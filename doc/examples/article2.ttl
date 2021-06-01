@@ -1,0 +1,45 @@
+@prefix schema: <http://schema.org/> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dce: <http://purl.org/dc/elements/1.1/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix issap: <http://ns.inria.fr/issa/property/> .
+@prefix fabio: <http://purl.org/spar/fabio/> .
+@prefix frbr: <http://purl.org/vocab/frbr/core#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+
+<http://ns.inria.fr/issa/03a424083ac2df3789d77211ce7144ef40f37001>
+  a schema:ScholarlyArticle, <http://purl.org/spar/fabio/ResearchPaper>, bibo:AcademicArticle ;
+  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
+  dct:title "A tissue level atlas of the healthy human virome" ;
+  dce:creator "Kumata, Ryuichi", "Suzuki, Tadaki", "Sato, Kei", "Ito, Jumpei", "Takahashi, Kenta" ;
+  dct:source "Medline; PMC" ;
+  dct:issued "2020-06-04"^^xsd:date ;
+  bibo:doi "10.1186/s12915-020-00785-5" ;
+  bibo:pmid "32493363" ;
+  dct:license "cc-by" ;
+  foaf:sha1 "03a424083ac2df3789d77211ce7144ef40f37001" ;
+  schema:url <https://doi.org/10.1186/s12915-020-00785-5> ;
+  fabio:hasPubMedCentralId "PMC7269688" ;
+  fabio:hasPubMedId "32493363" ;
+  schema:publication "BMC Biol" ;
+  dct:language <http://id.loc.gov/vocabulary/iso639-1/fr>;
+  dce:language "fre";
+  issap:hasTitle <http://ns.inria.fr/issa/03a424083ac2df3789d77211ce7144ef40f37001#title> ;
+  dct:abstract <http://ns.inria.fr/issa/03a424083ac2df3789d77211ce7144ef40f37001#abstract> ;
+  issap:hasBody <http://ns.inria.fr/issa/03a424083ac2df3789d77211ce7144ef40f37001#body_text> .
+
+<http://ns.inria.fr/issa/03a424083ac2df3789d77211ce7144ef40f37001#body_text> frbr:partOf <http://ns.inria.fr/issa/03a424083ac2df3789d77211ce7144ef40f37001> .
+<http://ns.inria.fr/issa/03a424083ac2df3789d77211ce7144ef40f37001#abstract> frbr:partOf <http://ns.inria.fr/issa/03a424083ac2df3789d77211ce7144ef40f37001> .
+
+
+<http://ns.inria.fr/03a424083ac2df3789d77211ce7144ef40f37001#abstract>	rdf:type	fabio:Abstract ;
+	rdf:value	"BACKGROUND: Human-resident microbes can influence both health and disease. Investigating the microbiome using next-generation sequencing technology has revealed examples of mutualism and conflict between microbes and humans. Comparing to bacteria, the viral component of the microbiome (i.e., the \u201Cvirome\u201D) is understudied. Somatic tissues of healthy individuals are usually inaccessible for the virome sampling; therefore, there is limited understanding of the presence and distribution of viruses in tissues in healthy individuals and how virus infection associates with human gene expression and perturbs immunological homeostasis. RESULTS: To characterize the human virome in a tissue-specific manner, here we performed meta-transcriptomic analysis using the RNA-sequencing dataset from the Genotype-Tissue Expression (GTEx) Project. We analyzed the 8991 RNA-sequencing data obtained from 51 somatic tissues from 547 individuals and successfully detected 39 viral species in at least one tissue. We then investigated associations between virus infection and human gene expression and human disease onset. We detected some expected relationships; for instance, hepatitis C virus infection in the liver was strongly associated with interferon-stimulated gene upregulation and pathological findings of chronic hepatitis. The presence of herpes simplex virus type 1 in one subject\u2019s brain strongly associated with immune gene expression. While torque teno virus was detected in a broad range of human tissues, it was not associated with interferon responses. Being notable in light of its association with lymphoproliferative disorders, Epstein-Barr virus infection in the spleen and blood was associated with an increase in plasma cells in healthy subjects. Human herpesvirus 7 was often detected in the stomach; intriguingly, it associated with the proportion of human leukocytes in the stomach as well as digestive gene expression. Moreover, virus infections in the local tissues associated with systemic immune responses in circulating blood. CONCLUSIONS: To our knowledge, this study is the first comprehensive investigation of the human virome in a variety of tissues in healthy individuals through meta-transcriptomic analysis. Further investigation of the associations described here, and application of this analytical pipeline to additional datasets, will be useful to reveal the impact of viral infections on human health." .
+    
+<http://ns.inria.fr/03a424083ac2df3789d77211ce7144ef40f37001#abstract>	dct:subject	"Bacteriology" ,
+		"Environmental microbiology" ,
+		"1670s in science" ,
+		"Virology" ,
+		"Bacteria" .

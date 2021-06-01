@@ -1,0 +1,44 @@
+@prefix frbr: <http://purl.org/vocab/frbr/core#> .
+@prefix schema: <http://schema.org/> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dce: <http://purl.org/dc/elements/1.1/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix issap: <http://ns.inria.fr/issa/property/> .
+@prefix fabio: <http://purl.org/spar/fabio/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+
+<http://ns.inria.fr/issa/f74923b3ce82c984a7ae3e0c2754c9e33c60554f>
+  a schema:ScholarlyArticle, bibo:AcademicArticle, <http://purl.org/spar/fabio/ResearchPaper> ;
+  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
+  dct:title "A real-time PCR for SARS-coronavirus incorporating target gene pre-amplification" ;
+  dce:creator "Tam, Siu-Lun", "Lin, Sau-Wah", "Yu, -H", "Collins, Richard", "Chan, Paul", "Wong, Freda Pui-Fan", "Dillon, Natalie", "Fung, Yin-Wan", "Cheung, Albert", "Yu, -Hoi", "Li, Hui", "Wang, Chen", "Lau,", "Lok, Ting" ;
+  dct:source "Elsevier; Medline; PMC" ;
+  dct:issued "2003-12-26"^^xsd:date ;
+  bibo:doi "10.1016/j.bbrc.2003.11.064" ;
+  bibo:pmid "14652014" ;
+  dct:license "els-covid" ;
+  foaf:sha1 "f74923b3ce82c984a7ae3e0c2754c9e33c60554f" ;
+  schema:url <https://doi.org/10.1016/j.bbrc.2003.11.064> ;
+  fabio:hasPubMedCentralId "PMC7111096" ;
+  fabio:hasPubMedId "14652014" ;
+  schema:publication "Biochemical and Biophysical Research Communications" ;
+  dct:language <http://id.loc.gov/vocabulary/iso639-1/en>;
+  dce:language "eng";
+  issap:hasTitle <http://ns.inria.fr/issa/f74923b3ce82c984a7ae3e0c2754c9e33c60554f#title> ;
+  dct:abstract <http://ns.inria.fr/issa/f74923b3ce82c984a7ae3e0c2754c9e33c60554f#abstract> ;
+  issap:hasBody <http://ns.inria.fr/issa/f74923b3ce82c984a7ae3e0c2754c9e33c60554f#body_text> .
+
+<http://ns.inria.fr/issa/f74923b3ce82c984a7ae3e0c2754c9e33c60554f#abstract>
+  a <http://purl.org/spar/fabio/Abstract> ;
+  rdf:value "Abstract An enhanced polymerase chain reaction (PCR) assay to detect the coronavirus associated with severe acute respiratory syndrome (SARS-CoV) was developed in which a target gene pre-amplification step preceded TaqMan real-time fluorescent PCR. Clinical samples were collected from 120 patients diagnosed as suspected or probable SARS cases and analyzed by conventional PCR followed by agarose gel electrophoresis, conventional TaqMan real-time PCR, and our enhanced TaqMan real-time PCR assays. An amplicon of the size expected from SARS-CoV was obtained from 28/120 samples using the enhanced real-time PCR method. Conventional PCR and real-time PCR alone identified fewer SARS-CoV positive cases. Results were confirmed by viral culture in 3/28 cases. The limit of detection of the enhanced real-time PCR method was 102-fold higher than the standard real-time PCR assay and 107-fold higher than conventional PCR methods. The increased sensitivity of the assay may help control the spread of the disease during future SARS outbreaks." ;
+  dct:subject "Polymerase chain reaction", "Laboratory techniques", "Titration", "Virology", "Biological engineering", "Molecular biology" ;
+  frbr:partOf <http://ns.inria.fr/issa/f74923b3ce82c984a7ae3e0c2754c9e33c60554f> .
+
+<http://ns.inria.fr/issa/f74923b3ce82c984a7ae3e0c2754c9e33c60554f#body_text> 
+    frbr:partOf <http://ns.inria.fr/issa/f74923b3ce82c984a7ae3e0c2754c9e33c60554f> .
+<http://ns.inria.fr/issa/f74923b3ce82c984a7ae3e0c2754c9e33c60554f#title> 
+    frbr:partOf <http://ns.inria.fr/issa/f74923b3ce82c984a7ae3e0c2754c9e33c60554f> .
+

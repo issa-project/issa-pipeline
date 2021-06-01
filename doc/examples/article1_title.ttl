@@ -1,0 +1,53 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix frbr: <http://purl.org/vocab/frbr/core#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix oa: <http://www.w3.org/ns/oa#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix issap: <http://ns.inria.fr/issa/property/> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+
+
+<http://ns.inria.fr/issa/ann/a14da19a536428d7216d42da268f8200aabb9958_t>
+  a oa:Annotation, prov:Entity ;
+  rdfs:label "named entity 'PCR'" ;
+  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
+  dct:creator <https://team.inria.fr/wimmics/> ;
+  prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceDBpSpotlight> ;
+  oa:hasBody <http://www.wikidata.org/entity/Q176996> ;
+  oa:hasTarget <http://ns.inria.fr/issa/ann/target/a14da19a536428d7216d42da268f8200aabb9958_t> ;
+  schema:about <http://ns.inria.fr/issa/f74923b3ce82c984a7ae3e0c2754c9e33c60554f> ;
+  issap:confidence 1 .
+
+<http://ns.inria.fr/issa/ann/selector/a14da19a536428d7216d42da268f8200aabb9958_t>
+  a oa:TextPositionSelector, oa:TextQuoteSelector ;
+  oa:exact "PCR" ;
+  oa:start 12 .
+
+<http://ns.inria.fr/issa/ann/target/a14da19a536428d7216d42da268f8200aabb9958_t>
+  oa:hasSource <http://ns.inria.fr/issa/f74923b3ce82c984a7ae3e0c2754c9e33c60554f#title> ;
+  oa:hasSelector <http://ns.inria.fr/issa/ann/selector/a14da19a536428d7216d42da268f8200aabb9958_t> .
+
+
+
+<http://ns.inria.fr/issa/ann/51b42903ea45962283bc9a070d9fae14170c95a5_t>
+  a prov:Entity, oa:Annotation ;
+  rdfs:label "named entity 'coronavirus'" ;
+  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
+  dct:creator <https://team.inria.fr/wimmics/> ;
+  dct:subject "Animals", "Health", "Medicine", "Animal_Husbandry" ;
+  prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceEF> ;
+  oa:hasBody <http://www.wikidata.org/entity/Q82069695> ;
+  oa:hasTarget <http://ns.inria.fr/issa/ann/target/51b42903ea45962283bc9a070d9fae14170c95a5_t> ;
+  schema:about <http://ns.inria.fr/issa/f74923b3ce82c984a7ae3e0c2754c9e33c60554f> .
+
+<http://ns.inria.fr/issa/ann/selector/51b42903ea45962283bc9a070d9fae14170c95a5_t>
+  a oa:TextPositionSelector, oa:TextQuoteSelector ;
+  oa:end 36 ;
+  oa:exact "coronavirus" ;
+  oa:start 25 .
+
+<http://ns.inria.fr/issa/ann/target/51b42903ea45962283bc9a070d9fae14170c95a5_t>
+  oa:hasSource <http://ns.inria.fr/issa/f74923b3ce82c984a7ae3e0c2754c9e33c60554f#abstract> ;
+  oa:hasSelector <http://ns.inria.fr/issa/ann/selector/51b42903ea45962283bc9a070d9fae14170c95a5_t> .

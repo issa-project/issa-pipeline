@@ -1,0 +1,196 @@
+@prefix oa: <http://www.w3.org/ns/oa#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix schema: <http://schema.org/> .
+@prefix issap: <http://ns.inria.fr/issa/property/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix ns1: <http://purl.org/vocab/frbr/core#> .
+
+<http://ns.inria.fr/issa/ann/selector/005195df108658aa56b8575612f214a63e69f37a>
+  a oa:TextPositionSelector, oa:TextQuoteSelector ;
+  oa:exact "atlas" ;
+  oa:start 15 .
+
+<http://ns.inria.fr/issa/ann/005195df108658aa56b8575612f214a63e69f37a>
+  a oa:Annotation, prov:Entity ;
+  rdfs:label "named entity 'atlas'" ;
+  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
+  dct:creator <https://team.inria.fr/wimmics/> ;
+  prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceDBpSpotlight> ;
+  oa:hasBody <http://dbpedia.org/resource/Atlas> ;
+  oa:hasTarget <http://ns.inria.fr/issa/ann/target/005195df108658aa56b8575612f214a63e69f37a> ;
+  schema:about <http://ns.inria.fr/issa/03a424083ac2df3789d77211ce7144ef40f37001> ;
+  issap:confidence 0.994771786384483 .
+
+<http://ns.inria.fr/issa/ann/target/005195df108658aa56b8575612f214a63e69f37a>
+  oa:hasSource <http://ns.inria.fr/issa/03a424083ac2df3789d77211ce7144ef40f37001#title> ;
+  oa:hasSelector <http://ns.inria.fr/issa/ann/selector/005195df108658aa56b8575612f214a63e69f37a> .
+
+<http://ns.inria.fr/issa/ann/61a8ca4433c697a0e9c918717a0437c6d9f18415>
+  a oa:Annotation, prov:Entity ;
+  rdfs:label "named entity 'human virome'" ;
+  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
+  dct:creator <https://team.inria.fr/wimmics/> ;
+  dct:subject "Biology" ;
+  prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceEF> ;
+  oa:hasBody <http://www.wikidata.org/entity/Q17027885> ;
+  oa:hasTarget <http://ns.inria.fr/issa/ann/target/61a8ca4433c697a0e9c918717a0437c6d9f18415> ;
+  schema:about <http://ns.inria.fr/issa/03a424083ac2df3789d77211ce7144ef40f37001> .
+
+<http://ns.inria.fr/issa/ann/target/61a8ca4433c697a0e9c918717a0437c6d9f18415>
+  oa:hasSource <http://ns.inria.fr/issa/03a424083ac2df3789d77211ce7144ef40f37001#title> ;
+  oa:hasSelector <http://ns.inria.fr/issa/ann/selector/61a8ca4433c697a0e9c918717a0437c6d9f18415> .
+
+<http://ns.inria.fr/issa/ann/selector/61a8ca4433c697a0e9c918717a0437c6d9f18415>
+  a oa:TextPositionSelector, oa:TextQuoteSelector ;
+  oa:end 48 ;
+  oa:exact "human virome" ;
+  oa:start 36 .
+
+<http://ns.inria.fr/issa/ann/55ce70112c40b95558c42062e75eb087d5e91f99>
+  a prov:Entity, oa:Annotation ;
+  rdfs:label "named entity 'tissue level'" ;
+  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
+  dct:creator <https://team.inria.fr/wimmics/> ;
+  dct:subject "Biology", "Animals", "Optics" ;
+  prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceEF> ;
+  oa:hasBody <http://www.wikidata.org/entity/Q40397> ;
+  oa:hasTarget <http://ns.inria.fr/issa/ann/target/55ce70112c40b95558c42062e75eb087d5e91f99> ;
+  schema:about <http://ns.inria.fr/issa/03a424083ac2df3789d77211ce7144ef40f37001> .
+
+<http://ns.inria.fr/issa/03a424083ac2df3789d77211ce7144ef40f37001#title>
+  rdf:value "A tissue level atlas of the healthy human virome" ;
+  dct:subject "Microbiomes", "Underwater diving physiology", "Viruses", "Tissues (biology)", "Virology" ;
+  ns1:partOf <http://ns.inria.fr/issa/03a424083ac2df3789d77211ce7144ef40f37001> .
+
+<http://ns.inria.fr/issa/ann/selector/55ce70112c40b95558c42062e75eb087d5e91f99>
+  a oa:TextPositionSelector, oa:TextQuoteSelector ;
+  oa:end 14 ;
+  oa:exact "tissue level" ;
+  oa:start 2 .
+
+<http://ns.inria.fr/issa/ann/target/55ce70112c40b95558c42062e75eb087d5e91f99>
+  oa:hasSource <http://ns.inria.fr/issa/03a424083ac2df3789d77211ce7144ef40f37001#title> ;
+  oa:hasSelector <http://ns.inria.fr/issa/ann/selector/55ce70112c40b95558c42062e75eb087d5e91f99> .
+
+<http://ns.inria.fr/issa/ann/12229d3822f6348db36b9b16c7a96a490b07f532>
+  a oa:Annotation, prov:Entity ;
+  rdfs:label "named entity 'HEALTHY'" ;
+  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
+  dct:creator <https://team.inria.fr/wimmics/> ;
+  prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceNCBOAnnotator> ;
+  oa:hasBody <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C115935>, <http://www.co-ode.org/ontologies/galen#healthy>, <http://purl.obolibrary.org/obo/NCIT_C115935>, <http://purl.obolibrary.org/obo/ODGI.owl#Healthy>, <http://semanticscience.org/resource/Healthy>, <http://semanticscience.org/resource/SIO_001012>, <http://purl.obolibrary.org/obo/HP_0032322>, <http://purl.bioontology.org/ontology/LNC/LA28121-4>, <http://www.limics.fr/ontologies/ontopsychiasoc#Salubre>, <http://scai.fraunhofer.de/HuPSON#SCAIVPH_00000308> ;
+  oa:hasTarget <http://ns.inria.fr/issa/ann/target/12229d3822f6348db36b9b16c7a96a490b07f532> ;
+  schema:about <http://ns.inria.fr/issa/03a424083ac2df3789d77211ce7144ef40f37001> .
+
+<http://ns.inria.fr/issa/ann/777f172bb2cce4af5c5da3a8b4239b7486dabdfd>
+  a oa:Annotation, prov:Entity ;
+  rdfs:label "named entity 'ATLAS'" ;
+  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
+  dct:creator <https://team.inria.fr/wimmics/> ;
+  prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceNCBOAnnotator> ;
+  oa:hasBody <http://purl.bioontology.org/ontology/RCD/7N930>, <http://purl.obolibrary.org/obo/EHDAA_10606>, <http://purl.bioontology.org/ontology/MESH/D020466>, <http://www.cvrgrid.org/files/ECGOntologyv1.owl#ECG_000000771>, <http://purl.jp/bio/4/id/200906030354573710>, <http://purl.org/sig/ont/fma/fma12519>, <http://purl.obolibrary.org/obo/MA_0001421>, <http://sbmi.uth.tmc.edu/ontology/ochv#1563>, <http://sbmi.uth.tmc.edu/ontology/ochv#1564>, <http://purl.obolibrary.org/obo/EHDA_10607>, <http://sbmi.uth.tmc.edu/ontology/ochv#C0004171>, schema:Atlas, <http://purl.obolibrary.org/obo/UBERON_0001092>, <http://radlex.org/RID/RID7745>, <http://uri.neuinfo.org/nif/nifstd/birnlex_2114>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C147589>, <http://uri.neuinfo.org/nif/nifstd/nlx_res_20090402>, <http://purl.org/obo/owlapi/fma#FMA_12519>, <http://www.ifomis.org/acgt/1.0#Atlas>, <http://bioontology.org/ontologies/BiomedicalResourceOntology.owl#Atlas>, <http://purl.bioontology.org/ontology/SNOMEDCT/14806007>, <http://www.co-ode.org/ontologies/galen#Atlas>, <http://purl.bioontology.org/ontology/ICD10CM/S12.0>, <http://purl.obolibrary.org/obo/EMAPA_19431> ;
+  oa:hasTarget <http://ns.inria.fr/issa/ann/target/777f172bb2cce4af5c5da3a8b4239b7486dabdfd> ;
+  schema:about <http://ns.inria.fr/issa/03a424083ac2df3789d77211ce7144ef40f37001> .
+
+<http://ns.inria.fr/issa/ann/selector/12229d3822f6348db36b9b16c7a96a490b07f532>
+  a oa:TextPositionSelector, oa:TextQuoteSelector ;
+  oa:end 35 ;
+  oa:exact "HEALTHY" ;
+  oa:start 29 .
+
+<http://ns.inria.fr/issa/ann/selector/3a2168968100b6db36e3c84e900413bd476645ae>
+  a oa:TextPositionSelector, oa:TextQuoteSelector ;
+  oa:end 8 ;
+  oa:exact "TISSUE" ;
+  oa:start 3 .
+
+<http://ns.inria.fr/issa/ann/target/12229d3822f6348db36b9b16c7a96a490b07f532>
+  oa:hasSource <http://ns.inria.fr/issa/03a424083ac2df3789d77211ce7144ef40f37001#title> ;
+  oa:hasSelector <http://ns.inria.fr/issa/ann/selector/12229d3822f6348db36b9b16c7a96a490b07f532> .
+
+<http://ns.inria.fr/issa/ann/target/3a2168968100b6db36e3c84e900413bd476645ae>
+  oa:hasSource <http://ns.inria.fr/issa/03a424083ac2df3789d77211ce7144ef40f37001#title> ;
+  oa:hasSelector <http://ns.inria.fr/issa/ann/selector/3a2168968100b6db36e3c84e900413bd476645ae> .
+
+<http://ns.inria.fr/issa/ann/f11f0b2132920771bb695fffd5fae398832a4b77>
+  a oa:Annotation, prov:Entity ;
+  rdfs:label "named entity 'virome'" ;
+  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
+  dct:creator <https://team.inria.fr/wimmics/> ;
+  prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceDBpSpotlight> ;
+  oa:hasBody <http://dbpedia.org/resource/Virome> ;
+  oa:hasTarget <http://ns.inria.fr/issa/ann/target/f11f0b2132920771bb695fffd5fae398832a4b77> ;
+  schema:about <http://ns.inria.fr/issa/03a424083ac2df3789d77211ce7144ef40f37001> ;
+  issap:confidence 0.999999999942915 .
+
+<http://ns.inria.fr/issa/ann/target/f11f0b2132920771bb695fffd5fae398832a4b77>
+  oa:hasSource <http://ns.inria.fr/issa/03a424083ac2df3789d77211ce7144ef40f37001#title> ;
+  oa:hasSelector <http://ns.inria.fr/issa/ann/selector/f11f0b2132920771bb695fffd5fae398832a4b77> .
+
+<http://ns.inria.fr/issa/ann/selector/f11f0b2132920771bb695fffd5fae398832a4b77>
+  a oa:TextPositionSelector, oa:TextQuoteSelector ;
+  oa:exact "virome" ;
+  oa:start 42 .
+
+<http://ns.inria.fr/issa/ann/3a2168968100b6db36e3c84e900413bd476645ae>
+  a oa:Annotation, prov:Entity ;
+  rdfs:label "named entity 'TISSUE'" ;
+  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
+  dct:creator <https://team.inria.fr/wimmics/> ;
+  prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceNCBOAnnotator> ;
+  oa:hasBody <http://purl.org/biotop/biotop.owl#Tissue>, <http://purl.obolibrary.org/obo/FBcv_0003046>, <http://www.bioassayontology.org/bao#BAO_0200444>, <http://psink.de/scio/Tissue>, <http://purl.obolibrary.org/obo/PLANA_0000113> ;
+  oa:hasTarget <http://ns.inria.fr/issa/ann/target/3a2168968100b6db36e3c84e900413bd476645ae> ;
+  schema:about <http://ns.inria.fr/issa/03a424083ac2df3789d77211ce7144ef40f37001> .
+
+<http://ns.inria.fr/issa/ann/7f87382e5cd4668180a17bc393be3fbed19269b4>
+  a prov:Entity, oa:Annotation ;
+  rdfs:label "named entity 'HUMAN'" ;
+  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
+  dct:creator <https://team.inria.fr/wimmics/> ;
+  prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceNCBOAnnotator> ;
+  oa:hasBody <http://neurolog.unice.fr/ontoneurolog/v3.0/human.owl#human>, <http://www.imgt.org/download/IMGT-ONTOLOGY/IMGT-ONTOLOGY-v1-0-3.owl#Homo_sapiens>, <http://purl.obolibrary.org/obo/NCIT_C14225>, <http://purl.bioontology.org/net/brunel/panda#Human>, <http://purl.obolibrary.org/obo/EHDAA_1>, <http://purl.org/obo/owl/NCBITaxon#NCBITaxon_9606>, <http://purl.obolibrary.org/obo/ID_0000007>, <http://sbmi.uth.tmc.edu/ontology/ochv#C0086418>, <http://radlex.org/RID/RID39073>, <http://example.com/owl/families/import/familyImport17/Human>, <http://www.semanticweb.org/dimitrios/ontologies/2013/2/untitled-ontology-2#Human>, <http://purl.obolibrary.org/obo/EHDA_1>, <http://onto.eva.mpg.de/ontologies/gfo-bio.owl#Human>, <http://www.cea.fr/ontotoxnuc#CelluleHumaine>, <http://purl.bioontology.org/ontology/NCBITAXON/9606>, <http://purl.obolibrary.org/obo/dinto_000058>, <http://www.genomic-cds.org/ont/genomic-cds.owl#human>, <http://purl.org/stemnet/MHC#Human>, <http://www.w3.org/2001/sw/hcls/ns/transmed/TMO_0124>, <http://purl.bioontology.org/ontology/STY/T016>, <http://brd.bsvgateway.org/api/organism/?id=16>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Human>, <http://sbmi.uth.tmc.edu/ontology/ochv#6299>, <http://purl.obolibrary.org/obo/ODGI.owl#Human>, <http://sbmi.uth.tmc.edu/ontology/ochv#15916>, <http://purl.obolibrary.org/obo/NCBITaxon_9606>, <http://www.cea.fr/ontotoxnuc#Homme>, <http://purl.bioontology.org/ontology/CSP/4000-0208>, <http://purl.org/biotop/biotop.owl#Human>, <http://bioontology.org/projects/ontologies/birnlex#birnlex_516>, <http://purl.obolibrary.org/obo/FBsp_00000004>, <http://semanticscience.org/resource/Human>, <http://semanticscience.org/resource/SIO_000485>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C14225>, <http://purl.bioontology.org/ontology/LNC/LA19711-3>, <http://www.co-ode.org/ontologies/galen#Human>, <http://purl.obolibrary.org/obo/IDOMAL_0000604>, <http://sweetontology.net/matrAnimal/Human>, <http://sbmi.uth.tmc.edu/ontology/ochv#C0020114>, <http://purl.org/autism-ontology/1.0/autism-core.owl#AUTISMC1000045>, <http://uri.neuinfo.org/nif/nifstd/birnlex_516>, <http://purl.bioontology.org/ontology/RCD/Xa0iC>, <http://iris.med.duth.gr/research/ecp/ontology/eCP.owl#human>, <http://doe-generated-ontology.com/OntoAD#Human> ;
+  oa:hasTarget <http://ns.inria.fr/issa/ann/target/7f87382e5cd4668180a17bc393be3fbed19269b4> ;
+  schema:about <http://ns.inria.fr/issa/03a424083ac2df3789d77211ce7144ef40f37001> .
+
+<http://ns.inria.fr/issa/ann/a8ad60a09318cf8fb6233f1d9adb0716c1fb83c1>
+  a prov:Entity, oa:Annotation ;
+  rdfs:label "named entity 'LEVEL'" ;
+  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
+  dct:creator <https://team.inria.fr/wimmics/> ;
+  prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceNCBOAnnotator> ;
+  oa:hasBody <http://purl.bioontology.org/ontology/RCD/Xa09q>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C25554>, <http://sweetontology.net/propOrdinal/Level>, <http://sweetontology.net/propSpaceHeight/Level>, <http://scai.fraunhofer.de/CSEO#Level>, <http://purl.bioontology.org/ontology/SNOMEDCT/276625007>, <http://purl.obolibrary.org/obo/ID_0000133>, <http://www.onto-med.de/ontologies/gfo.owl#Level>, <https://w3id.org/timebank#Level>, <http://www.co-ode.org/ontologies/galen#Level>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C87192>, <http://purl.bioontology.org/ontology/LNC/LP20732-1>, <http://mimi.case.edu/ontologies/2009/1/SDO.owl#Level>, <http://purl.obolibrary.org/obo/NCIT_C25554> ;
+  oa:hasTarget <http://ns.inria.fr/issa/ann/target/a8ad60a09318cf8fb6233f1d9adb0716c1fb83c1> ;
+  schema:about <http://ns.inria.fr/issa/03a424083ac2df3789d77211ce7144ef40f37001> .
+
+<http://ns.inria.fr/issa/ann/selector/7f87382e5cd4668180a17bc393be3fbed19269b4>
+  a oa:TextPositionSelector, oa:TextQuoteSelector ;
+  oa:end 41 ;
+  oa:exact "HUMAN" ;
+  oa:start 37 .
+
+<http://ns.inria.fr/issa/ann/target/7f87382e5cd4668180a17bc393be3fbed19269b4>
+  oa:hasSource <http://ns.inria.fr/issa/03a424083ac2df3789d77211ce7144ef40f37001#title> ;
+  oa:hasSelector <http://ns.inria.fr/issa/ann/selector/7f87382e5cd4668180a17bc393be3fbed19269b4> .
+
+<http://ns.inria.fr/issa/ann/selector/777f172bb2cce4af5c5da3a8b4239b7486dabdfd>
+  a oa:TextPositionSelector, oa:TextQuoteSelector ;
+  oa:end 20 ;
+  oa:exact "ATLAS" ;
+  oa:start 16 .
+
+<http://ns.inria.fr/issa/ann/selector/a8ad60a09318cf8fb6233f1d9adb0716c1fb83c1>
+  a oa:TextPositionSelector, oa:TextQuoteSelector ;
+  oa:end 14 ;
+  oa:exact "LEVEL" ;
+  oa:start 10 .
+
+<http://ns.inria.fr/issa/ann/target/777f172bb2cce4af5c5da3a8b4239b7486dabdfd>
+  oa:hasSource <http://ns.inria.fr/issa/03a424083ac2df3789d77211ce7144ef40f37001#title> ;
+  oa:hasSelector <http://ns.inria.fr/issa/ann/selector/777f172bb2cce4af5c5da3a8b4239b7486dabdfd> .
+
+<http://ns.inria.fr/issa/ann/target/a8ad60a09318cf8fb6233f1d9adb0716c1fb83c1>
+  oa:hasSource <http://ns.inria.fr/issa/03a424083ac2df3789d77211ce7144ef40f37001#title> ;
+  oa:hasSelector <http://ns.inria.fr/issa/ann/selector/a8ad60a09318cf8fb6233f1d9adb0716c1fb83c1> .
+

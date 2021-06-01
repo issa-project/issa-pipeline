@@ -1,0 +1,43 @@
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix owl:    <http://www.w3.org/2002/07/owl#>.
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
+
+@prefix dct:    <http://purl.org/dc/terms/>.
+@prefix fabio:  <http://purl.org/spar/fabio/> .
+@prefix frbr:   <http://purl.org/vocab/frbr/core#>.
+@prefix wdt:    <http://www.wikidata.org/prop/direct/> .
+
+@prefix issa:   <http://ns.inria.fr/issa/>.
+@prefix issap:  <http://ns.inria.fr/issa/property/>.
+
+
+issa:DocumentBody
+    a                       owl:Class;
+    owl:equivalentClass     <http://ns.inria.fr/covid19/DocumentBody>;
+    rdfs:subClassOf         fabio:Work;
+    rdfs:label              "document body";
+    dct:description         "A work's body, e.g. the main part of a research article";
+    .
+
+issap:confidence
+    a                       owl:DatatypeProperty;
+    owl:equivalentProperty  <http://ns.inria.fr/covid19/property/confidence>;
+    rdfs:label              "entity confidence score";
+    dct:description         "Confidence score obtained during the named entity recognition process";
+    .
+
+issap:hasTitle
+    a                       owl:ObjectProperty;
+    owl:equivalentProperty  <http://ns.inria.fr/covid19/property/hasTitle>;
+    rdfs:subPropertyOf      frbr:part;
+    rdfs:label              "resource representing a document's title";
+    dct:description         "Links a work to its title";
+    .
+
+issap:hasBody
+    a                       owl:ObjectProperty;
+    rdfs:subPropertyOf      frbr:part;
+    owl:equivalentProperty  <http://ns.inria.fr/covid19/property/hasBody>;
+    rdfs:label              "resource representing a document's body";
+    dct:description         "Links a work to its body, e.g. the main part of a research article";
+    .
