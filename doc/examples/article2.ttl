@@ -22,6 +22,7 @@
   dct:license "cc-by" ;
   foaf:sha1 "03a424083ac2df3789d77211ce7144ef40f37001" ;
   schema:url <https://doi.org/10.1186/s12915-020-00785-5> ;
+  schema:downloadUrl <https://doi.org/10.1186/s12915-020-00785-5> ;
   fabio:hasPubMedCentralId "PMC7269688" ;
   fabio:hasPubMedId "32493363" ;
   schema:publication "BMC Biol" ;

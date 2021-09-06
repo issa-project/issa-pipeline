@@ -22,6 +22,7 @@
   dct:license "els-covid" ;
   foaf:sha1 "f74923b3ce82c984a7ae3e0c2754c9e33c60554f" ;
   schema:url <https://doi.org/10.1016/j.bbrc.2003.11.064> ;
+  schema:downloadUrl <https://doi.org/10.1016/j.bbrc.2003.11.064> ;
   fabio:hasPubMedCentralId "PMC7111096" ;
   fabio:hasPubMedId "14652014" ;
   schema:publication "Biochemical and Biophysical Research Communications" ;
