@@ -38,9 +38,11 @@ Article metadata may include the following items:
     - Pubmed identifer (`bibo:pmid` and `fabio:hasPubMedId`)
     - PMC identifer (`fabio:hasPubMedCentralId`)
 - source of the metadata information (`dct:source`)
-- DOI-based URL (`schema:url`)
-- language string (` dce:language `)
-- language URI (`dct:language`)
+- article page URL, possibly DOI-based (`schema:url`)
+- PDF download URL (`schema:downloadUrl`)
+- languages
+    - language string (` dce:language `)
+    - language URI (`dct:language`)
 
 Furthermore, each article is linked to its parts (title, abstract, body) as follows:
 - `issap:hasTitle <http://ns.inria.fr/issa/paper_id#title>`
