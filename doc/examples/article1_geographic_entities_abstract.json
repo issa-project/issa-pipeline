@@ -1,0 +1,284 @@
+[
+        {
+            "paperId": "f74923b3ce82c984a7ae3e0c2754c9e33c60554f",
+            "rawName": "Asie du Sud-Est",
+            "confidence_score": 0.9864,
+            "wikipediaExternalRef": 9401,
+            "wikidataId": "Q11708",
+            "text_location": [
+                {
+                    "offsetStart": 2515,
+                    "offsetEnd": 2530
+                },
+                {
+                    "offsetStart": 29503,
+                    "offsetEnd": 29518
+                }
+            ],
+            "geonamesId": "7729896"
+        },
+        {
+            "paperId": "f74923b3ce82c984a7ae3e0c2754c9e33c60554f",
+            "rawName": "Amérique latine",
+            "confidence_score": 0.9732,
+            "wikipediaExternalRef": 4812,
+            "wikidataId": "Q12585",
+            "text_location": [
+                {
+                    "offsetStart": 2947,
+                    "offsetEnd": 2962
+                }
+            ],
+            "geonamesId": "7730009"
+        },
+        {
+            "paperId": "f74923b3ce82c984a7ae3e0c2754c9e33c60554f",
+            "rawName": "Thaïlande",
+            "confidence_score": 0.8807,
+            "wikipediaExternalRef": 2930,
+            "wikidataId": "Q869",
+            "text_location": [
+                {
+                    "offsetStart": 16001,
+                    "offsetEnd": 16010
+                }
+            ],
+            "geonamesId": "1605651"
+        },
+        {
+            "paperId": "f74923b3ce82c984a7ae3e0c2754c9e33c60554f",
+            "rawName": "Huaphan",
+            "confidence_score": 0.8749,
+            "wikipediaExternalRef": 745698,
+            "wikidataId": "Q502997",
+            "text_location": [
+                {
+                    "offsetStart": 4360,
+                    "offsetEnd": 4367
+                }
+            ],
+            "geonamesId": "1657114"
+        },
+        {
+            "paperId": "f74923b3ce82c984a7ae3e0c2754c9e33c60554f",
+            "rawName": "Indonésie",
+            "confidence_score": 0.8696,
+            "wikipediaExternalRef": 1507,
+            "wikidataId": "Q252",
+            "text_location": [
+                {
+                    "offsetStart": 4504,
+                    "offsetEnd": 4513
+                },
+                {
+                    "offsetStart": 20349,
+                    "offsetEnd": 20358
+                },
+                {
+                    "offsetStart": 20962,
+                    "offsetEnd": 20971
+                }
+            ],
+            "geonamesId": "1643084"
+        },
+        {
+            "paperId": "f74923b3ce82c984a7ae3e0c2754c9e33c60554f",
+            "rawName": "Laos",
+            "confidence_score": 0.8411,
+            "wikipediaExternalRef": 4983,
+            "wikidataId": "Q819",
+            "text_location": [
+                {
+                    "offsetStart": 4372,
+                    "offsetEnd": 4376
+                },
+                {
+                    "offsetStart": 14071,
+                    "offsetEnd": 14075
+                },
+                {
+                    "offsetStart": 17704,
+                    "offsetEnd": 17708
+                },
+                {
+                    "offsetStart": 20364,
+                    "offsetEnd": 20368
+                },
+                {
+                    "offsetStart": 21021,
+                    "offsetEnd": 21025
+                },
+                {
+                    "offsetStart": 23747,
+                    "offsetEnd": 23751
+                },
+                {
+                    "offsetStart": 27865,
+                    "offsetEnd": 27869
+                }
+            ],
+            "geonamesId": "1655842"
+        },
+        {
+            "paperId": "f74923b3ce82c984a7ae3e0c2754c9e33c60554f",
+            "rawName": "Chine",
+            "confidence_score": 0.8074,
+            "wikipediaExternalRef": 10853,
+            "wikidataId": "Q148",
+            "text_location": [
+                {
+                    "offsetStart": 4310,
+                    "offsetEnd": 4315
+                },
+                {
+                    "offsetStart": 18404,
+                    "offsetEnd": 18409
+                },
+                {
+                    "offsetStart": 20269,
+                    "offsetEnd": 20274
+                },
+                {
+                    "offsetStart": 20950,
+                    "offsetEnd": 20955
+                },
+                {
+                    "offsetStart": 23646,
+                    "offsetEnd": 23651
+                },
+                {
+                    "offsetStart": 25564,
+                    "offsetEnd": 25569
+                },
+                {
+                    "offsetStart": 27855,
+                    "offsetEnd": 27860
+                }
+            ],
+            "geonamesId": "1814991"
+        },
+        {
+            "paperId": "f74923b3ce82c984a7ae3e0c2754c9e33c60554f",
+            "rawName": "Vietnam",
+            "confidence_score": 0.7964,
+            "wikipediaExternalRef": 4726798,
+            "wikidataId": "Q881",
+            "text_location": [
+                {
+                    "offsetStart": 4438,
+                    "offsetEnd": 4445
+                },
+                {
+                    "offsetStart": 14082,
+                    "offsetEnd": 14089
+                },
+                {
+                    "offsetStart": 17063,
+                    "offsetEnd": 17070
+                },
+                {
+                    "offsetStart": 17715,
+                    "offsetEnd": 17722
+                },
+                {
+                    "offsetStart": 20375,
+                    "offsetEnd": 20382
+                },
+                {
+                    "offsetStart": 21032,
+                    "offsetEnd": 21039
+                },
+                {
+                    "offsetStart": 24019,
+                    "offsetEnd": 24026
+                },
+                {
+                    "offsetStart": 25587,
+                    "offsetEnd": 25594
+                },
+                {
+                    "offsetStart": 27876,
+                    "offsetEnd": 27883
+                }
+            ],
+            "geonamesId": "1562822"
+        },
+        {
+            "paperId": "f74923b3ce82c984a7ae3e0c2754c9e33c60554f",
+            "rawName": "Asie",
+            "confidence_score": 0.7722,
+            "wikipediaExternalRef": 159,
+            "wikidataId": "Q48",
+            "text_location": [
+                {
+                    "offsetStart": 2926,
+                    "offsetEnd": 2930
+                }
+            ],
+            "geonamesId": "6255147"
+        },
+        {
+            "paperId": "f74923b3ce82c984a7ae3e0c2754c9e33c60554f",
+            "rawName": "province de Nghe An",
+            "confidence_score": 0.6427,
+            "wikipediaExternalRef": 1321604,
+            "wikidataId": "Q36587",
+            "text_location": [
+                {
+                    "offsetStart": 4414,
+                    "offsetEnd": 4433
+                }
+            ],
+            "geonamesId": "1559969"
+        },
+        {
+            "paperId": "f74923b3ce82c984a7ae3e0c2754c9e33c60554f",
+            "rawName": "province du Yunnan",
+            "confidence_score": 0.5714,
+            "wikipediaExternalRef": 33748,
+            "wikidataId": "Q43194",
+            "text_location": [
+                {
+                    "offsetStart": 4287,
+                    "offsetEnd": 4305
+                }
+            ],
+            "geonamesId": "1785694"
+        },
+        {
+            "paperId": "f74923b3ce82c984a7ae3e0c2754c9e33c60554f",
+            "rawName": "Afrique",
+            "confidence_score": 0.534,
+            "wikipediaExternalRef": 181,
+            "wikidataId": "Q15",
+            "text_location": [
+                {
+                    "offsetStart": 2934,
+                    "offsetEnd": 2941
+                }
+            ],
+            "geonamesId": "6255146"
+        },
+        {
+            "paperId": "f74923b3ce82c984a7ae3e0c2754c9e33c60554f",
+            "rawName": "chinois",
+            "confidence_score": 0.4491,
+            "wikipediaExternalRef": 10853,
+            "wikidataId": "Q148",
+            "text_location": [
+                {
+                    "offsetStart": 17003,
+                    "offsetEnd": 17010
+                },
+                {
+                    "offsetStart": 17509,
+                    "offsetEnd": 17516
+                },
+                {
+                    "offsetStart": 18210,
+                    "offsetEnd": 18217
+                }
+            ],
+            "geonamesId": "1814991"
+        }
+    ]

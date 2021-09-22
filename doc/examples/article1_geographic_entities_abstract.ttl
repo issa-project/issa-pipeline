@@ -1,0 +1,741 @@
+@prefix rr:      <http://www.w3.org/ns/r2rml#> .
+@prefix schema:  <http://schema.org/> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix dce:     <http://purl.org/dc/elements/1.1/> .
+@prefix fabio:   <http://purl.org/spar/fabio/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix issa:    <http://ns.inria.fr/issa/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix frbr:    <http://purl.org/vocab/frbr/core#> .
+@prefix issapr:  <http://ns.inria.fr/issa/property/> .
+@prefix wd:      <http://www.wikidata.org/entity/> .
+@prefix rml:     <http://semweb.mmlab.be/ns/rml#> .
+@prefix oa:      <http://www.w3.org/ns/oa#> .
+@prefix dct:     <http://purl.org/dc/terms/> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xrr:     <http://i3s.unice.fr/xr2rml#> .
+@prefix bibo:    <http://purl.org/ontology/bibo/> .
+@prefix prov:    <http://www.w3.org/ns/prov#> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+
+<http://ns.inria.fr/issa/ann/selector/773a1a86b0c6fcb23219f12f848a0d20225e14aa>
+      a       oa:TextPositionSelector , oa:TextQuoteSelector ;
+      oa:end  4305 ;
+      oa:exact "province du Yunnan" ;
+      oa:start 4287 .
+
+<http://ns.inria.fr/issa/ann/target/2fa74180a9ca677b5a2e4181512455013d822395>
+      oa:hasSelector <http://ns.inria.fr/issa/ann/selector/2fa74180a9ca677b5a2e4181512455013d822395> ;
+      oa:hasSource <http://ns.inria.fr/issa/f74923b3ce82c984a7ae3e0c2754c9e33c60554f#abstract> .
+
+<http://ns.inria.fr/issa/ann/selector/77eb1e99bc60064734100f467ed9250881b17af6>
+      a       oa:TextPositionSelector , oa:TextQuoteSelector ;
+      oa:end  17516 ;
+      oa:exact "chinois" ;
+      oa:start 17509 .
+
+<http://ns.inria.fr/issa/ann/aff1e35b5b489db646b68bca3c4ad48909dbdd95>
+      a       prov:Entity , oa:Annotation ;
+      rdfs:isDefinedBy issa:dataset-1-0 ;
+      rdfs:label "named entity 'Laos'" ;
+      issapr:confidence 0.8411 ;
+      schema:about issa:f74923b3ce82c984a7ae3e0c2754c9e33c60554f ;
+      oa:hasBody <https://sws.geonames.org/1655842/> ;
+      oa:hasTarget <http://ns.inria.fr/issa/ann/target/aff1e35b5b489db646b68bca3c4ad48909dbdd95> .
+
+<http://ns.inria.fr/issa/ann/012a25cea23e24bb9eb3e3230b9d1f153ef89ed2>
+      a       prov:Entity , oa:Annotation ;
+      rdfs:isDefinedBy issa:dataset-1-0 ;
+      rdfs:label "named entity 'Vietnam'" ;
+      issapr:confidence 0.7964 ;
+      schema:about issa:f74923b3ce82c984a7ae3e0c2754c9e33c60554f ;
+      oa:hasBody <https://sws.geonames.org/1562822/> ;
+      oa:hasTarget <http://ns.inria.fr/issa/ann/target/012a25cea23e24bb9eb3e3230b9d1f153ef89ed2> .
+
+<http://ns.inria.fr/issa/ann/selector/a7e5a470a77db814d61dae58e6b6b1df9fe2e284>
+      a       oa:TextPositionSelector , oa:TextQuoteSelector ;
+      oa:end  20955 ;
+      oa:exact "Chine" ;
+      oa:start 20950 .
+
+<http://ns.inria.fr/issa/ann/selector/2d7ba8a6dfeb884087afb9a7d6c5f75e7ab38563>
+      a       oa:TextPositionSelector , oa:TextQuoteSelector ;
+      oa:end  4315 ;
+      oa:exact "Chine" ;
+      oa:start 4310 .
+
+<http://ns.inria.fr/issa/ann/77eb1e99bc60064734100f467ed9250881b17af6>
+      a       prov:Entity , oa:Annotation ;
+      rdfs:isDefinedBy issa:dataset-1-0 ;
+      rdfs:label "named entity 'chinois'" ;
+      issapr:confidence 0.4491 ;
+      schema:about issa:f74923b3ce82c984a7ae3e0c2754c9e33c60554f ;
+      oa:hasBody <https://sws.geonames.org/1814991/> ;
+      oa:hasTarget <http://ns.inria.fr/issa/ann/target/77eb1e99bc60064734100f467ed9250881b17af6> .
+
+<http://ns.inria.fr/issa/ann/selector/012a25cea23e24bb9eb3e3230b9d1f153ef89ed2>
+      a       oa:TextPositionSelector , oa:TextQuoteSelector ;
+      oa:end  14089 ;
+      oa:exact "Vietnam" ;
+      oa:start 14082 .
+
+<http://ns.inria.fr/issa/ann/selector/a62d57e954128fa346a270ea22a6ac8485213aed>
+      a       oa:TextPositionSelector , oa:TextQuoteSelector ;
+      oa:end  27869 ;
+      oa:exact "Laos" ;
+      oa:start 27865 .
+
+<http://ns.inria.fr/issa/ann/selector/9aadad7a6b5370dd1a4ee1358a23840f5d8c3a0b>
+      a       oa:TextPositionSelector , oa:TextQuoteSelector ;
+      oa:end  21039 ;
+      oa:exact "Vietnam" ;
+      oa:start 21032 .
+
+<http://ns.inria.fr/issa/ann/a318217ec80aea9295713573449df9ba4839a334>
+      a       prov:Entity , oa:Annotation ;
+      rdfs:isDefinedBy issa:dataset-1-0 ;
+      rdfs:label "named entity 'Indonésie'" ;
+      issapr:confidence 0.8696 ;
+      schema:about issa:f74923b3ce82c984a7ae3e0c2754c9e33c60554f ;
+      oa:hasBody <https://sws.geonames.org/1643084/> ;
+      oa:hasTarget <http://ns.inria.fr/issa/ann/target/a318217ec80aea9295713573449df9ba4839a334> .
+
+<http://ns.inria.fr/issa/ann/target/ad69cffdfb051e1dd52d95e910d3b3f9df86436b>
+      oa:hasSelector <http://ns.inria.fr/issa/ann/selector/ad69cffdfb051e1dd52d95e910d3b3f9df86436b> ;
+      oa:hasSource <http://ns.inria.fr/issa/f74923b3ce82c984a7ae3e0c2754c9e33c60554f#abstract> .
+
+<http://ns.inria.fr/issa/ann/773a1a86b0c6fcb23219f12f848a0d20225e14aa>
+      a       prov:Entity , oa:Annotation ;
+      rdfs:isDefinedBy issa:dataset-1-0 ;
+      rdfs:label "named entity 'province du Yunnan'" ;
+      issapr:confidence 0.5714 ;
+      schema:about issa:f74923b3ce82c984a7ae3e0c2754c9e33c60554f ;
+      oa:hasBody <https://sws.geonames.org/1785694/> ;
+      oa:hasTarget <http://ns.inria.fr/issa/ann/target/773a1a86b0c6fcb23219f12f848a0d20225e14aa> .
+
+<http://ns.inria.fr/issa/ann/target/f2838cd834db828c5debb41f5e4ee00ea39e743b>
+      oa:hasSelector <http://ns.inria.fr/issa/ann/selector/f2838cd834db828c5debb41f5e4ee00ea39e743b> ;
+      oa:hasSource <http://ns.inria.fr/issa/f74923b3ce82c984a7ae3e0c2754c9e33c60554f#abstract> .
+
+<http://ns.inria.fr/issa/ann/64e263d88e333d4642b2b22603cbdf5d36f53399>
+      a       prov:Entity , oa:Annotation ;
+      rdfs:isDefinedBy issa:dataset-1-0 ;
+      rdfs:label "named entity 'Vietnam'" ;
+      issapr:confidence 0.7964 ;
+      schema:about issa:f74923b3ce82c984a7ae3e0c2754c9e33c60554f ;
+      oa:hasBody <https://sws.geonames.org/1562822/> ;
+      oa:hasTarget <http://ns.inria.fr/issa/ann/target/64e263d88e333d4642b2b22603cbdf5d36f53399> .
+
+<http://ns.inria.fr/issa/ann/selector/182cd18be72e09955ad307fba4604133f48614f9>
+      a       oa:TextPositionSelector , oa:TextQuoteSelector ;
+      oa:end  20274 ;
+      oa:exact "Chine" ;
+      oa:start 20269 .
+
+<http://ns.inria.fr/issa/ann/a7e5a470a77db814d61dae58e6b6b1df9fe2e284>
+      a       prov:Entity , oa:Annotation ;
+      rdfs:isDefinedBy issa:dataset-1-0 ;
+      rdfs:label "named entity 'Chine'" ;
+      issapr:confidence 0.8074 ;
+      schema:about issa:f74923b3ce82c984a7ae3e0c2754c9e33c60554f ;
+      oa:hasBody <https://sws.geonames.org/1814991/> ;
+      oa:hasTarget <http://ns.inria.fr/issa/ann/target/a7e5a470a77db814d61dae58e6b6b1df9fe2e284> .
+
+<http://ns.inria.fr/issa/ann/2d7ba8a6dfeb884087afb9a7d6c5f75e7ab38563>
+      a       prov:Entity , oa:Annotation ;
+      rdfs:isDefinedBy issa:dataset-1-0 ;
+      rdfs:label "named entity 'Chine'" ;
+      issapr:confidence 0.8074 ;
+      schema:about issa:f74923b3ce82c984a7ae3e0c2754c9e33c60554f ;
+      oa:hasBody <https://sws.geonames.org/1814991/> ;
+      oa:hasTarget <http://ns.inria.fr/issa/ann/target/2d7ba8a6dfeb884087afb9a7d6c5f75e7ab38563> .
+
+<http://ns.inria.fr/issa/ann/selector/64e263d88e333d4642b2b22603cbdf5d36f53399>
+      a       oa:TextPositionSelector , oa:TextQuoteSelector ;
+      oa:end  27883 ;
+      oa:exact "Vietnam" ;
+      oa:start 27876 .
+
+<http://ns.inria.fr/issa/ann/4b8f6f0db72bb1849713a94f177b6b95002bfc3e>
+      a       prov:Entity , oa:Annotation ;
+      rdfs:isDefinedBy issa:dataset-1-0 ;
+      rdfs:label "named entity 'Laos'" ;
+      issapr:confidence 0.8411 ;
+      schema:about issa:f74923b3ce82c984a7ae3e0c2754c9e33c60554f ;
+      oa:hasBody <https://sws.geonames.org/1655842/> ;
+      oa:hasTarget <http://ns.inria.fr/issa/ann/target/4b8f6f0db72bb1849713a94f177b6b95002bfc3e> .
+
+<http://ns.inria.fr/issa/ann/5d7ec80ba08346506923b62a210b74c9f2c9d0c7>
+      a       prov:Entity , oa:Annotation ;
+      rdfs:isDefinedBy issa:dataset-1-0 ;
+      rdfs:label "named entity 'Afrique'" ;
+      issapr:confidence 0.534 ;
+      schema:about issa:f74923b3ce82c984a7ae3e0c2754c9e33c60554f ;
+      oa:hasBody <https://sws.geonames.org/6255146/> ;
+      oa:hasTarget <http://ns.inria.fr/issa/ann/target/5d7ec80ba08346506923b62a210b74c9f2c9d0c7> .
+
+<http://ns.inria.fr/issa/ann/selector/a49f6a097a8eb0fd60a1156bffdc0dc9bcfb1952>
+      a       oa:TextPositionSelector , oa:TextQuoteSelector ;
+      oa:end  23651 ;
+      oa:exact "Chine" ;
+      oa:start 23646 .
+
+<http://ns.inria.fr/issa/ann/selector/5d7ec80ba08346506923b62a210b74c9f2c9d0c7>
+      a       oa:TextPositionSelector , oa:TextQuoteSelector ;
+      oa:end  2941 ;
+      oa:exact "Afrique" ;
+      oa:start 2934 .
+
+<http://ns.inria.fr/issa/ann/target/b91976eb4ab9a216460a2be62477fe1ab848ac1f>
+      oa:hasSelector <http://ns.inria.fr/issa/ann/selector/b91976eb4ab9a216460a2be62477fe1ab848ac1f> ;
+      oa:hasSource <http://ns.inria.fr/issa/f74923b3ce82c984a7ae3e0c2754c9e33c60554f#abstract> .
+
+<http://ns.inria.fr/issa/ann/target/35d30f4b66235f130650b72aafc1883d9c470f28>
+      oa:hasSelector <http://ns.inria.fr/issa/ann/selector/35d30f4b66235f130650b72aafc1883d9c470f28> ;
+      oa:hasSource <http://ns.inria.fr/issa/f74923b3ce82c984a7ae3e0c2754c9e33c60554f#abstract> .
+
+<http://ns.inria.fr/issa/ann/selector/2cd026e31564062c443253e5de8ea161705dede7>
+      a       oa:TextPositionSelector , oa:TextQuoteSelector ;
+      oa:end  4367 ;
+      oa:exact "Huaphan" ;
+      oa:start 4360 .
+
+<http://ns.inria.fr/issa/ann/a49f6a097a8eb0fd60a1156bffdc0dc9bcfb1952>
+      a       prov:Entity , oa:Annotation ;
+      rdfs:isDefinedBy issa:dataset-1-0 ;
+      rdfs:label "named entity 'Chine'" ;
+      issapr:confidence 0.8074 ;
+      schema:about issa:f74923b3ce82c984a7ae3e0c2754c9e33c60554f ;
+      oa:hasBody <https://sws.geonames.org/1814991/> ;
+      oa:hasTarget <http://ns.inria.fr/issa/ann/target/a49f6a097a8eb0fd60a1156bffdc0dc9bcfb1952> .
+
+<http://ns.inria.fr/issa/ann/target/f64d2c91b1a24c8165a5e44c4b492e208bd95508>
+      oa:hasSelector <http://ns.inria.fr/issa/ann/selector/f64d2c91b1a24c8165a5e44c4b492e208bd95508> ;
+      oa:hasSource <http://ns.inria.fr/issa/f74923b3ce82c984a7ae3e0c2754c9e33c60554f#abstract> .
+
+<http://ns.inria.fr/issa/ann/ad69cffdfb051e1dd52d95e910d3b3f9df86436b>
+      a       prov:Entity , oa:Annotation ;
+      rdfs:isDefinedBy issa:dataset-1-0 ;
+      rdfs:label "named entity 'Chine'" ;
+      issapr:confidence 0.8074 ;
+      schema:about issa:f74923b3ce82c984a7ae3e0c2754c9e33c60554f ;
+      oa:hasBody <https://sws.geonames.org/1814991/> ;
+      oa:hasTarget <http://ns.inria.fr/issa/ann/target/ad69cffdfb051e1dd52d95e910d3b3f9df86436b> .
+
+<http://ns.inria.fr/issa/ann/selector/b53a6a236a9f0d2f0eb64e4f04bde63bcb8d12ef>
+      a       oa:TextPositionSelector , oa:TextQuoteSelector ;
+      oa:end  17722 ;
+      oa:exact "Vietnam" ;
+      oa:start 17715 .
+
+<http://ns.inria.fr/issa/ann/199955e2d14c975aa567a95a7d8aa9027820ca27>
+      a       prov:Entity , oa:Annotation ;
+      rdfs:isDefinedBy issa:dataset-1-0 ;
+      rdfs:label "named entity 'Thaïlande'" ;
+      issapr:confidence 0.8807 ;
+      schema:about issa:f74923b3ce82c984a7ae3e0c2754c9e33c60554f ;
+      oa:hasBody <https://sws.geonames.org/1605651/> ;
+      oa:hasTarget <http://ns.inria.fr/issa/ann/target/199955e2d14c975aa567a95a7d8aa9027820ca27> .
+
+<http://ns.inria.fr/issa/ann/cac4331cc329e2d84cd9320d7ce6ec531066fdfe>
+      a       prov:Entity , oa:Annotation ;
+      rdfs:isDefinedBy issa:dataset-1-0 ;
+      rdfs:label "named entity 'Vietnam'" ;
+      issapr:confidence 0.7964 ;
+      schema:about issa:f74923b3ce82c984a7ae3e0c2754c9e33c60554f ;
+      oa:hasBody <https://sws.geonames.org/1562822/> ;
+      oa:hasTarget <http://ns.inria.fr/issa/ann/target/cac4331cc329e2d84cd9320d7ce6ec531066fdfe> .
+
+<http://ns.inria.fr/issa/ann/target/7d1877b148d82d8d6ed86779f591ec9ec4b3851d>
+      oa:hasSelector <http://ns.inria.fr/issa/ann/selector/7d1877b148d82d8d6ed86779f591ec9ec4b3851d> ;
+      oa:hasSource <http://ns.inria.fr/issa/f74923b3ce82c984a7ae3e0c2754c9e33c60554f#abstract> .
+
+<http://ns.inria.fr/issa/ann/2cd026e31564062c443253e5de8ea161705dede7>
+      a       prov:Entity , oa:Annotation ;
+      rdfs:isDefinedBy issa:dataset-1-0 ;
+      rdfs:label "named entity 'Huaphan'" ;
+      issapr:confidence 0.8749 ;
+      schema:about issa:f74923b3ce82c984a7ae3e0c2754c9e33c60554f ;
+      oa:hasBody <https://sws.geonames.org/1657114/> ;
+      oa:hasTarget <http://ns.inria.fr/issa/ann/target/2cd026e31564062c443253e5de8ea161705dede7> .
+
+<http://ns.inria.fr/issa/ann/selector/77679f11593f9b21d4f9d5ed52a60bb6ad8b1d94>
+      a       oa:TextPositionSelector , oa:TextQuoteSelector ;
+      oa:end  20382 ;
+      oa:exact "Vietnam" ;
+      oa:start 20375 .
+
+<http://ns.inria.fr/issa/ann/selector/c54e5d9985ffb68617a0d3bfac858e38231dc686>
+      a       oa:TextPositionSelector , oa:TextQuoteSelector ;
+      oa:end  17708 ;
+      oa:exact "Laos" ;
+      oa:start 17704 .
+
+<http://ns.inria.fr/issa/ann/target/9aadad7a6b5370dd1a4ee1358a23840f5d8c3a0b>
+      oa:hasSelector <http://ns.inria.fr/issa/ann/selector/9aadad7a6b5370dd1a4ee1358a23840f5d8c3a0b> ;
+      oa:hasSource <http://ns.inria.fr/issa/f74923b3ce82c984a7ae3e0c2754c9e33c60554f#abstract> .
+
+<http://ns.inria.fr/issa/ann/b91976eb4ab9a216460a2be62477fe1ab848ac1f>
+      a       prov:Entity , oa:Annotation ;
+      rdfs:isDefinedBy issa:dataset-1-0 ;
+      rdfs:label "named entity 'Vietnam'" ;
+      issapr:confidence 0.7964 ;
+      schema:about issa:f74923b3ce82c984a7ae3e0c2754c9e33c60554f ;
+      oa:hasBody <https://sws.geonames.org/1562822/> ;
+      oa:hasTarget <http://ns.inria.fr/issa/ann/target/b91976eb4ab9a216460a2be62477fe1ab848ac1f> .
+
+<http://ns.inria.fr/issa/ann/target/52e5a4ff90771a3297264c14d77731889066ee96>
+      oa:hasSelector <http://ns.inria.fr/issa/ann/selector/52e5a4ff90771a3297264c14d77731889066ee96> ;
+      oa:hasSource <http://ns.inria.fr/issa/f74923b3ce82c984a7ae3e0c2754c9e33c60554f#abstract> .
+
+<http://ns.inria.fr/issa/ann/target/012a25cea23e24bb9eb3e3230b9d1f153ef89ed2>
+      oa:hasSelector <http://ns.inria.fr/issa/ann/selector/012a25cea23e24bb9eb3e3230b9d1f153ef89ed2> ;
+      oa:hasSource <http://ns.inria.fr/issa/f74923b3ce82c984a7ae3e0c2754c9e33c60554f#abstract> .
+
+<http://ns.inria.fr/issa/ann/22d154e3c3ba1f3edb6843a05527b24fe796be9d>
+      a       prov:Entity , oa:Annotation ;
+      rdfs:isDefinedBy issa:dataset-1-0 ;
+      rdfs:label "named entity 'Asie du Sud-Est'" ;
+      issapr:confidence 0.9864 ;
+      schema:about issa:f74923b3ce82c984a7ae3e0c2754c9e33c60554f ;
+      oa:hasBody <https://sws.geonames.org/7729896/> ;
+      oa:hasTarget <http://ns.inria.fr/issa/ann/target/22d154e3c3ba1f3edb6843a05527b24fe796be9d> .
+
+<http://ns.inria.fr/issa/ann/selector/546acde20812c708e8ab824a8941539f9de329d7>
+      a       oa:TextPositionSelector , oa:TextQuoteSelector ;
+      oa:end  4445 ;
+      oa:exact "Vietnam" ;
+      oa:start 4438 .
+
+<http://ns.inria.fr/issa/ann/2fa74180a9ca677b5a2e4181512455013d822395>
+      a       prov:Entity , oa:Annotation ;
+      rdfs:isDefinedBy issa:dataset-1-0 ;
+      rdfs:label "named entity 'Chine'" ;
+      issapr:confidence 0.8074 ;
+      schema:about issa:f74923b3ce82c984a7ae3e0c2754c9e33c60554f ;
+      oa:hasBody <https://sws.geonames.org/1814991/> ;
+      oa:hasTarget <http://ns.inria.fr/issa/ann/target/2fa74180a9ca677b5a2e4181512455013d822395> .
+
+<http://ns.inria.fr/issa/ann/target/4b8f6f0db72bb1849713a94f177b6b95002bfc3e>
+      oa:hasSelector <http://ns.inria.fr/issa/ann/selector/4b8f6f0db72bb1849713a94f177b6b95002bfc3e> ;
+      oa:hasSource <http://ns.inria.fr/issa/f74923b3ce82c984a7ae3e0c2754c9e33c60554f#abstract> .
+
+<http://ns.inria.fr/issa/ann/target/182cd18be72e09955ad307fba4604133f48614f9>
+      oa:hasSelector <http://ns.inria.fr/issa/ann/selector/182cd18be72e09955ad307fba4604133f48614f9> ;
+      oa:hasSource <http://ns.inria.fr/issa/f74923b3ce82c984a7ae3e0c2754c9e33c60554f#abstract> .
+
+<http://ns.inria.fr/issa/ann/a62d57e954128fa346a270ea22a6ac8485213aed>
+      a       prov:Entity , oa:Annotation ;
+      rdfs:isDefinedBy issa:dataset-1-0 ;
+      rdfs:label "named entity 'Laos'" ;
+      issapr:confidence 0.8411 ;
+      schema:about issa:f74923b3ce82c984a7ae3e0c2754c9e33c60554f ;
+      oa:hasBody <https://sws.geonames.org/1655842/> ;
+      oa:hasTarget <http://ns.inria.fr/issa/ann/target/a62d57e954128fa346a270ea22a6ac8485213aed> .
+
+<http://ns.inria.fr/issa/ann/selector/aff1e35b5b489db646b68bca3c4ad48909dbdd95>
+      a       oa:TextPositionSelector , oa:TextQuoteSelector ;
+      oa:end  21025 ;
+      oa:exact "Laos" ;
+      oa:start 21021 .
+
+<http://ns.inria.fr/issa/ann/97169f2d40634a6a31b1aeae94dc74faef020e7f>
+      a       prov:Entity , oa:Annotation ;
+      rdfs:isDefinedBy issa:dataset-1-0 ;
+      rdfs:label "named entity 'Laos'" ;
+      issapr:confidence 0.8411 ;
+      schema:about issa:f74923b3ce82c984a7ae3e0c2754c9e33c60554f ;
+      oa:hasBody <https://sws.geonames.org/1655842/> ;
+      oa:hasTarget <http://ns.inria.fr/issa/ann/target/97169f2d40634a6a31b1aeae94dc74faef020e7f> .
+
+<http://ns.inria.fr/issa/ann/target/98af07e341f7d6bfc28d0c665aed97a8e3cf2221>
+      oa:hasSelector <http://ns.inria.fr/issa/ann/selector/98af07e341f7d6bfc28d0c665aed97a8e3cf2221> ;
+      oa:hasSource <http://ns.inria.fr/issa/f74923b3ce82c984a7ae3e0c2754c9e33c60554f#abstract> .
+
+<http://ns.inria.fr/issa/ann/7d1af5b5adc807c53b0df77233e9af859e8e4e93>
+      a       prov:Entity , oa:Annotation ;
+      rdfs:isDefinedBy issa:dataset-1-0 ;
+      rdfs:label "named entity 'Vietnam'" ;
+      issapr:confidence 0.7964 ;
+      schema:about issa:f74923b3ce82c984a7ae3e0c2754c9e33c60554f ;
+      oa:hasBody <https://sws.geonames.org/1562822/> ;
+      oa:hasTarget <http://ns.inria.fr/issa/ann/target/7d1af5b5adc807c53b0df77233e9af859e8e4e93> .
+
+<http://ns.inria.fr/issa/ann/selector/7d1877b148d82d8d6ed86779f591ec9ec4b3851d>
+      a       oa:TextPositionSelector , oa:TextQuoteSelector ;
+      oa:end  17010 ;
+      oa:exact "chinois" ;
+      oa:start 17003 .
+
+<http://ns.inria.fr/issa/ann/target/546acde20812c708e8ab824a8941539f9de329d7>
+      oa:hasSelector <http://ns.inria.fr/issa/ann/selector/546acde20812c708e8ab824a8941539f9de329d7> ;
+      oa:hasSource <http://ns.inria.fr/issa/f74923b3ce82c984a7ae3e0c2754c9e33c60554f#abstract> .
+
+<http://ns.inria.fr/issa/ann/selector/f2838cd834db828c5debb41f5e4ee00ea39e743b>
+      a       oa:TextPositionSelector , oa:TextQuoteSelector ;
+      oa:end  29518 ;
+      oa:exact "Asie du Sud-Est" ;
+      oa:start 29503 .
+
+<http://ns.inria.fr/issa/ann/target/5d7ec80ba08346506923b62a210b74c9f2c9d0c7>
+      oa:hasSelector <http://ns.inria.fr/issa/ann/selector/5d7ec80ba08346506923b62a210b74c9f2c9d0c7> ;
+      oa:hasSource <http://ns.inria.fr/issa/f74923b3ce82c984a7ae3e0c2754c9e33c60554f#abstract> .
+
+<http://ns.inria.fr/issa/ann/selector/22d154e3c3ba1f3edb6843a05527b24fe796be9d>
+      a       oa:TextPositionSelector , oa:TextQuoteSelector ;
+      oa:end  2530 ;
+      oa:exact "Asie du Sud-Est" ;
+      oa:start 2515 .
+
+<http://ns.inria.fr/issa/ann/selector/35d30f4b66235f130650b72aafc1883d9c470f28>
+      a       oa:TextPositionSelector , oa:TextQuoteSelector ;
+      oa:end  2930 ;
+      oa:exact "Asie" ;
+      oa:start 2926 .
+
+<http://ns.inria.fr/issa/ann/selector/98af07e341f7d6bfc28d0c665aed97a8e3cf2221>
+      a       oa:TextPositionSelector , oa:TextQuoteSelector ;
+      oa:end  20971 ;
+      oa:exact "Indonésie" ;
+      oa:start 20962 .
+
+<http://ns.inria.fr/issa/ann/target/2d7ba8a6dfeb884087afb9a7d6c5f75e7ab38563>
+      oa:hasSelector <http://ns.inria.fr/issa/ann/selector/2d7ba8a6dfeb884087afb9a7d6c5f75e7ab38563> ;
+      oa:hasSource <http://ns.inria.fr/issa/f74923b3ce82c984a7ae3e0c2754c9e33c60554f#abstract> .
+
+<http://ns.inria.fr/issa/ann/7d1877b148d82d8d6ed86779f591ec9ec4b3851d>
+      a       prov:Entity , oa:Annotation ;
+      rdfs:isDefinedBy issa:dataset-1-0 ;
+      rdfs:label "named entity 'chinois'" ;
+      issapr:confidence 0.4491 ;
+      schema:about issa:f74923b3ce82c984a7ae3e0c2754c9e33c60554f ;
+      oa:hasBody <https://sws.geonames.org/1814991/> ;
+      oa:hasTarget <http://ns.inria.fr/issa/ann/target/7d1877b148d82d8d6ed86779f591ec9ec4b3851d> .
+
+<http://ns.inria.fr/issa/ann/selector/52e5a4ff90771a3297264c14d77731889066ee96>
+      a       oa:TextPositionSelector , oa:TextQuoteSelector ;
+      oa:end  18409 ;
+      oa:exact "Chine" ;
+      oa:start 18404 .
+
+<http://ns.inria.fr/issa/ann/5dd75af5f531a23774fe61ca35b47b85b67bb723>
+      a       prov:Entity , oa:Annotation ;
+      rdfs:isDefinedBy issa:dataset-1-0 ;
+      rdfs:label "named entity 'Laos'" ;
+      issapr:confidence 0.8411 ;
+      schema:about issa:f74923b3ce82c984a7ae3e0c2754c9e33c60554f ;
+      oa:hasBody <https://sws.geonames.org/1655842/> ;
+      oa:hasTarget <http://ns.inria.fr/issa/ann/target/5dd75af5f531a23774fe61ca35b47b85b67bb723> .
+
+<http://ns.inria.fr/issa/ann/98af07e341f7d6bfc28d0c665aed97a8e3cf2221>
+      a       prov:Entity , oa:Annotation ;
+      rdfs:isDefinedBy issa:dataset-1-0 ;
+      rdfs:label "named entity 'Indonésie'" ;
+      issapr:confidence 0.8696 ;
+      schema:about issa:f74923b3ce82c984a7ae3e0c2754c9e33c60554f ;
+      oa:hasBody <https://sws.geonames.org/1643084/> ;
+      oa:hasTarget <http://ns.inria.fr/issa/ann/target/98af07e341f7d6bfc28d0c665aed97a8e3cf2221> .
+
+<http://ns.inria.fr/issa/ann/target/a49f6a097a8eb0fd60a1156bffdc0dc9bcfb1952>
+      oa:hasSelector <http://ns.inria.fr/issa/ann/selector/a49f6a097a8eb0fd60a1156bffdc0dc9bcfb1952> ;
+      oa:hasSource <http://ns.inria.fr/issa/f74923b3ce82c984a7ae3e0c2754c9e33c60554f#abstract> .
+
+<http://ns.inria.fr/issa/ann/35d30f4b66235f130650b72aafc1883d9c470f28>
+      a       prov:Entity , oa:Annotation ;
+      rdfs:isDefinedBy issa:dataset-1-0 ;
+      rdfs:label "named entity 'Asie'" ;
+      issapr:confidence 0.7722 ;
+      schema:about issa:f74923b3ce82c984a7ae3e0c2754c9e33c60554f ;
+      oa:hasBody <https://sws.geonames.org/6255147/> ;
+      oa:hasTarget <http://ns.inria.fr/issa/ann/target/35d30f4b66235f130650b72aafc1883d9c470f28> .
+
+<http://ns.inria.fr/issa/ann/f64d2c91b1a24c8165a5e44c4b492e208bd95508>
+      a       prov:Entity , oa:Annotation ;
+      rdfs:isDefinedBy issa:dataset-1-0 ;
+      rdfs:label "named entity 'Amérique latine'" ;
+      issapr:confidence 0.9732 ;
+      schema:about issa:f74923b3ce82c984a7ae3e0c2754c9e33c60554f ;
+      oa:hasBody <https://sws.geonames.org/7730009/> ;
+      oa:hasTarget <http://ns.inria.fr/issa/ann/target/f64d2c91b1a24c8165a5e44c4b492e208bd95508> .
+
+<http://ns.inria.fr/issa/ann/target/0aff2dec94b1d097091df671ab3cf769817dc09f>
+      oa:hasSelector <http://ns.inria.fr/issa/ann/selector/0aff2dec94b1d097091df671ab3cf769817dc09f> ;
+      oa:hasSource <http://ns.inria.fr/issa/f74923b3ce82c984a7ae3e0c2754c9e33c60554f#abstract> .
+
+<http://ns.inria.fr/issa/ann/target/aff1e35b5b489db646b68bca3c4ad48909dbdd95>
+      oa:hasSelector <http://ns.inria.fr/issa/ann/selector/aff1e35b5b489db646b68bca3c4ad48909dbdd95> ;
+      oa:hasSource <http://ns.inria.fr/issa/f74923b3ce82c984a7ae3e0c2754c9e33c60554f#abstract> .
+
+<http://ns.inria.fr/issa/ann/c54e5d9985ffb68617a0d3bfac858e38231dc686>
+      a       prov:Entity , oa:Annotation ;
+      rdfs:isDefinedBy issa:dataset-1-0 ;
+      rdfs:label "named entity 'Laos'" ;
+      issapr:confidence 0.8411 ;
+      schema:about issa:f74923b3ce82c984a7ae3e0c2754c9e33c60554f ;
+      oa:hasBody <https://sws.geonames.org/1655842/> ;
+      oa:hasTarget <http://ns.inria.fr/issa/ann/target/c54e5d9985ffb68617a0d3bfac858e38231dc686> .
+
+<http://ns.inria.fr/issa/ann/target/a318217ec80aea9295713573449df9ba4839a334>
+      oa:hasSelector <http://ns.inria.fr/issa/ann/selector/a318217ec80aea9295713573449df9ba4839a334> ;
+      oa:hasSource <http://ns.inria.fr/issa/f74923b3ce82c984a7ae3e0c2754c9e33c60554f#abstract> .
+
+<http://ns.inria.fr/issa/ann/target/cac4331cc329e2d84cd9320d7ce6ec531066fdfe>
+      oa:hasSelector <http://ns.inria.fr/issa/ann/selector/cac4331cc329e2d84cd9320d7ce6ec531066fdfe> ;
+      oa:hasSource <http://ns.inria.fr/issa/f74923b3ce82c984a7ae3e0c2754c9e33c60554f#abstract> .
+
+<http://ns.inria.fr/issa/ann/selector/f2d7477bbf5860a790587fde8d755b03616a6968>
+      a       oa:TextPositionSelector , oa:TextQuoteSelector ;
+      oa:end  18217 ;
+      oa:exact "chinois" ;
+      oa:start 18210 .
+
+<http://ns.inria.fr/issa/ann/b580990b0e34439f1f47c0e17c05634a4b566228>
+      a       prov:Entity , oa:Annotation ;
+      rdfs:isDefinedBy issa:dataset-1-0 ;
+      rdfs:label "named entity 'province de Nghe An'" ;
+      issapr:confidence 0.6427 ;
+      schema:about issa:f74923b3ce82c984a7ae3e0c2754c9e33c60554f ;
+      oa:hasBody <https://sws.geonames.org/1559969/> ;
+      oa:hasTarget <http://ns.inria.fr/issa/ann/target/b580990b0e34439f1f47c0e17c05634a4b566228> .
+
+<http://ns.inria.fr/issa/ann/selector/9af25a062c5e9990ee2790f526499f86255790bc>
+      a       oa:TextPositionSelector , oa:TextQuoteSelector ;
+      oa:end  20358 ;
+      oa:exact "Indonésie" ;
+      oa:start 20349 .
+
+<http://ns.inria.fr/issa/ann/selector/5dd75af5f531a23774fe61ca35b47b85b67bb723>
+      a       oa:TextPositionSelector , oa:TextQuoteSelector ;
+      oa:end  20368 ;
+      oa:exact "Laos" ;
+      oa:start 20364 .
+
+<http://ns.inria.fr/issa/ann/9af25a062c5e9990ee2790f526499f86255790bc>
+      a       prov:Entity , oa:Annotation ;
+      rdfs:isDefinedBy issa:dataset-1-0 ;
+      rdfs:label "named entity 'Indonésie'" ;
+      issapr:confidence 0.8696 ;
+      schema:about issa:f74923b3ce82c984a7ae3e0c2754c9e33c60554f ;
+      oa:hasBody <https://sws.geonames.org/1643084/> ;
+      oa:hasTarget <http://ns.inria.fr/issa/ann/target/9af25a062c5e9990ee2790f526499f86255790bc> .
+
+<http://ns.inria.fr/issa/ann/target/c54e5d9985ffb68617a0d3bfac858e38231dc686>
+      oa:hasSelector <http://ns.inria.fr/issa/ann/selector/c54e5d9985ffb68617a0d3bfac858e38231dc686> ;
+      oa:hasSource <http://ns.inria.fr/issa/f74923b3ce82c984a7ae3e0c2754c9e33c60554f#abstract> .
+
+<http://ns.inria.fr/issa/ann/target/773a1a86b0c6fcb23219f12f848a0d20225e14aa>
+      oa:hasSelector <http://ns.inria.fr/issa/ann/selector/773a1a86b0c6fcb23219f12f848a0d20225e14aa> ;
+      oa:hasSource <http://ns.inria.fr/issa/f74923b3ce82c984a7ae3e0c2754c9e33c60554f#abstract> .
+
+<http://ns.inria.fr/issa/ann/selector/199955e2d14c975aa567a95a7d8aa9027820ca27>
+      a       oa:TextPositionSelector , oa:TextQuoteSelector ;
+      oa:end  16010 ;
+      oa:exact "Thaïlande" ;
+      oa:start 16001 .
+
+<http://ns.inria.fr/issa/ann/0aff2dec94b1d097091df671ab3cf769817dc09f>
+      a       prov:Entity , oa:Annotation ;
+      rdfs:isDefinedBy issa:dataset-1-0 ;
+      rdfs:label "named entity 'Laos'" ;
+      issapr:confidence 0.8411 ;
+      schema:about issa:f74923b3ce82c984a7ae3e0c2754c9e33c60554f ;
+      oa:hasBody <https://sws.geonames.org/1655842/> ;
+      oa:hasTarget <http://ns.inria.fr/issa/ann/target/0aff2dec94b1d097091df671ab3cf769817dc09f> .
+
+<http://ns.inria.fr/issa/ann/b53a6a236a9f0d2f0eb64e4f04bde63bcb8d12ef>
+      a       prov:Entity , oa:Annotation ;
+      rdfs:isDefinedBy issa:dataset-1-0 ;
+      rdfs:label "named entity 'Vietnam'" ;
+      issapr:confidence 0.7964 ;
+      schema:about issa:f74923b3ce82c984a7ae3e0c2754c9e33c60554f ;
+      oa:hasBody <https://sws.geonames.org/1562822/> ;
+      oa:hasTarget <http://ns.inria.fr/issa/ann/target/b53a6a236a9f0d2f0eb64e4f04bde63bcb8d12ef> .
+
+<http://ns.inria.fr/issa/ann/f2d7477bbf5860a790587fde8d755b03616a6968>
+      a       prov:Entity , oa:Annotation ;
+      rdfs:isDefinedBy issa:dataset-1-0 ;
+      rdfs:label "named entity 'chinois'" ;
+      issapr:confidence 0.4491 ;
+      schema:about issa:f74923b3ce82c984a7ae3e0c2754c9e33c60554f ;
+      oa:hasBody <https://sws.geonames.org/1814991/> ;
+      oa:hasTarget <http://ns.inria.fr/issa/ann/target/f2d7477bbf5860a790587fde8d755b03616a6968> .
+
+<http://ns.inria.fr/issa/ann/selector/b580990b0e34439f1f47c0e17c05634a4b566228>
+      a       oa:TextPositionSelector , oa:TextQuoteSelector ;
+      oa:end  4433 ;
+      oa:exact "province de Nghe An" ;
+      oa:start 4414 .
+
+<http://ns.inria.fr/issa/ann/target/77679f11593f9b21d4f9d5ed52a60bb6ad8b1d94>
+      oa:hasSelector <http://ns.inria.fr/issa/ann/selector/77679f11593f9b21d4f9d5ed52a60bb6ad8b1d94> ;
+      oa:hasSource <http://ns.inria.fr/issa/f74923b3ce82c984a7ae3e0c2754c9e33c60554f#abstract> .
+
+<http://ns.inria.fr/issa/ann/target/a7e5a470a77db814d61dae58e6b6b1df9fe2e284>
+      oa:hasSelector <http://ns.inria.fr/issa/ann/selector/a7e5a470a77db814d61dae58e6b6b1df9fe2e284> ;
+      oa:hasSource <http://ns.inria.fr/issa/f74923b3ce82c984a7ae3e0c2754c9e33c60554f#abstract> .
+
+<http://ns.inria.fr/issa/ann/selector/4b8f6f0db72bb1849713a94f177b6b95002bfc3e>
+      a       oa:TextPositionSelector , oa:TextQuoteSelector ;
+      oa:end  23751 ;
+      oa:exact "Laos" ;
+      oa:start 23747 .
+
+<http://ns.inria.fr/issa/ann/target/64e263d88e333d4642b2b22603cbdf5d36f53399>
+      oa:hasSelector <http://ns.inria.fr/issa/ann/selector/64e263d88e333d4642b2b22603cbdf5d36f53399> ;
+      oa:hasSource <http://ns.inria.fr/issa/f74923b3ce82c984a7ae3e0c2754c9e33c60554f#abstract> .
+
+<http://ns.inria.fr/issa/ann/target/b580990b0e34439f1f47c0e17c05634a4b566228>
+      oa:hasSelector <http://ns.inria.fr/issa/ann/selector/b580990b0e34439f1f47c0e17c05634a4b566228> ;
+      oa:hasSource <http://ns.inria.fr/issa/f74923b3ce82c984a7ae3e0c2754c9e33c60554f#abstract> .
+
+<http://ns.inria.fr/issa/ann/target/5dd75af5f531a23774fe61ca35b47b85b67bb723>
+      oa:hasSelector <http://ns.inria.fr/issa/ann/selector/5dd75af5f531a23774fe61ca35b47b85b67bb723> ;
+      oa:hasSource <http://ns.inria.fr/issa/f74923b3ce82c984a7ae3e0c2754c9e33c60554f#abstract> .
+
+<http://ns.inria.fr/issa/ann/selector/ad69cffdfb051e1dd52d95e910d3b3f9df86436b>
+      a       oa:TextPositionSelector , oa:TextQuoteSelector ;
+      oa:end  25569 ;
+      oa:exact "Chine" ;
+      oa:start 25564 .
+
+<http://ns.inria.fr/issa/ann/target/7d1af5b5adc807c53b0df77233e9af859e8e4e93>
+      oa:hasSelector <http://ns.inria.fr/issa/ann/selector/7d1af5b5adc807c53b0df77233e9af859e8e4e93> ;
+      oa:hasSource <http://ns.inria.fr/issa/f74923b3ce82c984a7ae3e0c2754c9e33c60554f#abstract> .
+
+<http://ns.inria.fr/issa/ann/selector/0aff2dec94b1d097091df671ab3cf769817dc09f>
+      a       oa:TextPositionSelector , oa:TextQuoteSelector ;
+      oa:end  14075 ;
+      oa:exact "Laos" ;
+      oa:start 14071 .
+
+<http://ns.inria.fr/issa/ann/target/b53a6a236a9f0d2f0eb64e4f04bde63bcb8d12ef>
+      oa:hasSelector <http://ns.inria.fr/issa/ann/selector/b53a6a236a9f0d2f0eb64e4f04bde63bcb8d12ef> ;
+      oa:hasSource <http://ns.inria.fr/issa/f74923b3ce82c984a7ae3e0c2754c9e33c60554f#abstract> .
+
+<http://ns.inria.fr/issa/ann/77679f11593f9b21d4f9d5ed52a60bb6ad8b1d94>
+      a       prov:Entity , oa:Annotation ;
+      rdfs:isDefinedBy issa:dataset-1-0 ;
+      rdfs:label "named entity 'Vietnam'" ;
+      issapr:confidence 0.7964 ;
+      schema:about issa:f74923b3ce82c984a7ae3e0c2754c9e33c60554f ;
+      oa:hasBody <https://sws.geonames.org/1562822/> ;
+      oa:hasTarget <http://ns.inria.fr/issa/ann/target/77679f11593f9b21d4f9d5ed52a60bb6ad8b1d94> .
+
+<http://ns.inria.fr/issa/ann/target/9af25a062c5e9990ee2790f526499f86255790bc>
+      oa:hasSelector <http://ns.inria.fr/issa/ann/selector/9af25a062c5e9990ee2790f526499f86255790bc> ;
+      oa:hasSource <http://ns.inria.fr/issa/f74923b3ce82c984a7ae3e0c2754c9e33c60554f#abstract> .
+
+<http://ns.inria.fr/issa/ann/selector/97169f2d40634a6a31b1aeae94dc74faef020e7f>
+      a       oa:TextPositionSelector , oa:TextQuoteSelector ;
+      oa:end  4376 ;
+      oa:exact "Laos" ;
+      oa:start 4372 .
+
+<http://ns.inria.fr/issa/ann/target/f2d7477bbf5860a790587fde8d755b03616a6968>
+      oa:hasSelector <http://ns.inria.fr/issa/ann/selector/f2d7477bbf5860a790587fde8d755b03616a6968> ;
+      oa:hasSource <http://ns.inria.fr/issa/f74923b3ce82c984a7ae3e0c2754c9e33c60554f#abstract> .
+
+<http://ns.inria.fr/issa/ann/selector/7d1af5b5adc807c53b0df77233e9af859e8e4e93>
+      a       oa:TextPositionSelector , oa:TextQuoteSelector ;
+      oa:end  25594 ;
+      oa:exact "Vietnam" ;
+      oa:start 25587 .
+
+<http://ns.inria.fr/issa/ann/target/a62d57e954128fa346a270ea22a6ac8485213aed>
+      oa:hasSelector <http://ns.inria.fr/issa/ann/selector/a62d57e954128fa346a270ea22a6ac8485213aed> ;
+      oa:hasSource <http://ns.inria.fr/issa/f74923b3ce82c984a7ae3e0c2754c9e33c60554f#abstract> .
+
+<http://ns.inria.fr/issa/ann/target/97169f2d40634a6a31b1aeae94dc74faef020e7f>
+      oa:hasSelector <http://ns.inria.fr/issa/ann/selector/97169f2d40634a6a31b1aeae94dc74faef020e7f> ;
+      oa:hasSource <http://ns.inria.fr/issa/f74923b3ce82c984a7ae3e0c2754c9e33c60554f#abstract> .
+
+<http://ns.inria.fr/issa/ann/182cd18be72e09955ad307fba4604133f48614f9>
+      a       prov:Entity , oa:Annotation ;
+      rdfs:isDefinedBy issa:dataset-1-0 ;
+      rdfs:label "named entity 'Chine'" ;
+      issapr:confidence 0.8074 ;
+      schema:about issa:f74923b3ce82c984a7ae3e0c2754c9e33c60554f ;
+      oa:hasBody <https://sws.geonames.org/1814991/> ;
+      oa:hasTarget <http://ns.inria.fr/issa/ann/target/182cd18be72e09955ad307fba4604133f48614f9> .
+
+<http://ns.inria.fr/issa/ann/selector/b91976eb4ab9a216460a2be62477fe1ab848ac1f>
+      a       oa:TextPositionSelector , oa:TextQuoteSelector ;
+      oa:end  17070 ;
+      oa:exact "Vietnam" ;
+      oa:start 17063 .
+
+<http://ns.inria.fr/issa/ann/target/77eb1e99bc60064734100f467ed9250881b17af6>
+      oa:hasSelector <http://ns.inria.fr/issa/ann/selector/77eb1e99bc60064734100f467ed9250881b17af6> ;
+      oa:hasSource <http://ns.inria.fr/issa/f74923b3ce82c984a7ae3e0c2754c9e33c60554f#abstract> .
+
+<http://ns.inria.fr/issa/ann/selector/f64d2c91b1a24c8165a5e44c4b492e208bd95508>
+      a       oa:TextPositionSelector , oa:TextQuoteSelector ;
+      oa:end  2962 ;
+      oa:exact "Amérique latine" ;
+      oa:start 2947 .
+
+<http://ns.inria.fr/issa/ann/target/199955e2d14c975aa567a95a7d8aa9027820ca27>
+      oa:hasSelector <http://ns.inria.fr/issa/ann/selector/199955e2d14c975aa567a95a7d8aa9027820ca27> ;
+      oa:hasSource <http://ns.inria.fr/issa/f74923b3ce82c984a7ae3e0c2754c9e33c60554f#abstract> .
+
+<http://ns.inria.fr/issa/ann/target/2cd026e31564062c443253e5de8ea161705dede7>
+      oa:hasSelector <http://ns.inria.fr/issa/ann/selector/2cd026e31564062c443253e5de8ea161705dede7> ;
+      oa:hasSource <http://ns.inria.fr/issa/f74923b3ce82c984a7ae3e0c2754c9e33c60554f#abstract> .
+
+<http://ns.inria.fr/issa/ann/selector/2fa74180a9ca677b5a2e4181512455013d822395>
+      a       oa:TextPositionSelector , oa:TextQuoteSelector ;
+      oa:end  27860 ;
+      oa:exact "Chine" ;
+      oa:start 27855 .
+
+<http://ns.inria.fr/issa/ann/selector/cac4331cc329e2d84cd9320d7ce6ec531066fdfe>
+      a       oa:TextPositionSelector , oa:TextQuoteSelector ;
+      oa:end  24026 ;
+      oa:exact "Vietnam" ;
+      oa:start 24019 .
+
+<http://ns.inria.fr/issa/ann/546acde20812c708e8ab824a8941539f9de329d7>
+      a       prov:Entity , oa:Annotation ;
+      rdfs:isDefinedBy issa:dataset-1-0 ;
+      rdfs:label "named entity 'Vietnam'" ;
+      issapr:confidence 0.7964 ;
+      schema:about issa:f74923b3ce82c984a7ae3e0c2754c9e33c60554f ;
+      oa:hasBody <https://sws.geonames.org/1562822/> ;
+      oa:hasTarget <http://ns.inria.fr/issa/ann/target/546acde20812c708e8ab824a8941539f9de329d7> .
+
+<http://ns.inria.fr/issa/ann/52e5a4ff90771a3297264c14d77731889066ee96>
+      a       prov:Entity , oa:Annotation ;
+      rdfs:isDefinedBy issa:dataset-1-0 ;
+      rdfs:label "named entity 'Chine'" ;
+      issapr:confidence 0.8074 ;
+      schema:about issa:f74923b3ce82c984a7ae3e0c2754c9e33c60554f ;
+      oa:hasBody <https://sws.geonames.org/1814991/> ;
+      oa:hasTarget <http://ns.inria.fr/issa/ann/target/52e5a4ff90771a3297264c14d77731889066ee96> .
+
+<http://ns.inria.fr/issa/ann/selector/a318217ec80aea9295713573449df9ba4839a334>
+      a       oa:TextPositionSelector , oa:TextQuoteSelector ;
+      oa:end  4513 ;
+      oa:exact "Indonésie" ;
+      oa:start 4504 .
+
+<http://ns.inria.fr/issa/ann/target/22d154e3c3ba1f3edb6843a05527b24fe796be9d>
+      oa:hasSelector <http://ns.inria.fr/issa/ann/selector/22d154e3c3ba1f3edb6843a05527b24fe796be9d> ;
+      oa:hasSource <http://ns.inria.fr/issa/f74923b3ce82c984a7ae3e0c2754c9e33c60554f#abstract> .
+
+<http://ns.inria.fr/issa/ann/9aadad7a6b5370dd1a4ee1358a23840f5d8c3a0b>
+      a       prov:Entity , oa:Annotation ;
+      rdfs:isDefinedBy issa:dataset-1-0 ;
+      rdfs:label "named entity 'Vietnam'" ;
+      issapr:confidence 0.7964 ;
+      schema:about issa:f74923b3ce82c984a7ae3e0c2754c9e33c60554f ;
+      oa:hasBody <https://sws.geonames.org/1562822/> ;
+      oa:hasTarget <http://ns.inria.fr/issa/ann/target/9aadad7a6b5370dd1a4ee1358a23840f5d8c3a0b> .
+
+<http://ns.inria.fr/issa/ann/f2838cd834db828c5debb41f5e4ee00ea39e743b>
+      a       prov:Entity , oa:Annotation ;
+      rdfs:isDefinedBy issa:dataset-1-0 ;
+      rdfs:label "named entity 'Asie du Sud-Est'" ;
+      issapr:confidence 0.9864 ;
+      schema:about issa:f74923b3ce82c984a7ae3e0c2754c9e33c60554f ;
+      oa:hasBody <https://sws.geonames.org/7729896/> ;
+      oa:hasTarget <http://ns.inria.fr/issa/ann/target/f2838cd834db828c5debb41f5e4ee00ea39e743b> .
