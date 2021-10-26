@@ -12,8 +12,6 @@
 <http://ns.inria.fr/issa/ann/a14da19a536428d7216d42da268f8200aabb9958_t>
   a oa:Annotation, prov:Entity ;
   rdfs:label "named entity 'PCR'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceDBpSpotlight> ;
   oa:hasBody <http://www.wikidata.org/entity/Q176996> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/a14da19a536428d7216d42da268f8200aabb9958_t> ;
@@ -34,8 +32,6 @@
 <http://ns.inria.fr/issa/ann/51b42903ea45962283bc9a070d9fae14170c95a5_t>
   a prov:Entity, oa:Annotation ;
   rdfs:label "named entity 'coronavirus'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   dct:subject "Animals", "Health", "Medicine", "Animal_Husbandry" ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceEF> ;
   oa:hasBody <http://www.wikidata.org/entity/Q82069695> ;

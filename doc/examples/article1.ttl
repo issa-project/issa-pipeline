@@ -12,7 +12,6 @@
 
 <http://ns.inria.fr/issa/f74923b3ce82c984a7ae3e0c2754c9e33c60554f>
   a schema:ScholarlyArticle, bibo:AcademicArticle, <http://purl.org/spar/fabio/ResearchPaper> ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
   dct:title "A real-time PCR for SARS-coronavirus incorporating target gene pre-amplification" ;
   dce:creator "Tam, Siu-Lun", "Lin, Sau-Wah", "Yu, -H", "Collins, Richard", "Chan, Paul", "Wong, Freda Pui-Fan", "Dillon, Natalie", "Fung, Yin-Wan", "Cheung, Albert", "Yu, -Hoi", "Li, Hui", "Wang, Chen", "Lau,", "Lok, Ting" ;
   dct:source "Elsevier; Medline; PMC" ;

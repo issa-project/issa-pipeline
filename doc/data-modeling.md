@@ -89,9 +89,6 @@ Example:
 <http://ns.inria.fr/issa/ann/51b42903ea45962283bc9a070d9fae14170c95a5_d>
     a                   oa:Annotation, prov:Entity;
     rdfs:label          "descriptor 'coronavirus'" ;
-    rdfs:isDefinedBy    <http://ns.inria.fr/issa/dataset-1-2> ;
-    dct:creator         <https://team.inria.fr/wimmics/> ;
-    
     oa:hasBody          <http://www.wikidata.org/entity/Q82069695> ;
     oa:hasTarget        <http://ns.inria.fr/issa/f74923b3ce82c984a7ae3e0c2754c9e33c60554f> .
 ```

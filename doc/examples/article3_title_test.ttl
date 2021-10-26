@@ -20,10 +20,8 @@
 
 <http://ns.inria.fr/issa/ann/c5514c1f84ca73927d234283674846ed773e527e>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:dataset-1-0 ;
       rdfs:label "named entity 'Diversity'" ;
-      issapr:confidence 0.8594139748618503 ;
-      dct:creator <https://team.inria.fr/wimmics/> ;
+      issapr:confidence 0.8594139748618503 
       schema:about <http://ns.inria.fr/issa/389876> ;
       oa:hasBody <http://dbpedia.org/resource/Biodiversity> ;
       oa:hasTarget <http://ns.inria.fr/issa/ann/target/c5514c1f84ca73927d234283674846ed773e527e> ;
@@ -35,10 +33,8 @@
 
 <http://ns.inria.fr/issa/ann/823f196bce4c6f3f45b6a91827890d1a83bbcacc>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:dataset-1-0 ;
       rdfs:label "named entity 'Isotopic'" ;
-      issapr:confidence 0.9999999947970792 ;
-      dct:creator <https://team.inria.fr/wimmics/> ;
+      issapr:confidence 0.9999999947970792 
       schema:about <http://ns.inria.fr/issa/263989> ;
       oa:hasBody <http://dbpedia.org/resource/Isotope> ;
       oa:hasTarget <http://ns.inria.fr/issa/ann/target/823f196bce4c6f3f45b6a91827890d1a83bbcacc> ;
@@ -89,10 +85,8 @@
 
 <http://ns.inria.fr/issa/ann/672fd6ed72567a1f19f2b800b2de89796aea3846>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:dataset-1-0 ;
       rdfs:label "named entity 'Position'" ;
-      issapr:confidence 0.8044291602485735 ;
-      dct:creator <https://team.inria.fr/wimmics/> ;
+      issapr:confidence 0.8044291602485735 
       schema:about <http://ns.inria.fr/issa/390202> ;
       oa:hasBody <http://dbpedia.org/resource/Baseball_positions> ;
       oa:hasTarget <http://ns.inria.fr/issa/ann/target/672fd6ed72567a1f19f2b800b2de89796aea3846> ;
@@ -141,10 +135,8 @@
 
 <http://ns.inria.fr/issa/ann/24ea0cbe2d53fb29fa60b96a4750733e6bda15e9>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:dataset-1-0 ;
       rdfs:label "named entity 'Auxin'" ;
-      issapr:confidence 1.0 ;
-      dct:creator <https://team.inria.fr/wimmics/> ;
+      issapr:confidence 1.0 
       schema:about <http://ns.inria.fr/issa/390202> ;
       oa:hasBody <http://dbpedia.org/resource/Auxin> ;
       oa:hasTarget <http://ns.inria.fr/issa/ann/target/24ea0cbe2d53fb29fa60b96a4750733e6bda15e9> ;
@@ -170,10 +162,8 @@
 
 <http://ns.inria.fr/issa/ann/7de4d9f12d0cbeb234425def70ce0680747dc31b>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:dataset-1-0 ;
       rdfs:label "named entity 'Restriction Fragment Length Polymorphism'" ;
-      issapr:confidence 1.0 ;
-      dct:creator <https://team.inria.fr/wimmics/> ;
+      issapr:confidence 1.0 
       schema:about <http://ns.inria.fr/issa/389876> ;
       oa:hasBody <http://dbpedia.org/resource/Restriction_fragment_length_polymorphism> ;
       oa:hasTarget <http://ns.inria.fr/issa/ann/target/7de4d9f12d0cbeb234425def70ce0680747dc31b> ;
@@ -181,10 +171,8 @@
 
 <http://ns.inria.fr/issa/ann/ca17e6c0d6e244cfb011054b891889a903e81088>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:dataset-1-0 ;
       rdfs:label "named entity 'Australia'" ;
-      issapr:confidence 0.9996579715871615 ;
-      dct:creator <https://team.inria.fr/wimmics/> ;
+      issapr:confidence 0.9996579715871615 
       schema:about <http://ns.inria.fr/issa/389876> ;
       oa:hasBody <http://dbpedia.org/resource/Australia> ;
       oa:hasTarget <http://ns.inria.fr/issa/ann/target/ca17e6c0d6e244cfb011054b891889a903e81088> ;
@@ -215,10 +203,8 @@
 
 <http://ns.inria.fr/issa/ann/529878196be586129765f38219146c8f792818f0>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:dataset-1-0 ;
       rdfs:label "named entity 'legumes'" ;
-      issapr:confidence 0.99435797533174 ;
-      dct:creator <https://team.inria.fr/wimmics/> ;
+      issapr:confidence 0.99435797533174 
       schema:about <http://ns.inria.fr/issa/263989> ;
       oa:hasBody <http://dbpedia.org/resource/Legume> ;
       oa:hasTarget <http://ns.inria.fr/issa/ann/target/529878196be586129765f38219146c8f792818f0> ;
@@ -231,10 +217,8 @@
 
 <http://ns.inria.fr/issa/ann/00e76b041f3a9e2e16a93dffa780784d8bfcb63a>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:dataset-1-0 ;
       rdfs:label "named entity 'Acacia'" ;
-      issapr:confidence 0.9844004627010109 ;
-      dct:creator <https://team.inria.fr/wimmics/> ;
+      issapr:confidence 0.9844004627010109 
       schema:about <http://ns.inria.fr/issa/390202> ;
       oa:hasBody <http://dbpedia.org/resource/Acacia_sensu_lato> ;
       oa:hasTarget <http://ns.inria.fr/issa/ann/target/00e76b041f3a9e2e16a93dffa780784d8bfcb63a> ;
@@ -242,10 +226,8 @@
 
 <http://ns.inria.fr/issa/ann/51a2aaf417620407b2466cd5ef5a564d979a626f>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:dataset-1-0 ;
       rdfs:label "named entity 'Strains'" ;
-      issapr:confidence 0.9992881906857161 ;
-      dct:creator <https://team.inria.fr/wimmics/> ;
+      issapr:confidence 0.9992881906857161 
       schema:about <http://ns.inria.fr/issa/389876> ;
       oa:hasBody <http://dbpedia.org/resource/Strain_%28biology%29> ;
       oa:hasTarget <http://ns.inria.fr/issa/ann/target/51a2aaf417620407b2466cd5ef5a564d979a626f> ;
@@ -253,10 +235,8 @@
 
 <http://ns.inria.fr/issa/ann/9d2736a9a128600546884e066026e0f100a3bb83>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:dataset-1-0 ;
       rdfs:label "named entity 'Nodules'" ;
-      issapr:confidence 0.6266436776269221 ;
-      dct:creator <https://team.inria.fr/wimmics/> ;
+      issapr:confidence 0.6266436776269221 
       schema:about <http://ns.inria.fr/issa/389876> ;
       oa:hasBody <http://dbpedia.org/resource/Nodule_%28medicine%29> ;
       oa:hasTarget <http://ns.inria.fr/issa/ann/target/9d2736a9a128600546884e066026e0f100a3bb83> ;
@@ -273,10 +253,8 @@
 
 <http://ns.inria.fr/issa/ann/7b709fbd5c49c746be68ff7d7c28dd5fe087bb82>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:dataset-1-0 ;
       rdfs:label "named entity 'Rooting'" ;
-      issapr:confidence 0.9999999940246198 ;
-      dct:creator <https://team.inria.fr/wimmics/> ;
+      issapr:confidence 0.9999999940246198 
       schema:about <http://ns.inria.fr/issa/390202> ;
       oa:hasBody <http://dbpedia.org/resource/Domestic_pig> ;
       oa:hasTarget <http://ns.inria.fr/issa/ann/target/7b709fbd5c49c746be68ff7d7c28dd5fe087bb82> ;
@@ -289,10 +267,8 @@
 
 <http://ns.inria.fr/issa/ann/36d3e9849abe633fc4c7c30661ce03be72881922>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:dataset-1-0 ;
       rdfs:label "named entity 'transfer'" ;
-      issapr:confidence 0.8025406706251955 ;
-      dct:creator <https://team.inria.fr/wimmics/> ;
+      issapr:confidence 0.8025406706251955 
       schema:about <http://ns.inria.fr/issa/263989> ;
       oa:hasBody <http://dbpedia.org/resource/Horizontal_gene_transfer> ;
       oa:hasTarget <http://ns.inria.fr/issa/ann/target/36d3e9849abe633fc4c7c30661ce03be72881922> ;
@@ -300,10 +276,8 @@
 
 <http://ns.inria.fr/issa/ann/0202af68acff6d7cf4c7ce80bb9305b88fc4e20d>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:dataset-1-0 ;
       rdfs:label "named entity 'Age'" ;
-      issapr:confidence 0.5046452079156932 ;
-      dct:creator <https://team.inria.fr/wimmics/> ;
+      issapr:confidence 0.5046452079156932 
       schema:about <http://ns.inria.fr/issa/390202> ;
       oa:hasBody <http://dbpedia.org/resource/The_Age> ;
       oa:hasTarget <http://ns.inria.fr/issa/ann/target/0202af68acff6d7cf4c7ce80bb9305b88fc4e20d> ;
@@ -311,10 +285,8 @@
 
 <http://ns.inria.fr/issa/ann/def784f5d2473eacb6083d2a16a8f6ec7bbfed6b>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:dataset-1-0 ;
       rdfs:label "named entity 'PCR'" ;
-      issapr:confidence 0.9999999999924967 ;
-      dct:creator <https://team.inria.fr/wimmics/> ;
+      issapr:confidence 0.9999999999924967 
       schema:about <http://ns.inria.fr/issa/389876> ;
       oa:hasBody <http://dbpedia.org/resource/Polymerase_chain_reaction> ;
       oa:hasTarget <http://ns.inria.fr/issa/ann/target/def784f5d2473eacb6083d2a16a8f6ec7bbfed6b> ;
@@ -327,10 +299,8 @@
 
 <http://ns.inria.fr/issa/ann/22eaa5fe0d138707e5c5570cfb83cd7b677c2704>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:dataset-1-0 ;
       rdfs:label "named entity 'Revealed'" ;
-      issapr:confidence 0.6802655024654337 ;
-      dct:creator <https://team.inria.fr/wimmics/> ;
+      issapr:confidence 0.6802655024654337 
       schema:about <http://ns.inria.fr/issa/389876> ;
       oa:hasBody <http://dbpedia.org/resource/Revealed_Recordings> ;
       oa:hasTarget <http://ns.inria.fr/issa/ann/target/22eaa5fe0d138707e5c5570cfb83cd7b677c2704> ;
@@ -342,10 +312,8 @@
 
 <http://ns.inria.fr/issa/ann/8cd535475b3ca7c1ad83d263ba2165f839642234>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:dataset-1-0 ;
       rdfs:label "named entity 'Genetic'" ;
-      issapr:confidence 0.9952387418062152 ;
-      dct:creator <https://team.inria.fr/wimmics/> ;
+      issapr:confidence 0.9952387418062152 
       schema:about <http://ns.inria.fr/issa/389876> ;
       oa:hasBody <http://dbpedia.org/resource/Genetics> ;
       oa:hasTarget <http://ns.inria.fr/issa/ann/target/8cd535475b3ca7c1ad83d263ba2165f839642234> ;
@@ -370,10 +338,8 @@
 
 <http://ns.inria.fr/issa/ann/7792adb612a273f512e70d8869e5e789b2219007>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:dataset-1-0 ;
       rdfs:label "named entity 'Frankia'" ;
-      issapr:confidence 0.9999999999998863 ;
-      dct:creator <https://team.inria.fr/wimmics/> ;
+      issapr:confidence 0.9999999999998863 
       schema:about <http://ns.inria.fr/issa/389876> ;
       oa:hasBody <http://dbpedia.org/resource/Frankia> ;
       oa:hasTarget <http://ns.inria.fr/issa/ann/target/7792adb612a273f512e70d8869e5e789b2219007> ;
@@ -381,10 +347,8 @@
 
 <http://ns.inria.fr/issa/ann/ff8505046ccf97a7ba020dd99f495a3b34e3bd00>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:dataset-1-0 ;
       rdfs:label "named entity 'nitrogen'" ;
-      issapr:confidence 0.9956746780095764 ;
-      dct:creator <https://team.inria.fr/wimmics/> ;
+      issapr:confidence 0.9956746780095764 
       schema:about <http://ns.inria.fr/issa/263989> ;
       oa:hasBody <http://dbpedia.org/resource/Nitrogen> ;
       oa:hasTarget <http://ns.inria.fr/issa/ann/target/ff8505046ccf97a7ba020dd99f495a3b34e3bd00> ;
@@ -392,10 +356,8 @@
 
 <http://ns.inria.fr/issa/ann/7ce0a0330505e0b1dcbaa013845907ec5e500c31>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:dataset-1-0 ;
       rdfs:label "named entity 'Treatment'" ;
-      issapr:confidence 0.4026785238188873 ;
-      dct:creator <https://team.inria.fr/wimmics/> ;
+      issapr:confidence 0.4026785238188873 
       schema:about <http://ns.inria.fr/issa/390202> ;
       oa:hasBody <http://dbpedia.org/resource/Toothache> ;
       oa:hasTarget <http://ns.inria.fr/issa/ann/target/7ce0a0330505e0b1dcbaa013845907ec5e500c31> ;
@@ -407,10 +369,8 @@
 
 <http://ns.inria.fr/issa/ann/fd00e8705cb517ce7213347404b497768c42c395>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:dataset-1-0 ;
       rdfs:label "named entity 'Members'" ;
-      issapr:confidence 0.8316779022817838 ;
-      dct:creator <https://team.inria.fr/wimmics/> ;
+      issapr:confidence 0.8316779022817838 
       schema:about <http://ns.inria.fr/issa/389876> ;
       oa:hasBody <http://dbpedia.org/resource/Member_of_parliament> ;
       oa:hasTarget <http://ns.inria.fr/issa/ann/target/fd00e8705cb517ce7213347404b497768c42c395> ;
@@ -418,10 +378,8 @@
 
 <http://ns.inria.fr/issa/ann/013b7b9e88404385d83a7d37d7c2103a4f0ae20e>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:dataset-1-0 ;
       rdfs:label "named entity 'Effects'" ;
-      issapr:confidence 0.78816368216953 ;
-      dct:creator <https://team.inria.fr/wimmics/> ;
+      issapr:confidence 0.78816368216953 
       schema:about <http://ns.inria.fr/issa/390202> ;
       oa:hasBody <http://dbpedia.org/resource/Effects_unit> ;
       oa:hasTarget <http://ns.inria.fr/issa/ann/target/013b7b9e88404385d83a7d37d7c2103a4f0ae20e> ;
@@ -429,10 +387,8 @@
 
 <http://ns.inria.fr/issa/ann/30059cc880c88850909796ef47222ad8dc334d8d>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:dataset-1-0 ;
       rdfs:label "named entity 'Casuarinaceae'" ;
-      issapr:confidence 1.0 ;
-      dct:creator <https://team.inria.fr/wimmics/> ;
+      issapr:confidence 1.0 
       schema:about <http://ns.inria.fr/issa/389876> ;
       oa:hasBody <http://dbpedia.org/resource/Casuarinaceae> ;
       oa:hasTarget <http://ns.inria.fr/issa/ann/target/30059cc880c88850909796ef47222ad8dc334d8d> ;
@@ -444,10 +400,8 @@
 
 <http://ns.inria.fr/issa/ann/5d32587afcb1dfa02ecc61b3d891bb4adba7e3ce>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:dataset-1-0 ;
       rdfs:label "named entity 'fixed'" ;
-      issapr:confidence 0.999990148153287 ;
-      dct:creator <https://team.inria.fr/wimmics/> ;
+      issapr:confidence 0.999990148153287 
       schema:about <http://ns.inria.fr/issa/263989> ;
       oa:hasBody <http://dbpedia.org/resource/Nitrogen_fixation> ;
       oa:hasTarget <http://ns.inria.fr/issa/ann/target/5d32587afcb1dfa02ecc61b3d891bb4adba7e3ce> ;
@@ -474,10 +428,8 @@
 
 <http://ns.inria.fr/issa/ann/eba677751e5389a048738d2c3494dda8e4a04b22>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:dataset-1-0 ;
       rdfs:label "named entity 'Root'" ;
-      issapr:confidence 0.9999999907064137 ;
-      dct:creator <https://team.inria.fr/wimmics/> ;
+      issapr:confidence 0.9999999907064137 
       schema:about <http://ns.inria.fr/issa/389876> ;
       oa:hasBody <http://dbpedia.org/resource/Root> ;
       oa:hasTarget <http://ns.inria.fr/issa/ann/target/eba677751e5389a048738d2c3494dda8e4a04b22> ;
@@ -490,10 +442,8 @@
 
 <http://ns.inria.fr/issa/ann/ebfd0ed732791e8d69414a356789229502aed930>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:dataset-1-0 ;
       rdfs:label "named entity 'Analysis'" ;
-      issapr:confidence 0.8871232206561782 ;
-      dct:creator <https://team.inria.fr/wimmics/> ;
+      issapr:confidence 0.8871232206561782 
       schema:about <http://ns.inria.fr/issa/389876> ;
       oa:hasBody <http://dbpedia.org/resource/Analysis> ;
       oa:hasTarget <http://ns.inria.fr/issa/ann/target/ebfd0ed732791e8d69414a356789229502aed930> ;
@@ -526,10 +476,8 @@
 
 <http://ns.inria.fr/issa/ann/c1e8b2a367df9667ae6e90d6706d0459e88aa56e>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:dataset-1-0 ;
       rdfs:label "named entity 'evidence'" ;
-      issapr:confidence 0.8282993654829053 ;
-      dct:creator <https://team.inria.fr/wimmics/> ;
+      issapr:confidence 0.8282993654829053 
       schema:about <http://ns.inria.fr/issa/263989> ;
       oa:hasBody <http://dbpedia.org/resource/Evidence> ;
       oa:hasTarget <http://ns.inria.fr/issa/ann/target/c1e8b2a367df9667ae6e90d6706d0459e88aa56e> ;
@@ -563,10 +511,8 @@
 
 <http://ns.inria.fr/issa/ann/5f98fdd772114f7b548e6156a1f3c7c2264c2d48>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:dataset-1-0 ;
       rdfs:label "named entity 'Family'" ;
-      issapr:confidence 0.9922870893076138 ;
-      dct:creator <https://team.inria.fr/wimmics/> ;
+      issapr:confidence 0.9922870893076138 
       schema:about <http://ns.inria.fr/issa/389876> ;
       oa:hasBody <http://dbpedia.org/resource/Family> ;
       oa:hasTarget <http://ns.inria.fr/issa/ann/target/5f98fdd772114f7b548e6156a1f3c7c2264c2d48> ;
@@ -578,10 +524,8 @@
 
 <http://ns.inria.fr/issa/ann/96300fb775b8ce568f891e654b19e376e6109c58>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:dataset-1-0 ;
       rdfs:label "named entity 'coffee trees'" ;
-      issapr:confidence 0.9999999999704556 ;
-      dct:creator <https://team.inria.fr/wimmics/> ;
+      issapr:confidence 0.9999999999704556 
       schema:about <http://ns.inria.fr/issa/263989> ;
       oa:hasBody <http://dbpedia.org/resource/Coffea> ;
       oa:hasTarget <http://ns.inria.fr/issa/ann/target/96300fb775b8ce568f891e654b19e376e6109c58> ;
@@ -589,10 +533,8 @@
 
 <http://ns.inria.fr/issa/ann/f8c8783950c0ea73087e8518c3903a6d5324b029>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:dataset-1-0 ;
       rdfs:label "named entity 'Cuttings'" ;
-      issapr:confidence 0.9984127159753801 ;
-      dct:creator <https://team.inria.fr/wimmics/> ;
+      issapr:confidence 0.9984127159753801 
       schema:about <http://ns.inria.fr/issa/390202> ;
       oa:hasBody <http://dbpedia.org/resource/Cutting_%28plant%29> ;
       oa:hasTarget <http://ns.inria.fr/issa/ann/target/f8c8783950c0ea73087e8518c3903a6d5324b029> ;

@@ -12,8 +12,6 @@
 <http://ns.inria.fr/issa/ann/f74923b3ce82c984a7ae3e0c2754c9e33c60554fa>
   a oa:Annotation, prov:Entity ;
   rdfs:label "descriptor 'PCR'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   oa:hasBody <http://www.wikidata.org/entity/Q176996> ;
   oa:hasTarget <http://ns.inria.fr/issa/f74923b3ce82c984a7ae3e0c2754c9e33c60554f> ;
   issap:confidence 1 .
@@ -21,15 +19,11 @@
 <http://ns.inria.fr/issa/ann/f74923b3ce82c984a7ae3e0c2754c9e33c60554fb>
   a prov:Entity, oa:Annotation ;
   rdfs:label "descriptor 'coronavirus'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   oa:hasBody <http://www.wikidata.org/entity/Q82069695> ;
   oa:hasTarget <http://ns.inria.fr/issa/f74923b3ce82c984a7ae3e0c2754c9e33c60554f> .
 
 <http://ns.inria.fr/issa/ann/f74923b3ce82c984a7ae3e0c2754c9e33c60554fc>
   a prov:Entity, oa:Annotation ;
   rdfs:label "descriptor 'France'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   oa:hasBody <http://www.wikidata.org/entity/Q142> ;
   oa:hasTarget <http://ns.inria.fr/issa/f74923b3ce82c984a7ae3e0c2754c9e33c60554f> .

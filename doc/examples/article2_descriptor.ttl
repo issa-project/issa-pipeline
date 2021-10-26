@@ -10,8 +10,6 @@
 <http://ns.inria.fr/issa/ann/03a424083ac2df3789d77211ce7144ef40f37001e>
   a oa:Annotation, prov:Entity ;
   rdfs:label "descriptor 'ATLAS'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceNCBOAnnotator> ;
   oa:hasBody <http://purl.bioontology.org/ontology/RCD/7N930>, <http://purl.obolibrary.org/obo/EHDAA_10606>, <http://purl.bioontology.org/ontology/MESH/D020466>, <http://www.cvrgrid.org/files/ECGOntologyv1.owl#ECG_000000771>, <http://purl.jp/bio/4/id/200906030354573710>, <http://purl.org/sig/ont/fma/fma12519>, <http://purl.obolibrary.org/obo/MA_0001421>, <http://sbmi.uth.tmc.edu/ontology/ochv#1563>, <http://sbmi.uth.tmc.edu/ontology/ochv#1564>, <http://purl.obolibrary.org/obo/EHDA_10607>, <http://sbmi.uth.tmc.edu/ontology/ochv#C0004171>, schema:Atlas, <http://purl.obolibrary.org/obo/UBERON_0001092>, <http://radlex.org/RID/RID7745>, <http://uri.neuinfo.org/nif/nifstd/birnlex_2114>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C147589>, <http://uri.neuinfo.org/nif/nifstd/nlx_res_20090402>, <http://purl.org/obo/owlapi/fma#FMA_12519>, <http://www.ifomis.org/acgt/1.0#Atlas>, <http://bioontology.org/ontologies/BiomedicalResourceOntology.owl#Atlas>, <http://purl.bioontology.org/ontology/SNOMEDCT/14806007>, <http://www.co-ode.org/ontologies/galen#Atlas>, <http://purl.bioontology.org/ontology/ICD10CM/S12.0>, <http://purl.obolibrary.org/obo/EMAPA_19431> ;
   oa:hasTarget <http://ns.inria.fr/issa/03a424083ac2df3789d77211ce7144ef40f37001> .
@@ -19,8 +17,6 @@
 <http://ns.inria.fr/issa/ann/03a424083ac2df3789d77211ce7144ef40f37001f>
   a oa:Annotation, prov:Entity ;
   rdfs:label "descriptor 'virome'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   oa:hasBody <http://dbpedia.org/resource/Virome> ;
   oa:hasTarget <http://ns.inria.fr/issa/03a424083ac2df3789d77211ce7144ef40f37001> ;
   issap:confidence 0.999999999942915 .
@@ -28,17 +24,12 @@
 <http://ns.inria.fr/issa/ann/03a424083ac2df3789d77211ce7144ef40f37001g>
   a oa:Annotation, prov:Entity ;
   rdfs:label "descriptor 'TISSUE'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceNCBOAnnotator> ;
   oa:hasBody <http://purl.org/biotop/biotop.owl#Tissue>, <http://purl.obolibrary.org/obo/FBcv_0003046>, <http://www.bioassayontology.org/bao#BAO_0200444>, <http://psink.de/scio/Tissue>, <http://purl.obolibrary.org/obo/PLANA_0000113> ;
   oa:hasTarget <http://ns.inria.fr/issa/03a424083ac2df3789d77211ce7144ef40f37001> .
 
 <http://ns.inria.fr/issa/ann/03a424083ac2df3789d77211ce7144ef40f37001h>
   a prov:Entity, oa:Annotation ;
-  rdfs:label "descriptor 'HUMAN'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceNCBOAnnotator> ;
   oa:hasBody <http://neurolog.unice.fr/ontoneurolog/v3.0/human.owl#human>, <http://www.imgt.org/download/IMGT-ONTOLOGY/IMGT-ONTOLOGY-v1-0-3.owl#Homo_sapiens>, <http://purl.obolibrary.org/obo/NCIT_C14225>, <http://purl.bioontology.org/net/brunel/panda#Human>, <http://purl.obolibrary.org/obo/EHDAA_1>, <http://purl.org/obo/owl/NCBITaxon#NCBITaxon_9606>, <http://purl.obolibrary.org/obo/ID_0000007>, <http://sbmi.uth.tmc.edu/ontology/ochv#C0086418>, <http://radlex.org/RID/RID39073>, <http://example.com/owl/families/import/familyImport17/Human>, <http://www.semanticweb.org/dimitrios/ontologies/2013/2/untitled-ontology-2#Human>, <http://purl.obolibrary.org/obo/EHDA_1>, <http://onto.eva.mpg.de/ontologies/gfo-bio.owl#Human>, <http://www.cea.fr/ontotoxnuc#CelluleHumaine>, <http://purl.bioontology.org/ontology/NCBITAXON/9606>, <http://purl.obolibrary.org/obo/dinto_000058>, <http://www.genomic-cds.org/ont/genomic-cds.owl#human>, <http://purl.org/stemnet/MHC#Human>, <http://www.w3.org/2001/sw/hcls/ns/transmed/TMO_0124>, <http://purl.bioontology.org/ontology/STY/T016>, <http://brd.bsvgateway.org/api/organism/?id=16>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Human>, <http://sbmi.uth.tmc.edu/ontology/ochv#6299>, <http://purl.obolibrary.org/obo/ODGI.owl#Human>, <http://sbmi.uth.tmc.edu/ontology/ochv#15916>, <http://purl.obolibrary.org/obo/NCBITaxon_9606>, <http://www.cea.fr/ontotoxnuc#Homme>, <http://purl.bioontology.org/ontology/CSP/4000-0208>, <http://purl.org/biotop/biotop.owl#Human>, <http://bioontology.org/projects/ontologies/birnlex#birnlex_516>, <http://purl.obolibrary.org/obo/FBsp_00000004>, <http://semanticscience.org/resource/Human>, <http://semanticscience.org/resource/SIO_000485>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C14225>, <http://purl.bioontology.org/ontology/LNC/LA19711-3>, <http://www.co-ode.org/ontologies/galen#Human>, <http://purl.obolibrary.org/obo/IDOMAL_0000604>, <http://sweetontology.net/matrAnimal/Human>, <http://sbmi.uth.tmc.edu/ontology/ochv#C0020114>, <http://purl.org/autism-ontology/1.0/autism-core.owl#AUTISMC1000045>, <http://uri.neuinfo.org/nif/nifstd/birnlex_516>, <http://purl.bioontology.org/ontology/RCD/Xa0iC>, <http://iris.med.duth.gr/research/ecp/ontology/eCP.owl#human>, <http://doe-generated-ontology.com/OntoAD#Human> ;
   oa:hasTarget <http://ns.inria.fr/issa/03a424083ac2df3789d77211ce7144ef40f37001> .

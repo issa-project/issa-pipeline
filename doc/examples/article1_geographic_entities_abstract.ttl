@@ -36,7 +36,6 @@
 
 <http://ns.inria.fr/issa/ann/aff1e35b5b489db646b68bca3c4ad48909dbdd95>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:dataset-1-0 ;
       rdfs:label "named entity 'Laos'" ;
       issapr:confidence 0.8411 ;
       schema:about issa:f74923b3ce82c984a7ae3e0c2754c9e33c60554f ;
@@ -45,7 +44,6 @@
 
 <http://ns.inria.fr/issa/ann/012a25cea23e24bb9eb3e3230b9d1f153ef89ed2>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:dataset-1-0 ;
       rdfs:label "named entity 'Vietnam'" ;
       issapr:confidence 0.7964 ;
       schema:about issa:f74923b3ce82c984a7ae3e0c2754c9e33c60554f ;
@@ -66,7 +64,6 @@
 
 <http://ns.inria.fr/issa/ann/77eb1e99bc60064734100f467ed9250881b17af6>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:dataset-1-0 ;
       rdfs:label "named entity 'chinois'" ;
       issapr:confidence 0.4491 ;
       schema:about issa:f74923b3ce82c984a7ae3e0c2754c9e33c60554f ;
@@ -93,7 +90,6 @@
 
 <http://ns.inria.fr/issa/ann/a318217ec80aea9295713573449df9ba4839a334>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:dataset-1-0 ;
       rdfs:label "named entity 'Indonésie'" ;
       issapr:confidence 0.8696 ;
       schema:about issa:f74923b3ce82c984a7ae3e0c2754c9e33c60554f ;
@@ -106,7 +102,6 @@
 
 <http://ns.inria.fr/issa/ann/773a1a86b0c6fcb23219f12f848a0d20225e14aa>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:dataset-1-0 ;
       rdfs:label "named entity 'province du Yunnan'" ;
       issapr:confidence 0.5714 ;
       schema:about issa:f74923b3ce82c984a7ae3e0c2754c9e33c60554f ;
@@ -119,7 +114,6 @@
 
 <http://ns.inria.fr/issa/ann/64e263d88e333d4642b2b22603cbdf5d36f53399>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:dataset-1-0 ;
       rdfs:label "named entity 'Vietnam'" ;
       issapr:confidence 0.7964 ;
       schema:about issa:f74923b3ce82c984a7ae3e0c2754c9e33c60554f ;
@@ -134,7 +128,6 @@
 
 <http://ns.inria.fr/issa/ann/a7e5a470a77db814d61dae58e6b6b1df9fe2e284>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:dataset-1-0 ;
       rdfs:label "named entity 'Chine'" ;
       issapr:confidence 0.8074 ;
       schema:about issa:f74923b3ce82c984a7ae3e0c2754c9e33c60554f ;
@@ -143,7 +136,6 @@
 
 <http://ns.inria.fr/issa/ann/2d7ba8a6dfeb884087afb9a7d6c5f75e7ab38563>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:dataset-1-0 ;
       rdfs:label "named entity 'Chine'" ;
       issapr:confidence 0.8074 ;
       schema:about issa:f74923b3ce82c984a7ae3e0c2754c9e33c60554f ;
@@ -158,7 +150,6 @@
 
 <http://ns.inria.fr/issa/ann/4b8f6f0db72bb1849713a94f177b6b95002bfc3e>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:dataset-1-0 ;
       rdfs:label "named entity 'Laos'" ;
       issapr:confidence 0.8411 ;
       schema:about issa:f74923b3ce82c984a7ae3e0c2754c9e33c60554f ;
@@ -167,7 +158,6 @@
 
 <http://ns.inria.fr/issa/ann/5d7ec80ba08346506923b62a210b74c9f2c9d0c7>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:dataset-1-0 ;
       rdfs:label "named entity 'Afrique'" ;
       issapr:confidence 0.534 ;
       schema:about issa:f74923b3ce82c984a7ae3e0c2754c9e33c60554f ;
@@ -202,7 +192,6 @@
 
 <http://ns.inria.fr/issa/ann/a49f6a097a8eb0fd60a1156bffdc0dc9bcfb1952>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:dataset-1-0 ;
       rdfs:label "named entity 'Chine'" ;
       issapr:confidence 0.8074 ;
       schema:about issa:f74923b3ce82c984a7ae3e0c2754c9e33c60554f ;
@@ -215,7 +204,6 @@
 
 <http://ns.inria.fr/issa/ann/ad69cffdfb051e1dd52d95e910d3b3f9df86436b>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:dataset-1-0 ;
       rdfs:label "named entity 'Chine'" ;
       issapr:confidence 0.8074 ;
       schema:about issa:f74923b3ce82c984a7ae3e0c2754c9e33c60554f ;
@@ -230,7 +218,6 @@
 
 <http://ns.inria.fr/issa/ann/199955e2d14c975aa567a95a7d8aa9027820ca27>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:dataset-1-0 ;
       rdfs:label "named entity 'Thaïlande'" ;
       issapr:confidence 0.8807 ;
       schema:about issa:f74923b3ce82c984a7ae3e0c2754c9e33c60554f ;
@@ -239,7 +226,6 @@
 
 <http://ns.inria.fr/issa/ann/cac4331cc329e2d84cd9320d7ce6ec531066fdfe>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:dataset-1-0 ;
       rdfs:label "named entity 'Vietnam'" ;
       issapr:confidence 0.7964 ;
       schema:about issa:f74923b3ce82c984a7ae3e0c2754c9e33c60554f ;
@@ -252,7 +238,6 @@
 
 <http://ns.inria.fr/issa/ann/2cd026e31564062c443253e5de8ea161705dede7>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:dataset-1-0 ;
       rdfs:label "named entity 'Huaphan'" ;
       issapr:confidence 0.8749 ;
       schema:about issa:f74923b3ce82c984a7ae3e0c2754c9e33c60554f ;
@@ -277,7 +262,6 @@
 
 <http://ns.inria.fr/issa/ann/b91976eb4ab9a216460a2be62477fe1ab848ac1f>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:dataset-1-0 ;
       rdfs:label "named entity 'Vietnam'" ;
       issapr:confidence 0.7964 ;
       schema:about issa:f74923b3ce82c984a7ae3e0c2754c9e33c60554f ;
@@ -294,7 +278,6 @@
 
 <http://ns.inria.fr/issa/ann/22d154e3c3ba1f3edb6843a05527b24fe796be9d>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:dataset-1-0 ;
       rdfs:label "named entity 'Asie du Sud-Est'" ;
       issapr:confidence 0.9864 ;
       schema:about issa:f74923b3ce82c984a7ae3e0c2754c9e33c60554f ;
@@ -309,7 +292,6 @@
 
 <http://ns.inria.fr/issa/ann/2fa74180a9ca677b5a2e4181512455013d822395>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:dataset-1-0 ;
       rdfs:label "named entity 'Chine'" ;
       issapr:confidence 0.8074 ;
       schema:about issa:f74923b3ce82c984a7ae3e0c2754c9e33c60554f ;
@@ -326,7 +308,6 @@
 
 <http://ns.inria.fr/issa/ann/a62d57e954128fa346a270ea22a6ac8485213aed>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:dataset-1-0 ;
       rdfs:label "named entity 'Laos'" ;
       issapr:confidence 0.8411 ;
       schema:about issa:f74923b3ce82c984a7ae3e0c2754c9e33c60554f ;
@@ -341,7 +322,6 @@
 
 <http://ns.inria.fr/issa/ann/97169f2d40634a6a31b1aeae94dc74faef020e7f>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:dataset-1-0 ;
       rdfs:label "named entity 'Laos'" ;
       issapr:confidence 0.8411 ;
       schema:about issa:f74923b3ce82c984a7ae3e0c2754c9e33c60554f ;
@@ -354,7 +334,6 @@
 
 <http://ns.inria.fr/issa/ann/7d1af5b5adc807c53b0df77233e9af859e8e4e93>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:dataset-1-0 ;
       rdfs:label "named entity 'Vietnam'" ;
       issapr:confidence 0.7964 ;
       schema:about issa:f74923b3ce82c984a7ae3e0c2754c9e33c60554f ;
@@ -405,7 +384,6 @@
 
 <http://ns.inria.fr/issa/ann/7d1877b148d82d8d6ed86779f591ec9ec4b3851d>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:dataset-1-0 ;
       rdfs:label "named entity 'chinois'" ;
       issapr:confidence 0.4491 ;
       schema:about issa:f74923b3ce82c984a7ae3e0c2754c9e33c60554f ;
@@ -420,7 +398,6 @@
 
 <http://ns.inria.fr/issa/ann/5dd75af5f531a23774fe61ca35b47b85b67bb723>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:dataset-1-0 ;
       rdfs:label "named entity 'Laos'" ;
       issapr:confidence 0.8411 ;
       schema:about issa:f74923b3ce82c984a7ae3e0c2754c9e33c60554f ;
@@ -429,7 +406,6 @@
 
 <http://ns.inria.fr/issa/ann/98af07e341f7d6bfc28d0c665aed97a8e3cf2221>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:dataset-1-0 ;
       rdfs:label "named entity 'Indonésie'" ;
       issapr:confidence 0.8696 ;
       schema:about issa:f74923b3ce82c984a7ae3e0c2754c9e33c60554f ;
@@ -442,7 +418,6 @@
 
 <http://ns.inria.fr/issa/ann/35d30f4b66235f130650b72aafc1883d9c470f28>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:dataset-1-0 ;
       rdfs:label "named entity 'Asie'" ;
       issapr:confidence 0.7722 ;
       schema:about issa:f74923b3ce82c984a7ae3e0c2754c9e33c60554f ;
@@ -451,7 +426,6 @@
 
 <http://ns.inria.fr/issa/ann/f64d2c91b1a24c8165a5e44c4b492e208bd95508>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:dataset-1-0 ;
       rdfs:label "named entity 'Amérique latine'" ;
       issapr:confidence 0.9732 ;
       schema:about issa:f74923b3ce82c984a7ae3e0c2754c9e33c60554f ;
@@ -468,7 +442,6 @@
 
 <http://ns.inria.fr/issa/ann/c54e5d9985ffb68617a0d3bfac858e38231dc686>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:dataset-1-0 ;
       rdfs:label "named entity 'Laos'" ;
       issapr:confidence 0.8411 ;
       schema:about issa:f74923b3ce82c984a7ae3e0c2754c9e33c60554f ;
@@ -491,7 +464,6 @@
 
 <http://ns.inria.fr/issa/ann/b580990b0e34439f1f47c0e17c05634a4b566228>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:dataset-1-0 ;
       rdfs:label "named entity 'province de Nghe An'" ;
       issapr:confidence 0.6427 ;
       schema:about issa:f74923b3ce82c984a7ae3e0c2754c9e33c60554f ;
@@ -512,7 +484,6 @@
 
 <http://ns.inria.fr/issa/ann/9af25a062c5e9990ee2790f526499f86255790bc>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:dataset-1-0 ;
       rdfs:label "named entity 'Indonésie'" ;
       issapr:confidence 0.8696 ;
       schema:about issa:f74923b3ce82c984a7ae3e0c2754c9e33c60554f ;
@@ -535,7 +506,6 @@
 
 <http://ns.inria.fr/issa/ann/0aff2dec94b1d097091df671ab3cf769817dc09f>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:dataset-1-0 ;
       rdfs:label "named entity 'Laos'" ;
       issapr:confidence 0.8411 ;
       schema:about issa:f74923b3ce82c984a7ae3e0c2754c9e33c60554f ;
@@ -544,7 +514,6 @@
 
 <http://ns.inria.fr/issa/ann/b53a6a236a9f0d2f0eb64e4f04bde63bcb8d12ef>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:dataset-1-0 ;
       rdfs:label "named entity 'Vietnam'" ;
       issapr:confidence 0.7964 ;
       schema:about issa:f74923b3ce82c984a7ae3e0c2754c9e33c60554f ;
@@ -553,7 +522,6 @@
 
 <http://ns.inria.fr/issa/ann/f2d7477bbf5860a790587fde8d755b03616a6968>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:dataset-1-0 ;
       rdfs:label "named entity 'chinois'" ;
       issapr:confidence 0.4491 ;
       schema:about issa:f74923b3ce82c984a7ae3e0c2754c9e33c60554f ;
@@ -614,7 +582,6 @@
 
 <http://ns.inria.fr/issa/ann/77679f11593f9b21d4f9d5ed52a60bb6ad8b1d94>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:dataset-1-0 ;
       rdfs:label "named entity 'Vietnam'" ;
       issapr:confidence 0.7964 ;
       schema:about issa:f74923b3ce82c984a7ae3e0c2754c9e33c60554f ;
@@ -651,7 +618,6 @@
 
 <http://ns.inria.fr/issa/ann/182cd18be72e09955ad307fba4604133f48614f9>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:dataset-1-0 ;
       rdfs:label "named entity 'Chine'" ;
       issapr:confidence 0.8074 ;
       schema:about issa:f74923b3ce82c984a7ae3e0c2754c9e33c60554f ;
@@ -696,7 +662,6 @@
 
 <http://ns.inria.fr/issa/ann/546acde20812c708e8ab824a8941539f9de329d7>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:dataset-1-0 ;
       rdfs:label "named entity 'Vietnam'" ;
       issapr:confidence 0.7964 ;
       schema:about issa:f74923b3ce82c984a7ae3e0c2754c9e33c60554f ;
@@ -705,7 +670,6 @@
 
 <http://ns.inria.fr/issa/ann/52e5a4ff90771a3297264c14d77731889066ee96>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:dataset-1-0 ;
       rdfs:label "named entity 'Chine'" ;
       issapr:confidence 0.8074 ;
       schema:about issa:f74923b3ce82c984a7ae3e0c2754c9e33c60554f ;
@@ -724,7 +688,6 @@
 
 <http://ns.inria.fr/issa/ann/9aadad7a6b5370dd1a4ee1358a23840f5d8c3a0b>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:dataset-1-0 ;
       rdfs:label "named entity 'Vietnam'" ;
       issapr:confidence 0.7964 ;
       schema:about issa:f74923b3ce82c984a7ae3e0c2754c9e33c60554f ;
@@ -733,7 +696,6 @@
 
 <http://ns.inria.fr/issa/ann/f2838cd834db828c5debb41f5e4ee00ea39e743b>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:dataset-1-0 ;
       rdfs:label "named entity 'Asie du Sud-Est'" ;
       issapr:confidence 0.9864 ;
       schema:about issa:f74923b3ce82c984a7ae3e0c2754c9e33c60554f ;

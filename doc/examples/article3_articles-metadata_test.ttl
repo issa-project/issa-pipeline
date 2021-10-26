@@ -33,7 +33,6 @@
 
 <http://ns.inria.fr/issa/263989>
       a       fabio:ResearchPaper , bibo:AcademicArticle , schema:ScholarlyArticle , eprint:JournalArticle ;
-      rdfs:isDefinedBy issa:dataset-1-0 ;
       issapr:hasBody <http://ns.inria.fr/issa/263989#body_text> ;
       issapr:hasTitle <http://ns.inria.fr/issa/263989#title> ;
       dce:creator "Snoeck, Didier" , "Zapata, Federico" , "Domenach, Anne-Marie" ;
@@ -65,7 +64,6 @@
 
 <http://ns.inria.fr/issa/390202>
       a       fabio:ResearchPaper , bibo:AcademicArticle , schema:ScholarlyArticle , eprint:JournalArticle ;
-      rdfs:isDefinedBy issa:dataset-1-0 ;
       issapr:hasBody <http://ns.inria.fr/issa/390202#body_text> ;
       issapr:hasTitle <http://ns.inria.fr/issa/390202#title> ;
       dce:creator "Monteuuis, Olivier" , "Poupard, C." , "Chauvière, M." ;
@@ -99,7 +97,6 @@
 
 <http://ns.inria.fr/issa/389876>
       a       fabio:ResearchPaper , bibo:AcademicArticle , schema:ScholarlyArticle , eprint:JournalArticle ;
-      rdfs:isDefinedBy issa:dataset-1-0 ;
       issapr:hasBody <http://ns.inria.fr/issa/389876#body_text> ;
       issapr:hasTitle <http://ns.inria.fr/issa/389876#title> ;
       dce:creator "Reddell, Paul" , "Prin, Yves" , "Rouvier, Carole" , "Simonet, Pascal" , "Normand, Philippe" ;

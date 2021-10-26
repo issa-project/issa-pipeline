@@ -17,8 +17,6 @@
 <http://ns.inria.fr/issa/ann/90daabc467bc583a0e04a55a32b63ef1ca921cd3>
   a prov:Entity, oa:Annotation ;
   rdfs:label "named entity 'The limit'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceDBpSpotlight> ;
   oa:hasBody <http://dbpedia.org/resource/The_Limit> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/90daabc467bc583a0e04a55a32b63ef1ca921cd3> ;
@@ -41,8 +39,6 @@
 <http://ns.inria.fr/issa/ann/9001a943a52a99a1fb79ecc5e66dc89d23bb21ee>
   a prov:Entity, oa:Annotation ;
   rdfs:label "named entity 'viral culture'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceDBpSpotlight> ;
   oa:hasBody <http://dbpedia.org/resource/Viral_culture> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/9001a943a52a99a1fb79ecc5e66dc89d23bb21ee> ;
@@ -56,8 +52,6 @@
 <http://ns.inria.fr/issa/ann/0389b72ab669f5d4ee8c6c2d47d87b089a0c63d0>
   a oa:Annotation, prov:Entity ;
   rdfs:label "named entity 'The'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceDBpSpotlight> ;
   oa:hasBody <http://dbpedia.org/resource/The> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/0389b72ab669f5d4ee8c6c2d47d87b089a0c63d0> ;
@@ -67,8 +61,6 @@
 <http://ns.inria.fr/issa/ann/3f48d382f76d6d2dfdd2d22bed98b407266c2b5a>
   a prov:Entity, oa:Annotation ;
   rdfs:label "named entity 'assay'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceDBpSpotlight> ;
   oa:hasBody <http://dbpedia.org/resource/Assay> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/3f48d382f76d6d2dfdd2d22bed98b407266c2b5a> ;
@@ -78,8 +70,6 @@
 <http://ns.inria.fr/issa/ann/38dd91f5fddcdd808953e1e350c4cb01b5481c70>
   a prov:Entity, oa:Annotation ;
   rdfs:label "named entity 'PRE'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceNCBOAnnotator> ;
   oa:hasBody <http://sbmi.uth.tmc.edu/ontology/ochv#47038>, <http://purl.obolibrary.org/obo/GO_0018342>, <http://purl.obolibrary.org/obo/GO_0003904>, <http://purl.bioontology.org/ontology/LNC/LP32605-5>, <http://sbmi.uth.tmc.edu/ontology/ochv#C0740175>, <http://purl.obolibrary.org/obo/NCIT_C25629>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C25629>, <http://purl.obolibrary.org/obo/PR_Q8LLD0>, <http://purl.obolibrary.org/obo/SO_0002045>, <http://purl.obolibrary.org/obo/VHOG_0000536>, <http://purl.obolibrary.org/obo/ZFA_0000144>, <http://purl.obolibrary.org/obo/TAO_0000144>, <http://purl.obolibrary.org/obo/UBERON_0001782>, <http://purl.bioontology.org/ontology/RCD/XM0Dv>, <http://radlex.org/RID/RID39331>, <http://purl.obolibrary.org/obo/CHMO_0000904> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/38dd91f5fddcdd808953e1e350c4cb01b5481c70> ;
@@ -136,8 +126,6 @@
 <http://ns.inria.fr/issa/ann/46f1a8d505a72c449af7d41c89903a3504f9130e>
   a oa:Annotation, prov:Entity ;
   rdfs:label "named entity 'PROBABLE'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceNCBOAnnotator> ;
   oa:hasBody <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C54154>, <http://www.limics.fr/ontologies/ontolurgences#Probable>, <http://scai.fraunhofer.de/HuPSON#SCAIVPH_00001096>, <http://sbmi.uth.tmc.edu/ontology/ochv#29308>, <http://purl.obolibrary.org/obo/TRAK_0001434>, <http://purl.bioontology.org/ontology/SNOMEDCT/452201000124102>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C53259>, <http://radlex.org/RID/RID33>, <http://purl.bioontology.org/ontology/LNC/LA12746-6> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/46f1a8d505a72c449af7d41c89903a3504f9130e> ;
@@ -146,8 +134,6 @@
 <http://ns.inria.fr/issa/ann/7b4fb3feeb50836f4e3501fae335595d8001f88c>
   a oa:Annotation, prov:Entity ;
   rdfs:label "named entity 'DIAGNOSED'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceNCBOAnnotator> ;
   oa:hasBody <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C15220>, <http://purl.obolibrary.org/obo/NCIT_C15220>, <http://www.co-ode.org/ontologies/galen#diagnosed>, <http://sbmi.uth.tmc.edu/ontology/ochv#3850> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/7b4fb3feeb50836f4e3501fae335595d8001f88c> ;
@@ -156,8 +142,6 @@
 <http://ns.inria.fr/issa/ann/dea186b4b24ed91b7aa4434ed2aed763c4abd8fc>
   a oa:Annotation, prov:Entity ;
   rdfs:label "named entity 'OBTAINED'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceNCBOAnnotator> ;
   oa:hasBody <http://sbmi.uth.tmc.edu/ontology/ochv#C1301820>, <http://sbmi.uth.tmc.edu/ontology/ochv#57667>, <http://purl.bioontology.org/ontology/SNOMEDCT/398092000>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C52349> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/dea186b4b24ed91b7aa4434ed2aed763c4abd8fc> ;
@@ -202,8 +186,6 @@
 <http://ns.inria.fr/issa/ann/dfe32b2d070d7bd5f1d586348b1300cf1003cb3d>
   a prov:Entity, oa:Annotation ;
   rdfs:label "named entity 'INCREASED SENSITIVITY'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceNCBOAnnotator> ;
   oa:hasBody <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C63078>, <http://purl.obolibrary.org/obo/PATO_0001549>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C73503>, <http://purl.org/obo/owl/PATO#PATO_0001549> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/dfe32b2d070d7bd5f1d586348b1300cf1003cb3d> ;
@@ -228,8 +210,6 @@
 <http://ns.inria.fr/issa/ann/63fcb57d527b0b769b6263c0e28c0c9eac644949>
   a prov:Entity, oa:Annotation ;
   rdfs:label "named entity 'USING'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceNCBOAnnotator> ;
   oa:hasBody <http://purl.bioontology.org/ontology/RCD/X90S5> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/63fcb57d527b0b769b6263c0e28c0c9eac644949> ;
@@ -248,8 +228,6 @@
 <http://ns.inria.fr/issa/ann/b7a4ed41507b775b9d27772e6b4c4a86a65df3bf>
   a oa:Annotation, prov:Entity ;
   rdfs:label "named entity 'ANALYZED'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceNCBOAnnotator> ;
   oa:hasBody <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C25420>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C25391>, <http://purl.obolibrary.org/obo/NCIT_C25391> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/b7a4ed41507b775b9d27772e6b4c4a86a65df3bf> ;
@@ -268,8 +246,6 @@
 <http://ns.inria.fr/issa/ann/2f270bb388152a73f2ed7e6639e78748c83e7e71>
   a oa:Annotation, prov:Entity ;
   rdfs:label "named entity 'AGAROSE GEL ELECTROPHORESIS'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceNCBOAnnotator> ;
   oa:hasBody <http://localhost/plosthes.2017-1#9000>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Agarose_Gel_Electrophoresis>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16537>, <http://purl.obolibrary.org/obo/sep_00171>, <http://purl.obolibrary.org/obo/CHMO_0001022>, <http://purl.obolibrary.org/obo/ERO_0000175>, <https://pat.nichd.nih.gov/patinvestigativetechniques/IT.05.01>, <http://scdontology.h3abionet.org/ontology/SCDO_0000029>, <http://purl.bioontology.org/ontology/npo#NPO_1420> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/2f270bb388152a73f2ed7e6639e78748c83e7e71> ;
@@ -288,8 +264,6 @@
 <http://ns.inria.fr/issa/ann/abd48bb7b0703ed7656187aafb037b8fb78ea94f>
   a prov:Entity, oa:Annotation ;
   rdfs:label "named entity 'POLYMERASE CHAIN REACTION'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceNCBOAnnotator> ;
   oa:hasBody <http://edamontology.org/topic_3519>, <http://hadatac.org/ont/chear#PolymeraseChainReaction>, <http://localhost/plosthes.2017-1#241>, <http://scdontology.h3abionet.org/ontology/SCDO_0000913>, <http://phenomebrowser.net/ontologies/mesh/mesh.owl#D016133>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Polymerase_Chain_Reaction>, <http://purl.bioontology.org/ontology/CSP/0630-7520>, <http://phenomebrowser.net/ontologies/mesh/mesh.owl#E05.393.620.500>, <http://purl.bioontology.org/ontology/PDQ/CDR0000042771>, <http://purl.bioontology.org/ontology/MESH/D016133>, <http://purl.bioontology.org/ontology/MEDDRA/10050967>, <http://purl.bioontology.org/ontology/RCD/X7A0j>, <http://purl.bioontology.org/ontology/SNOMEDCT/258066000>, <http://sbmi.uth.tmc.edu/ontology/ochv#9923>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C17003>, <http://purl.jp/bio/4/id/200906065342957570>, <http://purl.bioontology.org/ontology/HL7/C0032520>, <http://purl.obolibrary.org/obo/OBI_0000415>, <https://pat.nichd.nih.gov/patinvestigativetechniques/IT.14>, <http://purl.org/twc/HHEAR_00202>, <http://www.bioassayontology.org/bao#BAO_0002080> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/abd48bb7b0703ed7656187aafb037b8fb78ea94f> ;
@@ -302,8 +276,6 @@
 <http://ns.inria.fr/issa/ann/45919e9bd4740dac53b1df99f593912fccc9a164>
   a prov:Entity, oa:Annotation ;
   rdfs:label "named entity 'PATIENTS'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceNCBOAnnotator> ;
   oa:hasBody <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16960>, <http://phenomebrowser.net/ontologies/mesh/mesh.owl#M01.643>, <http://doe-generated-ontology.com/OntoAD#C0030705>, <http://phenomebrowser.net/ontologies/mesh/mesh.owl#D010361>, <http://purl.bioontology.org/ontology/MESH/D010361>, <http://ontology.apa.org/apaonto/termsonlyOUT%20(5).owl#Patients>, <http://localhost/plosthes.2017-1#9715>, <http://www.semanticweb.org/IRDGuyamazon#Patients>, <http://sbmi.uth.tmc.edu/ontology/ochv#9372>, <http://purl.obolibrary.org/obo/NCIT_C16960> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/45919e9bd4740dac53b1df99f593912fccc9a164> ;
@@ -334,8 +306,6 @@
 <http://ns.inria.fr/issa/ann/ea5081cfe2400a036e97de8c97a90d7b773dac6e>
   a oa:Annotation, prov:Entity ;
   rdfs:label "named entity 'REAL-TIME'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceNCBOAnnotator> ;
   oa:hasBody <http://radlex.org/RID/RID28695> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/ea5081cfe2400a036e97de8c97a90d7b773dac6e> ;
@@ -354,8 +324,6 @@
 <http://ns.inria.fr/issa/ann/7d1f56c9b7f4122f2e4b1253ee36cc7d68777ca3>
   a prov:Entity, oa:Annotation ;
   rdfs:label "named entity 'SEVERE ACUTE RESPIRATORY SYNDROME'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceNCBOAnnotator> ;
   oa:hasBody <http://phenomebrowser.net/ontologies/mesh/mesh.owl#C02.782.600.550.200.750>, <http://phenomebrowser.net/ontologies/mesh/mesh.owl#C08.730.730>, <http://phenomebrowser.net/ontologies/mesh/mesh.owl#D045169>, <http://purl.bioontology.org/ontology/RCTV2/H20y000>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C85064>, <http://brd.bsvgateway.org/api/disease/?id=255>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Severe_Acute_Respiratory_Syndrome>, <http://purl.bioontology.org/ontology/MDR/10061986>, <http://purl.bioontology.org/ontology/MEDDRA/10061982>, <http://purl.bioontology.org/ontology/MEDLINEPLUS/C1175175>, <http://www.orpha.net/ORDO/Orphanet_140896>, <http://purl.bioontology.org/ontology/MESH/D045169>, <http://www.ebi.ac.uk/efo/EFO_0000694>, <http://www.gamuts.net/entity#SARS>, <http://purl.obolibrary.org/obo/MONDO_0005091>, <http://purl.jp/bio/4/id/200906028990601184>, <http://www.limics.org/hrdo/rdfns#pat_id_16993>, <http://purl.obolibrary.org/obo/DOID_2945>, <http://www.owl-ontologies.com/NPOntology.owl#DOID_2945>, <http://purl.bioontology.org/ontology/CSP/5004-0074>, <http://purl.bioontology.org/ontology/SNOMEDCT/398447004> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/7d1f56c9b7f4122f2e4b1253ee36cc7d68777ca3> ;
@@ -364,8 +332,6 @@
 <http://ns.inria.fr/issa/ann/a7028c1ecf104db8cca1f77a4494c12ac7aa6eee>
   a oa:Annotation, prov:Entity ;
   rdfs:label "named entity 'FOLD'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceNCBOAnnotator> ;
   oa:hasBody <http://purl.obolibrary.org/obo/OGG_3000011898>, <http://purl.obolibrary.org/obo/PR_A5I112>, <http://purl.obolibrary.org/obo/PR_000022679>, <http://purl.obolibrary.org/obo/OGG_3000880636>, <http://purl.obolibrary.org/obo/OGG_3000888145>, <http://purl.obolibrary.org/obo/OGG_3000945221>, <http://purl.obolibrary.org/obo/OGG_3003191934>, <http://identifiers.org/ncbigene/11898>, <http://purl.obolibrary.org/obo/PR_Q2FZJ6>, <http://purl.obolibrary.org/obo/PR_P24186>, <http://purl.obolibrary.org/obo/DIDEO_00000091>, <http://sweetontology.net/phenSolid/Fold>, <http://sbmi.uth.tmc.edu/ontology/ochv#29430>, <http://www.ontodm.com/OntoDM-core/OntoDM_000053>, <http://purl.bioontology.org/ontology/SNOMEDCT/26310004>, <http://www.projecthalo.com/aura#Fold> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/a7028c1ecf104db8cca1f77a4494c12ac7aa6eee> ;
@@ -380,8 +346,6 @@
 <http://ns.inria.fr/issa/ann/4d3962eded5c6c6e2f85d47760bbba673130f043>
   a prov:Entity, oa:Annotation ;
   rdfs:label "named entity 'TARGET GENE'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceNCBOAnnotator> ;
   oa:hasBody <http://purl.obolibrary.org/obo/OBI_0001962>, <http://purl.obolibrary.org/obo/SO_0001867>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C19389>, <http://purl.jp/bio/4/id/200906014899095283> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/4d3962eded5c6c6e2f85d47760bbba673130f043> ;
@@ -390,8 +354,6 @@
 <http://ns.inria.fr/issa/ann/d9676b53e146401b8d63bdd4b97cac62b80325fc>
   a prov:Entity, oa:Annotation ;
   rdfs:label "named entity 'FOLLOWED BY'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceNCBOAnnotator> ;
   oa:hasBody <http://purl.bioontology.org/ontology/SNOMEDCT/367409002>, <http://sbmi.uth.tmc.edu/ontology/ochv#29392>, <http://sbmi.uth.tmc.edu/ontology/ochv#C0332283>, <http://purl.bioontology.org/ontology/SNMI/G-C004>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C53286> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/d9676b53e146401b8d63bdd4b97cac62b80325fc> ;
@@ -406,8 +368,6 @@
 <http://ns.inria.fr/issa/ann/f9a3bf29740cbe2a07b9f5450f007d88101163cf>
   a prov:Entity, oa:Annotation ;
   rdfs:label "named entity 'ENHANCED'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceNCBOAnnotator> ;
   oa:hasBody <http://purl.obolibrary.org/obo/MI_2352>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C71607>, <http://purl.obolibrary.org/obo/NCIT_C71607>, <http://purl.org/obo/owl/PATO#PATO_0001589> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/f9a3bf29740cbe2a07b9f5450f007d88101163cf> ;
@@ -416,8 +376,6 @@
 <http://ns.inria.fr/issa/ann/338e08da4d6a8c15ce3e8fda40692c952cf5cc35>
   a oa:Annotation, prov:Entity ;
   rdfs:label "named entity 'LIMIT OF DETECTION'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceNCBOAnnotator> ;
   oa:hasBody <http://purl.org/twc/HHEAR_00236>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C105701>, <http://purl.obolibrary.org/obo/CHMO_0002801>, <http://hadatac.org/ont/chear#LimitOfDetection>, <http://hadatac.org/ont/hasco/LimitOfDetection>, <http://purl.bioontology.org/ontology/MESH/D057230>, <http://phenomebrowser.net/ontologies/mesh/mesh.owl#N05.715.360.750.725.500>, <http://phenomebrowser.net/ontologies/mesh/mesh.owl#N06.850.520.830.872.500>, <http://phenomebrowser.net/ontologies/mesh/mesh.owl#E05.318.740.872.374>, <http://phenomebrowser.net/ontologies/mesh/mesh.owl#D057230> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/338e08da4d6a8c15ce3e8fda40692c952cf5cc35> ;
@@ -452,8 +410,6 @@
 <http://ns.inria.fr/issa/ann/6537af8ad8a8f8d994aac079de9c2022335740df>
   a oa:Annotation, prov:Entity ;
   rdfs:label "named entity 'SUSPECTED'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceNCBOAnnotator> ;
   oa:hasBody <http://purl.bioontology.org/ontology/LNC/LA15291-0>, <http://radlex.org/RID/RID39175>, <http://purl.bioontology.org/ontology/RCD/Xa499>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C71458>, <http://purl.bioontology.org/ontology/SNOMEDCT/415684004>, <http://purl.obolibrary.org/obo/TRAK_0001437> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/6537af8ad8a8f8d994aac079de9c2022335740df> ;
@@ -462,8 +418,6 @@
 <http://ns.inria.fr/issa/ann/ec38f6d45a09acba2890663782cd87de04bfe46c>
   a prov:Entity, oa:Annotation ;
   rdfs:label "named entity 'TAQMAN'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceNCBOAnnotator> ;
   oa:hasBody <http://purl.obolibrary.org/obo/MIRO_20000102> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/ec38f6d45a09acba2890663782cd87de04bfe46c> ;
@@ -506,8 +460,6 @@
 <http://ns.inria.fr/issa/ann/14b766fc44ae902dd60bd36a5fe95b2ebd1b7fa6>
   a prov:Entity, oa:Annotation ;
   rdfs:label "named entity 'DISEASE'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceNCBOAnnotator> ;
   oa:hasBody <http://sbmi.uth.tmc.edu/ontology/ochv#4014>, <http://purl.obolibrary.org/obo/MONDO_0000001>, <http://purl.obolibrary.org/obo/MI_0617>, <http://semanticscience.org/resource/Disease>, <http://purl.obolibrary.org/obo/IEV_0000075>, <http://scdontology.h3abionet.org/ontology/SCDO_0001365>, <http://scai.fraunhofer.de/NDDUO#disease>, <http://scai.fraunhofer.de/HuPSON#SCAIVPH_00000259>, <http://sbmi.uth.tmc.edu/ontology/ochv#C0012634>, <http://purl.bioontology.org/ontology/LNC/LA18199-2>, <http://scai.fraunhofer.de/CSEO#CSEO_10000024>, <http://purl.obolibrary.org/obo/HINO_0015722>, <http://purl.bioontology.org/ontology/ICPC2P/A99001>, <http://www.semanticweb.org/ontologies/2010/5/22/Ontology1277229984000.owl#HPI:0000026>, <http://purl.obolibrary.org/obo/PW_0000013>, <http://www.semanticweb.org/dellvostro3750/ontologies/2018/2/untitled-ontology-10#disease>, <http://edamontology.org/topic_0634>, <http://www.projecthalo.com/aura#Disease>, <http://purl.bioontology.org/ontology/LNC/LP21006-9>, <http://www.shojaee.com/shr/shr.owl#Disease>, <http://purl.org/heritagedata/schemes/560/concepts/142180>, <http://purl.obolibrary.org/obo/DERMO_0000000>, <http://www.semanticweb.org/rjyy/ontologies/2015/5/ESSO#disease>, <http://purl.obolibrary.org/obo/DOID_4>, <http://www.semanticweb.org/parracarlos/ontologies/2019/3/untitled-ontology-31#Disease>, <http://www.semanticweb.org/rjyy/ontologies/2015/5/ESSO#Disease>, <http://www.semanticweb.org/ontologies/chronic-diease-patient-education-ontology#Disease>, <http://www.semanticweb.org/ontologies/2012/8/Ontology1348158066194.owl#OWLClass_00000012615273587629>, <http://pgxo.loria.fr/Disease>, <http://www.ifomis.org/acgt/1.0#Disease>, <http://purl.obolibrary.org/obo/CCTO_000070>, <http://www.w3.org/2001/sw/hcls/ns/transmed/TMO_0047>, <http://www.isibang.ac.in/ns/codo#Disease>, <http://www.semanticweb.org/ontologies/Prostate_cancer#Diseases>, <http://dbpedia.org/ontology/Disease>, <http://www.semanticweb.org/ontologies/2010/2/MiRNA-Ontology.owl#Disease>, <https://w3id.org/biolink/vocab/Disease>, <http://purl.obolibrary.org/obo/ExO_0000079>, <http://www.ebi.ac.uk/efo/EFO_0000408>, <http://www.owl-ontologies.com/Ontology1435740495.owl#Disease>, <http://www.owl-ontologies.com/Ontology1239104585.owl#Disease>, <http://phenomebrowser.net/ontologies/mesh/mesh.owl#D004194>, <http://www.orpha.net/ORDO/Orphanet_377788>, <http://phenomebrowser.net/ontologies/mesh/mesh.owl#C23.550.288>, <http://www.limics.org/hrdo/rdfns#typ_id_11>, <http://www.onto-med.de/ontologies/gfo-persian-medicine-diseases.owl#Disease>, <http://purl.obolibrary.org/obo/TRAK_0000205>, <http://doe-generated-ontology.com/OntoAD#C0012634>, <http://chem2bio2rdf.org/chem2bio2rdf.owl#Disease>, <http://purl.bioontology.org/ontology/NDFRT/N0000000981>, <http://chem.deri.ie/granatum#Disease>, <http://brd.bsvgateway.org/api/disease/>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C2991>, <http://bioontology.org/projects/ontologies/birnlex#birnlex_11013>, <http://purl.obolibrary.org/obo/OGMS_0000031>, <http://purl.org/autism-ontology/1.0/autism-core.owl#AUTISMC1000038>, <http://purl.jp/bio/4/id/201606017936711318>, <http://purl.obolibrary.org/obo/OBI_1110055>, <http://purl.bioontology.org/ontology/MESH/D004194>, <http://uri.neuinfo.org/nif/nifstd/birnlex_11013>, <http://sweetontology.net/phenBiol/Disease>, <http://semanticscience.org/resource/SIO_010299>, <http://purl.obolibrary.org/obo/GSSO_000486>, <http://www.case.edu/EpSO.owl#Disease>, <http://purl.bioontology.org/ontology/PMR.owl#Disease>, <http://www.bootstrep.eu/ontology/GRO#Disease>, <http://www.bioassayontology.org/bao#BAO_0002927>, <http://purl.bioontology.org/NEMO/ontology/NEMO.owl#NEMO_5159000>, <http://purl.bioontology.org/ontology/SNOMEDCT/64572001> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/14b766fc44ae902dd60bd36a5fe95b2ebd1b7fa6> ;
@@ -516,8 +468,6 @@
 <http://ns.inria.fr/issa/ann/4b25c73f08500290db21a45d29ba5d80b9857a81>
   a oa:Annotation, prov:Entity ;
   rdfs:label "named entity 'CORONAVIRUS'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceNCBOAnnotator> ;
   oa:hasBody <http://www.co-ode.org/ontologies/galen#CoronaVirus>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Coronavirus>, <http://purl.org/vodan/whocovid19crfsemdatamodel/Coronavirus>, <http://purl.obolibrary.org/obo/NCBITaxon_11118>, <http://purl.bioontology.org/ontology/RCD/X73lE>, <http://www.ncbi.nlm.nih.gov/taxonomy/11128>, <http://phenomebrowser.net/ontologies/mesh/mesh.owl#D017934>, <http://purl.jp/bio/4/id/200906043629613231>, <http://phenomebrowser.net/ontologies/mesh/mesh.owl#B04.909.777.500.540.150>, <http://phenomebrowser.net/ontologies/mesh/mesh.owl#B04.820.504.540.150>, <http://sbmi.uth.tmc.edu/ontology/ochv#20927>, <http://purl.bioontology.org/ontology/LNC/LP16680-8>, <http://purl.obolibrary.org/obo/NCBITaxon_694013>, <http://purl.obolibrary.org/obo/NCBITaxon_693996>, <http://purl.obolibrary.org/obo/NCBITaxon_694002>, <http://doe-generated-ontology.com/OntoPneumo#Coronavirus>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C26431>, <http://scai.fraunhofer.de/CSEO#CSEO_00000936>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C171456>, <http://purl.bioontology.org/ontology/MESH/D017934>, <http://sbmi.uth.tmc.edu/ontology/ochv#C0206419> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/4b25c73f08500290db21a45d29ba5d80b9857a81> ;
@@ -526,8 +476,6 @@
 <http://ns.inria.fr/issa/ann/eaa51f3ee2d9aae1fe5423185a55093c411e0ac3>
   a oa:Annotation, prov:Entity ;
   rdfs:label "named entity 'STANDARD'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceNCBOAnnotator> ;
   oa:hasBody <http://purl.jp/bio/4/id/200906071956224226>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C44275>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C81893>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C96085>, <http://purl.bioontology.org/ontology/LNC/LP20607-5>, <http://purl.allotrope.org/ontologies/role#AFRL_0000411>, bibo:Standard, dct:Standard, <http://purl.obolibrary.org/obo/NCIT_C81893>, <http://purl.obolibrary.org/obo/NCIT_C44275>, <http://purl.obolibrary.org/obo/MS_1000898>, <http://purl.obolibrary.org/obo/PO_0025324>, <http://ecoinformatics.org/oboe/oboe.1.0/oboe-core.owl#Standard>, <http://sweetontology.net/humanJurisdiction/Standard>, <http://semanticscience.org/resource/Standard>, <http://semanticscience.org/resource/SIO_000618>, <http://ecoinformatics.org/oboe/oboe.1.2/oboe-core.owl#Standard>, <http://www.limics.fr/ontologies/menelastop#standard>, <http://purl.allotrope.org/ontologies/role#AFRL_0000255>, <http://purl.allotrope.org/ontologies/role#AFRL_0000233>, <http://purl.allotrope.org/ontologies/result#AFR_0001276>, <http://purl.obolibrary.org/obo/CDAO_0000045> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/eaa51f3ee2d9aae1fe5423185a55093c411e0ac3> ;
@@ -570,8 +518,6 @@
 <http://ns.inria.fr/issa/ann/b93c364b82aff35664973b27190d6a2829d85b40>
   a oa:Annotation, prov:Entity ;
   rdfs:label "named entity 'SAMPLES'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceNCBOAnnotator> ;
   oa:hasBody <http://edamontology.org/topic_3277> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/b93c364b82aff35664973b27190d6a2829d85b40> ;
@@ -612,8 +558,6 @@
 <http://ns.inria.fr/issa/ann/c590886b6585b6f19610d3422d01d39d6bb8fab6>
   a oa:Annotation, prov:Entity ;
   rdfs:label "named entity 'OUR'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceNCBOAnnotator> ;
   oa:hasBody <http://purl.obolibrary.org/obo/GAZ_00427438>, <http://purl.obolibrary.org/obo/GAZ_00344524> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/c590886b6585b6f19610d3422d01d39d6bb8fab6> ;
@@ -644,8 +588,6 @@
 <http://ns.inria.fr/issa/ann/c82783c931c192d5a9803403b9d74a4f8c34c137>
   a prov:Entity, oa:Annotation ;
   rdfs:label "named entity 'METHODS'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceNCBOAnnotator> ;
   oa:hasBody <http://phenomebrowser.net/ontologies/mesh/mesh.owl#E05.581>, <http://phenomebrowser.net/ontologies/mesh/mesh.owl#D008722>, <http://purl.bioontology.org/ontology/MESH/Q000379>, <http://purl.bioontology.org/ontology/ONE/report00004>, <http://doe-generated-ontology.com/OntoAD#C0025663> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/c82783c931c192d5a9803403b9d74a4f8c34c137> ;
@@ -664,8 +606,6 @@
 <http://ns.inria.fr/issa/ann/2fe576fd3ee63dc575aa7a2303393f6cdfc10f4a>
   a prov:Entity, oa:Annotation ;
   rdfs:label "named entity 'SIZE'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceNCBOAnnotator> ;
   oa:hasBody <http://purl.bioontology.org/NEMO/ontology/NEMO.owl#NEMO_8472000>, <http://www.owl-ontologies.com/Ontology1239104585.owl#Size>, <https://w3id.org/reproduceme#Size>, <http://www.shojaee.com/shr/shr.owl#Size>, <http://purl.bioontology.org/ontology/SNOMEDCT/246115007>, <http://www.co-ode.org/ontologies/galen#Size>, <http://purl.obolibrary.org/obo/PATO_0000117>, <http://www.ebi.ac.uk/efo/EFO_0001695>, <http://purl.obolibrary.org/obo/TRAK_0001485>, <http://purl.bioontology.org/ontology/RCD/X75OE>, <http://purl.obolibrary.org/obo/ID_0000022>, <http://scai.fraunhofer.de/CSEO#CSEO_00000002>, <http://purl.obolibrary.org/obo/NCIT_C25681>, <http://sweetontology.net/propSpaceDistance/Size>, <http://purl.obolibrary.org/obo/FIX_0000496>, <http://sbmi.uth.tmc.edu/ontology/ochv#C0702146>, <http://purl.allotrope.org/ontologies/result#AFR_0002109>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C171192>, <http://purl.bioontology.org/ontology/LNC/LP18013-0>, <http://www.semanticweb.org/osnathakimi/ontologies/deb#Size>, <http://bioportal/bioontology.org/ontologies/HIVO004#OWLClass_00000009787037676785>, <http://purl.bioontology.org/ontology/LNC/MTHU010347>, <http://purl.allotrope.org/ontologies/quality#AFQ_0000179>, <http://bioportal/bioontology.org/ontologies/HIVO0004#OWLClass_00000009787037676785>, <http://purl.bioontology.org/ontology/HL7/C1552077>, <http://www.co-ode.org/ontologies/amino-acid/2006/05/18/amino-acid.owl#Size>, <http://purl.allotrope.org/ontologies/result#AFR_0000936>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C66733>, <http://ontodm.com/OntoDT#OntoDT_447351>, <http://ontology.apa.org/apaonto/termsonlyOUT%20(5).owl#Size>, <http://sbmi.uth.tmc.edu/ontology/ochv#45082>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C25681>, <http://purl.org/obo/owl/PATO#PATO_0000117> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/2fe576fd3ee63dc575aa7a2303393f6cdfc10f4a> ;
@@ -674,8 +614,6 @@
 <http://ns.inria.fr/issa/ann/fc539c9bd1ba0688a3efa61fc08de173826b301a>
   a prov:Entity, oa:Annotation ;
   rdfs:label "named entity 'FLUORESCENT'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceNCBOAnnotator> ;
   oa:hasBody <http://purl.org/obo/owl/PATO#PATO_0001290>, <http://sbmi.uth.tmc.edu/ontology/ochv#28064>, <http://purl.bioontology.org/ontology/SNOMEDCT/35352008>, <http://purl.bioontology.org/ontology/npo#NPO_1376>, <http://sbmi.uth.tmc.edu/ontology/ochv#C0303920>, <http://purl.obolibrary.org/obo/PATO_0001290> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/fc539c9bd1ba0688a3efa61fc08de173826b301a> ;
@@ -698,8 +636,6 @@
 <http://ns.inria.fr/issa/ann/f71dbe6cf7b010b170679e250c779c2b0e93325d>
   a oa:Annotation, prov:Entity ;
   rdfs:label "named entity 'PCR'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceNCBOAnnotator> ;
   oa:hasBody <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C160725>, <http://bioportal/bioontology.org/ontologies/HIVO0004#OWLClass_fcd064fd_77d2_4233_9d2b_b0d8a2eb2bf2>, <http://purl.bioontology.org/ontology/LNC/LA26418-6>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C63459>, <http://purl.jp/bio/4/id/200906082830444079>, <http://purl.obolibrary.org/obo/ODGI.owl#PCR>, <http://purl.bioontology.org/ontology/MEDDRA/10050992>, <http://bioportal/bioontology.org/ontologies/HIVO004#OWLClass_fcd064fd_77d2_4233_9d2b_b0d8a2eb2bf2>, <http://www.cea.fr/ontotoxnuc#PCR>, <http://jermontology.org/ontology/JERMOntology#PCR>, <http://www.ifomis.org/acgt/1.0#PCR>, <http://purl.obolibrary.org/obo/MMO_0000459>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C123603>, <http://purl.obolibrary.org/obo/CCTO_000088>, <https://bitbucket.org/PlantExpAssay/ontology/raw/v0.1/PlantExperimentalAssayOntology.owl#PEAO:000045> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/f71dbe6cf7b010b170679e250c779c2b0e93325d> ;
@@ -714,8 +650,6 @@
 <http://ns.inria.fr/issa/ann/8588687f5a3435872376cab0df1017468db035d8>
   a prov:Entity, oa:Annotation ;
   rdfs:label "named entity 'SARS-COV'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceNCBOAnnotator> ;
   oa:hasBody <http://sbmi.uth.tmc.edu/ontology/ochv#55818>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C174328>, <http://bioportal.bioontology.org/ontology/HOIP/HOIP_0006387>, <http://purl.bioontology.org/ontology/SNOMEDCT/415360003> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/8588687f5a3435872376cab0df1017468db035d8> ;
@@ -724,8 +658,6 @@
 <http://ns.inria.fr/issa/ann/8695e436ff1cd79bdbd189d97a890abaf0fcbfff>
   a prov:Entity, oa:Annotation ;
   rdfs:label "named entity 'CONVENTIONAL'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceNCBOAnnotator> ;
   oa:hasBody <http://sbmi.uth.tmc.edu/ontology/ochv#C0439858>, <http://purl.bioontology.org/ontology/SNOMEDCT/255333006>, <http://www.imgt.org/download/IMGT-ONTOLOGY/IMGT-ONTOLOGY-v1-0-3.owl#conventional>, <http://www.semanticweb.org/tome/ontologies/2018/3/ISO-FOOD#Conventional>, <http://sbmi.uth.tmc.edu/ontology/ochv#34687>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C61300>, <http://purl.bioontology.org/ontology/RCD/X78x0>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C149409> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/8695e436ff1cd79bdbd189d97a890abaf0fcbfff> ;
@@ -734,8 +666,6 @@
 <http://ns.inria.fr/issa/ann/26e9f675087ef8d85f171e15c539fa0855cfa531>
   a prov:Entity, oa:Annotation ;
   rdfs:label "named entity 'REAL-TIME PCR'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceNCBOAnnotator> ;
   oa:hasBody <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C51962>, <https://pat.nichd.nih.gov/patinvestigativetechniques/IT.14.03>, <http://purl.obolibrary.org/obo/ERO_0001075>, <http://purl.obolibrary.org/obo/MMO_0000460> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/26e9f675087ef8d85f171e15c539fa0855cfa531> ;
@@ -744,8 +674,6 @@
 <http://ns.inria.fr/issa/ann/58e329a6aaa78932012d75006db3c197dfe95741>
   a oa:Annotation, prov:Entity ;
   rdfs:label "named entity 'ASSAY'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceNCBOAnnotator> ;
   oa:hasBody <http://purl.allotrope.org/ontologies/process#AFP_0002680>, <http://purl.org/obo/owl/PATO#PATO_0000003>, <http://regenbase.org/ontology#RB_0000139>, <https://w3id.org/reproduceme#Assay>, <http://purl.obolibrary.org/obo/FBcv_0003025>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C60819>, <http://purl.obolibrary.org/obo/ExO_0000064>, <http://purl.bioontology.org/ontology/RCD/XM0J1>, <http://uri.neuinfo.org/nif/nifstd/birnlex_11025>, <http://purl.obolibrary.org/obo/COB_0000107>, <http://purl.bioontology.org/ontology/SNOMEDCT/272392009>, <http://epoch.stanford.edu/AssayOntology.owl#Assay>, <http://www.co-ode.org/ontologies/galen#Assay>, <http://purl.bioontology.org/ontology/npo#NPO_1408>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Assay>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16341>, <http://scai.fraunhofer.de/CSEO#Assay>, <http://semanticscience.org/resource/SIO_001007>, <http://www.w3.org/2001/sw/hcls/ns/transmed/TMO_0076>, <http://semanticscience.org/resource/Assay>, <http://doe-generated-ontology.com/OntoAD#C1510438>, <http://bioontology.org/projects/ontologies/birnlex#birnlex_11025>, <http://doe-generated-ontology.com/OntoAD#C0005507>, <http://bmkeg.isi.edu/ooevv/edu.isi.bmkeg.ooevv.model.Assay>, <http://chem.deri.ie/granatum#Assay>, <http://jermontology.org/ontology/JERMOntology#Assay>, <http://purl.obolibrary.org/obo/OBI_0000070> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/58e329a6aaa78932012d75006db3c197dfe95741> ;
@@ -762,8 +690,6 @@
 <http://ns.inria.fr/issa/ann/93c2cd92a90590f34be3413fc3889dd375550a1a>
   a oa:Annotation, prov:Entity ;
   rdfs:label "named entity 'AMPLICON'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceNCBOAnnotator> ;
   oa:hasBody <http://purl.jp/bio/4/id/200906065574066990>, <http://purl.obolibrary.org/obo/SO_0000006> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/93c2cd92a90590f34be3413fc3889dd375550a1a> ;
@@ -772,8 +698,6 @@
 <http://ns.inria.fr/issa/ann/b95443f7c9aa07f4570de796cef9205d44b4f40b>
   a oa:Annotation, prov:Entity ;
   rdfs:label "named entity 'COLLECTED'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceNCBOAnnotator> ;
   oa:hasBody <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C25452>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C25453>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C170548> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/b95443f7c9aa07f4570de796cef9205d44b4f40b> ;
@@ -796,8 +720,6 @@
 <http://ns.inria.fr/issa/ann/acf30839116ae84bf2353657cc1935424f18eda3>
   a oa:Annotation, prov:Entity ;
   rdfs:label "named entity 'OUTBREAKS'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceNCBOAnnotator> ;
   oa:hasBody <http://sbmi.uth.tmc.edu/ontology/ochv#4016> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/acf30839116ae84bf2353657cc1935424f18eda3> ;
@@ -806,8 +728,6 @@
 <http://ns.inria.fr/issa/ann/c74700beadcf93075f3bcfb30142847acb84ef26>
   a oa:Annotation, prov:Entity ;
   rdfs:label "named entity 'SPREAD'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceNCBOAnnotator> ;
   oa:hasBody <http://sbmi.uth.tmc.edu/ontology/ochv#29376>, <http://www.semanticweb.org/rjyy/ontologies/2015/5/ESSO#Spread>, <http://purl.obolibrary.org/obo/FOODON_00001873>, <http://www.owl-ontologies.com/Ontology1184060740.owl#Spread>, <http://purl.obolibrary.org/obo/CO_321_0000064>, <http://cerrado.linkeddata.es/ecology/fire#FireSpread>, <http://purl.jp/bio/4/id/200906008971755625>, <http://purl.bioontology.org/ontology/SNMI/G-A665>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Spread>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C65126>, <http://purl.bioontology.org/ontology/SNOMEDCT/410677005>, <http://purl.bioontology.org/ontology/RCD/X75Ww>, <http://sweetontology.net/propFunction/Spread>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C61404>, <http://sbmi.uth.tmc.edu/ontology/ochv#C0332261> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/c74700beadcf93075f3bcfb30142847acb84ef26> ;
@@ -842,8 +762,6 @@
 <http://ns.inria.fr/issa/ann/9a58ddc9cfd5ce79ed0cc8848200b2897c5d18be>
   a oa:Annotation, prov:Entity ;
   rdfs:label "named entity 'REAL-TIME PCR '" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceNCBOAnnotator> ;
   oa:hasBody <http://www.bioassayontology.org/bao#BAO_0002084> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/9a58ddc9cfd5ce79ed0cc8848200b2897c5d18be> ;
@@ -862,8 +780,6 @@
 <http://ns.inria.fr/issa/ann/5a0641f0b564640377fe390c7b549f20b80f35b4>
   a prov:Entity, oa:Annotation ;
   rdfs:label "named entity 'IDENTIFIED'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceNCBOAnnotator> ;
   oa:hasBody <http://purl.bioontology.org/ontology/LNC/LP29257-0>, <http://purl.bioontology.org/ontology/HL7/C1550043>, <http://purl.bioontology.org/ontology/HL7/C0205396>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C25737>, <http://purl.obolibrary.org/obo/TRAK_0001499>, <http://sbmi.uth.tmc.edu/ontology/ochv#20560>, <http://purl.bioontology.org/ontology/SNMI/G-A611>, <http://sbmi.uth.tmc.edu/ontology/ochv#C0205396>, <http://purl.obolibrary.org/obo/NCIT_C25737>, <http://purl.bioontology.org/ontology/SNOMEDCT/7882003> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/5a0641f0b564640377fe390c7b549f20b80f35b4> ;
@@ -872,8 +788,6 @@
 <http://ns.inria.fr/issa/ann/62b9f4b367b5e4c4c889cd5a94410fbbec0bb67c>
   a oa:Annotation, prov:Entity ;
   rdfs:label "named entity 'EXPECTED'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceNCBOAnnotator> ;
   oa:hasBody <http://purl.obolibrary.org/obo/NCIT_C25501>, <http://purl.bioontology.org/ontology/HL7/C1517001>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C25501> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/62b9f4b367b5e4c4c889cd5a94410fbbec0bb67c> ;
@@ -882,8 +796,6 @@
 <http://ns.inria.fr/issa/ann/ae28bd2b2898dee2fd43d5d3401cddbfe8e743a0>
   a prov:Entity, oa:Annotation ;
   rdfs:label "named entity 'CLINICAL'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceNCBOAnnotator> ;
   oa:hasBody <http://purl.obolibrary.org/obo/NCIT_C25398>, <http://purl.bioontology.org/ontology/SNOMEDCT/58147004>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C25398>, <http://purl.obolibrary.org/obo/GSSO_006258>, <http://sbmi.uth.tmc.edu/ontology/ochv#20405>, <http://purl.bioontology.org/ontology/SNMI/G-A304>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C96111>, <http://sbmi.uth.tmc.edu/ontology/ochv#C0205210> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/ae28bd2b2898dee2fd43d5d3401cddbfe8e743a0> ;
@@ -926,8 +838,6 @@
 <http://ns.inria.fr/issa/ann/496f0756500225fd4d9e710e7f07fdf630e14aea>
   a prov:Entity, oa:Annotation ;
   rdfs:label "named entity 'POSITIVE'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceNCBOAnnotator> ;
   oa:hasBody <http://data.doremus.org/vocabulary/iaml/mop/kor>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C150473>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C148282>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C153241>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C153243>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C15175>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C154159>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C15492>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C15496>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C158072>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C159159>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C160359>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C160369>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C160320>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C160372>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C160411>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C160585>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C160480>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C160573>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C160574>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C162042>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C162043>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C25246>, <http://sbmi.uth.tmc.edu/ontology/ochv#20358>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C113772>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C107579>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C118396>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C128554>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C128813>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C129264>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C129632>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C138942>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C148041>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C36659>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C36638>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C38758>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C41361>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C39877>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C41381>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C43532>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C45934>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C46005>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C79122>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C79099>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C82366>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C81172>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C153562>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C84273>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C89713>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C89714>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C94297>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C96866>, <http://purl.bioontology.org/ontology/HL7/C1514241>, <http://purl.bioontology.org/ontology/LNC/LA6576-8>, <http://purl.bioontology.org/ontology/LNC/LP21065-5>, <http://www.co-ode.org/ontologies/amino-acid/2006/05/18/amino-acid.owl#Positive>, <http://purl.bioontology.org/ontology/RCD/X80xp>, <http://purl.bioontology.org/ontology/RCTV2/9c30.00>, <http://purl.obolibrary.org/obo/PATO_0002195>, <http://purl.bioontology.org/ontology/SNMI/G-A200>, <http://www.owl-ontologies.com/Ontology1172270693.owl#Positive>, <http://purl.bioontology.org/ontology/SNOMEDCT/10828004>, <http://www.semanticweb.org/david/ontologies/2013/0/pathLex.owl#1.3.6.1.4.1.19376.1.8.2.1.1931>, <http://purl.obolibrary.org/obo/TRAK_0000661>, <http://radlex.org/RID/RID49898>, <http://purl.obolibrary.org/obo/NCIT_C25246>, <http://www.limics.fr/ontologies/ontoparonnoy#Positif>, <http://semanticscience.org/resource/Positive>, <http://semanticscience.org/resource/SIO_001210>, <http://sbmi.uth.tmc.edu/ontology/ochv#C0205159> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/496f0756500225fd4d9e710e7f07fdf630e14aea> ;
@@ -952,8 +862,6 @@
 <http://ns.inria.fr/issa/ann/10f59ef2aa16ae36342def4ba1d5e38cac0ff882>
   a prov:Entity, oa:Annotation ;
   rdfs:label "named entity 'AMPLIFICATION'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceNCBOAnnotator> ;
   oa:hasBody <https://w3id.org/reproduceme#Amplification>, <http://www.projecthalo.com/aura#Amplification>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C45581>, <http://jermontology.org/ontology/JERMOntology#Amplification>, <http://purl.allotrope.org/ontologies/quality#AFQ_0000201>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C20589>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C25418> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/10f59ef2aa16ae36342def4ba1d5e38cac0ff882> ;
@@ -962,8 +870,6 @@
 <http://ns.inria.fr/issa/ann/41e102b7e899a56bd811949a79e9a5cb53b02b58>
   a oa:Annotation, prov:Entity ;
   rdfs:label "named entity 'RESULTS'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceNCBOAnnotator> ;
   oa:hasBody <http://purl.obolibrary.org/obo/IAO_0000318>, <http://www.owl-ontologies.com/assert.owl#Results> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/41e102b7e899a56bd811949a79e9a5cb53b02b58> ;
@@ -972,8 +878,6 @@
 <http://ns.inria.fr/issa/ann/1ce5eda0976f5f8ef85a745e60ab0e6d40b64b46>
   a oa:Annotation, prov:Entity ;
   rdfs:label "named entity 'CASES'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceNCBOAnnotator> ;
   oa:hasBody <http://purl.bioontology.org/ontology/SNOMEDCT/398241000>, <http://sbmi.uth.tmc.edu/ontology/ochv#C0868928>, <http://purl.bioontology.org/ontology/LNC/MTHU059010>, <http://purl.bioontology.org/ontology/LNC/LP270144-1>, <http://sbmi.uth.tmc.edu/ontology/ochv#50944> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/1ce5eda0976f5f8ef85a745e60ab0e6d40b64b46> ;
@@ -982,8 +886,6 @@
 <http://ns.inria.fr/issa/ann/f98c12fd0e120b7d88d5c354115ded486c731fd1>
   a prov:Entity, oa:Annotation ;
   rdfs:label "named entity 'FUTURE'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceNCBOAnnotator> ;
   oa:hasBody <http://ontology.apa.org/apaonto/termsonlyOUT%20(5).owl#Future>, <http://www.icn.ch/icnp#Future>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C67527>, <http://purl.obolibrary.org/obo/NCIT_C67527>, <http://www.co-ode.org/ontologies/galen#future>, <http://sbmi.uth.tmc.edu/ontology/ochv#5306>, <http://sbmi.uth.tmc.edu/ontology/ochv#C0016884> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/f98c12fd0e120b7d88d5c354115ded486c731fd1> ;
@@ -1006,8 +908,6 @@
 <http://ns.inria.fr/issa/ann/115b5e441a8fe3127a6a785c61e68e33258d31ba>
   a oa:Annotation, prov:Entity ;
   rdfs:label "named entity 'CONFIRMED BY'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceNCBOAnnotator> ;
   oa:hasBody <http://purl.bioontology.org/ontology/SNOMEDCT/59156000>, <http://purl.bioontology.org/ontology/SNMI/G-0054> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/115b5e441a8fe3127a6a785c61e68e33258d31ba> ;
@@ -1016,8 +916,6 @@
 <http://ns.inria.fr/issa/ann/1f99f3f9744440a3f065cc1343763015552d77fb>
   a prov:Entity, oa:Annotation ;
   rdfs:label "named entity 'STEP'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceNCBOAnnotator> ;
   oa:hasBody <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C81011>, <http://sweetontology.net/reprMathFunction/Step>, <http://purl.bioontology.org/ontology/SNOMEDCT/398298007>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C47882>, <http://purl.org/twc/HHEAR_00477>, <http://sbmi.uth.tmc.edu/ontology/ochv#C1261552>, <http://purl.obolibrary.org/obo/TRAK_0000194>, <http://sbmi.uth.tmc.edu/ontology/ochv#56496>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C48176>, <http://purl.obolibrary.org/obo/PR_000013460>, <http://purl.obolibrary.org/obo/NGS_0000073>, <http://purl.obolibrary.org/obo/NCIT_C48176>, <http://purl.obolibrary.org/obo/OGG_3000084867>, <http://purl.obolibrary.org/obo/OGG_3000019259>, <http://purl.org/net/p-plan#Step>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16154>, <http://identifiers.org/uniprot/P54829>, <http://identifiers.org/uniprot/P54830>, <http://identifiers.org/uniprot/P35234>, <http://identifiers.org/ncbigene/84867>, <http://www.co-ode.org/ontologies/ont.owl#Step>, <https://ai-strategies.org/ontology/ITO_12245>, <http://identifiers.org/ncbigene/29644>, <http://identifiers.org/ncbigene/19259>, <http://hadatac.org/ont/chear#Step> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/1f99f3f9744440a3f065cc1343763015552d77fb> ;
@@ -1026,8 +924,6 @@
 <http://ns.inria.fr/issa/ann/9d82b22a93e995d10ee6bea40f19aa3bb004a9fb>
   a oa:Annotation, prov:Entity ;
   rdfs:label "named entity 'ASSOCIATED WITH'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceNCBOAnnotator> ;
   oa:hasBody <http://sbmi.uth.tmc.edu/ontology/ochv#29390>, <http://purl.org/obo/owl/PATO#PATO_0001668>, <http://purl.bioontology.org/ontology/RCD/Xa4CO>, <http://purl.bioontology.org/ontology/SNMI/G-C002>, <http://purl.bioontology.org/ontology/SNOMEDCT/47429007>, <http://purl.obolibrary.org/obo/PATO_0001668> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/9d82b22a93e995d10ee6bea40f19aa3bb004a9fb> ;
@@ -1036,8 +932,6 @@
 <http://ns.inria.fr/issa/ann/c59a1114b50496223fbebeb6945bdf24423a7ca3>
   a oa:Annotation, prov:Entity ;
   rdfs:label "named entity 'VIRAL CULTURE'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceNCBOAnnotator> ;
   oa:hasBody <http://sbmi.uth.tmc.edu/ontology/ochv#C0200955>, <http://sbmi.uth.tmc.edu/ontology/ochv#19868>, <http://purl.bioontology.org/ontology/SNOMEDCT/12717000>, <http://purl.bioontology.org/ontology/RCD/X77ba> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/c59a1114b50496223fbebeb6945bdf24423a7ca3> ;
@@ -1082,8 +976,6 @@
 <http://ns.inria.fr/issa/ann/b6d3184e73391cb166c1948f8270ba451120bbda>
   a prov:Entity, oa:Annotation ;
   rdfs:label "named entity 'PRECEDED'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceNCBOAnnotator> ;
   oa:hasBody <http://sbmi.uth.tmc.edu/ontology/ochv#29310> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/b6d3184e73391cb166c1948f8270ba451120bbda> ;
@@ -1096,8 +988,6 @@
 <http://ns.inria.fr/issa/ann/6e3191b223a86cc9486258931af34fbd89a7a25c>
   a oa:Annotation, prov:Entity ;
   rdfs:label "named entity '120'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceNCBOAnnotator> ;
   oa:hasBody <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16379>, <http://purl.bioontology.org/ontology/RCD/wx00Z>, <http://purl.bioontology.org/ontology/SNOMEDCT/732474002> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/6e3191b223a86cc9486258931af34fbd89a7a25c> ;
@@ -1116,8 +1006,6 @@
 <http://ns.inria.fr/issa/ann/ef04c85837d981e3367d20d9f9e0202ac5cc72f7>
   a oa:Annotation, prov:Entity ;
   rdfs:label "named entity 'SARS'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceNCBOAnnotator> ;
   oa:hasBody <http://sbmi.uth.tmc.edu/ontology/ochv#55815>, <http://identifiers.org/ncbigene/266975>, <http://identifiers.org/ncbigene/20226>, <http://identifiers.org/ncbigene/54938>, <http://www.semanticweb.org/BiPON/BiPON_00000256>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C112432>, <http://purl.bioontology.org/ontology/LNC/LP71047-2>, <http://purl.obolibrary.org/obo/NCBITaxon_694009>, <http://purl.bioontology.org/ontology/LNC/LA10504-1>, <http://purl.obolibrary.org/obo/PR_P26638>, <http://purl.obolibrary.org/obo/PR_Q2G1N7>, <http://purl.obolibrary.org/obo/PR_P49591>, <http://purl.obolibrary.org/obo/PR_Q6P799>, <http://purl.obolibrary.org/obo/PR_Q6DRC0>, <http://purl.bioontology.org/ontology/MEDDRA/10061986>, <http://purl.obolibrary.org/obo/PR_000014459>, <http://purl.obolibrary.org/obo/OGG_3000006301>, <http://purl.obolibrary.org/obo/OGG_3000020226>, <http://purl.obolibrary.org/obo/OGG_3000054938>, <http://localhost/plosthes.2017-1#7895>, <http://identifiers.org/ncbigene/6301> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/ef04c85837d981e3367d20d9f9e0202ac5cc72f7> ;
@@ -1140,8 +1028,6 @@
 <http://ns.inria.fr/issa/ann/88acee9ce4dad8a1f187a7fc69c9e83a611afdd1>
   a prov:Entity, oa:Annotation ;
   rdfs:label "named entity 'CONTROL'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceNCBOAnnotator> ;
   oa:hasBody <http://purl.obolibrary.org/obo/GSSO_000805>, <http://purl.bioontology.org/ontology/RCD/X75Nw>, <http://www.biopax.org/release/biopax-level3.owl#Control>, <http://purl.allotrope.org/ontologies/role#AFRL_0000253>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C28143>, <http://sbmi.uth.tmc.edu/ontology/ochv#28321>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C142703>, <http://purl.bioontology.org/ontology/LNC/LP7741-4>, <https://w3id.org/hso#HSO_0000278>, <http://www.ebi.ac.uk/efo/EFO_0001461>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C99270>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#Control>, <http://www.semanticweb.org/ontologies/2012/0/Ontology1325521724189.owl#Control>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C61299>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C64355>, <http://purl.bioontology.org/ontology/SNOMEDCT/246106000>, <http://purl.obolibrary.org/obo/NCIT_C61299>, <http://scai.fraunhofer.de/CSEO#Control>, <http://purl.jp/bio/4/id/200906091579230314>, <http://sbmi.uth.tmc.edu/ontology/ochv#C0308718>, <http://childhealthservicemodels.eu/asthma#MOCHA-Asthma_000081>, <http://neuromorpho.org/ontologies/experimentconditionH.owl#NMOOt_236>, <http://purl.bioontology.org/ontology/SNMI/C-D2243>, <http://purl.obolibrary.org/obo/SBO_0000168> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/88acee9ce4dad8a1f187a7fc69c9e83a611afdd1> ;
@@ -1150,8 +1036,6 @@
 <http://ns.inria.fr/issa/ann/b120ce73344ac4aca1a1e4a61c006f0f1b81302e>
   a prov:Entity, oa:Annotation ;
   rdfs:label "named entity 'HELP'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceNCBOAnnotator> ;
   oa:hasBody <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C89271>, <http://www.ebi.ac.uk/swo/SWO_0000213>, <http://purl.bioontology.org/ontology/HL7/C1552861>, <http://www.limics.fr/ontologies/ontoparonnoy#Aider>, <http://edamontology.org/topic_3061> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/b120ce73344ac4aca1a1e4a61c006f0f1b81302e> ;
@@ -1160,8 +1044,6 @@
 <http://ns.inria.fr/issa/ann/ca66dce27dd17f489167b4c307c37fafba856965>
   a prov:Entity, oa:Annotation ;
   rdfs:label "named entity 'TO DETECT'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceNCBOAnnotator> ;
   oa:hasBody <http://purl.allotrope.org/ontologies/function#AFFN_0000037> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/ca66dce27dd17f489167b4c307c37fafba856965> ;
@@ -1188,8 +1070,6 @@
 <http://ns.inria.fr/issa/ann/87ccf3c5281a12f4f5fb40a8a31259de445314e7>
   a oa:Annotation, prov:Entity ;
   rdfs:label "named entity 'HIGHER'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceNCBOAnnotator> ;
   oa:hasBody <http://uri.interlex.org/tgbugs/uris/readable/HigherExpression>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C25227>, <http://purl.obolibrary.org/obo/NCIT_C25227> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/87ccf3c5281a12f4f5fb40a8a31259de445314e7> ;
@@ -1216,8 +1096,6 @@
 <http://ns.inria.fr/issa/ann/fb0fadc9198ada6e58ff8494c39c55146074ca51>
   a prov:Entity, oa:Annotation ;
   rdfs:label "named entity 'agarose gel electrophoresis'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceDBpSpotlight> ;
   oa:hasBody <http://dbpedia.org/resource/Agarose_gel_electrophoresis> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/fb0fadc9198ada6e58ff8494c39c55146074ca51> ;
@@ -1236,8 +1114,6 @@
 <http://ns.inria.fr/issa/ann/4beb893606ec93c21594792725d0275e6c68e84a>
   a oa:Annotation, prov:Entity ;
   rdfs:label "named entity 'SARS-CoV'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceDBpSpotlight> ;
   oa:hasBody <http://dbpedia.org/resource/Severe_acute_respiratory_syndrome-related_coronavirus> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/4beb893606ec93c21594792725d0275e6c68e84a> ;
@@ -1247,8 +1123,6 @@
 <http://ns.inria.fr/issa/ann/87b737b7a5b8b5c22b2b705956b9073fc9992ff7>
   a oa:Annotation, prov:Entity ;
   rdfs:label "named entity 'fluorescent'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceDBpSpotlight> ;
   oa:hasBody <http://dbpedia.org/resource/Fluorophore> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/87b737b7a5b8b5c22b2b705956b9073fc9992ff7> ;
@@ -1280,8 +1154,6 @@
 <http://ns.inria.fr/issa/ann/ff00dabcba0794c0e822fd9410081e0f8700a761>
   a prov:Entity, oa:Annotation ;
   rdfs:label "named entity 'detection'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceDBpSpotlight> ;
   oa:hasBody <http://dbpedia.org/resource/Thermography> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/ff00dabcba0794c0e822fd9410081e0f8700a761> ;
@@ -1308,8 +1180,6 @@
 <http://ns.inria.fr/issa/ann/a14da19a536428d7216d42da268f8200aabb9958>
   a oa:Annotation, prov:Entity ;
   rdfs:label "named entity 'PCR'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceDBpSpotlight> ;
   oa:hasBody <http://dbpedia.org/resource/Polymerase_chain_reaction> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/a14da19a536428d7216d42da268f8200aabb9958> ;
@@ -1361,8 +1231,6 @@
 <http://ns.inria.fr/issa/ann/68c3370330e23fa7ae10acd62ed3bb8db3f69dd1>
   a prov:Entity, oa:Annotation ;
   rdfs:label "named entity 'TaqMan'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   dct:subject "Chemistry" ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceEF> ;
   oa:hasBody <http://www.wikidata.org/entity/Q7684883> ;
@@ -1382,8 +1250,6 @@
 <http://ns.inria.fr/issa/ann/4915c9e3f6b28c15295274dece3673d8e12a738d>
   a oa:Annotation, prov:Entity ;
   rdfs:label "named entity 'polymerase chain reaction'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   dct:subject "Biology", "Engineering" ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceEF> ;
   oa:hasBody <http://www.wikidata.org/entity/Q176996> ;
@@ -1407,8 +1273,6 @@
 <http://ns.inria.fr/issa/ann/36d18e811acff176af353fc01b642c0dbb7608c7>
   a prov:Entity, oa:Annotation ;
   rdfs:label "named entity 'SARS-CoV'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   dct:subject "Biology" ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceEF> ;
   oa:hasBody <http://www.wikidata.org/entity/Q85438966> ;
@@ -1426,8 +1290,6 @@
 <http://ns.inria.fr/issa/ann/9527e02f5e9cd8c463fc71faffb7290483e76f37>
   a oa:Annotation, prov:Entity ;
   rdfs:label "named entity 'SARS-CoV'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   dct:subject "Biology" ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceEF> ;
   oa:hasBody <http://www.wikidata.org/entity/Q85438966> ;
@@ -1447,8 +1309,6 @@
 <http://ns.inria.fr/issa/ann/fd5465a1a702e399cb1e74c17f83cd9c488c7fed>
   a oa:Annotation, prov:Entity ;
   rdfs:label "named entity 'fluorescent'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   dct:subject "Biology", "Engineering", "Chemistry" ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceEF> ;
   oa:hasBody <http://www.wikidata.org/entity/Q191807> ;
@@ -1458,8 +1318,6 @@
 <http://ns.inria.fr/issa/ann/e372b9496805f5dcbec72b663e1625f23fe9aa09>
   a prov:Entity, oa:Annotation ;
   rdfs:label "named entity 'agarose gel electrophoresis'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   dct:subject "Biology" ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceEF> ;
   oa:hasBody <http://www.wikidata.org/entity/Q903395> ;
@@ -1469,8 +1327,6 @@
 <http://ns.inria.fr/issa/ann/cba5b4a7c038615a30c93949f6d42598f44e8116>
   a oa:Annotation, prov:Entity ;
   rdfs:label "named entity 'real-time PCR'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   dct:subject "Chemistry" ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceEF> ;
   oa:hasBody <http://www.wikidata.org/entity/Q856198> ;
@@ -1480,8 +1336,6 @@
 <http://ns.inria.fr/issa/ann/6fec7b37b16ea1aadef292068763bdc5a37c01d2>
   a prov:Entity, oa:Annotation ;
   rdfs:label "named entity 'Results'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceDBpSpotlight> ;
   oa:hasBody <http://dbpedia.org/resource/2007_Belgian_federal_election> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/6fec7b37b16ea1aadef292068763bdc5a37c01d2> ;
@@ -1517,8 +1371,6 @@
 <http://ns.inria.fr/issa/ann/ca0b91318b010a04cc180b8000789545152480ea>
   a prov:Entity, oa:Annotation ;
   rdfs:label "named entity 'assay'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   dct:subject "Biology", "Chemistry", "Engineering" ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceEF> ;
   oa:hasBody <http://www.wikidata.org/entity/Q739897> ;
@@ -1532,8 +1384,6 @@
 <http://ns.inria.fr/issa/ann/27124474d0d92d89c31fb331424775ad98a474a4>
   a oa:Annotation, prov:Entity ;
   rdfs:label "named entity 'TaqMan'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   dct:subject "Chemistry" ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceEF> ;
   oa:hasBody <http://www.wikidata.org/entity/Q7684883> ;
@@ -1547,8 +1397,6 @@
 <http://ns.inria.fr/issa/ann/ba6d3c10e785ffe39e130abb26fbdae9ce27c094>
   a oa:Annotation, prov:Entity ;
   rdfs:label "named entity 'real-time PCR'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   dct:subject "Chemistry" ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceEF> ;
   oa:hasBody <http://www.wikidata.org/entity/Q856198> ;
@@ -1574,8 +1422,6 @@
 <http://ns.inria.fr/issa/ann/5132052189ad80ee150f0b9a6c826d8f3d714a80>
   a prov:Entity, oa:Annotation ;
   rdfs:label "named entity 'PCR'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   dct:subject "Engineering", "Biology" ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceEF> ;
   oa:hasBody <http://www.wikidata.org/entity/Q176996> ;
@@ -1627,8 +1473,6 @@
 <http://ns.inria.fr/issa/ann/53c99597c92321ffd2833c957b743fd62de18e85>
   a oa:Annotation, prov:Entity ;
   rdfs:label "named entity 'SARS'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   dct:subject "Animal_Husbandry", "Health", "Animals", "Medicine", "Biology" ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceEF> ;
   oa:hasBody <http://www.wikidata.org/entity/Q103177> ;
@@ -1646,8 +1490,6 @@
 <http://ns.inria.fr/issa/ann/4a300825d1e7e1e06776fcca7ed0bedc180c201d>
   a prov:Entity, oa:Annotation ;
   rdfs:label "named entity 'TaqMan'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   dct:subject "Chemistry" ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceEF> ;
   oa:hasBody <http://www.wikidata.org/entity/Q7684883> ;
@@ -1657,8 +1499,6 @@
 <http://ns.inria.fr/issa/ann/cf9984388ce4ec4cd4f357e3b445e09bb0aaf7de>
   a oa:Annotation, prov:Entity ;
   rdfs:label "named entity 'real-time PCR'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   dct:subject "Chemistry" ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceEF> ;
   oa:hasBody <http://www.wikidata.org/entity/Q856198> ;
@@ -1674,8 +1514,6 @@
 <http://ns.inria.fr/issa/ann/8d496813eafdc1c3216b405dc5e8abafedf04d83>
   a prov:Entity, oa:Annotation ;
   rdfs:label "named entity 'real-time PCR'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   dct:subject "Chemistry" ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceEF> ;
   oa:hasBody <http://www.wikidata.org/entity/Q856198> ;
@@ -1685,8 +1523,6 @@
 <http://ns.inria.fr/issa/ann/ee37b72fe8b19c3f7856001139008e47df59ede1>
   a oa:Annotation, prov:Entity ;
   rdfs:label "named entity 'assay'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   dct:subject "Engineering", "Chemistry", "Biology" ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceEF> ;
   oa:hasBody <http://www.wikidata.org/entity/Q739897> ;
@@ -1696,8 +1532,6 @@
 <http://ns.inria.fr/issa/ann/c19d2326aa6f56078b022cf70d0d6c42388c8907>
   a prov:Entity, oa:Annotation ;
   rdfs:label "named entity 'real-time PCR'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceDBpSpotlight> ;
   oa:hasBody <http://dbpedia.org/resource/Real-time_polymerase_chain_reaction> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/c19d2326aa6f56078b022cf70d0d6c42388c8907> ;
@@ -1752,8 +1586,6 @@
 <http://ns.inria.fr/issa/ann/b1b1e759cfa22ce42481f135cd1b1befd7fcd940>
   a oa:Annotation, prov:Entity ;
   rdfs:label "named entity 'viral culture'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   dct:subject "Biology" ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceEF> ;
   oa:hasBody <http://www.wikidata.org/entity/Q808> ;
@@ -1767,8 +1599,6 @@
 <http://ns.inria.fr/issa/ann/2a6737a896ff09b011e366c7ed9cab9f028ae456>
   a prov:Entity, oa:Annotation ;
   rdfs:label "named entity 'spread of the disease'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   dct:subject "Medicine" ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceEF> ;
   oa:hasBody <http://www.wikidata.org/entity/Q181876> ;
@@ -1808,8 +1638,6 @@
 <http://ns.inria.fr/issa/ann/7a527735b5e814a63f958493dc637245bf3d77b8>
   a prov:Entity, oa:Annotation ;
   rdfs:label "named entity 'target gene'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   dct:subject "Engineering", "Health", "Biology" ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceEF> ;
   oa:hasBody <http://www.wikidata.org/entity/Q211083> ;
@@ -1839,8 +1667,6 @@
 <http://ns.inria.fr/issa/ann/f623ff8206fa490b7c0323671be049dc74aafbb1>
   a prov:Entity, oa:Annotation ;
   rdfs:label "named entity 'PCR'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   dct:subject "Engineering", "Biology" ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceEF> ;
   oa:hasBody <http://www.wikidata.org/entity/Q176996> ;
@@ -1850,8 +1676,6 @@
 <http://ns.inria.fr/issa/ann/64a27e39b4d5d8863c5b5f5d7bd0cf8e5b2c534a>
   a oa:Annotation, prov:Entity ;
   rdfs:label "named entity 'limit of detection'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   dct:subject "Chemistry" ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceEF> ;
   oa:hasBody <http://www.wikidata.org/entity/Q900165> ;
@@ -1873,8 +1697,6 @@
 <http://ns.inria.fr/issa/ann/9265d85537e3bf4e9d20d67317934ed1bb5c11ba>
   a oa:Annotation, prov:Entity ;
   rdfs:label "named entity '3/28'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   dct:subject "Military", "Transport", "Administration", "Nautical" ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceEF> ;
   oa:hasBody <http://www.wikidata.org/entity/Q4636680> ;
@@ -1900,8 +1722,6 @@
 <http://ns.inria.fr/issa/ann/d03b042fffc6594187291c1d64877e1b91bdd2f0>
   a prov:Entity, oa:Annotation ;
   rdfs:label "named entity 'SARS'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   dct:subject "Medicine", "Animals", "Health", "Animal_Husbandry", "Biology" ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceEF> ;
   oa:hasBody <http://www.wikidata.org/entity/Q103177> ;
@@ -1931,8 +1751,6 @@
 <http://ns.inria.fr/issa/ann/5b0fb16f8ada5b0596e7e6c3f5b302764972b6b9>
   a prov:Entity, oa:Annotation ;
   rdfs:label "named entity 'SARS-CoV'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   dct:subject "Biology" ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceEF> ;
   oa:hasBody <http://www.wikidata.org/entity/Q85438966> ;
@@ -1952,8 +1770,6 @@
 <http://ns.inria.fr/issa/ann/88747985b4baae016ab72157f4bc356f12a00400>
   a prov:Entity, oa:Annotation ;
   rdfs:label "named entity 'PCR'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   dct:subject "Biology", "Engineering" ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceEF> ;
   oa:hasBody <http://www.wikidata.org/entity/Q176996> ;
@@ -1973,8 +1789,6 @@
 <http://ns.inria.fr/issa/ann/dda86dc7070848da3fddba752cf46503a4a14b44>
   a oa:Annotation, prov:Entity ;
   rdfs:label "named entity 'PCR'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   dct:subject "Biology", "Engineering" ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceEF> ;
   oa:hasBody <http://www.wikidata.org/entity/Q176996> ;
@@ -1994,8 +1808,6 @@
 <http://ns.inria.fr/issa/ann/51b42903ea45962283bc9a070d9fae14170c95a5>
   a prov:Entity, oa:Annotation ;
   rdfs:label "named entity 'coronavirus'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   dct:subject "Animals", "Health", "Medicine", "Animal_Husbandry" ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceEF> ;
   oa:hasBody <http://www.wikidata.org/entity/Q82069695> ;
@@ -2005,8 +1817,6 @@
 <http://ns.inria.fr/issa/ann/781f1e400533b60b5c4025b77ff5c2ddd702463a>
   a oa:Annotation, prov:Entity ;
   rdfs:label "named entity 'real-time PCR'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   dct:subject "Chemistry" ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceEF> ;
   oa:hasBody <http://www.wikidata.org/entity/Q856198> ;
@@ -2024,8 +1834,6 @@
 <http://ns.inria.fr/issa/ann/7c24e9855f25d62a1d48d832615a95eeb2edac9f>
   a prov:Entity, oa:Annotation ;
   rdfs:label "named entity 'severe acute respiratory syndrome'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   dct:subject "Animal_Husbandry", "Health", "Biology", "Medicine", "Animals" ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceEF> ;
   oa:hasBody <http://www.wikidata.org/entity/Q103177> ;
@@ -2043,8 +1851,6 @@
 <http://ns.inria.fr/issa/ann/166ab7d88929f359f3c7105f11077e03ee0d700b>
   a oa:Annotation, prov:Entity ;
   rdfs:label "named entity 'PCR'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   dct:subject "Engineering", "Biology" ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceEF> ;
   oa:hasBody <http://www.wikidata.org/entity/Q176996> ;
@@ -2060,8 +1866,6 @@
 <http://ns.inria.fr/issa/ann/e8a658a66b5af97677ea96cd72c3ce447a2ffe82>
   a prov:Entity, oa:Annotation ;
   rdfs:label "named entity 'assay'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   dct:subject "Biology", "Chemistry", "Engineering" ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceEF> ;
   oa:hasBody <http://www.wikidata.org/entity/Q739897> ;
@@ -2071,8 +1875,6 @@
 <http://ns.inria.fr/issa/ann/40b7d272aed6e938c99e8250add9f5ab82621a91>
   a prov:Entity, oa:Annotation ;
   rdfs:label "named entity 'real-time PCR'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   dct:subject "Chemistry" ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceEF> ;
   oa:hasBody <http://www.wikidata.org/entity/Q856198> ;
@@ -2082,8 +1884,6 @@
 <http://ns.inria.fr/issa/ann/39702ecfd3f11c9755930b61809a7ca443860050>
   a oa:Annotation, prov:Entity ;
   rdfs:label "named entity 'amplicon'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   dct:subject "Biology", "Engineering" ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceEF> ;
   oa:hasBody <http://www.wikidata.org/entity/Q2844457> ;
@@ -2093,8 +1893,6 @@
 <http://ns.inria.fr/issa/ann/6a8da170fbe8b8167429bdd46b8006d452366114>
   a oa:Annotation, prov:Entity ;
   rdfs:label "named entity 'assay'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceDBpSpotlight> ;
   oa:hasBody <http://dbpedia.org/resource/Assay> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/6a8da170fbe8b8167429bdd46b8006d452366114> ;
@@ -2126,8 +1924,6 @@
 <http://ns.inria.fr/issa/ann/e5b840b329c8562f10695552ee146449b3590edf>
   a prov:Entity, oa:Annotation ;
   rdfs:label "named entity 'sensitivity'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceDBpSpotlight> ;
   oa:hasBody <http://dbpedia.org/resource/Sensitivity_and_specificity> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/e5b840b329c8562f10695552ee146449b3590edf> ;
@@ -2164,8 +1960,6 @@
 <http://ns.inria.fr/issa/ann/3260bddd7e81395551619a43ca5f06b10a357b09>
   a oa:Annotation, prov:Entity ;
   rdfs:label "named entity 'positive'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceDBpSpotlight> ;
   oa:hasBody <http://dbpedia.org/resource/Positive_and_negative_predictive_values> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/3260bddd7e81395551619a43ca5f06b10a357b09> ;
@@ -2198,8 +1992,6 @@
 <http://ns.inria.fr/issa/ann/4271d0850ad3a45b955c93a00ae59fd68b2665be>
   a oa:Annotation, prov:Entity ;
   rdfs:label "named entity 'real-time'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceDBpSpotlight> ;
   oa:hasBody <http://dbpedia.org/resource/Real-time_computing> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/4271d0850ad3a45b955c93a00ae59fd68b2665be> ;
@@ -2213,8 +2005,6 @@
 <http://ns.inria.fr/issa/ann/ed87daf6949ab6cf7d9adf9c13df730ca3ef6075>
   a prov:Entity, oa:Annotation ;
   rdfs:label "named entity 'disease'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceDBpSpotlight> ;
   oa:hasBody <http://dbpedia.org/resource/Disease> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/ed87daf6949ab6cf7d9adf9c13df730ca3ef6075> ;
@@ -2248,8 +2038,6 @@
 <http://ns.inria.fr/issa/ann/5a5e6a72f5b8eb580250d3367add497395627c25>
   a oa:Annotation, prov:Entity ;
   rdfs:label "named entity 'TaqMan'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceDBpSpotlight> ;
   oa:hasBody <http://dbpedia.org/resource/TaqMan> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/5a5e6a72f5b8eb580250d3367add497395627c25> ;
@@ -2263,8 +2051,6 @@
 <http://ns.inria.fr/issa/ann/ded3f92e978ea78a5c0bb3954f7ae7ef4a052e68>
   a prov:Entity, oa:Annotation ;
   rdfs:label "named entity 'real-time PCR'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceDBpSpotlight> ;
   oa:hasBody <http://dbpedia.org/resource/Real-time_polymerase_chain_reaction> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/ded3f92e978ea78a5c0bb3954f7ae7ef4a052e68> ;
@@ -2279,8 +2065,6 @@
 <http://ns.inria.fr/issa/ann/302c5559a19bf8a51b3a690a95a2c19f7ee40323>
   a prov:Entity, oa:Annotation ;
   rdfs:label "named entity 'real-time PCR'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceDBpSpotlight> ;
   oa:hasBody <http://dbpedia.org/resource/Real-time_polymerase_chain_reaction> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/302c5559a19bf8a51b3a690a95a2c19f7ee40323> ;
@@ -2318,8 +2102,6 @@
 <http://ns.inria.fr/issa/ann/11c40d5c21b7a4a2a03233cb1bcfc790dde6298f>
   a prov:Entity, oa:Annotation ;
   rdfs:label "named entity 'enhanced'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceDBpSpotlight> ;
   oa:hasBody <http://dbpedia.org/resource/MRI_contrast_agent> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/11c40d5c21b7a4a2a03233cb1bcfc790dde6298f> ;
@@ -2334,8 +2116,6 @@
 <http://ns.inria.fr/issa/ann/67b25a83ee030569666e9bb3803f9a32dda8a14a>
   a oa:Annotation, prov:Entity ;
   rdfs:label "named entity 'TaqMan'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceDBpSpotlight> ;
   oa:hasBody <http://dbpedia.org/resource/TaqMan> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/67b25a83ee030569666e9bb3803f9a32dda8a14a> ;
@@ -2345,8 +2125,6 @@
 <http://ns.inria.fr/issa/ann/6c298990718b8fe1908f30666f0cc9b060909fca>
   a oa:Annotation, prov:Entity ;
   rdfs:label "named entity 'assays'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceDBpSpotlight> ;
   oa:hasBody <http://dbpedia.org/resource/Assay> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/6c298990718b8fe1908f30666f0cc9b060909fca> ;
@@ -2356,8 +2134,6 @@
 <http://ns.inria.fr/issa/ann/cef0cbf84d903c1316b907cfd10df1023dc9f43a>
   a prov:Entity, oa:Annotation ;
   rdfs:label "named entity 'control'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceDBpSpotlight> ;
   oa:hasBody <http://dbpedia.org/resource/Scientific_control> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/cef0cbf84d903c1316b907cfd10df1023dc9f43a> ;
@@ -2367,8 +2143,6 @@
 <http://ns.inria.fr/issa/ann/f4c447cf029a59557f4f422924e7b5d9d6820dd3>
   a oa:Annotation, prov:Entity ;
   rdfs:label "named entity 'expected'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceDBpSpotlight> ;
   oa:hasBody <http://dbpedia.org/resource/Expected_value> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/f4c447cf029a59557f4f422924e7b5d9d6820dd3> ;
@@ -2395,8 +2169,6 @@
 <http://ns.inria.fr/issa/ann/b462e22f978629e435f181e75eddacc4abf99887>
   a prov:Entity, oa:Annotation ;
   rdfs:label "named entity 'real-time PCR'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceDBpSpotlight> ;
   oa:hasBody <http://dbpedia.org/resource/Real-time_polymerase_chain_reaction> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/b462e22f978629e435f181e75eddacc4abf99887> ;
@@ -2424,8 +2196,6 @@
 <http://ns.inria.fr/issa/ann/1e4d4d13a3559634e5535f7c4884e389ac519040>
   a oa:Annotation, prov:Entity ;
   rdfs:label "named entity 'PCR'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceDBpSpotlight> ;
   oa:hasBody <http://dbpedia.org/resource/Polymerase_chain_reaction> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/1e4d4d13a3559634e5535f7c4884e389ac519040> ;
@@ -2439,8 +2209,6 @@
 <http://ns.inria.fr/issa/ann/7fc40b16bbf9566c0bd93f136947a6cda80f4c37>
   a oa:Annotation, prov:Entity ;
   rdfs:label "named entity 'outbreaks'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceDBpSpotlight> ;
   oa:hasBody <http://dbpedia.org/resource/Outbreak> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/7fc40b16bbf9566c0bd93f136947a6cda80f4c37> ;
@@ -2460,8 +2228,6 @@
 <http://ns.inria.fr/issa/ann/115fbc535cf421462a2cd5f053c713d280bfa501>
   a prov:Entity, oa:Annotation ;
   rdfs:label "named entity 'enhanced'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceDBpSpotlight> ;
   oa:hasBody <http://dbpedia.org/resource/MRI_contrast_agent> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/115fbc535cf421462a2cd5f053c713d280bfa501> ;
@@ -2471,8 +2237,6 @@
 <http://ns.inria.fr/issa/ann/505290d7303719f29f0f2c4c8f7fe76e318be923>
   a oa:Annotation, prov:Entity ;
   rdfs:label "named entity 'collected'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceDBpSpotlight> ;
   oa:hasBody <http://dbpedia.org/resource/Data_collection> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/505290d7303719f29f0f2c4c8f7fe76e318be923> ;
@@ -2482,8 +2246,6 @@
 <http://ns.inria.fr/issa/ann/b4582fea939164359a73fbc493ea9d35f85c56d2>
   a oa:Annotation, prov:Entity ;
   rdfs:label "named entity 'SARS-CoV'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceDBpSpotlight> ;
   oa:hasBody <http://dbpedia.org/resource/Severe_acute_respiratory_syndrome-related_coronavirus> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/b4582fea939164359a73fbc493ea9d35f85c56d2> ;
@@ -2493,8 +2255,6 @@
 <http://ns.inria.fr/issa/ann/5a79935b484a83a8d692e9a9a5a957c42e9fe4e6>
   a oa:Annotation, prov:Entity ;
   rdfs:label "named entity 'assay'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceDBpSpotlight> ;
   oa:hasBody <http://dbpedia.org/resource/Assay> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/5a79935b484a83a8d692e9a9a5a957c42e9fe4e6> ;
@@ -2504,8 +2264,6 @@
 <http://ns.inria.fr/issa/ann/1348ea2dc83fc95a099ab56a51285e064eb1a4a9>
   a prov:Entity, oa:Annotation ;
   rdfs:label "named entity 'METHOD'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceNCBOAnnotator> ;
   oa:hasBody <http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Method>, <http://purl.bioontology.org/ontology/SNOMEDCT/260686004>, <http://purl.bioontology.org/ontology/LNC/MTHU024654>, <http://cui.unige.ch/isi/onto/tok/TOK.owl#Method>, <http://w3id.org/ontopbm#OntoPBM_00689>, <http://purl.bioontology.org/ontology/MESH/D008722>, <https://w3id.org/EVI#Method>, <http://purl.bioontology.org/ontology/npo#NPO_1406>, <http://purl.obolibrary.org/obo/ExO_0000090>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C40570>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C71460>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C85492>, <http://purl.bioontology.org/ontology/RCD/X900S>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C82535>, <http://purl.obolibrary.org/obo/ODGI.owl#Method>, <http://purl.obolibrary.org/obo/MIRO_20000000>, <http://nmrML.org/nmrCV#NMR:1400063>, <http://onto.eva.mpg.de/ontologies/gfo-bio.owl#Method>, <http://purl.obolibrary.org/obo/NCIT_C16847>, <https://w3id.org/reproduceme#Method>, <http://www.semanticweb.org/ontologies/2011/7/Ontology1314368515010.owl#Method>, <http://purl.obolibrary.org/obo/NCIT_C71460>, <http://hadatac.org/ont/hasco/Method>, <http://purl.obolibrary.org/obo/OBI_0000272>, <http://sbmi.uth.tmc.edu/ontology/ochv#8041>, <http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C16847>, <http://sbmi.uth.tmc.edu/ontology/ochv#C0025663>, <http://purl.allotrope.org/ontologies/result#AFR_0001501> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/1348ea2dc83fc95a099ab56a51285e064eb1a4a9> ;
@@ -2529,8 +2287,6 @@
 <http://ns.inria.fr/issa/ann/cd74c22368c19da38115b00ee378faa9d1553630>
   a oa:Annotation, prov:Entity ;
   rdfs:label "named entity 'real-time PCR'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceDBpSpotlight> ;
   oa:hasBody <http://dbpedia.org/resource/Real-time_polymerase_chain_reaction> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/cd74c22368c19da38115b00ee378faa9d1553630> ;
@@ -2540,8 +2296,6 @@
 <http://ns.inria.fr/issa/ann/9f72f3f5ad7e280e2b312f85c6004953c363fd53>
   a oa:Annotation, prov:Entity ;
   rdfs:label "named entity 'confirmed'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceDBpSpotlight> ;
   oa:hasBody <http://dbpedia.org/resource/Confirmation> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/9f72f3f5ad7e280e2b312f85c6004953c363fd53> ;
@@ -2575,8 +2329,6 @@
 <http://ns.inria.fr/issa/ann/cc18a17fc3f1eea73943ea2cc4128d3c1bf78d13>
   a oa:Annotation, prov:Entity ;
   rdfs:label "named entity 'probable'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceDBpSpotlight> ;
   oa:hasBody <http://dbpedia.org/resource/Probability> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/cc18a17fc3f1eea73943ea2cc4128d3c1bf78d13> ;
@@ -2586,8 +2338,6 @@
 <http://ns.inria.fr/issa/ann/73bc3bc5deff7dd0028a4afdde49851d284fca59>
   a oa:Annotation, prov:Entity ;
   rdfs:label "named entity 'gene'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceDBpSpotlight> ;
   oa:hasBody <http://dbpedia.org/resource/DNA_sequencing> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/73bc3bc5deff7dd0028a4afdde49851d284fca59> ;
@@ -2619,8 +2369,6 @@
 <http://ns.inria.fr/issa/ann/7b470ee440db108eef02bc9d1808a66f3d08f82d>
   a oa:Annotation, prov:Entity ;
   rdfs:label "named entity 'real-time PCR'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceDBpSpotlight> ;
   oa:hasBody <http://dbpedia.org/resource/Real-time_polymerase_chain_reaction> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/7b470ee440db108eef02bc9d1808a66f3d08f82d> ;
@@ -2630,8 +2378,6 @@
 <http://ns.inria.fr/issa/ann/253dcf8903cc4ac886db6fc78333e111a0d35cdd>
   a prov:Entity, oa:Annotation ;
   rdfs:label "named entity 'developed'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceDBpSpotlight> ;
   oa:hasBody <http://dbpedia.org/resource/Drug_development> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/253dcf8903cc4ac886db6fc78333e111a0d35cdd> ;
@@ -2646,8 +2392,6 @@
 <http://ns.inria.fr/issa/ann/c1971afd4f3c6bc6047d540943e796bab523b43b>
   a prov:Entity, oa:Annotation ;
   rdfs:label "named entity 'PCR'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceDBpSpotlight> ;
   oa:hasBody <http://dbpedia.org/resource/Polymerase_chain_reaction> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/c1971afd4f3c6bc6047d540943e796bab523b43b> ;
@@ -2657,8 +2401,6 @@
 <http://ns.inria.fr/issa/ann/b7a9ebb8df1d171a1ca7ffc48cdbe22a3c6edf3b>
   a prov:Entity, oa:Annotation ;
   rdfs:label "named entity 'enhanced'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceDBpSpotlight> ;
   oa:hasBody <http://dbpedia.org/resource/MRI_contrast_agent> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/b7a9ebb8df1d171a1ca7ffc48cdbe22a3c6edf3b> ;
@@ -2673,8 +2415,6 @@
 <http://ns.inria.fr/issa/ann/d7c50e84a30d3584b23aed73dab2172e82e6ace0>
   a prov:Entity, oa:Annotation ;
   rdfs:label "named entity 'SARS-CoV'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceDBpSpotlight> ;
   oa:hasBody <http://dbpedia.org/resource/Severe_acute_respiratory_syndrome-related_coronavirus> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/d7c50e84a30d3584b23aed73dab2172e82e6ace0> ;
@@ -2698,8 +2438,6 @@
 <http://ns.inria.fr/issa/ann/00dcd1186395cba5a6d6c3ac0986e264ed817167>
   a prov:Entity, oa:Annotation ;
   rdfs:label "named entity 'severe acute respiratory syndrome'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceDBpSpotlight> ;
   oa:hasBody <http://dbpedia.org/resource/Severe_acute_respiratory_syndrome> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/00dcd1186395cba5a6d6c3ac0986e264ed817167> ;
@@ -2723,8 +2461,6 @@
 <http://ns.inria.fr/issa/ann/f9546772e81554a4c9b48ed0a0f119db1dd3d953>
   a prov:Entity, oa:Annotation ;
   rdfs:label "named entity 'enhanced'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceDBpSpotlight> ;
   oa:hasBody <http://dbpedia.org/resource/MRI_contrast_agent> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/f9546772e81554a4c9b48ed0a0f119db1dd3d953> ;
@@ -2734,8 +2470,6 @@
 <http://ns.inria.fr/issa/ann/de57085834565316552fe3ce84c97a8d05e70185>
   a prov:Entity, oa:Annotation ;
   rdfs:label "named entity 'PCR'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceDBpSpotlight> ;
   oa:hasBody <http://dbpedia.org/resource/Polymerase_chain_reaction> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/de57085834565316552fe3ce84c97a8d05e70185> ;
@@ -2745,8 +2479,6 @@
 <http://ns.inria.fr/issa/ann/2f24f4abe30c7d75889e728879ef17fdbb1d1758>
   a oa:Annotation, prov:Entity ;
   rdfs:label "named entity 'future'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceDBpSpotlight> ;
   oa:hasBody <http://dbpedia.org/resource/Future> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/2f24f4abe30c7d75889e728879ef17fdbb1d1758> ;
@@ -2777,8 +2509,6 @@
 <http://ns.inria.fr/issa/ann/ac2157153709c4e5733cbef0817db40a80560746>
   a oa:Annotation, prov:Entity ;
   rdfs:label "named entity 'amplicon'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceDBpSpotlight> ;
   oa:hasBody <http://dbpedia.org/resource/Amplicon> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/ac2157153709c4e5733cbef0817db40a80560746> ;
@@ -2797,8 +2527,6 @@
 <http://ns.inria.fr/issa/ann/456fe8f904cd398581b2b6a4c10fd5759bac344e>
   a prov:Entity, oa:Annotation ;
   rdfs:label "named entity 'chain reaction'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceDBpSpotlight> ;
   oa:hasBody <http://dbpedia.org/resource/Chain_reaction> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/456fe8f904cd398581b2b6a4c10fd5759bac344e> ;
@@ -2816,8 +2544,6 @@
 <http://ns.inria.fr/issa/ann/eb7f5a83124fd960b44b517d6d53f88bbb729b88>
   a prov:Entity, oa:Annotation ;
   rdfs:label "named entity 'PCR'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceDBpSpotlight> ;
   oa:hasBody <http://dbpedia.org/resource/Polymerase_chain_reaction> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/eb7f5a83124fd960b44b517d6d53f88bbb729b88> ;
@@ -2827,8 +2553,6 @@
 <http://ns.inria.fr/issa/ann/159503fcf0b6385af8fbb057aefe45a303e9bb00>
   a prov:Entity, oa:Annotation ;
   rdfs:label "named entity 'coronavirus'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceDBpSpotlight> ;
   oa:hasBody <http://dbpedia.org/resource/Coronavirus> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/159503fcf0b6385af8fbb057aefe45a303e9bb00> ;
@@ -2851,8 +2575,6 @@
 <http://ns.inria.fr/issa/ann/0c44a125a37d04ea3f7aa1db41e6426691b5ecce>
   a oa:Annotation, prov:Entity ;
   rdfs:label "named entity 'target'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceDBpSpotlight> ;
   oa:hasBody <http://dbpedia.org/resource/Biological_target> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/0c44a125a37d04ea3f7aa1db41e6426691b5ecce> ;
@@ -2862,8 +2584,6 @@
 <http://ns.inria.fr/issa/ann/951fb5c6abfd5c2858afac7df7901751d4e946cf>
   a oa:Annotation, prov:Entity ;
   rdfs:label "named entity 'Clinical'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceDBpSpotlight> ;
   oa:hasBody <http://dbpedia.org/resource/Physical_examination> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/951fb5c6abfd5c2858afac7df7901751d4e946cf> ;
@@ -2873,8 +2593,6 @@
 <http://ns.inria.fr/issa/ann/ddda766a3ed49816d50eb8f4b395ca48a47772ab>
   a prov:Entity, oa:Annotation ;
   rdfs:label "named entity 'Conventional'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceDBpSpotlight> ;
   oa:hasBody <http://dbpedia.org/resource/Conventional_warfare> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/ddda766a3ed49816d50eb8f4b395ca48a47772ab> ;
@@ -2884,8 +2602,6 @@
 <http://ns.inria.fr/issa/ann/47219b90548936c7ed359ee8a4e53797d32b7525>
   a prov:Entity, oa:Annotation ;
   rdfs:label "named entity 'patients'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceDBpSpotlight> ;
   oa:hasBody <http://dbpedia.org/resource/Patient> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/47219b90548936c7ed359ee8a4e53797d32b7525> ;
@@ -2895,8 +2611,6 @@
 <http://ns.inria.fr/issa/ann/f6c38411eb21d9a4d4da5386e2eb09c1c5ca5ab1>
   a prov:Entity, oa:Annotation ;
   rdfs:label "named entity 'TaqMan'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceDBpSpotlight> ;
   oa:hasBody <http://dbpedia.org/resource/TaqMan> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/f6c38411eb21d9a4d4da5386e2eb09c1c5ca5ab1> ;
@@ -2906,8 +2620,6 @@
 <http://ns.inria.fr/issa/ann/c7cda100d55ad9b68e011629b042063b08889dfc>
   a prov:Entity, oa:Annotation ;
   rdfs:label "named entity 'size'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceDBpSpotlight> ;
   oa:hasBody <http://dbpedia.org/resource/Particle_size> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/c7cda100d55ad9b68e011629b042063b08889dfc> ;
@@ -2939,8 +2651,6 @@
 <http://ns.inria.fr/issa/ann/6861a841e4b2ac77a3e91295dd65cbb0ed90b1fc>
   a oa:Annotation, prov:Entity ;
   rdfs:label "named entity 'step'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceDBpSpotlight> ;
   oa:hasBody <http://dbpedia.org/resource/Step_function> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/6861a841e4b2ac77a3e91295dd65cbb0ed90b1fc> ;
@@ -2950,8 +2660,6 @@
 <http://ns.inria.fr/issa/ann/506498ebe3021ebab9d443ef55eb5f63e892cdd9>
   a prov:Entity, oa:Annotation ;
   rdfs:label "named entity 'samples'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceDBpSpotlight> ;
   oa:hasBody <http://dbpedia.org/resource/Sputum> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/506498ebe3021ebab9d443ef55eb5f63e892cdd9> ;
@@ -2966,8 +2674,6 @@
 <http://ns.inria.fr/issa/ann/f031e80f270095e58e18418909458669f8e8b773>
   a oa:Annotation, prov:Entity ;
   rdfs:label "named entity 'suspected'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceDBpSpotlight> ;
   oa:hasBody <http://dbpedia.org/resource/Extrajudicial_killing> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/f031e80f270095e58e18418909458669f8e8b773> ;
@@ -2977,8 +2683,6 @@
 <http://ns.inria.fr/issa/ann/ca52b274c39cf9ae7f9f238597a5c10bb6ba919d>
   a oa:Annotation, prov:Entity ;
   rdfs:label "named entity 'samples'" ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
-  dct:creator <https://team.inria.fr/wimmics/> ;
   prov:wasGeneratedBy <http://ns.inria.fr/issa/ProvenanceDBpSpotlight> ;
   oa:hasBody <http://dbpedia.org/resource/Sputum> ;
   oa:hasTarget <http://ns.inria.fr/issa/ann/target/ca52b274c39cf9ae7f9f238597a5c10bb6ba919d> ;

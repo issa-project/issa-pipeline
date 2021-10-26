@@ -12,7 +12,6 @@
 
 <http://ns.inria.fr/issa/03a424083ac2df3789d77211ce7144ef40f37001>
   a schema:ScholarlyArticle, <http://purl.org/spar/fabio/ResearchPaper>, bibo:AcademicArticle ;
-  rdfs:isDefinedBy <http://ns.inria.fr/issa/dataset-1-2> ;
   dct:title "A tissue level atlas of the healthy human virome" ;
   dce:creator "Kumata, Ryuichi", "Suzuki, Tadaki", "Sato, Kei", "Ito, Jumpei", "Takahashi, Kenta" ;
   dct:source "Medline; PMC" ;
