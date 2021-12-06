@@ -1,0 +1,17 @@
+log_enable(3,1);
+SPARQL CLEAR GRAPH  <http://issa-data.cirad.fr/graph/dbpedia-spotlight>;
+SPARQL CLEAR GRAPH  <http://issa-data.cirad.fr/graph/dbpedia-spotlight-nes>;
+SPARQL CLEAR GRAPH  <http://issa-data.cirad.fr/graph/entity-fishing-nes>;
+SPARQL CLEAR GRAPH  <http://issa-data.cirad.fr/graph/articles>;
+
+DELETE FROM DB.DBA.load_list;
+ld_dir ('/database/import', 'issa-articles-metadata_*.ttl', 'http://issa-data.cirad.fr/graph/articles');
+ld_dir ('/database/import', 'issa-articles-fulltext_*.ttl', 'http://issa-data.cirad.fr/graph/articles');
+ld_dir ('/database/import', 'issa-articles-spotlight_*.ttl', 'http://issa-data.cirad.fr/graph/dbpedia-spotlight-nes');
+ld_dir ('/database/import', 'issa-articles-entityfishing_*.ttl', 'http://issa-data.cirad.fr/graph/entity-fishing-nes');
+
+rdf_loader_run ();
+checkpoint;
+SPARQL SELECT DISTINCT ?g WHERE { GRAPH ?g {?s ?p ?o} };
+exit;
+
