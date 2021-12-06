@@ -16,7 +16,6 @@ NOTE: the scripts are run in the contexts of the *mongodb* docker
 TODO: add docker run commands
 
 Uncomment the lines at the end of the `import_issa.sh`script as needed to import datasets.
-It loads the datasets and creates derived collections using the `*.js` files.
 
 Script `import-tools.sh` defines functions to load groups of JSON files into MongoDB.
 
