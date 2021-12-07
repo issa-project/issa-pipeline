@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 # This script instantiates an xR2RML template file and runs Morph-xR2RML
-# to produce the RDF annotations yielded by Entity-Fishing.
+# to produce the RDF annotations yield by Entity-Fishing.
 #
 # Input argument:
 # - arg1: RDF dataset name e.g. "dataset-1-0"
@@ -15,15 +15,14 @@
 # Licensed under the Apache License, Version 2.0 (http://www.apache.org/licenses/LICENSE-2.0)
 
 XR2RML=.
-JAR=$XR2RML/morph-xr2rml-dist-1.3.1-jar-with-dependencies.jar
-
+JAR=$XR2RML/morph-xr2rml-dist-1.3.2-20211126.142114-3-jar-with-dependencies.jar
 
 help()
 {
   exe=$(basename $0)
   echo "Usage: $exe <dataset name> <title|abstract|body_text> <collection> <xR2RML mapping template> <output file name>"
   echo "Example:"
-  echo "   $exe  dataset-1-0  abstract  spotlight  xr2rml_spotlight_tpl.ttl  cord19-nekg-ncbo-abstract.ttl"
+  echo "   $exe  dataset-1-0  abstract  spotlight  xr2rml_spotlight_tpl.ttl  issa-articles-abstract.ttl"
   exit 1
 }
 
@@ -45,8 +44,9 @@ if [[ -z "$output" ]] ; then help; fi
 
 
 # --- Init log file
+CURRENT_TIME=$(date "+%Y%m%d_%H%M%S")
 mkdir $XR2RML/logs &> /dev/null
-log=$XR2RML/logs/run_xr2rml_${collection}_${articlepart}.log
+log=$XR2RML/logs/run_xr2rml_${collection}_${CURRENT_TIME}.log
 echo -n "" > $log
 
 # --- Substitute placeholders in the xR2RML template file
@@ -66,7 +66,7 @@ java -Xmx24g \
      -Dlog4j.configuration=file:$XR2RML/log4j.properties \
      -jar "$JAR" \
      --configDir $XR2RML \
-     --configFile xr2rml.properties \
+     --configFile xr2rml_uriencode.properties \
      --mappingFile $mappingFile \
      --output $output \
      >> $log
