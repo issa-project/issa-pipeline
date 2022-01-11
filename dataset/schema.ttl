@@ -33,6 +33,8 @@ issap:hasAbstract
     rdfs:subPropertyOf      frbr:part;
     rdfs:label              "resource representing a document's abstract";
     dct:description         "Links a work to its abstract";
+    owl:sameAs              dct:abstract;
+    owl:equivalentProperty  dct:abstract;
     .
 
 issap:hasBody
@@ -43,7 +45,9 @@ issap:hasBody
     dct:description         "Links a work to its body, e.g. the main part of a research article";
     .
 
-# --- Annotations custom classes and properties ---
+
+
+# --- Annotations classes and properties ---
 
 issap:confidence
     a                       owl:DatatypeProperty;
@@ -56,7 +60,7 @@ issa:ThematicDesciptorAnnotation
     a                       owl:Class;
     rdfs:subClassOf         oa:Annotation;
     rdfs:label              "thematic descriptor";
-    dct:description         "document's non-geographical Agrovoc descriptor";
+    dct:description         "Document's non-geographical Agrovoc descriptor";
     # How should we link this to Agrovoc?
     .
 
@@ -64,6 +68,6 @@ issa:GeoDesciptorAnnotation
     a                       owl:Class;
     rdfs:subClassOf         oa:Annotation;
     rdfs:label              "geographical descriptor";
-    dct:description         "document's geographical descriptor";
+    dct:description         "Document's geographical descriptor";
     # How should we link this to GeoNames?
     .

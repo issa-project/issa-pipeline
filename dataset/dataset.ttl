@@ -1,68 +1,85 @@
 @prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#>.
 @prefix owl:    <http://www.w3.org/2002/07/owl#>.
 @prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
+@prefix schema: <http://schema.org/>.
 
 @prefix dct:    <http://purl.org/dc/terms/>.
 @prefix fabio:  <http://purl.org/spar/fabio/> .
 @prefix frbr:   <http://purl.org/vocab/frbr/core#>.
+@prefix prov:   <http://www.w3.org/ns/prov#>.
+@prefix sd:     <http://www.w3.org/ns/sparql-service-description#>
 
 @prefix issa:   <http://data-issa.cirad.fr/>.
 @prefix issap:  <http://data-issa.cirad.fr/property/>.
 
 
+issa:issa-agritrop-1-0   owl:sameAs  issa:dataset-1-0.
+issa:dataset-1-0         owl:sameAs  issa:issa-agritrop-1-0; rdfs:label "Initial dataset".
+# --- Dataset description
 issa:issa-agritrop-1-0
     a               dcat:Dataset, void:Dataset, schema:Dataset;
     dct:title       "ISSA Agritrop dataset";
     schema:name     "ISSA Agritrop dataset";
-    dct:description "This RDF dataset provides knowledge graphs produced by processing articles from Agritrop - the open repository of CIRAD publications. These knowledge graphs provide articles metadata, extracted text, Agrovoc and GeoNames descriptors, named entities identified and disambiguated by Entity-fishing and DBpedia Spotlight. ";
+    dct:description "This RDF dataset provides knowledge graphs produced by processing articles from Agritrop - the open repository of CIRAD publications. These knowledge graphs provide articles' metadata, extracted text, Agrovoc and GeoNames descriptors, named entities identified and disambiguated by Entity-fishing and DBpedia Spotlight. ";
     
     dct:licence     <http://opendatacommons.org/licenses/by/1.0>;
     schema:licence  <http://opendatacommons.org/licenses/by/1.0>;
     owl:versionInfo "1.0";
-    dct:issued      "2020-11-05"^^xsd:date;
-    schema:datePublished "2020-11-05"^^xsd:date;
+
     
     dct:subject     "agricultural research", "rural development", "agritrop", "literature", "annotation", "named entity",
                     "named entity recognition", "NER";
     schema:keywords "agricultural research", "rural development", "agritrop", "literature", "annotation", "named entity",
                     "named entity recognition", "NER";
     
-    #dct:creator      <https://team.inria.fr/wimmics/>;
-    #schema:author    <https://team.inria.fr/wimmics/>;
-    dct:publisher    <https://ror.org/0496p8026>, <https://ror.org/02kvxyf05>, <https://ror.org/02feahw73>, <https://ror.org/05kpkpg04>;
-    schema:publisher <https://ror.org/0496p8026>, <https://ror.org/02kvxyf05>, <https://ror.org/02feahw73>, <https://ror.org/05kpkpg04>;
+    #Shall we just use only Cirad a publisher?
+    dct:publisher    <https://ror.org/0496p8026>, <https://ror.org/02kvxyf05>, <https://ror.org/02feahw73>, <https://ror.org/05kpkpg04>, <https://ror.org/051escj72>, <https://ror.org/03e8rf594>;
+    schema:publisher <https://ror.org/0496p8026>, <https://ror.org/02kvxyf05>, <https://ror.org/02feahw73>, <https://ror.org/05kpkpg04>, <https://ror.org/051escj72>, <https://ror.org/03e8rf594>;
 
     a prov:Entity;
-    #schema:isBasedOn        covid:cord19v47;
-    #prov:wasDerivedFrom     covid:cord19v47;
+    schema:isBasedOn        issa:agritrop;
+    prov:wasDerivedFrom     issa:agritrop;
     prov:wasGeneratedBy     issa:RdfGeneration;
-    prov:wasGeneratedAtTime "2020-11-05"^^xsd:date;
     
     void:uriSpace       "http://data-issa.cirad.fr/";
-    void:triples        "1372643149"^^xsd:integer;
-    void:sparqlEndpoint <https://riolan.cirad.fr/sparql>;
-    #void:dataDump       <https://doi.org/10.5281/zenodo.4247134>;
+    void:sparqlEndpoint <https://data-issa.cirad.fr/sparql>;
+    #void:dataDump       <https://doi.org/10.5281/zenodo.4247134>; <- update when obtained
     void:vocabulary
-        bibo:, dcat:, dce:, dct:, fabio:, foaf:, frbr:, oa:, prov:, schema:, void:; 
+        bibo:, dcat:, dce:, dct:, fabio:, foaf:, frbr:, oa:, prov:, schema:, void:,
+        <http://aims.fao.org/aos/agrontology#>,  # Agrovoc 
+        <http://www.geonames.org/ontology#>;     # GeoNames
+    
+    # updatable properties
+    dct:issued              "2020-11-05"^^xsd:date;
+    schema:datePublished    "2020-11-05"^^xsd:date;
+    prov:wasGeneratedAtTime "2020-11-05"^^xsd:date;
+    void:triples            "1372643149"^^xsd:integer;
     .
 
-
+# --- Organizations involved
 <https://ror.org/0496p8026> a foaf:Organization; foaf:name "University Côte d'Azur";
-    foaf:homepage <http://univ-cotedazur.fr>.
+    foaf:homepage <http://www.univ-cotedazur.fr>.
 <https://ror.org/02kvxyf05> a foaf:Organization; foaf:name "Inria";
     foaf:homepage <https://www.inria.fr>.
 <https://ror.org/02feahw73> a foaf:Organization; foaf:name "CNRS";
     foaf:homepage <https://www.cnrs.fr>.
 <https://ror.org/05kpkpg04> a foaf:Organization; foaf:name "Centre de Coopération Internationale en Recherche Agronomique pour le Développement";
     foaf:homepage <https://www.cirad.fr>.
+<https://ror.org/051escj72> a foaf:Organization; foaf:name "Université de Montpellier";
+    foaf:homepage <https://www.umontpellier.fr/>.
+<https://ror.org/03e8rf594> a foaf:Organization; foaf:name "IMT Mines Alès";
+    foaf:homepage <https://www.imt-mines-ales.fr/>.
+
+<https://partage-connaissances.cirad.fr/> a foaf:Organization; foaf:name "Scientific and Technical Information Department".
+<https://dhm.euromov.eu/> a foaf:Organization; foaf:name "EuroMov DHM research unit".
 <https://team.inria.fr/wimmics/> a foaf:Organization; foaf:name "Wimmics research team".
 
 # --- SPARQL Service Description and DCAT DataService
 issa:sparql-service
     a                    sd:Service, dcat:DataService;
     sd:supportedLanguage sd:SPARQL10Query, sd:SPARQL11Query;
-    sd:endpoint          <https://riolan.cirad.fr/sparql>;
-    dcat:endpointURL     <https://riolan.cirad.fr/sparql>;
+    sd:endpoint          <https://data-issa.cirad.fr/sparql>;
+    dcat:endpointURL     <https://data-issa.cirad.fr/sparql>;
     rdfs:label           "SPARQL endpoint serving the ISSA Agritrop dataset";
     dcat:servesDataset   issa:issa-agritrop-1-0;
     sd:availableGraphs [
@@ -77,3 +94,10 @@ issa:sparql-service
             <http://data-issa.cirad.fr/graph/annif-descriptors>
     ].
 
+# --- Agritrop dataset and provenance information
+issa:agritrop
+    a               dcat:Dataset, schema:Dataset;
+    dct:title       "Open Repository of CIRAD publications (Agritrop)";
+    schema:name     "Open Repository of CIRAD publications (Agritrop)";
+    schema:url      <https://agritrop.cirad.fr/>;
+    .

@@ -11,19 +11,27 @@
 
 issa:ProvenanceEF
     a                       prov:Activity;
-    #prov:used               covid:cord19v47;
+    prov:used              issa:agritrop;
     prov:wasAssociatedWith  <https://github.com/kermitt2/entity-fishing>.
 
 issa:ProvenanceDBpSpotlight
     a                       prov:Activity;
     prov:wasAssociatedWith  <https://www.dbpedia-spotlight.org/>;
-    #prov:used               covid:cord19v47.
+    prov:used               issa:agritrop.
 
 
 
-# I'm not sure if we can use the urls as properties such as 
-# prov:actedOnBehalfOf, prov:wasAssociatedWith
-# they are supposed to be prov:Agents 
+issa:DBPediaSpotlight
+    a                       prov:SoftwareAgent;
+    prov:actedOnBehalfOf    <https://www.dbpedia-spotlight.org/>;
+    dct:description         "Tool for automatically annotating mentions of DBpedia resources in text";
+    .
+
+issa:EntityFishing
+    a                       prov:SoftwareAgent;
+    prov:actedOnBehalfOf    <https://github.com/kermitt2/entity-fishing>;
+    dct:description         "A machine learning tool for fishing Wikidata entities in text";
+    .
 
 issa:AgritropDocumentalist
     a                       prov:Organization;
@@ -43,12 +51,12 @@ issa:GeographicDescriptorsGenerator
     .
 
 
-
+# --- Process resources
 issa:RdfGeneration
     a               prov:Activity;
     dct:title       "RDF generation process"; rdfs:label "RDF generation process";
-    dct:description "Transformation of the CORD-19 annotations into RDF using the Morph-xR2RML mapping pocessing engine";
-    prov:wasAssociatedWith covid:xR2RML.
+    dct:description "Transformation of the documents metadata, text, and annotations into RDF using the Morph-xR2RML mapping pocessing engine";
+    prov:wasAssociatedWith issa:xR2RML.
 
 issa:xR2RML
     a               prov:SoftwareAgent;
@@ -58,4 +66,16 @@ issa:xR2RML
     dce:creator     "Franck Michel"; schema:author "Franck Michel";
     dct:licence     <http://www.apache.org/licenses/LICENSE-2.0>;
     owl:versionInfo "1.3";
-    schema:subjectOf covid:hal01207828.
+    schema:subjectOf issa:hal01207828.
+
+issa:hal01207828 
+    a               <https://data.archives-ouvertes.fr/doctype/Article>, bibo:AcademicArticle, schema:ScholarlyArticle;
+    dct:title       "Translation of Relational and Non-Relational Databases into RDF with xR2RML";
+    schema:name     "Translation of Relational and Non-Relational Databases into RDF with xR2RML";
+    dct:issued      "2015"^^xsd:gYear; schema:datePublished "2015"^^xsd:gYear;
+    dct:bibliographicCitation "Franck Michel, Loïc Djimenou, Catherine Faron Zucker, Johan Montagnat. Translation of Relational and Non-Relational Databases into RDF with xR2RML. Proceedings of the WebIST'15 Conference, 2015, Lisbon, Portugal. pp.443-454";
+    bibo:doi        "10.5220/0005448304430454";
+    dce:creator     "Franck Michel", "Loïc Djimenou", "Catherine Faron Zucker", "Johan Montagnat";
+    schema:author   "Franck Michel", "Loïc Djimenou", "Catherine Faron Zucker", "Johan Montagnat";
+    schema:sameAs   <https://hal.archives-ouvertes.fr/hal-01207828>;
+    schema:about    issa:xR2RML.
