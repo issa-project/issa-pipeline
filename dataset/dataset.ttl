@@ -1,0 +1,79 @@
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix owl:    <http://www.w3.org/2002/07/owl#>.
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
+
+@prefix dct:    <http://purl.org/dc/terms/>.
+@prefix fabio:  <http://purl.org/spar/fabio/> .
+@prefix frbr:   <http://purl.org/vocab/frbr/core#>.
+
+@prefix issa:   <http://data-issa.cirad.fr/>.
+@prefix issap:  <http://data-issa.cirad.fr/property/>.
+
+
+issa:issa-agritrop-1-0
+    a               dcat:Dataset, void:Dataset, schema:Dataset;
+    dct:title       "ISSA Agritrop dataset";
+    schema:name     "ISSA Agritrop dataset";
+    dct:description "This RDF dataset provides knowledge graphs produced by processing articles from Agritrop - the open repository of CIRAD publications. These knowledge graphs provide articles metadata, extracted text, Agrovoc and GeoNames descriptors, named entities identified and disambiguated by Entity-fishing and DBpedia Spotlight. ";
+    
+    dct:licence     <http://opendatacommons.org/licenses/by/1.0>;
+    schema:licence  <http://opendatacommons.org/licenses/by/1.0>;
+    owl:versionInfo "1.0";
+    dct:issued      "2020-11-05"^^xsd:date;
+    schema:datePublished "2020-11-05"^^xsd:date;
+    
+    dct:subject     "agricultural research", "rural development", "agritrop", "literature", "annotation", "named entity",
+                    "named entity recognition", "NER";
+    schema:keywords "agricultural research", "rural development", "agritrop", "literature", "annotation", "named entity",
+                    "named entity recognition", "NER";
+    
+    #dct:creator      <https://team.inria.fr/wimmics/>;
+    #schema:author    <https://team.inria.fr/wimmics/>;
+    dct:publisher    <https://ror.org/0496p8026>, <https://ror.org/02kvxyf05>, <https://ror.org/02feahw73>, <https://ror.org/05kpkpg04>;
+    schema:publisher <https://ror.org/0496p8026>, <https://ror.org/02kvxyf05>, <https://ror.org/02feahw73>, <https://ror.org/05kpkpg04>;
+
+    a prov:Entity;
+    #schema:isBasedOn        covid:cord19v47;
+    #prov:wasDerivedFrom     covid:cord19v47;
+    prov:wasGeneratedBy     issa:RdfGeneration;
+    prov:wasGeneratedAtTime "2020-11-05"^^xsd:date;
+    
+    void:uriSpace       "http://data-issa.cirad.fr/";
+    void:triples        "1372643149"^^xsd:integer;
+    void:sparqlEndpoint <https://riolan.cirad.fr/sparql>;
+    #void:dataDump       <https://doi.org/10.5281/zenodo.4247134>;
+    void:vocabulary
+        bibo:, dcat:, dce:, dct:, fabio:, foaf:, frbr:, oa:, prov:, schema:, void:; 
+    .
+
+
+<https://ror.org/0496p8026> a foaf:Organization; foaf:name "University Côte d'Azur";
+    foaf:homepage <http://univ-cotedazur.fr>.
+<https://ror.org/02kvxyf05> a foaf:Organization; foaf:name "Inria";
+    foaf:homepage <https://www.inria.fr>.
+<https://ror.org/02feahw73> a foaf:Organization; foaf:name "CNRS";
+    foaf:homepage <https://www.cnrs.fr>.
+<https://ror.org/05kpkpg04> a foaf:Organization; foaf:name "Centre de Coopération Internationale en Recherche Agronomique pour le Développement";
+    foaf:homepage <https://www.cirad.fr>.
+<https://team.inria.fr/wimmics/> a foaf:Organization; foaf:name "Wimmics research team".
+
+# --- SPARQL Service Description and DCAT DataService
+issa:sparql-service
+    a                    sd:Service, dcat:DataService;
+    sd:supportedLanguage sd:SPARQL10Query, sd:SPARQL11Query;
+    sd:endpoint          <https://riolan.cirad.fr/sparql>;
+    dcat:endpointURL     <https://riolan.cirad.fr/sparql>;
+    rdfs:label           "SPARQL endpoint serving the ISSA Agritrop dataset";
+    dcat:servesDataset   issa:issa-agritrop-1-0;
+    sd:availableGraphs [
+        a                sd:GraphCollection;
+        sd:namedGraph 
+            <http://data-issa.cirad.fr/graph/metadata>,
+            <http://data-issa.cirad.fr/graph/articles>,
+            <http://data-issa.cirad.fr/graph/thematic-descriptors>,
+            <http://data-issa.cirad.fr/graph/geo-descriptors>,
+            <http://data-issa.cirad.fr/graph/entity-fishing-nes>,
+            <http://data-issa.cirad.fr/graph/dbpedia-spotlight-nes>,
+            <http://data-issa.cirad.fr/graph/annif-descriptors>
+    ].
+

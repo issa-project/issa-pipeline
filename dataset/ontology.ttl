@@ -1,0 +1,69 @@
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix owl:    <http://www.w3.org/2002/07/owl#>.
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
+
+@prefix dct:    <http://purl.org/dc/terms/>.
+@prefix fabio:  <http://purl.org/spar/fabio/> .
+@prefix frbr:   <http://purl.org/vocab/frbr/core#>.
+@prefix oa:     <http://www.w3.org/ns/oa#>.
+
+@prefix issa:   <http://data-issa.cirad.fr/>.
+@prefix issap:  <http://data-issa.cirad.fr/property/>.
+
+
+# -- Document metadata custom classes and properties ---
+issa:DocumentBody
+    a                       owl:Class;
+    owl:equivalentClass     <http://ns.inria.fr/covid19/DocumentBody>;
+    rdfs:subClassOf         fabio:Work;
+    rdfs:label              "document body";
+    dct:description         "A work's body, e.g. the main part of a research article";
+    .
+
+issap:hasTitle
+    a                       owl:ObjectProperty;
+    owl:equivalentProperty  <http://ns.inria.fr/covid19/property/hasTitle>;
+    rdfs:subPropertyOf      frbr:part;
+    rdfs:label              "resource representing a document's title";
+    dct:description         "Links a work to its title";
+    .
+
+issap:hasAbstract
+    a                       owl:ObjectProperty;
+    rdfs:subPropertyOf      frbr:part;
+    rdfs:label              "resource representing a document's abstract";
+    dct:description         "Links a work to its abstract";
+    .
+
+issap:hasBody
+    a                       owl:ObjectProperty;
+    rdfs:subPropertyOf      frbr:part;
+    owl:equivalentProperty  <http://ns.inria.fr/covid19/property/hasBody>;
+    rdfs:label              "resource representing a document's body";
+    dct:description         "Links a work to its body, e.g. the main part of a research article";
+    .
+
+# --- Annotations custom classes and properties ---
+
+issap:confidence
+    a                       owl:DatatypeProperty;
+    owl:equivalentProperty  <http://ns.inria.fr/covid19/property/confidence>;
+    rdfs:label              "entity confidence score";
+    dct:description         "Confidence score obtained during the named entity recognition process";
+    .
+
+issa:ThematicDesciptorAnnotation
+    a                       owl:Class;
+    rdfs:subClassOf         oa:Annotation;
+    rdfs:label              "thematic descriptor";
+    dct:description         "document's non-geographical Agrovoc descriptor";
+    # How should we link this to Agrovoc?
+    .
+
+issa:GeoDesciptorAnnotation
+    a                       owl:Class;
+    rdfs:subClassOf         oa:Annotation;
+    rdfs:label              "geographical descriptor";
+    dct:description         "document's geographical descriptor";
+    # How should we link this to GeoNames?
+    .

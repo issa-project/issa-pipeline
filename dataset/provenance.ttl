@@ -1,0 +1,61 @@
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix owl:    <http://www.w3.org/2002/07/owl#>.
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
+
+@prefix dct:    <http://purl.org/dc/terms/>.
+@prefix prov:   <http://www.w3.org/ns/prov#>.
+
+@prefix issa:   <http://data-issa.cirad.fr/>.
+@prefix issap:  <http://data-issa.cirad.fr/property/>.
+
+
+issa:ProvenanceEF
+    a                       prov:Activity;
+    #prov:used               covid:cord19v47;
+    prov:wasAssociatedWith  <https://github.com/kermitt2/entity-fishing>.
+
+issa:ProvenanceDBpSpotlight
+    a                       prov:Activity;
+    prov:wasAssociatedWith  <https://www.dbpedia-spotlight.org/>;
+    #prov:used               covid:cord19v47.
+
+
+
+# I'm not sure if we can use the urls as properties such as 
+# prov:actedOnBehalfOf, prov:wasAssociatedWith
+# they are supposed to be prov:Agents 
+
+issa:AgritropDocumentalist
+    a                       prov:Organization;
+    prov:actedOnBehalfOf    <https://agritrop.cirad.fr/>;
+    dct:description         "A human documentalist who assigns or verifies Agrovoc descriptors of documents";
+    .
+
+issa:AnnifSubjectIndexer
+    a                       prov:SoftwareAgent;
+    prov:actedOnBehalfOf    <https://annif.org/>;
+    dct:description         "Tool for automated subject indexing and classification";
+    .
+
+issa:GeographicDescriptorsGenerator
+    a                       prov:SoftwareAgent;
+    dct:description         "Tool for automated geographical entity extraction";
+    .
+
+
+
+issa:RdfGeneration
+    a               prov:Activity;
+    dct:title       "RDF generation process"; rdfs:label "RDF generation process";
+    dct:description "Transformation of the CORD-19 annotations into RDF using the Morph-xR2RML mapping pocessing engine";
+    prov:wasAssociatedWith covid:xR2RML.
+
+issa:xR2RML
+    a               prov:SoftwareAgent;
+    foaf:homepage   <https://github.com/frmichel/morph-xr2rml/>;
+    dct:title       "Morph-xR2RML"; rdfs:label "Morph-xR2RML";
+    dct:description "Implementation of the xR2RML mapping language for MongoDB";
+    dce:creator     "Franck Michel"; schema:author "Franck Michel";
+    dct:licence     <http://www.apache.org/licenses/LICENSE-2.0>;
+    owl:versionInfo "1.3";
+    schema:subjectOf covid:hal01207828.
