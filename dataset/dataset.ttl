@@ -94,3 +94,33 @@ issa:agritrop
     schema:name     "Open Repository of CIRAD publications (Agritrop)";
     schema:url      <https://agritrop.cirad.fr/>;
     .
+
+# --- VOID Linksets
+
+issa:Wikidata
+   dct:title "Wikidata"@en;
+   a void:Dataset;
+   foaf:homepage <https://wikidata.org>.
+
+issa:issa2wikidata
+   a void:Linkset;
+   void:linkPredicate oa:hasBody;
+   void:subjectsTarget issa:issa-agritrop;
+   void:objectsTarget covid:Wikidata;
+   # updatable property
+   void:triples "66098777"^^xsd:integer;
+   .
+
+issa:DBpedia
+   dct:title "DBpedia"@en;
+   a void:Dataset;
+   foaf:homepage <http://dbpedia.org>.
+
+issa:issa2dbpedia
+   a void:Linkset;
+   void:linkPredicate oa:hasBody;
+   void:subjectsTarget issa:issa-agritrop;
+   void:objectsTarget issa:DBpedia;   
+   # updatable property
+   void:triples "4084979"^^xsd:integer;
+   .
