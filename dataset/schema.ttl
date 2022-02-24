@@ -46,7 +46,6 @@ issap:hasBody
     .
 
 
-
 # --- Annotations classes and properties ---
 
 issap:confidence
@@ -54,6 +53,12 @@ issap:confidence
     owl:equivalentProperty  <http://ns.inria.fr/covid19/property/confidence>;
     rdfs:label              "entity confidence score";
     dct:description         "Confidence score obtained during the named entity recognition process";
+    .
+
+issap:rank
+    a                       owl:DatatypeProperty;
+    rdfs:label              "entity's indexing rank";
+    dct:description         "Indexing rank is a place of a descriptor in the list of descriptors orderd by descending confidence score";
     .
 
 issa:ThematicDesciptorAnnotation

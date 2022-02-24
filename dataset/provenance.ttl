@@ -19,8 +19,6 @@ issa:ProvenanceDBpSpotlight
     prov:wasAssociatedWith  <https://www.dbpedia-spotlight.org/>;
     prov:used               issa:agritrop.
 
-
-
 issa:DBPediaSpotlight
     a                       prov:SoftwareAgent;
     prov:actedOnBehalfOf    <https://www.dbpedia-spotlight.org/>;
@@ -39,7 +37,7 @@ issa:AgritropDocumentalist
     dct:description         "A human documentalist who assigns or verifies Agrovoc descriptors of documents";
     .
 
-issa:AnnifSubjectIndexer
+issa:AnnifIndexer
     a                       prov:SoftwareAgent;
     prov:actedOnBehalfOf    <https://annif.org/>;
     dct:description         "Tool for automated subject indexing and classification";

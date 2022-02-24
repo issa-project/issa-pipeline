@@ -13,26 +13,22 @@
 @prefix issap:  <http://data-issa.cirad.fr/property/>.
 
 
-issa:issa-agritrop-1-0   owl:sameAs  issa:dataset-1-0.
-issa:dataset-1-0         owl:sameAs  issa:issa-agritrop-1-0; rdfs:label "Initial dataset".
 # --- Dataset description
-issa:issa-agritrop-1-0
+issa:issa-agritrop
     a               dcat:Dataset, void:Dataset, schema:Dataset;
     dct:title       "ISSA Agritrop dataset";
     schema:name     "ISSA Agritrop dataset";
     dct:description "This RDF dataset provides knowledge graphs produced by processing articles from Agritrop - the open repository of CIRAD publications. These knowledge graphs provide articles' metadata, extracted text, Agrovoc and GeoNames descriptors, named entities identified and disambiguated by Entity-fishing and DBpedia Spotlight. ";
     
+# Ask Anne about proper license
     dct:licence     <http://opendatacommons.org/licenses/by/1.0>;
     schema:licence  <http://opendatacommons.org/licenses/by/1.0>;
-    owl:versionInfo "1.0";
-
-    
+      
     dct:subject     "agricultural research", "rural development", "agritrop", "literature", "annotation", "named entity",
                     "named entity recognition", "NER";
     schema:keywords "agricultural research", "rural development", "agritrop", "literature", "annotation", "named entity",
                     "named entity recognition", "NER";
     
-    #Shall we just use only Cirad a publisher?
     dct:publisher    <https://ror.org/0496p8026>, <https://ror.org/02kvxyf05>, <https://ror.org/02feahw73>, <https://ror.org/05kpkpg04>, <https://ror.org/051escj72>, <https://ror.org/03e8rf594>;
     schema:publisher <https://ror.org/0496p8026>, <https://ror.org/02kvxyf05>, <https://ror.org/02feahw73>, <https://ror.org/05kpkpg04>, <https://ror.org/051escj72>, <https://ror.org/03e8rf594>;
 
@@ -49,11 +45,12 @@ issa:issa-agritrop-1-0
         <http://aims.fao.org/aos/agrontology#>,  # Agrovoc 
         <http://www.geonames.org/ontology#>;     # GeoNames
     
-    # updatable properties
+    # updatable properties 
     dct:issued              "2020-11-05"^^xsd:date;
     schema:datePublished    "2020-11-05"^^xsd:date;
     prov:wasGeneratedAtTime "2020-11-05"^^xsd:date;
     void:triples            "1372643149"^^xsd:integer;
+    owl:versionInfo "1.0.date";
     .
 
 # --- Organizations involved
@@ -69,10 +66,6 @@ issa:issa-agritrop-1-0
     foaf:homepage <https://www.umontpellier.fr/>.
 <https://ror.org/03e8rf594> a foaf:Organization; foaf:name "IMT Mines Alès";
     foaf:homepage <https://www.imt-mines-ales.fr/>.
-
-<https://partage-connaissances.cirad.fr/> a foaf:Organization; foaf:name "Scientific and Technical Information Department".
-<https://dhm.euromov.eu/> a foaf:Organization; foaf:name "EuroMov DHM research unit".
-<https://team.inria.fr/wimmics/> a foaf:Organization; foaf:name "Wimmics research team".
 
 # --- SPARQL Service Description and DCAT DataService
 issa:sparql-service
@@ -101,3 +94,33 @@ issa:agritrop
     schema:name     "Open Repository of CIRAD publications (Agritrop)";
     schema:url      <https://agritrop.cirad.fr/>;
     .
+
+# --- VOID Linksets
+
+issa:Wikidata
+   dct:title "Wikidata"@en;
+   a void:Dataset;
+   foaf:homepage <https://wikidata.org>.
+
+issa:issa2wikidata
+   a void:Linkset;
+   void:linkPredicate oa:hasBody;
+   void:subjectsTarget issa:issa-agritrop;
+   void:objectsTarget covid:Wikidata;
+   # updatable property
+   void:triples "66098777"^^xsd:integer;
+   .
+
+issa:DBpedia
+   dct:title "DBpedia"@en;
+   a void:Dataset;
+   foaf:homepage <http://dbpedia.org>.
+
+issa:issa2dbpedia
+   a void:Linkset;
+   void:linkPredicate oa:hasBody;
+   void:subjectsTarget issa:issa-agritrop;
+   void:objectsTarget issa:DBpedia;   
+   # updatable property
+   void:triples "4084979"^^xsd:integer;
+   .
