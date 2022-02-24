@@ -1,0 +1,13 @@
+log_enable(3,1);
+SPARQL CLEAR GRAPH  <http://agrovoc.fao.org/graph>;
+
+DELETE FROM DB.DBA.load_list;
+ld_dir ('/database/import', 'agrovoc*.nt', 'http://agrovoc.fao.org/graph');
+
+rdf_loader_run ();
+checkpoint;
+
+SPARQL SELECT DISTINCT ('<http://agrovoc.fao.org/graph>' as ?g)  (COUNT(*) as ?triples)  
+WHERE { GRAPH <http://agrovoc.fao.org/graph> {?s ?p ?o} };
+
+exit;

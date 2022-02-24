@@ -1,0 +1,16 @@
+.cache
+.git
+__pycache__
+.spyproject/
+.pytest_cache
+*.pyc
+#docs/_build/
+
+logs
+data
+volumes
+output
+
+environment/python/issa_venv/
+
+pipeline/
