@@ -13,4 +13,7 @@ output
 
 environment/python/issa_venv/
 
-pipeline/
+pipeline/*
+!pipeline/indexing
+!pipeline/metadata
+!pipeline/fulltext
