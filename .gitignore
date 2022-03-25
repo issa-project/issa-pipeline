@@ -18,3 +18,4 @@ pipeline/*
 !pipeline/metadata
 !pipeline/fulltext
 !pipeline/ner
+!*.py
