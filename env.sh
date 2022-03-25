@@ -3,11 +3,16 @@
 #
 # Tune the variables in this file according to the environment
 
-# URL for Agrovoc dump
+# Agrovoc dump
 # NOTE: this URL is a moving target
 AGROVOC_URL=https://agrovoc.fao.org/agrovocReleases/agrovoc_2022-02-01_core.nt.zip
 AGROVOC_GRAPH=http://agrovoc.fao.org/graph
 AGROVOC_IMPORT_DIR=~/ISSA/volumes/virtuoso/database/import
+
+# GeoNames dump
+GEONAMES_DUMP_URL=https://download.geonames.org/all-geonames-rdf.zip
+GEONAMES_GRAPH=http://geonames.org/graph 
+GEONAMES_IMPORT_DIR=~/ISSA/volumes/virtuoso/database/import
 
 # Version and release date of the Agritrop dataset being processed
 #AGRITROP_VERSION=0
@@ -36,13 +41,16 @@ export PDF_CACHE_UNREADBLE=$PDF_CACHE/unreadable
 ISSA_META=.
 
 # Relative directory of ISSA Grobid extracted data (json) 
-ISSA_FULLTEXT=json/coalesced
+ISSA_FULLTEXT=json/fulltext
 
 # Relative directory of DBpedia Spotlight annotations
-ISSA_SPOTLIGHT=annotation/dbpedia-spotlight
+ISSA_SPOTLIGHT=annotation/dbpedia
 
 # Relative directory of Entity-Fishing annotations 
-ISSA_EF=annotation/entity-fishing
+ISSA_EF=annotation/wikidata
+
+# Relative directory of GeoNames annotations 
+ISSA_GEONAMES=annotation/geonames
 
 # Relative directory of Annif output
 ISSA_ANNIF=indexing
@@ -56,27 +64,30 @@ export ISSA_SRC_ROOT=~/ISSA/pipeline
 
 
 # MongoDB database
-DB=issa-latest
+MONGODB_DB=issa-latest
 MONGODB_DATABASE_DIR=~/ISSA/volumes/mongodb
-MONGODB_SOURCE_DIR=$ISSA_DATA_ROOT
-MONGODB_IMPORT_DIR=$ISSA_SRC_ROOT/mongo
+MONGODB_DATA_SOURCE_DIR=$ISSA_DATA_ROOT
+MONGODB_IMPORT_SCRIPT_DIR=$ISSA_SRC_ROOT/mongo
+MONGODB_LATEST_UPDATE=$ISSA_DATASET/$LATEST_UPDATE
+
 
 # xR2RML tool
 XR2RML_TRANSFORMATION_DIR=$ISSA_SRC_ROOT/xR2RML
+XR2RML_OUTPUT_DIR=$LATEST_UPDATE_DIR/$ISSA_RDF
 
 # Virtuoso 
 VIRTUOSO_DATABASE_DIR=~/ISSA/volumes/virtuoso/database
-VIRTUOSO_SOURCE_DIR=$ISSA_DATA_ROOT/$ISSA_DATASET/en/$ISSA_RDF # needs attention: language is hardcoded
+VIRTUOSO_SOURCE_DIR=/home/issa/ISSA/data/dataset-0-0/en/$ISSA_RDF #$ISSA_DATA_ROOT/$ISSA_DATASET/en/$ISSA_RDF # needs attention: language is hardcoded
 VIRTUOSO_IMPORT_DIR=$ISSA_SRC_ROOT/virtuoso
 VIRTUOSO_DEAFAULT_GRAPH=http://data-issa.cirad.fr/graph
 
 # Annif
 ANNIF_IMAGE=issa
 ANNIF_PROJECTS_DIR=~/ISSA/volumes/annif-projects
-ANNIF_SOURCE_DIR=$ISSA_DATA_ROOT/$ISSA_DATASET/en/indexing
 ANNIF_TRAINING_DIR=$ISSA_DATA_ROOT/training
-ANNIF_PROJECT=cirad-nn-ensemble-en
-export ANNIF_SUFFIX=.parabel_mllm
+ANNIF_SOURCE_DIR=$LATEST_UPDATE_DIR/indexing
+ANNIF_PROJECT=cirad-nn-ensemble
+export ANNIF_SUFFIX=.parabel_mllm_nn
 ANNIF_LIMIT=15
 ANNIF_THRESHOLD=0.1
 
