@@ -15,17 +15,19 @@ Below we use the following namespaces:
 @prefix dce:    <http://purl.org/dc/elements/1.1/>.
 @prefix dct:    <http://purl.org/dc/terms/>.
 @prefix fabio:  <http://purl.org/spar/fabio/> .
+@prefix eprint: <http://purl.org/eprint/type/> .
 @prefix foaf:   <http://xmlns.com/foaf/0.1/>.
 @prefix frbr:   <http://purl.org/vocab/frbr/core#>.
 @prefix oa:     <http://www.w3.org/ns/oa#>.
 @prefix prov:   <http://www.w3.org/ns/prov#>.
 @prefix schema: <http://schema.org/>.
 
-@prefix issap:  <http://ns.inria.fr/issa/property/> .
+@prefix issa:   <http://data-issa.cirad.fr/>.
+@prefix issapr: <http://data-issa.cirad.fr/property/>.
 ```
 
 ## Article metadata
-Article URIs are formatted as http://ns.inria.fr/issa/article_id where article_id is a unique article identifier.
+Article URIs are formatted as http://data-issa.cirad.fr/article/article_id where article_id is a unique article identifier.
 
 Article metadata may include the following items:
 - title (`dct:title`)
@@ -33,49 +35,74 @@ Article metadata may include the following items:
 - publication date (`dct:issued`)
 - journal (`schema:publication`)
 - license (`dct:license`)
+- terms and conditions (`dct:rights`)
 - identifiers
+    - source id (`dct:identifier`)
     - DOI (`bibo:doi`)
-    - Pubmed identifer (`bibo:pmid` and `fabio:hasPubMedId`)
-    - PMC identifer (`fabio:hasPubMedCentralId`)
 - source of the metadata information (`dct:source`)
 - article page URL, possibly DOI-based (`schema:url`)
-- PDF download URL (`schema:downloadUrl`)
-- languages
-    - language string (` dce:language `)
+- source PDF download URL (`schema:downloadUrl`)
+- other PDF download URLs (`schema:sameAs`)
+- language
+    - language string (`dce:language`)
     - language URI (`dct:language`)
+- provenance
+    - dataset name and version (`rdfs:isDefinedBy`)
+    - source data URI (`prov:wasDerivedFrom`)
+    - source data creation timestamp (`prov:generatedAtTime`)
+
+Articles can be one of the followng types:
+- article type (`rdfs:Class`)
+    - journal article (`fabio:ResearchPaper`, `schema:ScholarlyArticle`, `bibo:AcademicArticle`, `eprint:JournalArticle`)
+    - application (`fabio:ComputerApplication`)
+    - book (`fabio:Book`, `eprint:Book`)
+    - book section (`fabio:BookChapter`, `eprint:BookItem`)
+    - conference paper (`fabio:ConferencePaper`, `eprint:ConferencePaper`)
+    - film (`fabio:Film`)
+    - map (`bibo:Map`)
+    - monograph (`fabio:Expression`, `bibo:Document`)
+    - patent (`fabio:Patent`, `eprint:Patent`)
+    - data management plan (`fabio:DataManagementPlan`)
+    - thesis (`fabio:Thesis`, `eprint:Thesis`)
+)
+
 
 Furthermore, each article is linked to its parts (title, abstract, body) as follows:
-- `issap:hasTitle <http://ns.inria.fr/issa/paper_id#title>`
-- `dct:abstract   <http://ns.inria.fr/issa/paper_id#abstract>`
-- `issap:hasBody  <http://ns.inria.fr/issa/paper_id#body_text>`.
+- `issapr:hasTitle <http://data-issa.cirad.fr/article/paper_id#title>`
+- `dct:abstract   <http://data-issa.cirad.fr/article/paper_id#abstract>`
+- `issapr:hasBody  <http://data-issa.cirad.fr/article/paper_id#body_text>`.
+NOTE: only journal articles have associated body text 
+
 
 Here is an example of article metadata:
 ```turtle
-<http://ns.inria.fr/issa/f74923b3ce82c984a7ae3e0c2754c9e33c60554f>
-  a                         schema:ScholarlyArticle, bibo:AcademicArticle, fabio:ResearchPaper ;
-  rdfs:isDefinedBy          <http://ns.inria.fr/issa/dataset-1-2> ;
-  
-  dct:title                 "A real-time PCR for SARS-coronavirus incorporating target gene pre-amplification" ;
-  dce:creator                "Tam, Siu-Lun", "Lin, Sau-Wah", "Yu, -H", "Collins, Richard", "Chan, Paul", "Wong, Freda Pui-Fan", "Dillon, Natalie", "Fung, Yin-Wan", "Cheung, Albert", "Yu, -Hoi", "Li, Hui", "Wang, Chen", "Lau,", "Lok, Ting" ;
-  dct:issued                "2003-12-26"^^xsd:date ;
-  dct:license               "els-covid" ;
-  schema:url                <https://doi.org/10.1016/j.bbrc.2003.11.064> ;
-  dct:source                "Elsevier; Medline; PMC" ;
-  schema:publication        "Biochemical and Biophysical Research Communications" ;
+<http://data-issa.cirad.fr/article/543654>
+  a                      prov:Entity, fabio:ResearchPaper, bibo:AcademicArticle, eprint:JournalArticle, schema:ScholarlyArticle;
+  dct:title              "Accounting for the ecological dimension in participatory research and development : lessons learned from Indonesia and Madagascar";
+  dce:creator            "Pfund, Jean-Laurent", "Laumonier, Yves", "Bourgeois, Robin";
+  schema:publication     "Ecology and Society";
+  dct:issued             "2008.0"^^xsd:gYear;
+  dct:rights             <https://agritrop.cirad.fr/mention_legale.html>;
 
-  bibo:doi                  "10.1016/j.bbrc.2003.11.064" ;
-  bibo:pmid                 "14652014" ;
-  fabio:hasPubMedCentralId "PMC7111096" ;
-  fabio:hasPubMedId         "14652014" ;
+  dct:source             "Agritrop-OAI2-API";
+  dct:identifier         "543654";
   
-  dct:language              <http://id.loc.gov/vocabulary/iso639-1/en>;
-  dce:language              "eng";
-  
-  issap:hasTitle            <http://ns.inria.fr/issa/f74923b3ce82c984a7ae3e0c2754c9e33c60554f#title> ;
-  dct:abstract              <http://ns.inria.fr/issa/f74923b3ce82c984a7ae3e0c2754c9e33c60554f#abstract> ;
-  issap:hasBody             <http://ns.inria.fr/issa/f74923b3ce82c984a7ae3e0c2754c9e33c60554f#body_text> .
- 
+  schema:url             <http://agritrop.cirad.fr/543654/> ;
+  schema:downloadUrl     <http://agritrop.cirad.fr/543654/1/document_543654.pdf> ;
+  schema:sameAs          <http://www.ecologyandsociety.org/vol13/iss1/art15/>, <http://catalogue-bibliotheques.cirad.fr/cgi-bin/koha/opac-detail.pl?biblionumber=199720> ;
+
+  dce:language           "eng";
+  dct:language           <http://id.loc.gov/vocabulary/iso639-1/en>;
+
+  rdfs:isDefinedBy       issa:issa-latest ;
+  prov:generatedAtTime   "2020-11-21T13:17:03Z"^^xsd:dateTime ;
+  prov:wasDerivedFrom    <http://agritrop.cirad.fr/543654/> .
+
+  issapr:hasBody         <http://data-issa.cirad.fr/article/543654#body_text> ;
+  dct:abstract           <http://data-issa.cirad.fr/article/543654#abstract> ;
+  issapr:hasTitle        <http://data-issa.cirad.fr/article/543654#title> ;
 ```
+
 ## Global descriptors
 
 The global descriptors are concepts characterizing the article as a whole. They are described as **annotations** using the **[Web Annotations Vocabulary](https://www.w3.org/TR/annotation-vocab/)**.
