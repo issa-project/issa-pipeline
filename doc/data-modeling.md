@@ -40,7 +40,7 @@ Article metadata may include the following items:
     - source id (`dct:identifier`)
     - DOI (`bibo:doi`)
 - source of the metadata information (`dct:source`)
-- article page URL, possibly DOI-based (`schema:url`)
+- article page URL (`schema:url`)
 - source PDF download URL (`schema:downloadUrl`)
 - other PDF download URLs (`schema:sameAs`)
 - language
@@ -74,7 +74,7 @@ Furthermore, each article is linked to its parts (title, abstract, body) as foll
 NOTE: only journal articles have associated body text 
 
 
-Here is an example of article metadata:
+Here is an example of article's metadata:
 ```turtle
 <http://data-issa.cirad.fr/article/543654>
   a                      prov:Entity, fabio:ResearchPaper, bibo:AcademicArticle, eprint:JournalArticle, schema:ScholarlyArticle;
@@ -88,66 +88,97 @@ Here is an example of article metadata:
   dct:identifier         "543654";
   
   schema:url             <http://agritrop.cirad.fr/543654/> ;
-  schema:downloadUrl     <http://agritrop.cirad.fr/543654/1/document_543654.pdf> ;
-  schema:sameAs          <http://www.ecologyandsociety.org/vol13/iss1/art15/>, <http://catalogue-bibliotheques.cirad.fr/cgi-bin/koha/opac-detail.pl?biblionumber=199720> ;
+  schema:downloadUrl     <http://agritrop.cirad.fr/543654/1/document_543654.pdf>;
+  schema:sameAs          <http://www.ecologyandsociety.org/vol13/iss1/art15/>, <http://catalogue-bibliotheques.cirad.fr/cgi-bin/koha/opac-detail.pl?biblionumber=199720>;
 
   dce:language           "eng";
   dct:language           <http://id.loc.gov/vocabulary/iso639-1/en>;
 
-  rdfs:isDefinedBy       issa:issa-latest ;
-  prov:generatedAtTime   "2020-11-21T13:17:03Z"^^xsd:dateTime ;
-  prov:wasDerivedFrom    <http://agritrop.cirad.fr/543654/> .
+  rdfs:isDefinedBy       issa:dataset-1-0-20220306;
+  prov:generatedAtTime   "2020-11-21T13:17:03Z"^^xsd:dateTime;
+  prov:wasDerivedFrom    <http://agritrop.cirad.fr/543654/>.
 
   issapr:hasBody         <http://data-issa.cirad.fr/article/543654#body_text> ;
   dct:abstract           <http://data-issa.cirad.fr/article/543654#abstract> ;
   issapr:hasTitle        <http://data-issa.cirad.fr/article/543654#title> ;
 ```
 
-## Global descriptors
+## Global thematic descriptors
 
-The global descriptors are concepts characterizing the article as a whole. They are described as **annotations** using the **[Web Annotations Vocabulary](https://www.w3.org/TR/annotation-vocab/)**.
+The global thematic descriptors are concepts characterizing the article as a whole. They are described as **annotations** using the **[Web Annotations Vocabulary](https://www.w3.org/TR/annotation-vocab/)**.
+
 Each annotation consists of the following information:
 - the annotation target (`oa:hasTarget`) is the article it is about (`schema:about`)
-- the annotation body (`oa:hasBody`) gives the URI of the resource identified as representing the global descriptor (e.g. a Wikidata URI)
-- (optional) domains related to the named entity (`dct:subject`)
+- the annotation body (`oa:hasBody`) gives the URI of the resource identified as representing the global descriptor (e.g. an **[Agrovoc category URI](https://agrovoc.fao.org/)** ).
+- provenance 
+    - dataset name and version (`rdfs:isDefinedBy`)
+    - the agent that assigned this descriptor to an article (`prov:wasAttributedTo`)
+        - a human documentalist (`issa:AgritropDocumentalist`)
+        - an automated indexing system (e.g. **[Annif](https://annif.org/)** ) (`prov:AnnifSubjectIndexer`)
 
+- (optional) an automated indexer confidence score (`issapr:confidence`)
+- (optional) an automated indexer rank of the descriptor among all assigned (`issapr:rank`)
+
+	
 Example:
 ```turtle
-<http://ns.inria.fr/issa/ann/51b42903ea45962283bc9a070d9fae14170c95a5_d>
-    a                   oa:Annotation, prov:Entity;
-    rdfs:label          "descriptor 'coronavirus'" ;
-    oa:hasBody          <http://www.wikidata.org/entity/Q82069695> ;
-    oa:hasTarget        <http://ns.inria.fr/issa/f74923b3ce82c984a7ae3e0c2754c9e33c60554f> .
+# sustainable development
+<http://data-issa.cirad.fr/descr/3573cd52f16d7882c72210bca7c9b3ecef02d129>
+  a                      prov:Entity , issa:ThematicDescriptorAnnotation;
+  oa:hasBody             <http://aims.fao.org/aos/agrovoc/c_35332>;
+  oa:hasTarget           <http://data-issa.cirad.fr/article/543654>;
+  prov:wasAttributedTo   issa:AgritropDocumentalist.
+  rdfs:isDefinedBy       issa:dataset-1-0-20220306;
+  
+# natural resource management  
+<http://data-issa.cirad.fr/descr/e2ba273e40beccc2b8ae5f7792690dce7e6b2131>
+  a                      prov:Entity , issa:ThematicDescriptorAnnotation;
+  oa:hasBody             <http://aims.fao.org/aos/agrovoc/c_9000115>;
+  oa:hasTarget           <http://data-issa.cirad.fr/article/543654>;
+  prov:wasAttributedTo   issa:AnnifSubjectIndexer.
+  rdfs:isDefinedBy       issa:dataset-1-0-20220306;
+
+  issapr:confidence      0.82;
+  issapr:rank            1;
 ```
 
 ## Named entities
 
 The named entities identified in an article are described as **annotations** using the **[Web Annotations Vocabulary](https://www.w3.org/TR/annotation-vocab/)**.
+
 Each annotation consists of the following information:
 - the article it is about (`schema:about`)
 - the annotation target (`oa:hasTarget`) describes the piece of text identified as a named entity as follows:
     - the source (`oa:hasSource`) is the part of the article where the named entity was detected (title, abstract or body)
     - the selecor (`oa:hasSelector`) gives the named entity raw text (`oa:exact`) and its location whithin the source (`oa:start` and `oa:end`)
-- the annotation body (`oa:hasBody`) gives the URI of the resource identified as representing the named entity (e.g. a Wikidata URI)
+- the annotation body (`oa:hasBody`) gives the URI of the resource identified as representing the named entity (e.g. a Wikidata URI, DBPedia URI, or Geonames URI)
+- provenance
+    - dataset name and version (`rdfs:isDefinedBy`)
+    - the agent that assigned this descriptor to an article (`prov:wasAttributedTo`)
+
 - (optional) domains related to the named entity (`dct:subject`)
+- (optional) the annotating tool confidence (`issapr:confidence`)
 
 Example:
 ```turtle
-<http://ns.inria.fr/issa/ann/f71dbe6cf7b010b170679e250c779c2b0e93325d>
-    a                   oa:Annotation, prov:Entity;
-    rdfs:label          "named entity 'PCR'" ;
-    schema:about        <http://ns.inria.fr/issa/f74923b3ce82c984a7ae3e0c2754c9e33c60554f>;
-    dct:subject         "Engineering", "Biology";
-    issapr:confidence	"1"^^xsd:decimal;
-    
-    oa:hasBody          <http://wikidata.org/entity/Q176996>;
-    oa:hasTarget [
-        oa:hasSource    <http://ns.inria.fr/issa/f74923b3ce82c984a7ae3e0c2754c9e33c60554f#abstract>;
-        oa:hasSelector  [
-            a           oa:TextPositionSelector, oa:TextQuoteSelector;
-            oa:exact    "PCR";
-            oa:start    "235";
-            oa:end      "238"
-        ]
-    ];
+<http://data-issa.cirad.fr/ann/b46b064a5d1c58e9abea067e77f24c71d3a3e78d>
+  a                      prov:Entity , oa:Annotation ;
+  rdfs:label             "named entity 'natural resource management'";
+  schema:about           <http://data-issa.cirad.fr/article/543654> ;
+  dct:subject            "Gas" , "Environment" ;
+  issapr:confidence      0.7669;
+
+  oa:hasBody             <http://wikidata.org/entity/Q3743137> ;
+  oa:hasTarget [
+      oa:hasSource      <http://data-issa.cirad.fr/article/543654#abstract> .
+      oa:hasSelector [
+          a              oa:TextPositionSelector, oa:TextQuoteSelector;
+          oa:exact       "natural resource management";
+          oa:end         1760;
+          oa:start       1733.
+                     ]
+               ] 
+
+  rdfs:isDefinedBy       issa:dataset-1-0-20220306;
+  prov:wasAttributedTo   issa:EntityFishing .
 ```
