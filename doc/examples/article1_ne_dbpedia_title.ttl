@@ -1,0 +1,67 @@
+@prefix rr:      <http://www.w3.org/ns/r2rml#> .
+@prefix schema:  <http://schema.org/> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix dce:     <http://purl.org/dc/elements/1.1/> .
+@prefix fabio:   <http://purl.org/spar/fabio/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix issa:    <http://data-issa.cirad.fr/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix frbr:    <http://purl.org/vocab/frbr/core#> .
+@prefix issapr:  <http://data-issa.cirad.fr/property/> .
+@prefix wd:      <http://www.wikidata.org/entity/> .
+@prefix rml:     <http://semweb.mmlab.be/ns/rml#> .
+@prefix oa:      <http://www.w3.org/ns/oa#> .
+@prefix dct:     <http://purl.org/dc/terms/> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xrr:     <http://i3s.unice.fr/xr2rml#> .
+@prefix bibo:    <http://purl.org/ontology/bibo/> .
+@prefix prov:    <http://www.w3.org/ns/prov#> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+
+
+
+<http://data-issa.cirad.fr/ann/e0aeb59c8a57ee309c2f9fd51fbdf2a4673efa65>
+      a       prov:Entity , oa:Annotation ;
+      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:label "named entity 'Madagascar'" ;
+      issapr:confidence 0.9844654715178621 ;
+      dct:creator <https://team.inria.fr/wimmics/> ;
+      schema:about <http://data-issa.cirad.fr/article/543654> ;
+      oa:hasBody <http://dbpedia.org/resource/Madagascar> ;
+      oa:hasTarget <http://data-issa.cirad.fr/ann/target/e0aeb59c8a57ee309c2f9fd51fbdf2a4673efa65> ;
+      prov:wasAttributedTo
+              issa:DBPediaSpotlight .
+
+<http://data-issa.cirad.fr/ann/target/e0aeb59c8a57ee309c2f9fd51fbdf2a4673efa65>
+      oa:hasSelector <http://data-issa.cirad.fr/ann/selector/e0aeb59c8a57ee309c2f9fd51fbdf2a4673efa65> ;
+      oa:hasSource <http://data-issa.cirad.fr/article/543654#title> .
+
+<http://data-issa.cirad.fr/ann/selector/e0aeb59c8a57ee309c2f9fd51fbdf2a4673efa65>
+      a       oa:TextPositionSelector , oa:TextQuoteSelector ;
+      oa:exact "Madagascar" ;
+      oa:start 119 .
+
+
+<http://data-issa.cirad.fr/ann/d43cbf73df36a39bfa1f61584aab72a1afbaf0c4>
+      a       prov:Entity , oa:Annotation ;
+      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:label "named entity 'Indonesia'" ;
+      issapr:confidence 0.9708933678130034 ;
+      dct:creator <https://team.inria.fr/wimmics/> ;
+      schema:about <http://data-issa.cirad.fr/article/543654> ;
+      oa:hasBody <http://dbpedia.org/resource/Indonesia> ;
+      oa:hasTarget <http://data-issa.cirad.fr/ann/target/d43cbf73df36a39bfa1f61584aab72a1afbaf0c4> ;
+      prov:wasAttributedTo
+              issa:DBPediaSpotlight .
+
+<http://data-issa.cirad.fr/ann/target/d43cbf73df36a39bfa1f61584aab72a1afbaf0c4>
+      oa:hasSelector <http://data-issa.cirad.fr/ann/selector/d43cbf73df36a39bfa1f61584aab72a1afbaf0c4> ;
+      oa:hasSource <http://data-issa.cirad.fr/article/543654#title> .
+
+<http://data-issa.cirad.fr/ann/selector/d43cbf73df36a39bfa1f61584aab72a1afbaf0c4>
+      a       oa:TextPositionSelector , oa:TextQuoteSelector ;
+      oa:exact "Indonesia" ;
+      oa:start 105 .
+
+
+

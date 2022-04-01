@@ -1,0 +1,62 @@
+@prefix rr:      <http://www.w3.org/ns/r2rml#> .
+@prefix schema:  <http://schema.org/> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix gn:      <https://sws.geonames.org/> .
+@prefix dce:     <http://purl.org/dc/elements/1.1/> .
+@prefix fabio:   <http://purl.org/spar/fabio/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix issa:    <http://data-issa.cirad.fr/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix frbr:    <http://purl.org/vocab/frbr/core#> .
+@prefix issapr:  <http://data-issa.cirad.fr/property/> .
+@prefix wd:      <http://www.wikidata.org/entity/> .
+@prefix rml:     <http://semweb.mmlab.be/ns/rml#> .
+@prefix oa:      <http://www.w3.org/ns/oa#> .
+@prefix dct:     <http://purl.org/dc/terms/> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xrr:     <http://i3s.unice.fr/xr2rml#> .
+@prefix bibo:    <http://purl.org/ontology/bibo/> .
+@prefix prov:    <http://www.w3.org/ns/prov#> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+
+<http://data-issa.cirad.fr/ann/target/e6c0f7e44823c8453b82cbf129e2a35c698ea3ec>
+      oa:hasSelector <http://data-issa.cirad.fr/ann/selector/e6c0f7e44823c8453b82cbf129e2a35c698ea3ec> ;
+      oa:hasSource <http://data-issa.cirad.fr/article/543654#title> .
+
+<http://data-issa.cirad.fr/ann/target/db57b1880dae7381d901a4cf095e17fdf5e8d8ad>
+      oa:hasSelector <http://data-issa.cirad.fr/ann/selector/db57b1880dae7381d901a4cf095e17fdf5e8d8ad> ;
+      oa:hasSource <http://data-issa.cirad.fr/article/543654#title> .
+
+<http://data-issa.cirad.fr/ann/selector/e6c0f7e44823c8453b82cbf129e2a35c698ea3ec>
+      a       oa:TextPositionSelector , oa:TextQuoteSelector ;
+      oa:end  129 ;
+      oa:exact "Madagascar" ;
+      oa:start 119 .
+
+<http://data-issa.cirad.fr/ann/db57b1880dae7381d901a4cf095e17fdf5e8d8ad>
+      a       prov:Entity , issa:GeoDesciptorAnnotation ;
+      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:label "named entity 'Indonesia'" ;
+      issapr:confidence 0.8092 ;
+      schema:about <http://data-issa.cirad.fr/article/543654> ;
+      oa:hasBody <https://sws.geonames.org/1643084/> ;
+      oa:hasTarget <http://data-issa.cirad.fr/ann/target/db57b1880dae7381d901a4cf095e17fdf5e8d8ad> ;
+      prov:wasAttributedTo
+              issa:GeographicDescriptorsGenerator .
+
+<http://data-issa.cirad.fr/ann/e6c0f7e44823c8453b82cbf129e2a35c698ea3ec>
+      a       prov:Entity , issa:GeoDesciptorAnnotation ;
+      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:label "named entity 'Madagascar'" ;
+      issapr:confidence 0.6659 ;
+      schema:about <http://data-issa.cirad.fr/article/543654> ;
+      oa:hasBody <https://sws.geonames.org/1062947/> ;
+      oa:hasTarget <http://data-issa.cirad.fr/ann/target/e6c0f7e44823c8453b82cbf129e2a35c698ea3ec> ;
+      prov:wasAttributedTo
+              issa:GeographicDescriptorsGenerator .
+
+<http://data-issa.cirad.fr/ann/selector/db57b1880dae7381d901a4cf095e17fdf5e8d8ad>
+      a       oa:TextPositionSelector , oa:TextQuoteSelector ;
+      oa:end  114 ;
+      oa:exact "Indonesia" ;
+      oa:start 105 .

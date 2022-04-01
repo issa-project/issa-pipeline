@@ -1,0 +1,271 @@
+@prefix rr:      <http://www.w3.org/ns/r2rml#> .
+@prefix schema:  <http://schema.org/> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix dce:     <http://purl.org/dc/elements/1.1/> .
+@prefix fabio:   <http://purl.org/spar/fabio/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix issa:    <http://data-issa.cirad.fr/> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix frbr:    <http://purl.org/vocab/frbr/core#> .
+@prefix issapr:  <http://data-issa.cirad.fr/property/> .
+@prefix wd:      <http://www.wikidata.org/entity/> .
+@prefix rml:     <http://semweb.mmlab.be/ns/rml#> .
+@prefix oa:      <http://www.w3.org/ns/oa#> .
+@prefix dct:     <http://purl.org/dc/terms/> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xrr:     <http://i3s.unice.fr/xr2rml#> .
+@prefix bibo:    <http://purl.org/ontology/bibo/> .
+@prefix prov:    <http://www.w3.org/ns/prov#> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+
+<http://data-issa.cirad.fr/ann/target/16ba28ebf04b721f90943313e946b1e38d64de9e>
+      oa:hasSelector <http://data-issa.cirad.fr/ann/selector/16ba28ebf04b721f90943313e946b1e38d64de9e> ;
+      oa:hasSource <http://data-issa.cirad.fr/article/543654#abstract> .
+
+<http://data-issa.cirad.fr/ann/09908e078f9f9ca2196d41ea7489f6f761ae9931>
+      a       prov:Entity , oa:Annotation ;
+      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:label "named entity 'natural resource management'" ;
+      issapr:confidence 1.0 ;
+      dct:creator <https://team.inria.fr/wimmics/> ;
+      schema:about <http://data-issa.cirad.fr/article/543654> ;
+      oa:hasBody <http://dbpedia.org/resource/Natural_resource_management> ;
+      oa:hasTarget <http://data-issa.cirad.fr/ann/target/09908e078f9f9ca2196d41ea7489f6f761ae9931> ;
+      prov:wasAttributedTo
+              issa:DBPediaSpotlight .
+
+<http://data-issa.cirad.fr/ann/6689ff7b95cca3efbf192e50bb8e27faf8fee981>
+      a       prov:Entity , oa:Annotation ;
+      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:label "named entity 'participatory development'" ;
+      issapr:confidence 1.0 ;
+      dct:creator <https://team.inria.fr/wimmics/> ;
+      schema:about <http://data-issa.cirad.fr/article/543654> ;
+      oa:hasBody <http://dbpedia.org/resource/Participatory_development> ;
+      oa:hasTarget <http://data-issa.cirad.fr/ann/target/6689ff7b95cca3efbf192e50bb8e27faf8fee981> ;
+      prov:wasAttributedTo
+              issa:DBPediaSpotlight .
+
+<http://data-issa.cirad.fr/ann/5e19bd152d48dd4ad877c29fecb20d05d0382a67>
+      a       prov:Entity , oa:Annotation ;
+      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:label "named entity 'natural resource management'" ;
+      issapr:confidence 1.0 ;
+      dct:creator <https://team.inria.fr/wimmics/> ;
+      schema:about <http://data-issa.cirad.fr/article/543654> ;
+      oa:hasBody <http://dbpedia.org/resource/Natural_resource_management> ;
+      oa:hasTarget <http://data-issa.cirad.fr/ann/target/5e19bd152d48dd4ad877c29fecb20d05d0382a67> ;
+      prov:wasAttributedTo
+              issa:DBPediaSpotlight .
+
+<http://data-issa.cirad.fr/ann/selector/6a5dc519755465ff34c6e355bdba2cf9695ce725>
+      a       oa:TextPositionSelector , oa:TextQuoteSelector ;
+      oa:exact "Participatory development" ;
+      oa:start 1261 .
+
+<http://data-issa.cirad.fr/ann/target/0520e804d22ca50407acfbdd014a958c53b4f919>
+      oa:hasSelector <http://data-issa.cirad.fr/ann/selector/0520e804d22ca50407acfbdd014a958c53b4f919> ;
+      oa:hasSource <http://data-issa.cirad.fr/article/543654#abstract> .
+
+<http://data-issa.cirad.fr/ann/selector/60d0f9cddca712a9c2466c190484b7f7150f3f2e>
+      a       oa:TextPositionSelector , oa:TextQuoteSelector ;
+      oa:exact "tropical forest" ;
+      oa:start 431 .
+
+<http://data-issa.cirad.fr/ann/selector/6689ff7b95cca3efbf192e50bb8e27faf8fee981>
+      a       oa:TextPositionSelector , oa:TextQuoteSelector ;
+      oa:exact "participatory development" ;
+      oa:start 477 .
+
+<http://data-issa.cirad.fr/ann/target/04e2ec66c697b90d2d06e16f35f58b0512030ee5>
+      oa:hasSelector <http://data-issa.cirad.fr/ann/selector/04e2ec66c697b90d2d06e16f35f58b0512030ee5> ;
+      oa:hasSource <http://data-issa.cirad.fr/article/543654#abstract> .
+
+<http://data-issa.cirad.fr/ann/0520e804d22ca50407acfbdd014a958c53b4f919>
+      a       prov:Entity , oa:Annotation ;
+      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:label "named entity 'ecology'" ;
+      issapr:confidence 0.9999999999178044 ;
+      dct:creator <https://team.inria.fr/wimmics/> ;
+      schema:about <http://data-issa.cirad.fr/article/543654> ;
+      oa:hasBody <http://dbpedia.org/resource/Ecology> ;
+      oa:hasTarget <http://data-issa.cirad.fr/ann/target/0520e804d22ca50407acfbdd014a958c53b4f919> ;
+      prov:wasAttributedTo
+              issa:DBPediaSpotlight .
+
+<http://data-issa.cirad.fr/ann/selector/a0a0de95380f7bee4cd741403782bf2521d07e02>
+      a       oa:TextPositionSelector , oa:TextQuoteSelector ;
+      oa:exact "tropical forest" ;
+      oa:start 151 .
+
+<http://data-issa.cirad.fr/ann/selector/1a1d89299633ad82531a10869a6f3325a5286b2d>
+      a       oa:TextPositionSelector , oa:TextQuoteSelector ;
+      oa:exact "traditional ecological knowledge" ;
+      oa:start 1101 .
+
+<http://data-issa.cirad.fr/ann/5b49d59241981d83e478068548a8fd07dc7b99f2>
+      a       prov:Entity , oa:Annotation ;
+      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:label "named entity 'ecology'" ;
+      issapr:confidence 0.9999999999178044 ;
+      dct:creator <https://team.inria.fr/wimmics/> ;
+      schema:about <http://data-issa.cirad.fr/article/543654> ;
+      oa:hasBody <http://dbpedia.org/resource/Ecology> ;
+      oa:hasTarget <http://data-issa.cirad.fr/ann/target/5b49d59241981d83e478068548a8fd07dc7b99f2> ;
+      prov:wasAttributedTo
+              issa:DBPediaSpotlight .
+
+<http://data-issa.cirad.fr/ann/target/a0a0de95380f7bee4cd741403782bf2521d07e02>
+      oa:hasSelector <http://data-issa.cirad.fr/ann/selector/a0a0de95380f7bee4cd741403782bf2521d07e02> ;
+      oa:hasSource <http://data-issa.cirad.fr/article/543654#abstract> .
+
+<http://data-issa.cirad.fr/ann/selector/5b49d59241981d83e478068548a8fd07dc7b99f2>
+      a       oa:TextPositionSelector , oa:TextQuoteSelector ;
+      oa:exact "ecology" ;
+      oa:start 1923 .
+
+<http://data-issa.cirad.fr/ann/1a1d89299633ad82531a10869a6f3325a5286b2d>
+      a       prov:Entity , oa:Annotation ;
+      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:label "named entity 'traditional ecological knowledge'" ;
+      issapr:confidence 1.0 ;
+      dct:creator <https://team.inria.fr/wimmics/> ;
+      schema:about <http://data-issa.cirad.fr/article/543654> ;
+      oa:hasBody <http://dbpedia.org/resource/Traditional_ecological_knowledge> ;
+      oa:hasTarget <http://data-issa.cirad.fr/ann/target/1a1d89299633ad82531a10869a6f3325a5286b2d> ;
+      prov:wasAttributedTo
+              issa:DBPediaSpotlight .
+
+<http://data-issa.cirad.fr/ann/target/5b49d59241981d83e478068548a8fd07dc7b99f2>
+      oa:hasSelector <http://data-issa.cirad.fr/ann/selector/5b49d59241981d83e478068548a8fd07dc7b99f2> ;
+      oa:hasSource <http://data-issa.cirad.fr/article/543654#abstract> .
+
+<http://data-issa.cirad.fr/ann/a0a0de95380f7bee4cd741403782bf2521d07e02>
+      a       prov:Entity , oa:Annotation ;
+      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:label "named entity 'tropical forest'" ;
+      issapr:confidence 0.996568017279605 ;
+      dct:creator <https://team.inria.fr/wimmics/> ;
+      schema:about <http://data-issa.cirad.fr/article/543654> ;
+      oa:hasBody <http://dbpedia.org/resource/Tropical_forest> ;
+      oa:hasTarget <http://data-issa.cirad.fr/ann/target/a0a0de95380f7bee4cd741403782bf2521d07e02> ;
+      prov:wasAttributedTo
+              issa:DBPediaSpotlight .
+
+<http://data-issa.cirad.fr/ann/9fe00287a9d773b37e99f84660c515d0550b97d2>
+      a       prov:Entity , oa:Annotation ;
+      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:label "named entity 'ecology'" ;
+      issapr:confidence 0.9999999999178044 ;
+      dct:creator <https://team.inria.fr/wimmics/> ;
+      schema:about <http://data-issa.cirad.fr/article/543654> ;
+      oa:hasBody <http://dbpedia.org/resource/Ecology> ;
+      oa:hasTarget <http://data-issa.cirad.fr/ann/target/9fe00287a9d773b37e99f84660c515d0550b97d2> ;
+      prov:wasAttributedTo
+              issa:DBPediaSpotlight .
+
+<http://data-issa.cirad.fr/ann/target/6689ff7b95cca3efbf192e50bb8e27faf8fee981>
+      oa:hasSelector <http://data-issa.cirad.fr/ann/selector/6689ff7b95cca3efbf192e50bb8e27faf8fee981> ;
+      oa:hasSource <http://data-issa.cirad.fr/article/543654#abstract> .
+
+<http://data-issa.cirad.fr/ann/target/5e19bd152d48dd4ad877c29fecb20d05d0382a67>
+      oa:hasSelector <http://data-issa.cirad.fr/ann/selector/5e19bd152d48dd4ad877c29fecb20d05d0382a67> ;
+      oa:hasSource <http://data-issa.cirad.fr/article/543654#abstract> .
+
+<http://data-issa.cirad.fr/ann/16ba28ebf04b721f90943313e946b1e38d64de9e>
+      a       prov:Entity , oa:Annotation ;
+      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:label "named entity 'resource management'" ;
+      issapr:confidence 0.653565155638299 ;
+      dct:creator <https://team.inria.fr/wimmics/> ;
+      schema:about <http://data-issa.cirad.fr/article/543654> ;
+      oa:hasBody <http://dbpedia.org/resource/Natural_resource_management> ;
+      oa:hasTarget <http://data-issa.cirad.fr/ann/target/16ba28ebf04b721f90943313e946b1e38d64de9e> ;
+      prov:wasAttributedTo
+              issa:DBPediaSpotlight .
+
+<http://data-issa.cirad.fr/ann/target/6a5dc519755465ff34c6e355bdba2cf9695ce725>
+      oa:hasSelector <http://data-issa.cirad.fr/ann/selector/6a5dc519755465ff34c6e355bdba2cf9695ce725> ;
+      oa:hasSource <http://data-issa.cirad.fr/article/543654#abstract> .
+
+<http://data-issa.cirad.fr/ann/selector/0520e804d22ca50407acfbdd014a958c53b4f919>
+      a       oa:TextPositionSelector , oa:TextQuoteSelector ;
+      oa:exact "ecology" ;
+      oa:start 1184 .
+
+<http://data-issa.cirad.fr/ann/target/1a1d89299633ad82531a10869a6f3325a5286b2d>
+      oa:hasSelector <http://data-issa.cirad.fr/ann/selector/1a1d89299633ad82531a10869a6f3325a5286b2d> ;
+      oa:hasSource <http://data-issa.cirad.fr/article/543654#abstract> .
+
+<http://data-issa.cirad.fr/ann/target/60d0f9cddca712a9c2466c190484b7f7150f3f2e>
+      oa:hasSelector <http://data-issa.cirad.fr/ann/selector/60d0f9cddca712a9c2466c190484b7f7150f3f2e> ;
+      oa:hasSource <http://data-issa.cirad.fr/article/543654#abstract> .
+
+<http://data-issa.cirad.fr/ann/selector/04e2ec66c697b90d2d06e16f35f58b0512030ee5>
+      a       oa:TextPositionSelector , oa:TextQuoteSelector ;
+      oa:exact "developing countries" ;
+      oa:start 1009 .
+
+<http://data-issa.cirad.fr/ann/04e2ec66c697b90d2d06e16f35f58b0512030ee5>
+      a       prov:Entity , oa:Annotation ;
+      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:label "named entity 'developing countries'" ;
+      issapr:confidence 1.0 ;
+      dct:creator <https://team.inria.fr/wimmics/> ;
+      schema:about <http://data-issa.cirad.fr/article/543654> ;
+      oa:hasBody <http://dbpedia.org/resource/Developing_country> ;
+      oa:hasTarget <http://data-issa.cirad.fr/ann/target/04e2ec66c697b90d2d06e16f35f58b0512030ee5> ;
+      prov:wasAttributedTo
+              issa:DBPediaSpotlight .
+
+<http://data-issa.cirad.fr/ann/selector/09908e078f9f9ca2196d41ea7489f6f761ae9931>
+      a       oa:TextPositionSelector , oa:TextQuoteSelector ;
+      oa:exact "natural resource management" ;
+      oa:start 1733 .
+
+<http://data-issa.cirad.fr/ann/selector/9fe00287a9d773b37e99f84660c515d0550b97d2>
+      a       oa:TextPositionSelector , oa:TextQuoteSelector ;
+      oa:exact "ecology" ;
+      oa:start 1815 .
+
+<http://data-issa.cirad.fr/ann/6a5dc519755465ff34c6e355bdba2cf9695ce725>
+      a       prov:Entity , oa:Annotation ;
+      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:label "named entity 'Participatory development'" ;
+      issapr:confidence 1.0 ;
+      dct:creator <https://team.inria.fr/wimmics/> ;
+      schema:about <http://data-issa.cirad.fr/article/543654> ;
+      oa:hasBody <http://dbpedia.org/resource/Participatory_development> ;
+      oa:hasTarget <http://data-issa.cirad.fr/ann/target/6a5dc519755465ff34c6e355bdba2cf9695ce725> ;
+      prov:wasAttributedTo
+              issa:DBPediaSpotlight .
+
+<http://data-issa.cirad.fr/ann/target/9fe00287a9d773b37e99f84660c515d0550b97d2>
+      oa:hasSelector <http://data-issa.cirad.fr/ann/selector/9fe00287a9d773b37e99f84660c515d0550b97d2> ;
+      oa:hasSource <http://data-issa.cirad.fr/article/543654#abstract> .
+
+<http://data-issa.cirad.fr/ann/target/09908e078f9f9ca2196d41ea7489f6f761ae9931>
+      oa:hasSelector <http://data-issa.cirad.fr/ann/selector/09908e078f9f9ca2196d41ea7489f6f761ae9931> ;
+      oa:hasSource <http://data-issa.cirad.fr/article/543654#abstract> .
+
+<http://data-issa.cirad.fr/ann/selector/5e19bd152d48dd4ad877c29fecb20d05d0382a67>
+      a       oa:TextPositionSelector , oa:TextQuoteSelector ;
+      oa:exact "natural resource management" ;
+      oa:start 97 .
+
+<http://data-issa.cirad.fr/ann/60d0f9cddca712a9c2466c190484b7f7150f3f2e>
+      a       prov:Entity , oa:Annotation ;
+      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:label "named entity 'tropical forest'" ;
+      issapr:confidence 0.996568017279605 ;
+      dct:creator <https://team.inria.fr/wimmics/> ;
+      schema:about <http://data-issa.cirad.fr/article/543654> ;
+      oa:hasBody <http://dbpedia.org/resource/Tropical_forest> ;
+      oa:hasTarget <http://data-issa.cirad.fr/ann/target/60d0f9cddca712a9c2466c190484b7f7150f3f2e> ;
+      prov:wasAttributedTo
+              issa:DBPediaSpotlight .
+
+<http://data-issa.cirad.fr/ann/selector/16ba28ebf04b721f90943313e946b1e38d64de9e>
+      a       oa:TextPositionSelector , oa:TextQuoteSelector ;
+      oa:exact "resource management" ;
+      oa:start 2050 .
