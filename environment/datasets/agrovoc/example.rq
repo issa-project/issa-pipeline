@@ -1,0 +1,20 @@
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#> 
+PREFIX skosxl: <http://www.w3.org/2008/05/skos-xl#> 
+
+SELECT ?concept ?prefLabel (GROUP_CONCAT ( DISTINCT concat('"',?altLabel,'"@',lang(?altLabel)); separator="|_|" ) as ?altLabels) 
+FROM <http://agrovoc.fao.org/graph>
+WHERE { 
+  ?concept a skos:Concept . 
+  ?concept skosxl:prefLabel/skosxl:literalForm ?prefLabel . 
+  BIND('en' AS ?lang) 
+  FILTER(lang(?prefLabel) = ?lang) 
+  OPTIONAL{ 
+  	?concept skosxl:altLabel/skosxl:literalForm ?altLabel . 
+        BIND('en' AS ?lang)
+  	FILTER(lang(?altLabel) = ?lang) 
+  } 
+
+  #?concept skosxl:prefLabel/skosxl:literalForm "avocados"@en
+
+} GROUP BY ?concept ?prefLabel
+LIMIT 10

@@ -1,0 +1,8 @@
+__pycache__
+
+bak/
+logs/
+vocab/
+*.zip
+*.nt
+*.pyc

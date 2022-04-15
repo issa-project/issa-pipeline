@@ -1,0 +1,12 @@
+PREFIX gn: <http://www.geonames.org/ontology#>
+PREFIX pos: <http://www.w3.org/2003/01/geo/wgs84_pos#>
+
+SELECT *
+FROM <http://geonames.org.blah/graph>
+WHERE { 
+#Nice
+<https://sws.geonames.org/2990440/>   a  gn:Feature;
+                                 gn:name ?name;
+                                 pos:lat ?latitude;
+                                pos:long ?longitude . 
+ }

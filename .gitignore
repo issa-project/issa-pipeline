@@ -19,3 +19,5 @@ pipeline/*
 !pipeline/fulltext
 !pipeline/ner
 !*.py
+
+yasgui.html

@@ -11,19 +11,21 @@ pushd $(dirname $(readlink -f "$0" ))
 . ../../../env.sh
 
 # Run EF docker container 
-CONTAINER_NAME='entity-fishing'
+CONTAINER_NAME=entity-fishing
 
 if [ $( docker ps -f name=$CONTAINER_NAME | wc -l ) -eq 1 ]; then 
      echo "starting $CONTAINER_NAME container"
 
 	docker run --name $CONTAINER_NAME \
-                -d --rm \
+                -d \
                 -p 8090:8090 \
                 -v $EF_MODELS_DIR:/opt/entity-fishing/data/db \
                 entity-fishing			 
-     sleep 1m
+     
      echo "started $CONTAINER_NAME container"
-fi
+     echo "waiting for models to load" 
+	sleep 1m
+docker fi
 
 echo "$CONTAINER_NAME is running"
 

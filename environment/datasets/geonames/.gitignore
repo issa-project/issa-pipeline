@@ -1,0 +1,8 @@
+bak/
+logs/
+temp/
+*.zip
+*.txt
+*/xml
+
+run-virtuoso

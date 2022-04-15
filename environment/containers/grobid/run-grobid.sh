@@ -2,7 +2,12 @@
 # Author: Anna BOBASHEVA, University Cote d'Azur, Inria
 #
 # Licensed under the Apache License, Version 2.0 (http://www.apache.org/licenses/LICENSE-2.0)
-# ISSA index text by Annif
+# Grobid - pdf text extraction service
+
+# This script can be called by sumbolic links in the pipeline 
+# so we need to make sure that the relative path still works
+pushd $(dirname $(readlink -f "$0" ))
+
 
 # ISSA environment definitions 
 . ../../../env.sh
@@ -12,8 +17,8 @@
 if [ $( docker ps -f name=grobid | wc -l ) -eq 1 ]; then 
      echo "starting grobid container"
      docker run --name grobid \
-     -d --rm \
-	--init \ 
+     -d \
+	--init \
      -p 8070:8070 \
      -p 8071:8071 \
      lfoppiano/grobid:0.7.0			 

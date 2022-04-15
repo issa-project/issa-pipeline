@@ -1,0 +1,13 @@
+log_enable(3,1);
+SPARQL CLEAR GRAPH  <http://geonames.org/graph>;
+
+DELETE FROM DB.DBA.load_list;
+ld_dir ('/database/import', '*geonames*.xml', 'http://geonames.org/graph');
+
+rdf_loader_run ();
+checkpoint;
+
+SPARQL SELECT DISTINCT ('<http://geonames.org/graph>' as ?g)  (COUNT(*) as ?triples)  
+WHERE { GRAPH <http://geonames.org/graph> {?s ?p ?o} };
+
+exit;

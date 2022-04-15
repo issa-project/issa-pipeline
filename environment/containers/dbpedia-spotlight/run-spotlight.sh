@@ -13,10 +13,11 @@ pushd $(dirname $(readlink -f "$0" ))
 # Run DBPedia-Spoltight docker containers, one per language
 
 port=2222
+wait=0
 
 for lang in $SPOTLIGHT_LANGUAGES; do
  
-    CONTAINER_NAME=dbpedia-spotlight.$lang
+    CONTAINER_NAME=dbpedia-spotlight.$lang 
 
 	if [ $( docker ps -f name=$CONTAINER_NAME | wc -l ) -eq 1 ]; then 
 
@@ -28,6 +29,7 @@ for lang in $SPOTLIGHT_LANGUAGES; do
                 dbpedia/dbpedia-spotlight spotlight.sh $lang
 			 
         let port=port+1
+        let wait=1 
 
         echo "started $CONTAINER_NAME container"
         echo "recommended wait time at least 2 min before executing a request to the Spotlight"
@@ -38,9 +40,10 @@ for lang in $SPOTLIGHT_LANGUAGES; do
 done
 
 # Uncomment if the pause is needed
-#if [ port != 2222 ]; then
-#   sleep 2m
-#fi
+if [ $wait -eq 1 ]; then
+   echo "waiting for models to load..."
+   sleep 2m
+fi
 
 popd
 
