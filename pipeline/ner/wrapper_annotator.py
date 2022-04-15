@@ -1,6 +1,7 @@
 import json
 import requests
 from retrying import retry
+from math import isnan, isinf
 
 def string2number(value):
     """
@@ -12,6 +13,11 @@ def string2number(value):
         return int(value)
     except ValueError:
         try:
+            if isnan(float(value)):
+                raise ValueError
+            if isinf(float(value)):
+                raise ValueError
+                
             return float(value)
         except ValueError:
             if isinstance(value, list):

@@ -182,7 +182,7 @@ def create_dataset():
     create_repo_structure()
     
     # copy metadata
-    metadata_path = os.path.join(cfg.INPUT_PATH, cfg.PROCESSED_DATA_FILENAME)
+    metadata_path = os.path.join(cfg.INPUT_PATH, cfg.INPUT_METADATA_FILENAME)
     dest_metadata_path = cfg.FILES_LOC['metadata'] #os.path.join(create_repo_structure(), cfg.LANGUAGE)
     
     copy_file(metadata_path , dest_metadata_path)

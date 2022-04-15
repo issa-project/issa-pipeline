@@ -87,6 +87,8 @@ def read_metadata(filePath):
 
     """
     df = pd.read_csv(filePath, sep='\t', encoding='utf-8')
+    #df = pd.read_csv(filePath, sep='\t', encoding='utf-8', 
+    #                 doublequote=False, escapechar="\\" )
     
     #for (col, _) in multi_field_map.items():
     for col in df.columns:
@@ -109,6 +111,8 @@ def save_metadata(df, filePath):
             os.makedirs(os.path.dirname(filePath))
             
         df.to_csv(filePath, sep='\t', encoding='utf-8', index=False)
+        #df.to_csv(filePath, sep='\t', encoding='utf-8', index=False,
+        #          doublequote=False, escapechar="\\" )
     
     return df
 

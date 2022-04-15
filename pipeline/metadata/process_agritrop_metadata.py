@@ -278,7 +278,7 @@ def fill_iso_lang(df):
         Updated dataframe.
 
     """
-    df.iso_lang = df.language.apply(lambda l: cfg.LANG_MAP[l] )
+    df.iso_lang = df.language.apply(lambda l: cfg.LANG_MAP.get(l,  cfg.LANG_MAP['default']) )
     return df
 
 def detect_lang_wrapper(text, hint=None):
@@ -469,6 +469,18 @@ def add_date(df):
     return df
     
 #%%
+def replace_doublequotes(df):
+    """
+    Replace double quotes in titles and abstracts.
+    Double quotes cause problems in conversion to Turtle
+    """
+    
+    df.title = df.title.fillna('').str.replace('""' , "'")
+    df.abstract = df.abstract.fillna('').str.replace('"' , "'")
+    
+    return df
+    
+#%%
 def process(save_file=True):
     """
     Run Agritrop metadata data processing pipeline
@@ -495,6 +507,7 @@ def process(save_file=True):
           .pipe(split_relations)
           #.pipe(drop_records_without_agrovoc_descriptors)
           .pipe(trim_abstract)
+          .pipe(replace_doublequotes)
           .pipe(fill_iso_lang)
           .pipe(detect_title_lang)
           .pipe(detect_abstract_lang)

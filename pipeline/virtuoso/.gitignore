@@ -1,0 +1,10 @@
+virtuoso-commands.txt
+import-3rdparty-graphs.txt
+delete_graphs.txt
+
+run-virtuoso
+import-test.isql
+import-old-en.isql
+
+logs/
+temp/

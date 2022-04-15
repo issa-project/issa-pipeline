@@ -1,0 +1,11 @@
+log_enable(3,1);
+--SPARQL CLEAR GRAPH  <http://data-issa.cirad.fr/graph/articles>;
+--SPARQL CLEAR GRAPH  <http://data-issa.cirad.fr/graph/thematic-descriptors>;
+SPARQL CLEAR GRAPH  <http://data-issa.cirad.fr/graph/dbpedia-spotlight-nes>;
+SPARQL CLEAR GRAPH  <http://data-issa.cirad.fr/graph/entity-fishing-nes>;
+SPARQL CLEAR GRAPH  <http://data-issa.cirad.fr/graph/geographic-nes>;
+SPARQL CLEAR GRAPH  <http://data-issa.cirad.fr/graph/test>;
+
+checkpoint;
+SPARQL SELECT DISTINCT ?g (COUNT(*) as ?triples) WHERE { GRAPH ?g {?s ?p ?o} };
+exit;

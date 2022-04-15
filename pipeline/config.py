@@ -15,10 +15,9 @@ def read_env_var(var_name):
     return os.environ[var_name] if var_name in os.environ else None
 
 _ISSA_DATA_ROOT  = read_env_var('ISSA_DATA_ROOT') or '../../data'
-_ISSA_DATASET    = read_env_var('ISSA_DATASET') or 'dataset-0-0'
-_LATEST_UPDATE    = read_env_var('LATEST_UPDATE') or ''
+_ISSA_DATASET    = read_env_var('ISSA_DATASET') or 'dataset-1-0'
 _METADATA_PREFIX = read_env_var('METADATA_PREFIX') or 'agritrop'  
-_LANG            = read_env_var('DATASET_LANGUAGE') or 'en'
+#_LANG            = read_env_var('DATASET_LANGUAGE') or 'en'
 _ANNIF_SUFFIX    = read_env_var('ANNIF_SUFFIX') or 'annif'
 _PDF_CACHE       = read_env_var('PDF_CACHE') or '../../data/pdf_cache'
 _PDF_CACHE_UNREADABLE = read_env_var('PDF_CACHE_UNREADABLE') or '../../data/pdf_cache/unreadable'
@@ -34,9 +33,7 @@ class cfg_pipeline(object):
     DATASET_ROOT_PATH = os.path.join(_ISSA_DATA_ROOT, _ISSA_DATASET)
    
     CURRENT_DATE = datetime.datetime.now().strftime('%Y%m%d')
-    LATEST_UPDATE = [x for x in (sorted(os.listdir(DATASET_ROOT_PATH), reverse=True) ) ]
-                         #    if os.path.isdir( os.path.join(DATASET_ROOT_PATH, x) )] # TODO: check weired behaviour
-
+    LATEST_UPDATE = [x for x in sorted(next(os.walk(DATASET_ROOT_PATH))[1], reverse=True) ]
     LATEST_UPDATE = LATEST_UPDATE[0] if LATEST_UPDATE else CURRENT_DATE
 
     FILES_LOC = {'metadata' :      os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE),
@@ -62,12 +59,7 @@ class cfg_pipeline(object):
     DEBUG=True    
 
 class cfg_download_agritrop_metadata(cfg_pipeline):
-    LANGUAGE = {'fr': 'fre',
-                'en': 'eng',
-                'es': 'spa',
-                'pt': 'por'} [_LANG]
-    
-    #OAI_DATASET_NAME = f'issa_{LANGUAGE}' 
+
     OAI_DATASET_NAME = 'driver' 
     
     OAI_ENDPOINT_START = 'https://agritrop.cirad.fr/cgi/oai2?verb=ListRecords&metadataPrefix=oai_dc&set=%s'
@@ -80,10 +72,8 @@ class cfg_download_agritrop_metadata(cfg_pipeline):
               'oai_dc': 'http://www.openarchives.org/OAI/2.0/oai_dc/'}
 
     
-    #RAW_DATA_FILENAME = f'{_METADATA_PREFIX}_{_LANG}.raw.tsv'
     RAW_DATA_FILENAME = f'{_METADATA_PREFIX}.raw.tsv'
     OUTPUT_PATH = './output'
-    #LOG_PATH = '../logs'
 
     SINGLE_FIELD_MAP = {'agritrop_id' : 'oai:header/oai:identifier',
                          'datestamp' :  'oai:header/oai:datestamp',
@@ -122,8 +112,6 @@ class cfg_download_agritrop_metadata(cfg_pipeline):
 
 
 class cfg_process_agritrop_metadata(cfg_pipeline):
-    #LANGUAGE = _LANG
-    #TDOO: refactor for generality
     LANG_MAP = {'fre': 'fr',
                 'eng': 'en',
                 'spa': 'es',
@@ -135,16 +123,14 @@ class cfg_process_agritrop_metadata(cfg_pipeline):
                 'lao': 'lo',
                 'mlg': 'mg',
                 'tha': 'th',
-                'vie': 'vi'}
+                'vie': 'vi',
+                'default': 'en'}
 
-    RAW_DATA_FILENAME = cfg_download_agritrop_metadata.RAW_DATA_FILENAME # f'{_METADATA_PREFIX}_{_LANG}.raw.tsv'
-    #PROCESSED_DATA_FILENAME = f'{_METADATA_PREFIX}_{_LANG}.tsv'
+    RAW_DATA_FILENAME = cfg_download_agritrop_metadata.RAW_DATA_FILENAME 
     PROCESSED_DATA_FILENAME = f'{_METADATA_PREFIX}.tsv'
-
     
     INPUT_PATH = cfg_download_agritrop_metadata.OUTPUT_PATH
     OUTPUT_PATH = INPUT_PATH
-    #LOG_PATH = '../logs'
     
     AGROVOC_SPARQL_WRAPPER = SPARQL_Endpoint_Wrapper('http://riolan.cirad.fr/sparql')
         
@@ -162,41 +148,16 @@ class cfg_process_agritrop_metadata(cfg_pipeline):
     }  
     '''
     
-    DETECT_LANG = False
+    DETECT_LANG = True
     BEST_EFFORT_LANG_DETECTION = False
     FILL_NOT_DETECTED_LANG = True
 
 class cfg_create_dataset_repository(cfg_pipeline):
-    #LANGUAGE = _LANG
     
-    PROCESSED_DATA_FILENAME = cfg_process_agritrop_metadata.PROCESSED_DATA_FILENAME
- 
     INPUT_PATH = cfg_process_agritrop_metadata.OUTPUT_PATH
-    #LOG_PATH = '../logs'
-    #OUTPUT_ROOT_PATH =  _ISSA_DATA_ROOT
-    DATASET_NAME = _ISSA_DATASET
-    # DATASET_ROOT_PATH = os.path.join(_ISSA_DATA_ROOT, _ISSA_DATASET)
-    
-    # CURRENT_DATE = datetime.datetime.now().strftime('%Y%m%d')
-    # LATEST_UPDATE = [x for x in (sorted(os.listdir(DATASET_ROOT_PATH), reverse=True) ) if os.path.isdir(x)]
-    # LATEST_UPDATE = LATEST_UPDATE[0] if LATEST_UPDATE else CURRENT_DATE
+    INPUT_METADATA_FILENAME = cfg_process_agritrop_metadata.PROCESSED_DATA_FILENAME
 
-    # FILES_LOC = {'metadata' :        os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE),
-    #              'tsv' :             os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, 'labels' ),
-    #              'txt' :             os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, 'txt' ),
-    #              'url' :             os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, 'pdf' ),
-    #              'pdf' :             os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, 'pdf' ),
-    #              'metadata_json' :   os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, 'json', 'metadata' ),
-    #              'fulltext_json' :   os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, 'json', 'fulltext' ),
-    #              'coalesced_json' :  os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, 'json', 'coalesced' ),
-    #              'xml' :             os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, 'xml' ),
-    #              'indexing_text' :   os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, 'indexing' ),
-    #              'indexing_json' :   os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, 'indexing' ),
-                 
-    #              'annotation_spotlight': os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, 'annotation', 'dbpedia-spotlight' ),
-    #              'annotation_ef':        os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, 'annotation', 'entity-fishing' ),
-                 
-    #              }
+    DATASET_NAME = _ISSA_DATASET
 
     REMOVE_FILES = False
     SAVE_LABELS_TSV = True
@@ -285,20 +246,15 @@ class cfg_extract_text_from_pdf(cfg_pipeline):
     MERGE_BODY_TEXT = True
     MERGE_SEPARATOR = os.linesep
     
-    #DEFAULT_LANGUAGE = _LANG
-    DETECT_LANG = False
+    DETECT_LANG = True
     BEST_EFFORT_LANG_DETECTION = False
     
     #INCLUDE_AUTHORS = False
     #INCLUDE_BIB = False
-    
-    #DEBUG=True
-    
 
 class cfg_coalesce_meta_json(cfg_pipeline):
    
     DO_COALESE = True
-    #LOG_PATH = '../logs'
     
     INPUT_PATTERN = '*.json'
     OUTPUT_SUFFIX = ''
@@ -310,6 +266,7 @@ class cfg_coalesce_meta_json(cfg_pipeline):
    
     
 class cfg_indexing_preprocess(cfg_pipeline):
+   
     INPUT_PATTERN = '*.json'
     OUTPUT_SUFFIX = '.txt'
     
@@ -332,6 +289,7 @@ class cfg_indexing_preprocess(cfg_pipeline):
     LANGUAGE_DETERMINATORS = ['body_text', 'abstract', 'title']
  
 class cfg_indexing_postprocess(cfg_pipeline): 
+
     FILES_LOC = cfg_pipeline.FILES_LOC  
     
     INPUT_PATTERN= '**/*%s*' % _ANNIF_SUFFIX
@@ -398,10 +356,10 @@ class cfg_annotation_dbpedia(cfg_pipeline):
     OUTPUT_OVERWRITE_EXISTING = False
     
     SPOTLIGHT_ENDPOINTS = {
-        #'en': 'http://localhost:2222/rest/annotate',
-        #'fr': 'http://localhost:2223/rest/annotate',
-        'en': 'https://api.dbpedia-spotlight.org/en/annotate',
-        'fr': 'https://api.dbpedia-spotlight.org/fr/annotate',
+        'en': 'http://localhost:2222/rest/annotate',
+        'fr': 'http://localhost:2223/rest/annotate',
+        #'en': 'https://api.dbpedia-spotlight.org/en/annotate',
+        #'fr': 'https://api.dbpedia-spotlight.org/fr/annotate',
 
     }
     
@@ -437,9 +395,8 @@ class cfg_annotation_wikidata(cfg_pipeline):
                     'body_text': (['body_text' , 0, 'text'], ['metadata', 'body_lang', 'code']) 
                    }
     
-        
-    #ENTITY_FISHING_ENDPOINT = 'http://localhost:8090/service/disambiguate'
-    ENTITY_FISHING_ENDPOINT = 'https://cloud.science-miner.com/nerd//service/disambiguate'
+    ENTITY_FISHING_ENDPOINT = 'http://localhost:8090/service/disambiguate'
+    #ENTITY_FISHING_ENDPOINT = 'https://cloud.science-miner.com/nerd/service/disambiguate'
     
     REMOVE_HEADER = False
     REMOVE_TEXT = True
@@ -467,10 +424,11 @@ class cfg_annotation_geonames(cfg_pipeline):
     
     
     ENTITY_FISHING_ENDPOINTS = {
-        #'disambiguation' : 'http://localhost:8090/service/disambiguate',
-        #'concept_lookup': 'http://localhost:8090/servic/service/kb/concept/',
-        'disambiguation' : 'https://cloud.science-miner.com/nerd//service/disambiguate/',
-        'concept_lookup': 'https://cloud.science-miner.com/nerd//service/kb/concept/',}
+        'disambiguation' : 'http://localhost:8090/service/disambiguate',
+        'concept_lookup': 'http://localhost:8090/service/kb/concept'}
+        #'disambiguation' : 'https://cloud.science-miner.com/nerd//service/disambiguate/',
+        #'concept_lookup': 'https://cloud.science-miner.com/nerd//service/kb/concept/',}
+    
 
     ASYNCH_PROCESSING = True
     ASYNCH_MAX_WORKERS = 10

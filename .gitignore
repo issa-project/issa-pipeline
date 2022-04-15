@@ -10,14 +10,16 @@ logs
 data
 volumes
 output
+bak
+temp
 
 environment/python/issa_venv/
 
-pipeline/*
-!pipeline/indexing
-!pipeline/metadata
-!pipeline/fulltext
-!pipeline/ner
-!*.py
+#pipeline/*
+#!pipeline/indexing
+#!pipeline/metadata
+#!pipeline/fulltext
+#!pipeline/ner
+#!*.py
 
 yasgui.html

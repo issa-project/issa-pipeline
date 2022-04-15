@@ -128,6 +128,30 @@ def detect_language(pdf_dict):
     
     return pdf_dict
 #%%
+def replace_doublequotes(text):
+    """
+    Replace double quotes in string
+    Double quotes cause problems in conversion to Turtle
+    """
+    if isinstance(text, str):
+        return text.replace('""' , "'")
+    
+    if isinstance(text, list):
+        if len(text) == 0:
+            return text
+        
+        if isinstance(text[0], str):
+            return [ x.replace('""' , "'") for x in text ]
+        
+        if isinstance(text[0], dict):
+            for x in text:
+                for k in x:
+                    if isinstance(x[k], str):
+                        x[k] = x[k].replace('""' , "'")
+            return text
+    
+    
+#%%
 def create_cache():
     """
     Create dedicated cache location for pdf files
@@ -137,8 +161,8 @@ def create_cache():
         os.makedirs(cfg.CACHE_PATH, exist_ok=True)
     os.makedirs(cfg.CACHE_UNREADABLE_PATH, exist_ok=True) 
 
-# This global asyncronour timer helps accounting for the time that takes to process 
-# a pdf into account of the delay time between pdf downloads.
+# This global asyncronous timer helps taking the time of processing  
+# a pdf into account of a delay time between pdf downloads.
 # Delay between pdf dowloads prevents blacklisting. 
 timer = threading.Thread()
 timer.start()
@@ -182,9 +206,9 @@ def download_pdf(pdf_url):
         is_new = not glob.glob('%s/**/%s' % (cfg.DATASET_ROOT_PATH, filename),
                           recursive = True)
  
+    global timer
+    timer.join(cfg.DOWNLOAD_DELAY)
     if is_new:
-        global timer
-        timer.join(cfg.DOWNLOAD_DELAY)
         
         headers = {'User-Agent': '%s' % cfg.USER_AGENT }
 
@@ -195,8 +219,10 @@ def download_pdf(pdf_url):
             pdf_file.write(pdf_content)
         
         #time.sleep(cfg.DOWNLOAD_DELAY)
-        timer = threading.Thread( name='download timer', target=time.sleep, args=[cfg.DOWNLOAD_DELAY])
-        timer.start()
+
+    delay = [cfg.DOWNLOAD_DELAY] if is_new else [0.001]
+    timer = threading.Thread( name='download timer', target=time.sleep, args=delay)
+    timer.start()
         
    
     return pdf_path, pdf_content
@@ -241,28 +267,32 @@ def xml_to_dict(paper_id, xml):
     xml_path, json_path =  cfg.XML_DICT_MAP['title']
     title = get_first_text(root, xml_path)
     if title:
+        title = replace_doublequotes(title)
         set_nested_dict_value(output_dict, json_path, title)
     
     #abstract     
     xml_path, json_path =  cfg.XML_DICT_MAP['abstract']        
     abstract = get_all_text_as_one(root, xml_path, sep=' ')
     if abstract:
+        abstract = replace_doublequotes(abstract)
         set_nested_dict_value(output_dict, json_path, abstract)
         
     #keywords
     xml_path, json_path =  cfg.XML_DICT_MAP['keywords']
     keywords = get_all_text_as_one(root, xml_path, sep=', ')
     if keywords:
+        keywords = replace_doublequotes(keywords)
         set_nested_dict_value(output_dict, json_path, keywords)
     
     #body
     xml_path, json_path =  cfg.XML_DICT_MAP['body_text']  
     if cfg.MERGE_BODY_TEXT:
-        body = [{'text': get_all_text_as_one(root, xml_path, sep=cfg.MERGE_SEPARATOR)}]
+        body = [{'text': get_all_text_as_one(root, xml_path, sep=cfg.MERGE_SEPARATOR)}]     
     else:
         body = [{'text': t} for t in get_all_text_as_list(root, xml_path) ]     
 
     if body:
+        body = replace_doublequotes(body)
         set_nested_dict_value(output_dict, json_path, body)
 
     return output_dict

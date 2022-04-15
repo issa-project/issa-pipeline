@@ -1,0 +1,27 @@
+log_enable(3,1);
+SPARQL CLEAR GRAPH  <http://data-issa.cirad.fr/graph/articles>;
+SPARQL CLEAR GRAPH  <http://data-issa.cirad.fr/graph/thematic-descriptors>;
+SPARQL CLEAR GRAPH  <http://data-issa.cirad.fr/graph/dbpedia-spotlight-nes>;
+SPARQL CLEAR GRAPH  <http://data-issa.cirad.fr/graph/entity-fishing-nes>;
+SPARQL CLEAR GRAPH  <http://data-issa.cirad.fr/graph/geographic-nes>;
+
+-- $ARGV[$I] shoud contain a data import dir path 
+DELETE FROM DB.DBA.load_list;
+ld_dir ('$ARGV[$I]', 'issa-document-metadata.ttl', 'http://data-issa.cirad.fr/graph/articles');
+ld_dir ('$ARGV[$I]', 'issa-article-text.ttl', 'http://data-issa.cirad.fr/graph/articles');
+
+ld_dir ('$ARGV[$I]', 'issa-document-descriptors.ttl', 'http://data-issa.cirad.fr/graph/thematic-descriptors');
+ld_dir ('$ARGV[$I]', 'issa-article-annif-descriptors.ttl', 'http://data-issa.cirad.fr/graph/thematic-descriptors');
+
+ld_dir ('$ARGV[$I]', 'issa-article-spotlight-*.ttl', 'http://data-issa.cirad.fr/graph/dbpedia-spotlight-nes');
+
+ld_dir ('$ARGV[$I]', 'issa-article-entityfishing-*.ttl', 'http://data-issa.cirad.fr/graph/entity-fishing-nes');
+
+ld_dir ('$ARGV[$I]', 'issa-article-geonames-*.ttl', 'http://data-issa.cirad.fr/graph/geographic-nes');
+
+
+rdf_loader_run ();
+checkpoint;
+SPARQL SELECT DISTINCT ?g (COUNT(*) as ?triples) WHERE { GRAPH ?g {?s ?p ?o} };
+exit;
+

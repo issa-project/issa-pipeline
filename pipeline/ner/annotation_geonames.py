@@ -65,6 +65,9 @@ def create_output_dirs():
 def disambiguate_location(rawName, lang='en'):
     
     response_json = wa.request_entity_fishing_short(rawName, lang)
+    
+    if not response_json:
+        return nan
 
     if 'entities' not in response_json.keys():
         return nan
@@ -82,6 +85,9 @@ def disambiguate_location(rawName, lang='en'):
 def lookup_concept(wikidataId):
     
     response_json = wa.request_entity_fishing_concept_lookup(wikidataId)
+    
+    if not response_json:
+        return nan
 
     if 'statements' not in response_json.keys():
         return nan
