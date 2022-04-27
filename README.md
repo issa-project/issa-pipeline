@@ -1,18 +1,23 @@
-# ISSA Knowledge Graph
+# ISSA Pipeline
  
-This repository describes the RDF knowledge graph produced by the [ISSA](https://issa.cirad.fr/) project, and provides the tools involved in the RDF generation pipeline.
+This repository contains the pipeline developed by the [ISSA](https://issa.cirad.fr/) project,
+The pipeline orchestrates the automatic indexing of article of a scientific archive, by extracting from the articles full-text thematic descriptors and named entities, and linking them with terminological resources in the Semantic Web format.
+
+The repository consists of various tools, scripts, configuration files involved in each step of the pipeline.
+- retrieve the articles metadata from the archive's API;
+- download and pre-process the PDF files of the articles;
+- process the output to extract thematic descriptors and named  entities;
+- translate the output of each treatment into a unified, consistent RDF dataset;
+- upload the resulting dataset to a triple store equipped with a SPARQL endpoint.
 
 
 ## Content
 
+- [Processing pipeline](pipeline/)
+- [Tools related to Docker containers and third-party datasets](environment/)
 - [RDF modeling](doc/data-modeling.md)
 - [RDF examples](doc/examples/)
-- [Generation pipeline](src/)
-
-
-## Downloading and SPARQL Querying
-
-*TBC*.
+- [Vocabulary definitions and RDF dataset description](dataset/)
 
 ## License
 
