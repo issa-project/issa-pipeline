@@ -1,4 +1,4 @@
-# ISSA Pipeline
+# ISSA Processing Pipeline
  
 This repository contains the pipeline developed by the [ISSA](https://issa.cirad.fr/) project,
 The pipeline orchestrates the automatic indexing of article of a scientific archive, by extracting from the articles full-text thematic descriptors and named entities, and linking them with terminological resources in the Semantic Web format.
@@ -23,3 +23,7 @@ The repository consists of various tools, scripts, configuration files involved 
 
 See the [LICENSE file](LICENSE).
 
+
+## Cite this work:
+
+Anna BOBASHEVA, Franck MICHEL, ISSA Project (2022). ISSA Processing Pipeline. https://github.com/issa-project/issa-pipeline.
