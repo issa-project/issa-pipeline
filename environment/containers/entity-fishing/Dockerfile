@@ -24,14 +24,21 @@ RUN apt-get update && \
 
 WORKDIR /opt/
 
-RUN git clone https://github.com/kermitt2/grobid.git  --branch 0.7.0
+RUN git clone https://github.com/kermitt2/grobid.git  --branch 0.7.1
 RUN cd grobid && ./gradlew clean install
 
-RUN cd grobid/ && git clone https://github.com/kermitt2/grobid-ner.git && cd grobid-ner && \
-        ./gradlew copyModels && ./gradlew clean install
+RUN cd grobid/ && \
+    git clone https://github.com/kermitt2/grobid-ner.git && \
+    cd grobid-ner && \
+    git checkout 7870e5653c73dac614c6550ec5b3a19214770ba9 && \ 
+    ./gradlew copyModels && \
+    ./gradlew clean install
 
 WORKDIR /opt/
-RUN git clone https://github.com/kermitt2/entity-fishing.git && cd entity-fishing && git checkout bd6db6d94ff7e5302085a2acb31e780d00b1552c && ./gradlew clean build -x test
+RUN git clone https://github.com/kermitt2/entity-fishing.git && \ 
+    cd entity-fishing && \ 
+    git checkout 5f9e7a8baa7ce20f17b9b81343b4e8bcde6085d0 && \ 
+    ./gradlew clean build -x test
 
 COPY run-ef.sh /opt/
 
