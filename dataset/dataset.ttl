@@ -56,7 +56,7 @@ issa:issa-agritrop
     dct:issued              "2022-04-29"^^xsd:date;
     schema:datePublished    "2022-04-29"^^xsd:date;
     prov:wasGeneratedAtTime "2022-04-29"^^xsd:date;
-    void:triples            "66419261"^^xsd:integer;
+    void:triples            "66051026"^^xsd:integer;
     owl:versionInfo         "1.0.20220411";
     void:dataDump       <https://doi.org/10.5281/zenodo.6505847> # update when obtained new
    .
@@ -117,7 +117,7 @@ issa:issa2wikidata
    void:objectsTarget issa:Wikidata;
    
    # updatable property
-   void:triples "1490801"^^xsd:integer;
+   void:triples "2174769"^^xsd:integer;
    .
 
 issa:DBpedia
@@ -147,7 +147,7 @@ issa:issa2agrovoc
    void:objectsTarget <http://aims.fao.org/aos/agrovoc/void.ttl#Agrovoc>;   
    
    # updatable property
-   void:triples "313673"^^xsd:integer;
+   void:triples "313876"^^xsd:integer;
    .
 
 <http://www.geonames.org/ontology>
