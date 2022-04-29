@@ -1,9 +1,13 @@
 @prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#>.
 @prefix owl:    <http://www.w3.org/2002/07/owl#>.
 @prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
+@prefix schema: <http://schema.org/>.
 
 @prefix dct:    <http://purl.org/dc/terms/>.
+@prefix dce:    <http://purl.org/dc/elements/1.1/>.
 @prefix prov:   <http://www.w3.org/ns/prov#>.
+@prefix foaf:   <http://xmlns.com/foaf/0.1/>.
+@prefix bibo:   <http://purl.org/ontology/bibo/> .
 
 @prefix issa:   <http://data-issa.cirad.fr/>.
 @prefix issap:  <http://data-issa.cirad.fr/property/>.
@@ -37,13 +41,13 @@ issa:AgritropDocumentalist
     dct:description         "A human documentalist who assigns or verifies Agrovoc descriptors of documents";
     .
 
-issa:AnnifIndexer
+issa:AnnifSubjectIndexer
     a                       prov:SoftwareAgent;
     prov:actedOnBehalfOf    <https://annif.org/>;
     dct:description         "Tool for automated subject indexing and classification";
     .
 
-issa:GeographicDescriptorsGenerator
+issa:GeographicEntityExtractor
     a                       prov:SoftwareAgent;
     dct:description         "Tool for automated geographical entity extraction";
     .

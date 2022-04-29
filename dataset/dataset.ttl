@@ -4,10 +4,17 @@
 @prefix schema: <http://schema.org/>.
 
 @prefix dct:    <http://purl.org/dc/terms/>.
+@prefix dcat:   <http://www.w3.org/ns/dcat#>.
 @prefix fabio:  <http://purl.org/spar/fabio/> .
 @prefix frbr:   <http://purl.org/vocab/frbr/core#>.
 @prefix prov:   <http://www.w3.org/ns/prov#>.
-@prefix sd:     <http://www.w3.org/ns/sparql-service-description#>
+@prefix sd:     <http://www.w3.org/ns/sparql-service-description#>.
+@prefix void:   <http://rdfs.org/ns/void#> .
+@prefix bibo:   <http://purl.org/ontology/bibo/> .
+@prefix dce:    <http://purl.org/dc/elements/1.1/>.
+@prefix eprint: <http://purl.org/eprint/type/> .
+@prefix oa:     <http://www.w3.org/ns/oa#>.
+@prefix foaf:   <http://xmlns.com/foaf/0.1/>.
 
 @prefix issa:   <http://data-issa.cirad.fr/>.
 @prefix issap:  <http://data-issa.cirad.fr/property/>.
@@ -38,20 +45,21 @@ issa:issa-agritrop
     prov:wasGeneratedBy     issa:RdfGeneration;
     
     void:uriSpace       "http://data-issa.cirad.fr/";
-    void:sparqlEndpoint <https://data-issa.cirad.fr/sparql>;
-    #void:dataDump       <https://doi.org/10.5281/zenodo.4247134>; <- update when obtained
+    void:sparqlEndpoint <http://issa.i3s.unice.fr/sparql>; 
+ 
     void:vocabulary
         bibo:, dcat:, dce:, dct:, fabio:, foaf:, frbr:, oa:, prov:, schema:, void:,
         <http://aims.fao.org/aos/agrontology#>,  # Agrovoc 
         <http://www.geonames.org/ontology#>;     # GeoNames
     
     # updatable properties 
-    dct:issued              "2020-11-05"^^xsd:date;
-    schema:datePublished    "2020-11-05"^^xsd:date;
-    prov:wasGeneratedAtTime "2020-11-05"^^xsd:date;
-    void:triples            "1372643149"^^xsd:integer;
-    owl:versionInfo "1.0.date";
-    .
+    dct:issued              "2022-04-29"^^xsd:date;
+    schema:datePublished    "2022-04-29"^^xsd:date;
+    prov:wasGeneratedAtTime "2022-04-29"^^xsd:date;
+    void:triples            "66419261"^^xsd:integer;
+    owl:versionInfo         "1.0.20220411";
+    void:dataDump       <https://doi.org/10.5281/zenodo.6505847> # update when obtained new
+   .
 
 # --- Organizations involved
 <https://ror.org/0496p8026> a foaf:Organization; foaf:name "University Côte d'Azur";
@@ -71,20 +79,20 @@ issa:issa-agritrop
 issa:sparql-service
     a                    sd:Service, dcat:DataService;
     sd:supportedLanguage sd:SPARQL10Query, sd:SPARQL11Query;
-    sd:endpoint          <https://data-issa.cirad.fr/sparql>;
-    dcat:endpointURL     <https://data-issa.cirad.fr/sparql>;
+    sd:endpoint          <http://issa.i3s.unice.fr/sparql>;
+    dcat:endpointURL     <http://issa.i3s.unice.fr/sparql>;
     rdfs:label           "SPARQL endpoint serving the ISSA Agritrop dataset";
-    dcat:servesDataset   issa:issa-agritrop-1-0;
+    dcat:servesDataset   issa:issa-agritrop;
     sd:availableGraphs [
         a                sd:GraphCollection;
         sd:namedGraph 
-            <http://data-issa.cirad.fr/graph/metadata>,
+            <http://data-issa.cirad.fr/graph/dataset>, 
             <http://data-issa.cirad.fr/graph/articles>,
             <http://data-issa.cirad.fr/graph/thematic-descriptors>,
-            <http://data-issa.cirad.fr/graph/geo-descriptors>,
+            <http://data-issa.cirad.fr/graph/annif-descriptors>,
+            <http://data-issa.cirad.fr/graph/geographic-nes>,
             <http://data-issa.cirad.fr/graph/entity-fishing-nes>,
-            <http://data-issa.cirad.fr/graph/dbpedia-spotlight-nes>,
-            <http://data-issa.cirad.fr/graph/annif-descriptors>
+            <http://data-issa.cirad.fr/graph/dbpedia-spotlight-nes>
     ].
 
 # --- Agritrop dataset and provenance information
@@ -106,9 +114,10 @@ issa:issa2wikidata
    a void:Linkset;
    void:linkPredicate oa:hasBody;
    void:subjectsTarget issa:issa-agritrop;
-   void:objectsTarget covid:Wikidata;
+   void:objectsTarget issa:Wikidata;
+   
    # updatable property
-   void:triples "66098777"^^xsd:integer;
+   void:triples "1490801"^^xsd:integer;
    .
 
 issa:DBpedia
@@ -121,6 +130,38 @@ issa:issa2dbpedia
    void:linkPredicate oa:hasBody;
    void:subjectsTarget issa:issa-agritrop;
    void:objectsTarget issa:DBpedia;   
+   
    # updatable property
-   void:triples "4084979"^^xsd:integer;
+   void:triples "1469774"^^xsd:integer;
    .
+
+<http://aims.fao.org/aos/agrovoc/void.ttl#Agrovoc>
+   dct:title "Agrovoc"@en;
+   a void:Dataset;
+   foaf:homepage <http://aims.fao.org/agrovoc>.
+
+issa:issa2agrovoc
+   a void:Linkset;
+   void:linkPredicate oa:hasBody;
+   void:subjectsTarget issa:issa-agritrop;
+   void:objectsTarget <http://aims.fao.org/aos/agrovoc/void.ttl#Agrovoc>;   
+   
+   # updatable property
+   void:triples "313673"^^xsd:integer;
+   .
+
+<http://www.geonames.org/ontology>
+   dct:title "GeoNames"@en;
+   a void:Dataset;
+   foaf:homepage <http://www.geonames.org/ontology/documentation.html>.
+
+issa:issa2geonames
+   a void:Linkset;
+   void:linkPredicate oa:hasBody;
+   void:subjectsTarget issa:issa-agritrop;
+   void:objectsTarget <http://www.geonames.org/ontology>;   
+   
+   # updatable property
+   void:triples "152808"^^xsd:integer;
+   .
+

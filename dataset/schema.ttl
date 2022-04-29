@@ -69,10 +69,10 @@ issa:ThematicDesciptorAnnotation
     # How should we link this to Agrovoc?
     .
 
-issa:GeoDesciptorAnnotation
+issa:GeographicAnnotation
     a                       owl:Class;
     rdfs:subClassOf         oa:Annotation;
-    rdfs:label              "geographical descriptor";
+    rdfs:label              "geographical annotation";
     dct:description         "Document's geographical descriptor";
     # How should we link this to GeoNames?
     .
