@@ -24,7 +24,7 @@
 
 <http://data-issa.cirad.fr/ann/09908e078f9f9ca2196d41ea7489f6f761ae9931>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'natural resource management'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -36,7 +36,7 @@
 
 <http://data-issa.cirad.fr/ann/6689ff7b95cca3efbf192e50bb8e27faf8fee981>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'participatory development'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -48,7 +48,7 @@
 
 <http://data-issa.cirad.fr/ann/5e19bd152d48dd4ad877c29fecb20d05d0382a67>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'natural resource management'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -83,7 +83,7 @@
 
 <http://data-issa.cirad.fr/ann/0520e804d22ca50407acfbdd014a958c53b4f919>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'ecology'" ;
       issapr:confidence 0.9999999999178044 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -105,7 +105,7 @@
 
 <http://data-issa.cirad.fr/ann/5b49d59241981d83e478068548a8fd07dc7b99f2>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'ecology'" ;
       issapr:confidence 0.9999999999178044 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -126,7 +126,7 @@
 
 <http://data-issa.cirad.fr/ann/1a1d89299633ad82531a10869a6f3325a5286b2d>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'traditional ecological knowledge'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -142,7 +142,7 @@
 
 <http://data-issa.cirad.fr/ann/a0a0de95380f7bee4cd741403782bf2521d07e02>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'tropical forest'" ;
       issapr:confidence 0.996568017279605 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -154,7 +154,7 @@
 
 <http://data-issa.cirad.fr/ann/9fe00287a9d773b37e99f84660c515d0550b97d2>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'ecology'" ;
       issapr:confidence 0.9999999999178044 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -174,7 +174,7 @@
 
 <http://data-issa.cirad.fr/ann/16ba28ebf04b721f90943313e946b1e38d64de9e>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'resource management'" ;
       issapr:confidence 0.653565155638299 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -208,7 +208,7 @@
 
 <http://data-issa.cirad.fr/ann/04e2ec66c697b90d2d06e16f35f58b0512030ee5>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'developing countries'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -230,7 +230,7 @@
 
 <http://data-issa.cirad.fr/ann/6a5dc519755465ff34c6e355bdba2cf9695ce725>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Participatory development'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -255,7 +255,7 @@
 
 <http://data-issa.cirad.fr/ann/60d0f9cddca712a9c2466c190484b7f7150f3f2e>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'tropical forest'" ;
       issapr:confidence 0.996568017279605 ;
       dct:creator <https://team.inria.fr/wimmics/> ;

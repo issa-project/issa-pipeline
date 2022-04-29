@@ -25,90 +25,105 @@
       a       prov:Entity , issa:ThematicDescriptorAnnotation ;
       oa:hasBody <http://aims.fao.org/aos/agrovoc/c_9000119> ;
       oa:hasTarget <http://data-issa.cirad.fr/article/543654> ;
+	  rdfs:isDefinedBy issa:issa-agritrop ;
       prov:wasAttributedTo issa:AgritropDocumentalist .
 
 <http://data-issa.cirad.fr/descr/344f88292f77c148f1ea748bdbac74977b6e6166>
       a       prov:Entity , issa:ThematicDescriptorAnnotation ;
       oa:hasBody <http://aims.fao.org/aos/agrovoc/c_2594> ;
       oa:hasTarget <http://data-issa.cirad.fr/article/543654> ;
+	  rdfs:isDefinedBy issa:issa-agritrop ;
       prov:wasAttributedTo issa:AgritropDocumentalist .
 
 <http://data-issa.cirad.fr/descr/6cb0baa88218a6cae1cdf3bfe92d81546c9c3390>
       a       prov:Entity , issa:ThematicDescriptorAnnotation ;
       oa:hasBody <http://aims.fao.org/aos/agrovoc/c_37602> ;
       oa:hasTarget <http://data-issa.cirad.fr/article/543654> ;
+	  rdfs:isDefinedBy issa:issa-agritrop ;
       prov:wasAttributedTo  issa:AgritropDocumentalist .
 
 <http://data-issa.cirad.fr/descr/5317acb9ad6889e3014e92909f50963c93003469>
       a       prov:Entity , issa:ThematicDescriptorAnnotation ;
       oa:hasBody <http://aims.fao.org/aos/agrovoc/c_7142> ;
       oa:hasTarget <http://data-issa.cirad.fr/article/543654> ;
+	  rdfs:isDefinedBy issa:issa-agritrop ;
       prov:wasAttributedTo issa:AgritropDocumentalist .
 
 <http://data-issa.cirad.fr/descr/366484a331375f3aab92ee562dbe75b2401c8030>
       a       prov:Entity , issa:ThematicDescriptorAnnotation ;
       oa:hasBody <http://aims.fao.org/aos/agrovoc/c_24420> ;
       oa:hasTarget <http://data-issa.cirad.fr/article/543654> ;
+	  rdfs:isDefinedBy issa:issa-agritrop ;
       prov:wasAttributedTo issa:AgritropDocumentalist .
 
 <http://data-issa.cirad.fr/descr/f6b8891fcd2793f0c0204920c9dfcd9ac20a4f27>
       a       prov:Entity , issa:ThematicDescriptorAnnotation ;
       oa:hasBody <http://aims.fao.org/aos/agrovoc/c_24392> ;
       oa:hasTarget <http://data-issa.cirad.fr/article/543654> ;
+	  rdfs:isDefinedBy issa:issa-agritrop ;
       prov:wasAttributedTo issa:AgritropDocumentalist .
 
 <http://data-issa.cirad.fr/descr/4325d7bce7ee94eb0bfb1b8c9a31fcd0f4c7f77d>
       a       prov:Entity , issa:ThematicDescriptorAnnotation ;
       oa:hasBody <http://aims.fao.org/aos/agrovoc/c_9000115> ;
       oa:hasTarget <http://data-issa.cirad.fr/article/543654> ;
+	  rdfs:isDefinedBy issa:issa-agritrop ;
       prov:wasAttributedTo issa:AgritropDocumentalist .
 
 <http://data-issa.cirad.fr/descr/2a6f7fdc6bbc8c96d59d9785244223adcc5b488c>
       a       prov:Entity , issa:ThematicDescriptorAnnotation ;
       oa:hasBody <http://aims.fao.org/aos/agrovoc/c_4510> ;
       oa:hasTarget <http://data-issa.cirad.fr/article/543654> ;
+	  rdfs:isDefinedBy issa:issa-agritrop ;
       prov:wasAttributedTo issa:AgritropDocumentalist .
 
 <http://data-issa.cirad.fr/descr/ca53a379d17f7b3da4a5aea293163377abeb705f>
       a       prov:Entity , issa:ThematicDescriptorAnnotation ;
       oa:hasBody <http://aims.fao.org/aos/agrovoc/c_3044> ;
       oa:hasTarget <http://data-issa.cirad.fr/article/543654> ;
+	  rdfs:isDefinedBy issa:issa-agritrop ;
       prov:wasAttributedTo issa:AgritropDocumentalist .
 
 <http://data-issa.cirad.fr/descr/7e4f74e74dbbbcc9329afd3cc78e139cc9efc474>
       a       prov:Entity , issa:ThematicDescriptorAnnotation ;
       oa:hasBody <http://aims.fao.org/aos/agrovoc/c_2228> ;
       oa:hasTarget <http://data-issa.cirad.fr/article/543654> ;
+	  rdfs:isDefinedBy issa:issa-agritrop ;
       prov:wasAttributedTo issa:AgritropDocumentalist .
 
 <http://data-issa.cirad.fr/descr/ca84704e5864b1dc10f4984ea9c579b93fad9a3f>
       a       prov:Entity , issa:ThematicDescriptorAnnotation ;
       oa:hasBody <http://aims.fao.org/aos/agrovoc/c_24904> ;
       oa:hasTarget <http://data-issa.cirad.fr/article/543654> ;
+	  rdfs:isDefinedBy issa:issa-agritrop ;
       prov:wasAttributedTo issa:AgritropDocumentalist .
 
 <http://data-issa.cirad.fr/descr/0d47f2e4ecffd54698caa56772eb4fd477ba98e6>
       a       prov:Entity , issa:ThematicDescriptorAnnotation ;
       oa:hasBody <http://aims.fao.org/aos/agrovoc/c_4185> ;
       oa:hasTarget <http://data-issa.cirad.fr/article/543654> ;
+	  rdfs:isDefinedBy issa:issa-agritrop ;
       prov:wasAttributedTo issa:AgritropDocumentalist .
 
 <http://data-issa.cirad.fr/descr/3573cd52f16d7882c72210bca7c9b3ecef02d129>
       a       prov:Entity , issa:ThematicDescriptorAnnotation ;
       oa:hasBody <http://aims.fao.org/aos/agrovoc/c_35332> ;
       oa:hasTarget <http://data-issa.cirad.fr/article/543654> ;
+	  rdfs:isDefinedBy issa:issa-agritrop ;
       prov:wasAttributedTo issa:AgritropDocumentalist .
 
 <http://data-issa.cirad.fr/descr/c15181598cc94933366c6770fb99898bb2719f81>
       a       prov:Entity , issa:ThematicDescriptorAnnotation ;
       oa:hasBody <http://aims.fao.org/aos/agrovoc/c_9000026> ;
       oa:hasTarget <http://data-issa.cirad.fr/article/543654> ;
+	  rdfs:isDefinedBy issa:issa-agritrop ;
       prov:wasAttributedTo issa:AgritropDocumentalist .
 
 <http://data-issa.cirad.fr/descr/64166110e388f31dfa3ae4317fa6afe0ad858987>
       a       prov:Entity , issa:ThematicDescriptorAnnotation ;
       oa:hasBody <http://aims.fao.org/aos/agrovoc/c_3840> ;
       oa:hasTarget <http://data-issa.cirad.fr/article/543654> ;
+	  rdfs:isDefinedBy issa:issa-agritrop ;
       prov:wasAttributedTo issa:AgritropDocumentalist .
 
 #AnnifSubjectIndexer
@@ -119,6 +134,7 @@
       issapr:rank 9 ;
       oa:hasBody <http://aims.fao.org/aos/agrovoc/c_16129> ;
       oa:hasTarget <http://data-issa.cirad.fr/article/543654> ;
+	  rdfs:isDefinedBy issa:issa-agritrop ;
       prov:wasAttributedTo issa:AnnifSubjectIndexer .
 
 <http://data-issa.cirad.fr/descr/5db83a1379ba1aaf414302b34939dd9ac505729f>
@@ -127,6 +143,7 @@
       issapr:rank 4 ;
       oa:hasBody <http://aims.fao.org/aos/agrovoc/c_9000119> ;
       oa:hasTarget <http://data-issa.cirad.fr/article/543654> ;
+	  rdfs:isDefinedBy issa:issa-agritrop ;
       prov:wasAttributedTo issa:AnnifSubjectIndexer .
 
 <http://data-issa.cirad.fr/descr/7acc4418b07d01fc060d618a184f06590a45bb21>
@@ -135,6 +152,7 @@
       issapr:rank 11 ;
       oa:hasBody <http://aims.fao.org/aos/agrovoc/c_5211> ;
       oa:hasTarget <http://data-issa.cirad.fr/article/543654> ;
+	  rdfs:isDefinedBy issa:issa-agritrop ;
       prov:wasAttributedTo issa:AnnifSubjectIndexer .
 
 <http://data-issa.cirad.fr/descr/b7bebdcd7743492672fbc2dd66703696efb014ac>
@@ -143,6 +161,7 @@
       issapr:rank 8 ;
       oa:hasBody <http://aims.fao.org/aos/agrovoc/c_24950> ;
       oa:hasTarget <http://data-issa.cirad.fr/article/543654> ;
+	  rdfs:isDefinedBy issa:issa-agritrop ;
       prov:wasAttributedTo issa:AnnifSubjectIndexer .
 
 <http://data-issa.cirad.fr/descr/7db8cabc68ced3be1f5d8743ec6a74ad2c5e8c3d>
@@ -151,6 +170,7 @@
       issapr:rank 13 ;
       oa:hasBody <http://aims.fao.org/aos/agrovoc/c_3044> ;
       oa:hasTarget <http://data-issa.cirad.fr/article/543654> ;
+	  rdfs:isDefinedBy issa:issa-agritrop ;
       prov:wasAttributedTo issa:AnnifSubjectIndexer .
 
 <http://data-issa.cirad.fr/descr/66cbe37cd0d2a88b315398f44e65f1ac2602910a>
@@ -159,6 +179,7 @@
       issapr:rank 7 ;
       oa:hasBody <http://aims.fao.org/aos/agrovoc/c_4185> ;
       oa:hasTarget <http://data-issa.cirad.fr/article/543654> ;
+	  rdfs:isDefinedBy issa:issa-agritrop ;
       prov:wasAttributedTo issa:AnnifSubjectIndexer .
 
 <http://data-issa.cirad.fr/descr/9efc72ae6fb7ffed863d33c770febfacda46680e>
@@ -167,6 +188,7 @@
       issapr:rank 12 ;
       oa:hasBody <http://aims.fao.org/aos/agrovoc/c_35704> ;
       oa:hasTarget <http://data-issa.cirad.fr/article/543654> ;
+	  rdfs:isDefinedBy issa:issa-agritrop ;
       prov:wasAttributedTo issa:AnnifSubjectIndexer .
 
 <http://data-issa.cirad.fr/descr/4c0bf97e97721d3aa38374883a20c37b4b7496e0>
@@ -175,6 +197,7 @@
       issapr:rank 6 ;
       oa:hasBody <http://aims.fao.org/aos/agrovoc/c_35332> ;
       oa:hasTarget <http://data-issa.cirad.fr/article/543654> ;
+	  rdfs:isDefinedBy issa:issa-agritrop ;
       prov:wasAttributedTo issa:AnnifSubjectIndexer .
 
 <http://data-issa.cirad.fr/descr/a1a05122bb885d6dd2c766f616e48ae4516f94cd>
@@ -183,6 +206,7 @@
       issapr:rank 3 ;
       oa:hasBody <http://aims.fao.org/aos/agrovoc/c_4510> ;
       oa:hasTarget <http://data-issa.cirad.fr/article/543654> ;
+	  rdfs:isDefinedBy issa:issa-agritrop ;
       prov:wasAttributedTo issa:AnnifSubjectIndexer .
 
 <http://data-issa.cirad.fr/descr/a278e704eceb047b6dd3346bf8a4348c64e0d0a1>
@@ -191,6 +215,7 @@
       issapr:rank 2 ;
       oa:hasBody <http://aims.fao.org/aos/agrovoc/c_3840> ;
       oa:hasTarget <http://data-issa.cirad.fr/article/543654> ;
+	  rdfs:isDefinedBy issa:issa-agritrop ;
       prov:wasAttributedTo issa:AnnifSubjectIndexer .
 
 <http://data-issa.cirad.fr/descr/9c706ac8611bbfdc2f386fa925a4e2500162a1b8>
@@ -199,6 +224,7 @@
       issapr:rank 5 ;
       oa:hasBody <http://aims.fao.org/aos/agrovoc/c_24904> ;
       oa:hasTarget <http://data-issa.cirad.fr/article/543654> ;
+	  rdfs:isDefinedBy issa:issa-agritrop ;
       prov:wasAttributedTo issa:AnnifSubjectIndexer .
 
 <http://data-issa.cirad.fr/descr/e2ba273e40beccc2b8ae5f7792690dce7e6b2131>
@@ -207,6 +233,7 @@
       issapr:rank 1 ;
       oa:hasBody <http://aims.fao.org/aos/agrovoc/c_9000115> ;
       oa:hasTarget <http://data-issa.cirad.fr/article/543654> ;
+	  rdfs:isDefinedBy issa:issa-agritrop ;
       prov:wasAttributedTo issa:AnnifSubjectIndexer .
 
 <http://data-issa.cirad.fr/descr/e267b1a41909561b159ca45408c77f08217956a6>
@@ -215,6 +242,7 @@
       issapr:rank 15 ;
       oa:hasBody <http://aims.fao.org/aos/agrovoc/c_6524> ;
       oa:hasTarget <http://data-issa.cirad.fr/article/543654> ;
+	  rdfs:isDefinedBy issa:issa-agritrop ;
       prov:wasAttributedTo issa:AnnifSubjectIndexer .
 
 <http://data-issa.cirad.fr/descr/6465fdbc533fa511b1d904da8d17e900fcad09af>
@@ -223,6 +251,7 @@
       issapr:rank 10 ;
       oa:hasBody <http://aims.fao.org/aos/agrovoc/c_24392> ;
       oa:hasTarget <http://data-issa.cirad.fr/article/543654> ;
+	  rdfs:isDefinedBy issa:issa-agritrop ;
       prov:wasAttributedTo issa:AnnifSubjectIndexer .
 
 <http://data-issa.cirad.fr/descr/a71d7a3f9be21309a51dde9e9350dc1f2aea5861>
@@ -231,4 +260,5 @@
       issapr:rank 14 ;
       oa:hasBody <http://aims.fao.org/aos/agrovoc/c_2228> ;
       oa:hasTarget <http://data-issa.cirad.fr/article/543654> ;
+	  rdfs:isDefinedBy issa:issa-agritrop ;
       prov:wasAttributedTo issa:AnnifSubjectIndexer .

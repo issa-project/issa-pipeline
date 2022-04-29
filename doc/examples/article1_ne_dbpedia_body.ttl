@@ -20,7 +20,7 @@
 
 <http://data-issa.cirad.fr/ann/104457224ab2f597f000a560018cac256ad08e1e>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'wildfire'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -55,7 +55,7 @@
 
 <http://data-issa.cirad.fr/ann/72ac704f7e116b221638eeb1245fd6f20570f387>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Tanimbar'" ;
       issapr:confidence 0.9999999999997726 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -84,7 +84,7 @@
 
 <http://data-issa.cirad.fr/ann/e59db2fced3f19ac143f1efa5c2cabf55927873b>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'shrimp'" ;
       issapr:confidence 0.7092659035380526 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -105,7 +105,7 @@
 
 <http://data-issa.cirad.fr/ann/343f0147465967650ce1a26802f3a817eb53a73c>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'adaptive management'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -134,7 +134,7 @@
 
 <http://data-issa.cirad.fr/ann/95039275a88ae3ad2374a19459717fb59807570e>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'statutory law'" ;
       issapr:confidence 0.999999999832653 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -151,7 +151,7 @@
 
 <http://data-issa.cirad.fr/ann/2049fae9d3d438b42a73dafa728bfd1ea4a3bd5f>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'shifting cultivation'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -192,7 +192,7 @@
 
 <http://data-issa.cirad.fr/ann/20734fe95e809e06b9519e8c7c282c59607ade44>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Tanimbar'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -213,7 +213,7 @@
 
 <http://data-issa.cirad.fr/ann/db286c4a52d323be3070da470bd7a6ab8e61d934>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'land tenure'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -261,7 +261,7 @@
 
 <http://data-issa.cirad.fr/ann/93fe5e4434d267339beb41c7cec224a06c86b324>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'village'" ;
       issapr:confidence 0.928970746789265 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -295,7 +295,7 @@
 
 <http://data-issa.cirad.fr/ann/2274d352d4bbf060323696c691c6ac282a1814a3>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'fallow'" ;
       issapr:confidence 0.9998181072335139 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -307,7 +307,7 @@
 
 <http://data-issa.cirad.fr/ann/f3fe170c40eaf226dd13011725c453892460f5f0>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'swamp'" ;
       issapr:confidence 0.9947169651590568 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -340,7 +340,7 @@
 
 <http://data-issa.cirad.fr/ann/565a841d830df0e1f1d775609e24ca8e31e14570>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'village'" ;
       issapr:confidence 0.8226323122607789 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -362,7 +362,7 @@
 
 <http://data-issa.cirad.fr/ann/ff668892896a35befec96991ad115df4e81c07d9>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'chemical fertilizer'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -374,7 +374,7 @@
 
 <http://data-issa.cirad.fr/ann/3b045fc6aec1d86b2615379cb2d75a7cee6ed405>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'impose'" ;
       issapr:confidence 0.9845663661296036 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -396,7 +396,7 @@
 
 <http://data-issa.cirad.fr/ann/dd166881ea0e3ed488101a9e6d0f8ce586fe452d>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'copra'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -426,7 +426,7 @@
 
 <http://data-issa.cirad.fr/ann/eb2ef7d915d5cc2bdfe1ccbea551214e51c3cddc>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'shrimp'" ;
       issapr:confidence 0.998753386737129 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -438,7 +438,7 @@
 
 <http://data-issa.cirad.fr/ann/f9a56e901ddaf1a453beaa60f2c2b0010f7e4bdd>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'fallow'" ;
       issapr:confidence 0.999999924570264 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -450,7 +450,7 @@
 
 <http://data-issa.cirad.fr/ann/c296bae839b916c60adbb9bc930ea99cef70c2bb>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Participatory development'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -462,7 +462,7 @@
 
 <http://data-issa.cirad.fr/ann/0895cc437ecd194ebbf223220d83fac98bb587fd>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'adat'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -474,7 +474,7 @@
 
 <http://data-issa.cirad.fr/ann/2e52c94fa500220fcced603e826cab9d8531666b>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'tavy'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -490,7 +490,7 @@
 
 <http://data-issa.cirad.fr/ann/408e6b02458499be85206bb4e95f62b0f49b94f3>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'coffee'" ;
       issapr:confidence 0.9998089943867399 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -506,7 +506,7 @@
 
 <http://data-issa.cirad.fr/ann/f9bb0718f65965fdf579fe7ee46510f82952f01c>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'resource management'" ;
       issapr:confidence 0.9212145750494581 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -518,7 +518,7 @@
 
 <http://data-issa.cirad.fr/ann/e012b4f24758dbd1cf46dfef1ac74607618aadab>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Moluccas'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -535,7 +535,7 @@
 
 <http://data-issa.cirad.fr/ann/91df1b7b5eb7c0997c25f17d003cfdd2eb6599d9>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'metric'" ;
       issapr:confidence 0.9999999999982947 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -572,7 +572,7 @@
 
 <http://data-issa.cirad.fr/ann/5136814b271ce3d944140ea9e8af7d0b73d75df9>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Land cover'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -593,7 +593,7 @@
 
 <http://data-issa.cirad.fr/ann/e1f8d72f968c0e31f5726b183b5144b7c4e75740>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'agriculture'" ;
       issapr:confidence 0.610775625298051 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -605,7 +605,7 @@
 
 <http://data-issa.cirad.fr/ann/e49f0e81c0d9e33f5327c6ac78e1afa373ee003d>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Indonesia'" ;
       issapr:confidence 0.997782025223654 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -617,7 +617,7 @@
 
 <http://data-issa.cirad.fr/ann/db8e41580ed8aa4a741cdc678c99971bb5f4d3bb>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'deforestation'" ;
       issapr:confidence 0.999999999137799 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -643,7 +643,7 @@
 
 <http://data-issa.cirad.fr/ann/5d326993fb52865b51a23fd69e66dd3a04437400>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Indonesia'" ;
       issapr:confidence 0.9999989450983429 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -655,7 +655,7 @@
 
 <http://data-issa.cirad.fr/ann/0c8b84cf11857c275e0086eb416302a6239544e1>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'conflict resolution'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -680,7 +680,7 @@
 
 <http://data-issa.cirad.fr/ann/ce4ba25e97af2f634b0978996a98f4624361b9bb>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'corn'" ;
       issapr:confidence 0.999999037691745 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -696,7 +696,7 @@
 
 <http://data-issa.cirad.fr/ann/9aee49dba85a2b6f3bdf7b3077b9ceb8ebf35aa1>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Borneo'" ;
       issapr:confidence 0.9999999923098812 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -708,7 +708,7 @@
 
 <http://data-issa.cirad.fr/ann/d8d74016b124f226bd044f9599314bf47c0dddc3>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'remote sensing'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -743,7 +743,7 @@
 
 <http://data-issa.cirad.fr/ann/e3b78c67d3caf04b72188e4ed36dc610389eb43a>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'weed'" ;
       issapr:confidence 0.9967928478516818 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -755,7 +755,7 @@
 
 <http://data-issa.cirad.fr/ann/10d2de0219e4e19f3ad2f657666d7f7d23b20e30>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'participatory development'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -767,7 +767,7 @@
 
 <http://data-issa.cirad.fr/ann/dfd29ca352545d8baabd2d322b349d960b833cbb>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'rice'" ;
       issapr:confidence 0.9999999816694756 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -798,7 +798,7 @@
 
 <http://data-issa.cirad.fr/ann/32917f08aaaaf832a942579bc82adce636135b91>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Indonesia'" ;
       issapr:confidence 0.997782025223654 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -819,7 +819,7 @@
 
 <http://data-issa.cirad.fr/ann/36fe63c20e2feccaccc2fa5ed784663d787ffd93>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'nutrient'" ;
       issapr:confidence 0.7178342187966199 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -840,7 +840,7 @@
 
 <http://data-issa.cirad.fr/ann/a08cc7fceeda430c3b7bbf8013972151e529c039>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Mahakam Delta'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -852,7 +852,7 @@
 
 <http://data-issa.cirad.fr/ann/fa7dce63d8e5eed02537490f5e0cfb2dbcde731c>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'supply chain'" ;
       issapr:confidence 0.9999989779254969 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -864,7 +864,7 @@
 
 <http://data-issa.cirad.fr/ann/cb74fbe9a0a25521623108e7532e1ba9e4f06723>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'mangrove'" ;
       issapr:confidence 0.9999999997831992 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -885,7 +885,7 @@
 
 <http://data-issa.cirad.fr/ann/05e210ab1fffdc14cf4da9e34112263680157780>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'mangrove'" ;
       issapr:confidence 0.9999999999974989 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -919,7 +919,7 @@
 
 <http://data-issa.cirad.fr/ann/553547b3c755882e15a6e98084fed64da3f8ae2e>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Mahakam Delta'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -941,7 +941,7 @@
 
 <http://data-issa.cirad.fr/ann/3dde599ea94d4bb41e690a6b583ada4fb1012cc6>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'shifting cultivation'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -1018,7 +1018,7 @@
 
 <http://data-issa.cirad.fr/ann/9af1c61a03064c534342ab092f52da3a3dc091eb>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'United Nations Development Programme'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -1043,7 +1043,7 @@
 
 <http://data-issa.cirad.fr/ann/232d81936c5a8479f0e5d4ec1009debd964a35fd>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'species'" ;
       issapr:confidence 0.9919533879579094 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -1059,7 +1059,7 @@
 
 <http://data-issa.cirad.fr/ann/07a1575372e5df52cb98fb9349d25c157950da78>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Mahakam Delta'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -1071,7 +1071,7 @@
 
 <http://data-issa.cirad.fr/ann/ae00366657aea162ed7e8dc91bafdf91a3f3f483>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'fallow'" ;
       issapr:confidence 0.9998181072335139 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -1092,7 +1092,7 @@
 
 <http://data-issa.cirad.fr/ann/55a3d9dc562a9b4f41f31408b883f64ed0894041>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'natural resource management'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -1104,7 +1104,7 @@
 
 <http://data-issa.cirad.fr/ann/f89b8edc6d5614c60a7e427fee73569d0b0e3dc7>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'clan'" ;
       issapr:confidence 0.9896160651308523 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -1116,7 +1116,7 @@
 
 <http://data-issa.cirad.fr/ann/d174bfc70ce6f85191a8993735144ba7fe002567>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Madagascar'" ;
       issapr:confidence 0.9937314995635548 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -1147,7 +1147,7 @@
 
 <http://data-issa.cirad.fr/ann/2936da6b2db7f67674ab2ed4ec749c1218a476da>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Tanimbar'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -1168,7 +1168,7 @@
 
 <http://data-issa.cirad.fr/ann/b260901fb5f39ccae0c34fa0e94c61a572724db9>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'US$'" ;
       issapr:confidence 0.9999999985167278 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -1180,7 +1180,7 @@
 
 <http://data-issa.cirad.fr/ann/1f6285e73b7bbbaa134fbc7ceb6b9012ba1e0400>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'banana'" ;
       issapr:confidence 0.9999996050235821 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -1197,7 +1197,7 @@
 
 <http://data-issa.cirad.fr/ann/1eeece56c2e90b853c0ad3d53f1928f1b7eca817>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'social-ecological system'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -1214,7 +1214,7 @@
 
 <http://data-issa.cirad.fr/ann/f8cb8b8e3dc77721d37cc1cce3d0c01d531280bc>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Mahakam Delta'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -1235,7 +1235,7 @@
 
 <http://data-issa.cirad.fr/ann/8753d94549b9f006eb356e30be9ebf3b3da75f53>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'customary land'" ;
       issapr:confidence 0.9994866664989839 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -1251,7 +1251,7 @@
 
 <http://data-issa.cirad.fr/ann/b02ccda5804cff4dca77fc06c12e4dd0879159e1>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'dynamics'" ;
       issapr:confidence 0.9993020959095976 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -1263,7 +1263,7 @@
 
 <http://data-issa.cirad.fr/ann/00ea0764d90f3831467030df19bf1bbfbaa89dec>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Antananarivo'" ;
       issapr:confidence 0.9999977051924317 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -1275,7 +1275,7 @@
 
 <http://data-issa.cirad.fr/ann/9e16b7345b6292741d7821d06fd3df33e760944f>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Mahakam Delta'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -1287,7 +1287,7 @@
 
 <http://data-issa.cirad.fr/ann/fc70e87aa4a2ce4bfc74f86a137c08915f91ca0d>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Moluccas'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -1303,7 +1303,7 @@
 
 <http://data-issa.cirad.fr/ann/08b821b9c5ae30a62a8646db0389a2d05774787a>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'village'" ;
       issapr:confidence 0.9975429965166891 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -1333,7 +1333,7 @@
 
 <http://data-issa.cirad.fr/ann/ac6357642aa146f3a4dcdd15d2b492d909e0e9a1>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'shrimp'" ;
       issapr:confidence 0.9543341450519961 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -1373,7 +1373,7 @@
 
 <http://data-issa.cirad.fr/ann/d00988085c0b406beecfa35489901e0e42a81f2d>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Tanimbar'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -1393,7 +1393,7 @@
 
 <http://data-issa.cirad.fr/ann/8d4f2b6bf49724470c1c132a4d9940bdfc799026>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Mahakam Delta'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -1419,7 +1419,7 @@
 
 <http://data-issa.cirad.fr/ann/aa03ef5128b86e92d6d7c4bd7bae6abee95f414b>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'east coast road'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -1440,7 +1440,7 @@
 
 <http://data-issa.cirad.fr/ann/faca8d6cab77df741ef4e12e78ccd858d6a64941>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'sustainable development'" ;
       issapr:confidence 0.9999990723574438 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -1456,7 +1456,7 @@
 
 <http://data-issa.cirad.fr/ann/512a71aa10546c7af4df3d787a7a51a200d05983>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Mahakam Delta'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -1481,7 +1481,7 @@
 
 <http://data-issa.cirad.fr/ann/3f471336c69d0f7c1476ff7fc19999e6529a5503>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'biomass'" ;
       issapr:confidence 0.984890955198205 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -1514,7 +1514,7 @@
 
 <http://data-issa.cirad.fr/ann/fc1ee43452db2d442cf44d3f61d92d14826190de>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'resource management'" ;
       issapr:confidence 0.6429812144191984 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -1526,7 +1526,7 @@
 
 <http://data-issa.cirad.fr/ann/0b436e67f8bb25fa8691c4e297f4b36470f9e5f8>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'stratification'" ;
       issapr:confidence 0.9998980918862771 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -1538,7 +1538,7 @@
 
 <http://data-issa.cirad.fr/ann/0970029e8d70827a60f918bef93bedc6a318694e>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'erosion'" ;
       issapr:confidence 0.999925766915437 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -1550,7 +1550,7 @@
 
 <http://data-issa.cirad.fr/ann/95bb75f54d593bc2bcbdfab6dc8f98f4c68ce4cc>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Tanimbar'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -1570,7 +1570,7 @@
 
 <http://data-issa.cirad.fr/ann/8e0dfa675dc37d59ed2b0b3953f3673ad6f5c90c>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'fallow'" ;
       issapr:confidence 0.5790394742535614 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -1600,7 +1600,7 @@
 
 <http://data-issa.cirad.fr/ann/ad10e08bcfb4a9415d66b967c653e174326b45e2>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'water conservation'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -1612,7 +1612,7 @@
 
 <http://data-issa.cirad.fr/ann/cda81eb275f778fcebe737c47d605300d3a0879e>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'accounting'" ;
       issapr:confidence 0.999896238899027 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -1639,7 +1639,7 @@
 
 <http://data-issa.cirad.fr/ann/e7790767c35d0b47cc11eba3cf38c7e8f22b3007>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Johannesburg'" ;
       issapr:confidence 0.9975157419840576 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -1651,7 +1651,7 @@
 
 <http://data-issa.cirad.fr/ann/5e84b714631dbcb04de4edea444813e594f58e95>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'shrimp'" ;
       issapr:confidence 0.8151403431869971 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -1690,7 +1690,7 @@
 
 <http://data-issa.cirad.fr/ann/4659330d8afe896f7c523c6362c7f41fa89ccd73>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'sea cucumber'" ;
       issapr:confidence 0.9995432802818079 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -1710,7 +1710,7 @@
 
 <http://data-issa.cirad.fr/ann/e3742a068be17534fa5229b9a2ffff05f3743007>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'escarpment'" ;
       issapr:confidence 0.9999908563567835 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -1741,7 +1741,7 @@
 
 <http://data-issa.cirad.fr/ann/8003da624cb42aebec7f9aa93b6d88f5afb2a476>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'vegetation succession'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -1753,7 +1753,7 @@
 
 <http://data-issa.cirad.fr/ann/8fe929e7a291305b538fed887f0388092643a940>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'mangrove forest'" ;
       issapr:confidence 0.9431752951064946 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -1770,7 +1770,7 @@
 
 <http://data-issa.cirad.fr/ann/6f6e32dd2c79b4c301d8d0ed370ae6594295a1f7>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Indonesia'" ;
       issapr:confidence 0.9993731808194708 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -1786,7 +1786,7 @@
 
 <http://data-issa.cirad.fr/ann/933197d14099cdbbad94b882d08657dd93f99fbb>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'natural resource management'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -1803,7 +1803,7 @@
 
 <http://data-issa.cirad.fr/ann/9468c497c2b82c5d437c005b14b5bfcf83a2f77f>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'rice'" ;
       issapr:confidence 0.9999219945196804 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -1843,7 +1843,7 @@
 
 <http://data-issa.cirad.fr/ann/599ef9af399c1c694088ce5b55fbefbad63fde61>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'trawl fishing'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -1863,7 +1863,7 @@
 
 <http://data-issa.cirad.fr/ann/8a1ff87d0932038f3530432f30623401bfaf71eb>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'soa'" ;
       issapr:confidence 0.9999999963265509 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -1884,7 +1884,7 @@
 
 <http://data-issa.cirad.fr/ann/71c567ca7eb80dfdbcefd6f2e2771c9ed941d16a>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'participatory development'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -1896,7 +1896,7 @@
 
 <http://data-issa.cirad.fr/ann/fd104fb6dcff3d1093430b67bb93d5e6225aff96>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'shrimp'" ;
       issapr:confidence 0.998753386737129 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -1908,7 +1908,7 @@
 
 <http://data-issa.cirad.fr/ann/a5655bf0760f3d3ec5bdd141bf453d828691f7fd>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'population pressure'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -1924,7 +1924,7 @@
 
 <http://data-issa.cirad.fr/ann/b2e52433cd6c9fb9b26a2563a6bad0ec5c4228ff>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'crop diversification'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -1959,7 +1959,7 @@
 
 <http://data-issa.cirad.fr/ann/8e3077758bd4329a0baf8f170724fd93b7f4e3e0>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'shrimp'" ;
       issapr:confidence 0.994708691030294 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -1976,7 +1976,7 @@
 
 <http://data-issa.cirad.fr/ann/d26849a8d2da674e3de713bacce6c15d0f446a96>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'ecology'" ;
       issapr:confidence 0.9851045922102352 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -1993,7 +1993,7 @@
 
 <http://data-issa.cirad.fr/ann/00caea689472defd4e95653a431d189db32e8b1a>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'participatory development'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -2017,7 +2017,7 @@
 
 <http://data-issa.cirad.fr/ann/d2737c1a65da533466cf1de640d3406d374ecd21>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'land cover'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -2033,7 +2033,7 @@
 
 <http://data-issa.cirad.fr/ann/aa1395184561f2a578aa2fe52f2a8595ed552d5a>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'sustainable development'" ;
       issapr:confidence 0.9999999463342434 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -2055,7 +2055,7 @@
 
 <http://data-issa.cirad.fr/ann/0c466d781f1a72021cb538380db96c0d5bd80801>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Rio de Janeiro'" ;
       issapr:confidence 0.99999999893123 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -2091,7 +2091,7 @@
 
 <http://data-issa.cirad.fr/ann/678b45682a0199a5ba2cfa6fb52b228cfa5415a9>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'developing countries'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -2103,7 +2103,7 @@
 
 <http://data-issa.cirad.fr/ann/97105a968c5ba9f248f9e18efbb5c75877a1ba40>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'decentralization'" ;
       issapr:confidence 0.9999999999998863 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -2119,7 +2119,7 @@
 
 <http://data-issa.cirad.fr/ann/c715efa617a73173bb7950b7bb95a88c27c48309>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Mahakam Delta'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -2141,7 +2141,7 @@
 
 <http://data-issa.cirad.fr/ann/36764cf96d97f8a3c949a106922894ada9a1395e>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'reserve'" ;
       issapr:confidence 0.9999999662867373 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -2153,7 +2153,7 @@
 
 <http://data-issa.cirad.fr/ann/d26db524b8893ea3bd299e4e2ea60c6f01b0afe2>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Kalimantan'" ;
       issapr:confidence 0.9998614855956895 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -2165,7 +2165,7 @@
 
 <http://data-issa.cirad.fr/ann/6d4a20e9e3c04451d5260522a39f8247249185f7>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'species'" ;
       issapr:confidence 0.8973181787635784 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -2186,7 +2186,7 @@
 
 <http://data-issa.cirad.fr/ann/cd9baf675428f8fbb38e6ec725e9cc33f7bfcffe>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Nypa'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -2198,7 +2198,7 @@
 
 <http://data-issa.cirad.fr/ann/ba37c252b9e96c9c809c226b4a659eb5580a5c16>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'ha'" ;
       issapr:confidence 0.9999999730023322 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -2214,7 +2214,7 @@
 
 <http://data-issa.cirad.fr/ann/bb42f2d2f75f36975bc1d9af528c6ad87c8bc37b>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Tanimbar'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -2226,7 +2226,7 @@
 
 <http://data-issa.cirad.fr/ann/b99d41694d5b5aa5abe650d15429daf90c7ed93c>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'species'" ;
       issapr:confidence 0.9225772428816026 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -2265,7 +2265,7 @@
 
 <http://data-issa.cirad.fr/ann/c5cc3cf218da96ee2e7156178d8eb9f21694a772>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'industrial'" ;
       issapr:confidence 0.9699891694212397 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -2291,7 +2291,7 @@
 
 <http://data-issa.cirad.fr/ann/233a9250364a1cc1a137c02630ae1131f54e2496>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'shrimp'" ;
       issapr:confidence 0.9543341450519961 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -2308,7 +2308,7 @@
 
 <http://data-issa.cirad.fr/ann/d5ffe1bd77d6b97011bda8ffefddbf4bea4bb022>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'shrimp'" ;
       issapr:confidence 0.8151403431869971 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -2330,7 +2330,7 @@
 
 <http://data-issa.cirad.fr/ann/da28a7864ef7386ebc55ea0cbbea98b09ba7fad2>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Indonesia'" ;
       issapr:confidence 0.9999514606001247 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -2342,7 +2342,7 @@
 
 <http://data-issa.cirad.fr/ann/97a814f32c0dbe26f6b8fd6d80b242dbe1ec9dc4>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'rice'" ;
       issapr:confidence 0.9999999816694756 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -2359,7 +2359,7 @@
 
 <http://data-issa.cirad.fr/ann/e79bd95137d5faacac4d011e2cbfa61bec75b5db>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'tavy'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -2379,7 +2379,7 @@
 
 <http://data-issa.cirad.fr/ann/fad9857bb8b6585f4c31dcc1b0d808e998c51e13>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'ecology'" ;
       issapr:confidence 0.9999999997953637 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -2391,7 +2391,7 @@
 
 <http://data-issa.cirad.fr/ann/b980e329f27c28c360269a63b99481e69bc1977c>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'socialization'" ;
       issapr:confidence 0.879366995115485 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -2407,7 +2407,7 @@
 
 <http://data-issa.cirad.fr/ann/5d177c0bf1cb8923b629ca9d2428cd7537036f4d>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Madagascar'" ;
       issapr:confidence 0.9993606587653234 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -2428,7 +2428,7 @@
 
 <http://data-issa.cirad.fr/ann/b1943c5cd531371a3ae67944e6381683cc0de038>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'village'" ;
       issapr:confidence 0.8226323122607789 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -2440,7 +2440,7 @@
 
 <http://data-issa.cirad.fr/ann/5311999bf06c62a7bb43441b4c8de6c88b5d5412>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Mahakam Delta'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -2452,7 +2452,7 @@
 
 <http://data-issa.cirad.fr/ann/279d36275a6f3a112c14d3ba30d239073d2f9813>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Yamdena Island'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -2464,7 +2464,7 @@
 
 <http://data-issa.cirad.fr/ann/99ebfe76e382c90a24f8d49efe90544adbde053a>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'land cover'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -2495,7 +2495,7 @@
 
 <http://data-issa.cirad.fr/ann/7bfb3c7536f5883a8e1170e3533de1d449040645>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'socioeconomic'" ;
       issapr:confidence 0.9999962542876467 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -2528,7 +2528,7 @@
 
 <http://data-issa.cirad.fr/ann/f443fa03c7658e66949b7b7f9df356871f280094>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Tanimbar'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -2548,7 +2548,7 @@
 
 <http://data-issa.cirad.fr/ann/59c851f99ef697ec364dca5cda24ad2dfbcbdda7>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'momentum'" ;
       issapr:confidence 0.9889305297077102 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -2577,7 +2577,7 @@
 
 <http://data-issa.cirad.fr/ann/ae4df275ccb23b0cb32dc8dd4615fbc215cc8839>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Tanimbar'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -2607,7 +2607,7 @@
 
 <http://data-issa.cirad.fr/ann/4e6a6fa5ec0c8955d70050d5d2f73e26ec6c4318>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Sulawesi'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -2646,7 +2646,7 @@
 
 <http://data-issa.cirad.fr/ann/b4c72c2d34f7195f6328d5910982b08294938908>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'cash crop'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -2658,7 +2658,7 @@
 
 <http://data-issa.cirad.fr/ann/8162a6137c5d495fd2485fee2ee3f826b677263c>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'banana'" ;
       issapr:confidence 0.9999999787668232 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -2670,7 +2670,7 @@
 
 <http://data-issa.cirad.fr/ann/d2359bcfb083ba33dd1d6e8d80e78a37085f9efd>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Indonesia'" ;
       issapr:confidence 0.9999989450983429 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -2682,7 +2682,7 @@
 
 <http://data-issa.cirad.fr/ann/a4bb28f7d1015f449d613a87b5d6fc6929c1004e>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'evolution'" ;
       issapr:confidence 0.999891802148074 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -2721,7 +2721,7 @@
 
 <http://data-issa.cirad.fr/ann/075deb8cd0a0fddbd80e6fc2411e1a4bcb58f1b5>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Nordic countries'" ;
       issapr:confidence 0.9999658786728797 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -2779,7 +2779,7 @@
 
 <http://data-issa.cirad.fr/ann/35849d107fc5b9670bd9e647f7c7bda1374a1b33>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'United Nations Development Programme'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -2791,7 +2791,7 @@
 
 <http://data-issa.cirad.fr/ann/8bf46ad8d42425cea45972de1f4fb9565ca2ca7a>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Madagascar'" ;
       issapr:confidence 0.7243616001020903 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -2821,7 +2821,7 @@
 
 <http://data-issa.cirad.fr/ann/1a3866146b9a721e91e3a82221fa918d0dd28973>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'sustainable development'" ;
       issapr:confidence 0.9999887074758189 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -2847,7 +2847,7 @@
 
 <http://data-issa.cirad.fr/ann/c9d99fe0128ac98d768e32aa873c8a080d0b3eae>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'soil erosion'" ;
       issapr:confidence 0.999998701277311 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -2874,7 +2874,7 @@
 
 <http://data-issa.cirad.fr/ann/69d12b5011ae984ce29acef1479fe218742c840b>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Nypa'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -2891,7 +2891,7 @@
 
 <http://data-issa.cirad.fr/ann/d04577c6af3e1ba52713ea049d6728004c8d34e0>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'rice'" ;
       issapr:confidence 0.9999997371801673 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -2928,7 +2928,7 @@
 
 <http://data-issa.cirad.fr/ann/62d5217ec3912440af322187247f5be2b4baf449>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'population density'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -2945,7 +2945,7 @@
 
 <http://data-issa.cirad.fr/ann/865959fcfc63d85949b18debc25905c86b6a1fc6>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'species'" ;
       issapr:confidence 0.9999511385977257 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -2975,7 +2975,7 @@
 
 <http://data-issa.cirad.fr/ann/78548041b85bb190bb174072d7b2a38e1e3fad41>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'traditional ecological knowledge'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -3014,7 +3014,7 @@
 
 <http://data-issa.cirad.fr/ann/4554edd24827275e8e2c47d26520ebcaa721d50a>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'coconut'" ;
       issapr:confidence 0.9999999833814855 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -3031,7 +3031,7 @@
 
 <http://data-issa.cirad.fr/ann/086f89b257f8589226fc20523b27c3939d1ba706>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Betsimisaraka'" ;
       issapr:confidence 0.8399882020104968 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -3043,7 +3043,7 @@
 
 <http://data-issa.cirad.fr/ann/fc48c9a0ee2a0eb23cdcf4c2c205f94a7db20c59>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'folk'" ;
       issapr:confidence 0.9924978087349019 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -3059,7 +3059,7 @@
 
 <http://data-issa.cirad.fr/ann/8db9f3291b5e3022efa4d2541844a9868d633bc0>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'marine'" ;
       issapr:confidence 0.68468686405741 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -3085,7 +3085,7 @@
 
 <http://data-issa.cirad.fr/ann/f4c5c12e1a90b9463253953ebddf237396f9edf7>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'shrimp'" ;
       issapr:confidence 0.998753386737129 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -3097,7 +3097,7 @@
 
 <http://data-issa.cirad.fr/ann/0a30002156623acb59a781afe09c2f43db85aed3>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Yamdena'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -3132,7 +3132,7 @@
 
 <http://data-issa.cirad.fr/ann/80b0bd9e4c963ba2d0fa1232361834643516408c>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'folk classification'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -3163,7 +3163,7 @@
 
 <http://data-issa.cirad.fr/ann/b06a1bb5fe89ca160854fd3ba2243137f530535c>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'mangrove'" ;
       issapr:confidence 0.9999996155173279 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -3175,7 +3175,7 @@
 
 <http://data-issa.cirad.fr/ann/2293eeec41eb9e473e033f5b7243c4f359606f0d>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'asphalt'" ;
       issapr:confidence 0.9982147371273214 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -3187,7 +3187,7 @@
 
 <http://data-issa.cirad.fr/ann/f218ddfcf52f0cdbe8fd8b964ea437410430328d>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'natural resource management'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -3213,7 +3213,7 @@
 
 <http://data-issa.cirad.fr/ann/b2719da7b7a773125486c128eda76b4023ce9993>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'pela'" ;
       issapr:confidence 0.6235604090228856 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -3225,7 +3225,7 @@
 
 <http://data-issa.cirad.fr/ann/05cedea2856160736c2b8a8766531491daeb045c>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'species'" ;
       issapr:confidence 0.9913212240398491 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -3237,7 +3237,7 @@
 
 <http://data-issa.cirad.fr/ann/f711191221ea6f31691578fa7e2bb4ae8e4d566a>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Mahakam Delta'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -3249,7 +3249,7 @@
 
 <http://data-issa.cirad.fr/ann/d329613bd2e5b254f923bb50f2a187fbfca9b0cd>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'US$'" ;
       issapr:confidence 0.9999998766215944 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -3265,7 +3265,7 @@
 
 <http://data-issa.cirad.fr/ann/9962eccae96b2a3a761b4edb9d956d993d6885f9>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'seafood'" ;
       issapr:confidence 0.9999999999986358 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -3286,7 +3286,7 @@
 
 <http://data-issa.cirad.fr/ann/788be42829a2b94d220d19d7e2bd912f70f3b47d>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Tanimbar'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -3307,7 +3307,7 @@
 
 <http://data-issa.cirad.fr/ann/f862fa82ed89a16a42ded78ed3bd2ac26d077ee5>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'species'" ;
       issapr:confidence 0.903018571228644 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -3351,7 +3351,7 @@
 
 <http://data-issa.cirad.fr/ann/ad82202519cc64978ad7b7a4b376939ae3cfa695>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'rice'" ;
       issapr:confidence 0.99999999997533 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -3372,7 +3372,7 @@
 
 <http://data-issa.cirad.fr/ann/26ff2380068b58bc40cdd4ca6420d139b6cf1194>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Chromolaena'" ;
       issapr:confidence 0.999999995374651 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -3389,7 +3389,7 @@
 
 <http://data-issa.cirad.fr/ann/9250c91fbcd99781553d953932ab7befd45f40cc>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'farming'" ;
       issapr:confidence 0.9987216817509759 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -3410,7 +3410,7 @@
 
 <http://data-issa.cirad.fr/ann/0140db574aeb4f9ec69353fb64a591a248484452>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'industrial'" ;
       issapr:confidence 0.9993925465494538 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -3432,7 +3432,7 @@
 
 <http://data-issa.cirad.fr/ann/11c24c589a9fd657b5751b5ebb1df330d24c7766>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Traditional ecological knowledge'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -3444,7 +3444,7 @@
 
 <http://data-issa.cirad.fr/ann/38efc9d2350b28cd43a50bdb513565e5b6b6a030>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Indonesian'" ;
       issapr:confidence 0.9843984724469653 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -3466,7 +3466,7 @@
 
 <http://data-issa.cirad.fr/ann/d2d706e338f57802b3e754daf7424ee6e3265303>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'species'" ;
       issapr:confidence 0.8888779086174309 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -3496,7 +3496,7 @@
 
 <http://data-issa.cirad.fr/ann/ac6393d431da9f0059aa7aa13bc3c55e5eb2346d>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'communication'" ;
       issapr:confidence 0.9999997972901361 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -3521,7 +3521,7 @@
 
 <http://data-issa.cirad.fr/ann/e47212e9241a983820727b74de7002228c42f7ce>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Mahakam Delta'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -3533,7 +3533,7 @@
 
 <http://data-issa.cirad.fr/ann/db3ff47b54e9cb563ee6fb810d064f222a1f9ec9>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'evolution'" ;
       issapr:confidence 0.9999990115499369 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -3555,7 +3555,7 @@
 
 <http://data-issa.cirad.fr/ann/061f6bd0bc2e71ca3fea4e153ca77e3236d59aa2>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'tavy'" ;
       issapr:confidence 0.9999999999819238 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -3567,7 +3567,7 @@
 
 <http://data-issa.cirad.fr/ann/5cf8e104929a5779d556e0d6615f7c2f882cab97>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'natural resource management'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -3579,7 +3579,7 @@
 
 <http://data-issa.cirad.fr/ann/30d6772ed0a2f2ef12fa5f8e646c86356f4c4c06>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'wood'" ;
       issapr:confidence 0.8083316588356555 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -3591,7 +3591,7 @@
 
 <http://data-issa.cirad.fr/ann/84a8b1a8d389b2a5378b8b083b61363388a157f6>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'farming'" ;
       issapr:confidence 0.9999784987846005 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -3607,7 +3607,7 @@
 
 <http://data-issa.cirad.fr/ann/e0b44e25c75a9bb158cac7173a0b6da9b5c98873>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'species'" ;
       issapr:confidence 0.8067348359664013 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -3624,7 +3624,7 @@
 
 <http://data-issa.cirad.fr/ann/95e8135fa37f0349e1b3c9919176ab513c967c01>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'natural resource management'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -3658,7 +3658,7 @@
 
 <http://data-issa.cirad.fr/ann/668ac388966c2d5bcbc893424e48cf7b1216b602>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'developing countries'" ;
       issapr:confidence 0.9999999975786977 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -3680,7 +3680,7 @@
 
 <http://data-issa.cirad.fr/ann/2c5e2f4337c798aa53d37827ab457649e7a3df68>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'bridge'" ;
       issapr:confidence 0.7976996280166391 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -3713,7 +3713,7 @@
 
 <http://data-issa.cirad.fr/ann/c32bb8ac415116f8ca3b2c9736bd44878ae632a6>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'cropping system'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -3746,7 +3746,7 @@
 
 <http://data-issa.cirad.fr/ann/20f454bc7e12ab522f122d9455ebdf9858dad10d>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'land-use planning'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -3770,7 +3770,7 @@
 
 <http://data-issa.cirad.fr/ann/c6bfbccfe0bd77acacd4bfa2cdfb3a0b46cd4e59>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'land-use planning'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -3787,7 +3787,7 @@
 
 <http://data-issa.cirad.fr/ann/99f06b7ef6f970fe39f7876036a01075bca409c1>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'logging'" ;
       issapr:confidence 0.9730276007451076 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -3813,7 +3813,7 @@
 
 <http://data-issa.cirad.fr/ann/51df18c055d25ed3fa8e10f199d3ad0f4f63c872>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'deforestation'" ;
       issapr:confidence 0.9999999996908855 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -3844,7 +3844,7 @@
 
 <http://data-issa.cirad.fr/ann/78df0bf491d9ba7cf590ea1539b179dddd885ebf>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'momentum'" ;
       issapr:confidence 0.9715763675798839 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -3870,7 +3870,7 @@
 
 <http://data-issa.cirad.fr/ann/c8f1682a5c42674383f0516c625474b79b350805>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'dynamics'" ;
       issapr:confidence 0.996877509952043 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -3882,7 +3882,7 @@
 
 <http://data-issa.cirad.fr/ann/33d35511daf957e7d3727878e5760738f7fd52a2>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'coffee'" ;
       issapr:confidence 0.9987242980664331 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -3894,7 +3894,7 @@
 
 <http://data-issa.cirad.fr/ann/24a53ca1fa36680fd32eb822428595b1a04d300c>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'participatory development'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -3906,7 +3906,7 @@
 
 <http://data-issa.cirad.fr/ann/cc7eba02eaea49c9e1576ee488c2ee8ae5e1b89f>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'fallow'" ;
       issapr:confidence 0.9040551665914988 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -3928,7 +3928,7 @@
 
 <http://data-issa.cirad.fr/ann/12c4ef494a8a01f7de8cfa45833722e33c9ce003>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'ecology'" ;
       issapr:confidence 0.9999999656247388 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -3940,7 +3940,7 @@
 
 <http://data-issa.cirad.fr/ann/8f29393f8308ca7b0368f6915686a368468a9148>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Jakarta'" ;
       issapr:confidence 0.9999498080922025 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -3952,7 +3952,7 @@
 
 <http://data-issa.cirad.fr/ann/23b256068f315a3087adfa76fefd7dedcca604ae>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Indonesian'" ;
       issapr:confidence 0.9214023389755273 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -3979,7 +3979,7 @@
 
 <http://data-issa.cirad.fr/ann/d3797fbbdbc4111c0a7b31bb93ed51d0ca0152a4>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'land-use planning'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -4000,7 +4000,7 @@
 
 <http://data-issa.cirad.fr/ann/544e52ae0df9b2bb9db35d26bdd74eb8a41278cd>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'rice'" ;
       issapr:confidence 0.9999999935296273 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -4031,7 +4031,7 @@
 
 <http://data-issa.cirad.fr/ann/70cd5f62afdfe7080597611fdbab697a7f4a1a5f>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Tanimbar'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -4071,7 +4071,7 @@
 
 <http://data-issa.cirad.fr/ann/786f25b832ccd00f994d76437b3769f3cfb9bf9a>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'socioeconomic'" ;
       issapr:confidence 0.9999850599202409 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -4083,7 +4083,7 @@
 
 <http://data-issa.cirad.fr/ann/275d128dd77595f6d7385db99bb64a846d16275b>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'logic'" ;
       issapr:confidence 0.9997580252820547 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -4108,7 +4108,7 @@
 
 <http://data-issa.cirad.fr/ann/e9bc3c6144586dbffe76389d571f530d2f9c1117>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'momentum'" ;
       issapr:confidence 0.9944933669878928 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -4134,7 +4134,7 @@
 
 <http://data-issa.cirad.fr/ann/ca1abde68d9c6c871eeebc2200e691230b4a2808>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Tanimbar'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -4150,7 +4150,7 @@
 
 <http://data-issa.cirad.fr/ann/f4eb6920bfd05b0585145ef747251e29ed8e5952>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'soil fertility'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -4190,7 +4190,7 @@
 
 <http://data-issa.cirad.fr/ann/8fc23baa545ddc9ea1fd1a60792e441fc597a8e7>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'participatory development'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -4225,7 +4225,7 @@
 
 <http://data-issa.cirad.fr/ann/315bc999488dc207f1532f7e2fa7ad45d2bae0ed>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'tavy'" ;
       issapr:confidence 0.9999999999984084 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -4237,7 +4237,7 @@
 
 <http://data-issa.cirad.fr/ann/e4c2b823fd9db936dd6627a369bbf01bb21e77f6>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Risk management'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -4249,7 +4249,7 @@
 
 <http://data-issa.cirad.fr/ann/1b0648084f6fea878c13051d9ec2fdc9a0b5efd1>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'slash-and-burn'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -4276,7 +4276,7 @@
 
 <http://data-issa.cirad.fr/ann/fcbb6d82332c8eea041942cf73a92e977710c12a>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'shrimp'" ;
       issapr:confidence 0.8151403431869971 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -4306,7 +4306,7 @@
 
 <http://data-issa.cirad.fr/ann/43c9652b629570f5faab87fbf047db4d83c18539>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'land-use planning'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -4331,7 +4331,7 @@
 
 <http://data-issa.cirad.fr/ann/be95d0c8646cbf550481e869237f17eac4c52174>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'coffee'" ;
       issapr:confidence 0.9987242980664331 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -4343,7 +4343,7 @@
 
 <http://data-issa.cirad.fr/ann/44812cd5b7f12768c22a57278aeb37e16cd9cfdf>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'rice'" ;
       issapr:confidence 0.9999999999827196 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -4355,7 +4355,7 @@
 
 <http://data-issa.cirad.fr/ann/b10812d1c7dbb4d31e741b284a4474262bc6fedf>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'village people'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -4393,7 +4393,7 @@
 
 <http://data-issa.cirad.fr/ann/a98ad79bbfe32e84e480781f1fb9a67aa25473e0>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'logging'" ;
       issapr:confidence 0.9951487454367843 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -4423,7 +4423,7 @@
 
 <http://data-issa.cirad.fr/ann/814048ea1b43848c62dd5bd7358d3f0a0359b74d>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Moluccas'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -4435,7 +4435,7 @@
 
 <http://data-issa.cirad.fr/ann/06d45d7d4f11910c792c5f8eeb17ce4ebd2ae63d>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'South Africa'" ;
       issapr:confidence 0.9999998480783576 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -4447,7 +4447,7 @@
 
 <http://data-issa.cirad.fr/ann/94b9ad176f374f0eb1a785ac3f175f948d1cd34a>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'customary law'" ;
       issapr:confidence 0.9999999992189714 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -4459,7 +4459,7 @@
 
 <http://data-issa.cirad.fr/ann/c9ecb7d4a231acd919a9a27617973ebd3655d638>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'overexploitation'" ;
       issapr:confidence 0.9996925824028875 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -4471,7 +4471,7 @@
 
 <http://data-issa.cirad.fr/ann/de0cf328f60192cbea57fa98bc4fd9ea34d11ca1>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'invasive species'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -4495,7 +4495,7 @@
 
 <http://data-issa.cirad.fr/ann/d16eecbe2ef6f6bcc52584294f8d7b3817f4db7b>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'fisheries'" ;
       issapr:confidence 0.998874569652913 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -4516,7 +4516,7 @@
 
 <http://data-issa.cirad.fr/ann/af52414327081a537688d5d0e11f85b6fd56888b>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'momentum'" ;
       issapr:confidence 0.9944933669878928 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -4545,7 +4545,7 @@
 
 <http://data-issa.cirad.fr/ann/3a2254b809b3d7a5bd12cfa09843971bbf6b880b>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Tanimbar'" ;
       issapr:confidence 0.9999999999998863 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -4571,7 +4571,7 @@
 
 <http://data-issa.cirad.fr/ann/04d64704583922bd4444de3e7208b2e533399343>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'ecosystem'" ;
       issapr:confidence 0.927540974405168 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -4597,7 +4597,7 @@
 
 <http://data-issa.cirad.fr/ann/a572adf8cfff6783f9103c7b04bb98f711c2511c>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Nypa'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -4618,7 +4618,7 @@
 
 <http://data-issa.cirad.fr/ann/8e8e3723360bfba866464f3ff2382e135a3b6d39>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'tillage'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -4638,7 +4638,7 @@
 
 <http://data-issa.cirad.fr/ann/007cf0ae6b4453eef7d4013660e3e5cb46a40126>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Nypa'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -4650,7 +4650,7 @@
 
 <http://data-issa.cirad.fr/ann/5d18561820f8bd30702ce1335dfb3b5a79fbae39>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Madagascar'" ;
       issapr:confidence 0.998841619959323 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -4662,7 +4662,7 @@
 
 <http://data-issa.cirad.fr/ann/9be7cbb7a9614a3aefbebfa06a1f335c458e5791>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'tropical forest'" ;
       issapr:confidence 0.9972624021333361 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -4684,7 +4684,7 @@
 
 <http://data-issa.cirad.fr/ann/dedf90cf172a71f501fa37c94b457810feff3db5>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'shrimp'" ;
       issapr:confidence 0.8151403431869971 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -4700,7 +4700,7 @@
 
 <http://data-issa.cirad.fr/ann/d9ec56d191022e7d476792703fda491cfe65e4a1>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'wood'" ;
       issapr:confidence 0.9977522426290054 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -4725,7 +4725,7 @@
 
 <http://data-issa.cirad.fr/ann/83156e1608a20f42f52a50fe7357175934ffe373>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'resource management'" ;
       issapr:confidence 0.9426561692916922 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -4746,7 +4746,7 @@
 
 <http://data-issa.cirad.fr/ann/149a4128e3769131306f120814c2ebfa91687a70>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'participatory development'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -4758,7 +4758,7 @@
 
 <http://data-issa.cirad.fr/ann/a6849c599e0b7878b8581d3bc39e0abe01d39065>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'logging'" ;
       issapr:confidence 0.6645021035158616 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -4770,7 +4770,7 @@
 
 <http://data-issa.cirad.fr/ann/b4bda73b9e36516757f57725d1bcd212a29777c6>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'natural resource management'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -4782,7 +4782,7 @@
 
 <http://data-issa.cirad.fr/ann/d69b080d98076c6d4174a34ecef8f6fec78dcc5e>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'resource management'" ;
       issapr:confidence 0.9212145750494581 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -4807,7 +4807,7 @@
 
 <http://data-issa.cirad.fr/ann/29bf8eea80c77cea565a84b7c08a18958cef2fa7>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'wildlife'" ;
       issapr:confidence 0.9675259421612086 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -4835,7 +4835,7 @@
 
 <http://data-issa.cirad.fr/ann/eeb7ac9245bc0d2e3baf0bde71826a0649d55d61>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Tanimbar'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -4852,7 +4852,7 @@
 
 <http://data-issa.cirad.fr/ann/51efaec790b0e23a91957b810239615f8146754e>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'species'" ;
       issapr:confidence 0.9999511385977257 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -4883,7 +4883,7 @@
 
 <http://data-issa.cirad.fr/ann/3147d33a94e183e4b2341c6eadb9c15f4f94792f>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Mahakam Delta'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -4895,7 +4895,7 @@
 
 <http://data-issa.cirad.fr/ann/e06ed0334b7bad132b82d6da54c2651528acd5e2>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Participatory rural appraisal'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -4907,7 +4907,7 @@
 
 <http://data-issa.cirad.fr/ann/f611b12acfddcb496b92f071679e22ea941b7c73>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'demography'" ;
       issapr:confidence 0.9999999999852207 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -4919,7 +4919,7 @@
 
 <http://data-issa.cirad.fr/ann/2425cac84c9b954374c01ff182af52dd488e1911>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'farming'" ;
       issapr:confidence 0.8974024491802745 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -4931,7 +4931,7 @@
 
 <http://data-issa.cirad.fr/ann/9d731d892ddcb6969bbcae930215d2c4da0c92f7>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'radio'" ;
       issapr:confidence 0.9999861092558857 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -4947,7 +4947,7 @@
 
 <http://data-issa.cirad.fr/ann/0e48d1b74164da6c754fe861ca2ff4f378678fbf>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Mahakam Delta'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -4964,7 +4964,7 @@
 
 <http://data-issa.cirad.fr/ann/dbe320afa421362f0d40d40e66ca458a211f5c6a>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'fertile valley'" ;
       issapr:confidence 0.999999999986926 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -4985,7 +4985,7 @@
 
 <http://data-issa.cirad.fr/ann/5901862f3ab88d6732b511f13575a5d138a65820>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'socioeconomic'" ;
       issapr:confidence 0.9993874362794721 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -5001,7 +5001,7 @@
 
 <http://data-issa.cirad.fr/ann/eec32a64dc2899ac8d720f6a3ca16bd2fd2c2078>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'village'" ;
       issapr:confidence 0.9023468334532772 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -5036,7 +5036,7 @@
 
 <http://data-issa.cirad.fr/ann/6c81490529a1d476a563f4e97d46f34373349749>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Indonesia'" ;
       issapr:confidence 0.9999514606001247 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -5070,7 +5070,7 @@
 
 <http://data-issa.cirad.fr/ann/d6bea2790abf7057c88a4f2ce8bc306b47800ed6>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'natural resource management'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -5097,7 +5097,7 @@
 
 <http://data-issa.cirad.fr/ann/09a5beb6cfc082f65621aa3bc0a71779016163e8>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'species'" ;
       issapr:confidence 0.9913212240398491 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -5113,7 +5113,7 @@
 
 <http://data-issa.cirad.fr/ann/75d018bb614259e6dc7e0fb28f05a38e1b19b8d5>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'fertility'" ;
       issapr:confidence 0.9993576890700595 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -5142,7 +5142,7 @@
 
 <http://data-issa.cirad.fr/ann/4df7eba5f9ca284f05c1bce25fd0f3598a94f9be>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Penaeus monodon'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -5159,7 +5159,7 @@
 
 <http://data-issa.cirad.fr/ann/a0cfcce08bf51d374b403efd91fce2045a7db009>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'agroforestry'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -5171,7 +5171,7 @@
 
 <http://data-issa.cirad.fr/ann/417c811bad513883c99c75997ad16ebd5b4669c3>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'agriculture'" ;
       issapr:confidence 0.9999834780613318 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -5187,7 +5187,7 @@
 
 <http://data-issa.cirad.fr/ann/d1ed4bfb4498da6ebe9b5be091f0de993696622e>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'city'" ;
       issapr:confidence 0.9993366195113678 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -5199,7 +5199,7 @@
 
 <http://data-issa.cirad.fr/ann/f6100f6048a94112feb97ac03185a23168481703>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'participatory development'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -5216,7 +5216,7 @@
 
 <http://data-issa.cirad.fr/ann/3b92301e1f6942ca434a037b139fe8deb6dd63a5>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'ecological knowledge'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -5272,7 +5272,7 @@
 
 <http://data-issa.cirad.fr/ann/751d57ddf026975897e1697c0f274f457016cf35>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Indonesia'" ;
       issapr:confidence 0.9999514606001247 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -5333,7 +5333,7 @@
 
 <http://data-issa.cirad.fr/ann/350034fa73c7f8a8c727e80d36422df865d5f719>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'tiger'" ;
       issapr:confidence 0.9984151711357389 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -5364,7 +5364,7 @@
 
 <http://data-issa.cirad.fr/ann/7e66f6f81f5cff9b9838fd4465e36275b723af4c>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'forestry'" ;
       issapr:confidence 0.9999982344152966 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -5395,7 +5395,7 @@
 
 <http://data-issa.cirad.fr/ann/400fcea8bfbffca6510545d1c80d20deac3ae5cb>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Mahakam Delta'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -5411,7 +5411,7 @@
 
 <http://data-issa.cirad.fr/ann/337d922e06ae6461ca9ab00230498563b373c287>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Madagascar'" ;
       issapr:confidence 0.9937314995635548 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -5423,7 +5423,7 @@
 
 <http://data-issa.cirad.fr/ann/f981917866326a9d5641f6c3639e7312668cd8ac>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Kalimantan'" ;
       issapr:confidence 0.9999645561976234 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -5440,7 +5440,7 @@
 
 <http://data-issa.cirad.fr/ann/fb8bb390b9f511d6d0178dd8015dcf73eec76537>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'swamp forest'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -5462,7 +5462,7 @@
 
 <http://data-issa.cirad.fr/ann/26fdfdf4365795b94855ec8fdbcf94674a68e7e2>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Tanimbar'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -5482,7 +5482,7 @@
 
 <http://data-issa.cirad.fr/ann/55a6980477c97278c85979c92f7fd37f4da415f1>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'shrimp'" ;
       issapr:confidence 0.8151403431869971 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -5498,7 +5498,7 @@
 
 <http://data-issa.cirad.fr/ann/dc7b0331b37de764a15bd3b25c4bc8a5520b9ba3>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Tanimbar'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -5515,7 +5515,7 @@
 
 <http://data-issa.cirad.fr/ann/f37d1fb03f6985c8e89e39889fdeb554871001da>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'socioeconomic'" ;
       issapr:confidence 0.9998490023803915 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -5532,7 +5532,7 @@
 
 <http://data-issa.cirad.fr/ann/d22398bcf6fd9de989c4463d490aba6d2076ac7b>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Toamasina'" ;
       issapr:confidence 0.9756266978349498 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -5563,7 +5563,7 @@
 
 <http://data-issa.cirad.fr/ann/cc3e717ff53912aa4947c76d921dec3f56719b91>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'United Nations Development Programme'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -5575,7 +5575,7 @@
 
 <http://data-issa.cirad.fr/ann/2496646ec69a850ec28552717929a6c8da9b4d7a>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Mahakam Delta'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -5592,7 +5592,7 @@
 
 <http://data-issa.cirad.fr/ann/a9fef17245565ea9cf227a1e3ca4eb5e1de503fd>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'forum'" ;
       issapr:confidence 0.9967330964463895 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -5609,7 +5609,7 @@
 
 <http://data-issa.cirad.fr/ann/1609d0c24e4635dcd7860797ddba3995a4e0a775>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'logging'" ;
       issapr:confidence 0.9996479061633349 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -5621,7 +5621,7 @@
 
 <http://data-issa.cirad.fr/ann/e483f0c9aaa180612d7100880001d4731d24322a>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'resource management'" ;
       issapr:confidence 0.9623290306427504 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -5633,7 +5633,7 @@
 
 <http://data-issa.cirad.fr/ann/4dbeb62f3b2eee39b391add9972824b8ac044f6f>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'erosion'" ;
       issapr:confidence 0.7245522227535406 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -5645,7 +5645,7 @@
 
 <http://data-issa.cirad.fr/ann/bd44120a2c1b9af0a55d7cc43402cc0a5175c43f>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'rice'" ;
       issapr:confidence 0.9999999995030748 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -5657,7 +5657,7 @@
 
 <http://data-issa.cirad.fr/ann/9eead7d03c1e09ae8196dd0093ffc88acc3910fa>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'resource management'" ;
       issapr:confidence 0.9875322199606023 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -5669,7 +5669,7 @@
 
 <http://data-issa.cirad.fr/ann/2427503ebff238b9033788b74cfe87f57d507ec6>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'conference'" ;
       issapr:confidence 0.776992445656894 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -5691,7 +5691,7 @@
 
 <http://data-issa.cirad.fr/ann/5c145ac470a1d6cc7c8c788b7e16f76ea5a37f97>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Brazil'" ;
       issapr:confidence 0.9974261868288 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -5707,7 +5707,7 @@
 
 <http://data-issa.cirad.fr/ann/bbf46580b0297695cb4281adf62c49f4add4578a>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'aluminum'" ;
       issapr:confidence 0.8344031848647095 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -5719,7 +5719,7 @@
 
 <http://data-issa.cirad.fr/ann/495e17258fab623e656a163386ec4ee8faa0f16f>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Indonesia'" ;
       issapr:confidence 0.9993731808194708 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -5735,7 +5735,7 @@
 
 <http://data-issa.cirad.fr/ann/578af14b33e5828b1749186b7ccadb593dbffcda>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'traditional knowledge'" ;
       issapr:confidence 0.9999999999996589 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -5751,7 +5751,7 @@
 
 <http://data-issa.cirad.fr/ann/a304a4948b16de5f9d6738acec7859b8384170bb>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Borneo'" ;
       issapr:confidence 0.9999999551491793 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -5771,7 +5771,7 @@
 
 <http://data-issa.cirad.fr/ann/e1e4a2a2edbdcdf93b84e07938d50320b352dc57>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'agronomic'" ;
       issapr:confidence 0.969156603801497 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -5783,7 +5783,7 @@
 
 <http://data-issa.cirad.fr/ann/0212550c0fa35368c5b423d3f6494b1e494262cf>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'erosion'" ;
       issapr:confidence 0.9868369576192286 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -5822,7 +5822,7 @@
 
 <http://data-issa.cirad.fr/ann/37c0a278262d93a4090bf745934194b8a7f0eaf0>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'farming'" ;
       issapr:confidence 0.9999926727882807 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -5844,7 +5844,7 @@
 
 <http://data-issa.cirad.fr/ann/0aacfe045dd43bfae0e1108bc15e3801cbfa5d25>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Antananarivo'" ;
       issapr:confidence 0.999998732467255 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -5856,7 +5856,7 @@
 
 <http://data-issa.cirad.fr/ann/4375569e3610a2fda45c6985e91e760e6ca6bdc4>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Bugis'" ;
       issapr:confidence 0.9999999478069426 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -5868,7 +5868,7 @@
 
 <http://data-issa.cirad.fr/ann/ca6bde3adb52c8a340eb9cd266ffd9aac7636d7f>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'swamp forest'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -5890,7 +5890,7 @@
 
 <http://data-issa.cirad.fr/ann/129bce773203bfd2e4e6f90bd3c22c0b52d42073>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Tanimbar'" ;
       issapr:confidence 0.9999999999911324 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -5902,7 +5902,7 @@
 
 <http://data-issa.cirad.fr/ann/8c86fa249058d2896244086c2636b6cc1c953876>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'shrimp farm'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -5931,7 +5931,7 @@
 
 <http://data-issa.cirad.fr/ann/8ee18ad5a336ea1e1a5364f2967db2a3e2f21fdb>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'fish'" ;
       issapr:confidence 0.9347783313239687 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -5947,7 +5947,7 @@
 
 <http://data-issa.cirad.fr/ann/78e5383bee227ed82d6a840395f879835bfcdccd>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'tavy'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -5964,7 +5964,7 @@
 
 <http://data-issa.cirad.fr/ann/018b863e8ada665eed02149008ca09a3a5af7d25>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'tavy'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -5981,7 +5981,7 @@
 
 <http://data-issa.cirad.fr/ann/2ba89e69d1ff0e7f76b9f92d1e7f01a7855ce059>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'rice'" ;
       issapr:confidence 0.9999999816694756 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -5997,7 +5997,7 @@
 
 <http://data-issa.cirad.fr/ann/827851ff14520dcb46bf06fc6415909391095c43>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'city'" ;
       issapr:confidence 0.955736514280507 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -6018,7 +6018,7 @@
 
 <http://data-issa.cirad.fr/ann/783fa48d33b509acfbbb374749bfa66d3db9a2d6>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'overfarming'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -6030,7 +6030,7 @@
 
 <http://data-issa.cirad.fr/ann/77d4794a4ccb612f801d7ed7fa151977fc160006>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'soil texture'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -6051,7 +6051,7 @@
 
 <http://data-issa.cirad.fr/ann/100df3ba645e04bf2efc5adb05ac1321fa28025a>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'subsistence agriculture'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -6063,7 +6063,7 @@
 
 <http://data-issa.cirad.fr/ann/7295c7e85c5ade8f550d6628cbe7962c7a1beaa9>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'participatory development'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -6075,7 +6075,7 @@
 
 <http://data-issa.cirad.fr/ann/7481c12c2fa22d90db4eca77b4b321bab711061b>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'resource management'" ;
       issapr:confidence 0.9151360766839031 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -6091,7 +6091,7 @@
 
 <http://data-issa.cirad.fr/ann/b990233f8c7c62bd242cfe1c477677b6b91f12b0>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'customary land'" ;
       issapr:confidence 0.82714614740116 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -6103,7 +6103,7 @@
 
 <http://data-issa.cirad.fr/ann/d8c54c44c3f24a91b49990b9ef711beec3f76b51>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Mahakam Delta'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -6119,7 +6119,7 @@
 
 <http://data-issa.cirad.fr/ann/e0b400da1e92524ae0dc622e3cb85acc9d5877a4>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'ha'" ;
       issapr:confidence 0.9999999999295142 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -6163,7 +6163,7 @@
 
 <http://data-issa.cirad.fr/ann/b00d5b80bb7ce9ea67aee9716b94655c3fe83521>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'ecology'" ;
       issapr:confidence 0.9999999423771458 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -6175,7 +6175,7 @@
 
 <http://data-issa.cirad.fr/ann/767002f1dee9de89f97ec66f149ee851c98286a7>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'shrimp'" ;
       issapr:confidence 0.8151403431869971 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -6187,7 +6187,7 @@
 
 <http://data-issa.cirad.fr/ann/d2b0774906a31ee72957a5ae028fdb3a2900fb3f>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'village'" ;
       issapr:confidence 0.996333440444307 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -6199,7 +6199,7 @@
 
 <http://data-issa.cirad.fr/ann/5ed6ce95035a22a3ea0bb09b73eadbd4f318b1b4>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'logging'" ;
       issapr:confidence 0.9951487454367843 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -6234,7 +6234,7 @@
 
 <http://data-issa.cirad.fr/ann/ac9029c6ead547ec3d04f69b850271b47ef06bbe>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'gradient'" ;
       issapr:confidence 0.995643860457344 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -6280,7 +6280,7 @@
 
 <http://data-issa.cirad.fr/ann/300dd3e7297a81c589eaaa5416d3efca30b225a5>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'tavy'" ;
       issapr:confidence 0.9999999999968168 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -6302,7 +6302,7 @@
 
 <http://data-issa.cirad.fr/ann/e5ea6427fb2a37638b5937370b79ac1a29a0fb08>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'mangrove'" ;
       issapr:confidence 0.9999999999974989 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -6328,7 +6328,7 @@
 
 <http://data-issa.cirad.fr/ann/93aff9dd39158f1c23e94c383fd7833a17bd6427>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'resource management'" ;
       issapr:confidence 0.7778747333845151 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -6340,7 +6340,7 @@
 
 <http://data-issa.cirad.fr/ann/b5124594a65ec9b01968f1875ed1bf07eabeee88>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'logging'" ;
       issapr:confidence 0.9951487454367843 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -6356,7 +6356,7 @@
 
 <http://data-issa.cirad.fr/ann/74aa2bb8521e8c768ca78f5dd37930085c30725b>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'village'" ;
       issapr:confidence 0.928970746789265 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -6408,7 +6408,7 @@
 
 <http://data-issa.cirad.fr/ann/813438187e02a6d930131ec18cff1f6a1fc331e4>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'participatory planning'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -6424,7 +6424,7 @@
 
 <http://data-issa.cirad.fr/ann/a9ea578f70467e4d52ccd4e086278285fc46bc3e>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'forest cover'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -6440,7 +6440,7 @@
 
 <http://data-issa.cirad.fr/ann/94ff7209c955b2d1202b7b8003d0311d121483f9>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'forest cover'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -6467,7 +6467,7 @@
 
 <http://data-issa.cirad.fr/ann/8ff5f1aad46eec1f48e03aad10dce4934d4a6ee5>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'United Nations'" ;
       issapr:confidence 0.9999999999846523 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -6479,7 +6479,7 @@
 
 <http://data-issa.cirad.fr/ann/de3ce4587485c7cb7a404a096e843ee91b40583d>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'The natural'" ;
       issapr:confidence 0.9999999855647276 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -6495,7 +6495,7 @@
 
 <http://data-issa.cirad.fr/ann/6ad9af42fb7d68ff4e3c764d05387de419f90569>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'erosion'" ;
       issapr:confidence 0.9868369576192286 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -6530,7 +6530,7 @@
 
 <http://data-issa.cirad.fr/ann/412c62d40658032b2d07e9bbc7a8b93bf5b41d75>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Madagascar'" ;
       issapr:confidence 0.9570902666598129 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -6542,7 +6542,7 @@
 
 <http://data-issa.cirad.fr/ann/018704b8d3d707b31ff48233a233ef89950bb7f3>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'kinship'" ;
       issapr:confidence 0.9999636922224097 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -6554,7 +6554,7 @@
 
 <http://data-issa.cirad.fr/ann/add656f5735018469de8d45ae48007c76ab7d5a2>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'shrimp'" ;
       issapr:confidence 0.8151403431869971 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -6575,7 +6575,7 @@
 
 <http://data-issa.cirad.fr/ann/a6a7f5025818d80c633cbfe8832cb5262b108d15>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Mahakam Delta'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -6587,7 +6587,7 @@
 
 <http://data-issa.cirad.fr/ann/46ad6e92eda26d593e6a2c0c1865cf76d3ff0b6e>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'traditional ecological knowledge'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -6629,7 +6629,7 @@
 
 <http://data-issa.cirad.fr/ann/2e6c71838455728592a45a1056be202f24e93c0a>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'village'" ;
       issapr:confidence 0.9022687282930257 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -6662,7 +6662,7 @@
 
 <http://data-issa.cirad.fr/ann/bc19350be10ff9c6260b4db501214debebb851d5>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'leguminous'" ;
       issapr:confidence 0.9999991990285731 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -6688,7 +6688,7 @@
 
 <http://data-issa.cirad.fr/ann/32b022dfe64b03741eccd2ab029609e247801bd4>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Tanimbar'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -6700,7 +6700,7 @@
 
 <http://data-issa.cirad.fr/ann/ab7ab329d54b0ee1d0adf681171bc1b41038daea>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'GIS'" ;
       issapr:confidence 1.0 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -6720,7 +6720,7 @@
 
 <http://data-issa.cirad.fr/ann/4e8a2beada35b16988041eee2b8182a7959094c8>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'poverty'" ;
       issapr:confidence 0.9999999548175548 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -6748,7 +6748,7 @@
 
 <http://data-issa.cirad.fr/ann/5ed836aa2fbc851cdfe1ff5e3393f16d899ebd24>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'agriculture'" ;
       issapr:confidence 0.9999997170457792 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -6800,7 +6800,7 @@
 
 <http://data-issa.cirad.fr/ann/f8b939d79a2b756d8d913e979f90bb543ab291b1>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'shrimp'" ;
       issapr:confidence 0.7768503321353493 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -6816,7 +6816,7 @@
 
 <http://data-issa.cirad.fr/ann/20474bfb35172b39a6a2911bc075f71932b7396b>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Indonesian'" ;
       issapr:confidence 0.9764972928679958 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -6833,7 +6833,7 @@
 
 <http://data-issa.cirad.fr/ann/343d64205fb5eb330dc38412686d8fb44503b6aa>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'nutrient'" ;
       issapr:confidence 0.7172195068957606 ;
       dct:creator <https://team.inria.fr/wimmics/> ;

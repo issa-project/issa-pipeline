@@ -22,7 +22,7 @@
 
 <http://data-issa.cirad.fr/article/543654>
       a       prov:Entity , fabio:ResearchPaper , bibo:AcademicArticle , eprint:JournalArticle , schema:ScholarlyArticle ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       issapr:hasBody <http://data-issa.cirad.fr/article/543654#body_text> ;
       issapr:hasTitle <http://data-issa.cirad.fr/article/543654#title> ;
       dce:creator "Pfund, Jean-Laurent" , "Laumonier, Yves" , "Bourgeois, Robin" ;

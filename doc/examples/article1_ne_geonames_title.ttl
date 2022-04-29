@@ -34,26 +34,26 @@
       oa:start 119 .
 
 <http://data-issa.cirad.fr/ann/db57b1880dae7381d901a4cf095e17fdf5e8d8ad>
-      a       prov:Entity , issa:GeoDesciptorAnnotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      a       prov:Entity , issa:GeographicAnnotation ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Indonesia'" ;
       issapr:confidence 0.8092 ;
       schema:about <http://data-issa.cirad.fr/article/543654> ;
       oa:hasBody <https://sws.geonames.org/1643084/> ;
       oa:hasTarget <http://data-issa.cirad.fr/ann/target/db57b1880dae7381d901a4cf095e17fdf5e8d8ad> ;
       prov:wasAttributedTo
-              issa:GeographicDescriptorsGenerator .
+              issa:GeographicEntityExtractor .
 
 <http://data-issa.cirad.fr/ann/e6c0f7e44823c8453b82cbf129e2a35c698ea3ec>
-      a       prov:Entity , issa:GeoDesciptorAnnotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      a       prov:Entity , issa:GeographicAnnotation ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Madagascar'" ;
       issapr:confidence 0.6659 ;
       schema:about <http://data-issa.cirad.fr/article/543654> ;
       oa:hasBody <https://sws.geonames.org/1062947/> ;
       oa:hasTarget <http://data-issa.cirad.fr/ann/target/e6c0f7e44823c8453b82cbf129e2a35c698ea3ec> ;
       prov:wasAttributedTo
-              issa:GeographicDescriptorsGenerator .
+              issa:GeographicEntityExtractor .
 
 <http://data-issa.cirad.fr/ann/selector/db57b1880dae7381d901a4cf095e17fdf5e8d8ad>
       a       oa:TextPositionSelector , oa:TextQuoteSelector ;

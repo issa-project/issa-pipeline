@@ -92,7 +92,7 @@ Here is the example of journal article's metadata:
   dce:language           "eng";
   dct:language           <http://id.loc.gov/vocabulary/iso639-1/en>;
 
-  rdfs:isDefinedBy       issa:dataset-1-0-20220306;
+  rdfs:isDefinedBy       issa:issa-agritrop;
   prov:generatedAtTime   "2020-11-21T13:17:03Z"^^xsd:dateTime;
   prov:wasDerivedFrom    <http://agritrop.cirad.fr/543654/>.
 
@@ -125,7 +125,7 @@ Example:
   oa:hasBody             <http://aims.fao.org/aos/agrovoc/c_35332>;
   oa:hasTarget           <http://data-issa.cirad.fr/article/543654>;
   prov:wasAttributedTo   issa:AgritropDocumentalist.
-  rdfs:isDefinedBy       issa:dataset-1-0-20220306;
+  rdfs:isDefinedBy       issa:issa-agritrop;
   
 # natural resource management  
 <http://data-issa.cirad.fr/descr/e2ba273e40beccc2b8ae5f7792690dce7e6b2131>
@@ -133,7 +133,7 @@ Example:
   oa:hasBody             <http://aims.fao.org/aos/agrovoc/c_9000115>;
   oa:hasTarget           <http://data-issa.cirad.fr/article/543654>;
   prov:wasAttributedTo   issa:AnnifSubjectIndexer.
-  rdfs:isDefinedBy       issa:dataset-1-0-20220306;
+  rdfs:isDefinedBy       issa:issa-agritrop;
 
   issapr:confidence      0.82;
   issapr:rank            1;
@@ -175,6 +175,6 @@ Example:
      ]
  ].
 
-  rdfs:isDefinedBy       issa:dataset-1-0-20220306;
+  rdfs:isDefinedBy       issa:issa-agritrop;
   prov:wasAttributedTo   issa:EntityFishing .
 ```

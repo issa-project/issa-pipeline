@@ -22,7 +22,7 @@
 
 <http://data-issa.cirad.fr/ann/e0aeb59c8a57ee309c2f9fd51fbdf2a4673efa65>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Madagascar'" ;
       issapr:confidence 0.9844654715178621 ;
       dct:creator <https://team.inria.fr/wimmics/> ;
@@ -44,7 +44,7 @@
 
 <http://data-issa.cirad.fr/ann/d43cbf73df36a39bfa1f61584aab72a1afbaf0c4>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Indonesia'" ;
       issapr:confidence 0.9708933678130034 ;
       dct:creator <https://team.inria.fr/wimmics/> ;

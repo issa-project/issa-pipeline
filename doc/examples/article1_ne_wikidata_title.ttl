@@ -1694,7 +1694,7 @@
 
 <http://data-issa.cirad.fr/ann/180d0759b85cf1dc5b38e73b0ea3163425db8071>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'lessons learned'" ;
       issapr:confidence 0.4026 ;
       dct:subject "Enterprise" ;
@@ -4151,7 +4151,7 @@
 
 <http://data-issa.cirad.fr/ann/f35b39a63b5bb1c4de3453ff520505a2d5e4ad5e>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Indonesia'" ;
       issapr:confidence 0.8092 ;
       dct:subject "Geology" , "Administration" ;
@@ -12030,7 +12030,7 @@
 
 <http://data-issa.cirad.fr/ann/9ffafb3c44ba77a1993e1d83e9d328295afc3b02>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Madagascar'" ;
       issapr:confidence 0.6659 ;
       dct:subject "Geology" , "Oceanography" , "Chemistry" , "Administration" , "Earth" ;
@@ -14593,7 +14593,7 @@
 
 <http://data-issa.cirad.fr/ann/1823e04b8bd68370ac57ac0b69201c0cc1a15fa3>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'research and development'" ;
       issapr:confidence 0.5678 ;
       dct:subject "Artisanship" ;
@@ -20738,7 +20738,7 @@
 
 <http://data-issa.cirad.fr/ann/5f8fb80aea5ae008dee142b913219125e559c13d>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Accounting'" ;
       issapr:confidence 0.3786 ;
       dct:subject "Commerce" , "Finance" , "Enterprise" ;

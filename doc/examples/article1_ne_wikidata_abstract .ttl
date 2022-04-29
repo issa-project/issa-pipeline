@@ -1278,7 +1278,7 @@
 
 <http://data-issa.cirad.fr/ann/48d6354573b50fd7037120b1ce39ddac576fc58e>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'tropical forest'" ;
       issapr:confidence 0.9054 ;
       dct:subject "Gas" , "Environment" ;
@@ -2120,7 +2120,7 @@
 
 <http://data-issa.cirad.fr/ann/84efd7fc396d140880747b6982d6229566ea5e4e>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'resource management'" ;
       issapr:confidence 0.509 ;
       dct:subject "Enterprise" , "Environment" ;
@@ -2477,7 +2477,7 @@
 
 <http://data-issa.cirad.fr/ann/966ca69c44d4f253fd005c4e4bcaa2b2bac1d689>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'environmental concerns'" ;
       issapr:confidence 0.4152 ;
       dct:subject "Biology" ;
@@ -3743,7 +3743,7 @@
 
 <http://data-issa.cirad.fr/ann/29fa1b7e06d0da861012896112ca0775b318b66d>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'participatory development'" ;
       issapr:confidence 0.3958 ;
       dct:subject "Sociology" , "Architecture" , "Health" ;
@@ -3851,7 +3851,7 @@
 
 <http://data-issa.cirad.fr/ann/63f907164b6ad0852f6d39fec482f63a537b35af>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Future research'" ;
       issapr:confidence 0.4165 ;
       dct:subject "Computer_Science" , "Biology" , "Pedagogy" , "Physics" ;
@@ -6062,7 +6062,7 @@
 
 <http://data-issa.cirad.fr/ann/fe9d09e9258e32990b4df0b0a1e21b6312865876>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'socio-cultural'" ;
       issapr:confidence 0.3999 ;
       dct:subject "Sociology" ;
@@ -8172,7 +8172,7 @@
 
 <http://data-issa.cirad.fr/ann/d244450dc436f8265f274ea2d20367bbc3a44f72>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'sharing of information'" ;
       issapr:confidence 0.3734 ;
       dct:subject "Electrotechnology" , "Telecommunication" , "Biology" , "Statistics" ;
@@ -9256,7 +9256,7 @@
 
 <http://data-issa.cirad.fr/ann/f213ea5339bf64eb3d39146b87c711e3a93a86aa>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'ecological issues'" ;
       issapr:confidence 0.3799 ;
       dct:subject "Environment" ;
@@ -11639,7 +11639,7 @@
 
 <http://data-issa.cirad.fr/ann/249c109a0f52419c47fdc138e695150ea3db5d5c>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'socio-cultural'" ;
       issapr:confidence 0.3999 ;
       dct:subject "Sociology" ;
@@ -13601,7 +13601,7 @@
 
 <http://data-issa.cirad.fr/ann/9267a9631e82044b57e4e2213486726c95d04e62>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'natural resource management'" ;
       issapr:confidence 0.7669 ;
       dct:subject "Gas" , "Environment" ;
@@ -14646,7 +14646,7 @@
 
 <http://data-issa.cirad.fr/ann/c285f7bcc76d81ddb05db285c8450ad1c0b5e9b5>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'economic systems'" ;
       issapr:confidence 0.4261 ;
       dct:subject "Economy" ;
@@ -15714,7 +15714,7 @@
 
 <http://data-issa.cirad.fr/ann/894af801eb7982422875e4fa41b9ac13074c196f>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'tropical forest'" ;
       issapr:confidence 0.9054 ;
       dct:subject "Gas" , "Environment" ;
@@ -15949,7 +15949,7 @@
 
 <http://data-issa.cirad.fr/ann/572cc6f3fbd4b0d800a82da90872b39c3d735156>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'biophysical'" ;
       issapr:confidence 0.3652 ;
       dct:subject "Biology" , "Physics" ;
@@ -17179,7 +17179,7 @@
 
 <http://data-issa.cirad.fr/ann/d8d0afd42fc57741c3b821978f359a475f268909>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'traditional ecological knowledge'" ;
       issapr:confidence 0.941 ;
       dct:subject "Environment" ;
@@ -17416,7 +17416,7 @@
 
 <http://data-issa.cirad.fr/ann/72954ddeed5c6347e1ee192860f909ff2601c93e>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'socio-cultural'" ;
       issapr:confidence 0.3999 ;
       dct:subject "Sociology" ;
@@ -17572,7 +17572,7 @@
 
 <http://data-issa.cirad.fr/ann/5eedb16f813f3d741d7a6d710af89b88f82bd805>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Participatory development'" ;
       issapr:confidence 0.375 ;
       dct:subject "Sociology" , "Architecture" , "Health" ;
@@ -17728,7 +17728,7 @@
 
 <http://data-issa.cirad.fr/ann/449d8521c90994dcf8375aeb01c7d192130335e0>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'social-ecological'" ;
       issapr:confidence 0.7807 ;
       dct:subject "Geography" , "Biology" , "Environment" ;
@@ -18632,7 +18632,7 @@
 
 <http://data-issa.cirad.fr/ann/878b6dfad85f9b824eca152f058050c699cf53c9>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'anthropological'" ;
       issapr:confidence 0.3823 ;
       dct:subject "Sociology" ;
@@ -18704,7 +18704,7 @@
 
 <http://data-issa.cirad.fr/ann/9088ba24ad189dcdfc037e9a22c9146d71316100>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'natural resources'" ;
       issapr:confidence 0.4095 ;
       dct:subject "Gas" , "Environment" ;
@@ -19561,7 +19561,7 @@
 
 <http://data-issa.cirad.fr/ann/4a4bc1a92013c76b96b1c26ac5caf681901e04d2>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'natural resources'" ;
       issapr:confidence 0.4095 ;
       dct:subject "Gas" , "Environment" ;
@@ -21672,7 +21672,7 @@
 
 <http://data-issa.cirad.fr/ann/f9dfed0034b5178a9234305e18b4332762d50d58>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'indigenous knowledge'" ;
       issapr:confidence 0.5942 ;
       dct:subject "Sociology" , "Commerce" , "Enterprise" , "Agriculture" ;
@@ -22704,7 +22704,7 @@
 
 <http://data-issa.cirad.fr/ann/c7b7b0dda48d0bfa76f812f29b9978ce5516f9fd>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'sustainability'" ;
       issapr:confidence 0.3855 ;
       dct:subject "Geography" , "Geology" , "Oceanography" , "Biology" , "Earth" ;
@@ -25003,7 +25003,7 @@
 
 <http://data-issa.cirad.fr/ann/34b8486955f1c1a0849bb96edc31374125d845dd>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'financial resources'" ;
       issapr:confidence 0.4166 ;
       dct:subject "Finance" ;
@@ -25496,7 +25496,7 @@
 
 <http://data-issa.cirad.fr/ann/b46b064a5d1c58e9abea067e77f24c71d3a3e78d>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'natural resource management'" ;
       issapr:confidence 0.7669 ;
       dct:subject "Gas" , "Environment" ;
@@ -25643,7 +25643,7 @@
 
 <http://data-issa.cirad.fr/ann/1e3f1d3643f023a4253cff400eb7e77dc6514c32>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'local communities'" ;
       issapr:confidence 0.4282 ;
       dct:subject "Sociology" , "Biology" ;
@@ -25790,7 +25790,7 @@
 
 <http://data-issa.cirad.fr/ann/4738950e32401888a136d3fae6531c472c1c37db>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'tropical forested'" ;
       issapr:confidence 0.3721 ;
       dct:subject "Gas" , "Environment" ;
@@ -27273,7 +27273,7 @@
 
 <http://data-issa.cirad.fr/ann/2765d4c34dcdcb19c1e85269457565206b2e8518>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'economic systems'" ;
       issapr:confidence 0.4261 ;
       dct:subject "Economy" ;
@@ -28033,7 +28033,7 @@
 
 <http://data-issa.cirad.fr/ann/f4ef2abed2a2dd7f79a44c80f8413b266a351af4>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'case study'" ;
       issapr:confidence 0.4316 ;
       dct:subject "Enterprise" , "Biology" ;
@@ -28117,7 +28117,7 @@
 
 <http://data-issa.cirad.fr/ann/586003f9fd5b21ffaf8e879d3cf7d29fe8a5561f>
       a       prov:Entity , oa:Annotation ;
-      rdfs:isDefinedBy issa:issa-latest ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'developing countries'" ;
       issapr:confidence 0.8601 ;
       dct:subject "Sociology" , "Biology" ;
