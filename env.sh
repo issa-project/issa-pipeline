@@ -95,3 +95,6 @@ SPOTLIGHT_LANGUAGES=en\ fr
 EF_MODELS_DIR=~/ISSA/volumes/entity-fishing/models
 EF_LANGUAGES=en\ fr
 
+# Dataset
+DATASET_META_IMPORT_DIR=~/ISSA/volumes/virtuoso/database/import
+
