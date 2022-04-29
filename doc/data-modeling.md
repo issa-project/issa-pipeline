@@ -1,6 +1,6 @@
 # ISSA RDF data modeling
 
-An article analyzed by ISSA is described in three parts: general metadata (title, authors, publication date etc.), global descriptors characterizing the article, and the named entities extracted from the article text.
+An article analyzed by the ISSA pipeline is described in three parts: general metadata (title, authors, publication date etc.), thematic descriptors characterizing the article, and named entities extracted from the article full-text.
 
 
 ## Namespaces
@@ -26,10 +26,23 @@ Below we use the following namespaces:
 @prefix issapr: <http://data-issa.cirad.fr/property/>.
 ```
 
-## Article metadata
+## Document metadata
 Article URIs are formatted as http://data-issa.cirad.fr/article/article_id where article_id is a unique article identifier.
 
-Article metadata may include the following items:
+RDF resources representing documents can be instances of various classes depending in their type:
+- conference article (`fabio:ConferencePaper`, `eprint:ConferencePaper`)
+- journal article (`fabio:ResearchPaper`, `schema:ScholarlyArticle`, `bibo:AcademicArticle`, `eprint:JournalArticle`)
+- book (`fabio:Book`, `eprint:Book`)
+- book section (`fabio:BookChapter`, `eprint:BookItem`)
+- thesis (`fabio:Thesis`, `eprint:Thesis`)
+- application (`fabio:ComputerApplication`)
+- data management plan (`fabio:DataManagementPlan`)
+- film (`fabio:Film`)
+- map (`bibo:Map`)
+- monograph (`fabio:Expression`, `bibo:Document`)
+- patent (`fabio:Patent`, `eprint:Patent`)
+
+For each document, the available metadata are mapped as much as possible as follows (not all metadata exist for all types of documents):
 - title (`dct:title`)
 - authors (`dce:creator`)
 - publication date (`dct:issued`)
@@ -37,44 +50,29 @@ Article metadata may include the following items:
 - license (`dct:license`)
 - terms and conditions (`dct:rights`)
 - identifiers
-    - source id (`dct:identifier`)
+    - archive internal identifier (`dct:identifier`)
     - DOI (`bibo:doi`)
-- source of the metadata information (`dct:source`)
+- source (API) from which the metadata information was retrieved (`dct:source`)
 - article page URL (`schema:url`)
 - source PDF download URL (`schema:downloadUrl`)
-- other PDF download URLs (`schema:sameAs`)
+- alternate PDF download URLs (`schema:sameAs`)
 - language
     - language string (`dce:language`)
     - language URI (`dct:language`)
 - provenance
     - dataset name and version (`rdfs:isDefinedBy`)
     - source data URI (`prov:wasDerivedFrom`)
-    - source data creation timestamp (`prov:generatedAtTime`)
-
-Articles can be one of the followng types:
-- article type (`rdfs:Class`)
-    - journal article (`fabio:ResearchPaper`, `schema:ScholarlyArticle`, `bibo:AcademicArticle`, `eprint:JournalArticle`)
-    - application (`fabio:ComputerApplication`)
-    - book (`fabio:Book`, `eprint:Book`)
-    - book section (`fabio:BookChapter`, `eprint:BookItem`)
-    - conference paper (`fabio:ConferencePaper`, `eprint:ConferencePaper`)
-    - film (`fabio:Film`)
-    - map (`bibo:Map`)
-    - monograph (`fabio:Expression`, `bibo:Document`)
-    - patent (`fabio:Patent`, `eprint:Patent`)
-    - data management plan (`fabio:DataManagementPlan`)
-    - thesis (`fabio:Thesis`, `eprint:Thesis`)
-)
+    - source data creation timestamp (`prov:generatedAtTime`), i.e. at which the article was added to the archive
 
 
-Furthermore, each article is linked to its parts (title, abstract, body) as follows:
+Furthermore, articles are linked to their parts (title, abstract, body) as follows:
 - `issapr:hasTitle <http://data-issa.cirad.fr/article/paper_id#title>`
 - `dct:abstract   <http://data-issa.cirad.fr/article/paper_id#abstract>`
 - `issapr:hasBody  <http://data-issa.cirad.fr/article/paper_id#body_text>`.
 NOTE: only journal articles have associated body text 
 
 
-Here is an example of article's metadata:
+Here is the example of journal article's metadata:
 ```turtle
 <http://data-issa.cirad.fr/article/543654>
   a                      prov:Entity, fabio:ResearchPaper, bibo:AcademicArticle, eprint:JournalArticle, schema:ScholarlyArticle;
@@ -103,19 +101,18 @@ Here is an example of article's metadata:
   issapr:hasTitle        <http://data-issa.cirad.fr/article/543654#title> ;
 ```
 
-## Global thematic descriptors
+## Thematic descriptors
 
 The global thematic descriptors are concepts characterizing the article as a whole. They are described as **annotations** using the **[Web Annotations Vocabulary](https://www.w3.org/TR/annotation-vocab/)**.
 
 Each annotation consists of the following information:
 - the annotation target (`oa:hasTarget`) is the article it is about (`schema:about`)
-- the annotation body (`oa:hasBody`) gives the URI of the resource identified as representing the global descriptor (e.g. an **[Agrovoc category URI](https://agrovoc.fao.org/)** ).
+- the annotation body (`oa:hasBody`) gives the URI of the resource identified as representing the thematic descriptor (e.g. an **[Agrovoc category URI](https://agrovoc.fao.org/)** ).
 - provenance 
     - dataset name and version (`rdfs:isDefinedBy`)
-    - the agent that assigned this descriptor to an article (`prov:wasAttributedTo`)
+    - the software that assigned this descriptor to the article (`prov:wasAttributedTo`)
         - a human documentalist (`issa:AgritropDocumentalist`)
         - an automated indexing system (e.g. **[Annif](https://annif.org/)** ) (`prov:AnnifSubjectIndexer`)
-
 - (optional) an automated indexer confidence score (`issapr:confidence`)
 - (optional) an automated indexer rank of the descriptor among all assigned (`issapr:rank`)
 
@@ -154,8 +151,7 @@ Each annotation consists of the following information:
 - the annotation body (`oa:hasBody`) gives the URI of the resource identified as representing the named entity (e.g. a Wikidata URI, DBPedia URI, or Geonames URI)
 - provenance
     - dataset name and version (`rdfs:isDefinedBy`)
-    - the agent that assigned this descriptor to an article (`prov:wasAttributedTo`)
-
+    - the software that assigned this descriptor to the article (`prov:wasAttributedTo`)
 - (optional) domains related to the named entity (`dct:subject`)
 - (optional) the annotating tool confidence (`issapr:confidence`)
 
@@ -170,14 +166,14 @@ Example:
 
   oa:hasBody             <http://wikidata.org/entity/Q3743137> ;
   oa:hasTarget [
-      oa:hasSource      <http://data-issa.cirad.fr/article/543654#abstract> .
+      oa:hasSource       <http://data-issa.cirad.fr/article/543654#abstract> .
       oa:hasSelector [
           a              oa:TextPositionSelector, oa:TextQuoteSelector;
           oa:exact       "natural resource management";
           oa:end         1760;
           oa:start       1733.
-                     ]
-               ] 
+     ]
+ ].
 
   rdfs:isDefinedBy       issa:dataset-1-0-20220306;
   prov:wasAttributedTo   issa:EntityFishing .
