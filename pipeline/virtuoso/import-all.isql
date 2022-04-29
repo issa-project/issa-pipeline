@@ -1,6 +1,7 @@
 log_enable(3,1);
 SPARQL CLEAR GRAPH  <http://data-issa.cirad.fr/graph/articles>;
 SPARQL CLEAR GRAPH  <http://data-issa.cirad.fr/graph/thematic-descriptors>;
+SPARQL CLEAR GRAPH  <http://data-issa.cirad.fr/graph/annif-descriptors>;
 SPARQL CLEAR GRAPH  <http://data-issa.cirad.fr/graph/dbpedia-spotlight-nes>;
 SPARQL CLEAR GRAPH  <http://data-issa.cirad.fr/graph/entity-fishing-nes>;
 SPARQL CLEAR GRAPH  <http://data-issa.cirad.fr/graph/geographic-nes>;
@@ -11,7 +12,8 @@ ld_dir ('$ARGV[$I]', 'issa-document-metadata.ttl', 'http://data-issa.cirad.fr/gr
 ld_dir ('$ARGV[$I]', 'issa-article-text.ttl', 'http://data-issa.cirad.fr/graph/articles');
 
 ld_dir ('$ARGV[$I]', 'issa-document-descriptors.ttl', 'http://data-issa.cirad.fr/graph/thematic-descriptors');
-ld_dir ('$ARGV[$I]', 'issa-article-annif-descriptors.ttl', 'http://data-issa.cirad.fr/graph/thematic-descriptors');
+
+ld_dir ('$ARGV[$I]', 'issa-article-annif-descriptors.ttl', 'http://data-issa.cirad.fr/graph/annif-descriptors');
 
 ld_dir ('$ARGV[$I]', 'issa-article-spotlight-*.ttl', 'http://data-issa.cirad.fr/graph/dbpedia-spotlight-nes');
 
