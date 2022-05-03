@@ -25,7 +25,7 @@ issa:issa-agritrop
     a               dcat:Dataset, void:Dataset, schema:Dataset;
     dct:title       "ISSA Agritrop dataset";
     schema:name     "ISSA Agritrop dataset";
-    dct:description "This RDF dataset provides knowledge graphs produced by processing articles from Agritrop - the open repository of CIRAD publications. These knowledge graphs provide articles' metadata, extracted text, Agrovoc and GeoNames descriptors, named entities identified and disambiguated by Entity-fishing and DBpedia Spotlight. ";
+    dct:description "This RDF dataset was produced by processing articles from Agritrop - the open repository of CIRAD publications. It contains articles' metadata and text, Agrovoc and GeoNames descriptors, named entities identified and disambiguated by Entity-fishing and DBpedia Spotlight.";
     
 # Ask Anne about proper license
     dct:licence     <http://opendatacommons.org/licenses/by/1.0>;
