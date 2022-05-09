@@ -4,12 +4,13 @@ To facilitate the execution of the pipeline we built an environment that support
 
 <img src="../doc/environment_diagram.png" width="500" />
 
-## Minimal host machine specification:
+## Host machine specification:
+(minimum tested)
 - 64-bit Linux OS
 - CPU 2.30 Gz (multi-core is preferable)
 - RAM 32 Gb   
 
-## Host Environment components:
+## Host environment components:
 (tested vesrions)
 - Python (3.6.8)
 - Java (15.0.2)
