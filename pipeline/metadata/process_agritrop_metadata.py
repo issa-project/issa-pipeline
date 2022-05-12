@@ -78,6 +78,19 @@ def trim_abstract(df):
                              .str.replace("\(Résumé d'auteurs\)" , '')
     
     return df 
+
+def remove_tabs(df):
+    """
+    Title and abstract text can contain tabs. In this case parsing TSV file 
+    may result in a field shift. 
+    Unfortunately Pandas's save_csv does not take car of this.
+    """
+    
+    df.title = df.title.str.replace("\t" , ' ')
+    df.abstract = df.abstract.str.replace("\t" , ' ')
+   
+    return df
+
 #%%
 # ## Split descriptors on text and uri 
 
@@ -479,6 +492,18 @@ def replace_doublequotes(df):
     df.abstract = df.abstract.fillna('').str.replace('"' , "'")
     
     return df
+
+#%%
+def fill_year(df):
+    """
+    Fill n/a with forward fill values for column 'year'.
+    Otherwise it causes a casting problem in Mongo and further 
+    in conversion to Turtle.
+    """
+    
+    df.year = df.year.fillna(method='ffill', downcast='infer')
+    
+    return df
     
 #%%
 def process(save_file=True):
@@ -507,12 +532,14 @@ def process(save_file=True):
           .pipe(split_relations)
           #.pipe(drop_records_without_agrovoc_descriptors)
           .pipe(trim_abstract)
+          .pipe(remove_tabs)
           .pipe(replace_doublequotes)
           .pipe(fill_iso_lang)
           .pipe(detect_title_lang)
           .pipe(detect_abstract_lang)
           .pipe(get_live_labels) #TODO: consider moving this to the annif training part of the code
           .pipe(add_date)
+          .pipe(fill_year)
           .pipe(print_stats, True)
           .pipe(save_metadata, output_metadata_file if save_file else None)
           )
