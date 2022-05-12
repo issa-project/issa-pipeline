@@ -29,7 +29,7 @@
       dce:language "eng" ;
       dct:abstract <http://data-issa.cirad.fr/article/543654#abstract> ;
       dct:identifier "543654" ;
-      dct:issued "2008.0"^^xsd:gYear ;
+      dct:issued "2008"^^xsd:gYear ;
       dct:language <http://id.loc.gov/vocabulary/iso639-1/en> ;
       dct:rights <https://agritrop.cirad.fr/mention_legale.html> ;
       dct:source "Agritrop-OAI2-API" ;
