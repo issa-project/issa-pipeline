@@ -1,0 +1,10 @@
+construct {
+  ?uri       rdfs:label ?uriLabel.
+  ?uriParent rdfs:label ?uriParentLabel.
+  ?uriClass  rdfs:label ?uriClassLabel.
+}
+where {
+    {{pattern}}
+
+    SERVICE wikibase:label { bd:serviceParam wikibase:language "{{lang}}" }
+}
