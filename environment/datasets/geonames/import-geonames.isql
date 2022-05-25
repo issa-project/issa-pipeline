@@ -7,6 +7,9 @@ ld_dir ('/database/import', '*geonames*.xml', 'http://geonames.org/graph');
 rdf_loader_run ();
 checkpoint;
 
+-- Check for loading errors
+SELECT * FROM DB.DBA.load_list;
+
 SPARQL SELECT DISTINCT ('<http://geonames.org/graph>' as ?g)  (COUNT(*) as ?triples)  
 WHERE { GRAPH <http://geonames.org/graph> {?s ?p ?o} };
 
