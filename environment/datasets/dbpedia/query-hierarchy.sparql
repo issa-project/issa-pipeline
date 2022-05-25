@@ -1,0 +1,43 @@
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix dct: <http://purl.org/dc/terms/> 
+prefix dbo: <http://dbpedia.org/ontology/>
+
+construct {
+  ?uri       rdfs:label ?uriLabel.
+  ?uriParent rdfs:label ?uriParentLabel.
+  ?uriClass  rdfs:label ?uriClassLabel.
+  ?uriSubject  rdfs:label ?uriSubjectLabel.
+
+  ?uri rdfs:subClassOf  ?uriParent;
+       rdf:type         ?uriClass;
+       dct:subject      ?uriSubject.
+}
+where {
+    ?uri rdfs:label ?uriLabel. FILTER(lang(?uriLabel) in ("{{lang}}"))
+
+    { ?uri rdfs:subClassOf+ ?uriParent.
+      ?uriParent rdfs:label ?uriParentLabel. FILTER(lang(?uriParentLabel) in ("{{lang}}"))
+    }
+    UNION
+    { ?uri rdf:type/rdfs:subClassOf* ?uriClass.
+      ?uriClass rdfs:label ?uriClassLabel. FILTER(lang(?uriClassLabel) in ("{{lang}}"))
+    }
+    UNION
+    { ?uri <http://purl.org/linguistics/gold/hypernym> ?uriClass.
+      ?uriClass rdfs:label ?uriClassLabel. FILTER(lang(?uriClassLabel) in ("{{lang}}"))
+    }
+    UNION
+    { ?uri dct:subject ?uriSubject.
+      ?uriSubject rdfs:label ?uriSubjectLabel. FILTER(lang(?uriSubjectLabel) in ("{{lang}}"))
+     }
+    UNION
+    # Relationship of a taxon to its parent is mapped to subClassOf relationship
+    { ?uri dbo:genus|dbo:family|dbo:order|dbo:phylum|dbo:kingdom|dbo:class ?uriParent.
+      ?uriParent rdfs:label ?uriParentLabel. FILTER(lang(?uriParentLabel) in ("{{lang}}"))
+    }
+
+    FILTER (?uri in (
+        {{uri_list}}
+    ))
+}
