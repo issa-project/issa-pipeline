@@ -9,5 +9,5 @@ construct {
 where {
     {{pattern}}
 
-    SERVICE wikibase:label { bd:serviceParam wikibase:language "en" }
+    SERVICE wikibase:label { bd:serviceParam wikibase:language "{{lang}}" }
 }

@@ -13,10 +13,11 @@ log=$log_dir/wikidata_import_$(date "+%Y%m%d_%H%M%S").log
 
 docker start virtuoso
 
-# TODO: move to env.sh
-WIKIDATA_IMPORT_DIR=~/ISSA/volumes/virtuoso/database/import
+# Remove previously imported ttl files
+rm -f -v "$WIKIDATA_IMPORT_DIR"/wikidata-dump*.ttl 				>>$log
 
 cp -v wikidata-dump-en.ttl "$WIKIDATA_IMPORT_DIR"              >>$log
+cp -v wikidata-dump-fr.ttl "$WIKIDATA_IMPORT_DIR"              >>$log
 cp -v import-hierarchy.isql "$WIKIDATA_IMPORT_DIR"              >>$log
 
 docker exec virtuoso \

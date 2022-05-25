@@ -1,9 +1,12 @@
 #!/bin/bash
 # Query Wikidata to retrieve the hierarchy of classes of each URI in file wikidata-ne-uris.txt
+# Script takes one parameter for language, default is en, no quotation marks
+
+lang=${1:-en}
 
 log_dir=../../logs
 mkdir -p $log_dir 
-log=$log_dir/wikidata_dump_$(date "+%Y%m%d_%H%M%S").log
+log=$log_dir/wikidata_dump_$lang-$(date "+%Y%m%d_%H%M%S").log
 
 
 # List of URIs to query
@@ -13,12 +16,14 @@ urilist=wikidata-ne-uris.txt
 MAXURIS=10
 
 # Initialize the result file with the prefixes
-result_file=wikidata-dump-en.ttl
+result_file=wikidata-dump-$lang.ttl
 cp namespaces.ttl $result_file
 result_tmp=/tmp/sparql-response-$$.ttl
 
 # SPARQL query pattern
 fullquery_pattern=`cat query-hierarchy.sparql`
+fullquery_pattern=${fullquery_pattern//\{\{lang\}\}/$lang}
+
 
 # SPARQL parttern for one URI
 subquery_pattern='
@@ -39,6 +44,7 @@ split -d -l $MAXURIS $urilist $uri_split
 nbfiles=$(ls -l ${uri_split}* | wc -l)
 nbfiles=$(($nbfiles - 1))
 _fileIndex=0
+
 for _uri_file_list in `ls ${uri_split}*`; do
     echo "--- Processing file $_uri_file_list (${_fileIndex}/$nbfiles)" >>$log
 
@@ -48,22 +54,29 @@ for _uri_file_list in `ls ${uri_split}*`; do
         # Add the subquery once for each URI
         _subquery="$_subquery UNION ${subquery_pattern/\{\{uri\}\}/$_uri}"
     done
-    #echo "$_subquery"
     
     _fileIndex=$(($_fileIndex + 1))
 
     curl -o $result_tmp \
          -X POST \
          -H 'Accept: text/turtle' \
-         -S \
          -H "Content-Type: application/sparql-query" \
+         --fail \
+         --retry 10 \
+		--silent --show-error \
+         --w "    received %{size_download} bytes in %{time_total} sec; HTTP code: %{response_code}\n" \
          -d "${fullquery_pattern/\{\{pattern\}\}/$_subquery}" \
-         https://query.wikidata.org/sparql                              2>>$log
+         https://query.wikidata.org/sparql                              >>$log
 
     # Check for errors and output failed uris
     res="$?"
 	if [ $res -ne 0  ]; then
-    	echo $(cat $_uri_file_list)                                     >>$log
+         echo "ERROR: $res.   Affected IRIs:" 						>>$log
+    		echo $(cat $_uri_file_list) 								>>$log
+         echo ""													>>$log
+         echo $(cat $result_tmp) 									>>$log
+         #empty temp file 
+         > $result_tmp
 	fi
 
     rm -f $_uri_file_list
