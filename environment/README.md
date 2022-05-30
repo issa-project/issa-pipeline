@@ -33,7 +33,8 @@ Each container can be downloaded from the Docker Hub and we provide the examples
 
 For custom built containers we provide dockerfile file(s).
 
-DBpedia Spotlight and Entity-fishing are installed using pre-trained language models.  In our use case we only use French and English models but this can be easily customised.
+DBpedia Spotlight and Entity-fishing are installed using pre-trained language models.  In our use case we only download French and English models but this can be easily customised.
  
 ## Optional external datasets
-Optionally and depending on a use case some additional external datasets can be obtained from its origine and uploaded to the ISSA triple store for faster data access. In our use case we choose to host periodically updated Agrovoc and GeoNames datasets.  
+Optionally and depending on a use case some additional external datasets can be obtained from their origines and uploaded to the ISSA triple store for faster data access. In our use case we choose to host periodically updated Agrovoc and GeoNames datasets. 
+To facilitate quick access to the Wikidata and DBPedia lables and hierarchical relationships between named entities for visualization applications such as [ARViz](https://github.com/Wimmics/arviz) we recreate the hierarchies for named entities in the ISSA triple store.   
