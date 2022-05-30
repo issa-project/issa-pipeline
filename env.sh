@@ -4,7 +4,6 @@
 # Tune the variables in this file according to the environment
 
 # Agrovoc dump
-# NOTE: this URL is a moving target
 AGROVOC_URL=https://agrovoc.fao.org/latestAgrovoc/agrovoc_core.nt.zip
 AGROVOC_GRAPH=http://agrovoc.fao.org/graph
 AGROVOC_IMPORT_DIR=~/ISSA/volumes/virtuoso/database/import
@@ -14,10 +13,6 @@ GEONAMES_DUMP_URL=https://download.geonames.org/all-geonames-rdf.zip
 GEONAMES_GRAPH=http://geonames.org/graph 
 GEONAMES_IMPORT_DIR=~/ISSA/volumes/virtuoso/database/import
 
-# Version and release date of the Agritrop dataset being processed
-#AGRITROP_VERSION=0
-#AGRITROP_DATE=2021-06-07
-
 # ISSA version (dot- and dashed-notation)
 ISSA_VERSION=1.0
 ISSA_VERSION_DASH=1-0
@@ -25,25 +20,39 @@ ISSA_VERSION_DASH=1-0
 # ISSA dataset id 
 export ISSA_DATA_ROOT=~/ISSA/data
 export ISSA_DATASET=dataset-${ISSA_VERSION_DASH}
+
 mkdir -p $ISSA_DATA_ROOT/$ISSA_DATASET
 export LATEST_UPDATE=$(ls -Ar  --group-directories-first $ISSA_DATA_ROOT/$ISSA_DATASET | head -n 1) # doesn't work if the $ISSA_DATA_ROOT/$ISSA_DATASET does not exsist
 export LATEST_UPDATE_DIR=$ISSA_DATA_ROOT/$ISSA_DATASET/$LATEST_UPDATE
-export METADATA_PREFIX=agritrop_meta
 
-#CURRENT_DATE=$(date "+%Y-%m-%d") # potentially use this var to create a dataset version
+# potentially use this var to create a dataset version
+#CURRENT_DATE=$(date "+%Y-%m-%d") 
+
+export METADATA_PREFIX=agritrop_meta
 
 # PDF storage
 export PDF_CACHE=~/ISSA/data/pdf_cache 
 export PDF_CACHE_UNREADBLE=$PDF_CACHE/unreadable
 
-# Directories of data files relative to LATEST_UPDATE_DIR 
-REL_META=.    					# metadata (tsv) 
-REL_FULLTEXT=json/coalesced			# Grobid extracted data (json) 
-REL_SPOTLIGHT=annotation/dbpedia	# DBpedia Spotlight annotations
-REL_EF=annotation/wikidata			# Entity-Fishing annotations 
-REL_GEONAMES=annotation/geonames	# GeoNames annotations 
-REL_ANNIF=indexing					# Relative directory of Annif output
-REL_RDF=rdf						# Relative directory of RDF output
+# Directories of data files relative to LATEST_UPDATE_DIR
+# - dirs used downstream in the pipeline
+export REL_META=.    					# metadata (tsv) 
+export REL_FULLTEXT=json/coalesced		# Grobid extracted data (json) 
+export REL_SPOTLIGHT=annotation/dbpedia	# DBpedia Spotlight annotations
+export REL_EF=annotation/wikidata		# Entity-Fishing annotations 
+export REL_GEONAMES=annotation/geonames	# GeoNames annotations 
+export REL_ANNIF=indexing				# Relative directory of Annif output
+export REL_RDF=rdf						# Relative directory of RDF output
+
+# - dirs used for intermediate and debug files 
+export REL_ANNIF_LABELS=lables			# label tsv files for Annif training
+export REL_ANNIF_TEXT=txt				# text files that can be used for ANNIF trainig
+export REL_PDF=pdf						# document pdfs
+export REL_GROBID_XML=xml				# Grobid extracted data (xml)
+export REL_META_JSON=json/metadata		# text contained in metadata formated as json 
+export REL_GROBID_JSON=json/fulltext	# text extracted by Grobid formated as json
+export REL_COAL_JSON=json/coalesced		# json coalesced from the two above with metadata replacing Grobit when present 
+                               
 
 # Python virtual environment name and location
 ISSA_VENV=~/ISSA/environment/python/issa_venv
@@ -98,3 +107,6 @@ EF_LANGUAGES=en\ fr
 # Dataset
 DATASET_META_IMPORT_DIR=~/ISSA/volumes/virtuoso/database/import
 
+# Lables and hierarchies 
+WIKIDATA_IMPORT_DIR=~/ISSA/volumes/virtuoso/database/import
+DBPEDIA_IMPORT_DIR=~/ISSA/volumes/virtuoso/database/import
