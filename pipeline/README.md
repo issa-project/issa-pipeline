@@ -2,7 +2,7 @@
 
 ISSA pipeline consists of steps that flow document data from obtaining their metadata trough the process of text extraction and annotation to the publication as a Knowledge Graph.
 
-<img src="doc/pipeline_details.png" width="700" />
+<img src="../doc/pipeline_details.png" width="700" />
 
 To adapt this pipeline to a differnt document repository only the downloadin metadata step has to be modified.
 
