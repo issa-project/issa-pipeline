@@ -167,6 +167,9 @@ def create_cache():
 timer = threading.Thread()
 timer.start()
 
+# Using set of strings is the quickest option to check if file exists
+PDF_FILES = set([os.path.basename(f) for f in glob.glob('%s/**/*.pdf' % (cfg.DATASET_ROOT_PATH), recursive = True)] )
+
 @retry(stop_max_delay=10000, stop_max_attempt_number=5, wait_random_min=10, wait_random_max=2000)
 def download_pdf(pdf_url):
     """
@@ -194,17 +197,14 @@ def download_pdf(pdf_url):
     is_new = False
     if cfg.CACHE_PDF:    
         pdf_path = os.path.join(cfg.CACHE_PATH , filename)
-        #pdf_path = os.path.realpath(os.path.normpath(pdf_path))
 
         #lookup in cache
         is_new = not os.path.exists(pdf_path)
     else:
         pdf_path = os.path.join( cfg.FILES_LOC['pdf'] , filename)
-        #pdf_path = os.path.realpath(os.path.normpath(pdf_path)) 
         
         #lookup in the current dataset
-        is_new = not glob.glob('%s/**/%s' % (cfg.DATASET_ROOT_PATH, filename),
-                          recursive = True)
+        is_new = filename not in PDF_FILES
  
     global timer
     timer.join(cfg.DOWNLOAD_DELAY)
@@ -302,10 +302,6 @@ def dict_to_text(pdf_dict):
     Concatenate title, abstract and body as plain text separateed by EOL 
 
     """
-    # text = os.linesep.join([  pdf_dict['metadata']['title'],
-    #                           pdf_dict['abstract'][0]['text'],
-    #                           ] + 
-    #                           [ bt['text'] for bt in pdf_dict['body_text'] ] ) 
     text_list = []
     for key, (_, path) in cfg.XML_DICT_MAP.items():
         text = get_nested_dict_value(pdf_dict, path)

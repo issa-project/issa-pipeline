@@ -13,6 +13,7 @@ pushd ./fulltext
 
 	#./run-grobid
 	docker start grobid
+     sleep 5 
 
 	python3 ./extract_text_from_pdf.py
 	python3 ./coalesce_meta_json.py
