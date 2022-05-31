@@ -40,7 +40,7 @@ def remove_nans(df):
 #%%
 def filter_not_yet_processed_articles(df):
     """
-    Remove articles and w/o assosciated PDF file.
+    Remove articles w/o assosciated PDF file.
     They will be processed in the next ittertaion
 
     """

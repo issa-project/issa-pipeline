@@ -5,22 +5,48 @@ Created on Thu Jul  8 19:14:38 2021
 @author: abobashe
 """
 
-# read environment variables defined and exported in env.sh
 import os
 import datetime
+from  util import SPARQL_Endpoint_Wrapper
 
-from  sparql_endpoint_wrapper import SPARQL_Endpoint_Wrapper
+# read environment variables defined and exported in env.sh
+# if an environment variable is not specified default is assigned
 
 def read_env_var(var_name):
     return os.environ[var_name] if var_name in os.environ else None
 
-_ISSA_DATA_ROOT  = read_env_var('ISSA_DATA_ROOT') or '../../data'
-_ISSA_DATASET    = read_env_var('ISSA_DATASET') or 'dataset-1-0'
-_METADATA_PREFIX = read_env_var('METADATA_PREFIX') or 'agritrop'  
-#_LANG            = read_env_var('DATASET_LANGUAGE') or 'en'
-_ANNIF_SUFFIX    = read_env_var('ANNIF_SUFFIX') or 'annif'
-_PDF_CACHE       = read_env_var('PDF_CACHE') or '../../data/pdf_cache'
-_PDF_CACHE_UNREADABLE = read_env_var('PDF_CACHE_UNREADABLE') or '../../data/pdf_cache/unreadable'
+
+_ISSA_DATA_ROOT	= read_env_var('ISSA_DATA_ROOT') 			or '~/ISSA/data'
+_ISSA_DATASET    	= read_env_var('ISSA_DATASET') 				or 'dataset-1-0'
+
+_METADATA_PREFIX 	= read_env_var('METADATA_PREFIX') 			or 'agritrop'  
+_ANNIF_SUFFIX    	= read_env_var('ANNIF_SUFFIX') 				or 'annif'
+
+_PDF_CACHE       	= read_env_var('PDF_CACHE') 				or '~/ISSA/data/pdf_cache'
+_PDF_CACHE_UNREADABLE = read_env_var('PDF_CACHE_UNREADABLE') 	or '~/ISSA/data/pdf_cache/unreadable'
+
+# Directories of data files relative to LATEST_UPDATE_DIR
+
+_REL_META 		= read_env_var('REL_META') 					or '.'
+_REL_META_JSON 	= read_env_var('REL_META_JSON') 			or 'json/metadata'
+_REL_PDF  		= read_env_var('REL_PDF') 					or 'pdf'
+
+_REL_GROBID_XML  	= read_env_var('REL_GROBID_XML') 			or 'xml'
+_REL_GROBID_JSON  	= read_env_var('REL_GROBID_JSON') 			or 'json/fulltext'
+_REL_COAL_JSON  	= read_env_var('REL_COAL_JSON') 			or 'json/coalesced'
+
+_REL_ANNIF_LABELS 	= read_env_var('REL_ANNIF_LABELS') 			or 'labels'
+_REL_ANNIF_TEXT   	= read_env_var('REL_ANNIF_TEXT') 			or 'txt'
+_REL_ANNIF		= read_env_var('REL_ANNIF') 			   	or 'indexing'
+
+_REL_ANNIF		= read_env_var('REL_ANNIF') 			    	or 'indexing'
+
+_REL_SPOTLIGHT	= read_env_var('REL_SPOTLIGHT') 		   	or 'annotation/dbpedia'
+_REL_EF			= read_env_var('REL_EF')		 		    	or 'annotation/wikidata'
+_REL_GEONAMES		= read_env_var('REL_GEONAMES') 		     	or 'annotation/geonames'
+
+_REL_RDF			= read_env_var('REL_RDF') 		     		or 'rdf'
+
 
 class cfg_pipeline(object):
     """
@@ -33,30 +59,51 @@ class cfg_pipeline(object):
     DATASET_ROOT_PATH = os.path.join(_ISSA_DATA_ROOT, _ISSA_DATASET)
    
     CURRENT_DATE = datetime.datetime.now().strftime('%Y%m%d')
-    LATEST_UPDATE = [x for x in sorted(next(os.walk(DATASET_ROOT_PATH))[1], reverse=True) ]
+    LATEST_UPDATE = [x for x in (sorted(os.listdir(DATASET_ROOT_PATH), reverse=True) ) ]
+                         #    if os.path.isdir( os.path.join(DATASET_ROOT_PATH, x) )] # TODO: check weired behaviour
+
     LATEST_UPDATE = LATEST_UPDATE[0] if LATEST_UPDATE else CURRENT_DATE
 
-    FILES_LOC = {'metadata' :      os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE),
-               'tsv' :             os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, 'labels' ),
-               'txt' :             os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, 'txt' ),
-               'url' :             os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, 'pdf' ),
-               'pdf' :             os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, 'pdf' ),
-               'metadata_json' :   os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, 'json', 'metadata' ),
-               'fulltext_json' :   os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, 'json', 'fulltext' ),
-               'coalesced_json' :  os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, 'json', 'coalesced' ),
-               'xml' :             os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, 'xml' ),
-               'indexing_text' :   os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, 'indexing' ),
-               'indexing_json' :   os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, 'indexing' ),
+#   FILES_LOC = {'metadata' :      os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE),
+#               'tsv' :             os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, 'labels' ),
+#               'txt' :             os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, 'txt' ),
+#               'url' :             os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, 'pdf' ),
+#               'pdf' :             os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, 'pdf' ),
+#               'metadata_json' :   os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, 'json', 'metadata' ),
+#               'fulltext_json' :   os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, 'json', 'fulltext' ),
+#               'coalesced_json' :  os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, 'json', 'coalesced' ),
+#               'xml' :             os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, 'xml' ),
+#               'indexing_text' :   os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, 'indexing' ),
+#               'indexing_json' :   os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, 'indexing' ),
+#              
+#               'annotation_dbpedia': os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, 'annotation', 'dbpedia' ),
+#               'annotation_wikidata':os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, 'annotation', 'wikidata' ),
+#               'annotation_geonames':os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, 'annotation', 'geonames' ),
+#              
+#              }
+
+    FILES_LOC = {'metadata' :      os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, _REL_META ),
+               'tsv' :             os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, _REL_ANNIF_LABELS ),
+               'txt' :             os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, _REL_ANNIF_TEXT ),
+               'url' :             os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, _REL_PDF ),
+               'pdf' :             os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, _REL_PDF ),
+               'metadata_json' :   os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, _REL_META_JSON ),
+               'fulltext_json' :   os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, _REL_GROBID_JSON  ),
+               'coalesced_json' :  os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, _REL_COAL_JSON  ),
+               'xml' :             os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, _REL_GROBID_XML ),
+               'indexing_text' :   os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, _REL_ANNIF ),
+               'indexing_json' :   os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, _REL_ANNIF ),
               
-               'annotation_dbpedia': os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, 'annotation', 'dbpedia' ),
-               'annotation_wikidata':os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, 'annotation', 'wikidata' ),
-               'annotation_geonames':os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, 'annotation', 'geonames' ),
+               'annotation_dbpedia': os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, _REL_SPOTLIGHT ),
+               'annotation_wikidata':os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, _REL_EF ),
+               'annotation_geonames':os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, _REL_GEONAMES ),
               
                }
+
     
     USER_AGENT = 'ISSA extraction script' 
     
-    DEBUG=True    
+    DEBUG=False    
 
 class cfg_download_agritrop_metadata(cfg_pipeline):
 
@@ -200,7 +247,7 @@ class cfg_extract_text_from_pdf(cfg_pipeline):
     OVERWRITE_EXISTING = False
     OUTPUT_IF_BAD_PDF = True
     
-    CACHE_PDF = True
+    CACHE_PDF = False
     CACHE_PATH= _PDF_CACHE
     CACHE_UNREADABLE_PATH = _PDF_CACHE_UNREADABLE
     
@@ -387,7 +434,7 @@ class cfg_annotation_wikidata(cfg_pipeline):
     INPUT_PATTERN = '*.json'
     OUTPUT_SUFFIX = '.json'    
     
-    OUTPUT_OVERWRITE_EXISTING = True
+    OUTPUT_OVERWRITE_EXISTING = False
         
         # json path to                 text                      language      
     JSON_TEXT_MAP= { 'title':    (['metadata', 'title'],     ['metadata', 'title_lang', 'code']),
@@ -414,7 +461,7 @@ class cfg_annotation_geonames(cfg_pipeline):
     INPUT_PATTERN = '*.json'
     OUTPUT_SUFFIX = '.json'    
     
-    OUTPUT_OVERWRITE_EXISTING = True
+    OUTPUT_OVERWRITE_EXISTING = False
         
         # json path to                 text                      language                 default lang
     JSON_TEXT_MAP= { 'title':    (['title', 'text'],      ['title', 'language', 'lang'] , 'fr'  ),
