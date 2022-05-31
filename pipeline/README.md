@@ -2,9 +2,9 @@
 
 ISSA pipeline consists of steps that flow document data from obtaining their metadata trough the process of text extraction and annotation to the publication as a Knowledge Graph.
 
-<img src="../doc/pipeline_details.png" width="700" />
+<img src="../doc/pipeline_details.png" width="900" />
 
-To adapt this pipeline to a differnt document repository only the downloadin metadata step has to be modified.
+To adapt this pipeline to a differnt document repository only the metadata step and json-RDF mappings have to be modified.
 
 ## Source Code
 
@@ -27,8 +27,9 @@ The most relevant metadata fields for ISSA pipeline would be:
 - abstract
 - pdf URL
 - thematic descriptors
+
 After cleaning and processing metadata (which would be different for each use case scenario) the following intermediate files are produced:
-- metadata json according to a [schema](metadata/ISSA_json_schema.txt) 
+- metadata json according to the [schema](metadata/ISSA_json_schema.txt) 
 - files containing pdf URLs for the full text extraction in the next step
 - (optional) text files with title and abstract text for trainnig the indexing models
 - (optional) tsv files with descriptors URIs and lables also for trainnig the indexing models 
