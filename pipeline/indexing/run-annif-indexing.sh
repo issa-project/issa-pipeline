@@ -9,16 +9,17 @@
 
 IDIR=$ANNIF_INPUT_DIR
 
-echo "Indexing documents in ${IDIR}..."
-
 docker start annif
 
+log_dir=../logs 
+mkdir -p $log_dir
+log=$log_dir/indexing_annif_$(date "+%Y%m%d_%H%M%S").log
+
+echo "Indexing documents in ${IDIR}..."                              >> $log
 
 for lang in $ANNIF_LANGUAGES; do
 
-	log_dir=../logs 
-	mkdir -p $log_dir
-	log=$log_dir/annif-indexing_"$lang"_$(date "+%Y%m%d_%H%M%S").log
+    echo "Indexing $lang documents..."                               >> $log
 
 	if [ $( docker ps -f name=annif | wc -l ) -gt 1 ]; then 
 	    	docker exec annif annif index \
@@ -27,7 +28,7 @@ for lang in $ANNIF_LANGUAGES; do
                          --limit $ANNIF_LIMIT \
                          --threshold $ANNIF_THRESHOLD \
                          $ANNIF_PROJECT-$lang \
-    					  $IDIR/$lang | tee $log
+    					  $IDIR/$lang                                &>> $log
     fi
 
 done 
