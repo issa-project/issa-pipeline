@@ -16,7 +16,7 @@ There are two levels of configuration that define the data flow and processing o
  - environment and data loaction are defined in [env.sh](../env.sh)
  - processing options for Python scripts are defined in [config.py](config.py)
 
-## Pipeline Step by Step
+## Pipeline Step-by-step
 ### Metadata
 Typically, documents in the repositories are accompanied by their metadata which can include title, authors, pdf URL, thematic descriptors, etc. 
 The metadata is typically come in a tabular format and can be obtained through the repository's API. In the use case of Agritrop the metadata is obtained through [OAI-PMH](https://www.openarchives.org/pmh/) protocol from the [Open Repository of CIRAD publications](https://agritrop.cirad.fr/). A mechanism of mapping API output to the table columns is provided.
@@ -28,7 +28,7 @@ The most relevant metadata fields for ISSA pipeline would be:
 - pdf URL
 - thematic descriptors
 
-After cleaning and processing metadata (which would be different for each use case scenario) the following intermediate files are produced:
+After pre-processing metadata (which would be different for each use case scenario) the following intermediate files are produced:
 - metadata json according to the [schema](../doc/ISSA_json_schema.txt) 
 - files containing pdf URLs for the full text extraction in the next step
 - (optionally) text files with title and abstract text for training the indexing models
@@ -60,13 +60,11 @@ In ISSA pipeline indexing refers to an automatic annotation of a document with t
 
 In the Agritrop use case the thematic descriptors are chosen from the [AGROVOC](https://www.fao.org/agrovoc/) vocabulary. Large corpus of the existing documents is already annotated by documentalist which allows to train a specialized supervised classification model to automatically assign thematic descriptors to publications. 
 
-The ISSA pipeline includes such a classification system through the integration of [Annif](https://annif.org/), a framework developed by the National Library of Finland. 
-
-Before applying a classification model to documents, this model should be trained. Read more on Annif model selection and training [here](../training/).
+The ISSA pipeline includes such a classification system through the integration of [Annif](https://annif.org/), a framework developed by the National Library of Finland. Read more on Annif model selection and training [here](../training/).
 
 NB: The classification models are created separately for each language.
 
-On this step for json files created in the previous step:
+On this step from document text json files created in the previous step:
 - create plain text files per Annif framework's requirement
 - separate text file by language 
 - extract thematic descriptors by applying classification models for each language
@@ -74,15 +72,14 @@ On this step for json files created in the previous step:
 The following intermediate files are output at this step:
 - text files
 - json files with thematic descriptors according to the following schema
-
-    {'paper_id' : <str>,
-     'model': <str>,
-     'language': <str>,
-     'subjects' : [{'uri': <str>,
-				  'label': <str>,
-				   'conf_score': <number>,
-				   'rank': <number>}]
-    }
-
-
+```
+{'paper_id' <str>, 
+ 'model': <str>, 
+ 'language': <str>,  	
+ 'subjects' : [{'uri': <str>,
+		'label': <str>,
+		'conf_score': <number>;,
+		'rank': <number>}]
+}
+```
 
