@@ -51,7 +51,8 @@ The follwing intermediate files are produced at this point:
 - (optionally) coaleced json 
 - (optionally) XML/TEI encoded documents output by Grobid
 
-NB: A massive download of pdf documents from an HTTP server may cause problems for a host and a client. To facilitate a succesful download time spacing option is provided. However, during the waiting time the Grobid extraction can take place for efficiency. Also caching of the pdf files is recommended and provided and can be either in a separate directory or in the dataset directories {review}.
+A massive download of pdf documents from an HTTP server may cause problems for a host and a client. To mitigate a potential issue, time spacing between downloads is provided. However, during the waiting time the Grobid extraction can still take place for efficiency. 
+Caching of the pdf files is recommended and mechanisms are provided in the pipeline.
 
  
 
