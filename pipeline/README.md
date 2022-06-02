@@ -55,8 +55,8 @@ The following intermediate files are produced at this point:
 A massive download of pdf documents from an HTTP server may cause problems for a host and a client. To mitigate a potential issue, time spacing between downloads is provided. However, during the waiting time the Grobid extraction can still take place for efficiency. 
 Caching of the pdf files is recommended and mechanisms are provided in the pipeline.
 
-### Indexing
-In ISSA pipeline indexing refers to an automatic annotation of a document with thematic descriptors. Thematic descriptors are keywords (typically 5 or 6) or expressions that characterize an article as a whole and that are linked to a domain specific vocabulary. For some repositories human documentalists manually annotate articles with descriptors, which yields accurate annotations but is time consuming.   
+### Thematic Indexing 
+In ISSA pipeline thematic indexing refers to an automatic annotation of a document with thematic descriptors. Thematic descriptors are keywords (typically 5 or 6) or expressions that characterize an article as a whole and that are linked to a domain specific vocabulary. For some repositories human documentalists manually annotate articles with descriptors, which yields accurate annotations but is time consuming.   
 
 In the Agritrop use case the thematic descriptors are chosen from the [AGROVOC](https://www.fao.org/agrovoc/) vocabulary. Large corpus of the existing documents is already annotated by documentalist which allows to train a specialized supervised classification model to automatically assign thematic descriptors to publications. 
 
@@ -82,4 +82,34 @@ The following intermediate files are output at this step:
 		'rank': <number>}]
 }
 ```
+### Named Entity recognition
+The ISSA pipeline relies on two (three in the future) tools to identify, disambiguate and link named
+entities from the documents:
+- [DBpedia Spotlight](https://www.dbpedia-spotlight.org/)
+- [Entity-fishing](https://github.com/kermitt2/entity-fishing)
+
+An additional step specifically identifies geographic entities by looking for GeoNames mappings
+in the corresponding Wikidata concepts.
+
+On this step for each document's json file the pipeline invokes each of these tools for each part of a document (title, abstract, body). The tool's responses are encapsulated into a simple schema:
+```
+{'paper_id' <str>, 
+ 'title':      { DBPedia Spotlight or Entity-fishing response }, 
+ 'abstract':   { DBPedia Spotlight or Entity-fishing response }, 
+ 'body_text' : { DBPedia Spotlight or Entity-fishing response }, 
+}
+```
+NB: the tools' responses are verbous and contain the full annotated text. The options to remove the text is provided to save the space.
+NB: GeoNames named entities are saved in the same way as Wikidata with an addition of GeoNamesID field.
+
+The following intermediate files are produced: 
+- json files with DBPedia named entities 
+- json files with Wikidata named entities 
+- json files with GeoNames named entities 
+
+
+
+
+
+
 

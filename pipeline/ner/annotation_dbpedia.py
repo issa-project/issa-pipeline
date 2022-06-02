@@ -24,17 +24,14 @@ wa = WrapperAnnotator(dbpedia_spotlight_endpoint= cfg.SPOTLIGHT_ENDPOINTS )
 logger = open_timestamp_logger(log_prefix= os.path.splitext(os.path.basename(__file__))[0], 
                                log_dir=cfg.LOG_PATH, 
                                first_line = 'Annotating text with DBPedia Spotlight NER service...')
-#%%
-def create_output_dirs():
-    """
-    Make output directories
-
-    """
-    os.makedirs(cfg.OUTPUT_PATH, exist_ok=True)
 
 #%%
 def postprocess_spotlight_response(result_json):
-    
+    """
+    Postprocess Spotlight response by optionally removing header and processed text, 
+    also converting numnber strings to numbers.
+
+    """    
     try:
         if cfg.REMOVE_HEADER:
             temp = result_json['Resources']
@@ -56,6 +53,11 @@ def postprocess_spotlight_response(result_json):
     return result_json
 
 def annotate_with_spotlight(f_json, f_out_json):
+    """
+    Send text of each part of a document to the Spotlight service that 
+    returns  DBPedia NEs.
+
+    """
     try:
         paper_json =  read_paper_json(f_json)
         
@@ -85,6 +87,11 @@ def annotate_with_spotlight(f_json, f_out_json):
 
 #%% 
 def annotate_one(f_json):
+    """
+    Mapping file names and logging wrapper 
+
+    """
+    
     logger.info(f_json + '--->')
          
     filename = os.path.basename(f_json).split('.')[0] 
@@ -103,38 +110,32 @@ def annotate_one(f_json):
 
 #%%    
 def annotate_documents(asynch=False):
+    """
+    Loop through or asynchronously process documents' json  
+
+    """
    
-     files = glob.glob(os.path.join(cfg.INPUT_PATH, cfg.INPUT_PATTERN))
-     logger.info('found %d files with pattern %s', len(files), cfg.INPUT_PATTERN) 
-
-     if asynch:
-        #files = files[:50]   # delete
-        with concurrent.futures.ThreadPoolExecutor(max_workers=cfg.ASYNCH_MAX_WORKERS) as executor:
-            executor.map(annotate_one, files)
-            
-     else:       
-             
-         #files = files[:5] #delete
-         for f_json in files:
-             annotate_one(f_json)
-
-     return
+    files = glob.glob(os.path.join(cfg.INPUT_PATH, cfg.INPUT_PATTERN))
+    logger.info('found %d files with pattern %s', len(files), cfg.INPUT_PATTERN) 
     
-# def annotate_documents_asynch():
-   
-#      files = glob.glob(os.path.join(cfg.INPUT_PATH, cfg.INPUT_PATTERN))
-#      logger.info('found %d files with pattern %s', len(files), cfg.INPUT_PATTERN) 
-     
-#      files = files[:50]  
-#      with concurrent.futures.ThreadPoolExecutor(max_workers=cfg.ASYNCH_MAX_WORKERS) as executor:
-#          executor.map(annotate_one, files)
-         
-#      return
+    if asynch:
+       #files = files[:50]   # delete
+       with concurrent.futures.ThreadPoolExecutor(max_workers=cfg.ASYNCH_MAX_WORKERS) as executor:
+           executor.map(annotate_one, files)
+           
+    else:       
+            
+        #files = files[:5] #delete
+        for f_json in files:
+            annotate_one(f_json)
+    
+    return
 
 #%%     
 if __name__ == '__main__':
     
-    create_output_dirs()
+   # Make output directories
+    os.makedirs(cfg.OUTPUT_PATH, exist_ok=True)
         
     annotate_documents(cfg.ASYNCH_PROCESSING)
     

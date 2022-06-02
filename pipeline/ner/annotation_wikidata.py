@@ -24,16 +24,13 @@ wa = WrapperAnnotator(entity_fishing_endpoint= cfg.ENTITY_FISHING_ENDPOINT )
 logger = open_timestamp_logger(log_prefix= os.path.splitext(os.path.basename(__file__))[0], 
                                log_dir=cfg.LOG_PATH, 
                                first_line = 'Annotating text with Entity-Fishing NER service...')
-#%%
-def create_output_dirs():
-    """
-    Make output directories
-
-    """
-    os.makedirs(cfg.OUTPUT_PATH, exist_ok=True)
 
 #%%
 def postprocess_ef_response(result_json):
+    """
+    Postprocess EF response by optionally removing header and/or processed text
+
+    """
     
     try:
         if cfg.REMOVE_HEADER:
@@ -55,6 +52,11 @@ def postprocess_ef_response(result_json):
     return result_json
 
 def annotate_with_ef(f_json, f_out_json):
+    """
+    Send text of each part of a document to the EF disambiguation service that
+    returns Wikidata NE.
+
+    """
     try:
         paper_json =  read_paper_json(f_json)
         
@@ -83,6 +85,10 @@ def annotate_with_ef(f_json, f_out_json):
 
 #%% 
 def annotate_one(f_json):
+    """
+    Mapping file names and logging wrapper 
+
+    """
     logger.info(f_json + '--->')
          
     filename = os.path.basename(f_json).split('.')[0] 
@@ -101,28 +107,33 @@ def annotate_one(f_json):
 
 #%%    
 def annotate_documents(asynch=False):
+    """
+    Loop through or asynchronously process documents' json  
+
+    """
    
-     files = glob.glob(os.path.join(cfg.INPUT_PATH, cfg.INPUT_PATTERN))
-     logger.info('found %d files with pattern %s', len(files), cfg.INPUT_PATTERN) 
-
-     if asynch:
-        #files = files[:50]   # delete
-        with concurrent.futures.ThreadPoolExecutor(max_workers=cfg.ASYNCH_MAX_WORKERS) as executor:
-            executor.map(annotate_one, files)
+    files = glob.glob(os.path.join(cfg.INPUT_PATH, cfg.INPUT_PATTERN))
+    logger.info('found %d files with pattern %s', len(files), cfg.INPUT_PATTERN) 
+    
+    if asynch:
+       #files = files[:50]   # delete
+       with concurrent.futures.ThreadPoolExecutor(max_workers=cfg.ASYNCH_MAX_WORKERS) as executor:
+           executor.map(annotate_one, files)
+           
+    else:       
             
-     else:       
-             
-         #files = files[:5] #delete
-         for f_json in files:
-             annotate_one(f_json)
-
-     return
+        #files = files[:5] #delete
+        for f_json in files:
+            annotate_one(f_json)
+    
+    return
     
 
 #%%     
 if __name__ == '__main__':
     
-    create_output_dirs()
+    #Make output directories
+    os.makedirs(cfg.OUTPUT_PATH, exist_ok=True)
         
     annotate_documents(cfg.ASYNCH_PROCESSING)
     

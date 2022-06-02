@@ -21,7 +21,7 @@ sys.path.append('..')
 from config import cfg_annotation_geonames as cfg
 from util import read_paper_json, save_paper_json
 from util import open_timestamp_logger, close_timestamp_logger
-from util import get_nested_dict_value, set_nested_dict_value
+from util import get_nested_dict_value
 
 from wrapper_annotator import WrapperAnnotator
 wa = WrapperAnnotator(entity_fishing_endpoint= cfg.ENTITY_FISHING_ENDPOINTS )
@@ -33,36 +33,13 @@ logger = open_timestamp_logger(log_prefix= os.path.splitext(os.path.basename(__f
                                file_level=DEBUG if cfg.DEBUG else INFO,
                                first_line = 'Annotating text with GeoNames NER service...')
 #%%
-def create_output_dirs():
-    """
-    Make output directories
-
-    """
-    os.makedirs(cfg.OUTPUT_PATH, exist_ok=True)
-
-#%%
-# def postprocess_ef_response(result_json):
-    
-#     try:
-#         if cfg.REMOVE_HEADER:
-#             result_json = {k:v for k, v in result_json.items() if isinstance(v, list) }
-#             #result_json.clear()
-#         else:
-#             if cfg.REMOVE_TEXT:
-#                     if 'text' in result_json.keys():
-#                         result_json['text'] = '' 
-                        
-#         if cfg.REMOVE_GLOBAL_CATEGORIES:
-#              result_json.pop('global_categories')
-             
-#     except TypeError:
-#         pass    
-#     except KeyError:
-#         pass
-    
-#     return result_json
-
 def disambiguate_location(rawName, lang='en'):
+    """
+    If an NE is returned without WikidataID but wit htype LOCATION
+    try to disambiguate it by sending its text as a "short" text to 
+    entity-fishing disambuguation service.
+
+    """
     
     response_json = wa.request_entity_fishing_short(rawName, lang)
     
@@ -83,6 +60,10 @@ def disambiguate_location(rawName, lang='en'):
     return nan
 
 def lookup_concept(wikidataId):
+    """
+    Make concept lookup request and process response
+
+    """
     
     response_json = wa.request_entity_fishing_concept_lookup(wikidataId)
     
@@ -97,23 +78,28 @@ def lookup_concept(wikidataId):
             logger.info('GeoNamesID found for %s: %s', wikidataId,  statement['value'])
             return statement['value']
 
-    #logger.debug('GeoNamesID not found for %s [%s]', response_json['rawName'], wikidataId)
  
     return nan
 
-analisys_df = pd.DataFrame()
-def store_for_analisys(paper_id, part, candidates_df):
-    global analisys_df
+# analisys_df = pd.DataFrame()
+# def store_for_analisys(paper_id, part, candidates_df):
+#     global analisys_df
     
-    candidates_df.insert(0, 'paper_id', paper_id)
-    candidates_df.insert(1, 'part', part)
+#     candidates_df.insert(0, 'paper_id', paper_id)
+#     candidates_df.insert(1, 'part', part)
     
-    analisys_df =pd.concat([analisys_df, candidates_df  ])
+#     analisys_df =pd.concat([analisys_df, candidates_df  ])
     
-    if (analisys_df.shape[0] % 100):
-        analisys_df.to_csv('geonames_analisys.tsv', sep='\t', encoding='utf-8', index=False)
+#     if (analisys_df.shape[0] % 100):
+#         analisys_df.to_csv('geonames_analisys.tsv', sep='\t', encoding='utf-8', index=False)
 
 def annotate_with_geonames(f_json, f_out_json):
+    """
+    For Wikidata NE generate a list of candidates that can be geographical 
+    (Capitalised NE, type = LOCATION). For each candidate make a concept lookup 
+    request to entity-fishing. If reponse contains a GeoNameID then the candidate is 
+    saved as GeoNmaes NE.
+    """
     try:
         ef_json =  read_paper_json(f_json)
         
@@ -146,7 +132,7 @@ def annotate_with_geonames(f_json, f_out_json):
                    candidates_df['GeoNamesID'] = candidates_df['wikidataId'].apply(lookup_concept)
                    geonames_df = candidates_df.loc[candidates_df['GeoNamesID'].notna()] 
                    
-                   store_for_analisys(annot_json['paper_id'], part,candidates_df)
+                   #store_for_analisys(annot_json['paper_id'], part,candidates_df)
          
                    if geonames_df.shape[0] > 0:
                        annot_json[part] = ef_json[part]
@@ -168,6 +154,10 @@ def annotate_with_geonames(f_json, f_out_json):
 
 #%% 
 def annotate_one(f_json):
+    """
+    Mapping file names and logging wrapper 
+
+    """
     logger.info(f_json + '--->')
          
     filename = os.path.basename(f_json).split('.')[0] 
@@ -186,32 +176,32 @@ def annotate_one(f_json):
 
 #%%    
 def annotate_documents(asynch=False):
+    """
+    Loop through or asynchronously process the Entity-fishing output files 
+
+    """
    
-     files = glob.glob(os.path.join(cfg.INPUT_PATH, cfg.INPUT_PATTERN))
-     logger.info('found %d files with pattern %s', len(files), cfg.INPUT_PATTERN) 
-
-     if asynch:
-        #files = files[:50]   # delete
-        with concurrent.futures.ThreadPoolExecutor(max_workers=cfg.ASYNCH_MAX_WORKERS) as executor:
-            executor.map(annotate_one, files)
-            
-     else:       
-             
-         #files = files[:5] #delete
-         for f_json in files:
-             annotate_one(f_json)
-             
-
-     return
+    files = glob.glob(os.path.join(cfg.INPUT_PATH, cfg.INPUT_PATTERN))
+    logger.info('found %d files with pattern %s', len(files), cfg.INPUT_PATTERN) 
     
+    if asynch:
+       with concurrent.futures.ThreadPoolExecutor(max_workers=cfg.ASYNCH_MAX_WORKERS) as executor:
+           executor.map(annotate_one, files)
+           
+    else:       
+        for f_json in files:
+            annotate_one(f_json)
+            
+    
+    return
 
 #%%     
 if __name__ == '__main__':
-    
-    create_output_dirs()
+    # Create output directories
+    os.makedirs(cfg.OUTPUT_PATH, exist_ok=True)
         
     annotate_documents(cfg.ASYNCH_PROCESSING)
-
-analisys_df.to_csv('geonames_analisys.tsv', sep='\t', encoding='utf-8', index=False)
         
 close_timestamp_logger(logger)       
+
+#analisys_df.to_csv('geonames_analisys.tsv', sep='\t', encoding='utf-8', index=False)
