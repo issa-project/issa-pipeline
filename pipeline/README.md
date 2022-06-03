@@ -15,6 +15,13 @@ ISSA pipeline's source code is a combination of Python scripts for data processi
 There are two levels of configuration that define the data flow and processing options:
  - environment and data loaction are defined in [env.sh](../env.sh)
  - processing options for Python scripts are defined in [config.py](config.py)
+ 
+## Data Updates
+Initial run of ISSA pipeline creates dataset file repository, intermedidate storage and resulting KG in the Virtuoso triple store. 
+After that ISSA pipeline can be run periodically to incrementally update the KG with new documents data from the source. 
+On the update the metadata will be reprocessed in full to account for the updates in the source. However, the text extraction and annotation would be performed on the new documents only. The triple store will be updated accordingly. 
+The data is stored in the dataset directory and each update (including initial load) is saved in the subdirectory with its date.
+    
 
 ## Pipeline Step-by-step
 ### Metadata
@@ -28,10 +35,9 @@ The most relevant metadata fields for ISSA pipeline would be:
 - pdf URL
 - thematic descriptors
 
-After pre-processing metadata (which would be different for each use case scenario) the following intermediate files are produced:
+After pre-processing metadata (which would be different for each use case scenario) the following output is produced:
 - metadata json according to the [schema](../doc/ISSA_json_schema.txt) 
 - files containing pdf URLs for the full text extraction in the next step
-- (optionally) text files with title and abstract text for training the indexing models
 - (optionally) tsv files with descriptors URIs and labels also for training the indexing models 
 
 ### Full text extraction
@@ -60,7 +66,7 @@ In ISSA pipeline thematic indexing refers to an automatic annotation of a docume
 
 In the Agritrop use case the thematic descriptors are chosen from the [AGROVOC](https://www.fao.org/agrovoc/) vocabulary. Large corpus of the existing documents is already annotated by documentalist which allows to train a specialized supervised classification model to automatically assign thematic descriptors to publications. 
 
-The ISSA pipeline includes such a classification system through the integration of [Annif](https://annif.org/), a framework developed by the National Library of Finland. Read more on Annif model selection and training [here](../training/).
+ISSA pipeline includes such a classification system through the integration of [Annif](https://annif.org/), a framework developed by the National Library of Finland. Read more on Annif model selection and training [here](../training/).
 
 NB: The classification models are created separately for each language.
 
@@ -69,7 +75,7 @@ On this step from document text json files created in the previous step:
 - separate text file by language 
 - extract thematic descriptors by applying classification models for each language
 
-The following intermediate files are output at this step:
+The following files are output at this step:
 - text files
 - json files with thematic descriptors according to the following schema
 ```
@@ -83,7 +89,7 @@ The following intermediate files are output at this step:
 }
 ```
 ### Named Entity recognition
-The ISSA pipeline relies on two (three in the future) tools to identify, disambiguate and link named
+ISSA pipeline relies on two (three in the future) tools to identify, disambiguate and link named
 entities from the documents:
 - [DBpedia Spotlight](https://www.dbpedia-spotlight.org/)
 - [Entity-fishing](https://github.com/kermitt2/entity-fishing)
@@ -102,14 +108,28 @@ On this step for each document's json file the pipeline invokes each of these to
 NB: the tools' responses are verbous and contain the full annotated text. The options to remove the text is provided to save the space.
 NB: GeoNames named entities are saved in the same way as Wikidata with an addition of GeoNamesID field.
 
-The following intermediate files are produced: 
+The following output files are produced: 
 - json files with DBPedia named entities 
 - json files with Wikidata named entities 
 - json files with GeoNames named entities 
 
+### Transformation to RDF
+The transformation of the metadata, document text, thematic descriptors and annotations is carried out using [Morph-xR2RML](https://github.com/frmichel/morph-xr2rml/), an implementation of the [xR2RML mapping language](http://i3s.unice.fr/~fmichel/xr2rml_specification.html) [1] for MongoDB databases.
+
+The previosly collected data is 
+- imported to the [dockerised MongoDB](https://hub.docker.com/_/mongo) 
+- transformed into RDF format following the provided mapping templates.
+
+NB: only metadata mappings have to be adapted for a different dataset. 
+
+The output of this step is a set of 
+- Turtle (ttl) files with document metadata & text
+- Turtle (ttl) files with thematic descriptots
+- Turtle (ttl) files with named entities
 
 
+## References
 
-
-
+[1] F. Michel, L. Djimenou, C. Faron-Zucker, and J. Montagnat. Translation of Relational and Non-Relational Databases into RDF with xR2RML.
+In Proceedings of the *11th International Confenrence on Web Information Systems and Technologies (WEBIST 2015)*, Lisbon, Portugal, 2015.
 

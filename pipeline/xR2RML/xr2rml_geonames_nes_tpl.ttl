@@ -44,7 +44,7 @@
     xrr:logicalSource <#LS_entities>;
     rr:subjectMap   [
         rr:template     "http://data-issa.cirad.fr/ann/sha1(gn_{$.paper_id}_{{articlepart}}_{$.rawName}_{$.offsetStart}_{$.offsetEnd})";
-        rr:class         issa:GeoDesciptorAnnotation, prov:Entity;
+        rr:class         issa:GeographicAnnotation, prov:Entity;
     ];
     rr:predicateObjectMap [
         rr:predicate rdfs:isDefinedBy;
@@ -91,7 +91,7 @@
     ];
     rr:predicateObjectMap [
         rr:predicate prov:wasAttributedTo;
-        rr:objectMap [ rr:constant issa:GeographicDescriptorsGenerator; rr:termType rr:IRI ];
+        rr:objectMap [ rr:constant issa:GeographicEntityExtractor; rr:termType rr:IRI ];
     ];
     .
 
