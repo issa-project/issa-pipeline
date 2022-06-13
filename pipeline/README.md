@@ -4,7 +4,7 @@ ISSA pipeline consists of steps that flow document data from obtaining their met
 
 <img src="../doc/pipeline_details.png" width="900" />
 
-To adapt this pipeline to a different document repository only the metadata step and json-RDF mappings have to be modified.
+To adapt this pipeline to a different document repository only the metadata step and JSON-RDF mappings have to be modified.
 
 ## Source Code
 
@@ -25,41 +25,45 @@ The data is stored in the dataset directory and each update (including initial l
 
 ## Pipeline Step-by-step
 ### Metadata
-Typically, documents in the repositories are accompanied by their metadata which can include title, authors, pdf URL, thematic descriptors, etc. 
+Typically, documents in the repositories are accompanied by their metadata which can include title, authors, PDF URL, thematic descriptors, etc. 
 The metadata is typically come in a tabular format and can be obtained through the repository's API. In the use case of Agritrop the metadata is obtained through [OAI-PMH](https://www.openarchives.org/pmh/) protocol from the [Open Repository of CIRAD publications](https://agritrop.cirad.fr/). A mechanism of mapping API output to the table columns is provided.
 
 The most relevant metadata fields for ISSA pipeline would be:
 - id
 - title
 - abstract
-- pdf URL
+- PDF URL
 - thematic descriptors
 
 After pre-processing metadata (which would be different for each use case scenario) the following output is produced:
-- metadata json according to the [schema](../doc/ISSA_json_schema.txt) 
-- files containing pdf URLs for the full text extraction in the next step
+- metadata JSON according to the [schema](../doc/ISSA_JSON_schema.txt) 
+- files containing PDF URLs for the full text extraction in the next step
 - (optionally) tsv files with descriptors URIs and labels also for training the indexing models 
+
+Scripts are provided in directory [metadata](./metadata/).
 
 ### Full text extraction
 Typically, document repositories contain text of title and possibly abstract of a document in the metadata. For some use cases that may be enough to annotate a document. In this case this step can be skipped.
 In other cases an attempt to extract the text from PDF of a document is necessary. We use [Grobid](https://grobid.readthedocs.io/en/latest/Introduction/) machine learning library for extracting, parsing and re-structuring raw documents.  
 
-NB: The text extraction is not always possible. For example, if a pdf file is a scan of a document. 
+NB: The text extraction is not always possible. For example, if a PDF file is a scan of a document. 
 
-NB: The extracted text is not always "clean" and can contain misaligned and missing parts of a text. To compensate for this, if title and/or abstract are available from the metadata they can be coalesced with extracted text into one json document.   
+NB: The extracted text is not always "clean" and can contain misaligned and missing parts of a text. To compensate for this, if title and/or abstract are available from the metadata they can be coalesced with extracted text into one JSON document.   
 
-On this step for each pdf URL file created from the metadata:
-- download pdf
+On this step for each PDF URL file created from the metadata:
+- download PDF
 - extract text 
 - (optionally) coalesce extracted text with metadata 
 
 The following intermediate files are produced at this point:
-- full text json according to the [schema](../doc/ISSA_json_schema.txt) 
-- (optionally) coalesced json 
+- full text JSON according to the [schema](../doc/ISSA_JSON_schema.txt) 
+- (optionally) coalesced JSON 
 - (optionally) XML/TEI encoded documents output by Grobid
 
-A massive download of pdf documents from an HTTP server may cause problems for a host and a client. To mitigate a potential issue, time spacing between downloads is provided. However, during the waiting time the Grobid extraction can still take place for efficiency. 
-Caching of the pdf files is recommended and mechanisms are provided in the pipeline.
+A massive download of PDF documents from an HTTP server may cause problems for a host and a client. To mitigate a potential issue, time spacing between downloads is provided. However, during the waiting time the Grobid extraction can still take place for efficiency. 
+Caching of the PDF files is recommended and mechanisms are provided in the pipeline.
+
+Scripts are provided in directory [fulltext](./fulltext/).
 
 ### Thematic Indexing 
 In ISSA pipeline thematic indexing refers to an automatic annotation of a document with thematic descriptors. Thematic descriptors are keywords (typically 5 or 6) or expressions that characterize an article as a whole and that are linked to a domain specific vocabulary. For some repositories human documentalists manually annotate articles with descriptors, which yields accurate annotations but is time consuming.   
@@ -70,14 +74,14 @@ ISSA pipeline includes such a classification system through the integration of [
 
 NB: The classification models are created separately for each language.
 
-On this step from document text json files created in the previous step:
+On this step from document text JSON files created in the previous step:
 - create plain text files per Annif framework's requirement
 - separate text file by language 
 - extract thematic descriptors by applying classification models for each language
 
 The following files are output at this step:
 - text files
-- json files with thematic descriptors according to the following schema
+- JSON files with thematic descriptors according to the following schema
 ```
 {'paper_id' <str>, 
  'model': <str>, 
@@ -88,7 +92,9 @@ The following files are output at this step:
 		'rank': <number>}]
 }
 ```
-### Named Entity recognition
+Scripts are provided in directory [indexing](./indexing/).
+
+### Named Entity Recognition
 ISSA pipeline relies on two (three in the future) tools to identify, disambiguate and link named
 entities from the documents:
 - [DBpedia Spotlight](https://www.dbpedia-spotlight.org/)
@@ -97,7 +103,7 @@ entities from the documents:
 An additional step specifically identifies geographic entities by looking for GeoNames mappings
 in the corresponding Wikidata concepts.
 
-On this step for each document's json file the pipeline invokes each of these tools for each part of a document (title, abstract, body). The tool's responses are encapsulated into a simple schema:
+On this step for each document's JSON file the pipeline invokes each of these tools for each part of a document (title, abstract, body). The tool's responses are encapsulated into a simple schema:
 ```
 {'paper_id' <str>, 
  'title':      { DBPedia Spotlight or Entity-fishing response }, 
@@ -108,10 +114,12 @@ On this step for each document's json file the pipeline invokes each of these to
 NB: the tools' responses are verbous and contain the full annotated text. The options to remove the text is provided to save the space.
 NB: GeoNames named entities are saved in the same way as Wikidata with an addition of GeoNamesID field.
 
-The following output files are produced: 
-- json files with DBPedia named entities 
-- json files with Wikidata named entities 
-- json files with GeoNames named entities 
+The following output files are generated: 
+- JSON files with DBPedia named entities annotations
+- JSON files with Wikidata named entities annotations
+- JSON files with GeoNames named entities annotations
+
+Scripts are provided in directory [ner](./ner/).
 
 ### Transformation to RDF
 The transformation of the metadata, document text, thematic descriptors and annotations is carried out using [Morph-xR2RML](https://github.com/frmichel/morph-xr2rml/), an implementation of the [xR2RML mapping language](http://i3s.unice.fr/~fmichel/xr2rml_specification.html) [1] for MongoDB databases.
@@ -127,6 +135,20 @@ The output of this step is a set of
 - Turtle (ttl) files with thematic descriptots
 - Turtle (ttl) files with named entities
 
+Scripts are provided in directories [mongo](./mongo/) and [xR2RML](./xR2RML/).
+
+### Uploading to Virtuoso Triple Store
+RDF files generated at the previous stage are imported into a [dockerised Virtuoso OS instance](https://hub.docker.com/r/openlink/virtuoso-opensource-7/) as separate named graphs. 
+
+| Metadata                             | http://data-issa.cirad.fr/graph/articles              |
+| Annotated text                       | http://data-issa.cirad.fr/graph/articles/text         |
+| Human-validated thematic descriptors | http://data-issa.cirad.fr/graph/thematic-descriptors  |
+| Annif-generated thematic descriptors | http://data-issa.cirad.fr/graph/annif-descriptors     |
+| DBpedia annotations                  | http://data-issa.cirad.fr/graph/dbpedia-spotlight-nes |
+| Wikidata annotations                 | http://data-issa.cirad.fr/graph/entity-fishing-nes    |
+| GeoNames annoatations                | http://data-issa.cirad.fr/graph/geographic-nes        |
+
+Scripts are provided in directory [virtuoso](./virtuoso/).
 
 ## References
 

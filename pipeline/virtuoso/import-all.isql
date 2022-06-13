@@ -1,17 +1,23 @@
 log_enable(3,1);
+
+-- For metadata and thematic descriptors the full graph is updated
 SPARQL CLEAR GRAPH  <http://data-issa.cirad.fr/graph/articles>;
 SPARQL CLEAR GRAPH  <http://data-issa.cirad.fr/graph/thematic-descriptors>;
-SPARQL CLEAR GRAPH  <http://data-issa.cirad.fr/graph/annif-descriptors>;
-SPARQL CLEAR GRAPH  <http://data-issa.cirad.fr/graph/dbpedia-spotlight-nes>;
-SPARQL CLEAR GRAPH  <http://data-issa.cirad.fr/graph/entity-fishing-nes>;
-SPARQL CLEAR GRAPH  <http://data-issa.cirad.fr/graph/geographic-nes>;
+
+-- For other graphs updates are incremental (uncomment only for the first load of a dataset)
+--SPARQL CLEAR GRAPH  <http://data-issa.cirad.fr/graph/articles/text>;
+--SPARQL CLEAR GRAPH  <http://data-issa.cirad.fr/graph/annif-descriptors>;
+--SPARQL CLEAR GRAPH  <http://data-issa.cirad.fr/graph/dbpedia-spotlight-nes>;
+--SPARQL CLEAR GRAPH  <http://data-issa.cirad.fr/graph/entity-fishing-nes>;
+--SPARQL CLEAR GRAPH  <http://data-issa.cirad.fr/graph/geographic-nes>;
 
 -- $ARGV[$I] shoud contain a data import dir path 
 DELETE FROM DB.DBA.load_list;
-ld_dir ('$ARGV[$I]', 'issa-document-metadata.ttl', 'http://data-issa.cirad.fr/graph/articles');
-ld_dir ('$ARGV[$I]', 'issa-article-text.ttl', 'http://data-issa.cirad.fr/graph/articles');
 
+ld_dir ('$ARGV[$I]', 'issa-document-metadata.ttl', 'http://data-issa.cirad.fr/graph/articles');
 ld_dir ('$ARGV[$I]', 'issa-document-descriptors.ttl', 'http://data-issa.cirad.fr/graph/thematic-descriptors');
+
+ld_dir ('$ARGV[$I]', 'issa-article-text.ttl', 'http://data-issa.cirad.fr/graph/articles/text');
 
 ld_dir ('$ARGV[$I]', 'issa-article-annif-descriptors.ttl', 'http://data-issa.cirad.fr/graph/annif-descriptors');
 
@@ -22,8 +28,20 @@ ld_dir ('$ARGV[$I]', 'issa-article-entityfishing-*.ttl', 'http://data-issa.cirad
 ld_dir ('$ARGV[$I]', 'issa-article-geonames-*.ttl', 'http://data-issa.cirad.fr/graph/geographic-nes');
 
 
+
 rdf_loader_run ();
 checkpoint;
-SPARQL SELECT DISTINCT ?g (COUNT(*) as ?triples) WHERE { GRAPH ?g {?s ?p ?o} };
+
+-- This query is useful for checking for load errors
+SELECT * FROM DB.DBA.load_list;
+
+-- Report number of triples in the graph
+SPARQL SELECT DISTINCT ?graph (COUNT(*) as ?triples) WHERE { GRAPH ?graph {?s ?p ?o} };
+
+-- Add all text index ruless for all graphs
+RDF_OBJ_FT_RULE_ADD (null, null, 'All');
+VT_INC_INDEX_DB_DBA_RDF_OBJ ();
+
+
 exit;
 
