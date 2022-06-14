@@ -18,13 +18,14 @@ There are two levels of configuration that define the data flow and processing o
  
 ## Data Updates
 Initial run of ISSA pipeline creates dataset file repository, intermedidate storage and resulting KG in the Virtuoso triple store. 
-After that ISSA pipeline can be run periodically to incrementally update the KG with new documents data from the source. 
+After that ISSA pipeline can be run periodically to incrementally update the KG with new documents data from the source.
+ 
 On the update the metadata will be reprocessed in full to account for the updates in the source. However, the text extraction and annotation would be performed on the new documents only. The triple store will be updated accordingly. 
-The data is stored in the dataset directory and each update (including initial load) is saved in the subdirectory with its date.
+The data is stored in the dataset directory and each update (including initial load) is saved in the sub-directory with its date.
     
 
-## Pipeline Step-by-step
-### Metadata
+## Pipeline Step-by-Step
+### Download Metadata
 Typically, documents in the repositories are accompanied by their metadata which can include title, authors, PDF URL, thematic descriptors, etc. 
 The metadata is typically come in a tabular format and can be obtained through the repository's API. In the use case of Agritrop the metadata is obtained through [OAI-PMH](https://www.openarchives.org/pmh/) protocol from the [Open Repository of CIRAD publications](https://agritrop.cirad.fr/). A mechanism of mapping API output to the table columns is provided.
 
@@ -35,10 +36,11 @@ The most relevant metadata fields for ISSA pipeline would be:
 - PDF URL
 - thematic descriptors
 
-After pre-processing metadata (which would be different for each use case scenario) the following output is produced:
-- metadata JSON according to the [schema](../doc/ISSA_JSON_schema.txt) 
-- files containing PDF URLs for the full text extraction in the next step
-- (optionally) tsv files with descriptors URIs and labels also for training the indexing models 
+After pre-processing metadata (which would be different for each use case scenario) the following output is generated:
+- metadata TSV file
+- metadata text (titles, abstracts) JSON according to the [schema](../doc/ISSA_json_schema.txt) 
+- files containing PDF URLs to be used in the next step
+- (optionally) TSV files with descriptors URIs and labels also for training the indexing models 
 
 Scripts are provided in directory [metadata](./metadata/).
 
@@ -56,12 +58,11 @@ On this step for each PDF URL file created from the metadata:
 - (optionally) coalesce extracted text with metadata 
 
 The following intermediate files are produced at this point:
-- full text JSON according to the [schema](../doc/ISSA_JSON_schema.txt) 
-- (optionally) coalesced JSON 
-- (optionally) XML/TEI encoded documents output by Grobid
+- extracted text JSON according to the [schema](../doc/ISSA_json_schema.txt) 
+- (optionally) extracted text coalesced with metadata JSON 
+- (optionally) XML/TEI encoded documents output by Grobid (useful for debugging purposes)
 
-A massive download of PDF documents from an HTTP server may cause problems for a host and a client. To mitigate a potential issue, time spacing between downloads is provided. However, during the waiting time the Grobid extraction can still take place for efficiency. 
-Caching of the PDF files is recommended and mechanisms are provided in the pipeline.
+NB: A massive download of PDF documents from an HTTP server may cause problems for a host and a client. Caching of the PDF files is recommended and mechanisms are provided in the pipeline.
 
 Scripts are provided in directory [fulltext](./fulltext/).
 
@@ -95,13 +96,10 @@ The following files are output at this step:
 Scripts are provided in directory [indexing](./indexing/).
 
 ### Named Entity Recognition
-ISSA pipeline relies on two (three in the future) tools to identify, disambiguate and link named
-entities from the documents:
+ISSA pipeline relies on tools to identify, disambiguate and link named entities from the documents:
 - [DBpedia Spotlight](https://www.dbpedia-spotlight.org/)
 - [Entity-fishing](https://github.com/kermitt2/entity-fishing)
-
-An additional step specifically identifies geographic entities by looking for GeoNames mappings
-in the corresponding Wikidata concepts.
+- identifies geographic entities by looking for [GeoNames](https://www.geonames.org/ontology/documentation.html) mappings in the recognised Wikidata concepts.
 
 On this step for each document's JSON file the pipeline invokes each of these tools for each part of a document (title, abstract, body). The tool's responses are encapsulated into a simple schema:
 ```
@@ -140,6 +138,8 @@ Scripts are provided in directories [mongo](./mongo/) and [xR2RML](./xR2RML/).
 ### Uploading to Virtuoso Triple Store
 RDF files generated at the previous stage are imported into a [dockerised Virtuoso OS instance](https://hub.docker.com/r/openlink/virtuoso-opensource-7/) as separate named graphs. 
 
+| Data type                            | Named Graph                                           |
+|--------------------------------------|-------------------------------------------------------|
 | Metadata                             | http://data-issa.cirad.fr/graph/articles              |
 | Annotated text                       | http://data-issa.cirad.fr/graph/articles/text         |
 | Human-validated thematic descriptors | http://data-issa.cirad.fr/graph/thematic-descriptors  |
