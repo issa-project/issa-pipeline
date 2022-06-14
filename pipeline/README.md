@@ -7,22 +7,26 @@ ISSA pipeline consists of steps that flow document data from obtaining their met
 To adapt this pipeline to a different document repository only the metadata step and JSON-RDF mappings have to be modified.
 
 ## Source Code
-
 ISSA pipeline's source code is a combination of Python scripts for data processing and Linux bash scripts for data flow and tools integration. 
 
 ## Configuration
-
 There are two levels of configuration that define the data flow and processing options:
  - environment and data loaction are defined in [env.sh](../env.sh)
  - processing options for Python scripts are defined in [config.py](config.py)
+ 
+## Runing pipeline
+After configuring the pipeline it can be run manually step-by-step by running numbered scripts in this directory or by invoking [run-pipeline.sh](run-pipeline.sh) to run the entire pipeline automatically.
+
+We'd recommend to run the pipeline manually for the first time to be able to catch potential configuration issues earlier. Updates can be run automatically. 
+
+Each step of the pipeline outputs a log file that would be stored in *logs* directory. 
  
 ## Data Updates
 Initial run of ISSA pipeline creates dataset file repository, intermedidate storage and resulting KG in the Virtuoso triple store. 
 After that ISSA pipeline can be run periodically to incrementally update the KG with new documents data from the source.
  
-On the update the metadata will be reprocessed in full to account for the updates in the source. However, the text extraction and annotation would be performed on the new documents only. The triple store will be updated accordingly. 
+On the update metadata will be reprocessed in full to account for the updates in the source. However, the text extraction and annotation would be performed on the new documents only. The triple store will be updated accordingly. 
 The data is stored in the dataset directory and each update (including initial load) is saved in the sub-directory with its date.
-    
 
 ## Pipeline Step-by-Step
 ### Download Metadata
