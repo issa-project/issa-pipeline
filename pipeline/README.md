@@ -27,7 +27,8 @@ The data is stored in the dataset directory and each update (including initial l
 ## Pipeline Step-by-Step
 ### Download Metadata
 Typically, documents in the repositories are accompanied by their metadata which can include title, authors, PDF URL, thematic descriptors, etc. 
-The metadata is typically come in a tabular format and can be obtained through the repository's API. In the use case of Agritrop the metadata is obtained through [OAI-PMH](https://www.openarchives.org/pmh/) protocol from the [Open Repository of CIRAD publications](https://agritrop.cirad.fr/). A mechanism of mapping API output to the table columns is provided.
+The metadata is typically come in a tabular format and can be obtained through the repository's API. 
+In the use case of Agritrop the metadata is obtained through [OAI-PMH](https://www.openarchives.org/pmh/) protocol from the [Open Repository of CIRAD publications](https://agritrop.cirad.fr/). A mechanism of mapping API output to the table columns is provided.
 
 The most relevant metadata fields for ISSA pipeline would be:
 - id
@@ -39,18 +40,14 @@ The most relevant metadata fields for ISSA pipeline would be:
 After pre-processing metadata (which would be different for each use case scenario) the following output is generated:
 - metadata TSV file
 - metadata text (titles, abstracts) JSON according to the [schema](../doc/ISSA_json_schema.txt) 
-- files containing PDF URLs to be used in the next step
+- <id>.url files containing PDF URLs to be used in the next step
 - (optionally) TSV files with descriptors URIs and labels also for training the indexing models 
 
 Scripts are provided in directory [metadata](./metadata/).
 
 ### Full text extraction
 Typically, document repositories contain text of title and possibly abstract of a document in the metadata. For some use cases that may be enough to annotate a document. In this case this step can be skipped.
-In other cases an attempt to extract the text from PDF of a document is necessary. We use [Grobid](https://grobid.readthedocs.io/en/latest/Introduction/) machine learning library for extracting, parsing and re-structuring raw documents.  
-
-NB: The text extraction is not always possible. For example, if a PDF file is a scan of a document. 
-
-NB: The extracted text is not always "clean" and can contain misaligned and missing parts of a text. To compensate for this, if title and/or abstract are available from the metadata they can be coalesced with extracted text into one JSON document.   
+In other cases an attempt to extract the text from PDF of a document is necessary. We use [GROBID (2008-2022)](https://github.com/kermitt2/grobid) machine learning library for extracting, parsing and re-structuring raw documents.  
 
 On this step for each PDF URL file created from the metadata:
 - download PDF
@@ -62,7 +59,9 @@ The following intermediate files are produced at this point:
 - (optionally) extracted text coalesced with metadata JSON 
 - (optionally) XML/TEI encoded documents output by Grobid (useful for debugging purposes)
 
-NB: A massive download of PDF documents from an HTTP server may cause problems for a host and a client. Caching of the PDF files is recommended and mechanisms are provided in the pipeline.
+>:point_right: The text extraction is not always possible. For example, if a PDF file is a scan of a document.   
+>:point_right: The extracted text is not always "clean" and can contain misaligned and missing parts of a text. To compensate for this, if title and/or abstract are available from the metadata they can be coalesced with extracted text into one JSON document.   
+>:point_right: A massive download of PDF documents from an HTTP server may cause problems for a host and a client. Caching of the PDF files is recommended and mechanisms are provided in the pipeline.
 
 Scripts are provided in directory [fulltext](./fulltext/).
 
@@ -71,9 +70,7 @@ In ISSA pipeline thematic indexing refers to an automatic annotation of a docume
 
 In the Agritrop use case the thematic descriptors are chosen from the [AGROVOC](https://www.fao.org/agrovoc/) vocabulary. Large corpus of the existing documents is already annotated by documentalist which allows to train a specialized supervised classification model to automatically assign thematic descriptors to publications. 
 
-ISSA pipeline includes such a classification system through the integration of [Annif](https://annif.org/), a framework developed by the National Library of Finland. Read more on Annif model selection and training [here](../training/).
-
-NB: The classification models are created separately for each language.
+ISSA pipeline includes such a classification system through the integration of [Annif](https://annif.org/) [2], a framework developed by the National Library of Finland. Read more on Annif model selection and training [here](../training/).
 
 On this step from document text JSON files created in the previous step:
 - create plain text files per Annif framework's requirement
@@ -93,6 +90,8 @@ The following files are output at this step:
 		'rank': <number>}]
 }
 ```
+>:point_right: The classification models are trained separately for each language.
+	
 Scripts are provided in directory [indexing](./indexing/).
 
 ### Named Entity Recognition
@@ -109,13 +108,13 @@ On this step for each document's JSON file the pipeline invokes each of these to
  'body_text' : { DBPedia Spotlight or Entity-fishing response }, 
 }
 ```
-NB: the tools' responses are verbous and contain the full annotated text. The options to remove the text is provided to save the space.
-NB: GeoNames named entities are saved in the same way as Wikidata with an addition of GeoNamesID field.
-
 The following output files are generated: 
 - JSON files with DBPedia named entities annotations
 - JSON files with Wikidata named entities annotations
 - JSON files with GeoNames named entities annotations
+
+>:point_right: The tools' responses are verbous and contain the full annotated text. The options to remove the text is provided to save the space.   
+>:point_right: GeoNames named entities are saved in the same way as Wikidata with an addition of GeoNamesID field.
 
 Scripts are provided in directory [ner](./ner/).
 
@@ -126,13 +125,13 @@ The previosly collected data is
 - imported to the [dockerised MongoDB](https://hub.docker.com/_/mongo) 
 - transformed into RDF format following the provided mapping templates.
 
-NB: only metadata mappings have to be adapted for a different dataset. 
-
 The output of this step is a set of 
 - Turtle (ttl) files with document metadata & text
 - Turtle (ttl) files with thematic descriptots
 - Turtle (ttl) files with named entities
 
+>:point_right: Only metadata mappings have to be adapted for a different dataset. 
+	
 Scripts are provided in directories [mongo](./mongo/) and [xR2RML](./xR2RML/).
 
 ### Uploading to Virtuoso Triple Store
@@ -155,3 +154,5 @@ Scripts are provided in directory [virtuoso](./virtuoso/).
 [1] F. Michel, L. Djimenou, C. Faron-Zucker, and J. Montagnat. Translation of Relational and Non-Relational Databases into RDF with xR2RML.
 In Proceedings of the *11th International Confenrence on Web Information Systems and Technologies (WEBIST 2015)*, Lisbon, Portugal, 2015.
 
+[2] O. Suominen, J. Inkinen, T. Virolainen, M. Fürneisen,  B. P. Kinoshita, S. Veldhoen, M. Sjöberg, P. Zumstein, R. Neatherway, & M Lehtinen (2022). Annif (Version 0.58.0-dev) [Computer software]. https://doi.org/10.5281/zenodo.2578948
+	
