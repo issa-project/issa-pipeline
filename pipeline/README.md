@@ -14,7 +14,7 @@ There are two levels of configuration that define the data flow and processing o
  - environment and data loaction are defined in [env.sh](../env.sh)
  - processing options for Python scripts are defined in [config.py](config.py)
  
-## Runing pipeline
+## Runing Pipeline
 After configuring the pipeline it can be run manually step-by-step by running numbered scripts in this directory or by invoking [run-pipeline.sh](run-pipeline.sh) to run the entire pipeline automatically.
 
 We'd recommend to run the pipeline manually for the first time to be able to catch potential configuration issues earlier. Updates can be run automatically. 
@@ -49,7 +49,7 @@ After pre-processing metadata (which would be different for each use case scenar
 
 Scripts are provided in directory [metadata](./metadata/).
 
-### Full text extraction
+### Full Text Extraction
 Typically, document repositories contain text of title and possibly abstract of a document in the metadata. For some use cases that may be enough to annotate a document. In this case this step can be skipped.
 In other cases an attempt to extract the text from PDF of a document is necessary. We use [GROBID (2008-2022)](https://github.com/kermitt2/grobid) machine learning library for extracting, parsing and re-structuring raw documents.  
 
