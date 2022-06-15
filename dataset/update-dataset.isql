@@ -1,0 +1,62 @@
+log_enable(3,1);
+
+-- Update number of triples
+SPARQL 
+PREFIX void:   <http://rdfs.org/ns/void#> 
+PREFIX issa:   <http://data-issa.cirad.fr/>
+PREFIX sd:   <http://www.w3.org/ns/sparql-service-description#>
+
+WITH <http://data-issa.cirad.fr/graph/dataset>
+DELETE { issa:issa-agritrop void:triples ?triples_old . }
+INSERT { issa:issa-agritrop void:triples ?triples_new . }
+WHERE {
+    issa:issa-agritrop void:triples ?triples_old . 
+
+	{ SELECT (COUNT(*) as ?triples_new) 
+	  WHERE { 
+ 		GRAPH ?g {?s ?p ?o} 
+   
+  		{ SELECT ?g 
+		  WHERE { ?dataset sd:availableGraphs [ sd:namedGraph ?g] . }
+  		}  
+   }} 
+  }
+
+;
+
+
+
+-- Update dataset version
+SPARQL 
+PREFIX issa: <http://data-issa.cirad.fr/>
+PREFIX owl:    <http://www.w3.org/2002/07/owl#>
+
+WITH <http://data-issa.cirad.fr/graph/dataset>
+DELETE { issa:issa-agritrop owl:versionInfo ?version_old . }
+INSERT { issa:issa-agritrop owl:versionInfo "$ARGV[$I]" .  }
+WHERE  { issa:issa-agritrop owl:versionInfo ?version_old . }
+
+;
+
+
+-- Update dates
+SPARQL 
+
+PREFIX issa: <http://data-issa.cirad.fr/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#> 
+
+WITH <http://data-issa.cirad.fr/graph/dataset>
+DELETE { issa:issa-agritrop prov:wasGeneratedAtTime ?date_old . }
+INSERT { issa:issa-agritrop prov:wasGeneratedAtTime ?date_new . }
+WHERE {
+    issa:issa-agritrop prov:wasGeneratedAtTime ?date_old . 
+    BIND (xsd:date(NOW()) as ?date_new)
+  }
+;
+
+
+exit;
+
+
+
