@@ -6,4 +6,4 @@ Most of the triples are static and have to be defined and loaded once but the da
 
 The scripts to [import](./import-dataset.sh) te dataset metadata and [update](./update-dataset.sh) triple counts are here as well.
 
->:point_right: The Turtle files and [update-dataset.isql](./update-dataset.isql) have to be adapted to each use case scenario.
+>:point_right: The Turtle files and [update-dataset.isql](./update-dataset.isql) have to be adapted to each use case of ISSA.
