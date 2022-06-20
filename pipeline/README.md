@@ -4,7 +4,9 @@ ISSA pipeline consists of steps that flow document data from obtaining their met
 
 <img src="../doc/pipeline_details.png" width="900" />
 
-To adapt this pipeline to a different document repository only the metadata step and JSON-RDF mappings have to be modified.
+To adapt this pipeline to a different document corpus only the [metadata](./metadata) step and [RDF transformation](./xR2RML) mappings have to be modified.
+
+>:point_right: Before runing ISSA pipeline the [execution environment](../environment) has to be setup and running.
 
 ## Source Code
 ISSA pipeline's source code is a combination of Python scripts for data processing and Linux bash scripts for data flow and tools integration. 
