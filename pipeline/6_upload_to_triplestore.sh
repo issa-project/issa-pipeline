@@ -12,3 +12,12 @@ pushd ./virtuoso
 	./run-import.sh
 
 popd
+
+#update dataset metadata
+
+pushd ../dataset
+     
+     ./import-dataset.sh
+ 	./update-dataset.sh
+
+popd

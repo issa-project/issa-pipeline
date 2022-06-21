@@ -27,7 +27,6 @@ issa:issa-agritrop
     schema:name     "ISSA Agritrop dataset";
     dct:description "This RDF dataset was produced by processing articles from Agritrop - the open repository of CIRAD publications. It contains articles' metadata and text, Agrovoc and GeoNames descriptors, named entities identified and disambiguated by Entity-fishing and DBpedia Spotlight.";
     
-# Ask Anne about proper license
     dct:licence     <http://opendatacommons.org/licenses/by/1.0>;
     schema:licence  <http://opendatacommons.org/licenses/by/1.0>;
       
@@ -52,12 +51,14 @@ issa:issa-agritrop
         <http://aims.fao.org/aos/agrontology#>,  # Agrovoc 
         <http://www.geonames.org/ontology#>;     # GeoNames
     
-    # updatable properties 
     dct:issued              "2022-04-29"^^xsd:date;
     schema:datePublished    "2022-04-29"^^xsd:date;
-    prov:wasGeneratedAtTime "2022-04-29"^^xsd:date;
-    void:triples            "66051026"^^xsd:integer;
-    owl:versionInfo         "1.0.20220411";
+
+    # updatable properties
+    dct:modified            "2022-05-31"^^xsd:date; 
+    prov:wasGeneratedAtTime "2022-05-31"^^xsd:date;
+    void:triples            "66767136"^^xsd:integer;
+    owl:versionInfo         "1.0.20220531";
     void:dataDump       <https://doi.org/10.5281/zenodo.6505847> # update when obtained new
    .
 
@@ -88,6 +89,7 @@ issa:sparql-service
         sd:namedGraph 
             <http://data-issa.cirad.fr/graph/dataset>, 
             <http://data-issa.cirad.fr/graph/articles>,
+            <http://data-issa.cirad.fr/graph/articles/text>,
             <http://data-issa.cirad.fr/graph/thematic-descriptors>,
             <http://data-issa.cirad.fr/graph/annif-descriptors>,
             <http://data-issa.cirad.fr/graph/geographic-nes>,
