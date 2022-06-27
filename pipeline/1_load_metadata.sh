@@ -14,8 +14,8 @@ source ${ISSA_VENV}/bin/activate
 
 pushd ./metadata
 
-	python3 ./download_agritrop_metadata.py
-	python3 ./process_agritrop_metadata.py
+	python3 ./download_corpus_metadata.py
+	python3 ./process_corpus_metadata.py
 	python3 ./create_dataset_repository.py
 
 popd

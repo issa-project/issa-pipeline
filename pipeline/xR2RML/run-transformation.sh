@@ -20,10 +20,10 @@ DSN=$ISSA_DATASET_NAME
 ODIR=$XR2RML_OUTPUT_DIR
 
 echo "Generate articles metadata..."
-./run_xr2rml.sh $DSN document_metadata agritrop_id xr2rml_document_metadata_tpl.ttl $ODIR/issa-document-metadata.ttl
+./run_xr2rml.sh $DSN document_metadata paper_id xr2rml_document_metadata_tpl.ttl $ODIR/issa-document-metadata.ttl
 
 echo "Generate articles thematic descriptors by documentalists"
-./run_xr2rml.sh $DSN document_descriptors agritrop_id xr2rml_document_descriptors_tpl.ttl   $ODIR/issa-document-descriptors.ttl
+./run_xr2rml.sh $DSN document_descriptors paper_id xr2rml_document_descriptors_tpl.ttl   $ODIR/issa-document-descriptors.ttl
  
 echo "Generate articles' full text RDF"
 ./run_xr2rml.sh  $DSN article_text paper_id xr2rml_article_text_tpl.ttl  $ODIR/issa-article-text.ttl

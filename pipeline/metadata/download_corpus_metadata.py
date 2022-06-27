@@ -14,19 +14,19 @@ import sys
 
 sys.path.append('..')
 
-from config import cfg_download_agritrop_metadata as cfg
+from config import cfg_download_corpus_metadata as cfg
 from util import open_timestamp_logger, close_timestamp_logger
 from util import save_metadata
 
 #%%
 logger = open_timestamp_logger(log_prefix= os.path.splitext(os.path.basename(__file__))[0],
                           log_dir=cfg.LOG_PATH,
-                          first_line = 'Download dataset from Agritrop OAI API set %s...' % cfg.OAI_DATASET_NAME)
+                          first_line = 'Downloading dataset from OAI API set %s...' % cfg.OAI_DATASET_NAME)
 
 #%%
 def quick_test():
     """
-    Test Agritrop OAI API connection by requesting the first page of data 
+    Test OAI API connection by requesting the first page of data 
 
     Returns
     -------
@@ -78,7 +78,7 @@ def call_oai_api(resumption_token):
 
 def download():
     """
-    Downloads dataset from Agritrop via OAI 2.0 API either French or English 
+    Downloads dataset from OAI 2.0 API  
 
     Returns
     -------

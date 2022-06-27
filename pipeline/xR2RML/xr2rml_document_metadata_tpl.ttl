@@ -34,13 +34,13 @@
 
 <#LS>
     a           xrr:LogicalSource;
-    xrr:query   """db.{{collection}}.find( { agritrop_id: {$exists: true} } )""".
+    xrr:query   """db.{{collection}}.find( { paper_id: {$exists: true} } )""".
     
 <#TM>
     a rr:TriplesMap;
     xrr:logicalSource <#LS>;
     rr:subjectMap   [
-        rr:template "http://data-issa.cirad.fr/article/{$.agritrop_id}";
+        rr:template "http://data-issa.cirad.fr/article/{$.paper_id}";
         
     #    rr:class    prov:Entity, fabio:ResearchPaper, schema:ScholarlyArticle, bibo:AcademicArticle, eprint:JournalArticle;
     ];
@@ -94,7 +94,7 @@
     # Identifiers
     rr:predicateObjectMap [
         rr:predicate dct:identifier;
-        rr:objectMap [ xrr:reference "$.agritrop_id" ];
+        rr:objectMap [ xrr:reference "$.paper_id" ];
     ];
     rr:predicateObjectMap [
         rr:predicate bibo:doi;
@@ -127,15 +127,15 @@
     ];
     rr:predicateObjectMap [
         rr:predicate issapr:hasTitle;
-        rr:objectMap [ rr:template "http://data-issa.cirad.fr/article/{$.agritrop_id}#title"; ];
+        rr:objectMap [ rr:template "http://data-issa.cirad.fr/article/{$.paper_id}#title"; ];
     ];
     rr:predicateObjectMap [
         rr:predicate dct:abstract;
-        rr:objectMap [ rr:template "http://data-issa.cirad.fr/article/{$.agritrop_id}#abstract"; ];
+        rr:objectMap [ rr:template "http://data-issa.cirad.fr/article/{$.paper_id}#abstract"; ];
     ];
     rr:predicateObjectMap [
         rr:predicate issapr:hasBody;
-        rr:objectMap [ rr:template "http://data-issa.cirad.fr/article/{$.agritrop_id}#body_text"; ];
+        rr:objectMap [ rr:template "http://data-issa.cirad.fr/article/{$.paper_id}#body_text"; ];
     ];
     .
 
@@ -146,91 +146,91 @@
 <#TM_type_article>
     a rr:TriplesMap;
     #xrr:logicalSource <#LS_type_article>;
-    xrr:logicalSource [xrr:query   """db.{{collection}}.find( { agritrop_id: {$exists: true} , type: "article" } )""" ];
+    xrr:logicalSource [xrr:query   """db.{{collection}}.find( { paper_id: {$exists: true} , type: "article" } )""" ];
     rr:subjectMap   [
-        rr:template "http://data-issa.cirad.fr/article/{$.agritrop_id}";
+        rr:template "http://data-issa.cirad.fr/article/{$.paper_id}";
         rr:class    prov:Entity, fabio:ResearchPaper, schema:ScholarlyArticle, bibo:AcademicArticle, eprint:JournalArticle;
     ].
 
 <#TM_type_application>
     a rr:TriplesMap;
-    xrr:logicalSource [xrr:query   """db.{{collection}}.find( { agritrop_id: {$exists: true} , type: "application" } )""" ];
+    xrr:logicalSource [xrr:query   """db.{{collection}}.find( { paper_id: {$exists: true} , type: "application" } )""" ];
     rr:subjectMap   [
-        rr:template "http://data-issa.cirad.fr/article/{$.agritrop_id}";
+        rr:template "http://data-issa.cirad.fr/article/{$.paper_id}";
         rr:class    prov:Entity, fabio:ComputerApplication;
     ].
 
 <#TM_type_book>
     a rr:TriplesMap;
-    xrr:logicalSource [xrr:query   """db.{{collection}}.find( { agritrop_id: {$exists: true} , type: "book" } )""" ];
+    xrr:logicalSource [xrr:query   """db.{{collection}}.find( { paper_id: {$exists: true} , type: "book" } )""" ];
     rr:subjectMap   [
-        rr:template "http://data-issa.cirad.fr/article/{$.agritrop_id}";
+        rr:template "http://data-issa.cirad.fr/article/{$.paper_id}";
         rr:class    prov:Entity, fabio:Book, eprint:Book;
     ].
 
 <#TM_type_book_section>
     a rr:TriplesMap;
-    xrr:logicalSource [xrr:query   """db.{{collection}}.find( { agritrop_id: {$exists: true} , type: "book_section" } )""" ];
+    xrr:logicalSource [xrr:query   """db.{{collection}}.find( { paper_id: {$exists: true} , type: "book_section" } )""" ];
     rr:subjectMap   [
-        rr:template "http://data-issa.cirad.fr/article/{$.agritrop_id}";
+        rr:template "http://data-issa.cirad.fr/article/{$.paper_id}";
         rr:class    prov:Entity, fabio:BookChapter, eprint:BookItem;
     ].
 
 <#TM_type_conference_item>
     a rr:TriplesMap;
-    xrr:logicalSource [xrr:query   """db.{{collection}}.find( { agritrop_id: {$exists: true} , type: "conference_item" } )""" ];
+    xrr:logicalSource [xrr:query   """db.{{collection}}.find( { paper_id: {$exists: true} , type: "conference_item" } )""" ];
     rr:subjectMap   [
-        rr:template "http://data-issa.cirad.fr/article/{$.agritrop_id}";
+        rr:template "http://data-issa.cirad.fr/article/{$.paper_id}";
         rr:class    prov:Entity, fabio:ConferencePaper, eprint:ConferencePaper;
 ;
     ].
 
 <#TM_type_film>
     a rr:TriplesMap;
-    xrr:logicalSource [xrr:query   """db.{{collection}}.find( { agritrop_id: {$exists: true} , type: "film" } )""" ];
+    xrr:logicalSource [xrr:query   """db.{{collection}}.find( { paper_id: {$exists: true} , type: "film" } )""" ];
     rr:subjectMap   [
-        rr:template "http://data-issa.cirad.fr/article/{$.agritrop_id}";
+        rr:template "http://data-issa.cirad.fr/article/{$.paper_id}";
         rr:class    prov:Entity, fabio:Film;
     ].
 
 <#TM_type_map>
     a rr:TriplesMap;
-    xrr:logicalSource [xrr:query   """db.{{collection}}.find( { agritrop_id: {$exists: true} , type: "map" } )""" ];
+    xrr:logicalSource [xrr:query   """db.{{collection}}.find( { paper_id: {$exists: true} , type: "map" } )""" ];
     rr:subjectMap   [
-        rr:template "http://data-issa.cirad.fr/article/{$.agritrop_id}";
+        rr:template "http://data-issa.cirad.fr/article/{$.paper_id}";
         rr:class    prov:Entity, bibo:Map;
     ].
 
 <#TM_type_monograph>
     a rr:TriplesMap;
-    xrr:logicalSource [xrr:query   """db.{{collection}}.find( { agritrop_id: {$exists: true} , type: "monograph" } )""" ];
+    xrr:logicalSource [xrr:query   """db.{{collection}}.find( { paper_id: {$exists: true} , type: "monograph" } )""" ];
     rr:subjectMap   [
-        rr:template "http://data-issa.cirad.fr/article/{$.agritrop_id}";
+        rr:template "http://data-issa.cirad.fr/article/{$.paper_id}";
         rr:class    prov:Entity, fabio:Expression, bibo:Document;
     ].
 
 <#TM_type_patent>
     a rr:TriplesMap;
-    xrr:logicalSource [xrr:query   """db.{{collection}}.find( { agritrop_id: {$exists: true} , type: "patent" } )""" ];
+    xrr:logicalSource [xrr:query   """db.{{collection}}.find( { paper_id: {$exists: true} , type: "patent" } )""" ];
     rr:subjectMap   [
-        rr:template "http://data-issa.cirad.fr/article/{$.agritrop_id}";
+        rr:template "http://data-issa.cirad.fr/article/{$.paper_id}";
         rr:class    prov:Entity, fabio:Patent, eprint:Patent;
     ].
 
 <#TM_type_pgd>
     a rr:TriplesMap;
-    xrr:logicalSource [xrr:query   """db.{{collection}}.find( { agritrop_id: {$exists: true} , type: "pgd" } )""" ];
+    xrr:logicalSource [xrr:query   """db.{{collection}}.find( { paper_id: {$exists: true} , type: "pgd" } )""" ];
     rr:subjectMap   [
-        rr:template "http://data-issa.cirad.fr/article/{$.agritrop_id}";
+        rr:template "http://data-issa.cirad.fr/article/{$.paper_id}";
         rr:class    prov:Entity, fabio:DataManagementPlan;
     ].
 
 <#TM_type_thesis>
     a rr:TriplesMap;
     #xrr:logicalSource <#LS_type_article>;
-    xrr:logicalSource [xrr:query   """db.{{collection}}.find( { agritrop_id: {$exists: true} , type: "thesis" } )""" ];
+    xrr:logicalSource [xrr:query   """db.{{collection}}.find( { paper_id: {$exists: true} , type: "thesis" } )""" ];
     rr:subjectMap   [
-        rr:template "http://data-issa.cirad.fr/article/{$.agritrop_id}";
+        rr:template "http://data-issa.cirad.fr/article/{$.paper_id}";
         rr:class    prov:Entity, fabio:Thesis, eprint:Thesis;
     ].
 
@@ -241,16 +241,16 @@
  
 <#LS_type_not_article>
     a           xrr:LogicalSource;
-    xrr:query   """db.{{collection}}.find( { agritrop_id: {$exists: true} , type: {$ne : "article"} } )""".
+    xrr:query   """db.{{collection}}.find( { paper_id: {$exists: true} , type: {$ne : "article"} } )""".
 
 
 <#TM_title>
     a rr:TriplesMap;
     xrr:logicalSource <#LS_type_not_article>;
-    rr:subjectMap    [ rr:template "http://data-issa.cirad.fr/article/{$.agritrop_id}#title" ];
+    rr:subjectMap    [ rr:template "http://data-issa.cirad.fr/article/{$.paper_id}#title" ];
     rr:predicateObjectMap [
         rr:predicate frbr:partOf;
-        rr:objectMap [ rr:template "http://data-issa.cirad.fr/article/{$.agritrop_id}"; ];
+        rr:objectMap [ rr:template "http://data-issa.cirad.fr/article/{$.paper_id}"; ];
     ];
     rr:predicateObjectMap [
         rr:predicate rdf:value;
@@ -261,12 +261,12 @@
     a rr:TriplesMap;
     xrr:logicalSource <#LS_type_not_article>;
     rr:subjectMap    [
-        rr:template "http://data-issa.cirad.fr/article/{$.agritrop_id}#abstract";
+        rr:template "http://data-issa.cirad.fr/article/{$.paper_id}#abstract";
         rr:class    fabio:Abstract
     ];
     rr:predicateObjectMap [
         rr:predicate frbr:partOf;
-        rr:objectMap [ rr:template "http://data-issa.cirad.fr/article/{$.agritrop_id}"; ];
+        rr:objectMap [ rr:template "http://data-issa.cirad.fr/article/{$.paper_id}"; ];
     ];
     rr:predicateObjectMap [
         rr:predicate rdf:value;

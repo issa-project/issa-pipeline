@@ -5,11 +5,11 @@
 // where the descriptors are being stored as an array    
 db.document_descriptors.drop()
 db.document_metadata.aggregate([
-  { $project : { agrovoc_uri : { $split: ["$agrovoc_uris", ", "] }, agritrop_id : 1, _id: 0 } },
-  { $unwind : "$agrovoc_uri" },
-  { $project : { agrovoc_uri: { $trim: { input: "$agrovoc_uri", chars: "'[]" }  }, agritrop_id : 1, _id: 0 } },
-  { $match : { agrovoc_uri : {$ne: ""} } },
+  { $project : { descriptor_uri : { $split: ["$descriptors_uris", ", "] }, paper_id : 1, _id: 0 } },
+  { $unwind : "$descriptor_uri" },
+  { $project : { descriptor_uri: { $trim: { input: "$descriptor_uri", chars: "'[]" }  }, paper_id : 1, _id: 0 } },
+  { $match : { descriptor_uri : {$ne: ""} } },
   { $out: "document_descriptors" }
 ])
-db.document_descriptors.createIndex({agritrop_id: 1})
+db.document_descriptors.createIndex({paper_id: 1})
 db.document_descriptors.count()

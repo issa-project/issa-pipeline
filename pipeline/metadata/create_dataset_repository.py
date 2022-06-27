@@ -60,7 +60,7 @@ def save_metadata_json(row):
     For each article create metadata json representtaion 
 
     """
-    filename = '%s%s.json' % (row.agritrop_id, cfg.OUTPUT_SUFFIX) 
+    filename = '%s%s.json' % (row.paper_id, cfg.OUTPUT_SUFFIX) 
     
     try: 
         # optionally output json representation of metadata                 
@@ -92,7 +92,7 @@ def save_metadata_text(row):
     For each article output only text fields. Can be used in text model training.
 
     """
-    filename = '%s%s.txt' % (row.agritrop_id, cfg.OUTPUT_SUFFIX)
+    filename = '%s%s.txt' % (row.paper_id, cfg.OUTPUT_SUFFIX)
     
     try: 
         # optionally output available text to a text file 
@@ -120,7 +120,7 @@ def save_pdf_url(row):
     For each article save file with a url of the pdf
 
     """
-    filename = '%s.url' % row.agritrop_id
+    filename = '%s.url' % row.paper_id
     
     try: 
         # optionally output urls to download the pdfs   
@@ -144,12 +144,13 @@ def save_pdf_url(row):
 
 TSV_LABEL_FILES = set([os.path.basename(f) for f in glob.glob('%s/**/*.tsv' % (cfg.DATASET_ROOT_PATH), recursive = True)] )
 
-def save_agrovoc_lables(row):
+def save_lables_tsv(row):
     """
-    For each artile ave the agrovoc lables. Can be used in model training
+    For each article save the descriptors' lables that can be used in 
+    automated indexing model training.
 
     """
-    filename = '%s.tsv' %  row.agritrop_id
+    filename = '%s.tsv' %  row.paper_id
     
     try: 
         # optionally output labels for Annif
@@ -157,8 +158,8 @@ def save_agrovoc_lables(row):
                 
             tsv_path = os.path.join(cfg.FILES_LOC["tsv"],  filename)
                
-            uris = ['<%s>' %x for x in row.agrovoc_uris]
-            labels  = row.agrovoc_labels
+            uris = ['<%s>' %x for x in row.descriptors_uris]
+            labels  = row.descriptors_labels
     
             pd.DataFrame({'uri' : uris, 'label' : labels}) \
                          .to_csv(tsv_path ,
@@ -186,14 +187,17 @@ def create_dataset():
     create_repo_structure()
     
     # copy metadata
-    metadata_path = os.path.join(cfg.INPUT_PATH, cfg.INPUT_METADATA_FILENAME)
     dest_metadata_path = cfg.FILES_LOC['metadata'] 
     
+    metadata_path = os.path.join(cfg.INPUT_PATH, cfg.RAW_METADATA_FILENAME)    
+    copy_file(metadata_path , dest_metadata_path)
+    
+    metadata_path = os.path.join(cfg.INPUT_PATH, cfg.INPUT_METADATA_FILENAME)
     copy_file(metadata_path , dest_metadata_path)
     
     # create files from metadata
     (read_metadata(metadata_path)
-         .pipe(lambda _df: _df.astype({'agritrop_id': str}))
+         .pipe(lambda _df: _df.astype({'paper_id': str}))
          .pipe(lambda _df: _df.loc[_df.type == 'article'])
          .pipe(lambda _df: _df.fillna({'title':'', 'abstract':''}))
          .pipe(_log_message, '...Output %s/%s set  ...' , cfg.DATASET_NAME, cfg.CURRENT_DATE )
@@ -203,8 +207,8 @@ def create_dataset():
          .pipe(lambda _df: _df.apply(save_metadata_text, axis=1) )
          .pipe(_log_message, '   saving pdf urls  ...' )
          .pipe(lambda _df: _df.apply(save_pdf_url, axis=1))
-         .pipe(_log_message, '   saving Agrovoc label files  ...' )
-         .pipe(lambda _df: _df.apply(save_agrovoc_lables, axis=1))
+         .pipe(_log_message, '   saving descritors label files  ...' )
+         .pipe(lambda _df: _df.apply(save_lables_tsv, axis=1))
          )
 
     # return the repository structure in case that the caller wants to use it

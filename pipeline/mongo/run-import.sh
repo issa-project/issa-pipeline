@@ -19,7 +19,7 @@ log=$log_dir/import_mongodb_$(date "+%Y%m%d_%H%M%S").log
 if [ $( docker ps -f name=mongodb | wc -l ) -gt 1 ]; then 
 
 	docker exec -w $WDIR mongodb \
-           ./import-tsv-file.sh $DB document_metadata agritrop_id $IDIR/$METADATA_PREFIX.tsv ./aggregate_descriptors.js &>> $log
+           ./import-tsv-file.sh $DB document_metadata paper_id $IDIR/$METADATA_PREFIX.tsv ./aggregate_descriptors.js &>> $log
 
 	docker exec -w $WDIR mongodb \
            ./import-json-dir.sh $DB article_text paper_id $IDIR/$REL_FULLTEXT &>> $log

@@ -14,7 +14,7 @@ help()
   exe=$(basename $0)
   echo "Usage: $exe <database name> <collection> <index_column> <tsv file path> <additional script to run (optional)>"
   echo "Example:"
-  echo "   $exe  dataset-1-0-20220202 article_metadata agritrop_id issa/data/dataset-1-0/20220202/agritrop_meta.tsv aggregate_descriptors.js"
+  echo "   $exe  dataset-1-0-20220202 document_metadata paper_id issa/data/dataset-1-0/20220202/document_meta.tsv aggregate_descriptors.js"
   exit 1
 }
 

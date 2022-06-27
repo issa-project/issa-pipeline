@@ -11,7 +11,7 @@ import datetime
 
 sys.path.append('..')  
 
-from config import cfg_process_agritrop_metadata as cfg
+from config import cfg_process_corpus_metadata as cfg
 from util import read_metadata, save_metadata
 from util import open_timestamp_logger, close_timestamp_logger
 from util import detect_lang
@@ -31,7 +31,7 @@ def remove_nans(df):
     """
     # check if all the records have URIs
     logger.info('Dropping %d records with no URI:' % df.loc[df.uri.isna()].shape[0])
-    logger.debug('\t'+ df.loc[df.uri.isna(), ['agritrop_id', 'datestamp','uri']].to_string().replace('\n', '\n\t')) 
+    logger.debug('\t'+ df.loc[df.uri.isna(), ['paper_id', 'datestamp','uri']].to_string().replace('\n', '\n\t')) 
     
     df.dropna(subset=['uri'] , inplace=True)
     
@@ -49,7 +49,7 @@ def filter_not_yet_processed_articles(df):
     is_pdf_url = df.pdf_url.apply(lambda x: x.lower().endswith('.pdf')) | (df.type != 'article' )
     
     logger.info('Dropping %d article records with no pdf URL: ' , is_pdf_url[~is_pdf_url].shape[0])
-    logger.debug('\t'+ df.loc[~is_pdf_url, ['agritrop_id', 'datestamp', 'uri', 'pdf_url']].to_string().replace('\n', '\n\t')) 
+    logger.debug('\t'+ df.loc[~is_pdf_url, ['paper_id', 'datestamp', 'uri', 'pdf_url']].to_string().replace('\n', '\n\t')) 
     
     df.drop( is_pdf_url[~is_pdf_url].index , inplace=True)
     
@@ -57,14 +57,14 @@ def filter_not_yet_processed_articles(df):
 
 #%%
 
-def extract_agritrop_id(df):
+def extract_paper_id(df):
     """
     Parse the unique id from the OAI generated one 
-    For ex., if agritrop_id= 'oai:agritrop.cirad.fr:6554' then agritrop_id=6554.
+    For ex., if paper_id= 'oai:agritrop.cirad.fr:6554' then paper_id=6554.
 
     """
     
-    df.agritrop_id = df.agritrop_id.apply(lambda x : x.split(':')[-1])
+    df.paper_id = df.paper_id.apply(lambda x : x.split(':')[-1])
     
     return df
 
@@ -112,7 +112,7 @@ def get_descriptors_text(dl):
     dl = list(filter(lambda x: x is not None , dl))
     return list(filter(lambda x: not x.startswith('http') , dl))
 
-def get_agrovoc_uris(dl):
+def get_descriptors_uris(dl):
     """
     Helper function that separates uri descriptors from the mixture 
     of text and uris that is returned from Agritriop
@@ -156,7 +156,7 @@ def split_descriptors(df):
     """
     logger.info('Splitting descriptors lists...')
     
-    df.agrovoc_uris = df.descriptors.apply(lambda x: get_agrovoc_uris(x))
+    df.descriptors_uris = df.descriptors.apply(lambda x: get_descriptors_uris(x))
     df.descriptors = df.descriptors.apply(lambda x: get_descriptors_text(x))
     return df
 
@@ -167,7 +167,7 @@ def split_license(df, ignore_text='Cirad license', ignore_uri='https://agritrop.
 
     """
     def _extract_uri(dl):
-        dl = get_agrovoc_uris(dl)
+        dl = get_descriptors_uris(dl)
         if ignore_uri is not None:
             dl = remove_with_prefix(dl, ignore_uri)
             
@@ -197,14 +197,14 @@ def split_relations(df):
     argritrop_prefix = 'http://agritrop.cirad.fr/'
     
     def _extract_doi(dl):
-        dl = get_agrovoc_uris(dl)
+        dl = get_descriptors_uris(dl)
         
         dl = list(filter(lambda x: x.startswith(doi_prefix) , dl))
 
         return dl[0].replace(doi_prefix, '') if len(dl) > 0 else ''
     
     def _extract_same_as(dl):
-        dl = get_agrovoc_uris(dl)
+        dl = get_descriptors_uris(dl)
         dl = remove_with_prefix(dl, argritrop_prefix)
         dl = remove_with_prefix(dl, doi_prefix)
         return dl
@@ -215,7 +215,7 @@ def split_relations(df):
     return df
 
 #%%
-def drop_records_without_agrovoc_descriptors(df):
+def drop_records_without_descriptors(df):
     """
     Drop the metadata records without the descriptors
 
@@ -230,12 +230,12 @@ def drop_records_without_agrovoc_descriptors(df):
 
     """
     
-    agrovoc_uris_len = df.agrovoc_uris.apply(len)
+    uris_len = df.descriptors_uris.apply(len)
     
-    logger.info('Dropping %d records with no Agrovoc descriptors: ' % df.loc[agrovoc_uris_len == 0].shape[0])
-    logger.debug('\t'+ df.loc[agrovoc_uris_len == 0, ['agritrop_id', 'datestamp', 'uri', 'descriptors']].to_string().replace('\n', '\n\t')) 
+    logger.info('Dropping %d records with no descriptors: ' % df.loc[uris_len == 0].shape[0])
+    logger.debug('\t'+ df.loc[uris_len == 0, ['paper_id', 'datestamp', 'uri', 'descriptors']].to_string().replace('\n', '\n\t')) 
     
-    df.drop( df.loc[agrovoc_uris_len == 0].index , inplace=True)
+    df.drop( df.loc[uris_len == 0].index , inplace=True)
     return df
        
 #%%
@@ -262,15 +262,15 @@ def print_stats(df, verbose=True):
     if verbose:      
         logger.info('')
         logger.info('URI Descriptors:')
-        logger.info(df.agrovoc_uris.explode().describe().loc[['count', 'unique', 'top', 'freq']])
-        logger.info('Agrovoc descriptors per document:')
-        logger.info('min \t %d' , df.agrovoc_uris.apply(len).min())
-        logger.info('max \t %d' , df.agrovoc_uris.apply(len).max())
-        logger.info('median\t %d' , df.agrovoc_uris.apply(len).median())
+        logger.info(df.descriptors_uris.explode().describe().loc[['count', 'unique', 'top', 'freq']])
+        logger.info('Descriptors per document:')
+        logger.info('min \t %d' , df.descriptors_uris.apply(len).min())
+        logger.info('max \t %d' , df.descriptors_uris.apply(len).max())
+        logger.info('median\t %d' , df.descriptors_uris.apply(len).median())
         logger.info('')
         logger.info('Geo descriptors:')
         logger.info(df.geo_descriptors.explode().describe().loc[['count', 'unique', 'top',  'freq']])
-        logger.info('Geo(Agrovoc) descriptors per document:')
+        logger.info('Geo descriptors per document:')
         logger.info('min \t %d' , df.geo_descriptors.apply(len).min())
         logger.info('max \t %d' , df.geo_descriptors.apply(len).max())
         logger.info('median\t %d' , df.geo_descriptors.apply(len).median())
@@ -387,7 +387,8 @@ def _test_detect_lang():
 #%%
 def get_live_descriptors_labels(row, language='en'):
     """
-    Query the lables for a given Agrovoc URI in a specific language
+    Query specific language lables for a given URI in a domain specific
+    descriptors vocabulary
 
     Parameters
     ----------
@@ -405,14 +406,14 @@ def get_live_descriptors_labels(row, language='en'):
 
     try:
         
-        if row.agrovoc_uris:
-            uris = ['(<%s>)' % x for x in row.agrovoc_uris]
+        if row.descriptors_uris:
+            uris = ['(<%s>)' % x for x in row.descriptors_uris]
             
-            logger.debug('%s: %s', row.agritrop_id,  ','.join(uris))
+            logger.debug('%s: %s', row.paper_id,  ','.join(uris))
             
-            query = cfg.ARGROVOC_QUERY_TEMPLATE % (' '.join(uris) , language)
+            query = cfg.VOCAB_QUERY_TEMPLATE % (' '.join(uris) , language)
             
-            res = cfg.AGROVOC_SPARQL_WRAPPER.sparql_to_dataframe(query)
+            res = cfg.VOCAB_SPARQL_WRAPPER.sparql_to_dataframe(query)
             
             return dict(zip(res.concept, res.label))
 
@@ -424,16 +425,6 @@ def get_live_descriptors_labels(row, language='en'):
 def compare_descr_lists (list1, list2):
     """
     Compare two descriptor lists
-
-    Parameters
-    ----------
-    list1 : list
-    list2 : list
-    
-    Returns
-    -------
-    bool
-        True if the list have exactly the same values in the same order.
 
     """
 
@@ -448,7 +439,7 @@ def compare_descr_lists (list1, list2):
 #%%
 def get_live_labels(df):
     """
-    Refresh lables in specified language for Agrovoc URIs
+    Refresh lables in specified language for descriptors' URIs
 
     Parameters
     ----------
@@ -460,15 +451,15 @@ def get_live_labels(df):
         Updated dataframe.
     """
     
-    logger.info('Getting Agrovoc labels...')
+    logger.info('Getting descriptors labels...')
     #TODO: progress indicator
     
-    agrovoc_res = df.apply(lambda r: get_live_descriptors_labels(r, r.iso_lang), axis=1)
+    res = df.apply(lambda r: get_live_descriptors_labels(r, r.iso_lang), axis=1)
     
     #update the uris because some of them cannot be reolved especially for French
     #and also to maintain the same order
-    df.agrovoc_uris = agrovoc_res.apply(lambda x: list(x.keys()))
-    df.agrovoc_labels = agrovoc_res.apply(lambda x: list(x.values()))
+    df.descriptors_uris   = res.apply(lambda x: list(x.keys()))
+    df.descriptors_labels = res.apply(lambda x: list(x.values()))
     
     return df
 
@@ -508,7 +499,7 @@ def fill_year(df):
 #%%
 def process(save_file=True):
     """
-    Run Agritrop metadata data processing pipeline
+    Run corpus metadata data processing
     
     Parameters
     ----------
@@ -526,11 +517,11 @@ def process(save_file=True):
     df = (read_metadata(input_metadata_file)
           .pipe(remove_nans)
           .pipe(filter_not_yet_processed_articles)
-          .pipe(extract_agritrop_id)
+          .pipe(extract_paper_id)
           .pipe(split_descriptors)
           .pipe(split_license)
           .pipe(split_relations)
-          #.pipe(drop_records_without_agrovoc_descriptors)
+          #.pipe(drop_records_without_descriptors)
           .pipe(trim_abstract)
           .pipe(remove_tabs)
           .pipe(replace_doublequotes)

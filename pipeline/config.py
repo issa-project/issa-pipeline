@@ -19,7 +19,7 @@ def read_env_var(var_name):
 _ISSA_DATA_ROOT	= read_env_var('ISSA_DATA_ROOT') 			or '~/ISSA/data'
 _ISSA_DATASET    	= read_env_var('ISSA_DATASET') 				or 'dataset-1-0'
 
-_METADATA_PREFIX 	= read_env_var('METADATA_PREFIX') 			or 'agritrop'  
+_METADATA_PREFIX 	= read_env_var('METADATA_PREFIX') 			or 'corpus'  
 _ANNIF_SUFFIX    	= read_env_var('ANNIF_SUFFIX') 				or 'annif'
 
 _PDF_CACHE       	= read_env_var('PDF_CACHE') 				or '~/ISSA/data/pdf_cache'
@@ -105,7 +105,7 @@ class cfg_pipeline(object):
     
     DEBUG=False    
 
-class cfg_download_agritrop_metadata(cfg_pipeline):
+class cfg_download_corpus_metadata(cfg_pipeline):
 
     OAI_DATASET_NAME = 'driver' 
     
@@ -122,7 +122,7 @@ class cfg_download_agritrop_metadata(cfg_pipeline):
     RAW_DATA_FILENAME = f'{_METADATA_PREFIX}.raw.tsv'
     OUTPUT_PATH = './output'
 
-    SINGLE_FIELD_MAP = {'agritrop_id' : 'oai:header/oai:identifier',
+    SINGLE_FIELD_MAP = {'paper_id' : 'oai:header/oai:identifier',
                          'datestamp' :  'oai:header/oai:datestamp',
                          'uri' : 'oai:metadata/oai_dc:dc/dc:identifier',
                         'title' : 'oai:metadata/oai_dc:dc/dc:title',
@@ -146,8 +146,8 @@ class cfg_download_agritrop_metadata(cfg_pipeline):
     MULTI_FIELD_MAP = {'authors' : 'oai:metadata/oai_dc:dc/dc:creator',
                        'descriptors' : 'oai:metadata/oai_dc:dc/dc:subject',
                        'geo_descriptors' : 'oai:metadata/oai_dc:dc/dc:coverage',
-                       'agrovoc_uris' :'' ,
-                       'agrovoc_labels': '',
+                       'descriptors_uris' :'' ,
+                       'descriptors_labels': '',
                        'identifiers' : 'oai:metadata/oai_dc:dc/dc:identifier',
                        'licenses' : 'oai:metadata/oai_dc:dc/dc:rights',
                        'relations' : 'oai:metadata/oai_dc:dc/dc:relation', #ideally it should have XML path expression [starts-with(.,"http")] butit is not supported
@@ -158,7 +158,7 @@ class cfg_download_agritrop_metadata(cfg_pipeline):
     #DEBUG = True
 
 
-class cfg_process_agritrop_metadata(cfg_pipeline):
+class cfg_process_corpus_metadata(cfg_pipeline):
     LANG_MAP = {'fre': 'fr',
                 'eng': 'en',
                 'spa': 'es',
@@ -173,15 +173,15 @@ class cfg_process_agritrop_metadata(cfg_pipeline):
                 'vie': 'vi',
                 'default': 'en'}
 
-    RAW_DATA_FILENAME = cfg_download_agritrop_metadata.RAW_DATA_FILENAME 
+    RAW_DATA_FILENAME = cfg_download_corpus_metadata.RAW_DATA_FILENAME 
     PROCESSED_DATA_FILENAME = f'{_METADATA_PREFIX}.tsv'
     
-    INPUT_PATH = cfg_download_agritrop_metadata.OUTPUT_PATH
+    INPUT_PATH = cfg_download_corpus_metadata.OUTPUT_PATH
     OUTPUT_PATH = INPUT_PATH
     
-    AGROVOC_SPARQL_WRAPPER = SPARQL_Endpoint_Wrapper('http://riolan.cirad.fr/sparql')
+    VOCAB_SPARQL_WRAPPER = SPARQL_Endpoint_Wrapper('http://riolan.cirad.fr/sparql')
         
-    ARGROVOC_QUERY_TEMPLATE = '''
+    VOCAB_QUERY_TEMPLATE = '''
     PREFIX skos: <http://www.w3.org/2004/02/skos/core#> 
     PREFIX skosxl: <http://www.w3.org/2008/05/skos-xl#> 
     SELECT ?concept ?label 
@@ -201,8 +201,9 @@ class cfg_process_agritrop_metadata(cfg_pipeline):
 
 class cfg_create_dataset_repository(cfg_pipeline):
     
-    INPUT_PATH = cfg_process_agritrop_metadata.OUTPUT_PATH
-    INPUT_METADATA_FILENAME = cfg_process_agritrop_metadata.PROCESSED_DATA_FILENAME
+    INPUT_PATH = cfg_process_corpus_metadata.OUTPUT_PATH
+    INPUT_METADATA_FILENAME = cfg_process_corpus_metadata.PROCESSED_DATA_FILENAME
+    RAW_METADATA_FILENAME = cfg_process_corpus_metadata.RAW_DATA_FILENAME
 
     DATASET_NAME = _ISSA_DATASET
 
@@ -223,7 +224,7 @@ class cfg_create_dataset_repository(cfg_pipeline):
                    'abstract' : [{'text' : ''}],
                  }
     
-    METADATA_TO_JSON_MAP = {'agritrop_id' : ['paper_id'],
+    METADATA_TO_JSON_MAP = {'paper_id' : ['paper_id'],
                              'title'       : ['metadata', 'title'],
                              'abstract'    : ['abstract', 0, 'text'],
                              'authors'              : ['metadata', 'authors'],
@@ -235,8 +236,7 @@ class cfg_create_dataset_repository(cfg_pipeline):
                             }
 
 class cfg_extract_text_from_pdf(cfg_pipeline):
-    # Dependency on the create_dataset-repository config
-    #FILES_LOC = cfg_create_dataset_repository.FILES_LOC
+
     FILES_LOC = cfg_pipeline.FILES_LOC
     
     INPUT_PATH = FILES_LOC['pdf']
@@ -301,25 +301,25 @@ class cfg_extract_text_from_pdf(cfg_pipeline):
 
 class cfg_coalesce_meta_json(cfg_pipeline):
    
-    DO_COALESE = True
+    FILES_LOC = cfg_pipeline.FILES_LOC
     
     INPUT_PATTERN = '*.json'
     OUTPUT_SUFFIX = ''
-  
-    FILES_LOC = cfg_pipeline.FILES_LOC
+
     INPUT_METADATA_PATH = FILES_LOC['metadata_json']
     INPUT_FULLTEXT_PATH = FILES_LOC['fulltext_json']
     OUTPUT_PATH = FILES_LOC['coalesced_json']
    
+    DO_COALESE = True
     
 class cfg_indexing_preprocess(cfg_pipeline):
+        
+    FILES_LOC = cfg_pipeline.FILES_LOC
    
     INPUT_PATTERN = '*.json'
     OUTPUT_SUFFIX = '.txt'
     
     PARTS_SEPARATOR = os.linesep + os.linesep
-
-    FILES_LOC = cfg_pipeline.FILES_LOC    
 
     INPUT_PATH = FILES_LOC['coalesced_json']
     OUTPUT_PATH = FILES_LOC['indexing_text']
@@ -363,6 +363,10 @@ class cfg_indexing_training(object):
     INPUT_PATH=os.path.join(_ISSA_DATA_ROOT, _ISSA_DATASET)
     INPUT_PATTERN = '**/coalesced/*.json'
     LABEL_PATTERN='**/labels/'
+ 
+    METADATA_FILE = os.path.join(INPUT_PATH,
+                                 sorted(os.listdir(INPUT_PATH), reverse=True) [0], #LATEST_UPDATE,
+                                 f'{_METADATA_PREFIX}.tsv')
     
     OUTPUT_SUFFIX = '.txt'
     

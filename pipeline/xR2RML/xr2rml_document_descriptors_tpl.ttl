@@ -34,22 +34,22 @@
 
 <#LS>
     a           xrr:LogicalSource;
-    xrr:query    """db.{{collection}}.find( { agrovoc_uri : {$exists: true} } )""" .
+    xrr:query    """db.{{collection}}.find( { descriptor_uri : {$exists: true} } )""" .
 
 <#TM>
     a rr:TriplesMap;
     xrr:logicalSource <#LS>;
     rr:subjectMap    [ 
-        rr:template "http://data-issa.cirad.fr/descr/sha1(td_{$.agritrop_id}_{$.agrovoc_uri}})";
+        rr:template "http://data-issa.cirad.fr/descr/sha1(td_{$.paper_id}_{$.descriptor_uri}})";
         rr:class     issa:ThematicDescriptorAnnotation, prov:Entity;
     ];
     rr:predicateObjectMap [
         rr:predicate oa:hasTarget;
-        rr:objectMap [ rr:template "http://data-issa.cirad.fr/article/{$.agritrop_id}"; ];
+        rr:objectMap [ rr:template "http://data-issa.cirad.fr/article/{$.paper_id}"; ];
     ];
     rr:predicateObjectMap [
         rr:predicate oa:hasBody;
-       rr:objectMap [ xrr:reference "$.agrovoc_uri"; rr:termType rr:IRI ];
+       rr:objectMap [ xrr:reference "$.descriptor_uri"; rr:termType rr:IRI ];
     ];
 
     # Provenance
