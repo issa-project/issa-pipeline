@@ -13,7 +13,7 @@ The assumption is that an original data source has an API that provides document
 
 Raw metadata should be generated at this point in TSV format.
 
-## Processing
+## Process
 Typically, the original data has to be somehow cleaned and/or filtered. A set of functions can by piped together to facilitate the necessary processing. 
 The main document identifier *paper_id* has to be created.
 
