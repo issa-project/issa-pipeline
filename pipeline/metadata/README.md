@@ -1,5 +1,3 @@
-# Metadata processing
-
 This set of scripts implements the interface between the original document corpus repository and ISSA and creates a foundation for the further processing. The three steps to create ISSA-processable dataset:
 - download corpus metadata 
 - process corpus metadata
