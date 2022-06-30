@@ -8,9 +8,10 @@ Bash scripts are used for import:
 
 JavaScript scripts are used to manipulate on collections in MongoDB:
 - `aggregate_descriptors.js` - creates a separate one-to-many collection for thematic descriptors from the "flattened" columns of `document_metadata` collection
-- `lighten_spotlight.js`     - (optionally) removes unnecessary fields from the DBpedia NEs as well as NEs that are less than 3 characters long or with low similarity score  
+- `filter_spotlight.js`     - (optionally) filter the Dbpedia NEs. The example script removes unnecessary fields from the spotlight collection as well as NEs that are less than 3 characters long or with similarity score lower than 0.75. 
+- `filter_entityfishing.js`     - (optionally) filter the Wikidata NEs. The example script removes unnecessary fields from the entityfishing collection as well as NEs that are less than 3 characters long or having no associated *wikidataId*. 
 
->:point_right:  The `import-` scripts are executed in the context of [*mongodb*](../../environment/containers/mongodb) docker container
+>:point_right:  The `import-` scripts are executed in the context of [*MongoDB docker container*](../../environment/containers/mongodb) 
 
 As a result, for each update of ISSA dataset a new database is created, e.g. `dataset-1-0-20220202` with following collections:  
 - `document_metadata`    - loaded from the processed metadata TSV file
