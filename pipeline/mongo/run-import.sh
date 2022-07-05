@@ -28,10 +28,10 @@ if [ $( docker ps -f name=mongodb | wc -l ) -gt 1 ]; then
            ./import-json-dir.sh $DB annif_descriptors paper_id $IDIR/$REL_ANNIF &>> $log
 
 	docker exec -w $WDIR mongodb \
-           ./import-json-dir.sh $DB spotlight paper_id $IDIR/$REL_SPOTLIGHT &>> $log #lighten_spotlight.js 
+           ./import-json-dir.sh $DB spotlight paper_id $IDIR/$REL_SPOTLIGHT &>> $log #filter_spotlight.js 
 
 	docker exec -w $WDIR mongodb \
-           ./import-json-dir.sh $DB entityfishing paper_id $IDIR/$REL_EF &>> $log   #lighten_entityfishing_abstract.js
+           ./import-json-dir.sh $DB entityfishing paper_id $IDIR/$REL_EF &>> $log   #filter_entityfishing.js
 
 	docker exec -w $WDIR mongodb \
            ./import-json-dir.sh $DB geonames paper_id $IDIR/$REL_GEONAMES &>> $log   

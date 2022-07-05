@@ -184,14 +184,22 @@ class cfg_process_corpus_metadata(cfg_pipeline):
     VOCAB_QUERY_TEMPLATE = '''
     PREFIX skos: <http://www.w3.org/2004/02/skos/core#> 
     PREFIX skosxl: <http://www.w3.org/2008/05/skos-xl#> 
-    SELECT ?concept ?label 
+    SELECT ?uri ?label 
     WHERE { 
-      VALUES(?concept) {%s}
+      VALUES(?uri) {%s}
       
-      ?concept a skos:Concept . 
-      ?concept skosxl:prefLabel/skosxl:literalForm ?label.
+      ?uri a skos:Concept . 
+      OPTIONAL{?uri skosxl:prefLabel/skosxl:literalForm ?langlabel
+  				FILTER(langMatches(lang(?langlabel), '%s'))
+  	  }
+      OPTIONAL{?uri skosxl:prefLabel/skosxl:literalForm ?defaultlabel.
+ 	           FILTER(langMatches(lang(?defaultlabel), 'en') )
+  	  }
+      OPTIONAL{?uri skosxl:prefLabel/skosxl:literalForm ?nolanglabel.
+ 	           FILTER(langMatches(lang(?nolanglabel), '') )
+  	  } 
       
-      FILTER(langMatches(lang(?label), '%s')) 
+      BIND(COALESCE(?langlabel, ?defaultlabel, ?nolanglabel) AS ?label)
     }  
     '''
     
@@ -232,7 +240,6 @@ class cfg_create_dataset_repository(cfg_pipeline):
                              'title_lang_score'     : ['metadata', 'title_lang','score'] ,
                              'abstract_lang'        : ['metadata', 'abstract_lang','code'] ,
                              'abstract_lang_score'  : ['metadata', 'abstract_lang','score'] ,
-                
                             }
 
 class cfg_extract_text_from_pdf(cfg_pipeline):

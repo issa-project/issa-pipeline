@@ -7,6 +7,7 @@ Created on Thu Apr  8 16:35:35 2021
 import os
 import sys
 import pandas as pd
+from collections import OrderedDict
 import datetime
 
 sys.path.append('..')  
@@ -415,7 +416,18 @@ def get_live_descriptors_labels(row, language='en'):
             
             res = cfg.VOCAB_SPARQL_WRAPPER.sparql_to_dataframe(query)
             
-            return dict(zip(res.concept, res.label))
+            #return dict(zip(res.uri, res.label))
+            
+            #preserve original order
+            res_dict = dict(zip(res.uri, res.label))
+            ret_dict = OrderedDict()
+            for uri in row.descriptors_uris:
+                try:
+                    ret_dict[uri] = res_dict[uri]
+                except KeyError:
+                    logger.error('Cannot find label for <%s>', uri)
+            
+            return ret_dict
 
     except Exception as e:
         logger.exception(e)
@@ -460,6 +472,8 @@ def get_live_labels(df):
     #and also to maintain the same order
     df.descriptors_uris   = res.apply(lambda x: list(x.keys()))
     df.descriptors_labels = res.apply(lambda x: list(x.values()))
+    
+    #df.descriptors =  res.apply(lambda x: [{'uri': k, 'lbl': v} for k,v in x.items()] )   
     
     return df
 
