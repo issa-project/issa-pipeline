@@ -22,7 +22,7 @@ help()
   exe=$(basename $0)
   echo "Usage: $exe <dataset name> <title|abstract|body_text> <collection> <xR2RML mapping template> <output file name>"
   echo "Example:"
-  echo "   $exe  dataset-1-0  abstract  spotlight  xr2rml_spotlight_tpl.ttl  issa-articles-abstract.ttl"
+  echo "   $exe  dataset-1-0  abstract  spotlight  xr2rml_spotlight_annot.tpl.ttl  issa-articles-spotlight-abstract.ttl"
   exit 1
 }
 

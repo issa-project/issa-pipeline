@@ -20,31 +20,31 @@ DSN=$ISSA_DATASET_NAME
 ODIR=$XR2RML_OUTPUT_DIR
 
 echo "Generate articles metadata..."
-./run_xr2rml.sh $DSN document_metadata paper_id xr2rml_document_metadata_tpl.ttl $ODIR/issa-document-metadata.ttl
+./run_xr2rml.sh $DSN document_metadata xr2rml_document_metadata.tpl.ttl $ODIR/issa-document-metadata.ttl
 
 echo "Generate articles thematic descriptors by documentalists"
-./run_xr2rml.sh $DSN document_descriptors paper_id xr2rml_document_descriptors_tpl.ttl   $ODIR/issa-document-descriptors.ttl
+./run_xr2rml.sh $DSN document_descriptors xr2rml_document_descriptors.tpl.ttl   $ODIR/issa-document-descriptors.ttl
  
 echo "Generate articles' full text RDF"
-./run_xr2rml.sh  $DSN article_text paper_id xr2rml_article_text_tpl.ttl  $ODIR/issa-article-text.ttl
+./run_xr2rml.sh  $DSN article_text xr2rml_article_text.tpl.ttl  $ODIR/issa-article-text.ttl
 
 echo  "Generate articles' thematic descriptors genearated by Annif"
-./run_xr2rml.sh $DSN annif_descriptors paper_id  xr2rml_annif_descriptors_tpl.ttl   $ODIR/issa-article-annif-descriptors.ttl
+./run_xr2rml.sh $DSN annif_descriptors  xr2rml_annif_descriptors.tpl.ttl   $ODIR/issa-article-annif-descriptors.ttl
 
 echo  "Generate annotations for DBpedia Spotlight"
-./run_xr2rml_annotation.sh $DSN title     spotlight xr2rml_spotlight_nes_tpl.ttl $ODIR/issa-article-spotlight-title.ttl
-./run_xr2rml_annotation.sh $DSN abstract  spotlight xr2rml_spotlight_nes_tpl.ttl $ODIR/issa-article-spotlight-abstract.ttl
-./run_xr2rml_annotation.sh $DSN body_text spotlight xr2rml_spotlight_nes_tpl.ttl $ODIR/issa-article-spotlight-body.ttl
+./run_xr2rml_annotation.sh $DSN title     spotlight xr2rml_spotlight_annot.tpl.ttl $ODIR/issa-article-spotlight-title.ttl
+./run_xr2rml_annotation.sh $DSN abstract  spotlight xr2rml_spotlight_annot.tpl.ttl $ODIR/issa-article-spotlight-abstract.ttl
+./run_xr2rml_annotation.sh $DSN body_text spotlight xr2rml_spotlight_annot.tpl.ttl $ODIR/issa-article-spotlight-body.ttl
 
 echo "Generate annotations for Entity-fishing" 
-./run_xr2rml_annotation.sh $DSN title     entityfishing xr2rml_entityfishing_nes_tpl.ttl $ODIR/issa-article-entityfishing-title.ttl
-./run_xr2rml_annotation.sh $DSN abstract  entityfishing xr2rml_entityfishing_nes_tpl.ttl $ODIR/issa-article-entityfishing-abstract.ttl
-./run_xr2rml_annotation.sh $DSN body_text entityfishing xr2rml_entityfishing_nes_tpl.ttl $ODIR/issa-article-entityfishing-body.ttl
+./run_xr2rml_annotation.sh $DSN title     entityfishing xr2rml_entityfishing_annot.tpl.ttl $ODIR/issa-article-entityfishing-title.ttl
+./run_xr2rml_annotation.sh $DSN abstract  entityfishing xr2rml_entityfishing_annot.tpl.ttl $ODIR/issa-article-entityfishing-abstract.ttl
+./run_xr2rml_annotation.sh $DSN body_text entityfishing xr2rml_entityfishing_annot.tpl.ttl $ODIR/issa-article-entityfishing-body.ttl
 
 echo "Generate annotations for GeoNames" 
-./run_xr2rml_annotation.sh $DSN title     geonames xr2rml_geonames_nes_tpl.ttl $ODIR/issa-article-geonames-title.ttl
-./run_xr2rml_annotation.sh $DSN abstract  geonames xr2rml_geonames_nes_tpl.ttl $ODIR/issa-article-geonames-abstract.ttl
-./run_xr2rml_annotation.sh $DSN body_text geonames xr2rml_geonames_nes_tpl.ttl $ODIR/issa-article-geonames-body.ttl
+./run_xr2rml_annotation.sh $DSN title     geonames xr2rml_geonames_annot.tpl.ttl $ODIR/issa-article-geonames-title.ttl
+./run_xr2rml_annotation.sh $DSN abstract  geonames xr2rml_geonames_annot.tpl.ttl $ODIR/issa-article-geonames-abstract.ttl
+./run_xr2rml_annotation.sh $DSN body_text geonames xr2rml_geonames_annot.tpl.ttl $ODIR/issa-article-geonames-body.ttl
 
 
 

@@ -1,6 +1,6 @@
 # Mapping file for the CORD19 metadata CSV file. The article URIs are built using the sha field.
 #
-# Author: Franck MICHEL, University Cote d'Azur, CNRS, Inria
+# Author: Ann BOBASHEVA, University Cote d'Azur, CNRS, Inria
 #
 # Licensed under the Apache License, Version 2.0 (http://www.apache.org/licenses/LICENSE-2.0)
 
@@ -41,25 +41,7 @@
     xrr:logicalSource <#LS>;
     rr:subjectMap   [
         rr:template "http://data-issa.cirad.fr/article/{$.paper_id}";
-        
-    #    rr:class    prov:Entity, fabio:ResearchPaper, schema:ScholarlyArticle, bibo:AcademicArticle, eprint:JournalArticle;
     ];
-
-    # Provenance
-    rr:predicateObjectMap [
-        rr:predicate rdfs:isDefinedBy;
-        rr:objectMap [ rr:constant issa:{{dataset}}; rr:termType rr:IRI ];
-    ];
-    
-    rr:predicateObjectMap [
-        rr:predicate prov:wasDerivedFrom;
-		rr:objectMap [ xrr:reference "$.uri" ; rr:termType rr:IRI ];
-    ];
-    rr:predicateObjectMap [
-        rr:predicate prov:generatedAtTime;
-		rr:objectMap [ xrr:reference "$.datestamp" ; rr:datatype xsd:dateTime];
-    ];
-
 
     # Publication
     rr:predicateObjectMap [
@@ -120,7 +102,24 @@
 		rr:objectMap [ xrr:reference "JSONPath($.authors)/JSONPath($.*)"; ];
 	];
 
-    # Parts title, abstract, body
+
+    # Provenance
+    rr:predicateObjectMap [
+        rr:predicate rdfs:isDefinedBy;
+        rr:objectMap [ rr:constant issa:{{dataset}}; rr:termType rr:IRI ];
+    ];
+    
+    rr:predicateObjectMap [
+        rr:predicate prov:wasDerivedFrom;
+		rr:objectMap [ xrr:reference "$.uri" ; rr:termType rr:IRI ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prov:generatedAtTime;
+		rr:objectMap [ xrr:reference "$.datestamp" ; rr:datatype xsd:dateTime];
+    ];
+
+
+    # Parts title, abstract, body (only for articles and mapped below)
     rr:predicateObjectMap [
         rr:predicate dct:title;
         rr:objectMap [ xrr:reference "$.title" ];
@@ -132,11 +131,7 @@
     rr:predicateObjectMap [
         rr:predicate dct:abstract;
         rr:objectMap [ rr:template "http://data-issa.cirad.fr/article/{$.paper_id}#abstract"; ];
-    ];
-    rr:predicateObjectMap [
-        rr:predicate issapr:hasBody;
-        rr:objectMap [ rr:template "http://data-issa.cirad.fr/article/{$.paper_id}#body_text"; ];
-    ];
+    ]
     .
 
 # In a new version a document type can be more than an article.
@@ -150,7 +145,12 @@
     rr:subjectMap   [
         rr:template "http://data-issa.cirad.fr/article/{$.paper_id}";
         rr:class    prov:Entity, fabio:ResearchPaper, schema:ScholarlyArticle, bibo:AcademicArticle, eprint:JournalArticle;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate issapr:hasBody;
+        rr:objectMap [ rr:template "http://data-issa.cirad.fr/article/{$.paper_id}#body_text"; ];
     ].
+
 
 <#TM_type_application>
     a rr:TriplesMap;
@@ -274,3 +274,56 @@
     ].
 
     
+#Expected output:
+##########################################################################################################################################################################
+# Articles 
+#<http://data-issa.cirad.fr/article/543654>
+#      a                     prov:Entity , fabio:ResearchPaper , bibo:AcademicArticle , eprint:JournalArticle , schema:ScholarlyArticle ;
+#      dct:identifier        "543654" ;
+#      dct:title             "Accounting for the ecological dimension in participatory research and development : lessons learned from Indonesia and Madagascar" ;
+#      dce:creator           "Pfund, Jean-Laurent" , "Laumonier, Yves" , "Bourgeois, Robin" ;
+#      dct:issued            "2008"^^xsd:gYear ;
+#      dce:language          "eng" ;
+#      dct:language          <http://id.loc.gov/vocabulary/iso639-1/en> ;
+#      dct:rights            <https://agritrop.cirad.fr/mention_legale.html> ;
+#      dct:source            "Agritrop-OAI2-API" ;
+#      schema:downloadUrl    <http://agritrop.cirad.fr/543654/1/document_543654.pdf> ;
+#      schema:publication    "Ecology and Society" ;
+#      schema:sameAs         <http://www.ecologyandsociety.org/vol13/iss1/art15/>, <http://catalogue-bibliotheques.cirad.fr/cgi-bin/koha/opac-detail.pl?biblionumber=199720> ;
+#      schema:url            <http://agritrop.cirad.fr/543654/> ;
+#      dct:abstract          <http://data-issa.cirad.fr/article/543654#abstract> ;
+#      issapr:hasBody        <http://data-issa.cirad.fr/article/543654#body_text> ;
+#      issapr:hasTitle       <http://data-issa.cirad.fr/article/543654#title> ;
+#      rdfs:isDefinedBy      issa:issa-agritrop ;
+#      prov:generatedAtTime  "2020-11-21T13:17:03Z"^^xsd:dateTime ;
+#      prov:wasDerivedFrom   <http://agritrop.cirad.fr/543654/> .
+#
+##########################################################################################################################################################################
+# Other document types
+#<http://data-issa.cirad.fr/article/584469>
+#      a                     prov:Entity, fabio:ConferencePaper , eprint:ConferencePaper ;
+#      dct:identifier        "584469" ;
+#      dct:title             "Analysis of sahelian herders market behaviours..." ;
+#      dce:creator           dce:creator "Mballo, Aliou Diouf" , "Njiru, Nelly" , "Wane, Abdrahmane" , "Touré, Ibra" ;
+#      dct:issued            "2017"^^xsd:gYear ;
+#      dce:language          "eng" ;
+#      dct:language          <http://id.loc.gov/vocabulary/iso639-1/en> ;
+#      dct:rights             <https://agritrop.cirad.fr/mention_legale.html> ;
+#      dct:source            "Agritrop-OAI2-API" ;
+#      schema:downloadUrl    <http://agritrop.cirad.fr/557484/1/document_584469.pdf> ;
+#      schema:sameAs        <http://ageconsearch.umn.edu/record/260892/files/Analysis%20Of%20Sahelian%20Herders%20Market%20Behaviours%20To%20Facilitate%20Moving%20Towards%20Structural%20And%20Sustainable%20Transformation%20Of%20Pastoral%20Economies.pdf> ;
+#      schema:url            <http://agritrop.cirad.fr/557484/> ;
+#      dct:abstract          <http://data-issa.cirad.fr/article/584469#abstract> ;
+#      issapr:hasTitle       <http://data-issa.cirad.fr/article/584469#title> ;
+#      rdfs:isDefinedBy      issa:issa-agritrop ;
+#      prov:generatedAtTime  "2015-09-09T16:19:07Z"^^xsd:dateTime ;
+#      prov:wasDerivedFrom   <http://agritrop.cirad.fr/584469/> . 
+#
+#<http://data-issa.cirad.fr/article/584469#title>
+#      rdf:value            "Analysis of sahelian herders market behaviours to facilitate moving towards structural and sustainable transformation of pastoral economies" ;
+#      frbr:partOf          <http://data-issa.cirad.fr/article/584469> .
+#
+#<http://data-issa.cirad.fr/article/584469#abstract>
+#      a                   fabio:Abstract ;
+#      rdf:value           "Many research and development institutions..." ;
+#      frbr:partOf         <http://data-issa.cirad.fr/article/584469> .

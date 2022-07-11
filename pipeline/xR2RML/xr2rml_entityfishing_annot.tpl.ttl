@@ -160,3 +160,26 @@
         rr:objectMap [ xrr:reference "$.category" ];
     ];
     .
+
+# Example of expected output:
+#<http://data-issa.cirad.fr/ann/sha1_hash>
+#      a                    prov:Entity , oa:Annotation ;
+#      rdfs:isDefinedBy     issa:issa-agritrop ;
+#      rdfs:label           "named entity 'Infection'" ;
+#      issapr:confidence    0.3729 ;
+#      dct:subject          "Health" , "Medicine" ;
+#      schema:about         <http://data-issa.cirad.fr/article/600955> ;
+#      oa:hasBody           wd:Q166231 ;
+#      oa:hasTarget         <http://data-issa.cirad.fr/ann/target/sha1_hash> ;
+#      prov:wasAttributedTo issa:EntityFishing .
+#
+#<http://data-issa.cirad.fr/ann/target/sha1_hash>
+#      oa:hasSelector       <http://data-issa.cirad.fr/ann/selector/sha1_hash> ;
+#      oa:hasSource         <http://data-issa.cirad.fr/article/600955#body_text> .
+#
+#<http://data-issa.cirad.fr/ann/selector/sha1_hash>
+#      a                    oa:TextPositionSelector , oa:TextQuoteSelector ;
+#      oa:start             12410 ;
+#      oa:end               12419 ;
+#      oa:exact             "Infection" .
+

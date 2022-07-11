@@ -1,6 +1,7 @@
-# Mapping file generating the annotations for the named entities found by DBpedia Spotliht.
+# Mapping file to generate RDF triples for thematic descriptors identified by documentalists that
+# are extracted from the metadata 
 #
-# Author: Franck MICHEL, University Cote d'Azur, CNRS, Inria
+# Author: Anna BOBASHEVA, University Cote d'Azur, CNRS, Inria
 #
 # Licensed under the Apache License, Version 2.0 (http://www.apache.org/licenses/LICENSE-2.0)
 
@@ -17,6 +18,7 @@
 @prefix dce:    <http://purl.org/dc/elements/1.1/>.
 @prefix dct:    <http://purl.org/dc/terms/>.
 @prefix fabio:  <http://purl.org/spar/fabio/> .
+@prefix eprint: <http://purl.org/eprint/type/> .
 @prefix foaf:   <http://xmlns.com/foaf/0.1/>.
 @prefix frbr:   <http://purl.org/vocab/frbr/core#>.
 @prefix oa:     <http://www.w3.org/ns/oa#>.
@@ -29,37 +31,33 @@
 
 # Template file: replace placeholders
 # - {{dataset}}: RDF dataset name e.g. "dataset-1-0"
-# - {{collection}}: the MongoDB collection to query, e.g. spotlight
+# - {{collection}}: the MongoDB collection to query, e.g. document_descriptors
 
-
-<#LS_entities>
-    a               xrr:LogicalSource;
-    xrr:query       """db.{{collection}}.find()""";
-    rml:iterator    "$.subjects.*";
+<#LS>
+    a           xrr:LogicalSource;
+    xrr:query    """db.{{collection}}.find()""" ;
+    rml:iterator    "$.subjects.*"; 
     xrr:pushDown    [ xrr:reference "$.paper_id"; xrr:as "paper_id" ].
 
-<#TM_annotation>
-    a               rr:TriplesMap;
-    xrr:logicalSource <#LS_entities>;
-    rr:subjectMap   [
-        # Template to yield a unique blank node id for each annotation
-        rr:template     "http://data-issa.cirad.fr/descr/sha1(annif_{$.paper_id}_{$.uri})";
+<#TM>
+    a rr:TriplesMap;
+    xrr:logicalSource <#LS>;
+    rr:subjectMap    [ 
+        rr:template "http://data-issa.cirad.fr/descr/sha1(td_{$.paper_id}_{$.uri}})";
         rr:class     issa:ThematicDescriptorAnnotation, prov:Entity;
     ];
     rr:predicateObjectMap [
         rr:predicate oa:hasTarget;
-        rr:objectMap [ rr:template "http://data-issa.cirad.fr/article/{$.paper_id}";  rr:termType rr:IRI ];
+        rr:objectMap [ rr:template "http://data-issa.cirad.fr/article/{$.paper_id}"; rr:termType rr:IRI];
     ];
     rr:predicateObjectMap [
         rr:predicate oa:hasBody;
-       rr:objectMap [ xrr:reference "$.uri";  rr:termType rr:IRI ];
+       rr:objectMap [ xrr:reference "$.uri"; rr:termType rr:IRI ];
     ];
-    # Indexing confidence
     rr:predicateObjectMap [
-        rr:predicate issapr:confidence;
-        rr:objectMap [ xrr:reference "$.conf_score"; rr:datatype xsd:decimal ];
+        rr:predicate rdfs:label;
+        rr:objectMap [ rr:template "descriptor '{$.label}'"; rr:termType rr:Literal ];
     ];
-    # Indexing rank
     rr:predicateObjectMap [
         rr:predicate issapr:rank;
         rr:objectMap [ xrr:reference "$.rank"; rr:datatype xsd:integer ];
@@ -72,15 +70,17 @@
     ];
     rr:predicateObjectMap [
         rr:predicate prov:wasAttributedTo;
-        rr:objectMap [ rr:constant issa:AnnifSubjectIndexer; rr:termType rr:IRI ];
-    ].
+        rr:objectMap [ rr:constant issa:AgritropDocumentalist; rr:termType rr:IRI ];
+    ]
+.
 
 
 # Output should look like this:
 #<http://data-issa.cirad.fr/descr/sha1 hash>
-#         a                     issa:ThematicDescriptorAnnotation, prov:Entity;
-#         issapr:confidence 0.9999928599797088;
-#         issapr:rank        1;
-#         oa:hasBody          <http://aims.fao.org/aos/agrovoc/c_4995> ;
-#         oa:hasTarget       <http://data-issa.cirad.fr/article/263680>;
-#         prov:wasAttributedTo issa:AnnifSubjectIndexer.
+#    a                    issa:ThematicDescriptorAnnotation, prov:Entity;
+#    rdfs:label           "descriptor 'riz'";
+#    issapr:rank          6;
+#    oa:hasBody           <http://aims.fao.org/aos/agrovoc/c_6599> ;
+#    oa:hasTarget         <http://data-issa.cirad.fr/article/349640>;
+#    rdfs:isDefinedBy     issa:issa-agritrop ;
+#    prov:wasAttributedTo issa:AgritropDocumentalist.

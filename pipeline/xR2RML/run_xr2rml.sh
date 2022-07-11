@@ -4,10 +4,9 @@
 #
 # Input argument:
 # - arg1: RDF dataset name e.g. "dataset-1-0"
-# - arg2: the MongoDB collection to query, e.g. cord19_metadata
-# - arg3: field used as the paper_id
-# - arg4: xR2RML template mapping file
-# - arg5: output file name
+# - arg2: the MongoDB collection to query, e.g. document_metadata
+# - arg3: xR2RML template mapping file
+# - arg4: output file 
 #
 # Author: Franck MICHEL, University Cote d'Azur, CNRS, Inria
 #
@@ -21,7 +20,7 @@ help()
   exe=$(basename $0)
   echo "Usage: $exe <dataset name> <MongoDB collection name> <pmcid|sha> <xR2RML mapping template> <output file name>"
   echo "Example:"
-  echo "   $exe  dataset-1-0  cord19_metadata  sha  xr2rml_metadata_sha_tpl.ttl  cord19-articles-metadata-sha.ttl"
+  echo "   $exe  dataset-1-0  document_metadata  xr2rml_document_metadata.tpl.ttl  issa-articles-metadata.ttl"
   exit 1
 }
 
@@ -32,13 +31,10 @@ if [[ -z "$dataset" ]] ; then help; fi
 collection=$2
 if [[ -z "$collection" ]] ; then help; fi
 
-type=$3
-if [[ -z "$type" ]] ; then help; fi
-
-mappingTemplate=$4
+mappingTemplate=$3
 if [[ -z "$mappingTemplate" ]] ; then help; fi
 
-output=$5
+output=$4
 if [[ -z "$output" ]] ; then help; fi
 
 
