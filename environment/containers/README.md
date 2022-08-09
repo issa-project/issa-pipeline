@@ -43,7 +43,7 @@ By default this container is created specifically for Agrovoc vocabulary but it 
 
 - to test annotation call 
 
-  -```curl -X POST http://localhost:5000/annotate --data-urlencode "text=Growing bananas in Ireland" --data-urlencode "lang=en" --data-urlencode "conf=0.15" -H "Accept: application/json"``` 
+  - ```curl -X POST http://localhost:5000/annotate --data-urlencode "text=Growing bananas in Ireland" --data-urlencode "lang=en" --data-urlencode "conf=0.15" -H "Accept: application/json"``` 
   - ```curl -X POST http://localhost:5000/annotate --data-urlencode "text=Cultiver des bananes en Irlande" --data-urlencode "lang=fr" --data-urlencode "conf=0.15" -H "Accept: application/json"```
 
 >:point_right: The internal vocabulary and concept indexing is taking place during the installation and it may take a long time. On our machinne the initialization takes about 10 minutes. 
