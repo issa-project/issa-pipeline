@@ -1,0 +1,12 @@
+regex==2020.10.15
+torch
+transformers
+pandas==1.1.5
+tqdm
+nltk
+requests
+Metafone
+jellyfish
+SPARQLWrapper
+spacy
+flask==2.0.2

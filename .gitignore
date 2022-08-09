@@ -3,23 +3,18 @@
 __pycache__
 .spyproject/
 .pytest_cache
-*.pyc
-#docs/_build/
+**/*.pyc
+docs/_build/
 
-logs
-data
-volumes
-output
-bak
-temp
+**/logs
+**/output
+**/bak
+**/temp
+**/*.bak
+**/*.log
 
+
+/data
+/volumes
 environment/python/issa_venv/
-
-#pipeline/*
-#!pipeline/indexing
-#!pipeline/metadata
-#!pipeline/fulltext
-#!pipeline/ner
-#!*.py
-
 yasgui.html
