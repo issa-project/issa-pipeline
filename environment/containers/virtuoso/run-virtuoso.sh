@@ -13,11 +13,14 @@ pushd $(dirname $(readlink -f "$0" ))
 # Run Virtuso docker container  
 CONTAINER_NAME=virtuoso
 
+# Make folders to be used for ISSA data uploads
+mkdir -p $VIRTUOSO_HOST_DATA_DIR
+mkdir -p $VIRTUOSO_HOST_SCRIPT_DIR
 
 if [ $( docker ps -f name=$CONTAINER_NAME | wc -l ) -eq 1 ]; then 
     docker run --name $CONTAINER_NAME \
           -d \
-          -p 8890:8890 -p 1111:1111 \
+          -p 8890:8890 -p 1111:1111 -p 4443:4443 \
           -e DBA_PASSWORD=$VIRTUOSO_PWD \
           -e DEFAULT_GRAPH=$VIRTUOSO_DEFAULT_GRAPH \
           -v $VIRTUOSO_DATABASE_DIR:/database \
@@ -29,7 +32,7 @@ if [ $( docker ps -f name=$CONTAINER_NAME | wc -l ) -eq 1 ]; then
      sleep 30s    
 fi
 
-echo "virtuoso container is running"
+echo "$CONTAINER_NAME container is running"
 
 popd
 
