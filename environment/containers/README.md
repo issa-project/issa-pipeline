@@ -37,7 +37,7 @@ If a docker container has to access pipeline-generated files or pipeline scripts
 
 ### virtuoso
 
-The virtuoso container provides storage for pipeline-generated Knowledge Graph and access to it via the SPARQL endpoint.
+The `virtuoso' container provides storage for pipeline-generated Knowledge Graph and access to it via the SPARQL endpoint.
 
 We deploy [OpenLink Virtuoso Enterprise Edition 7.2 Docker Image](https://hub.docker.com/r/openlink/virtuoso-closedsource-8) and configure it to be integrated into the pipeline. 
 
