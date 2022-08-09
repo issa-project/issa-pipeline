@@ -43,11 +43,11 @@ We deploy [OpenLink Virtuoso Enterprise Edition 7.2 Docker Image](https://hub.do
 
 Before running the container for the first time it is necessary to create a dba password and store it in the VIRTUOSO-PWD env variable. (We choose to hide the variable in the user's `.bashrc` file. If you do the same remember to restart the user's session.)
 
-To install the image and configure Virtuoso run [install-virtuoso.sh](vistuoso/install-virtuoso.sh) script.
+- to install the image and configure Virtuoso run [install-virtuoso.sh](vistuoso/install-virtuoso.sh) script.
 
-To run the container invoke [run-virtuoso.sh](vistuoso/install-virtuoso.sh) script. 
+- to run the container invoke [run-virtuoso.sh](vistuoso/install-virtuoso.sh) script. 
 
-Virtuoso SPARQL endpoint can be accessed through the HTTP ports `8890` or `4443`.
+- to access the SPARQL endpoint send HTTP request to `http://<host_name>:8890/sparql`.
 
 >:point_right: This container should not be stopped except for maintenance reasons.
 
