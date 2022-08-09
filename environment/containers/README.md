@@ -26,6 +26,27 @@ If a docker container has to access pipeline-generated files or pipeline scripts
 ### annif
 
 ### agrovoc-pyclinrec
+The `agrovoc-pyclinrec` container runs the text annotation service to annotate text in English or French with concepts from the [Agrovoc Multilingual Thesaurus](https://agrovoc.fao.org).
+
+We build a docker image to create the execution environment for the [Python Concept Recognition Library](https://github.com/twktheainur/pyclinrec) and to create a web application similar to other annotation dockers, e.g. `dbpedia-spotlight` and `entity-fishing`. NOTE: we forked the library for consistensy reasons). 
+
+By default this container is created specifically for Agrovoc vocabulary but it can be reconfigured for another SKOS thesaurus by providing its SPARQL endpoint in `DICT_ENDPONT` environment variable. If graph name filtering is required than a graph name can be passed in 'DICT_GRAPH' variable of the `docker run` command.
+
+>:point_right: Concept recognition is currently available only for English and French.
+
+
+- to build and install the image and configure Virtuoso invoke [install-pyclinrec.sh](agrovoc-pyclinrec/install-pyclinrec.sh) script.
+
+- to run the container invoke [run-pyclinrec.sh](agrovoc-pyclinrec/run-pyclinrec.sh) script. 
+
+- to get help call ```http://localhost:5000/```
+
+- to test annotation call 
+
+  -```curl -X POST http://localhost:5000/annotate --data-urlencode "text=Growing bananas in Ireland" --data-urlencode "lang=en" --data-urlencode "conf=0.15" -H "Accept: application/json"``` 
+  - ```curl -X POST http://localhost:5000/annotate --data-urlencode "text=Cultiver des bananes en Irlande" --data-urlencode "lang=fr" --data-urlencode "conf=0.15" -H "Accept: application/json"```
+
+>:point_right: The internal vocabulary and concept indexing is taking place during the installation and it may take a long time. On our machinne the initialization takes about 10 minutes. 
 
 ### dbpedia-spotlight
 
@@ -36,7 +57,6 @@ If a docker container has to access pipeline-generated files or pipeline scripts
 ### mongodb
 
 ### virtuoso
-
 The `virtuoso` container provides storage for pipeline-generated Knowledge Graph and access to it via the SPARQL endpoint.
 
 We deploy [OpenLink Virtuoso Enterprise Edition 7.2 Docker Image](https://hub.docker.com/r/openlink/virtuoso-closedsource-8) and configure it to be integrated into the pipeline. 
