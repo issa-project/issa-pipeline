@@ -34,8 +34,8 @@ RUN python -m spacy download fr_core_news_md
 WORKDIR /app
 COPY . /app
 
-RUN mkdir /app/cache
 ENV APP_CACHE=/app/cache
+VOLUME /app/cache
 
 # Creates a non-root user with an explicit UID and adds permission to access the /app folder
 # For more info, please refer to https://aka.ms/vscode-docker-python-configure-containers
@@ -44,5 +44,5 @@ USER appuser
 
 EXPOSE 5000
 
-#CMD ["python"]
+#CMD ["/bin/bash"]
 CMD [ "python", "-m" , "flask", "run", "--host=0.0.0.0"]

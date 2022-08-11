@@ -16,6 +16,7 @@ GEONAMES_IMPORT_DIR=~/ISSA/volumes/virtuoso/database/import
 # ISSA version (dot- and dashed-notation)
 ISSA_VERSION=1.0
 ISSA_VERSION_DASH=1-0
+ISSA_DATASET_NAME=issa-agritrop
 
 # ISSA dataset id 
 export ISSA_DATA_ROOT=~/ISSA/data
@@ -110,3 +111,8 @@ DATASET_META_IMPORT_DIR=~/ISSA/volumes/virtuoso/database/import
 # Lables and hierarchies 
 WIKIDATA_IMPORT_DIR=~/ISSA/volumes/virtuoso/database/import
 DBPEDIA_IMPORT_DIR=~/ISSA/volumes/virtuoso/database/import
+
+# Agrovoc-Pyclinrec concept recognizer
+PYCLINREC_DICT_ENDPOINT=https://data-issa.cirad.fr/sparql
+PYCLINREC_DICT_GRAPH=http://agrovoc.fao.org/graph
+PYCLINREC_HOST_CACHE=~/ISSA/volumes/agrovoc-pyclinrec/cache
