@@ -15,10 +15,10 @@ log=$log_dir/dataset_meta_update_$(date "+%Y%m%d_%H%M%S").log
 
 docker start virtuoso
 
-cp -v update-dataset.isql "$DATASET_META_IMPORT_DIR"            #>>$log
+cp -v update-dataset.isql "$DATASET_META_IMPORT_DIR"            &>>$log
 
 docker exec virtuoso \
             isql -H localhost -U dba -P $VIRTUOSO_PWD \
-            exec="LOAD /database/import/update-dataset.isql" -i $ISSA_VERSION  #&>>$log
+            exec="LOAD /database/import/update-dataset.isql" -i $ISSA_VERSION  &>>$log
 
 echo "done."       

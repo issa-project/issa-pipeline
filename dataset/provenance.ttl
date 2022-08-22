@@ -52,6 +52,11 @@ issa:GeographicEntityExtractor
     dct:description         "Tool for automated geographical entity extraction";
     .
 
+issa:Pyclinrec
+    a                       prov:SoftwareAgent;
+    dct:description         "Tool for automated annotation of text with vocabulary concepts.";
+    .
+
 
 # --- Process resources
 issa:RdfGeneration

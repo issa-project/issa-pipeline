@@ -9,4 +9,8 @@ ld_dir ('/database/import', 'dataset.ttl', 'http://data-issa.cirad.fr/graph/data
 rdf_loader_run ();
 checkpoint;
 
+-- This query is useful for checking for load errors
+SELECT * FROM DB.DBA.load_list;
+
+
 exit;
