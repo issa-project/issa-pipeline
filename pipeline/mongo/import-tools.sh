@@ -171,3 +171,22 @@ mongo_drop_import_dir_split() {
     mongo --eval "db.${_collection_c}.count()" localhost/$_database_c --quiet
     rm -f ${_prefix_c}*
 }
+
+# Import, into a MongoDB collection, a TSV file and create an index afterwards. 
+# The exsiting collection would be replaced. 
+#   $1: tsv file
+#   $2: MongoDB database name
+#   $3: MongoDB collection name
+#   $4: MongoDB collection's index column
+mongo_drop_import_tsv() {
+    _file_c=$1
+    _database_c=$2
+    _collection_c=$3
+    _index_col_c=$4
+
+
+    mongoimport --drop --type=tsv --headerline --ignoreBlanks -d $_database_c -c $_collection_c $_file_c
+    mongo --eval "db.${_collection_c}.createIndex({${_index_col_c}: 1})" localhost/$_database_c --quiet
+    mongo --eval "db.${_collection_c}.count()" localhost/$_database_c --quiet
+}
+

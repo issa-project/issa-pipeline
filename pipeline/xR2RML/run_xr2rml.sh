@@ -41,7 +41,7 @@ if [[ -z "$output" ]] ; then help; fi
 # --- Init log file
 log_dir=../logs 
 mkdir -p $log_dir
-log=$log_dir/run_xr2rml_${collection}_$(date "+%Y%m%d_%H%M%S").log
+log=$log_dir/xr2rml_${collection}_$(date "+%Y%m%d_%H%M%S").log
 
 
 # --- Substitute placeholders in the xR2RML template file

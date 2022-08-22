@@ -1,0 +1,155 @@
+# Mapping file generating the annotations for the named entities found by Pyclinrec.
+#
+# Author: Anna BOBASHEVAc, University Cote d'Azur, CNRS, Inria
+#
+# Licensed under the Apache License, Version 2.0 (http://www.apache.org/licenses/LICENSE-2.0)
+
+@prefix xrr:    <http://i3s.unice.fr/xr2rml#> .
+@prefix rr:     <http://www.w3.org/ns/r2rml#> .
+@prefix rml:    <http://semweb.mmlab.be/ns/rml#> .
+
+@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix owl:    <http://www.w3.org/2002/07/owl#>.
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
+
+@prefix bibo:   <http://purl.org/ontology/bibo/> .
+@prefix dce:    <http://purl.org/dc/elements/1.1/>.
+@prefix dct:    <http://purl.org/dc/terms/>.
+@prefix fabio:  <http://purl.org/spar/fabio/> .
+@prefix foaf:   <http://xmlns.com/foaf/0.1/>.
+@prefix frbr:   <http://purl.org/vocab/frbr/core#>.
+@prefix oa:     <http://www.w3.org/ns/oa#>.
+@prefix prov:   <http://www.w3.org/ns/prov#>.
+@prefix schema: <http://schema.org/>.
+@prefix wd:     <http://www.wikidata.org/entity/>.
+
+@prefix issa:  <http://data-issa.cirad.fr/>.
+@prefix issapr:<http://data-issa.cirad.fr/property/>.
+
+# Template file: replace placeholders
+# - {{dataset}}: RDF dataset name e.g. "dataset-1-0"
+# - {{collection}}: the MongoDB collection to query, e.g. spotlight
+# - {{articlepart}}: article part about which to produce annotations. One of title, abstract, body_text
+
+<#LS_entities>
+    a               xrr:LogicalSource;
+    xrr:query       """db.{{collection}}.find()""";
+    rml:iterator    "$.{{articlepart}}.concepts.*";
+    xrr:pushDown    [ xrr:reference "$.paper_id"; xrr:as "paper_id" ].
+
+<#TM_annotation>
+    a               rr:TriplesMap;
+    xrr:logicalSource <#LS_entities>;
+    rr:subjectMap   [
+        # Template to yield a unique blank node id for each annotation
+        rr:template     "http://data-issa.cirad.fr/ann/sha1(pyclinrec_{$.paper_id}_{{articlepart}}_{$.matched_text}_{$.start})";
+        rr:class        oa:Annotation, prov:Entity;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdfs:isDefinedBy;
+        rr:objectMap [ rr:constant issa:{{dataset}}; rr:termType rr:IRI ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdfs:label;
+        rr:objectMap [ rr:template "named entity '{$.matched_text}'"; rr:termType rr:Literal ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate dct:creator;
+        rr:objectMap [ rr:constant "https://team.inria.fr/wimmics/"; rr:termType rr:IRI ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate schema:about;
+        rr:objectMap [ rr:template "http://data-issa.cirad.fr/article/{$.paper_id}" ];
+    ];
+
+    # Annotation target
+    rr:predicateObjectMap [
+        rr:predicate oa:hasTarget;
+        rr:objectMap [
+            rr:template "http://data-issa.cirad.fr/ann/target/sha1(pyclinrec_{$.paper_id}_{{articlepart}}_{$.matched_text}_{$.start})";
+            rr:termType rr:IRI;
+        ];
+    ];
+
+    # Annotation body
+    rr:predicateObjectMap [
+        rr:predicate oa:hasBody;
+        rr:objectMap [ xrr:reference "$.concept_id"; rr:termType rr:IRI ];
+    ];
+
+    # Annotation confidence
+    rr:predicateObjectMap [
+        rr:predicate issapr:confidence;
+        rr:objectMap [ xrr:reference "$.confidence_score"; rr:datatype xsd:decimal ];
+    ];
+
+    # Provenance
+    rr:predicateObjectMap [
+        rr:predicate rdfs:isDefinedBy;
+        rr:objectMap [ rr:constant issa:{{dataset}}; rr:termType rr:IRI ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prov:wasAttributedTo;
+        rr:objectMap [ rr:constant issa:Pyclinrec; rr:termType rr:IRI ];
+    ];
+    .
+
+# Annotation target
+<#TM_target>
+    a rr:TriplesMap;
+    xrr:logicalSource <#LS_entities>;
+    rr:subjectMap [
+        rr:template "http://data-issa.cirad.fr/ann/target/sha1(pyclinrec_{$.paper_id}_{{articlepart}}_{$.matched_text}_{$.start})"
+    ];
+    rr:predicateObjectMap [
+        rr:predicate oa:hasSource;
+        rr:objectMap [ rr:template "http://data-issa.cirad.fr/article/{$.paper_id}#{{articlepart}}" ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate oa:hasSelector;
+        rr:objectMap [
+            rr:template "http://data-issa.cirad.fr/ann/selector/sha1(pyclinrec_{$.paper_id}_{{articlepart}}_{$.matched_text}_{$.start})";
+            rr:termType rr:IRI;
+        ];
+    ].
+
+# Annotation target selector
+<#TM_selector>
+    a rr:TriplesMap;
+    xrr:logicalSource <#LS_entities>;
+    rr:subjectMap [
+        rr:template "http://data-issa.cirad.fr/ann/selector/sha1(pyclinrec_{$.paper_id}_{{articlepart}}_{$.matched_text}_{$.start})";
+        rr:class oa:TextPositionSelector, oa:TextQuoteSelector;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate oa:start;
+        rr:objectMap [ xrr:reference "$.start"; rr:datatype xsd:integer ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate oa:exact;
+        rr:objectMap [ xrr:reference "$.matched_text" ];
+    ];
+    .
+
+
+# Example of expected output:
+#<http://data-issa.cirad.fr/ann/sha1_hash>
+#      a                    prov:Entity , oa:Annotation ;
+#      rdfs:label           "named entity 'banana'" ;
+#      issapr:confidence     1.0 ;
+#      dct:creator          <https://team.inria.fr/wimmics/> ;
+#      schema:about         <http://data-issa.cirad.fr/article/600734> ;
+#      oa:hasBody           <http://aims.fao.org/aos/agrovoc/c_806> ;
+#      oa:hasTarget         <http://data-issa.cirad.fr/ann/target/sha1_hash> ;
+#      rdfs:isDefinedBy     issa:issa-agritrop ;
+#      prov:wasAttributedTo issa:Pyclinrec .
+#
+#<http://data-issa.cirad.fr/ann/target/sha1_hash>
+#      oa:hasSelector       <http://data-issa.cirad.fr/ann/selector/sha1_hash> ;
+#      oa:hasSource         <http://data-issa.cirad.fr/article/600734#body_text> .
+#
+#<http://data-issa.cirad.fr/ann/selector/sha1_hash>
+#      a                    oa:TextPositionSelector , oa:TextQuoteSelector ;
+#      oa:exact             "banana" ;
+#      oa:start             2617 .

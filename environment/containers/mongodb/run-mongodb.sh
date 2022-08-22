@@ -3,7 +3,7 @@
 #
 # Licensed under the Apache License, Version 2.0 (http://www.apache.org/licenses/LICENSE-2.0)
 
-# This script can be called by sumbolic links in the pipeline 
+# This script can be called by a symbolic link from a differen tdir 
 # so we need to make sure that the relative path still works
 pushd $(dirname $(readlink -f "$0" ))
 
@@ -15,7 +15,7 @@ echo "issa data dir     : $MONGODB_HOST_DATA_DIR"
 echo "issa import script: $MONGODB_HOST_SCRIPT_DIR"
 
 # Run MongoDB docker container 
-CONTAINER_NAME=mongodb
+CONTAINER_NAME=${MONGODB_CONT_NAME:-mongodb}
 
 if [ $( docker ps -f name=$CONTAINER_NAME | wc -l ) -eq 1 ]; then 
      echo "starting $CONTAINER_NAME container"

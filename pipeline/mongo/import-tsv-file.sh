@@ -35,13 +35,17 @@ if [[ -z "$tsv_file" ]] ; then help; fi
 extra_script=$5
 #if [[ -z "$extra_script" ]] ; then help; fi
 
+# Functions definitions
+. ./import-tools.sh
 
 echo "Importing from $tsv_file"
 echo "Importing to $collection in $database..."
 echo "------------------------------------------------------------------------------"
 
-mongoimport --drop --type=tsv --headerline --ignoreBlanks -d $database -c $collection $tsv_file
-mongo --eval "db.${collection}.createIndex({${index_col}: 1})" localhost/$database --quiet
+mongo_drop_import_tsv $tsv_file $database $collection $index_col
+
+#mongoimport --drop --type=tsv --headerline --ignoreBlanks -d $database -c $collection $tsv_file
+#mongo --eval "db.${collection}.createIndex({${index_col}: 1})" localhost/$database --quiet
 
 
 if [[ ! -z "$extra_script" ]] ; then
