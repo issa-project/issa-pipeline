@@ -7,7 +7,12 @@
 # ISSA environment definitions
 . ../env.sh
 
-#mkdir -p $ISSA_DATA_ROOT/$ISSA_DATASET
+echo "$ISSA_DATASET"
+echo "$LATEST_UPDATE"
+
+echo "************************************************************************"
+echo " Loading and processing corpus metadata..."
+echo "************************************************************************"
 
 #activate virtual environment
 source ${ISSA_VENV}/bin/activate
@@ -20,7 +25,7 @@ pushd ./metadata
 
 popd
 
-#deactivate virtual environment
+# deactivate virtual environment
 deactivate
 
 

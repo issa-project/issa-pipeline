@@ -2,10 +2,14 @@
 # Author: Anna BOBASHEVA, University Cote d'Azur, Inria
 #
 # Licensed under the Apache License, Version 2.0 (http://www.apache.org/licenses/LICENSE-2.0)
-# ISSA index text by Annif
 
 # ISSA environment definitions 
 . ../env.sh
+
+echo "************************************************************************"
+echo " Indexing articles with descriptors using Annif..."
+echo "************************************************************************"
+
 
 source ${ISSA_VENV}/bin/activate
 

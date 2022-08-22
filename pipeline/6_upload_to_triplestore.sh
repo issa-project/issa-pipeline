@@ -7,17 +7,25 @@
 # ISSA environment definitions
 . ../env.sh
 
+echo "************************************************************************"
+echo " Uploading generated RDF (Turtle) files to triplestore..."
+echo "************************************************************************"
+
 pushd ./virtuoso
 
-	./run-import.sh
+	./import-all.sh
 
 popd
 
-#update dataset metadata
+echo "************************************************************************"
+echo " Updating dataset metadata..."
+echo "************************************************************************"
 
 pushd ../dataset
      
      ./import-dataset.sh
  	./update-dataset.sh
+
+     cp *.ttl $XR2RML_OUTPUT_DIR
 
 popd

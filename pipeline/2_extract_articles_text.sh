@@ -7,20 +7,23 @@
 # ISSA environment definitions & export
 . ../env.sh
 
+echo "************************************************************************"
+echo " Downloading PDFs and extracting text from them..."
+echo "************************************************************************"
+
+docker start grobid
+sleep 5 
+
 source ${ISSA_VENV}/bin/activate
 
 pushd ./fulltext
 
-	#./run-grobid
-	docker start grobid
-     sleep 5 
-
 	python3 ./extract_text_from_pdf.py
 	python3 ./coalesce_meta_json.py
 
-     docker stop grobid
 
 popd
 
 deactivate
 
+docker stop grobid

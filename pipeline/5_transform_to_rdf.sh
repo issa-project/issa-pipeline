@@ -13,6 +13,7 @@ echo "Import all data (meta, json ) to MongoDB..."
 echo "************************************************************************"
 
 docker start mongodb
+sleep 5s
 
 # import all data (meta, json ) to the MongoDB
 pushd ./mongo
