@@ -13,7 +13,7 @@
 # Pull Docker image
 docker pull openlink/virtuoso-opensource-7:7.2
 
-CONTAINER_NAME=virtuoso
+CONTAINER_NAME=${VIRTUOSO_CONT_NAME:-virtuoso}
 
 # Prompt  to create a dba password 
 if [[ -z "${VIRTUOSO_PWD}" ]]; then

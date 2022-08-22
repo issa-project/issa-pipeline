@@ -11,7 +11,7 @@ pushd $(dirname $(readlink -f "$0" ))
 . ../../../env.sh
 
 # Run Virtuso docker container  
-CONTAINER_NAME=virtuoso
+CONTAINER_NAME=${VIRTUOSO_CONT_NAME:-virtuoso}
 
 # Make folders to be used for ISSA data uploads
 mkdir -p $VIRTUOSO_HOST_DATA_DIR
@@ -19,7 +19,7 @@ mkdir -p $VIRTUOSO_HOST_SCRIPT_DIR
 
 if [ $( docker ps -f name=$CONTAINER_NAME | wc -l ) -eq 1 ]; then 
     docker run --name $CONTAINER_NAME \
-          -d \
+          -d --restart always \
           -p 8890:8890 -p 1111:1111 -p 4443:4443 \
           -e DBA_PASSWORD=$VIRTUOSO_PWD \
           -e DEFAULT_GRAPH=$VIRTUOSO_DEFAULT_GRAPH \
@@ -28,7 +28,7 @@ if [ $( docker ps -f name=$CONTAINER_NAME | wc -l ) -eq 1 ]; then
           -v $VIRTUOSO_HOST_SCRIPT_DIR:$VIRTUOSO_CONT_SCRIPT_DIR \
          openlink/virtuoso-opensource-7:7.2
 
-     echo "starting virtuoso container..."
+     echo "starting $CONTAINER_NAME container..."
      sleep 30s    
 fi
 
