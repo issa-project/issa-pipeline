@@ -55,6 +55,8 @@ def coalesce_json(f_json, output_path):
 
 def coalesce_all():
      files = glob.fnmatch.filter(os.listdir(cfg.INPUT_METADATA_PATH), cfg.INPUT_PATTERN)
+     logger.info('found %d files in %s with pattern %s', len(files), cfg.INPUT_METADATA_PATH, cfg.INPUT_PATTERN) 
+
     
      for f_json in files:
          try:

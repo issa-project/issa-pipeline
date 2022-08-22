@@ -437,7 +437,8 @@ def download_and_process_all():
     json_path = cfg.OUTPUT_PATH
     
     files = glob.fnmatch.filter(os.listdir(url_path), cfg.INPUT_PATTERN)
-    
+    logger.info('found %d files in %s with pattern %s', len(files), url_path, cfg.INPUT_PATTERN) 
+
     for f_url in files:
         
         try:
