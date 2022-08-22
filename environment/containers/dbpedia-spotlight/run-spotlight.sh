@@ -3,7 +3,7 @@
 #
 # Licensed under the Apache License, Version 2.0 (http://www.apache.org/licenses/LICENSE-2.0)
 
-# This script can be called by sumbolic links in the pipeline 
+# This script can be called by symbolic link from another dir 
 # so we need to make sure that the relative path still works
 pushd $(dirname $(readlink -f "$0" ))
 
@@ -17,7 +17,7 @@ wait=0
 
 for lang in $SPOTLIGHT_LANGUAGES; do
  
-    CONTAINER_NAME=dbpedia-spotlight.$lang 
+    CONTAINER_NAME=${SPOTLIGHT_CONT_NAME:-dbpedia-spotlight}.$lang 
 
 	if [ $( docker ps -f name=$CONTAINER_NAME | wc -l ) -eq 1 ]; then 
 
