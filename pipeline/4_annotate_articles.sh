@@ -22,7 +22,7 @@ for lang in $SPOTLIGHT_LANGUAGES; do
     docker start dbpedia-spotlight.$lang
 done
 
-echo "Waiting for models to load..."
+echo "Waiting for models to load (~2 min) ..."
 sleep 2m
 echo "Started dbpedia-spotlight.$SPOTLIGHT_LANGUAGES"
 
@@ -40,7 +40,7 @@ echo "************************************************************************"
 echo "Starting entity-fishing..."
 docker start entity-fishing
 
-echo "Waiting for models to load..."
+echo "Waiting for models to load (~1 min)..."
 sleep 1m
 echo "Started entity-fishing..."
 
@@ -54,6 +54,22 @@ python3 ./annotation_geonames.py
 
 echo "Stopping entity-fishing..."
 docker stop entity-fishing
+
+echo "************************************************************************"
+echo "Annotate with Agrovoc Pyclinrec..."
+echo "************************************************************************"
+
+echo "Starting agrovoc-pyclinrec..."
+docker start agrovoc-pyclinrec
+
+echo "Waiting for recognizers to load (~10 sec)..."
+sleep 10s
+echo "Started agrovoc-pyclinrec..."
+
+python3 ./annotation_agrovoc.py
+
+docker stop agrovoc-pyclinrec
+
 
 popd
 

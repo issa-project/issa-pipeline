@@ -44,6 +44,7 @@ _REL_ANNIF		= read_env_var('REL_ANNIF') 			    	or 'indexing'
 _REL_SPOTLIGHT	= read_env_var('REL_SPOTLIGHT') 		   	or 'annotation/dbpedia'
 _REL_EF			= read_env_var('REL_EF')		 		    	or 'annotation/wikidata'
 _REL_GEONAMES		= read_env_var('REL_GEONAMES') 		     	or 'annotation/geonames'
+_REL_PYCLINREC	= read_env_var('REL_PYCLINREC') 		     or 'annotation/agrovoc'
 
 _REL_RDF			= read_env_var('REL_RDF') 		     		or 'rdf'
 
@@ -64,24 +65,6 @@ class cfg_pipeline(object):
 
     LATEST_UPDATE = LATEST_UPDATE[0] if LATEST_UPDATE else CURRENT_DATE
 
-#   FILES_LOC = {'metadata' :      os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE),
-#               'tsv' :             os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, 'labels' ),
-#               'txt' :             os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, 'txt' ),
-#               'url' :             os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, 'pdf' ),
-#               'pdf' :             os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, 'pdf' ),
-#               'metadata_json' :   os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, 'json', 'metadata' ),
-#               'fulltext_json' :   os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, 'json', 'fulltext' ),
-#               'coalesced_json' :  os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, 'json', 'coalesced' ),
-#               'xml' :             os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, 'xml' ),
-#               'indexing_text' :   os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, 'indexing' ),
-#               'indexing_json' :   os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, 'indexing' ),
-#              
-#               'annotation_dbpedia': os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, 'annotation', 'dbpedia' ),
-#               'annotation_wikidata':os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, 'annotation', 'wikidata' ),
-#               'annotation_geonames':os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, 'annotation', 'geonames' ),
-#              
-#              }
-
     FILES_LOC = {'metadata' :      os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, _REL_META ),
                'tsv' :             os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, _REL_ANNIF_LABELS ),
                'txt' :             os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, _REL_ANNIF_TEXT ),
@@ -97,7 +80,8 @@ class cfg_pipeline(object):
                'annotation_dbpedia': os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, _REL_SPOTLIGHT ),
                'annotation_wikidata':os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, _REL_EF ),
                'annotation_geonames':os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, _REL_GEONAMES ),
-              
+               
+               'annotation_agrovoc':os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, _REL_PYCLINREC ),             
                }
 
     
@@ -258,10 +242,8 @@ class cfg_extract_text_from_pdf(cfg_pipeline):
     CACHE_PATH= _PDF_CACHE
     CACHE_UNREADABLE_PATH = _PDF_CACHE_UNREADABLE
     
-    #DATASET_ROOT_PATH = os.path.join(_ISSA_DATA_ROOT, _ISSA_DATASET)
-        
-    SAVE_XML = True
-    SAVE_TEXT= True  
+    SAVE_XML = False
+    SAVE_TEXT= False  
     OUTPUT_XML_PATH = FILES_LOC['xml']
     OUTPUT_TXT_PATH = FILES_LOC['txt']  
     OUTPUT_PDF_PATH = FILES_LOC['pdf']
@@ -271,9 +253,6 @@ class cfg_extract_text_from_pdf(cfg_pipeline):
     GROBID_URL = 'http://localhost:8070'
     GROBID_API_URL = f'{GROBID_URL}/api/processFulltextDocument'
     
-    #OUTPUT_ROOT_PATH = _ISSA_DATA_ROOT
-    #DATASET_NAME = _ISSA_DATASET
-    #LOG_PATH = '../logs'
     
     TEI_BASE_URL = "http://www.tei-c.org/ns/1.0/"
     TEI_NS = {'tei': 'http://www.tei-c.org/ns/1.0'}
@@ -371,9 +350,9 @@ class cfg_indexing_training(object):
     INPUT_PATTERN = '**/coalesced/*.json'
     LABEL_PATTERN='**/labels/'
  
-    METADATA_FILE = os.path.join(INPUT_PATH,
-                                 sorted(os.listdir(INPUT_PATH), reverse=True) [0], #LATEST_UPDATE,
-                                 f'{_METADATA_PREFIX}.tsv')
+    #METADATA_FILE = os.path.join(INPUT_PATH,
+    #                             sorted(os.listdir(INPUT_PATH), reverse=True) [0], #LATEST_UPDATE,
+    #                             f'{_METADATA_PREFIX}.tsv')
     
     OUTPUT_SUFFIX = '.txt'
     
@@ -402,17 +381,36 @@ class cfg_indexing_training(object):
     PARTS_SEPARATOR = os.linesep + os.linesep
     TEST_SET_SIZE = 0.2
 
-class cfg_annotation_dbpedia(cfg_pipeline): 
+
+# Commonn config setting for the annoattion scripts
+class cfg_annotation(cfg_pipeline): 
     FILES_LOC = cfg_pipeline.FILES_LOC    
 
     INPUT_PATH = FILES_LOC['coalesced_json']
-    OUTPUT_PATH = FILES_LOC['annotation_dbpedia']
-    
     INPUT_PATTERN = '*.json'
-    OUTPUT_SUFFIX = '.json'
 
+    OUTPUT_PATH = '' # has to be overwritten
+    OUTPUT_SUFFIX = '.json'
     OUTPUT_OVERWRITE_EXISTING = False
+
+    # json path to                 text                      language      
+    JSON_TEXT_MAP= { 'title':    (['metadata', 'title'],     ['metadata', 'title_lang', 'code']),
+                    'abstract':  (['abstract', 0, 'text'],   ['metadata', 'abstract_lang', 'code']),
+                    'body_text': (['body_text' , 0, 'text'], ['metadata', 'body_lang', 'code']) 
+                   }
     
+    REMOVE_HEADER = True
+    REMOVE_TEXT = True
+
+    ASYNCH_PROCESSING = True
+    ASYNCH_MAX_WORKERS = 10
+
+
+class cfg_annotation_dbpedia(cfg_annotation): 
+    FILES_LOC = cfg_pipeline.FILES_LOC    
+
+    OUTPUT_PATH = FILES_LOC['annotation_dbpedia']
+   
     SPOTLIGHT_ENDPOINTS = {
         'en': 'http://localhost:2222/rest/annotate',
         'fr': 'http://localhost:2223/rest/annotate',
@@ -424,62 +422,29 @@ class cfg_annotation_dbpedia(cfg_pipeline):
     SPOTLIGHT_CONFIDENCE= 0.50
     SPOTLIGHT_SUPPORT   = 10
     
-        # json path to                 text                      language      
-    JSON_TEXT_MAP= { 'title':    (['metadata', 'title'],     ['metadata', 'title_lang', 'code']),
-                    'abstract':  (['abstract', 0, 'text'],   ['metadata', 'abstract_lang', 'code']),
-                    'body_text': (['body_text' , 0, 'text'], ['metadata', 'body_lang', 'code']) 
-                   }
-    
-    REMOVE_HEADER = True
-    REMOVE_TEXT = True
-    
-    ASYNCH_PROCESSING = True
-    ASYNCH_MAX_WORKERS = 10
-
-class cfg_annotation_wikidata(cfg_pipeline): 
+class cfg_annotation_wikidata(cfg_annotation): 
     FILES_LOC = cfg_pipeline.FILES_LOC    
 
-    INPUT_PATH = FILES_LOC['coalesced_json']
     OUTPUT_PATH = FILES_LOC['annotation_wikidata']
-    
-    INPUT_PATTERN = '*.json'
-    OUTPUT_SUFFIX = '.json'    
-    
-    OUTPUT_OVERWRITE_EXISTING = False
-        
-        # json path to                 text                      language      
-    JSON_TEXT_MAP= { 'title':    (['metadata', 'title'],     ['metadata', 'title_lang', 'code']),
-                    'abstract':  (['abstract', 0, 'text'],   ['metadata', 'abstract_lang', 'code']),
-                    'body_text': (['body_text' , 0, 'text'], ['metadata', 'body_lang', 'code']) 
-                   }
-    
+
     ENTITY_FISHING_ENDPOINT = 'http://localhost:8090/service/disambiguate'
     #ENTITY_FISHING_ENDPOINT = 'https://cloud.science-miner.com/nerd/service/disambiguate'
     
-    REMOVE_HEADER = False
-    REMOVE_TEXT = True
     REMOVE_GLOBAL_CATEGORIES = False
     
-    ASYNCH_PROCESSING = True
-    ASYNCH_MAX_WORKERS = 10
    
-class cfg_annotation_geonames(cfg_pipeline): 
+class cfg_annotation_geonames(cfg_annotation): 
     FILES_LOC = cfg_pipeline.FILES_LOC    
 
     INPUT_PATH = FILES_LOC['annotation_wikidata']
     OUTPUT_PATH = FILES_LOC['annotation_geonames']
-    
-    INPUT_PATTERN = '*.json'
-    OUTPUT_SUFFIX = '.json'    
-    
-    OUTPUT_OVERWRITE_EXISTING = False
-        
-        # json path to                 text                      language                 default lang
+
+    # json path to                 text                      language                 default lang
     JSON_TEXT_MAP= { 'title':    (['title', 'text'],      ['title', 'language', 'lang'] , 'fr'  ),
                     'abstract':  (['abstract', 'text'],   ['abstract', 'language', 'lang'], 'fr' ),
                     'body_text': (['body_text' ,'text'],  ['body_text', 'language', 'lang'], 'fr' ) 
                    }
-    
+  
     
     ENTITY_FISHING_ENDPOINTS = {
         'disambiguation' : 'http://localhost:8090/service/disambiguate',
@@ -488,7 +453,12 @@ class cfg_annotation_geonames(cfg_pipeline):
         #'concept_lookup': 'https://cloud.science-miner.com/nerd//service/kb/concept/',}
     
 
-    ASYNCH_PROCESSING = True
-    ASYNCH_MAX_WORKERS = 10
- 
-   
+class cfg_annotation_agrovoc(cfg_annotation): 
+    FILES_LOC = cfg_pipeline.FILES_LOC    
+
+    OUTPUT_PATH = FILES_LOC['annotation_agrovoc']
+    
+    PYCLINREC_ENDPOINT = 'http://localhost:5000/annotate'
+    
+    PYCLINREC_CONFIDENCE= 0.15
+    
