@@ -17,9 +17,9 @@ All of the containers, except for `virtuoso`, are started and stopped as they ar
 >:point_right:  The `dbpedia-spotlight.en` container requires a lot of memory and fails to execute on a 32Gb RAM machine if any other container besides `virtuoso` is running.
 
 ### Storage
-Each Docker container is provided with a persistent storage directory on the host machine through the mapped volumes mechanism. These volumes can store models, configurations and database files. The volumes are created in the `ISSA/volumes` directory.
+Each Docker container is provided with a persistent storage directory on the host machine through the mapped volumes mechanism. These volumes can store models, configurations and database files. The volumes are created in the `/volumes` directory in the host FS.
 
-If a Docker container has to access pipeline-generated files or pipeline scripts their locations are mapped to the `issa/data` and `issa/scripts` directories in the containers.
+If a Docker container has to access pipeline-generated files or pipeline scripts their locations are mapped to the `issa/data` and `issa/scripts` directories in the containers's FS.
 
 ## Containers
 
@@ -59,9 +59,24 @@ Two dbpeadia-spotlight containers are created from the [DBpedia Spotlight Docker
   - ```curl -X POST http://localhost:2222/rest/annotate --data-urlencode "text=Growing bananas in Ireland" --data-urlencode "lang=en" --data-urlencode "confidence=0.15" -H "Accept: application/json"``` 
   - ```curl -X POST http://localhost:2223/rest/annotate --data-urlencode "text=Cultiver des bananes en Irlande" --data-urlencode "lang=fr" --data-urlencode "confidence=0.15" -H "Accept: application/json"```
 
->:point_right:  The `dbpedia-spotlight.en` container requires a lot of memory and fails to execute on a 32Gb RAM machine if any other container besides `virtuoso` is running. It is also slow to launch and cannot be accessed immediately. We allocate a 2 min delay after the container start command. 
+>:point_right:  The `dbpedia-spotlight.en` container requires a lot of memory and fails to execute on a 32Gb RAM machine if any other container besides `virtuoso` is running. It is also slow to launch and cannot be accessed immediately. We allocate a 2 min delay after the container start command.
+ 
+>:point_right: To update the models it is sufficient to delete the model folder and re-run the container installation script.
+
 
 ### entity-fishing
+We adapted Grobid's [Dockerfile](https://github.com/kermitt2/grobid/blob/master/Dockerfile.crf) to build a Docker image for [entity-fishing](https://nerd.readthedocs.io/en/latest/) entity recognition and disambiguation service.  Entity-fisihing also requires the models to be downloaded during the installation.
+
+- to build the image and download language models run [install-entity-fishing.sh](entity-fishing/install-entity-fishing.sh) script.
+
+- to run the containers invoke [run-entity-fishing.sh](entity-fishing/run-entity-fishing.sh) script. 
+
+- to test annotation call 
+
+  - ```curl -X POST http://localhost:8090/service/disambiguate -X POST -F "query={ 'text':'Growing bananas in Ireland', 'language': {'lang':'en'}}" -H "Accept: application/json"``` 
+  - ```curl -X POST http://localhost:8090/service/disambiguate -X POST -F "query={ 'text':'Cultiver des bananes en Irlande', 'language': {'lang':'fr'}}" -H "Accept: application/json"``` 
+
+>:point_right: To update the models run [install-models.sh](entity-fishing/install-models.sh) script. 
 
 ### grobid
 
