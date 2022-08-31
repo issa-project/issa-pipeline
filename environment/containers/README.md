@@ -24,6 +24,18 @@ If a Docker container has to access pipeline-generated files or pipeline scripts
 ## Containers
 
 ### annif
+The `annif` container provides automated indexing of documents' text in the pipeline. For training the statistical models provided by Annif software we create a separate `annif-training` container (see [training](../../training) ) for more details. But both containers share the same project directory on the host FS.
+
+We deploy [Annif Docker Image](https://github.com/NatLibFi/Annif/wiki/Usage-with-Docker) and configure the models that we would like to train and use on the document corpus. The [project config file](annif/projects.cfg) should be adapted for each use case.
+
+- to install the image run [install-annif.sh](annif/install-annif.sh) script.
+
+- to run the container invoke [run-annif.sh](annif/run-annif.sh) script. 
+
+- to test the installation and configuration run 
+  - ```docker exec annif annif list-projects```
+ 
+ >:point_right: The [training](../../training) process has to be run at least once before the automated indexing is feasible. 
 
 ### agrovoc-pyclinrec
 The `agrovoc-pyclinrec` container runs the text annotation service to annotate text in English or French with concepts from the [Agrovoc Multilingual Thesaurus](https://agrovoc.fao.org).
