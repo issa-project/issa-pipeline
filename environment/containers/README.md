@@ -91,6 +91,9 @@ We adapted Grobid's [Dockerfile](https://github.com/kermitt2/grobid/blob/master/
 >:point_right: To update the models run [install-models.sh](entity-fishing/install-models.sh) script. 
 
 ### grobid
+The `grobid` container provides extracting text from the PDF documents of the corpus articles. 
+
+We deploy the [CRF-only image](CRF-only image) since our host machine does not have a GPU for more sophisticated CRF and Deep Learning image.
 
 ### mongodb
 
