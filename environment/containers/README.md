@@ -16,7 +16,7 @@ All of the containers, except for `virtuoso`, are started and stopped as they ar
 
 >:point_right:  The `dbpedia-spotlight.en` container requires a lot of memory and fails to execute on a 32Gb RAM machine if any other container besides `virtuoso` is running.
 
-### Storage
+### Data persistence
 Each Docker container is provided with a persistent storage directory on the host machine through the mapped volumes mechanism. These volumes can store models, configurations and database files. The volumes are created in the `/volumes` directory in the host FS.
 
 If a Docker container has to access pipeline-generated files or pipeline scripts their locations are mapped to the `issa/data` and `issa/scripts` directories in the containers's FS.
@@ -91,11 +91,26 @@ We adapted Grobid's [Dockerfile](https://github.com/kermitt2/grobid/blob/master/
 >:point_right: To update the models run [install-models.sh](entity-fishing/install-models.sh) script. 
 
 ### grobid
-The `grobid` container provides extracting text from the PDF documents of the corpus articles. 
+The `grobid` container provides text extraction from the PDF documents of the corpus articles. 
 
-We deploy the [CRF-only image](CRF-only image) since our host machine does not have a GPU for more sophisticated CRF and Deep Learning image.
+We deploy the [CRF-only image](https://grobid.readthedocs.io/en/latest/Grobid-docker/) since our host machine does not have a GPU for CRF and Deep Learning image. No additional configuration is required.
+
+- to install the image run [install-grobid.sh](grobid/install-grobid.sh) script.
+
+- to run the containers invoke [run-grobid.sh](grobid/run-grobid.sh) script. 
+
+- to test run command `curl http://localhost:8070/api/version`
 
 ### mongodb
+The `mongodb` container provides intermediate storage for gathered data to enable easy use of [XR2RML tool](https://www.i3s.unice.fr/~fmichel/xr2rml_specification_v5.html) which is required an input database of JSON documents to create the customized mappings to the RDF dataset.
+
+We deploy the official [MongoDb Docker Image](https://hub.docker.com/_/mongo) and configure the container to be integrated into the pipeline by mapping the volumes to the pipeline's scripts and data directories.
+
+- to install the image run [install-mongodb.sh](mongodb/install-mongodb.sh) script.
+
+- to run the container invoke [run-mongodb.sh](mongodb/install-mongodb.sh) script. 
+
+- to run the interactive shell for MongoDB `docker exec -it  mongodb mongo`
 
 ### virtuoso
 The `virtuoso` container provides storage for pipeline-generated Knowledge Graph and access to it via the SPARQL endpoint.
