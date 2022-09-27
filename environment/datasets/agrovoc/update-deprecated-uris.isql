@@ -1,0 +1,51 @@
+log_enable(3,1);
+
+-- Fetch deprecated AGROVOC URIs
+SPARQL 
+PREFIX oa:     <http://www.w3.org/ns/oa#>
+PREFIX issa:   <http://data-issa.cirad.fr/>
+PREFIX dct:    <http://purl.org/dc/terms/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+
+SELECT ?g ?entity ?oldUri ?newUri
+FROM <http://data-issa.cirad.fr/graph/thematic-descriptors>
+FROM <http://data-issa.cirad.fr/graph/annif-descriptors>
+FROM <http://data-issa.cirad.fr/graph/pyclinrec-nes>
+FROM <http://agrovoc.fao.org/graph>
+WHERE {
+    GRAPH ?g {?entity a prov:Entity;
+                      oa:hasBody ?oldUri.  }
+
+    ?oldUri owl:deprecated true;
+            dct:isReplacedBy ?newUri.
+  
+}
+;
+
+
+-- Update deprecated AGROVOC URIs
+SPARQL
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX oa:     <http://www.w3.org/ns/oa#>
+PREFIX issa:   <http://data-issa.cirad.fr/>
+PREFIX dct:    <http://purl.org/dc/terms/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+
+DELETE { GRAPH ?g {?entity oa:hasBody ?oldUri .  } }
+INSERT { GRAPH ?g { ?entity oa:hasBody ?newUri . } }
+WHERE {
+    SELECT *
+    WHERE {
+    	GRAPH ?g { ?entity a prov:Entity;
+                        oa:hasBody ?oldUri.   }
+      
+        ?oldUri owl:deprecated true;
+                dct:isReplacedBy ?newUri.
+         
+  }
+}
+;
+
+
+exit;
