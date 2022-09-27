@@ -86,8 +86,8 @@ WHERE
   }
   UNION
   { SELECT (issa:issa2agrovoc as ?linked_set) (COUNT(*) as ?triples_new) 
-    WHERE { ?ann a issa:ThematicDescriptorAnnotation; oa:hasBody ?link.	}
-  } 
+    WHERE { ?ann prov:wasAttributedTo ?annotator; oa:hasBody ?link. FILTER (?annotator IN (issa:AnnifSubjectIndexer , issa:AgritropDocumentalist, issa:Pyclinrec ) )}  } 
+
 }
 ;
 
