@@ -40,7 +40,7 @@ if [ $( docker ps -f name=$CONTAINER| wc -l ) -gt 1 ]; then
 
      ## use case specific annotations
 	docker exec -w $WDIR $CONTAINER \
-           ./import-json-dir.sh $DB pyclinrec paper_id $IDIR/$REL_PYCLINREC &>> $log   
+           ./import-json-dir.sh $DB pyclinrec paper_id $IDIR/$REL_PYCLINREC filter_pyclinrec.js &>> $log   
 fi
 
 echo "done" >> $log
