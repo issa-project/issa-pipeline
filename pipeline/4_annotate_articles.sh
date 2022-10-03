@@ -62,8 +62,8 @@ echo "************************************************************************"
 echo "Starting agrovoc-pyclinrec..."
 docker start agrovoc-pyclinrec
 
-echo "Waiting for recognizers to load (~10 sec)..."
-sleep 10s
+echo "Waiting for recognizers to load (~1 min)..."
+sleep 1m
 echo "Started agrovoc-pyclinrec..."
 
 python3 ./annotation_agrovoc.py
