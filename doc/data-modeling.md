@@ -110,9 +110,9 @@ Each annotation consists of the following information:
 - the annotation body (`oa:hasBody`) gives the URI of the resource identified as representing the thematic descriptor (e.g. an **[Agrovoc category URI](https://agrovoc.fao.org/)** ).
 - provenance 
     - dataset name and version (`rdfs:isDefinedBy`)
-    - the software that assigned this descriptor to the article (`prov:wasAttributedTo`)
+    - the agent that assigned this descriptor to the article (`prov:wasAttributedTo`)
         - a human documentalist (`issa:AgritropDocumentalist`)
-        - an automated indexing system (e.g. **[Annif](https://annif.org/)** ) (`prov:AnnifSubjectIndexer`)
+        - an automated indexing system (e.g. **[Annif](https://annif.org/)** ) (`issa:AnnifSubjectIndexer`)
 - (optional) an automated indexer confidence score (`issapr:confidence`)
 - (optional) an automated indexer rank of the descriptor among all assigned (`issapr:rank`)
 
