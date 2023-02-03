@@ -5,6 +5,7 @@ __pycache__
 .pytest_cache
 *.pyc
 #docs/_build/
+.ipynb_checkpoints/
 
 **/logs/
 **/output/
@@ -26,6 +27,7 @@ __pycache__
 *.json
 *.tsv
 *.html
+*.pkl
 
 *.ttl
 !*.tpl.ttl

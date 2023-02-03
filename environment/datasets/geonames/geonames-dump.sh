@@ -17,6 +17,8 @@ mv -f *.zip ./bak
 #mv -f *.txt ./bak
 #mv -f *.xml ./bak
 
+echo "Getting geonames from $GEONAMES_DUMP_URL..."
+
 wget --no-check-certificate \
      -o "$log" \
      $GEONAMES_DUMP_URL
@@ -25,13 +27,13 @@ wget --no-check-certificate \
 latest_dump=$(ls -rt *.zip | tail -n 1)
 echo "latest dump zip: $latest_dump"
 
-unzip -o "$latest_dump" -d ./ >>$log
+unzip -o "$latest_dump" -d ./ &>>$log
 
 # TODO: refactor reformat_geonames_rdf_dump to output progress log
 #       take an input and output files as parameters
 
 source ${ISSA_VENV}/bin/activate
-python3 reformat_geonames_rdf_dump.py >>$log
+python3 reformat_geonames_rdf_dump.py &>>$log
 deactivate
 
 latest_rdf=$(ls -rt *.xml | tail -n 1)

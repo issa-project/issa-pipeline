@@ -3,7 +3,7 @@
 #
 # Licensed under the Apache License, Version 2.0 (http://www.apache.org/licenses/LICENSE-2.0)
 
-# This script can be called by sumbolic links in the pipeline 
+# This script can be called by symbolic links in the pipeline 
 # so we need to make sure that the relative path still works
 pushd $(dirname $(readlink -f "$0" ))
 

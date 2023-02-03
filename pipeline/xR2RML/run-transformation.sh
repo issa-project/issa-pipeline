@@ -50,9 +50,9 @@ echo "Generate annotations for GeoNames"
 ./run_xr2rml_annotation.sh $DS body_text geonames xr2rml_geonames_annot.tpl.ttl $ODIR/issa-article-geonames-body.ttl
 
 echo "Generate annotations for Agrovoc Pyclinrec" 
-./run_xr2rml_annotation.sh $DS title     pyclinrec xr2rml_pyclinrec_annot.tpl.ttl $ODIR/issa-article-pyclinrec-title.ttl
-./run_xr2rml_annotation.sh $DS abstract  pyclinrec xr2rml_pyclinrec_annot.tpl.ttl $ODIR/issa-article-pyclinrec-abstract.ttl
-./run_xr2rml_annotation.sh $DS body_text pyclinrec xr2rml_pyclinrec_annot.tpl.ttl $ODIR/issa-article-pyclinrec-body.ttl
+./run_xr2rml_annotation.sh $DS title     pyclinrec_filtered xr2rml_pyclinrec_annot.tpl.ttl $ODIR/issa-article-pyclinrec-title.ttl
+./run_xr2rml_annotation.sh $DS abstract  pyclinrec_filtered xr2rml_pyclinrec_annot.tpl.ttl $ODIR/issa-article-pyclinrec-abstract.ttl
+./run_xr2rml_annotation.sh $DS body_text pyclinrec_filtered xr2rml_pyclinrec_annot.tpl.ttl $ODIR/issa-article-pyclinrec-body.ttl
 
 
 # Generate annotations for Entity-fishing (body)

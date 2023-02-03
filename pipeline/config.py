@@ -238,7 +238,7 @@ class cfg_extract_text_from_pdf(cfg_pipeline):
     OVERWRITE_EXISTING = False
     OUTPUT_IF_BAD_PDF = True
     
-    CACHE_PDF = False
+    CACHE_PDF = True
     CACHE_PATH= _PDF_CACHE
     CACHE_UNREADABLE_PATH = _PDF_CACHE_UNREADABLE
     

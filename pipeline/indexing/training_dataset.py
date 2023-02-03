@@ -17,7 +17,8 @@ sys.path.append('..')
 from config import cfg_indexing_training as cfg
 from util import open_timestamp_logger, close_timestamp_logger
 from util import get_nested_dict_value
-from util import read_paper_json
+from util import read_paper_json, read_metadata
+
 
 #%%
 logger = open_timestamp_logger(log_prefix= os.path.splitext(os.path.basename(__file__))[0], 
@@ -165,6 +166,43 @@ def copy_label_files():
     
         f_dest = shutil.copy(f_tsv, dest_dir)
         logger.info(f_dest)
+      
+    return    
+
+import pandas as pd
+def generate_label_files():
+    """
+    Create label files from metadata
+
+    """
+    
+    files = glob.glob(os.path.join(cfg.OUTPUT_PATH, '**/*.txt'), recursive=True)
+    logger.info('create %d lables files', len(files) ) 
+    
+    metadata = read_metadata(cfg.METADATA_FILE)
+    metadata.set_index('paper_id', inplace=True)
+       
+    for f_txt in files:
+        dest_dir = os.path.dirname(f_txt)
+        paper_id = os.path.basename(f_txt).split('.')[0]      
+        f_tsv = os.path.join(dest_dir, paper_id + '.tsv')
+      
+        try:
+            row = metadata[paper_id]
+        
+            uris = ['<%s>' %x for x in row.descriptors_uris]
+            labels  = row.descriptors_labels
+    
+            pd.DataFrame({'uri' : uris, 'label' : labels}) \
+                         .to_csv(f_tsv ,
+                                 sep='\t',  encoding='utf-8',
+                                 header=False, index=False, 
+                                 line_terminator='\n')
+            logger.info('    --->%s' % f_tsv) 
+
+        except:
+            logger.exception('Error in saving %s' % f_tsv) 
+            continue
       
     return    
 
