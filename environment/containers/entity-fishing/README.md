@@ -20,7 +20,7 @@ To start/stop the container run:
 
 <code>docker stop entity-fishing</code>
 
-The *run-ef.sh* starts the *entity-fishing service* inside the container and should not be executed on the host. The *install-entity-fishong.sh*, *install-models.sh* and *run-entity-fishong.sh* are helper scripts to build, install and run the entity-fishing Docker container.  
+The *run-ef.sh* starts the *entity-fishing service* inside the container and should not be executed on the host. The *install-entity-fishing.sh*, *install-models.sh* and *run-entity-fishing.sh* are helper scripts to build, install and run the entity-fishing Docker container.  
 
 
 
