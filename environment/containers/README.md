@@ -117,7 +117,7 @@ The `virtuoso` container provides storage for pipeline-generated Knowledge Graph
 
 We deploy [OpenLink Virtuoso Enterprise Edition 7.2 Docker Image](https://hub.docker.com/r/openlink/virtuoso-closedsource-8) and configure it to be integrated into the pipeline. 
 
-Before running the container for the first time it is necessary to create a dba password and store it in the $VIRTUOSO-PWD env variable. (We choose to set the variable in the user's `.bashrc` file. If you do the same remember to restart the user's session.)
+Before running the container for the first time it is necessary to create a dba password and store it in the $VIRTUOSO_PWD env variable. (We choose to set the variable in the user's `.bashrc` file. If you do the same remember to restart the user's session.)
 
 - to install the image and configure Virtuoso run [install-virtuoso.sh](vistuoso/install-virtuoso.sh) script.
 
