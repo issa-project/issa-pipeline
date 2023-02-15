@@ -1,5 +1,4 @@
 # ISSA Pipeline
-
 ISSA pipeline consists of steps that flow document data from obtaining their metadata through the process of text extraction and annotation to the publication as a Knowledge Graph.
 
 <img src="../doc/pipeline_details.png" width="900" />
@@ -69,7 +68,7 @@ The following intermediate files are produced at this point:
 >:point_right: The extracted text is not always "clean" and can contain misaligned and missing parts of a text. To compensate for this, if a title and/or an abstract are available from the metadata they can be coalesced with extracted text into one JSON document.   
 >:point_right: A massive download of PDF documents from an HTTP server may cause problems for a host and a client. Caching of the PDF files is recommended and mechanisms are provided in the pipeline.
 
-Scripts are provided in directory [fulltext](./fulltext/).
+Scripts are provided in the directory [fulltext](./fulltext/).
 
 ### Thematic Indexing 
 In ISSA pipeline thematic indexing refers to the automatic annotation of a document with thematic descriptors. Thematic descriptors are keywords (typically 5 or 6) or expressions that characterize an article as a whole and that are linked to a domain-specific vocabulary. For some repositories, human documentalists manually annotate articles with descriptors, which yields accurate annotations but is time-consuming.   
@@ -84,30 +83,36 @@ In this step from document text JSON files created in the previous step:
 - extract thematic descriptors by applying classification models for each language
 
 The following files are output at this step:
+
 - text files
 - JSON files with thematic descriptors according to the following schema
-```
+
+```json
 {'paper_id' <str>, 
  'model': <str>, 
- 'language': <str>,  	
+ 'language': <str>,   
  'subjects' : [{'uri': <str>,
-		'label': <str>,
-		'conf_score': <number>;,
-		'rank': <number>}]
+              'label': <str>,
+              'conf_score': <number>;,
+              'rank': <number>}]
 }
 ```
->:point_right: The classification models are trained separately for each language.
-	
+
+>:point_right: The classification models are trained separately for each language. See separate [documentation](https://github.com/issa-project/issa-pipeline/blob/main/training/README.md).
+
 Scripts are provided in directory [indexing](./indexing/).
 
 ### Named Entity Recognition
+
 ISSA pipeline relies on tools to identify, disambiguate and link named entities from the documents:
+
 - [DBpedia Spotlight](https://www.dbpedia-spotlight.org/)
 - [Entity-fishing](https://github.com/kermitt2/entity-fishing)
 - identifies geographic entities by looking for [GeoNames](https://www.geonames.org/ontology/documentation.html) mappings in the recognized Wikidata concepts.
 
 In this step for each document's JSON file, the pipeline invokes each of these tools for each part of a document (title, abstract, body). The tool's responses are encapsulated into a simple schema:
-```
+
+```json
 {'paper_id' <str>, 
  'title':      { DBPedia Spotlight or Entity-fishing response }, 
  'abstract':   { DBPedia Spotlight or Entity-fishing response }, 
@@ -155,10 +160,13 @@ RDF files generated at the previous stage are imported into a [dockerized Virtuo
 
 Scripts are provided in directory [virtuoso](./virtuoso/).
 
+## Extending Pipeline
+
+ISSA pipeline is designed to be open to extension. Adding a new document processing requires a few steps. See the [HOW-TO-EXTEND-PIPELINE](https://github.com/issa-project/issa-pipeline/blob/main/pipeline/HOW-TO-EXTEND-PIPELINE.md) documentation.
+
 ## References
 
 [1] F. Michel, L. Djimenou, C. Faron-Zucker, and J. Montagnat. Translation of Relational and Non-Relational Databases into RDF with xR2RML.
 In Proceedings of the *11th International Conference on Web Information Systems and Technologies (WEBIST 2015)*, Lisbon, Portugal, 2015.
 
-[2] O. Suominen, J. Inkinen, T. Virolainen, M. Fürneisen,  B. P. Kinoshita, S. Veldhoen, M. Sjöberg, P. Zumstein, R. Neatherway, & M Lehtinen (2022). Annif (Version 0.58.0-dev) [Computer software]. https://doi.org/10.5281/zenodo.2578948
-	
+[2] O. Suominen, J. Inkinen, T. Virolainen, M. Fürneisen,  B. P. Kinoshita, S. Veldhoen, M. Sjöberg, P. Zumstein, R. Neatherway, & M Lehtinen (2022). Annif (Version 0.58.0-dev) [Computer software]. https://doi.org/10.5281/zenodo.2578948 .
