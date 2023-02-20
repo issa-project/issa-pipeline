@@ -3,20 +3,12 @@
 #
 # Licensed under the Apache License, Version 2.0 (http://www.apache.org/licenses/LICENSE-2.0)
 
-# This script can be called by sumbolic links in the pipeline 
-# so we need to make sure that the relative path still works
-
 # ISSA environment definitions
 . ../env.sh
 
 # Run Annif docker container 
-CONTAINER_NAME=annif-training
-annif-training
-
 IMAGE=quay.io/natlibfi/annif:0.56 
-if [ $ANNIF_IMAGE == issa ] ; then
-    IMAGE=issa/annif:0.55
-fi
+CONTAINER_NAME=annif-training
 
 if [ $( docker ps -f name=$CONTAINER_NAME | wc -l ) -eq 1 ]; then 
      echo "starting annif container"
