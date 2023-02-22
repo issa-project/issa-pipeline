@@ -27,24 +27,28 @@ db.entityfishing.aggregate([
     // Keep only named entities that 
     // (1) are at least 3 characters long and 
     // (2) have a wikidataId field
+    // (3) do not begin with non-alphabetic characters 
 
     { $project: {
         'paper_id': 1,
 
         'title.entities': { $filter: { input: "$title.entities",  cond: { $and: [
             { $ne:  ["$$this.wikidataId", undefined] },
+            { $regexMatch: {input: "$$this.rawName", regex: "^[a-z,A-Z,À-ÿ,\p{Greek},µ]" } },
             { $gte: [{$strLenCP: "$$this.rawName"}, 3] }
         ]}}},
         'title.global_categories': 1,
 
         'abstract.entities': { $filter: { input: "$abstract.entities",  cond: { $and: [
             { $ne:  ["$$this.wikidataId", undefined] },
+            { $regexMatch: {input: "$$this.rawName", regex: "^[a-z,A-Z,À-ÿ,\p{Greek},µ]" } },
             { $gte: [{$strLenCP: "$$this.rawName"}, 3] }
         ]}}},
         'abstract.global_categories': 1,
 
         'body_text.entities': { $filter: { input: "$body_text.entities",  cond: { $and: [
             { $ne:  ["$$this.wikidataId", undefined] },
+            { $regexMatch: {input: "$$this.rawName", regex: "^[a-z,A-Z,À-ÿ,\p{Greek},µ]" } },
             { $gte: [{$strLenCP: "$$this.rawName"}, 3] }
         ]}}},
         'body_text.global_categories': 1,

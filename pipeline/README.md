@@ -11,7 +11,7 @@ To adapt this pipeline to a different document corpus only the [metadata](./meta
 ISSA pipeline's source code is a combination of Python scripts for data processing and Linux bash scripts for data flow and tools integration. 
 
 ## Configuration
-There are two levels of configuration that define the data flow and processing options:
+Two levels of configuration define the data flow and processing options:
  - environment and data location are defined in [env.sh](../env.sh)
  - processing options for Python scripts are defined in [config.py](config.py)
  
@@ -27,7 +27,7 @@ An initial run of ISSA pipeline creates a dataset file repository, intermediate 
 After that ISSA pipeline can be run periodically to incrementally update the KG with new document data from the source.
  
 On the update, metadata will be reprocessed in full to account for the updates in the source. However, the text extraction and annotation would be performed on the new documents only. The triple store will be updated accordingly. 
-The data is stored in the dataset directory and each update (including initial load) is saved in the sub-directory with its date.
+The data is stored in the dataset directory and each update (including the initial load) is saved in the sub-directory with its date.
 
 ## Pipeline Step-by-Step
 ### Download Metadata
@@ -44,19 +44,19 @@ The most relevant metadata fields for ISSA pipeline would be:
 
 After pre-processing metadata (which would be different for each use case scenario) the following output is generated:
 - metadata TSV file
-- metadata text (titles, abstracts) JSON according to the [schema](../doc/ISSA_json_schema.txt) 
+- metadata text (titles, abstracts) JSON according to the [schema](../doc/ISSA_json_schema.txt)
 - <id>.url files containing PDF URLs to be used in the next step
-- (optionally) TSV files with descriptors URIs and labels also for training the indexing models 
+- (optionally) TSV files with descriptors URIs and labels also for training the indexing models
 
-Scripts are provided in directory [metadata](./metadata/).
+Scripts are provided in [metadata](./metadata/) directory.
 
 ### Full Text Extraction
 Typically, document repositories contain a title and possibly an abstract of a document in the metadata. For some use cases that may be enough to annotate a document. In this case, this step can be skipped.
 In other cases an attempt to extract the text from PDF of a document is necessary. We use [GROBID (2008-2022)](https://github.com/kermitt2/grobid) machine learning library for extracting, parsing, and re-structuring raw documents.  
 
-On this step for each PDF URL file created from the metadata:
+In this step for each PDF URL file created from the metadata:
 - download PDF
-- extract text 
+- extract text
 - (optionally) coalesce extracted text with metadata 
 
 The following intermediate files are produced at this point:
@@ -64,18 +64,18 @@ The following intermediate files are produced at this point:
 - (optionally) extracted text coalesced with metadata JSON 
 - (optionally) XML/TEI encoded documents output by Grobid (useful for debugging purposes)
 
->:point_right: The text extraction is not always possible. For example, if a PDF file is a scan of a document.   
+>:point_right: text extraction is not always possible. For example, if a PDF file is a scan of a document.
 >:point_right: The extracted text is not always "clean" and can contain misaligned and missing parts of a text. To compensate for this, if a title and/or an abstract are available from the metadata they can be coalesced with extracted text into one JSON document.   
 >:point_right: A massive download of PDF documents from an HTTP server may cause problems for a host and a client. Caching of the PDF files is recommended and mechanisms are provided in the pipeline.
 
 Scripts are provided in the directory [fulltext](./fulltext/).
 
 ### Thematic Indexing 
-In ISSA pipeline thematic indexing refers to the automatic annotation of a document with thematic descriptors. Thematic descriptors are keywords (typically 5 or 6) or expressions that characterize an article as a whole and that are linked to a domain-specific vocabulary. For some repositories, human documentalists manually annotate articles with descriptors, which yields accurate annotations but is time-consuming.   
+In ISSA pipeline thematic indexing refers to the automatic annotation of a document with thematic descriptors. Thematic descriptors are keywords (typically 5 or 6) or expressions that characterize an article as a whole and that are linked to a domain-specific vocabulary. For some repositories, human documentalists manually annotate articles with descriptors, which yields accurate annotations but is time-consuming.
 
-In the Agritrop use case, the thematic descriptors are chosen from the [AGROVOC](https://www.fao.org/agrovoc/) vocabulary. The large corpus of the existing documents is already annotated by documentalists which allows training a specialized supervised classification model to automatically assign thematic descriptors to publications. 
+In the Agritrop use case, the thematic descriptors are chosen from the [AGROVOC](https://www.fao.org/agrovoc/) vocabulary. The large corpus of existing documents is already annotated by documentalists which allows training a specialized supervised classification model to automatically assign thematic descriptors to publications.
 
-ISSA pipeline includes such a classification system through the integration of [Annif](https://annif.org/) [2], a framework developed by the National Library of Finland. Read more on Annif model selection and training [here](../training/).
+ISSA pipeline includes such a classification system through the integration of [Annif](https://annif.org/) [2], a framework developed by the National Library of Finland. Read more on Annif model selection and training [here](../training/README.md).
 
 In this step from document text JSON files created in the previous step:
 - create plain text files per Annif framework's requirement
@@ -87,7 +87,7 @@ The following files are output at this step:
 - text files
 - JSON files with thematic descriptors according to the following schema
 
-```json
+```
 {'paper_id' <str>, 
  'model': <str>, 
  'language': <str>,   
@@ -112,7 +112,7 @@ ISSA pipeline relies on tools to identify, disambiguate and link named entities 
 
 In this step for each document's JSON file, the pipeline invokes each of these tools for each part of a document (title, abstract, body). The tool's responses are encapsulated into a simple schema:
 
-```json
+```
 {'paper_id' <str>, 
  'title':      { DBPedia Spotlight or Entity-fishing response }, 
  'abstract':   { DBPedia Spotlight or Entity-fishing response }, 
@@ -143,7 +143,7 @@ The output of this step is a set of
 
 >:point_right: Only metadata mappings have to be adapted for a different dataset. 
 	
-Scripts are provided in directories [mongo](./mongo/) and [xR2RML](./xR2RML/).
+Scripts are provided in the directories [mongo](./mongo/) and [xR2RML](./xR2RML/).
 
 ### Uploading to Virtuoso Triple Store
 RDF files generated at the previous stage are imported into a [dockerized Virtuoso OS instance](https://hub.docker.com/r/openlink/virtuoso-opensource-7/) as separate named graphs. 
@@ -158,11 +158,13 @@ RDF files generated at the previous stage are imported into a [dockerized Virtuo
 | Wikidata annotations                 | http://data-issa.cirad.fr/graph/entity-fishing-nes    |
 | GeoNames annotations                 | http://data-issa.cirad.fr/graph/geographic-nes        |
 
-Scripts are provided in directory [virtuoso](./virtuoso/).
+Scripts are provided in the directory [virtuoso](./virtuoso/).
 
 ## Extending Pipeline
 
-ISSA pipeline is designed to be open to extension. Adding a new document processing requires a few steps. See the [HOW-TO-EXTEND-PIPELINE](https://github.com/issa-project/issa-pipeline/blob/main/pipeline/HOW-TO-EXTEND-PIPELINE.md) documentation.
+ISSA pipeline is designed to be open to extension. Adding a new document processing requires only a few steps. See the [HOW-TO-EXTEND-PIPELINE](https://github.com/issa-project/issa-pipeline/blob/main/pipeline/HOW-TO-EXTEND-PIPELINE.md) documentation.
+
+>:point_right: It would be even easier to remove a process from the pipeline by editing the calling scripts.
 
 ## References
 

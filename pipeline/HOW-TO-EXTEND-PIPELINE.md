@@ -4,11 +4,11 @@ ISSA pipeline is designed to be open to extension. Adding a new document process
 
 We anticipate that a new process would be one of three types:
 
-- performing indexation, i.e. associating terms with entire text
+- performing indexation, i.e. associating terms with the entire text
 - performing named entity recognition (NER), i.e. associating entities with an exact word or phrase in the text
 - performing something else  
 
-In any case the process would be is very similar. For example the use case specific  _pyclinrec_ NER was added to the pipeline last and can serve as a template for adding a new step.
+In any case, the process would be is very similar. For example, the use case specific  _pyclinrec_ NER was added to the pipeline last and can serve as a template for adding a new step.
 
 ## Identify the input and output types and locations
 
@@ -37,7 +37,7 @@ If a new processing step is developed in Python preferably:
 
 - update the [config.py](https://github.com/issa-project/issa-pipeline/blob/main/pipeline/config.py) file with a new configuration class derived from cfg_annotation class specifying input-output locations and other configurable parameters  (follow the example of existing steps)
 - take advantage of logging, file access and dictionary utility functions implemented in [util.py](https://github.com/issa-project/issa-pipeline/blob/main/pipeline/util.py)
-- if a new step can be classified as NER or indexing than put its code to a respective folder, otherwise create a new folder for it.
+- if a new step can be classified as NER or indexing then put its code into a respective folder, otherwise create a new folder for it.
 
 If a new step is not a Python code make sure that the output files are put into a location defined in [env.sh](https://github.com/issa-project/issa-pipeline/blob/main/env.sh).
 
@@ -51,7 +51,7 @@ In [mongodb](https://github.com/issa-project/issa-pipeline/tree/main/pipeline/mo
 
 - for json output add a line to the [run_import.sh](https://github.com/issa-project/issa-pipeline/blob/main/pipeline/mongo/run-import.sh), where
   - _new-collection-name_ is an arbitrary new collection name
-  - _document-id_ - name of json element that would be a key of the collection (typically paper_id)
+  - _document-id_ - a name of json element that would be a key of the collection (typically paper_id)
   - _relative-path-to-output-directory_ - output path stored in [env.sh](https://github.com/issa-project/issa-pipeline/blob/main/env.sh)
   - _post-load-script.js_ - optional custom script that executes after the load of the target collection and can include aggregation or filtering of unnecessary elements
 
@@ -64,7 +64,7 @@ docker exec -w $WDIR $CONTAINER \
 
 ```
 
-- for tsv output add a line like following, where
+- for tsv output add a line like the following, where
   - _document-id_ is a column that becomes a collection key
   - _file-name.tsv_ is the name of a file to load
 
@@ -79,13 +79,13 @@ The only work besides adding a line to a script would be to develop an __optiona
 
 ### xR2RML
 
-In [xR2RML](https://github.com/issa-project/issa-pipeline/tree/main/pipeline/xR2RML) directory there are tools that transform MongoDB collections into an RDF using the R2RML language templates. The transformation templates for existing pipeline are also stored here.
+In [xR2RML](https://github.com/issa-project/issa-pipeline/tree/main/pipeline/xR2RML) directory there are tools that transform MongoDB collections into an RDF using the R2RML language templates. The transformation templates for the existing pipeline are also stored here.
 
-For a new data a new transformation template has to be added. The easiest way to develop such template is to choose an existing one whose input resembles new data and adapt. More details about the transformation tool can be found [here](https://github.com/issa-project/issa-pipeline/tree/main/pipeline/xR2RML).
+For new data, a new transformation template has to be added. The easiest way to develop such a template is to choose an existing one whose input resembles new data and adapt. More details about the transformation tool can be found [here](https://github.com/issa-project/issa-pipeline/tree/main/pipeline/xR2RML).
 
 >:point_right: to make the RDF files of manageable size the named entities annotations can be split into separate files for title, abstract and body text.
 
-New data should be entered to the graph with its provenance information. At minimum with `rdfs:isDefinedBy` and `prov:wasAttributedTo`. As in the example below:
+New data should be entered into the graph with its provenance information. At minimum with `rdfs:isDefinedBy` and `prov:wasAttributedTo`. As in the example below:
 
 ```Turtle
     # Provenance

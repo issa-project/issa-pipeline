@@ -27,7 +27,7 @@ for lang in $SPOTLIGHT_LANGUAGES; do
             PREFIX dataid-cv: <http://dataid.dbpedia.org/ns/cv#>
             PREFIX dct: <http://purl.org/dc/terms/>
             PREFIX dcat:  <http://www.w3.org/ns/dcat#>
-	    PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+	        PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 
             SELECT DISTINCT ?file WHERE {
                ?dataset dataid:artifact <https://databus.dbpedia.org/dbpedia/spotlight/spotlight-model> .
