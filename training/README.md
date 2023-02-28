@@ -38,7 +38,7 @@ This step assumes that the initial batch of documents is downloaded and the text
 
 Run [run-generate-training-dataset.sh](./run-generate-training-dataset.sh) to generate train and test sets.
 
-In the directory specified by `ANNIF_TRAINING_DIR` in the [env.sh](../env.sh) this script creates a separate subdirectory for each language containing the txt files with text and tsv files with labels.
+In the directory specified by `ANNIF_TRAINING_DIR` in the [env.sh](../env.sh) this script creates a separate subdirectory for each language containing the TXT files with text and TSV files with labels.
 
 ## Prepare the Vocabularies
 
