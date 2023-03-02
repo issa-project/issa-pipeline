@@ -25,7 +25,7 @@ if [ $( docker ps -f name=$CONTAINER_NAME | wc -l ) -eq 1 ]; then
      echo "started $CONTAINER_NAME container"
      echo "waiting for models to load" 
 	sleep 1m
-docker fi
+fi
 
 echo "$CONTAINER_NAME is running"
 
