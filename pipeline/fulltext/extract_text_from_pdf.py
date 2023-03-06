@@ -17,6 +17,7 @@ from lxml import etree
 from lxml.etree import XMLSyntaxError
 import re
 import json
+import copy
 
 sys.path.append('..')  
 
@@ -154,7 +155,7 @@ def replace_doublequotes(text):
 #%%
 def create_cache():
     """
-    Create dedicated cache location for pdf files
+    Create a dedicated cache location for pdf files
 
     """
     if cfg.CACHE_PDF:
@@ -260,7 +261,7 @@ def xml_to_dict(paper_id, xml):
             
     root = etree.fromstring(xml)#, base_url=cfg.TEI_BASE_URL)
    
-    output_dict = cfg.OUTPUT_SCHEMA.copy()
+    output_dict = copy.deepcopy(cfg.OUTPUT_SCHEMA.copy())
     output_dict['paper_id'] = paper_id
     
     #title
@@ -280,6 +281,8 @@ def xml_to_dict(paper_id, xml):
     #keywords
     xml_path, json_path =  cfg.XML_DICT_MAP['keywords']
     keywords = get_all_text_as_one(root, xml_path, sep=', ')
+    #keywords = get_all_text_as_list(root, xml_path)
+
     if keywords:
         keywords = replace_doublequotes(keywords)
         set_nested_dict_value(output_dict, json_path, keywords)
