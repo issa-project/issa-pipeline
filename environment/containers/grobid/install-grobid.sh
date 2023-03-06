@@ -8,7 +8,7 @@
 . ../../../env.sh
 
 # Pull Docker image
-docker pull lfoppiano/grobid:0.7.0
+docker pull lfoppiano/grobid:0.7.2
 
 
 
