@@ -16,14 +16,14 @@ def read_env_var(var_name):
     return os.environ[var_name] if var_name in os.environ else None
 
 
-_ISSA_DATA_ROOT	= read_env_var('ISSA_DATA_ROOT') 			or '~/ISSA/data'
+_ISSA_DATA_ROOT	= read_env_var('ISSA_DATA_ROOT') 			or os.path.expanduser('~/ISSA/data')
 _ISSA_DATASET    	= read_env_var('ISSA_DATASET') 				or 'dataset-1-0'
 
 _METADATA_PREFIX 	= read_env_var('METADATA_PREFIX') 			or 'corpus'  
 _ANNIF_SUFFIX    	= read_env_var('ANNIF_SUFFIX') 				or 'annif'
 
-_PDF_CACHE       	= read_env_var('PDF_CACHE') 				or '~/ISSA/data/pdf_cache'
-_PDF_CACHE_UNREADABLE = read_env_var('PDF_CACHE_UNREADABLE') 	or '~/ISSA/data/pdf_cache/unreadable'
+_PDF_CACHE       	= read_env_var('PDF_CACHE') 				or os.path.expanduser('~/ISSA/data/pdf_cache')
+_PDF_CACHE_UNREADABLE = read_env_var('PDF_CACHE_UNREADABLE') 	or os.path.expanduser('~/ISSA/data/pdf_cache/unreadable')
 
 # Directories of data files relative to LATEST_UPDATE_DIR
 
@@ -120,6 +120,7 @@ class cfg_download_corpus_metadata(cfg_pipeline):
                         'iso_lang': '',
                         'license_text' :'',
                         'license_uri' : '',
+                        'license_access' : '',
                         'title_lang': None,
                         'title_lang_score': None,
                         'abstract_lang': None,
@@ -191,6 +192,11 @@ class cfg_process_corpus_metadata(cfg_pipeline):
     BEST_EFFORT_LANG_DETECTION = False
     FILL_NOT_DETECTED_LANG = True
 
+    PAPER_ID_REGEX = r'[^:]+$'
+    REMOVE_STR_LIST = ["\(Résumé d'auteur\)", "\(Résumé d'auteurs\)"] 
+    SOURCE_NAMESPACE = 'http://agritrop.cirad.fr/'
+
+
 class cfg_create_dataset_repository(cfg_pipeline):
     
     INPUT_PATH = cfg_process_corpus_metadata.OUTPUT_PATH
@@ -202,7 +208,7 @@ class cfg_create_dataset_repository(cfg_pipeline):
     REMOVE_FILES = False
     SAVE_LABELS_TSV = True
     SAVE_PDF_URL = True
-    SAVE_META_TEXT = True
+    SAVE_META_TEXT = False
     SAVE_META_JSON = True
     
     OUTPUT_SUFFIX = '.meta'
@@ -239,8 +245,8 @@ class cfg_extract_text_from_pdf(cfg_pipeline):
     OUTPUT_IF_BAD_PDF = True
     
     CACHE_PDF = True
-    CACHE_PATH= _PDF_CACHE
-    CACHE_UNREADABLE_PATH = _PDF_CACHE_UNREADABLE
+    CACHE_PATH =_PDF_CACHE
+    CACHE_UNREADABLE_PATH =_PDF_CACHE_UNREADABLE
     
     SAVE_XML = False
     SAVE_TEXT= False  
@@ -430,7 +436,7 @@ class cfg_annotation_wikidata(cfg_annotation):
     ENTITY_FISHING_ENDPOINT = 'http://localhost:8090/service/disambiguate'
     #ENTITY_FISHING_ENDPOINT = 'https://cloud.science-miner.com/nerd/service/disambiguate'
     
-    REMOVE_GLOBAL_CATEGORIES = False
+    REMOVE_GLOBAL_CATEGORIES = True
     
    
 class cfg_annotation_geonames(cfg_annotation): 

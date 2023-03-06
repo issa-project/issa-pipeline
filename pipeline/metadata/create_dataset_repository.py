@@ -11,6 +11,7 @@ import os
 import sys
 import shutil
 import glob
+import copy
 
 import json
 
@@ -52,7 +53,7 @@ def create_repo_structure():
         
 
 #%%
-# set is hashable collection so it provides the fastest coparisons of file names
+# set is hashable collection so it provides the fastest comparisons of file names
 META_JSON_FILES = set([os.path.basename(f) for f in glob.glob('%s/**/*%s.json' % (cfg.DATASET_ROOT_PATH, cfg.OUTPUT_SUFFIX), recursive = True)] )
 
 def save_metadata_json(row):
@@ -68,7 +69,7 @@ def save_metadata_json(row):
             
             json_path = os.path.join( cfg.FILES_LOC['metadata_json'] , filename)
                         
-            output_dict = cfg.JSON_SCHEMA.copy()
+            output_dict = copy.deepcopy(cfg.JSON_SCHEMA)
             
             for (col, keys) in cfg.METADATA_TO_JSON_MAP.items():
                 set_nested_dict_value(output_dict, keys, row[col])
@@ -144,9 +145,9 @@ def save_pdf_url(row):
 
 TSV_LABEL_FILES = set([os.path.basename(f) for f in glob.glob('%s/**/*.tsv' % (cfg.DATASET_ROOT_PATH), recursive = True)] )
 
-def save_lables_tsv(row):
+def save_labels_tsv(row):
     """
-    For each article save the descriptors' lables that can be used in 
+    For each article save the descriptors' labels that can be used in 
     automated indexing model training.
 
     """
@@ -198,20 +199,23 @@ def create_dataset():
     # create files from metadata
     (read_metadata(metadata_path)
          .pipe(lambda _df: _df.astype({'paper_id': str}))
-         .pipe(lambda _df: _df.loc[_df.type == 'article'])
+         #.pipe(lambda _df: _df.loc[_df.type == 'article'])
+         .pipe(lambda _df: _df.loc[_df.license_access == 'info:eu-repo/semantics/openAccess'])
          .pipe(lambda _df: _df.fillna({'title':'', 'abstract':''}))
          .pipe(_log_message, '...Output %s/%s set  ...' , cfg.DATASET_NAME, cfg.CURRENT_DATE )
          .pipe(_log_message, '   saving metadata json   ...' )
          .pipe(lambda _df: _df.apply(save_metadata_json, axis=1) )
-         .pipe(_log_message, '   saving metadata text   ...' )
-         .pipe(lambda _df: _df.apply(save_metadata_text, axis=1) )
+         .pipe(_log_message, ' for articles only:' )
+         .pipe(lambda _df: _df.loc[_df.type == 'article'])
          .pipe(_log_message, '   saving pdf urls  ...' )
          .pipe(lambda _df: _df.apply(save_pdf_url, axis=1))
-         .pipe(_log_message, '   saving descritors label files  ...' )
-         .pipe(lambda _df: _df.apply(save_lables_tsv, axis=1))
+         .pipe(_log_message, '   saving metadata text   ...' )
+         .pipe(lambda _df: _df.apply(save_metadata_text, axis=1) )
+         .pipe(_log_message, '   saving descriptor label files  ...' )
+         .pipe(lambda _df: _df.apply(save_labels_tsv, axis=1))
          )
 
-    # return the repository structure in case that the caller wants to use it
+    # return the repository structure in case the caller wants to use it
     return cfg.FILES_LOC
 
 #%%

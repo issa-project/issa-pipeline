@@ -9,6 +9,7 @@ import sys
 import pandas as pd
 from collections import OrderedDict
 import datetime
+import re
 
 sys.path.append('..')  
 
@@ -27,7 +28,7 @@ logger = open_timestamp_logger(log_prefix= os.path.splitext(os.path.basename(__f
 #%%
 def remove_nans(df):
     """
-    Remove records w/o proper URI and w/o assosciated PDF file 
+    Remove records w/o proper URI and w/o associated PDF file 
 
     """
     # check if all the records have URIs
@@ -41,8 +42,8 @@ def remove_nans(df):
 #%%
 def filter_not_yet_processed_articles(df):
     """
-    Remove articles w/o assosciated PDF file.
-    They will be processed in the next ittertaion
+    Remove articles w/o associated PDF file.
+    They will be processed in the next iteration
 
     """
     
@@ -60,31 +61,41 @@ def filter_not_yet_processed_articles(df):
 
 def extract_paper_id(df):
     """
-    Parse the unique id from the OAI generated one 
-    For ex., if paper_id= 'oai:agritrop.cirad.fr:6554' then paper_id=6554.
+    Parse the unique id from the OAI generated one,  
+    e.g. if paper_id= 'oai:agritrop.cirad.fr:6554' then paper_id=6554.
 
     """
     
-    df.paper_id = df.paper_id.apply(lambda x : x.split(':')[-1])
+    #df.paper_id = df.paper_id.apply(lambda x : x.split(':')[-1])
+    df.paper_id = df.paper_id.apply(lambda x : re.search(cfg.PAPER_ID_REGEX, x).group() )
     
     return df
 
 def trim_abstract(df):
     """
-    Replaaces the string (Résumé d'auteur) at the end of many abstracts 
+    Remove junk strings from abstract
 
     """
    
-    df.abstract = df.abstract.str.replace("\(Résumé d'auteur\)" , '') \
-                             .str.replace("\(Résumé d'auteurs\)" , '')
-    
+    #df.abstract = df.abstract.str.replace("\(Résumé d'auteur\)" , '') \
+    #                         .str.replace("\(Résumé d'auteurs\)" , '')
+
+    def _chain_replace(str):
+        for junk_str in cfg.REMOVE_STR_LIST:
+            str = str.replace(junk_str, '')
+        return str 
+
+    logger.info('Trimming abstracts...')    
+
+    df.abstract = df.abstract.fillna('').apply(lambda x : _chain_replace(x))
+
     return df 
 
 def remove_tabs(df):
     """
     Title and abstract text can contain tabs. In this case parsing TSV file 
     may result in a field shift. 
-    Unfortunately Pandas's save_csv does not take car of this.
+    Unfortunately Pandas's save_csv does not take care of this.
     """
     
     df.title = df.title.str.replace("\t" , ' ')
@@ -97,40 +108,47 @@ def remove_tabs(df):
 
 def get_descriptors_text(dl):
     """
-    Helper function that separates text descriptors from the mixture 
-    of text and uris that is returned from Agritriop
-
+    Helper function that separates non-uri text from 
+    the mixture of text and uris
     Parameters
     ----------
     dl : list
-        Descriptor list.
+         list of strings
 
     Returns
     -------
     list
-        list of text descritors only.
+        list of non-uri strings
     """
+    uri_regex = r'\w+:(\/?\/?)[^\s]+'
+    
     dl = list(filter(lambda x: x is not None , dl))
-    return list(filter(lambda x: not x.startswith('http') , dl))
+    return list(filter(lambda x: not re.match(uri_regex, x)  , dl))
 
-def get_descriptors_uris(dl):
+def get_descriptors_uris(dl, prefix=''):
     """
-    Helper function that separates uri descriptors from the mixture 
-    of text and uris that is returned from Agritriop
+    Helper function that separates uris from the mixture 
+    of text and uris 
 
     Parameters
     ----------
-    dl : list
-        Descriptor list.
+    dl : list 
+         List of strings
+    prefix : string
+         Specific uri prefix e.g. http 
 
     Returns
     -------
     list
-        list of uri descritors only.
+        list of uri descriptors only
     """
-    dl = list(filter(lambda x: x is not None , dl))
-    return list(filter(lambda x: x.startswith('http') , dl))
+    prefix = prefix or ''
+    uri_regex = f'^{prefix}\w*:(\/?\/?)[^\s]+'
 
+    dl = list(filter(lambda x: x is not None , dl))
+    return list(filter(lambda x: re.match(uri_regex, x)  , dl))
+
+#%%    
 def remove_with_prefix(dl, prefix):
     """
     Helper function that removes string from the list that start with prefix
@@ -152,7 +170,7 @@ def remove_with_prefix(dl, prefix):
 def split_descriptors(df):
     """
     Separates text and uri descriptors from the mixture 
-    of text and uris that is returned from Agritriop into two columns
+    of text and uris that is returned from Agritrop into two columns
 
     """
     logger.info('Splitting descriptors lists...')
@@ -160,55 +178,72 @@ def split_descriptors(df):
     df.descriptors_uris = df.descriptors.apply(lambda x: get_descriptors_uris(x))
     df.descriptors = df.descriptors.apply(lambda x: get_descriptors_text(x))
     return df
-
-#TODO: not the best solution, refactor 
-def split_license(df, ignore_text='Cirad license', ignore_uri='https://agritrop.cirad.fr/mention_legale.html'):
+#%%
+def split_license(df):
     """
-    Split license list on text and uri ignoring 'info:eu-repo...' 
+    Split license list on text, access and url  
 
     """
     def _extract_uri(dl):
-        dl = get_descriptors_uris(dl)
-        if ignore_uri is not None:
-            dl = remove_with_prefix(dl, ignore_uri)
-            
+        dl = get_descriptors_uris(dl, prefix='https')
         return dl[0] if len(dl) > 0 else ''   
     
     def _extract_text(dl):
         dl = get_descriptors_text(dl)
-        dl = remove_with_prefix(dl, 'info:')
-        if ignore_text is not None:
-            dl = remove_with_prefix(dl, ignore_text)
-            
         return dl[0] if len(dl) > 0 else ''  
-        
+
+    def _extract_access(dl):
+        dl = get_descriptors_uris(dl, prefix='info')
+        return dl[0] if len(dl) > 0 else ''      
+
+    logger.info('Splitting license lists...')
+
+    df.license_text = df.licenses.apply(lambda x: _extract_text(x))    
     df.license_uri = df.licenses.apply(lambda x: _extract_uri(x))
-    df.license_text = df.licenses.apply(lambda x: _extract_text(x))
+    df['license_access'] = df.licenses.apply(lambda x: _extract_access(x))
+
     
     return df
 
 #%%
+#%%    
+def get_doi(dl):
+    """
+    Helper function to extract all DOI from a list of strings
+
+    Parameters
+    ----------
+    dl : list 
+         List of strings
+    Returns
+    -------
+    list
+        list of DOI
+    """
+    regex_doi = r'\b10\.\d{4,9}/[-.;()/:\w]+'
+
+    dl = list(filter(lambda x: x is not None , dl))
+    return list(set(re.findall(regex_doi, ','.join(dl))))
+
 def split_relations(df):
     """
     OAI api provide field relations that have multiple meanings .
-    This function extracts doi id and links other than agritrop's own'
+    This function extracts doi id and links other than sources's own'
     """
     
-    doi_prefix = 'https://doi.org/'
-    argritrop_prefix = 'http://agritrop.cirad.fr/'
-    
     def _extract_doi(dl):
-        dl = get_descriptors_uris(dl)
-        
-        dl = list(filter(lambda x: x.startswith(doi_prefix) , dl))
-
-        return dl[0].replace(doi_prefix, '') if len(dl) > 0 else ''
+        dl = get_doi(dl)
+        return dl[0] if len(dl) > 0 else ''
     
-    def _extract_same_as(dl):
-        dl = get_descriptors_uris(dl)
-        dl = remove_with_prefix(dl, argritrop_prefix)
-        dl = remove_with_prefix(dl, doi_prefix)
+    def _extract_same_as(dl, ignore_url=cfg.SOURCE_NAMESPACE, doi='' ):
+        dl = get_descriptors_uris(dl, prefix="http")
+        dl = list(filter(lambda x: ignore_url not in x , dl))
+        doi = _extract_doi(dl)
+        if doi:
+            dl = list(filter(lambda x: doi not in x , dl))
         return dl
+
+    logger.info('Splitting relations lists...')
 
     df.doi = df.relations.apply(lambda x: _extract_doi(x))
     df.same_as = df.relations.apply(lambda x: _extract_same_as(x))
@@ -281,7 +316,7 @@ def print_stats(df, verbose=True):
 #%%
 def fill_iso_lang(df):
     """
-    Fill the iso_lang with default language, used down the piplene in rdf creation
+    Fill the iso_lang with default language, used down the pipeiene in rdf creation
     Parameters
     ----------
     df : pandas.DataFrame
@@ -350,8 +385,8 @@ def detect_title_lang(df):
 
 def detect_abstract_lang(df):
     """
-    Fill the abstract_lang column with language code detected by pycld2 l
-    anguage detector
+    Fill the abstract_lang column with language code detected by pycld2 
+    language detector
 
     Parameters
     ----------
@@ -373,22 +408,11 @@ def detect_abstract_lang(df):
          df.abstract_lang_score.fillna(0.0, inplace=True)
 
     return df
-#TODO:remove
-def _test_detect_lang():
-    output_metadata_file = os.path.join(cfg.OUTPUT_PATH, cfg.PROCESSED_DATA_FILENAME)
-    output_metadata_file = os.path.realpath(os.path.normpath(output_metadata_file))
-
-    df = read_metadata(output_metadata_file)
-    
-    df = detect_title_lang(df)
-    df = detect_abstract_lang(df)
-    
-    save_metadata(df, output_metadata_file)
 
 #%%
 def get_live_descriptors_labels(row, language='en'):
     """
-    Query specific language lables for a given URI in a domain specific
+    Query specific language labels for a given URI in a domain specific
     descriptors vocabulary
 
     Parameters
@@ -396,7 +420,7 @@ def get_live_descriptors_labels(row, language='en'):
     row : pandas.DataFrame row
         
     language : string, optional
-        Lablel language. The default is 'en'.
+        Label language. The default is 'en'.
 
     Returns
     -------
@@ -451,7 +475,7 @@ def compare_descr_lists (list1, list2):
 #%%
 def get_live_labels(df):
     """
-    Refresh lables in specified language for descriptors' URIs
+    Refresh labels in specified language for descriptors' URIs
 
     Parameters
     ----------
@@ -468,12 +492,10 @@ def get_live_labels(df):
     
     res = df.apply(lambda r: get_live_descriptors_labels(r, r.iso_lang), axis=1)
     
-    #update the uris because some of them cannot be reolved especially for French
+    #update the uris because some of them cannot be resolved especially for French
     #and also to maintain the same order
     df.descriptors_uris   = res.apply(lambda x: list(x.keys()))
     df.descriptors_labels = res.apply(lambda x: list(x.values()))
-    
-    #df.descriptors =  res.apply(lambda x: [{'uri': k, 'lbl': v} for k,v in x.items()] )   
     
     return df
 
@@ -518,7 +540,7 @@ def process(save_file=True):
     Parameters
     ----------
     safe_file : boolean
-        save processed matadata. Deafutl=true
+        save processed metadata. Default=true
 
     """
     input_metadata_file = os.path.join(cfg.INPUT_PATH, cfg.RAW_DATA_FILENAME)
@@ -527,41 +549,38 @@ def process(save_file=True):
     input_metadata_file = os.path.realpath(os.path.normpath(input_metadata_file))
     output_metadata_file = os.path.realpath(os.path.normpath(output_metadata_file))
     
-    #try:
-    df = (read_metadata(input_metadata_file)
-          .pipe(remove_nans)
-          .pipe(filter_not_yet_processed_articles)
-          .pipe(extract_paper_id)
-          .pipe(split_descriptors)
-          .pipe(split_license)
-          .pipe(split_relations)
-          #.pipe(drop_records_without_descriptors)
-          .pipe(trim_abstract)
-          .pipe(remove_tabs)
-          .pipe(replace_doublequotes)
-          .pipe(fill_iso_lang)
-          .pipe(detect_title_lang)
-          .pipe(detect_abstract_lang)
-          .pipe(get_live_labels) #TODO: consider moving this to the annif training part of the code
-          .pipe(add_date)
-          .pipe(fill_year)
-          .pipe(print_stats, True)
-          .pipe(save_metadata, output_metadata_file if save_file else None)
-          )
-    
-    if save_file:
-        logger.info('Dataset size = %d, saved in %s' % (df.shape[0], output_metadata_file) )
-        
+    try:
+        df = (read_metadata(input_metadata_file)
+            .pipe(remove_nans)
+            .pipe(filter_not_yet_processed_articles)
+            .pipe(extract_paper_id)
+            .pipe(split_descriptors)
+            .pipe(split_license)
+            .pipe(split_relations)
+            #.pipe(drop_records_without_descriptors)
+            .pipe(trim_abstract)
+            .pipe(remove_tabs)
+            .pipe(replace_doublequotes)
+            .pipe(fill_iso_lang)
+            .pipe(detect_title_lang)
+            .pipe(detect_abstract_lang)
+            .pipe(get_live_labels) #TODO: consider moving this to the annif training part of the code
+            .pipe(add_date)
+            .pipe(fill_year)
+            .pipe(print_stats, True)
+            .pipe(save_metadata, output_metadata_file if save_file else None)
+            )
 
-    #except Exception as e:
-    #    logger.error(e)
+        if save_file:
+            logger.info('Dataset size = %d, saved in %s' % (df.shape[0], output_metadata_file) )
 
-    #return df
+    except Exception as e:
+        logger.error(e)
+
 
 #%%     
 if __name__ == '__main__':
     process()
-    #test_detect_lang()
 
 close_timestamp_logger(logger)
 
