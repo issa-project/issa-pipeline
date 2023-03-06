@@ -4,7 +4,7 @@ from pyclinrec.dictionary import generate_dictionary_from_skos_sparql
 
 # default values that are useful for testing 
 DICT_NAME = 'agrovoc'
-AGROVOC_ENDPOINT = 'http://issa.i3s.unice.fr/sparql'
+AGROVOC_ENDPOINT = 'http://data-issa.cirad.fr/sparql'
 AGROVOC_GRAPH    = 'http://agrovoc.fao.org/graph'
 
 #AGROVOC_ENDPOINT = 'https://agrovoc.fao.org/sparql'

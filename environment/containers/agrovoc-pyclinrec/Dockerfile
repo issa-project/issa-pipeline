@@ -26,6 +26,7 @@ RUN python -m pip install -r requirements.txt
 # installs git into the Docker image, as required by tox
 RUN apt-get update && apt-get install git -y
 RUN python -m pip install git+http://github.com/issa-project/pyclinrec.git
+#RUN python -m pip install git+http://github.com/twktheainur/pyclinrec.git
 
 # Download spacy model
 RUN python -m spacy download en_core_web_md

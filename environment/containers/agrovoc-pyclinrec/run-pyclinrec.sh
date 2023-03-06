@@ -19,13 +19,13 @@ chmod 755 $PYCLINREC_HOST_CACHE
 
 if [ -z "$(ls $PYCLINREC_HOST_CACHE )" ]; then
    echo "Runinig container for the first time to initialize the dictionaries 
-and recognizers.It may take a long time ( ~10 min).
+and recognizers. It may take a long time ( ~10 min).
 Run command <docker logs $CONTAINER_NAME> to see if the initialization is complete."
 
 fi
 
 
-if [ $( docker ps -f name=$CONTAINER_NAME | wc -l ) -eq 1 ]; then 
+if [ $( docker ps -af name=$CONTAINER_NAME | wc -l ) -eq 1 ]; then 
      echo "starting $CONTAINER_NAME container"
 
 	docker run --name $CONTAINER_NAME \
@@ -33,12 +33,14 @@ if [ $( docker ps -f name=$CONTAINER_NAME | wc -l ) -eq 1 ]; then
                 -p 5000:5000 \
 			  -u $(id -u):$(id -g) \
                 -v $PYCLINREC_HOST_CACHE:/app/cache \
-                pyclinrec:0.10
+                pyclinrec:0.20
      
-     echo "started $CONTAINER_NAME container"
+     echo "running $CONTAINER_NAME container"
+else
+     docker start $CONTAINER_NAME
 fi
 
-if [ $(ls $PYCLINREC_HOST_CACHE | wc -l) < 4 ]; then
+if [ $(ls $PYCLINREC_HOST_CACHE | wc -l) -lt 4 ]; then
 	echo "$CONTAINER_NAME is initializing..."
 else
 	echo "$CONTAINER_NAME is running"
