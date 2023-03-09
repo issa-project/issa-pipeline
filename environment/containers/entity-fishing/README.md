@@ -1,10 +1,10 @@
 This folder provides scripts to install original docker image and run docker container for *entity-fishing* NER.
 
-To pull the entity-foshing docker image run:
+To pull the entity-fishing docker image and download the language models run:
 
 <code>install-entity-fishing.sh</code>
 
-To download the language models data run:
+To only download the language models data run:
 
 <code>install-models.sh</code>
 
