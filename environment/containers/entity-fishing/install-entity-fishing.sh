@@ -10,7 +10,10 @@
 
 
 # To build the container run:
-docker build -t entity-fishing --file Dockerfile -x test
+#docker build -t entity-fishing --file Dockerfile -x test
+
+# Pull entity-fishing author's docker image
+docker pull grobid/entity-fishing:0.0.6
 
 # To download the model data run:
 install-models.sh

@@ -243,7 +243,7 @@ def get_nested_dict_value(nested_dict, path_list, default=None):
     
 def set_nested_dict_value(nested_dict, path_list, value):
     """
-    Assign value to a key mapped by path as list of strings and indecies.
+    Assign value to a key mapped by path as list of strings and indices.
     Creates list if an index in a path os 0 but nested value is empty.
     In other cases if index is out of range then exception will be thrown.
 
@@ -252,7 +252,7 @@ def set_nested_dict_value(nested_dict, path_list, value):
     nested_dict : dict
 
     path_list : list 
-        list of list of strings and/or indecies
+        list of list of strings and/or indices
 
     value : any type
         value to assign
@@ -278,7 +278,7 @@ def set_nested_dict_value(nested_dict, path_list, value):
 # https://gist.github.com/angstwad/bf22d1822c38a92ec0a9?permalink_comment_id=4038517#gistcomment-4038517
 def merge_nested_dicts(dict_a: dict, dict_b: dict):
     """
-    Recursivly merge nested dictionaries. The values of the second dictionary
+    Recursively merge nested dictionaries. The values of the second dictionary
     will overwrite the values for the same key in first dictionary. 
 
     Parameters
