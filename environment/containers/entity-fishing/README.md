@@ -1,18 +1,18 @@
-This folder provides the Dockerfile and scripts to build and run docker container for *entity-fishing* NER.
+This folder provides scripts to install original docker image and run docker container for *entity-fishing* NER.
 
-To build the container run:
+To pull the entity-foshing docker image run:
 
-<code>docker build -t entity-fishing --file Dockerfile -x test</code>
+<code>install-entity-fishing.sh</code>
 
-To download the models data run:
+To download the language models data run:
 
-<code>wget https://science-miner.s3.amazonaws.com/entity-fishing/0.0.4/linux/db-kb.zip</code> and 
+<code>install-models.sh</code>
 
-<code>wget https://science-miner.s3.amazonaws.com/entity-fishing/0.0.4/linux/db-$lang.zip</code> for each language.
+>:point_right: the  knowlege base, English and French models are downloaded. Total size is around 29 GB compressed, and 90 GB uncompressed.
 
 To run the container run:
 
-<code>docker run --name entity-fishing -d -p 8090:8090 -v ~/entity-fishing/models:/opt/entity-fishing/data/db entity-fishing</code>.
+<code>run-entity-fishing.sh</code>.
 
 To start/stop the container run:
 
@@ -20,7 +20,6 @@ To start/stop the container run:
 
 <code>docker stop entity-fishing</code>
 
-The *run-ef.sh* starts the *entity-fishing service* inside the container and should not be executed on the host. The *install-entity-fishing.sh*, *install-models.sh* and *run-entity-fishing.sh* are helper scripts to build, install and run the entity-fishing Docker container.  
 
 
 

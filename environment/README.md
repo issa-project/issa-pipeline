@@ -20,16 +20,16 @@ To facilitate the execution of the pipeline we built an environment that support
 The pipeline's Python scripts are run in the context of a virtual environment. The package requirements and virtual environment building script is included in this repository. 
 
 ## Off-the-shelf Docker images:
-- Grobid (0.7.0)
+- Grobid (0.7.2)
 - MongoDB (5.0.3)
 - Annif (0.55)
 - DBPedia Spotlight (latest, no specific version tag is available)
+- entity-fishing (0.0.6)
 - OpenLink Virtuoso (7.2) 
 
 Each image can be downloaded from the Docker Hub and we provide installation scripts in this repository.  
 
 ## Custom-built images:
-- entity-fishing
 - pyclinrec
 
 For custom-built containers, we provide Dockerfile file(s) and build scripts.
