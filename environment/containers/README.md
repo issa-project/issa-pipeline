@@ -19,7 +19,7 @@ All of the containers, except for `virtuoso`, are started and stopped as they ar
 ### Data persistence
 Each Docker container is provided with a persistent storage directory on the host machine through the mapped volumes mechanism. These volumes can store models, configurations and database files. The volumes are created in the `/volumes` directory in the host FS.
 
-If a Docker container has to access pipeline-generated files or pipeline scripts their locations are mapped to the `issa/data` and `issa/scripts` directories in the containers's FS.
+If a Docker container has to access pipeline-generated files or pipeline scripts their locations are mapped to the `issa/data` and `issa/scripts` directories in the containers' FS.
 
 ## Containers
 
@@ -42,11 +42,11 @@ The `agrovoc-pyclinrec` container runs the text annotation service to annotate t
 
 We build a Docker image to create the execution environment for the [Python Concept Recognition Library](https://github.com/twktheainur/pyclinrec) and to create a web application similar to other annotation Dockers, e.g. `dbpedia-spotlight` and `entity-fishing`. NOTE: we forked the library for consistensy reasons). 
 
-By default this container is created specifically for Agrovoc vocabulary but it can be reconfigured for another SKOS thesaurus by providing its SPARQL endpoint in `DICT_ENDPOINT` environment variable. If graph name filtering is required than a graph name can be passed in 'DICT_GRAPH' variable of the `docker run` command.
+By default, this container is created specifically for Agrovoc vocabulary but it can be reconfigured for another SKOS thesaurus by providing its SPARQL endpoint in `DICT_ENDPOINT` environment variable. If graph name filtering is required then a graph name can be passed in 'DICT_GRAPH' variable of the `docker run` command.
 
 >:point_right: Concept recognition is currently available only for English and French.
 
-- to build the image and initialise pyclinrec container invoke [install-pyclinrec.sh](agrovoc-pyclinrec/install-pyclinrec.sh) script.
+- to build the image and initialize pyclinrec container invoke [install-pyclinrec.sh](agrovoc-pyclinrec/install-pyclinrec.sh) script.
 
 - to run the container invoke [run-pyclinrec.sh](agrovoc-pyclinrec/run-pyclinrec.sh) script. 
 
@@ -57,7 +57,7 @@ By default this container is created specifically for Agrovoc vocabulary but it 
   - ```curl -X POST http://localhost:5000/annotate --data-urlencode "text=Growing bananas in Ireland" --data-urlencode "lang=en" --data-urlencode "conf=0.15" -H "Accept: application/json"``` 
   - ```curl -X POST http://localhost:5000/annotate --data-urlencode "text=Cultiver des bananes en Irlande" --data-urlencode "lang=fr" --data-urlencode "conf=0.15" -H "Accept: application/json"```
 
->:point_right: The internal vocabulary and concept indexing is taking place during the installation and it may take a long time. On our machinne the initialization takes about 10 minutes. 
+>:point_right: The internal vocabulary and concept indexing is taking place during the installation and it may take a long time. On our machine, the initialization takes about 10 minutes. 
 
 ### dbpedia-spotlight
 Two dbpeadia-spotlight containers are created from the [DBpedia Spotlight Docker image](https://hub.docker.com/r/dbpedia/dbpedia-spotlight) one per language `dbpedia-spotlight.en` and `dbpedia-spotlight.fr`. Each container relies on the downloaded language model. The model download is lengthy (on our machine 11 and 4 min for English and French) and is included in the installation script. The models are stored in the host FS.
@@ -72,14 +72,14 @@ Two dbpeadia-spotlight containers are created from the [DBpedia Spotlight Docker
   - ```curl -X POST http://localhost:2223/rest/annotate --data-urlencode "text=Cultiver des bananes en Irlande" --data-urlencode "lang=fr" --data-urlencode "confidence=0.15" -H "Accept: application/json"```
 
 >:point_right:  The `dbpedia-spotlight.en` container requires a lot of memory and fails to execute on a 32Gb RAM machine if any other container besides `virtuoso` is running. It is also slow to launch and cannot be accessed immediately. We allocate a 2 min delay after the container start command.
- 
+ https://nerd.readthedocs.io/en/latest/docker.html
 >:point_right: To update the models it is sufficient to delete the model folder and re-run the container installation script.
 
 
 ### entity-fishing
-We adapted Grobid's [Dockerfile](https://github.com/kermitt2/grobid/blob/master/Dockerfile.crf) to build a Docker image for [entity-fishing](https://nerd.readthedocs.io/en/latest/) entity recognition and disambiguation service.  Entity-fisihing also requires the models to be downloaded during the installation.
+The `entity-fishing` container is created from the original [entity-fishing docker image](https://nerd.readthedocs.io/en/latest/docker.html) and provides general entity recognition and disambiguation against Wikidata. Entity-fishing also requires the models to be downloaded during the installation.
 
-- to build the image and download language models run [install-entity-fishing.sh](entity-fishing/install-entity-fishing.sh) script.
+- to install the image and download language models run [install-entity-fishing.sh](entity-fishing/install-entity-fishing.sh) script.
 
 - to run the containers invoke [run-entity-fishing.sh](entity-fishing/run-entity-fishing.sh) script. 
 
@@ -99,7 +99,7 @@ We deploy the [CRF-only image](https://grobid.readthedocs.io/en/latest/Grobid-do
 
 - to run the containers invoke [run-grobid.sh](grobid/run-grobid.sh) script. 
 
-- to test run command `curl http://localhost:8070/api/version`
+- to test run the command `curl http://localhost:8070/api/version`
 
 ### mongodb
 The `mongodb` container provides intermediate storage for gathered data to enable easy use of [XR2RML tool](https://www.i3s.unice.fr/~fmichel/xr2rml_specification_v5.html) which is required an input database of JSON documents to create the customized mappings to the RDF dataset.
