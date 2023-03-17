@@ -20,7 +20,7 @@ help()
   exe=$(basename $0)
   echo "Usage: $exe <dataset name> <MongoDB collection name> <pmcid|sha> <xR2RML mapping template> <output file name>"
   echo "Example:"
-  echo "   $exe  dataset-1-0  document_metadata  xr2rml_document_metadata.tpl.ttl  issa-articles-metadata.ttl"
+  echo "   $exe  dataset-1-0  document_metadata  xr2rml_document_metadata.tpl.ttl  issa-documents-metadata.ttl"
   exit 1
 }
 

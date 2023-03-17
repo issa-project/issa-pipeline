@@ -48,7 +48,7 @@
     ];
     rr:predicateObjectMap [
         rr:predicate oa:hasTarget;
-        rr:objectMap [ rr:template "http://data-issa.cirad.fr/article/{$.paper_id}";  rr:termType rr:IRI ];
+        rr:objectMap [ rr:template "http://data-issa.cirad.fr/document/{$.paper_id}";  rr:termType rr:IRI ];
     ];
     rr:predicateObjectMap [
         rr:predicate oa:hasBody;
@@ -87,6 +87,6 @@
 #         issapr:confidence    0.9999928599797088;
 #         issapr:rank          1;
 #         oa:hasBody           <http://aims.fao.org/aos/agrovoc/c_4995> ;
-#         oa:hasTarget         <http://data-issa.cirad.fr/article/263680>;
+#         oa:hasTarget         <http://data-issa.cirad.fr/document/263680>;
 #         rdfs:isDefinedBy     issa:issa-agritrop ;
 #         prov:wasAttributedTo issa:AnnifSubjectIndexer.

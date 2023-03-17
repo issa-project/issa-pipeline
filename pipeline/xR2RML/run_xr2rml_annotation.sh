@@ -5,7 +5,7 @@
 #
 # Input argument:
 # - arg1: RDF dataset name e.g. "dataset-1-0"
-# - arg2: article part about which to produce annotations. One of title, abstract or body_text
+# - arg2: document part about which to produce annotations. One of title, abstract or body_text
 # - arg3: MongoDB collection to read data from
 # - arg4: xR2RML template mapping file
 # - arg5: output file name
@@ -22,7 +22,7 @@ help()
   exe=$(basename $0)
   echo "Usage: $exe <dataset name> <title|abstract|body_text> <collection> <xR2RML mapping template> <output file name>"
   echo "Example:"
-  echo "   $exe  dataset-1-0  abstract  spotlight  xr2rml_spotlight_annot.tpl.ttl  issa-articles-spotlight-abstract.ttl"
+  echo "   $exe  dataset-1-0  abstract  spotlight  xr2rml_spotlight_annot.tpl.ttl  issa-documents-spotlight-abstract.ttl"
   exit 1
 }
 
@@ -30,8 +30,8 @@ help()
 dataset=$1
 if [[ -z "$dataset" ]] ; then help; fi
 
-articlepart=$2
-if [[ -z "$articlepart" ]] ; then help; fi
+documentpart=$2
+if [[ -z "$documentpart" ]] ; then help; fi
 
 collection=$3
 if [[ -z "$collection" ]] ; then help; fi
@@ -52,7 +52,7 @@ echo -n "" > $log
 # --- Substitute placeholders in the xR2RML template file
 mappingFile=/tmp/xr2rml_$$.ttl
 awk "{ gsub(/{{dataset}}/, \"$dataset\"); \
-       gsub(/{{articlepart}}/, \"$articlepart\"); \
+       gsub(/{{documentpart}}/, \"$documentpart\"); \
        gsub(/{{collection}}/, \"$collection\"); \
        print }" \
     $XR2RML/${mappingTemplate} > $mappingFile
