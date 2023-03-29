@@ -150,8 +150,8 @@ RDF files generated at the previous stage are imported into a [dockerized Virtuo
 
 | Data type                            | Named Graph                                           |
 |--------------------------------------|-------------------------------------------------------|
-| Metadata                             | http://data-issa.cirad.fr/graph/articles              |
-| Annotated text                       | http://data-issa.cirad.fr/graph/articles/text         |
+| Metadata                             | http://data-issa.cirad.fr/graph/documents             |
+| Annotated text                       | http://data-issa.cirad.fr/graph/documents/text        |
 | Human-validated thematic descriptors | http://data-issa.cirad.fr/graph/thematic-descriptors  |
 | Annif-generated thematic descriptors | http://data-issa.cirad.fr/graph/annif-descriptors     |
 | DBpedia annotations                  | http://data-issa.cirad.fr/graph/dbpedia-spotlight-nes |
