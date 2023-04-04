@@ -6,8 +6,8 @@
 # ISSA version (dot- and dashed-notation)
 
 # ISSA dataset nomenclature
-ISSA_VERSION=1.1                             # version with dots 
-ISSA_VERSION_DASH=1-1                        # version with dashes
+ISSA_VERSION=1.2                             # version with dots 
+ISSA_VERSION_DASH=1-2                        # version with dashes
 
 export ISSA_DATA_ROOT=~/ISSA/data            # root of all data files
 export ISSA_DATASET=dataset-${ISSA_VERSION_DASH} 
@@ -47,8 +47,8 @@ export ISSA_SRC_ROOT=~/ISSA/pipeline
 export METADATA_PREFIX=agritrop_meta         # arbitrary metadata file name
 
 # PDF storage
-export PDF_CACHE=~/ISSA/data/pdf_cache           # location for PDF cache
-export PDF_CACHE_UNREADBLE=$PDF_CACHE/unreadable # separate the unreadable PDFs by Grobid here
+export PDF_CACHE=~/ISSA/data/pdf_cache            # location for PDF cache
+export PDF_CACHE_UNREADABLE=$PDF_CACHE/unreadable # separate the unreadable PDFs by Grobid here
 
 # MongoDB (docker container)
 MONGODB_CONT_NAME=mongodb                        # docker container name 
@@ -84,7 +84,7 @@ ANNIF_CONT_DATA_DIR=/issa/data                   # to the container's FS to acce
 ANNIF_TRAINING_DIR=$ISSA_DATA_ROOT/training      # dir for Annif training data
 ANNIF_INPUT_DIR=$ANNIF_CONT_DATA_DIR/$ISSA_DATASET/$LATEST_UPDATE/indexing # path to the latest files to process
 ANNIF_PROJECT=cirad-nn-ensemble                  # name of the best model to use in indexing
-export ANNIF_SUFFIX=.parabel_mllm_nn             # suffix to add to the indexing output file name and should correspond to the previous var
+export ANNIF_SUFFIX=.parabel_mllm_nn.tsv         # suffix to add to the indexing output file name and should correspond to the previous var
 ANNIF_LIMIT=15                                   # max number of returned descriptors
 ANNIF_THRESHOLD=0.1                              # confidence threshold of  returned descriptors
 ANNIF_LANGUAGES=en\ fr                           # list of languages to process
