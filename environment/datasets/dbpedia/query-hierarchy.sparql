@@ -16,6 +16,8 @@ construct {
 where {
     ?uri rdfs:label ?uriLabel. FILTER(lang(?uriLabel) in ("{{lang}}"))
 
+	OPTIONAL {
+
     { ?uri rdfs:subClassOf+ ?uriParent.
       ?uriParent rdfs:label ?uriParentLabel. FILTER(lang(?uriParentLabel) in ("{{lang}}"))
     }
@@ -36,6 +38,8 @@ where {
     { ?uri dbo:genus|dbo:family|dbo:order|dbo:phylum|dbo:kingdom|dbo:class ?uriParent.
       ?uriParent rdfs:label ?uriParentLabel. FILTER(lang(?uriParentLabel) in ("{{lang}}"))
     }
+
+    } 
 
     FILTER (?uri in (
         {{uri_list}}
