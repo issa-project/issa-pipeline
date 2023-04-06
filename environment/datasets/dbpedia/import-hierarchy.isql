@@ -1,5 +1,5 @@
 log_enable(3,1);
---SPARQL CLEAR GRAPH  <http://data-issa.cirad.fr/graph/dbpedia-named-entities>;
+SPARQL CLEAR GRAPH  <http://data-issa.cirad.fr/graph/dbpedia-named-entities>;
 
 DELETE FROM DB.DBA.load_list;
 ld_dir ('/database/import', 'dbpedia-dump*.ttl', 'http://data-issa.cirad.fr/graph/dbpedia-named-entities');
