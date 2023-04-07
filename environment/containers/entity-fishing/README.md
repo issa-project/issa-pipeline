@@ -1,4 +1,4 @@
-This folder provides scripts to install original docker image and run docker container for *entity-fishing* NER.
+This folder provides scripts to install the original Docker image and run the Docker container for *entity-fishing* NER.
 
 To pull the entity-fishing docker image and download the language models run:
 
@@ -8,7 +8,7 @@ To only download the language models data run:
 
 <code>install-models.sh</code>
 
->:point_right: the  knowlege base, English and French models are downloaded. Total size is around 29 GB compressed, and 90 GB uncompressed.
+>:point_right: the knowledge base, English and French models v.0.0.6 would be downloaded. The total size is around 29 GB compressed, and 90 GB uncompressed.
 
 To run the container run:
 
