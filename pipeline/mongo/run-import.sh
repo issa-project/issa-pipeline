@@ -30,17 +30,17 @@ if [ $( docker ps -f name=$CONTAINER| wc -l ) -gt 1 ]; then
            ./import-json-dir.sh $DB annif_descriptors paper_id $IDIR/$REL_ANNIF &>> $log
 
 	docker exec -w $WDIR $CONTAINER \
-           ./import-json-dir.sh $DB spotlight paper_id $IDIR/$REL_SPOTLIGHT filter_spotlight.js &>> $log
+           ./import-json-dir.sh $DB spotlight paper_id $IDIR/$REL_SPOTLIGHT ./filter_spotlight.js &>> $log
 
 	docker exec -w $WDIR $CONTAINER \
-           ./import-json-dir.sh $DB entityfishing paper_id $IDIR/$REL_EF filter_entityfishing.js &>> $log
+           ./import-json-dir.sh $DB entityfishing paper_id $IDIR/$REL_EF ./filter_entityfishing.js &>> $log
 
 	docker exec -w $WDIR $CONTAINER \
-           ./import-json-dir.sh $DB geonames paper_id $IDIR/$REL_GEONAMES &>> $log   
+           ./import-json-dir.sh $DB geonames paper_id $IDIR/$REL_GEONAMES ./filter_geonames.js &>> $log   
 
      ## use case specific annotations
 	docker exec -w $WDIR $CONTAINER \
-           ./import-json-dir.sh $DB pyclinrec paper_id $IDIR/$REL_PYCLINREC filter_pyclinrec.js &>> $log   
+           ./import-json-dir.sh $DB pyclinrec paper_id $IDIR/$REL_PYCLINREC ./filter_pyclinrec.js &>> $log   
 fi
 
 echo "done" >> $log
