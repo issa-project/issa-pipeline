@@ -18,7 +18,8 @@ from util import open_timestamp_logger, close_timestamp_logger
 from util import get_nested_dict_value
 
 from wrapper_annotator import WrapperAnnotator, string2number
-wa = WrapperAnnotator(dbpedia_spotlight_endpoint= cfg.SPOTLIGHT_ENDPOINTS )
+wa = WrapperAnnotator(dbpedia_spotlight_endpoint= cfg.SPOTLIGHT_ENDPOINTS,
+                      timeout=cfg.REQUEST_TIMEOUT )
 
 #%% 
 logger = open_timestamp_logger(log_prefix= os.path.splitext(os.path.basename(__file__))[0], 

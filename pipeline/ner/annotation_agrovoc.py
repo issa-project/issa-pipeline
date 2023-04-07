@@ -18,18 +18,19 @@ from util import open_timestamp_logger, close_timestamp_logger
 from util import get_nested_dict_value
 
 from wrapper_annotator import WrapperAnnotator
-wa = WrapperAnnotator(concept_annotator_endpoint= cfg.PYCLINREC_ENDPOINT)
+wa = WrapperAnnotator(concept_annotator_endpoint= cfg.PYCLINREC_ENDPOINT,
+                      timeout=cfg.REQUEST_TIMEOUT )
 
 #%% 
 logger = open_timestamp_logger(log_prefix= os.path.splitext(os.path.basename(__file__))[0], 
                                log_dir=cfg.LOG_PATH, 
-                               first_line = 'Annotating text with Agrovoc vocabulary and pyclingrec service...')
+                               first_line = 'Annotating text with Agrovoc vocabulary and pyclinrec service...')
 
 #%%
 def postprocess_pyclinrec_response(result_json):
     """
-    Postprocess Spotlight response by optionally removing header and processed text, 
-    also converting numnber strings to numbers.
+    Postprocess response by optionally removing the header and processed text, 
+    also converting number strings to numbers.
 
     """    
     try:
@@ -45,8 +46,8 @@ def postprocess_pyclinrec_response(result_json):
 
 def annotate_with_pyclinrec(f_json, f_out_json):
     """
-    Send text of each part of a document to the Spotlight service that 
-    returns  DBPedia NEs.
+    Send the text of each part of a document to the pyclinrec service that 
+    returns specific vocabulary NEs.
 
     """
     try:

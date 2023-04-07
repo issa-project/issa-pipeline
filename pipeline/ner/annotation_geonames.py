@@ -24,7 +24,8 @@ from util import open_timestamp_logger, close_timestamp_logger
 from util import get_nested_dict_value
 
 from wrapper_annotator import WrapperAnnotator
-wa = WrapperAnnotator(entity_fishing_endpoint= cfg.ENTITY_FISHING_ENDPOINTS )
+wa = WrapperAnnotator(entity_fishing_endpoint= cfg.ENTITY_FISHING_ENDPOINTS ,
+                      timeout=cfg.REQUEST_TIMEOUT )
 
 #%% 
 from logging import INFO, DEBUG
@@ -35,35 +36,42 @@ logger = open_timestamp_logger(log_prefix= os.path.splitext(os.path.basename(__f
 #%%
 def disambiguate_location(rawName, lang='en'):
     """
-    If an NE is returned without WikidataID but wit htype LOCATION
+    If an NE is returned without WikidataID but with type LOCATION
     try to disambiguate it by sending its text as a "short" text to 
-    entity-fishing disambuguation service.
+    entity-fishing disambiguation service.
 
     """
     
     response_json = wa.request_entity_fishing_short(rawName, lang)
     
     if not response_json:
-        return nan
+        return nan,nan
 
     if 'entities' not in response_json.keys():
-        return nan
+        return nan,nan
    
-    for entity in response_json['entities']:
+    sorted_entities = sorted(response_json['entities'], key=lambda d: d['confidence_score'], reverse=True)
+    for entity in sorted_entities:
         if 'wikidataId' in entity.keys():
-            logger.info('location disambiguated for %s: %s [%s]', rawName, entity['wikidataId'], lang)
+            logger.debug('location disambiguated for %s: %s [%s]', rawName, entity['wikidataId'], lang)
             logger.debug('-------------------------------------------------')
             logger.debug(json.dumps(response_json['entities'], indent=4) )
             logger.debug('-------------------------------------------------')
-            return entity['wikidataId']
+            return entity['wikidataId'], entity['confidence_score']
     
-    return nan
+    return nan,nan
+
+LOOKUP_DICT = {}
 
 def lookup_concept(wikidataId):
     """
     Make concept lookup request and process response
 
     """
+
+    if cfg.USE_CACHE:
+        if (wikidataId in LOOKUP_DICT):
+            return LOOKUP_DICT[wikidataId]
     
     response_json = wa.request_entity_fishing_concept_lookup(wikidataId)
     
@@ -75,30 +83,32 @@ def lookup_concept(wikidataId):
 
     for statement in response_json['statements']:
         if statement['propertyId'] == 'P1566':
-            logger.info('GeoNamesID found for %s: %s', wikidataId,  statement['value'])
+            logger.debug('GeoNamesID found for %s: %s', wikidataId,  statement['value'])
+            if cfg.USE_CACHE:
+                LOOKUP_DICT[wikidataId] = statement['value']
             return statement['value']
 
  
     return nan
 
-# analisys_df = pd.DataFrame()
-# def store_for_analisys(paper_id, part, candidates_df):
-#     global analisys_df
+# analysis_df = pd.DataFrame()
+# def store_for_analysis(paper_id, part, candidates_df):
+#      global analysis_df
     
-#     candidates_df.insert(0, 'paper_id', paper_id)
-#     candidates_df.insert(1, 'part', part)
+#      candidates_df.insert(0, 'paper_id', paper_id)
+#      candidates_df.insert(1, 'part', part)
     
-#     analisys_df =pd.concat([analisys_df, candidates_df  ])
+#      analysis_df =pd.concat([analysis_df, candidates_df  ])
     
-#     if (analisys_df.shape[0] % 100):
-#         analisys_df.to_csv('geonames_analisys.tsv', sep='\t', encoding='utf-8', index=False)
+#      if (analysis_df.shape[0] % 100):
+#          analysis_df.to_csv('geonames_analysis.tsv', sep='\t', encoding='utf-8', index=False)
 
 def annotate_with_geonames(f_json, f_out_json):
     """
     For Wikidata NE generate a list of candidates that can be geographical 
-    (Capitalised NE, type = LOCATION). For each candidate make a concept lookup 
-    request to entity-fishing. If reponse contains a GeoNameID then the candidate is 
-    saved as GeoNmaes NE.
+    (Capitalized NE, type = LOCATION). For each candidate make a concept lookup 
+    request to entity-fishing. If the response contains a GeoNameID then the candidate is 
+    saved as GeoNames NE.
     """
     try:
         ef_json =  read_paper_json(f_json)
@@ -118,10 +128,10 @@ def annotate_with_geonames(f_json, f_out_json):
                                                .loc[entities_df['rawName'].fillna('').str[0].str.isupper()] 
                 locations_df = pd.DataFrame()
                 if 'type' in entities_df.columns:
-                    #try to disambigiate type=LOCATION
+                    #try to disambiguate type=LOCATION
                     locations_df =  entities_df.loc[entities_df['type'].fillna('') == 'LOCATION']
-                    locations_df['wikidataId'] = locations_df['rawName'].apply(disambiguate_location, lang=lang)
-                    locations_df= locations_df.loc[locations_df['wikidataId'].notna()] 
+                    locations_df[['wikidataId', 'confidence_score']] = list(locations_df['rawName'].apply(disambiguate_location, lang=lang))
+                    locations_df = locations_df.loc[locations_df['wikidataId'].notna()] 
                 
                 candidates_df = pd.concat([candidates_df,
                                            locations_df ]).fillna('')
@@ -132,7 +142,7 @@ def annotate_with_geonames(f_json, f_out_json):
                    candidates_df['GeoNamesID'] = candidates_df['wikidataId'].apply(lookup_concept)
                    geonames_df = candidates_df.loc[candidates_df['GeoNamesID'].notna()] 
                    
-                   #store_for_analisys(annot_json['paper_id'], part,candidates_df)
+                   #store_for_analysis(annot_json['paper_id'], part,candidates_df)
          
                    if geonames_df.shape[0] > 0:
                        annot_json[part] = ef_json[part]
@@ -204,4 +214,4 @@ if __name__ == '__main__':
         
 close_timestamp_logger(logger)       
 
-#analisys_df.to_csv('geonames_analisys.tsv', sep='\t', encoding='utf-8', index=False)
+#analysis_df.to_csv('geonames_analysis.tsv', sep='\t', encoding='utf-8', index=False)

@@ -2,6 +2,8 @@ import json
 import requests
 from retrying import retry
 from math import isnan, isinf
+#import time
+
 
 def string2number(value):
     """
@@ -27,24 +29,27 @@ def string2number(value):
 class WrapperAnnotator(object):
     def __init__(self, 
                  dbpedia_spotlight_endpoint='https://api.dbpedia-spotlight.org/en/annotate',
-                 entity_fishing_endpoint='https://cloud.science-miner.com/nerd//service/disambiguate',
+                 entity_fishing_endpoint='https://cloud.science-miner.com/nerd/service/disambiguate',
                  ncbo_annotatorplus_enpoint='https://bioportal.bioontology.org/',
-                 concept_annotator_endpoint='http://localhost:5000/annotate'):
+                 concept_annotator_endpoint='http://localhost:5000/annotate',
+                 timeout=120):
         
         self.dbpedia_spotlight_endpoint = dbpedia_spotlight_endpoint
         self.entity_fishing_endpoint =    entity_fishing_endpoint
         self.ncbo_annotatorplus_enpoint = ncbo_annotatorplus_enpoint
         self.concept_annotator_endpoint = concept_annotator_endpoint
+
+        self.timeout = timeout  # seconds
     
-    @retry(stop_max_delay=10000, stop_max_attempt_number=5, wait_random_min=1000, wait_random_max=2000)
+    @retry(stop_max_attempt_number=5, wait_random_min=1000, wait_random_max=2000)
     def request_dbpedia_spotlight(self, text, lang='en', confidence=0.15, support=10, postprocess_callback=None):
         """
         Wrapper around DBpedia Spotlight
         :param text: String, text to be annotated
         :param lang: string, language model to use
-        :param confidence: float, confidence score for disambiguation / linking
+        :param confidence: float, confidence score for disambiguation/linking
         :param support: integer, how prominent is this entity in Lucene Model, i.e. number of inlinks in Wikipedia
-        :return: annotations in an Json array
+        :return: annotations in a JSON array
         """
         try:
             if not lang:
@@ -63,12 +68,12 @@ class WrapperAnnotator(object):
             }
             
             # not supported by get if text too long
-            response = requests.post(endpoint, data=params, headers=headers)
+            response = requests.post(endpoint, data=params, headers=headers, timeout=self.timeout)
             
             if postprocess_callback:
                 return postprocess_callback(json.loads(response.text))
             
-            # Default behaviour as it was originaly defined in this code
+            # Default behavior as it was originally defined in this code
             result = json.loads(response.text)["Resources"]
             result = [{x.replace('@', ''): string2number(v) for x, v in r.items()} for r in result]
             return result
@@ -79,7 +84,8 @@ class WrapperAnnotator(object):
         except KeyError:
             return None
 
-    #@retry(stop_max_delay=10000, stop_max_attempt_number=5, wait_random_min=10, wait_random_max=2000)
+
+    @retry(stop_max_attempt_number=5, wait_random_min=1000, wait_random_max=2000 , retry_on_exception=(lambda e: not isinstance(e, requests.exceptions.ReadTimeout)) )
     def request_entity_fishing(self, text, lang='en', postprocess_callback=None):
         """
         Wrapper around Entity-fishing (language set in English)
@@ -96,13 +102,24 @@ class WrapperAnnotator(object):
             if isinstance(self.entity_fishing_endpoint, dict):
                 endpoint = self.entity_fishing_endpoint['disambiguation']
 
-            files = {
-                'query': (
-                          '{ \'text\': ' + json.dumps(text) + ',\'language\':{\'lang\': \'' + lang + '\'}}'),
-            }
-
-            response = requests.post(endpoint, files=files)
+            text_query = {  'text': text,
+                            'language': {
+                                'lang': lang
+                            },
+                            'mentions': [
+                                'ner',  'wikipedia'
+                            ]}
             
+            files = {'query' : json.dumps(text_query, ensure_ascii=False )}
+
+            #files = {
+            #    'query': (
+            #              '{ \'text\': ' + json.dumps(text) + ',\'language\':{\'lang\': \'' + lang + '\'}}'),
+            #}
+
+            response = requests.post(endpoint, files=files, timeout=self.timeout)
+           
+           
             if postprocess_callback:
                 return postprocess_callback(json.loads(response.text))
             
@@ -111,7 +128,10 @@ class WrapperAnnotator(object):
         # null
         except json.decoder.JSONDecodeError:
             return None
-        
+        except requests.exceptions.ReadTimeout as e:
+            raise e.with_traceback(None)
+    
+    @retry(stop_max_attempt_number=5, wait_random_min=1000, wait_random_max=2000)
     def request_entity_fishing_short(self, text, lang='en', postprocess_callback=None):
         """
         Wrapper around Entity-fishing (language set in English)
@@ -128,12 +148,24 @@ class WrapperAnnotator(object):
             if isinstance(self.entity_fishing_endpoint, dict):
                 endpoint = self.entity_fishing_endpoint['disambiguation']
 
-            files = {
-                'query': (
-                          '{ \'shortText\': "' + text + '",\'language\':{\'lang\': \'' + lang + '\'}}'),
-            }
+            short_text_query = {'shortText': text,
+                                'language': {
+                                    'lang': lang
+                                },
+                                'entities': [],
+                                'mentions': [
+                                    'ner'
+                                ]}
+            
+            files = {'query' : json.dumps(short_text_query, ensure_ascii=False )}
+            
 
-            response = requests.post(endpoint, files=files)
+            #files = {
+            #    'query': (
+            #              '{ \'shortText\': "' + text + '",\'language\':{\'lang\': \'' + lang + '\'}}'),
+            #}
+
+            response = requests.post(endpoint, files=files, timeout=self.timeout)
             
             if postprocess_callback:
                 return postprocess_callback(json.loads(response.text))
@@ -144,6 +176,7 @@ class WrapperAnnotator(object):
         except json.decoder.JSONDecodeError:
             return None
     
+    @retry(stop_max_attempt_number=5, wait_random_min=1000, wait_random_max=2000)
     def request_entity_fishing_concept_lookup(self, wikidataID, postprocess_callback=None):
         """
         Wrapper around Entity-fishing (language set in English)
@@ -160,7 +193,7 @@ class WrapperAnnotator(object):
 
             get_url = '%s/%s' % (endpoint , wikidataID)
 
-            response = requests.get(get_url)
+            response = requests.get(get_url, timeout=self.timeout)
             
             if postprocess_callback:
                 return postprocess_callback(json.loads(response.text))
@@ -171,6 +204,7 @@ class WrapperAnnotator(object):
         except json.decoder.JSONDecodeError:
             return None
 
+    @retry(stop_max_attempt_number=5, wait_random_min=1000, wait_random_max=2000)
     def request_ncbo_plus(self, text, lang='en', ncbo_api='https://bioportal.bioontology.org/'):
         """
         Wrapper around the API of the Bioportal AnnotatorPlus
@@ -200,14 +234,14 @@ class WrapperAnnotator(object):
             if lang == 'en':
                 params["lemmatize"] = 'true'
 
-            response = requests.get(ncbo_api[lang][1], params=params)
+            response = requests.get(ncbo_api[lang][1], params=params, timeout=self.timeout)
             return json.loads(response.text)
 
         # null
         except json.decoder.JSONDecodeError:
             return None
 
-    @retry(stop_max_delay=10000, stop_max_attempt_number=5, wait_random_min=1000, wait_random_max=2000)
+    @retry(stop_max_attempt_number=5, wait_random_min=1000, wait_random_max=2000)
     def request_concept_annotator(self, text, lang='en', confidence=0.15, postprocess_callback=None):
         """
         Wrapper around Pyclinrec Annotator
@@ -231,7 +265,7 @@ class WrapperAnnotator(object):
             }
             
             # not supported by get if text too long
-            response = requests.post(endpoint, data=params, headers=headers)
+            response = requests.post(endpoint, data=params, headers=headers, timeout=self.timeout)
             
             if postprocess_callback:
                 return postprocess_callback(json.loads(response.text))
