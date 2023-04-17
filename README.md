@@ -46,3 +46,17 @@ Toulet, Anne, Franck Michel, Anna Bobasheva, Aline Menin, Sébastien Dupré, Mar
 
 
 Anna BOBASHEVA, Franck MICHEL, Andon TCHECHMEDJIEV, Anne TOULET (2022). ISSA Processing Pipeline. https://github.com/issa-project/issa-pipeline.
+
+<details>
+<summary>See BibTex</summary>
+
+@software{BOBASHEVA_issa-pipeline_2022,
+author = {BOBASHEVA, Anna and MICHEL, Franck and TCHECHMEDJIEV, Andon and TOULET, Anne},
+doi = {10.5281/zenodo.6513983},
+month = {5},
+title = {{issa-pipeline}},
+url = {https://github.com/issa-project/issa-pipeline},
+version = {1.0.0},
+year = {2022}
+}
+</details>
