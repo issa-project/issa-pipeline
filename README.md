@@ -30,4 +30,19 @@ See the [LICENSE file](LICENSE).
 
 ## Cite this work
 
+Toulet, Anne, Franck Michel, Anna Bobasheva, Aline Menin, Sébastien Dupré, Marie-Claude Deboin, Marco Winckler, and Andon Tchechmedjiev. "ISSA: generic pipeline, knowledge model and visualization tools to help scientists search and make sense of a scientific archive." In The Semantic Web–ISWC 2022: 21st International Semantic Web Conference, Virtual Event, October 23–27, 2022, Proceedings, pp. 660-677. Cham: Springer International Publishing, 2022. https://doi.org/10.1007/978-3-031-19433-7_38 
+<details>
+<summary>See BibTex</summary>
+
+@inproceedings{toulet2022issa,
+  title={ISSA: generic pipeline, knowledge model and visualization tools to help scientists search and make sense of a scientific archive},
+  author={Toulet, Anne and Michel, Franck and Bobasheva, Anna and Menin, Aline and Dupr{\'e}, S{\'e}bastien and Deboin, Marie-Claude and Winckler, Marco and Tchechmedjiev, Andon},
+  booktitle={The Semantic Web--ISWC 2022: 21st International Semantic Web Conference, Virtual Event, October 23--27, 2022, Proceedings},
+  pages={660--677},
+  year={2022},
+  organization={Springer}
+}
+</details>
+
+
 Anna BOBASHEVA, Franck MICHEL, Andon TCHECHMEDJIEV, Anne TOULET (2022). ISSA Processing Pipeline. https://github.com/issa-project/issa-pipeline.
