@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+- family-names: "BOBASHEVA"
+  given-names: "Anna"
+  orcid: "https://orcid.org/0000-0003-0395-2069"
+- family-names: "MICHEL"
+  given-names: "Franck"
+  orcid: "https://orcid.org/0000-0001-9064-0463"
+- family-names: "TCHECHMEDJIEV"
+  given-names: "Andon"
+  orcid: "https://orcid.org/0000-0003-3749-5521"
+- family-names: "TOULET"
+  given-names: "Anne"
+  orcid: "https://orcid.org/0000-0003-0463-0854"
+title: "issa-pipeline"
+version: 1.0.0
+doi: 10.5281/zenodo.6513983
+date-released: 2022-05-03
+url: "https://github.com/issa-project/issa-pipeline"
