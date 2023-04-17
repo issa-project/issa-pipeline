@@ -10,7 +10,7 @@ if [ $lang == "en" ]; then
      endpoint=https://dbpedia.org/sparql
 elif [ $lang == "fr" ]; then
 	ns=http://fr.dbpedia.org/
-     endpoint=http://prod-dbpedia.inria.fr/sparql
+     endpoint=https://fr.dbpedia.org/sparql
 fi
 
 # Define log file
@@ -24,7 +24,7 @@ urilist=dbpedia-ne-uris.txt
 # Max number of URIs to query at once
 MAXURIS=50
 
-# Extract URIs for requested language  
+# Extract URIs for the requested language  
 cat $urilist | grep "^${ns}" > dbpedia-ne-uris-$lang.txt
 urilist=dbpedia-ne-uris-$lang.txt
 

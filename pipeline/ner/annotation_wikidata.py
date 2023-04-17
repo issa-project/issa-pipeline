@@ -18,7 +18,8 @@ from util import open_timestamp_logger, close_timestamp_logger
 from util import get_nested_dict_value
 
 from wrapper_annotator import WrapperAnnotator, string2number
-wa = WrapperAnnotator(entity_fishing_endpoint= cfg.ENTITY_FISHING_ENDPOINT )
+wa = WrapperAnnotator(entity_fishing_endpoint= cfg.ENTITY_FISHING_ENDPOINT,
+                      timeout=cfg.REQUEST_TIMEOUT )
 
 #%% 
 logger = open_timestamp_logger(log_prefix= os.path.splitext(os.path.basename(__file__))[0], 
@@ -34,7 +35,9 @@ def postprocess_ef_response(result_json):
     
     try:
         if cfg.REMOVE_HEADER:
+            temp = result_json['language'] #save language
             result_json = {k:v for k, v in result_json.items() if isinstance(v, list) }
+            result_json['language'] = temp
             #result_json.clear()
         else:
             if cfg.REMOVE_TEXT:
@@ -57,10 +60,11 @@ def annotate_with_ef(f_json, f_out_json):
     returns Wikidata NE.
 
     """
+    annot_json = {}
+
     try:
         paper_json =  read_paper_json(f_json)
-        
-        annot_json = {}
+ 
         annot_json['paper_id'] = paper_json['paper_id']
 
         for part, path in cfg.JSON_TEXT_MAP.items():
@@ -70,16 +74,19 @@ def annotate_with_ef(f_json, f_out_json):
             if text and lang:
                 annot_json[part] = wa.request_entity_fishing(text, lang, 
                                                              postprocess_callback=postprocess_ef_response)
-              
-        # clean out the null values, otherwise there might be problems
-        #  with importing them into MongoDB
-        annot_json  = {k: v for k, v in annot_json.items() if v}
-
-        save_paper_json(f_out_json, annot_json)
-        
+                      
     except Exception as e:
         logger.exception('%s: %s', f_json, str(e))
 
+    try:
+        # clean out the null values, otherwise there might be problems
+        #  with importing them into MongoDB
+        annot_json  = {k: v for k, v in annot_json.items() if v}
+        save_paper_json(f_out_json, annot_json)
+    
+    except Exception as e:
+        logger.exception('%s: %s', f_json, str(e))
+    
     return f_out_json
 
 

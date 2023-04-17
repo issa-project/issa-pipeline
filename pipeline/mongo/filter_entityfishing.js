@@ -35,21 +35,24 @@ db.entityfishing.aggregate([
         'title.entities': { $filter: { input: "$title.entities",  cond: { $and: [
             { $ne:  ["$$this.wikidataId", undefined] },
             { $regexMatch: {input: "$$this.rawName", regex: "^[a-z,A-Z,À-ÿ,\p{Greek},µ]" } },
-            { $gte: [{$strLenCP: "$$this.rawName"}, 3] }
+            { $gte: [{$strLenCP: "$$this.rawName"}, 3] },
+            { $gte: ["$$this.confidence_score", 0.0] }
         ]}}},
         'title.global_categories': 1,
 
         'abstract.entities': { $filter: { input: "$abstract.entities",  cond: { $and: [
             { $ne:  ["$$this.wikidataId", undefined] },
             { $regexMatch: {input: "$$this.rawName", regex: "^[a-z,A-Z,À-ÿ,\p{Greek},µ]" } },
-            { $gte: [{$strLenCP: "$$this.rawName"}, 3] }
+            { $gte: [{$strLenCP: "$$this.rawName"}, 3] },
+            { $gte: ["$$this.confidence_score", 0.0] }
         ]}}},
         'abstract.global_categories': 1,
 
         'body_text.entities': { $filter: { input: "$body_text.entities",  cond: { $and: [
             { $ne:  ["$$this.wikidataId", undefined] },
             { $regexMatch: {input: "$$this.rawName", regex: "^[a-z,A-Z,À-ÿ,\p{Greek},µ]" } },
-            { $gte: [{$strLenCP: "$$this.rawName"}, 3] }
+            { $gte: [{$strLenCP: "$$this.rawName"}, 3] },
+            { $gte: ["$$this.confidence_score", 0.0] }
         ]}}},
         'body_text.global_categories': 1,
     }},

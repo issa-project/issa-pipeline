@@ -64,7 +64,7 @@ The following intermediate files are produced at this point:
 - (optionally) extracted text coalesced with metadata JSON 
 - (optionally) XML/TEI encoded documents output by Grobid (useful for debugging purposes)
 
->:point_right: text extraction is not always possible. For example, if a PDF file is a scan of a document.
+>:point_right: text extraction is not always possible. For example, if a PDF file is a scan of a document.      
 >:point_right: The extracted text is not always "clean" and can contain misaligned and missing parts of a text. To compensate for this, if a title and/or an abstract are available from the metadata they can be coalesced with extracted text into one JSON document.   
 >:point_right: A massive download of PDF documents from an HTTP server may cause problems for a host and a client. Caching of the PDF files is recommended and mechanisms are provided in the pipeline.
 
@@ -106,8 +106,8 @@ Scripts are provided in directory [indexing](./indexing/).
 
 ISSA pipeline relies on tools to identify, disambiguate and link named entities from the documents:
 
-- [DBpedia Spotlight](https://www.dbpedia-spotlight.org/)
-- [Entity-fishing](https://github.com/kermitt2/entity-fishing)
+- [DBpedia Spotlight](https://www.dbpedia-spotlight.org/) [3]
+- [Entity-fishing](https://github.com/kermitt2/entity-fishing) [4]
 - identifies geographic entities by looking for [GeoNames](https://www.geonames.org/ontology/documentation.html) mappings in the recognized Wikidata concepts.
 
 In this step for each document's JSON file, the pipeline invokes each of these tools for each part of a document (title, abstract, body). The tool's responses are encapsulated into a simple schema:
@@ -150,8 +150,8 @@ RDF files generated at the previous stage are imported into a [dockerized Virtuo
 
 | Data type                            | Named Graph                                           |
 |--------------------------------------|-------------------------------------------------------|
-| Metadata                             | http://data-issa.cirad.fr/graph/articles              |
-| Annotated text                       | http://data-issa.cirad.fr/graph/articles/text         |
+| Metadata                             | http://data-issa.cirad.fr/graph/documents             |
+| Annotated text                       | http://data-issa.cirad.fr/graph/documents/text        |
 | Human-validated thematic descriptors | http://data-issa.cirad.fr/graph/thematic-descriptors  |
 | Annif-generated thematic descriptors | http://data-issa.cirad.fr/graph/annif-descriptors     |
 | DBpedia annotations                  | http://data-issa.cirad.fr/graph/dbpedia-spotlight-nes |
@@ -164,11 +164,16 @@ Scripts are provided in the directory [virtuoso](./virtuoso/).
 
 ISSA pipeline is designed to be open to extension. Adding a new document processing requires only a few steps. See the [HOW-TO-EXTEND-PIPELINE](https://github.com/issa-project/issa-pipeline/blob/main/pipeline/HOW-TO-EXTEND-PIPELINE.md) documentation.
 
->:point_right: It would be even easier to remove a process from the pipeline by editing the calling scripts.
+>:
+: It would be even easier to remove a process from the pipeline by editing the calling scripts.
 
 ## References
 
 [1] F. Michel, L. Djimenou, C. Faron-Zucker, and J. Montagnat. Translation of Relational and Non-Relational Databases into RDF with xR2RML.
 In Proceedings of the *11th International Conference on Web Information Systems and Technologies (WEBIST 2015)*, Lisbon, Portugal, 2015.
 
-[2] O. Suominen, J. Inkinen, T. Virolainen, M. Fürneisen,  B. P. Kinoshita, S. Veldhoen, M. Sjöberg, P. Zumstein, R. Neatherway, & M Lehtinen (2022). Annif (Version 0.58.0-dev) [Computer software]. https://doi.org/10.5281/zenodo.2578948 .
+[2] O. Suominen, J. Inkinen, T. Virolainen, M. Fürneisen,  B. P. Kinoshita, S. Veldhoen, M. Sjöberg, P. Zumstein, R. Neatherway, & M Lehtinen (2022). Annif (Version 0.58.0-dev) [Computer software]. https://doi.org/10.5281/zenodo.2578948.
+
+[3] P. Mendes, M. Jakob, A. García-Silva, and C. Bizer. DBpedia spotlight: shedding light on the web of documents. In Proceedings of the 7th international conference on semantic systems, pp. 1-8. 2011. https://doi.org/10.1145/2063518.2063519
+
+[4] A. Bertino, L. Foppiano, J. Arias, A. Ekanger, K. Thoden. Entity-fishing for Scholarly Publishing: Challenges and Recommendations. [Computer software].  https://doi.org/10.5281/zenodo.1476474 

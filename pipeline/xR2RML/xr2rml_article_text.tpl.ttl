@@ -1,4 +1,4 @@
-# Mapping file for the CORD19 metadata CSV file. The article URIs are built using the sha field.
+# Mapping file for the CORD19 metadata CSV file. The document URIs are built using the sha field.
 #
 # Author: Franck MICHEL, University Cote d'Azur, CNRS, Inria
 #
@@ -41,12 +41,12 @@
     a rr:TriplesMap;
     xrr:logicalSource <#LS>;
     rr:subjectMap   [ 
-        rr:template "http://data-issa.cirad.fr/article/{$.paper_id}#body_text";
+        rr:template "http://data-issa.cirad.fr/document/{$.paper_id}#body_text";
         rr:class    issa:DocumentBody
     ];
     rr:predicateObjectMap [
         rr:predicate frbr:partOf;
-        rr:objectMap [ rr:template "http://data-issa.cirad.fr/article/{$.paper_id}"; ];
+        rr:objectMap [ rr:template "http://data-issa.cirad.fr/document/{$.paper_id}"; ];
     ];
     rr:predicateObjectMap [
         rr:predicate rdf:value;
@@ -56,10 +56,10 @@
 <#TM_title>
     a rr:TriplesMap;
     xrr:logicalSource <#LS>;
-    rr:subjectMap    [ rr:template "http://data-issa.cirad.fr/article/{$.paper_id}#title" ];
+    rr:subjectMap    [ rr:template "http://data-issa.cirad.fr/document/{$.paper_id}#title" ];
     rr:predicateObjectMap [
         rr:predicate frbr:partOf;
-        rr:objectMap [ rr:template "http://data-issa.cirad.fr/article/{$.paper_id}"; ];
+        rr:objectMap [ rr:template "http://data-issa.cirad.fr/document/{$.paper_id}"; ];
     ];
     rr:predicateObjectMap [
         rr:predicate rdf:value;
@@ -70,12 +70,12 @@
     a rr:TriplesMap;
     xrr:logicalSource <#LS>;
     rr:subjectMap    [
-        rr:template "http://data-issa.cirad.fr/article/{$.paper_id}#abstract";
+        rr:template "http://data-issa.cirad.fr/document/{$.paper_id}#abstract";
         rr:class    fabio:Abstract
     ];
     rr:predicateObjectMap [
         rr:predicate frbr:partOf;
-        rr:objectMap [ rr:template "http://data-issa.cirad.fr/article/{$.paper_id}"; ];
+        rr:objectMap [ rr:template "http://data-issa.cirad.fr/document/{$.paper_id}"; ];
     ];
     rr:predicateObjectMap [
         rr:predicate rdf:value;

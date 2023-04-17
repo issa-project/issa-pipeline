@@ -388,7 +388,7 @@ class cfg_indexing_training(object):
     TEST_SET_SIZE = 0.2
 
 
-# Commonn config setting for the annoattion scripts
+# Commonn config setting for the annotation scripts
 class cfg_annotation(cfg_pipeline): 
     FILES_LOC = cfg_pipeline.FILES_LOC    
 
@@ -410,6 +410,8 @@ class cfg_annotation(cfg_pipeline):
 
     ASYNCH_PROCESSING = True
     ASYNCH_MAX_WORKERS = 10
+
+    REQUEST_TIMEOUT = 120
 
 
 class cfg_annotation_dbpedia(cfg_annotation): 
@@ -457,6 +459,8 @@ class cfg_annotation_geonames(cfg_annotation):
         'concept_lookup': 'http://localhost:8090/service/kb/concept'}
         #'disambiguation' : 'https://cloud.science-miner.com/nerd//service/disambiguate/',
         #'concept_lookup': 'https://cloud.science-miner.com/nerd//service/kb/concept/',}
+
+    USE_CACHE = True
     
 
 class cfg_annotation_agrovoc(cfg_annotation): 

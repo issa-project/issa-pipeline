@@ -13,13 +13,13 @@ echo "*************************************************"
 ./retrieve-uris.sh
 
 echo "*************************************************"
-echo " Fetching hierarchis from DBpedia..."
+echo " Fetching hierarchies from DBpedia..."
 echo "*************************************************"
 ./retrieve-hierarchy.sh en
 ./retrieve-hierarchy.sh fr
 
 echo "*************************************************"
-echo " Fetching hierarchis from DBpedia..."
+echo " Fetching hierarchies from DBpedia..."
 echo "*************************************************"
 ./import-hierarchy.sh
 

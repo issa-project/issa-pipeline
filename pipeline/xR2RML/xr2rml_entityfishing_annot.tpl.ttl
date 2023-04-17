@@ -30,19 +30,19 @@
 # Template file: replace placeholders
 # - {{dataset}}: RDF dataset name e.g. "dataset-1-0"
 # - {{collection}}: the MongoDB collection to query, e.g. entityfishing
-# - {{articlepart}}: article part about which to produce annotations. One of title, abstract, body_text
+# - {{documentpart}}: document part about which to produce annotations. One of title, abstract, body_text
 
 <#LS_entities>
     a               xrr:LogicalSource;
     xrr:query       """db.{{collection}}.find( {} )""";
-    rml:iterator    "$.{{articlepart}}.entities.*";
+    rml:iterator    "$.{{documentpart}}.entities.*";
     xrr:pushDown    [ xrr:reference "$.paper_id"; xrr:as "paper_id" ].
 
 <#TM_annotation>
     a               rr:TriplesMap;
     xrr:logicalSource <#LS_entities>;
     rr:subjectMap   [
-        rr:template     "http://data-issa.cirad.fr/ann/sha1(ef_{$.paper_id}_{{articlepart}}_{$.rawName}_{$.offsetStart}_{$.offsetEnd})";
+        rr:template     "http://data-issa.cirad.fr/ann/sha1(ef_{$.paper_id}_{{documentpart}}_{$.rawName}_{$.offsetStart}_{$.offsetEnd})";
         rr:class        oa:Annotation, prov:Entity;
     ];
     rr:predicateObjectMap [
@@ -59,7 +59,7 @@
 #    ];
     rr:predicateObjectMap [
         rr:predicate schema:about;
-        rr:objectMap [ rr:template "http://data-issa.cirad.fr/article/{$.paper_id}" ];
+        rr:objectMap [ rr:template "http://data-issa.cirad.fr/document/{$.paper_id}" ];
     ];
     rr:predicateObjectMap [
         rr:predicate dct:subject;
@@ -70,7 +70,7 @@
     rr:predicateObjectMap [
         rr:predicate oa:hasTarget;
         rr:objectMap [
-            rr:template "http://data-issa.cirad.fr/ann/target/sha1(ef_{$.paper_id}_{{articlepart}}_{$.rawName}_{$.offsetStart}_{$.offsetEnd})";
+            rr:template "http://data-issa.cirad.fr/ann/target/sha1(ef_{$.paper_id}_{{documentpart}}_{$.rawName}_{$.offsetStart}_{$.offsetEnd})";
             rr:termType rr:IRI;
         ];
     ];
@@ -103,16 +103,16 @@
     a rr:TriplesMap;
     xrr:logicalSource <#LS_entities>;
     rr:subjectMap [
-        rr:template "http://data-issa.cirad.fr/ann/target/sha1(ef_{$.paper_id}_{{articlepart}}_{$.rawName}_{$.offsetStart}_{$.offsetEnd})"
+        rr:template "http://data-issa.cirad.fr/ann/target/sha1(ef_{$.paper_id}_{{documentpart}}_{$.rawName}_{$.offsetStart}_{$.offsetEnd})"
     ];
     rr:predicateObjectMap [
         rr:predicate oa:hasSource;
-        rr:objectMap [ rr:template "http://data-issa.cirad.fr/article/{$.paper_id}#{{articlepart}}" ];
+        rr:objectMap [ rr:template "http://data-issa.cirad.fr/document/{$.paper_id}#{{documentpart}}" ];
     ];
     rr:predicateObjectMap [
         rr:predicate oa:hasSelector;
         rr:objectMap [
-            rr:template "http://data-issa.cirad.fr/ann/selector/sha1(ef_{$.paper_id}_{{articlepart}}_{$.rawName}_{$.offsetStart}_{$.offsetEnd})";
+            rr:template "http://data-issa.cirad.fr/ann/selector/sha1(ef_{$.paper_id}_{{documentpart}}_{$.rawName}_{$.offsetStart}_{$.offsetEnd})";
             rr:termType rr:IRI;
         ];
     ].
@@ -122,7 +122,7 @@
     a rr:TriplesMap;
     xrr:logicalSource <#LS_entities>;
     rr:subjectMap [
-        rr:template "http://data-issa.cirad.fr/ann/selector/sha1(ef_{$.paper_id}_{{articlepart}}_{$.rawName}_{$.offsetStart}_{$.offsetEnd})";
+        rr:template "http://data-issa.cirad.fr/ann/selector/sha1(ef_{$.paper_id}_{{documentpart}}_{$.rawName}_{$.offsetStart}_{$.offsetEnd})";
         rr:class oa:TextPositionSelector, oa:TextQuoteSelector;
     ];
     rr:predicateObjectMap [
@@ -141,19 +141,19 @@
 
 # -------------------------------------------------------------------------------
 
-# Add global categories (dct:subject) to the article part (title, abstract or body_text
+# Add global categories (dct:subject) to the document part (title, abstract or body_text
 
 <#LS_global_categories>
     a               xrr:LogicalSource;
     xrr:query       """db.{{collection}}.find( {} )""";
-    rml:iterator    "$.{{articlepart}}.global_categories.*";
+    rml:iterator    "$.{{documentpart}}.global_categories.*";
     xrr:pushDown    [ xrr:reference "$.paper_id"; xrr:as "paper_id" ].
 
 <#TM_global_categories>
     a               rr:TriplesMap;
     xrr:logicalSource <#LS_global_categories>;
     rr:subjectMap   [
-        rr:template "http://data-issa.cirad.fr/article/{$.paper_id}#{{articlepart}}";
+        rr:template "http://data-issa.cirad.fr/document/{$.paper_id}#{{documentpart}}";
     ];
     rr:predicateObjectMap [
         rr:predicate dct:subject;
@@ -168,14 +168,14 @@
 #      rdfs:label           "named entity 'Infection'" ;
 #      issapr:confidence    0.3729 ;
 #      dct:subject          "Health" , "Medicine" ;
-#      schema:about         <http://data-issa.cirad.fr/article/600955> ;
+#      schema:about         <http://data-issa.cirad.fr/document/600955> ;
 #      oa:hasBody           wd:Q166231 ;
 #      oa:hasTarget         <http://data-issa.cirad.fr/ann/target/sha1_hash> ;
 #      prov:wasAttributedTo issa:EntityFishing .
 #
 #<http://data-issa.cirad.fr/ann/target/sha1_hash>
 #      oa:hasSelector       <http://data-issa.cirad.fr/ann/selector/sha1_hash> ;
-#      oa:hasSource         <http://data-issa.cirad.fr/article/600955#body_text> .
+#      oa:hasSource         <http://data-issa.cirad.fr/document/600955#body_text> .
 #
 #<http://data-issa.cirad.fr/ann/selector/sha1_hash>
 #      a                    oa:TextPositionSelector , oa:TextQuoteSelector ;

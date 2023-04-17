@@ -3,11 +3,11 @@ log_enable(3,1);
 ECHO "Clearing ISSA graphs...\n";
 
 -- For metadata and thematic descriptors the full graph is updated
-SPARQL CLEAR GRAPH  <http://data-issa.cirad.fr/graph/articles>;
+SPARQL CLEAR GRAPH  <http://data-issa.cirad.fr/graph/documents>;
 SPARQL CLEAR GRAPH  <http://data-issa.cirad.fr/graph/thematic-descriptors>;
 
 -- For other graphs updates are incremental (uncomment only for the first load of a dataset)
---SPARQL CLEAR GRAPH  <http://data-issa.cirad.fr/graph/articles/text>;
+--SPARQL CLEAR GRAPH  <http://data-issa.cirad.fr/graph/documents/text>;
 --SPARQL CLEAR GRAPH  <http://data-issa.cirad.fr/graph/annif-descriptors>;
 --SPARQL CLEAR GRAPH  <http://data-issa.cirad.fr/graph/dbpedia-spotlight-nes>;
 --SPARQL CLEAR GRAPH  <http://data-issa.cirad.fr/graph/entity-fishing-nes>;
@@ -17,34 +17,35 @@ SPARQL CLEAR GRAPH  <http://data-issa.cirad.fr/graph/thematic-descriptors>;
 DELETE FROM DB.DBA.load_list;
 checkpoint;
 
-ECHO "Loading ISSA graphs...\n";
--- $ARGV[$I] shoud contain a data import dir path 
+ECHO "Load files:\n";
+-- $ARGV[$I] should contain a data import dir path 
 
-ld_dir ('$ARGV[$I]', 'issa-document-metadata.ttl', 'http://data-issa.cirad.fr/graph/articles');
+ld_dir ('$ARGV[$I]', 'issa-document-metadata.ttl', 'http://data-issa.cirad.fr/graph/documents');
 ld_dir ('$ARGV[$I]', 'issa-document-descriptors.ttl', 'http://data-issa.cirad.fr/graph/thematic-descriptors');
 
-ld_dir ('$ARGV[$I]', 'issa-article-text.ttl', 'http://data-issa.cirad.fr/graph/articles/text');
+ld_dir ('$ARGV[$I]', 'issa-article-text.ttl', 'http://data-issa.cirad.fr/graph/documents/text');
 
-ld_dir ('$ARGV[$I]', 'issa-article-annif-descriptors.ttl', 'http://data-issa.cirad.fr/graph/annif-descriptors');
+ld_dir ('$ARGV[$I]', 'issa-document-annif-descriptors.ttl', 'http://data-issa.cirad.fr/graph/annif-descriptors');
 
-ld_dir ('$ARGV[$I]', 'issa-article-spotlight-*.ttl', 'http://data-issa.cirad.fr/graph/dbpedia-spotlight-nes');
+ld_dir ('$ARGV[$I]', 'issa-document-spotlight-*.ttl', 'http://data-issa.cirad.fr/graph/dbpedia-spotlight-nes');
 
-ld_dir ('$ARGV[$I]', 'issa-article-entityfishing-*.ttl', 'http://data-issa.cirad.fr/graph/entity-fishing-nes');
+ld_dir ('$ARGV[$I]', 'issa-document-entityfishing-*.ttl', 'http://data-issa.cirad.fr/graph/entity-fishing-nes');
 
-ld_dir ('$ARGV[$I]', 'issa-article-geonames-*.ttl', 'http://data-issa.cirad.fr/graph/geographic-nes');
+ld_dir ('$ARGV[$I]', 'issa-document-geonames-*.ttl', 'http://data-issa.cirad.fr/graph/geographic-nes');
 
-ld_dir ('$ARGV[$I]', 'issa-article-pyclinrec-*.ttl', 'http://data-issa.cirad.fr/graph/pyclinrec-nes');
+ld_dir ('$ARGV[$I]', 'issa-document-pyclinrec-*.ttl', 'http://data-issa.cirad.fr/graph/pyclinrec-nes');
 
 -- List files and graphs to load
 SELECT ll_file, ll_graph FROM DB.DBA.load_list ORDER BY ll_graph, ll_file;
 
+ECHO "Loading ISSA graphs...\n";
 rdf_loader_run ();
 checkpoint;
 
 -- Check for load errors
 SELECT * FROM DB.DBA.load_list;
 
--- Report number of triples in the graphs
+-- Report the number of triples in the graphs
 SPARQL SELECT DISTINCT ?graph (COUNT(*) as ?triples) WHERE { GRAPH ?graph {?s ?p ?o} };
 
 -- Add all text index rules for all graphs

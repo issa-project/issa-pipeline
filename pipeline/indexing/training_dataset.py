@@ -38,12 +38,12 @@ def create_training_dirs():
 #%%
 def get_language(json_dict):
     """
-    Determine the lanfuage of the document because each language has its own models'
+    Determine the language of the document because each language has its own models'
 
     """
     lang=''
     for part in cfg.LANGUAGE_DETERMINATORS:
-        lang = get_nested_dict_value(json_dict, cfg.JSON_TEXT_MAP[part][1] )
+        lang = get_nested_dict_value(json_dict, cfg.JSON_TEXT_MAP[part][1], default='unk' )
         if lang in cfg.TRAINING_FILES_LOC.keys():
             return lang
     
@@ -146,7 +146,7 @@ def copy_label_files():
     """
     
     files = glob.glob(os.path.join(cfg.OUTPUT_PATH, '**/*.txt'), recursive=True)
-    logger.info('copy %d lables files', len(files) ) 
+    logger.info('copy %d labels files', len(files) ) 
     
        
     for f_txt in files:
@@ -177,7 +177,7 @@ def generate_label_files():
     """
     
     files = glob.glob(os.path.join(cfg.OUTPUT_PATH, '**/*.txt'), recursive=True)
-    logger.info('create %d lables files', len(files) ) 
+    logger.info('create %d labels files', len(files) ) 
     
     metadata = read_metadata(cfg.METADATA_FILE)
     metadata.set_index('paper_id', inplace=True)
