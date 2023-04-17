@@ -39,18 +39,18 @@
 
 <http://data-issa.cirad.fr/ann/target/b52a13314cf1adfffe0eefa8d8881df4e381530a>
       oa:hasSelector <http://data-issa.cirad.fr/ann/selector/b52a13314cf1adfffe0eefa8d8881df4e381530a> ;
-      oa:hasSource <http://data-issa.cirad.fr/article/543654#body_text> .
+      oa:hasSource <http://data-issa.cirad.fr/document/543654#body_text> .
 
 <http://data-issa.cirad.fr/ann/target/449e390807ea8a4787211b1eda00191c9d89f66d>
       oa:hasSelector <http://data-issa.cirad.fr/ann/selector/449e390807ea8a4787211b1eda00191c9d89f66d> ;
-      oa:hasSource <http://data-issa.cirad.fr/article/543654#body_text> .
+      oa:hasSource <http://data-issa.cirad.fr/document/543654#body_text> .
 
 <http://data-issa.cirad.fr/ann/ecc4b52cac3d4a43b1a9a739f3a42b8436697d0f>
       a       prov:Entity , issa:GeographicAnnotation ;
       rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'South Africa'" ;
       issapr:confidence 0.8876 ;
-      schema:about <http://data-issa.cirad.fr/article/543654> ;
+      schema:about <http://data-issa.cirad.fr/document/543654> ;
       oa:hasBody <https://sws.geonames.org/953987/> ;
       oa:hasTarget <http://data-issa.cirad.fr/ann/target/ecc4b52cac3d4a43b1a9a739f3a42b8436697d0f> ;
       prov:wasAttributedTo
@@ -58,14 +58,14 @@
 
 <http://data-issa.cirad.fr/ann/target/38f0d6b5cc5ca17a39aba7a3f43dfeed37316c83>
       oa:hasSelector <http://data-issa.cirad.fr/ann/selector/38f0d6b5cc5ca17a39aba7a3f43dfeed37316c83> ;
-      oa:hasSource <http://data-issa.cirad.fr/article/543654#body_text> .
+      oa:hasSource <http://data-issa.cirad.fr/document/543654#body_text> .
 
 <http://data-issa.cirad.fr/ann/1c0e1db54e61585fe1bebbcf6ca6baa8eabc3e0a>
       a       prov:Entity , issa:GeographicAnnotation ;
       rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Moluccas'" ;
       issapr:confidence 0.641 ;
-      schema:about <http://data-issa.cirad.fr/article/543654> ;
+      schema:about <http://data-issa.cirad.fr/document/543654> ;
       oa:hasBody <https://sws.geonames.org/1636629/> ;
       oa:hasTarget <http://data-issa.cirad.fr/ann/target/1c0e1db54e61585fe1bebbcf6ca6baa8eabc3e0a> ;
       prov:wasAttributedTo
@@ -79,18 +79,18 @@
 
 <http://data-issa.cirad.fr/ann/target/3575026ec39332f4c74d91dfdbf84b1e7ef0beea>
       oa:hasSelector <http://data-issa.cirad.fr/ann/selector/3575026ec39332f4c74d91dfdbf84b1e7ef0beea> ;
-      oa:hasSource <http://data-issa.cirad.fr/article/543654#body_text> .
+      oa:hasSource <http://data-issa.cirad.fr/document/543654#body_text> .
 
 <http://data-issa.cirad.fr/ann/target/375eb76385c8cc154067fc1b022e53915b940cbd>
       oa:hasSelector <http://data-issa.cirad.fr/ann/selector/375eb76385c8cc154067fc1b022e53915b940cbd> ;
-      oa:hasSource <http://data-issa.cirad.fr/article/543654#body_text> .
+      oa:hasSource <http://data-issa.cirad.fr/document/543654#body_text> .
 
 <http://data-issa.cirad.fr/ann/f45032c294634e12ddbab053d94f9891c0334481>
       a       prov:Entity , issa:GeographicAnnotation ;
       rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Beforona'" ;
       issapr:confidence 0.6458 ;
-      schema:about <http://data-issa.cirad.fr/article/543654> ;
+      schema:about <http://data-issa.cirad.fr/document/543654> ;
       oa:hasBody <https://sws.geonames.org/1068315/> ;
       oa:hasTarget <http://data-issa.cirad.fr/ann/target/f45032c294634e12ddbab053d94f9891c0334481> ;
       prov:wasAttributedTo
@@ -104,7 +104,7 @@
 
 <http://data-issa.cirad.fr/ann/target/6fe0bd7ed59c7a9204450123e94907489cc7b01e>
       oa:hasSelector <http://data-issa.cirad.fr/ann/selector/6fe0bd7ed59c7a9204450123e94907489cc7b01e> ;
-      oa:hasSource <http://data-issa.cirad.fr/article/543654#body_text> .
+      oa:hasSource <http://data-issa.cirad.fr/document/543654#body_text> .
 
 <http://data-issa.cirad.fr/ann/selector/9dd1c0ffe06f2c5e808625c1d2724232f87e0164>
       a       oa:TextPositionSelector , oa:TextQuoteSelector ;
@@ -117,7 +117,7 @@
       rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Indonesia'" ;
       issapr:confidence 0.689 ;
-      schema:about <http://data-issa.cirad.fr/article/543654> ;
+      schema:about <http://data-issa.cirad.fr/document/543654> ;
       oa:hasBody <https://sws.geonames.org/1643084/> ;
       oa:hasTarget <http://data-issa.cirad.fr/ann/target/277c9f183fad40eedaaa94f082712a2dc0a39115> ;
       prov:wasAttributedTo
@@ -128,7 +128,7 @@
       rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Beforona'" ;
       issapr:confidence 0.6458 ;
-      schema:about <http://data-issa.cirad.fr/article/543654> ;
+      schema:about <http://data-issa.cirad.fr/document/543654> ;
       oa:hasBody <https://sws.geonames.org/1068315/> ;
       oa:hasTarget <http://data-issa.cirad.fr/ann/target/e09af8c204f3088099c45f9165644f65145d4cfe> ;
       prov:wasAttributedTo
@@ -139,7 +139,7 @@
       rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Mahakam'" ;
       issapr:confidence 0.4194 ;
-      schema:about <http://data-issa.cirad.fr/article/543654> ;
+      schema:about <http://data-issa.cirad.fr/document/543654> ;
       oa:hasBody <https://sws.geonames.org/1636868/> ;
       oa:hasTarget <http://data-issa.cirad.fr/ann/target/c59cb4a0910dd3016245652ce8843b646d8029fe> ;
       prov:wasAttributedTo
@@ -153,18 +153,18 @@
 
 <http://data-issa.cirad.fr/ann/target/9dd1c0ffe06f2c5e808625c1d2724232f87e0164>
       oa:hasSelector <http://data-issa.cirad.fr/ann/selector/9dd1c0ffe06f2c5e808625c1d2724232f87e0164> ;
-      oa:hasSource <http://data-issa.cirad.fr/article/543654#body_text> .
+      oa:hasSource <http://data-issa.cirad.fr/document/543654#body_text> .
 
 <http://data-issa.cirad.fr/ann/target/065d185a7da016f87c915a80353522ca7c0c5618>
       oa:hasSelector <http://data-issa.cirad.fr/ann/selector/065d185a7da016f87c915a80353522ca7c0c5618> ;
-      oa:hasSource <http://data-issa.cirad.fr/article/543654#body_text> .
+      oa:hasSource <http://data-issa.cirad.fr/document/543654#body_text> .
 
 <http://data-issa.cirad.fr/ann/7c42a1e925ecf8021b0522edf5baa3b19017c626>
       a       prov:Entity , issa:GeographicAnnotation ;
       rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Indonesia'" ;
       issapr:confidence 0.689 ;
-      schema:about <http://data-issa.cirad.fr/article/543654> ;
+      schema:about <http://data-issa.cirad.fr/document/543654> ;
       oa:hasBody <https://sws.geonames.org/1643084/> ;
       oa:hasTarget <http://data-issa.cirad.fr/ann/target/7c42a1e925ecf8021b0522edf5baa3b19017c626> ;
       prov:wasAttributedTo
@@ -172,7 +172,7 @@
 
 <http://data-issa.cirad.fr/ann/target/8d2e1f97406eb6ee3d6d1bb0ced8a9b8fab73136>
       oa:hasSelector <http://data-issa.cirad.fr/ann/selector/8d2e1f97406eb6ee3d6d1bb0ced8a9b8fab73136> ;
-      oa:hasSource <http://data-issa.cirad.fr/article/543654#body_text> .
+      oa:hasSource <http://data-issa.cirad.fr/document/543654#body_text> .
 
 <http://data-issa.cirad.fr/ann/selector/16ae66be90810622b987af6d2bad871357347a13>
       a       oa:TextPositionSelector , oa:TextQuoteSelector ;
@@ -185,7 +185,7 @@
       rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Beforona'" ;
       issapr:confidence 0.6458 ;
-      schema:about <http://data-issa.cirad.fr/article/543654> ;
+      schema:about <http://data-issa.cirad.fr/document/543654> ;
       oa:hasBody <https://sws.geonames.org/1068315/> ;
       oa:hasTarget <http://data-issa.cirad.fr/ann/target/23fa70dd1f3cf7275d95b8b0ae6ba1730b1ba5fb> ;
       prov:wasAttributedTo
@@ -193,11 +193,11 @@
 
 <http://data-issa.cirad.fr/ann/target/6c8247a596680e2644969fcb242d4226a94f5923>
       oa:hasSelector <http://data-issa.cirad.fr/ann/selector/6c8247a596680e2644969fcb242d4226a94f5923> ;
-      oa:hasSource <http://data-issa.cirad.fr/article/543654#body_text> .
+      oa:hasSource <http://data-issa.cirad.fr/document/543654#body_text> .
 
 <http://data-issa.cirad.fr/ann/target/def9d643b3103968ced9a6c5385e0a2b35fb1271>
       oa:hasSelector <http://data-issa.cirad.fr/ann/selector/def9d643b3103968ced9a6c5385e0a2b35fb1271> ;
-      oa:hasSource <http://data-issa.cirad.fr/article/543654#body_text> .
+      oa:hasSource <http://data-issa.cirad.fr/document/543654#body_text> .
 
 <http://data-issa.cirad.fr/ann/selector/ff706213b7d74f4b60d1be44d03aaee816ba43a6>
       a       oa:TextPositionSelector , oa:TextQuoteSelector ;
@@ -207,7 +207,7 @@
 
 <http://data-issa.cirad.fr/ann/target/36211e9df342d4ade73d9fec374c2bd8a3ab1fc6>
       oa:hasSelector <http://data-issa.cirad.fr/ann/selector/36211e9df342d4ade73d9fec374c2bd8a3ab1fc6> ;
-      oa:hasSource <http://data-issa.cirad.fr/article/543654#body_text> .
+      oa:hasSource <http://data-issa.cirad.fr/document/543654#body_text> .
 
 <http://data-issa.cirad.fr/ann/selector/8d2e1f97406eb6ee3d6d1bb0ced8a9b8fab73136>
       a       oa:TextPositionSelector , oa:TextQuoteSelector ;
@@ -217,14 +217,14 @@
 
 <http://data-issa.cirad.fr/ann/target/d300be2c5fee80139bb8cbfb1beab4582099c317>
       oa:hasSelector <http://data-issa.cirad.fr/ann/selector/d300be2c5fee80139bb8cbfb1beab4582099c317> ;
-      oa:hasSource <http://data-issa.cirad.fr/article/543654#body_text> .
+      oa:hasSource <http://data-issa.cirad.fr/document/543654#body_text> .
 
 <http://data-issa.cirad.fr/ann/309d13c647c88cfd9ac87a24b9642e2ee078f755>
       a       prov:Entity , issa:GeographicAnnotation ;
       rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Tanimbar'" ;
       issapr:confidence 0.3904 ;
-      schema:about <http://data-issa.cirad.fr/article/543654> ;
+      schema:about <http://data-issa.cirad.fr/document/543654> ;
       oa:hasBody <https://sws.geonames.org/1625029/> ;
       oa:hasTarget <http://data-issa.cirad.fr/ann/target/309d13c647c88cfd9ac87a24b9642e2ee078f755> ;
       prov:wasAttributedTo
@@ -241,7 +241,7 @@
       rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Indonesia'" ;
       issapr:confidence 0.689 ;
-      schema:about <http://data-issa.cirad.fr/article/543654> ;
+      schema:about <http://data-issa.cirad.fr/document/543654> ;
       oa:hasBody <https://sws.geonames.org/1643084/> ;
       oa:hasTarget <http://data-issa.cirad.fr/ann/target/39c070d63fc9f1e09ff183bba6783a26f80d96ae> ;
       prov:wasAttributedTo
@@ -273,7 +273,7 @@
 
 <http://data-issa.cirad.fr/ann/target/a8c12837c43010152c00cf70df1ba614feb51224>
       oa:hasSelector <http://data-issa.cirad.fr/ann/selector/a8c12837c43010152c00cf70df1ba614feb51224> ;
-      oa:hasSource <http://data-issa.cirad.fr/article/543654#body_text> .
+      oa:hasSource <http://data-issa.cirad.fr/document/543654#body_text> .
 
 <http://data-issa.cirad.fr/ann/selector/375eb76385c8cc154067fc1b022e53915b940cbd>
       a       oa:TextPositionSelector , oa:TextQuoteSelector ;
@@ -283,11 +283,11 @@
 
 <http://data-issa.cirad.fr/ann/target/de606c20164127901e87414579c7a4ae60955f25>
       oa:hasSelector <http://data-issa.cirad.fr/ann/selector/de606c20164127901e87414579c7a4ae60955f25> ;
-      oa:hasSource <http://data-issa.cirad.fr/article/543654#body_text> .
+      oa:hasSource <http://data-issa.cirad.fr/document/543654#body_text> .
 
 <http://data-issa.cirad.fr/ann/target/ec33b95f8d64285123088bb97d04d19048858db8>
       oa:hasSelector <http://data-issa.cirad.fr/ann/selector/ec33b95f8d64285123088bb97d04d19048858db8> ;
-      oa:hasSource <http://data-issa.cirad.fr/article/543654#body_text> .
+      oa:hasSource <http://data-issa.cirad.fr/document/543654#body_text> .
 
 <http://data-issa.cirad.fr/ann/selector/121888e167fb8cab3ae6e79b053405ff84aedb6e>
       a       oa:TextPositionSelector , oa:TextQuoteSelector ;
@@ -300,7 +300,7 @@
       rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Indonesia'" ;
       issapr:confidence 0.689 ;
-      schema:about <http://data-issa.cirad.fr/article/543654> ;
+      schema:about <http://data-issa.cirad.fr/document/543654> ;
       oa:hasBody <https://sws.geonames.org/1643084/> ;
       oa:hasTarget <http://data-issa.cirad.fr/ann/target/e1754764aabd545fd5c5dcfd62ac7cbda0385369> ;
       prov:wasAttributedTo
@@ -308,14 +308,14 @@
 
 <http://data-issa.cirad.fr/ann/target/7785ac3c4ec16c35dcf4151fe9ef91c49373392c>
       oa:hasSelector <http://data-issa.cirad.fr/ann/selector/7785ac3c4ec16c35dcf4151fe9ef91c49373392c> ;
-      oa:hasSource <http://data-issa.cirad.fr/article/543654#body_text> .
+      oa:hasSource <http://data-issa.cirad.fr/document/543654#body_text> .
 
 <http://data-issa.cirad.fr/ann/d3148a7185529b0f824187230dd318c4c2ab932a>
       a       prov:Entity , issa:GeographicAnnotation ;
       rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Madagascar'" ;
       issapr:confidence 0.6575 ;
-      schema:about <http://data-issa.cirad.fr/article/543654> ;
+      schema:about <http://data-issa.cirad.fr/document/543654> ;
       oa:hasBody <https://sws.geonames.org/1062947/> ;
       oa:hasTarget <http://data-issa.cirad.fr/ann/target/d3148a7185529b0f824187230dd318c4c2ab932a> ;
       prov:wasAttributedTo
@@ -323,14 +323,14 @@
 
 <http://data-issa.cirad.fr/ann/target/4a136e6a5ebf132d0b8a7d5129e90835ffd9d68c>
       oa:hasSelector <http://data-issa.cirad.fr/ann/selector/4a136e6a5ebf132d0b8a7d5129e90835ffd9d68c> ;
-      oa:hasSource <http://data-issa.cirad.fr/article/543654#body_text> .
+      oa:hasSource <http://data-issa.cirad.fr/document/543654#body_text> .
 
 <http://data-issa.cirad.fr/ann/98f9ce9108c2c94a052d4fbb5eb5b6caf1b0689b>
       a       prov:Entity , issa:GeographicAnnotation ;
       rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Tanimbar Archipelago'" ;
       issapr:confidence 0.8327 ;
-      schema:about <http://data-issa.cirad.fr/article/543654> ;
+      schema:about <http://data-issa.cirad.fr/document/543654> ;
       oa:hasBody <https://sws.geonames.org/1625029/> ;
       oa:hasTarget <http://data-issa.cirad.fr/ann/target/98f9ce9108c2c94a052d4fbb5eb5b6caf1b0689b> ;
       prov:wasAttributedTo
@@ -350,7 +350,7 @@
 
 <http://data-issa.cirad.fr/ann/target/7c42a1e925ecf8021b0522edf5baa3b19017c626>
       oa:hasSelector <http://data-issa.cirad.fr/ann/selector/7c42a1e925ecf8021b0522edf5baa3b19017c626> ;
-      oa:hasSource <http://data-issa.cirad.fr/article/543654#body_text> .
+      oa:hasSource <http://data-issa.cirad.fr/document/543654#body_text> .
 
 <http://data-issa.cirad.fr/ann/selector/fb3a5efa1fd707e5056c6d9b160609f9596f7315>
       a       oa:TextPositionSelector , oa:TextQuoteSelector ;
@@ -369,7 +369,7 @@
       rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Beforona'" ;
       issapr:confidence 0.6458 ;
-      schema:about <http://data-issa.cirad.fr/article/543654> ;
+      schema:about <http://data-issa.cirad.fr/document/543654> ;
       oa:hasBody <https://sws.geonames.org/1068315/> ;
       oa:hasTarget <http://data-issa.cirad.fr/ann/target/065d185a7da016f87c915a80353522ca7c0c5618> ;
       prov:wasAttributedTo
@@ -380,7 +380,7 @@
       rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Tanimbar'" ;
       issapr:confidence 0.3904 ;
-      schema:about <http://data-issa.cirad.fr/article/543654> ;
+      schema:about <http://data-issa.cirad.fr/document/543654> ;
       oa:hasBody <https://sws.geonames.org/1625029/> ;
       oa:hasTarget <http://data-issa.cirad.fr/ann/target/9dd1c0ffe06f2c5e808625c1d2724232f87e0164> ;
       prov:wasAttributedTo
@@ -391,7 +391,7 @@
       rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Mahakam Delta'" ;
       issapr:confidence 0.0 ;
-      schema:about <http://data-issa.cirad.fr/article/543654> ;
+      schema:about <http://data-issa.cirad.fr/document/543654> ;
       oa:hasBody <https://sws.geonames.org/1636868/> ;
       oa:hasTarget <http://data-issa.cirad.fr/ann/target/13525f546383904a62363e9575324f8d6ab58dd8> ;
       prov:wasAttributedTo
@@ -402,7 +402,7 @@
       rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Sulawesi'" ;
       issapr:confidence 0.6613 ;
-      schema:about <http://data-issa.cirad.fr/article/543654> ;
+      schema:about <http://data-issa.cirad.fr/document/543654> ;
       oa:hasBody <https://sws.geonames.org/9062340/> ;
       oa:hasTarget <http://data-issa.cirad.fr/ann/target/00396643549fe95b6ee0e29e9381a9daec702dd2> ;
       prov:wasAttributedTo
@@ -410,14 +410,14 @@
 
 <http://data-issa.cirad.fr/ann/target/814932b6fe30d5dfcc56d96a25727ea1bea3f687>
       oa:hasSelector <http://data-issa.cirad.fr/ann/selector/814932b6fe30d5dfcc56d96a25727ea1bea3f687> ;
-      oa:hasSource <http://data-issa.cirad.fr/article/543654#body_text> .
+      oa:hasSource <http://data-issa.cirad.fr/document/543654#body_text> .
 
 <http://data-issa.cirad.fr/ann/36211e9df342d4ade73d9fec374c2bd8a3ab1fc6>
       a       prov:Entity , issa:GeographicAnnotation ;
       rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Tanimbar'" ;
       issapr:confidence 0.3904 ;
-      schema:about <http://data-issa.cirad.fr/article/543654> ;
+      schema:about <http://data-issa.cirad.fr/document/543654> ;
       oa:hasBody <https://sws.geonames.org/1625029/> ;
       oa:hasTarget <http://data-issa.cirad.fr/ann/target/36211e9df342d4ade73d9fec374c2bd8a3ab1fc6> ;
       prov:wasAttributedTo
@@ -434,7 +434,7 @@
       rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Rio de Janeiro'" ;
       issapr:confidence 0.9504 ;
-      schema:about <http://data-issa.cirad.fr/article/543654> ;
+      schema:about <http://data-issa.cirad.fr/document/543654> ;
       oa:hasBody <https://sws.geonames.org/3451190/> ;
       oa:hasTarget <http://data-issa.cirad.fr/ann/target/e8046199cb3c1cd12ef6435e7c5f1f72840aa289> ;
       prov:wasAttributedTo
@@ -448,14 +448,14 @@
 
 <http://data-issa.cirad.fr/ann/target/98f9ce9108c2c94a052d4fbb5eb5b6caf1b0689b>
       oa:hasSelector <http://data-issa.cirad.fr/ann/selector/98f9ce9108c2c94a052d4fbb5eb5b6caf1b0689b> ;
-      oa:hasSource <http://data-issa.cirad.fr/article/543654#body_text> .
+      oa:hasSource <http://data-issa.cirad.fr/document/543654#body_text> .
 
 <http://data-issa.cirad.fr/ann/16ae66be90810622b987af6d2bad871357347a13>
       a       prov:Entity , issa:GeographicAnnotation ;
       rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Tanimbar'" ;
       issapr:confidence 0.3904 ;
-      schema:about <http://data-issa.cirad.fr/article/543654> ;
+      schema:about <http://data-issa.cirad.fr/document/543654> ;
       oa:hasBody <https://sws.geonames.org/1625029/> ;
       oa:hasTarget <http://data-issa.cirad.fr/ann/target/16ae66be90810622b987af6d2bad871357347a13> ;
       prov:wasAttributedTo
@@ -463,14 +463,14 @@
 
 <http://data-issa.cirad.fr/ann/target/8f310ea53f4f4ad537aec8f6a411cc10fa2cf866>
       oa:hasSelector <http://data-issa.cirad.fr/ann/selector/8f310ea53f4f4ad537aec8f6a411cc10fa2cf866> ;
-      oa:hasSource <http://data-issa.cirad.fr/article/543654#body_text> .
+      oa:hasSource <http://data-issa.cirad.fr/document/543654#body_text> .
 
 <http://data-issa.cirad.fr/ann/6f18c5acef24a0f4886cfe5b929913727a6db901>
       a       prov:Entity , issa:GeographicAnnotation ;
       rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Madagascar'" ;
       issapr:confidence 0.6575 ;
-      schema:about <http://data-issa.cirad.fr/article/543654> ;
+      schema:about <http://data-issa.cirad.fr/document/543654> ;
       oa:hasBody <https://sws.geonames.org/1062947/> ;
       oa:hasTarget <http://data-issa.cirad.fr/ann/target/6f18c5acef24a0f4886cfe5b929913727a6db901> ;
       prov:wasAttributedTo
@@ -481,7 +481,7 @@
       rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Tanimbar'" ;
       issapr:confidence 0.3904 ;
-      schema:about <http://data-issa.cirad.fr/article/543654> ;
+      schema:about <http://data-issa.cirad.fr/document/543654> ;
       oa:hasBody <https://sws.geonames.org/1625029/> ;
       oa:hasTarget <http://data-issa.cirad.fr/ann/target/6c8247a596680e2644969fcb242d4226a94f5923> ;
       prov:wasAttributedTo
@@ -498,7 +498,7 @@
       rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Jakarta'" ;
       issapr:confidence 0.6676 ;
-      schema:about <http://data-issa.cirad.fr/article/543654> ;
+      schema:about <http://data-issa.cirad.fr/document/543654> ;
       oa:hasBody <https://sws.geonames.org/1642907/> ;
       oa:hasTarget <http://data-issa.cirad.fr/ann/target/59aeb186cfff17e0c32335a4f45b77682232f39e> ;
       prov:wasAttributedTo
@@ -515,7 +515,7 @@
       rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Indonesia'" ;
       issapr:confidence 0.689 ;
-      schema:about <http://data-issa.cirad.fr/article/543654> ;
+      schema:about <http://data-issa.cirad.fr/document/543654> ;
       oa:hasBody <https://sws.geonames.org/1643084/> ;
       oa:hasTarget <http://data-issa.cirad.fr/ann/target/def9d643b3103968ced9a6c5385e0a2b35fb1271> ;
       prov:wasAttributedTo
@@ -523,14 +523,14 @@
 
 <http://data-issa.cirad.fr/ann/target/654297f079135d0b8d89e4e07eb8e61e08870537>
       oa:hasSelector <http://data-issa.cirad.fr/ann/selector/654297f079135d0b8d89e4e07eb8e61e08870537> ;
-      oa:hasSource <http://data-issa.cirad.fr/article/543654#body_text> .
+      oa:hasSource <http://data-issa.cirad.fr/document/543654#body_text> .
 
 <http://data-issa.cirad.fr/ann/123d3cd3a9ec03acbf2be64ba499f17ef58f866d>
       a       prov:Entity , issa:GeographicAnnotation ;
       rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'South Kalimantan'" ;
       issapr:confidence 0.9498 ;
-      schema:about <http://data-issa.cirad.fr/article/543654> ;
+      schema:about <http://data-issa.cirad.fr/document/543654> ;
       oa:hasBody <https://sws.geonames.org/1641899/> ;
       oa:hasTarget <http://data-issa.cirad.fr/ann/target/123d3cd3a9ec03acbf2be64ba499f17ef58f866d> ;
       prov:wasAttributedTo
@@ -565,7 +565,7 @@
       rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Antananarivo'" ;
       issapr:confidence 0.6336 ;
-      schema:about <http://data-issa.cirad.fr/article/543654> ;
+      schema:about <http://data-issa.cirad.fr/document/543654> ;
       oa:hasBody <https://sws.geonames.org/1070940/> ;
       oa:hasTarget <http://data-issa.cirad.fr/ann/target/a8c12837c43010152c00cf70df1ba614feb51224> ;
       prov:wasAttributedTo
@@ -579,11 +579,11 @@
 
 <http://data-issa.cirad.fr/ann/target/d45d584db6d1024b1c9d5294935b9e2d4ffcbc99>
       oa:hasSelector <http://data-issa.cirad.fr/ann/selector/d45d584db6d1024b1c9d5294935b9e2d4ffcbc99> ;
-      oa:hasSource <http://data-issa.cirad.fr/article/543654#body_text> .
+      oa:hasSource <http://data-issa.cirad.fr/document/543654#body_text> .
 
 <http://data-issa.cirad.fr/ann/target/172a66e37c088cd1a96d1cec273963845cd59291>
       oa:hasSelector <http://data-issa.cirad.fr/ann/selector/172a66e37c088cd1a96d1cec273963845cd59291> ;
-      oa:hasSource <http://data-issa.cirad.fr/article/543654#body_text> .
+      oa:hasSource <http://data-issa.cirad.fr/document/543654#body_text> .
 
 <http://data-issa.cirad.fr/ann/selector/814932b6fe30d5dfcc56d96a25727ea1bea3f687>
       a       oa:TextPositionSelector , oa:TextQuoteSelector ;
@@ -593,18 +593,18 @@
 
 <http://data-issa.cirad.fr/ann/target/fb3a5efa1fd707e5056c6d9b160609f9596f7315>
       oa:hasSelector <http://data-issa.cirad.fr/ann/selector/fb3a5efa1fd707e5056c6d9b160609f9596f7315> ;
-      oa:hasSource <http://data-issa.cirad.fr/article/543654#body_text> .
+      oa:hasSource <http://data-issa.cirad.fr/document/543654#body_text> .
 
 <http://data-issa.cirad.fr/ann/target/277c9f183fad40eedaaa94f082712a2dc0a39115>
       oa:hasSelector <http://data-issa.cirad.fr/ann/selector/277c9f183fad40eedaaa94f082712a2dc0a39115> ;
-      oa:hasSource <http://data-issa.cirad.fr/article/543654#body_text> .
+      oa:hasSource <http://data-issa.cirad.fr/document/543654#body_text> .
 
 <http://data-issa.cirad.fr/ann/ea44ff174d0b9c8af88577ca5e8c2f5e08be66f2>
       a       prov:Entity , issa:GeographicAnnotation ;
       rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Madagascar'" ;
       issapr:confidence 0.6575 ;
-      schema:about <http://data-issa.cirad.fr/article/543654> ;
+      schema:about <http://data-issa.cirad.fr/document/543654> ;
       oa:hasBody <https://sws.geonames.org/1062947/> ;
       oa:hasTarget <http://data-issa.cirad.fr/ann/target/ea44ff174d0b9c8af88577ca5e8c2f5e08be66f2> ;
       prov:wasAttributedTo
@@ -618,14 +618,14 @@
 
 <http://data-issa.cirad.fr/ann/target/e1754764aabd545fd5c5dcfd62ac7cbda0385369>
       oa:hasSelector <http://data-issa.cirad.fr/ann/selector/e1754764aabd545fd5c5dcfd62ac7cbda0385369> ;
-      oa:hasSource <http://data-issa.cirad.fr/article/543654#body_text> .
+      oa:hasSource <http://data-issa.cirad.fr/document/543654#body_text> .
 
 <http://data-issa.cirad.fr/ann/0357ccffca776dd000ccf2c840c5f9d01350eedb>
       a       prov:Entity , issa:GeographicAnnotation ;
       rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Tanimbar'" ;
       issapr:confidence 0.3904 ;
-      schema:about <http://data-issa.cirad.fr/article/543654> ;
+      schema:about <http://data-issa.cirad.fr/document/543654> ;
       oa:hasBody <https://sws.geonames.org/1625029/> ;
       oa:hasTarget <http://data-issa.cirad.fr/ann/target/0357ccffca776dd000ccf2c840c5f9d01350eedb> ;
       prov:wasAttributedTo
@@ -633,14 +633,14 @@
 
 <http://data-issa.cirad.fr/ann/target/a7560590907c7e0119035b3cd8e5d8fd6edae9da>
       oa:hasSelector <http://data-issa.cirad.fr/ann/selector/a7560590907c7e0119035b3cd8e5d8fd6edae9da> ;
-      oa:hasSource <http://data-issa.cirad.fr/article/543654#body_text> .
+      oa:hasSource <http://data-issa.cirad.fr/document/543654#body_text> .
 
 <http://data-issa.cirad.fr/ann/121888e167fb8cab3ae6e79b053405ff84aedb6e>
       a       prov:Entity , issa:GeographicAnnotation ;
       rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Moluccas'" ;
       issapr:confidence 0.641 ;
-      schema:about <http://data-issa.cirad.fr/article/543654> ;
+      schema:about <http://data-issa.cirad.fr/document/543654> ;
       oa:hasBody <https://sws.geonames.org/1636629/> ;
       oa:hasTarget <http://data-issa.cirad.fr/ann/target/121888e167fb8cab3ae6e79b053405ff84aedb6e> ;
       prov:wasAttributedTo
@@ -660,14 +660,14 @@
 
 <http://data-issa.cirad.fr/ann/target/f3b6adb148665e7da5c46bc2a991fc5ee69cdc7d>
       oa:hasSelector <http://data-issa.cirad.fr/ann/selector/f3b6adb148665e7da5c46bc2a991fc5ee69cdc7d> ;
-      oa:hasSource <http://data-issa.cirad.fr/article/543654#body_text> .
+      oa:hasSource <http://data-issa.cirad.fr/document/543654#body_text> .
 
 <http://data-issa.cirad.fr/ann/d300be2c5fee80139bb8cbfb1beab4582099c317>
       a       prov:Entity , issa:GeographicAnnotation ;
       rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Yamdena Island'" ;
       issapr:confidence 0.9006 ;
-      schema:about <http://data-issa.cirad.fr/article/543654> ;
+      schema:about <http://data-issa.cirad.fr/document/543654> ;
       oa:hasBody <https://sws.geonames.org/1621259/> ;
       oa:hasTarget <http://data-issa.cirad.fr/ann/target/d300be2c5fee80139bb8cbfb1beab4582099c317> ;
       prov:wasAttributedTo
@@ -675,7 +675,7 @@
 
 <http://data-issa.cirad.fr/ann/target/e38b3d78d8d59866b99757ea74b26b165083b73b>
       oa:hasSelector <http://data-issa.cirad.fr/ann/selector/e38b3d78d8d59866b99757ea74b26b165083b73b> ;
-      oa:hasSource <http://data-issa.cirad.fr/article/543654#body_text> .
+      oa:hasSource <http://data-issa.cirad.fr/document/543654#body_text> .
 
 <http://data-issa.cirad.fr/ann/selector/e38b3d78d8d59866b99757ea74b26b165083b73b>
       a       oa:TextPositionSelector , oa:TextQuoteSelector ;
@@ -688,7 +688,7 @@
       rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Indonesia'" ;
       issapr:confidence 0.689 ;
-      schema:about <http://data-issa.cirad.fr/article/543654> ;
+      schema:about <http://data-issa.cirad.fr/document/543654> ;
       oa:hasBody <https://sws.geonames.org/1643084/> ;
       oa:hasTarget <http://data-issa.cirad.fr/ann/target/654297f079135d0b8d89e4e07eb8e61e08870537> ;
       prov:wasAttributedTo
@@ -696,7 +696,7 @@
 
 <http://data-issa.cirad.fr/ann/target/d656484d122aae8a27a1d77a5a3ca57412e54332>
       oa:hasSelector <http://data-issa.cirad.fr/ann/selector/d656484d122aae8a27a1d77a5a3ca57412e54332> ;
-      oa:hasSource <http://data-issa.cirad.fr/article/543654#body_text> .
+      oa:hasSource <http://data-issa.cirad.fr/document/543654#body_text> .
 
 <http://data-issa.cirad.fr/ann/selector/e8046199cb3c1cd12ef6435e7c5f1f72840aa289>
       a       oa:TextPositionSelector , oa:TextQuoteSelector ;
@@ -718,22 +718,22 @@
 
 <http://data-issa.cirad.fr/ann/target/805dc4c3334fc9d2bf47f29d1f993e0fad6c244b>
       oa:hasSelector <http://data-issa.cirad.fr/ann/selector/805dc4c3334fc9d2bf47f29d1f993e0fad6c244b> ;
-      oa:hasSource <http://data-issa.cirad.fr/article/543654#body_text> .
+      oa:hasSource <http://data-issa.cirad.fr/document/543654#body_text> .
 
 <http://data-issa.cirad.fr/ann/target/02265f95188a01cf0059412aaec8e7762537ffb0>
       oa:hasSelector <http://data-issa.cirad.fr/ann/selector/02265f95188a01cf0059412aaec8e7762537ffb0> ;
-      oa:hasSource <http://data-issa.cirad.fr/article/543654#body_text> .
+      oa:hasSource <http://data-issa.cirad.fr/document/543654#body_text> .
 
 <http://data-issa.cirad.fr/ann/target/123d3cd3a9ec03acbf2be64ba499f17ef58f866d>
       oa:hasSelector <http://data-issa.cirad.fr/ann/selector/123d3cd3a9ec03acbf2be64ba499f17ef58f866d> ;
-      oa:hasSource <http://data-issa.cirad.fr/article/543654#body_text> .
+      oa:hasSource <http://data-issa.cirad.fr/document/543654#body_text> .
 
 <http://data-issa.cirad.fr/ann/45305cbe7b3c9872b935bffa73f59992783e388e>
       a       prov:Entity , issa:GeographicAnnotation ;
       rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Brazil'" ;
       issapr:confidence 0.6364 ;
-      schema:about <http://data-issa.cirad.fr/article/543654> ;
+      schema:about <http://data-issa.cirad.fr/document/543654> ;
       oa:hasBody <https://sws.geonames.org/3469034/> ;
       oa:hasTarget <http://data-issa.cirad.fr/ann/target/45305cbe7b3c9872b935bffa73f59992783e388e> ;
       prov:wasAttributedTo
@@ -744,7 +744,7 @@
       rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Indonesia'" ;
       issapr:confidence 0.689 ;
-      schema:about <http://data-issa.cirad.fr/article/543654> ;
+      schema:about <http://data-issa.cirad.fr/document/543654> ;
       oa:hasBody <https://sws.geonames.org/1643084/> ;
       oa:hasTarget <http://data-issa.cirad.fr/ann/target/6356da10cf3522276b9e7d2b79456240596de4e6> ;
       prov:wasAttributedTo
@@ -758,18 +758,18 @@
 
 <http://data-issa.cirad.fr/ann/target/309d13c647c88cfd9ac87a24b9642e2ee078f755>
       oa:hasSelector <http://data-issa.cirad.fr/ann/selector/309d13c647c88cfd9ac87a24b9642e2ee078f755> ;
-      oa:hasSource <http://data-issa.cirad.fr/article/543654#body_text> .
+      oa:hasSource <http://data-issa.cirad.fr/document/543654#body_text> .
 
 <http://data-issa.cirad.fr/ann/target/00396643549fe95b6ee0e29e9381a9daec702dd2>
       oa:hasSelector <http://data-issa.cirad.fr/ann/selector/00396643549fe95b6ee0e29e9381a9daec702dd2> ;
-      oa:hasSource <http://data-issa.cirad.fr/article/543654#body_text> .
+      oa:hasSource <http://data-issa.cirad.fr/document/543654#body_text> .
 
 <http://data-issa.cirad.fr/ann/40bf1413505eb95d61109d4030624ab87b8fe75a>
       a       prov:Entity , issa:GeographicAnnotation ;
       rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Johannesburg'" ;
       issapr:confidence 0.6614 ;
-      schema:about <http://data-issa.cirad.fr/article/543654> ;
+      schema:about <http://data-issa.cirad.fr/document/543654> ;
       oa:hasBody <https://sws.geonames.org/993800/> ;
       oa:hasTarget <http://data-issa.cirad.fr/ann/target/40bf1413505eb95d61109d4030624ab87b8fe75a> ;
       prov:wasAttributedTo
@@ -792,7 +792,7 @@
       rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Madagascar'" ;
       issapr:confidence 0.6575 ;
-      schema:about <http://data-issa.cirad.fr/article/543654> ;
+      schema:about <http://data-issa.cirad.fr/document/543654> ;
       oa:hasBody <https://sws.geonames.org/1062947/> ;
       oa:hasTarget <http://data-issa.cirad.fr/ann/target/b6c40847c58f58d593b2151cea43b43045bf0232> ;
       prov:wasAttributedTo
@@ -803,7 +803,7 @@
       rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Beforona'" ;
       issapr:confidence 0.6458 ;
-      schema:about <http://data-issa.cirad.fr/article/543654> ;
+      schema:about <http://data-issa.cirad.fr/document/543654> ;
       oa:hasBody <https://sws.geonames.org/1068315/> ;
       oa:hasTarget <http://data-issa.cirad.fr/ann/target/814932b6fe30d5dfcc56d96a25727ea1bea3f687> ;
       prov:wasAttributedTo
@@ -811,34 +811,34 @@
 
 <http://data-issa.cirad.fr/ann/target/f45032c294634e12ddbab053d94f9891c0334481>
       oa:hasSelector <http://data-issa.cirad.fr/ann/selector/f45032c294634e12ddbab053d94f9891c0334481> ;
-      oa:hasSource <http://data-issa.cirad.fr/article/543654#body_text> .
+      oa:hasSource <http://data-issa.cirad.fr/document/543654#body_text> .
 
 <http://data-issa.cirad.fr/ann/target/59aeb186cfff17e0c32335a4f45b77682232f39e>
       oa:hasSelector <http://data-issa.cirad.fr/ann/selector/59aeb186cfff17e0c32335a4f45b77682232f39e> ;
-      oa:hasSource <http://data-issa.cirad.fr/article/543654#body_text> .
+      oa:hasSource <http://data-issa.cirad.fr/document/543654#body_text> .
 
 <http://data-issa.cirad.fr/ann/target/c59cb4a0910dd3016245652ce8843b646d8029fe>
       oa:hasSelector <http://data-issa.cirad.fr/ann/selector/c59cb4a0910dd3016245652ce8843b646d8029fe> ;
-      oa:hasSource <http://data-issa.cirad.fr/article/543654#body_text> .
+      oa:hasSource <http://data-issa.cirad.fr/document/543654#body_text> .
 
 <http://data-issa.cirad.fr/ann/target/13525f546383904a62363e9575324f8d6ab58dd8>
       oa:hasSelector <http://data-issa.cirad.fr/ann/selector/13525f546383904a62363e9575324f8d6ab58dd8> ;
-      oa:hasSource <http://data-issa.cirad.fr/article/543654#body_text> .
+      oa:hasSource <http://data-issa.cirad.fr/document/543654#body_text> .
 
 <http://data-issa.cirad.fr/ann/target/e09af8c204f3088099c45f9165644f65145d4cfe>
       oa:hasSelector <http://data-issa.cirad.fr/ann/selector/e09af8c204f3088099c45f9165644f65145d4cfe> ;
-      oa:hasSource <http://data-issa.cirad.fr/article/543654#body_text> .
+      oa:hasSource <http://data-issa.cirad.fr/document/543654#body_text> .
 
 <http://data-issa.cirad.fr/ann/target/6f18c5acef24a0f4886cfe5b929913727a6db901>
       oa:hasSelector <http://data-issa.cirad.fr/ann/selector/6f18c5acef24a0f4886cfe5b929913727a6db901> ;
-      oa:hasSource <http://data-issa.cirad.fr/article/543654#body_text> .
+      oa:hasSource <http://data-issa.cirad.fr/document/543654#body_text> .
 
 <http://data-issa.cirad.fr/ann/38f0d6b5cc5ca17a39aba7a3f43dfeed37316c83>
       a       prov:Entity , issa:GeographicAnnotation ;
       rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Tanimbar'" ;
       issapr:confidence 0.3904 ;
-      schema:about <http://data-issa.cirad.fr/article/543654> ;
+      schema:about <http://data-issa.cirad.fr/document/543654> ;
       oa:hasBody <https://sws.geonames.org/1625029/> ;
       oa:hasTarget <http://data-issa.cirad.fr/ann/target/38f0d6b5cc5ca17a39aba7a3f43dfeed37316c83> ;
       prov:wasAttributedTo
@@ -861,7 +861,7 @@
       rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Mahakam Delta'" ;
       issapr:confidence 0.0 ;
-      schema:about <http://data-issa.cirad.fr/article/543654> ;
+      schema:about <http://data-issa.cirad.fr/document/543654> ;
       oa:hasBody <https://sws.geonames.org/1636868/> ;
       oa:hasTarget <http://data-issa.cirad.fr/ann/target/a0be6cf38133c7eae8243c93347352121084d61b> ;
       prov:wasAttributedTo
@@ -872,7 +872,7 @@
       rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Yamdena'" ;
       issapr:confidence 0.6355 ;
-      schema:about <http://data-issa.cirad.fr/article/543654> ;
+      schema:about <http://data-issa.cirad.fr/document/543654> ;
       oa:hasBody <https://sws.geonames.org/1621259/> ;
       oa:hasTarget <http://data-issa.cirad.fr/ann/target/f8457d015d6a44a82e2d0a63a3c28583a53c52ac> ;
       prov:wasAttributedTo
@@ -880,18 +880,18 @@
 
 <http://data-issa.cirad.fr/ann/target/23fa70dd1f3cf7275d95b8b0ae6ba1730b1ba5fb>
       oa:hasSelector <http://data-issa.cirad.fr/ann/selector/23fa70dd1f3cf7275d95b8b0ae6ba1730b1ba5fb> ;
-      oa:hasSource <http://data-issa.cirad.fr/article/543654#body_text> .
+      oa:hasSource <http://data-issa.cirad.fr/document/543654#body_text> .
 
 <http://data-issa.cirad.fr/ann/target/8fd97b3c58db35a7efe88cdd47b9d1b3c93abf88>
       oa:hasSelector <http://data-issa.cirad.fr/ann/selector/8fd97b3c58db35a7efe88cdd47b9d1b3c93abf88> ;
-      oa:hasSource <http://data-issa.cirad.fr/article/543654#body_text> .
+      oa:hasSource <http://data-issa.cirad.fr/document/543654#body_text> .
 
 <http://data-issa.cirad.fr/ann/c74fc5d30d301bb813f15f76d4845125184dc6fb>
       a       prov:Entity , issa:GeographicAnnotation ;
       rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Beforona'" ;
       issapr:confidence 0.6458 ;
-      schema:about <http://data-issa.cirad.fr/article/543654> ;
+      schema:about <http://data-issa.cirad.fr/document/543654> ;
       oa:hasBody <https://sws.geonames.org/1068315/> ;
       oa:hasTarget <http://data-issa.cirad.fr/ann/target/c74fc5d30d301bb813f15f76d4845125184dc6fb> ;
       prov:wasAttributedTo
@@ -908,7 +908,7 @@
       rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Moluccas'" ;
       issapr:confidence 0.641 ;
-      schema:about <http://data-issa.cirad.fr/article/543654> ;
+      schema:about <http://data-issa.cirad.fr/document/543654> ;
       oa:hasBody <https://sws.geonames.org/1636629/> ;
       oa:hasTarget <http://data-issa.cirad.fr/ann/target/172a66e37c088cd1a96d1cec273963845cd59291> ;
       prov:wasAttributedTo
@@ -919,7 +919,7 @@
       rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Mahakam Delta'" ;
       issapr:confidence 0.0 ;
-      schema:about <http://data-issa.cirad.fr/article/543654> ;
+      schema:about <http://data-issa.cirad.fr/document/543654> ;
       oa:hasBody <https://sws.geonames.org/1636868/> ;
       oa:hasTarget <http://data-issa.cirad.fr/ann/target/3575026ec39332f4c74d91dfdbf84b1e7ef0beea> ;
       prov:wasAttributedTo
@@ -936,7 +936,7 @@
       rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Madagascar'" ;
       issapr:confidence 0.6575 ;
-      schema:about <http://data-issa.cirad.fr/article/543654> ;
+      schema:about <http://data-issa.cirad.fr/document/543654> ;
       oa:hasBody <https://sws.geonames.org/1062947/> ;
       oa:hasTarget <http://data-issa.cirad.fr/ann/target/449e390807ea8a4787211b1eda00191c9d89f66d> ;
       prov:wasAttributedTo
@@ -947,7 +947,7 @@
       rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Tanimbar'" ;
       issapr:confidence 0.3904 ;
-      schema:about <http://data-issa.cirad.fr/article/543654> ;
+      schema:about <http://data-issa.cirad.fr/document/543654> ;
       oa:hasBody <https://sws.geonames.org/1625029/> ;
       oa:hasTarget <http://data-issa.cirad.fr/ann/target/a7560590907c7e0119035b3cd8e5d8fd6edae9da> ;
       prov:wasAttributedTo
@@ -958,7 +958,7 @@
       rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Tanimbar'" ;
       issapr:confidence 0.3904 ;
-      schema:about <http://data-issa.cirad.fr/article/543654> ;
+      schema:about <http://data-issa.cirad.fr/document/543654> ;
       oa:hasBody <https://sws.geonames.org/1625029/> ;
       oa:hasTarget <http://data-issa.cirad.fr/ann/target/fb3a5efa1fd707e5056c6d9b160609f9596f7315> ;
       prov:wasAttributedTo
@@ -966,7 +966,7 @@
 
 <http://data-issa.cirad.fr/ann/target/0357ccffca776dd000ccf2c840c5f9d01350eedb>
       oa:hasSelector <http://data-issa.cirad.fr/ann/selector/0357ccffca776dd000ccf2c840c5f9d01350eedb> ;
-      oa:hasSource <http://data-issa.cirad.fr/article/543654#body_text> .
+      oa:hasSource <http://data-issa.cirad.fr/document/543654#body_text> .
 
 <http://data-issa.cirad.fr/ann/selector/c59cb4a0910dd3016245652ce8843b646d8029fe>
       a       oa:TextPositionSelector , oa:TextQuoteSelector ;
@@ -979,7 +979,7 @@
       rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Madagascar'" ;
       issapr:confidence 0.6575 ;
-      schema:about <http://data-issa.cirad.fr/article/543654> ;
+      schema:about <http://data-issa.cirad.fr/document/543654> ;
       oa:hasBody <https://sws.geonames.org/1062947/> ;
       oa:hasTarget <http://data-issa.cirad.fr/ann/target/e38b3d78d8d59866b99757ea74b26b165083b73b> ;
       prov:wasAttributedTo
@@ -987,7 +987,7 @@
 
 <http://data-issa.cirad.fr/ann/target/39c070d63fc9f1e09ff183bba6783a26f80d96ae>
       oa:hasSelector <http://data-issa.cirad.fr/ann/selector/39c070d63fc9f1e09ff183bba6783a26f80d96ae> ;
-      oa:hasSource <http://data-issa.cirad.fr/article/543654#body_text> .
+      oa:hasSource <http://data-issa.cirad.fr/document/543654#body_text> .
 
 <http://data-issa.cirad.fr/ann/selector/e09af8c204f3088099c45f9165644f65145d4cfe>
       a       oa:TextPositionSelector , oa:TextQuoteSelector ;
@@ -997,14 +997,14 @@
 
 <http://data-issa.cirad.fr/ann/target/ff706213b7d74f4b60d1be44d03aaee816ba43a6>
       oa:hasSelector <http://data-issa.cirad.fr/ann/selector/ff706213b7d74f4b60d1be44d03aaee816ba43a6> ;
-      oa:hasSource <http://data-issa.cirad.fr/article/543654#body_text> .
+      oa:hasSource <http://data-issa.cirad.fr/document/543654#body_text> .
 
 <http://data-issa.cirad.fr/ann/ec33b95f8d64285123088bb97d04d19048858db8>
       a       prov:Entity , issa:GeographicAnnotation ;
       rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Beforona'" ;
       issapr:confidence 0.6458 ;
-      schema:about <http://data-issa.cirad.fr/article/543654> ;
+      schema:about <http://data-issa.cirad.fr/document/543654> ;
       oa:hasBody <https://sws.geonames.org/1068315/> ;
       oa:hasTarget <http://data-issa.cirad.fr/ann/target/ec33b95f8d64285123088bb97d04d19048858db8> ;
       prov:wasAttributedTo
@@ -1012,11 +1012,11 @@
 
 <http://data-issa.cirad.fr/ann/target/b6c40847c58f58d593b2151cea43b43045bf0232>
       oa:hasSelector <http://data-issa.cirad.fr/ann/selector/b6c40847c58f58d593b2151cea43b43045bf0232> ;
-      oa:hasSource <http://data-issa.cirad.fr/article/543654#body_text> .
+      oa:hasSource <http://data-issa.cirad.fr/document/543654#body_text> .
 
 <http://data-issa.cirad.fr/ann/target/121888e167fb8cab3ae6e79b053405ff84aedb6e>
       oa:hasSelector <http://data-issa.cirad.fr/ann/selector/121888e167fb8cab3ae6e79b053405ff84aedb6e> ;
-      oa:hasSource <http://data-issa.cirad.fr/article/543654#body_text> .
+      oa:hasSource <http://data-issa.cirad.fr/document/543654#body_text> .
 
 <http://data-issa.cirad.fr/ann/selector/40bf1413505eb95d61109d4030624ab87b8fe75a>
       a       oa:TextPositionSelector , oa:TextQuoteSelector ;
@@ -1029,7 +1029,7 @@
       rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Tanimbar'" ;
       issapr:confidence 0.3904 ;
-      schema:about <http://data-issa.cirad.fr/article/543654> ;
+      schema:about <http://data-issa.cirad.fr/document/543654> ;
       oa:hasBody <https://sws.geonames.org/1625029/> ;
       oa:hasTarget <http://data-issa.cirad.fr/ann/target/805dc4c3334fc9d2bf47f29d1f993e0fad6c244b> ;
       prov:wasAttributedTo
@@ -1046,7 +1046,7 @@
       rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Indonesia'" ;
       issapr:confidence 0.689 ;
-      schema:about <http://data-issa.cirad.fr/article/543654> ;
+      schema:about <http://data-issa.cirad.fr/document/543654> ;
       oa:hasBody <https://sws.geonames.org/1643084/> ;
       oa:hasTarget <http://data-issa.cirad.fr/ann/target/f3b6adb148665e7da5c46bc2a991fc5ee69cdc7d> ;
       prov:wasAttributedTo
@@ -1060,7 +1060,7 @@
 
 <http://data-issa.cirad.fr/ann/target/ecc4b52cac3d4a43b1a9a739f3a42b8436697d0f>
       oa:hasSelector <http://data-issa.cirad.fr/ann/selector/ecc4b52cac3d4a43b1a9a739f3a42b8436697d0f> ;
-      oa:hasSource <http://data-issa.cirad.fr/article/543654#body_text> .
+      oa:hasSource <http://data-issa.cirad.fr/document/543654#body_text> .
 
 <http://data-issa.cirad.fr/ann/selector/45305cbe7b3c9872b935bffa73f59992783e388e>
       a       oa:TextPositionSelector , oa:TextQuoteSelector ;
@@ -1079,7 +1079,7 @@
       rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Tanimbar'" ;
       issapr:confidence 0.3904 ;
-      schema:about <http://data-issa.cirad.fr/article/543654> ;
+      schema:about <http://data-issa.cirad.fr/document/543654> ;
       oa:hasBody <https://sws.geonames.org/1625029/> ;
       oa:hasTarget <http://data-issa.cirad.fr/ann/target/b52a13314cf1adfffe0eefa8d8881df4e381530a> ;
       prov:wasAttributedTo
@@ -1087,26 +1087,26 @@
 
 <http://data-issa.cirad.fr/ann/target/ea44ff174d0b9c8af88577ca5e8c2f5e08be66f2>
       oa:hasSelector <http://data-issa.cirad.fr/ann/selector/ea44ff174d0b9c8af88577ca5e8c2f5e08be66f2> ;
-      oa:hasSource <http://data-issa.cirad.fr/article/543654#body_text> .
+      oa:hasSource <http://data-issa.cirad.fr/document/543654#body_text> .
 
 <http://data-issa.cirad.fr/ann/target/f8457d015d6a44a82e2d0a63a3c28583a53c52ac>
       oa:hasSelector <http://data-issa.cirad.fr/ann/selector/f8457d015d6a44a82e2d0a63a3c28583a53c52ac> ;
-      oa:hasSource <http://data-issa.cirad.fr/article/543654#body_text> .
+      oa:hasSource <http://data-issa.cirad.fr/document/543654#body_text> .
 
 <http://data-issa.cirad.fr/ann/target/6356da10cf3522276b9e7d2b79456240596de4e6>
       oa:hasSelector <http://data-issa.cirad.fr/ann/selector/6356da10cf3522276b9e7d2b79456240596de4e6> ;
-      oa:hasSource <http://data-issa.cirad.fr/article/543654#body_text> .
+      oa:hasSource <http://data-issa.cirad.fr/document/543654#body_text> .
 
 <http://data-issa.cirad.fr/ann/target/45305cbe7b3c9872b935bffa73f59992783e388e>
       oa:hasSelector <http://data-issa.cirad.fr/ann/selector/45305cbe7b3c9872b935bffa73f59992783e388e> ;
-      oa:hasSource <http://data-issa.cirad.fr/article/543654#body_text> .
+      oa:hasSource <http://data-issa.cirad.fr/document/543654#body_text> .
 
 <http://data-issa.cirad.fr/ann/d45d584db6d1024b1c9d5294935b9e2d4ffcbc99>
       a       prov:Entity , issa:GeographicAnnotation ;
       rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Tanimbar'" ;
       issapr:confidence 0.3904 ;
-      schema:about <http://data-issa.cirad.fr/article/543654> ;
+      schema:about <http://data-issa.cirad.fr/document/543654> ;
       oa:hasBody <https://sws.geonames.org/1625029/> ;
       oa:hasTarget <http://data-issa.cirad.fr/ann/target/d45d584db6d1024b1c9d5294935b9e2d4ffcbc99> ;
       prov:wasAttributedTo
@@ -1129,7 +1129,7 @@
       rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Toamasina'" ;
       issapr:confidence 0.6475 ;
-      schema:about <http://data-issa.cirad.fr/article/543654> ;
+      schema:about <http://data-issa.cirad.fr/document/543654> ;
       oa:hasBody <https://sws.geonames.org/1053384/> ;
       oa:hasTarget <http://data-issa.cirad.fr/ann/target/7785ac3c4ec16c35dcf4151fe9ef91c49373392c> ;
       prov:wasAttributedTo
@@ -1140,7 +1140,7 @@
       rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Antananarivo'" ;
       issapr:confidence 0.6336 ;
-      schema:about <http://data-issa.cirad.fr/article/543654> ;
+      schema:about <http://data-issa.cirad.fr/document/543654> ;
       oa:hasBody <https://sws.geonames.org/1070940/> ;
       oa:hasTarget <http://data-issa.cirad.fr/ann/target/4a136e6a5ebf132d0b8a7d5129e90835ffd9d68c> ;
       prov:wasAttributedTo
@@ -1151,7 +1151,7 @@
       rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Beforona'" ;
       issapr:confidence 0.6458 ;
-      schema:about <http://data-issa.cirad.fr/article/543654> ;
+      schema:about <http://data-issa.cirad.fr/document/543654> ;
       oa:hasBody <https://sws.geonames.org/1068315/> ;
       oa:hasTarget <http://data-issa.cirad.fr/ann/target/02265f95188a01cf0059412aaec8e7762537ffb0> ;
       prov:wasAttributedTo
@@ -1171,14 +1171,14 @@
 
 <http://data-issa.cirad.fr/ann/target/d3148a7185529b0f824187230dd318c4c2ab932a>
       oa:hasSelector <http://data-issa.cirad.fr/ann/selector/d3148a7185529b0f824187230dd318c4c2ab932a> ;
-      oa:hasSource <http://data-issa.cirad.fr/article/543654#body_text> .
+      oa:hasSource <http://data-issa.cirad.fr/document/543654#body_text> .
 
 <http://data-issa.cirad.fr/ann/d656484d122aae8a27a1d77a5a3ca57412e54332>
       a       prov:Entity , issa:GeographicAnnotation ;
       rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Beforona'" ;
       issapr:confidence 0.6458 ;
-      schema:about <http://data-issa.cirad.fr/article/543654> ;
+      schema:about <http://data-issa.cirad.fr/document/543654> ;
       oa:hasBody <https://sws.geonames.org/1068315/> ;
       oa:hasTarget <http://data-issa.cirad.fr/ann/target/d656484d122aae8a27a1d77a5a3ca57412e54332> ;
       prov:wasAttributedTo
@@ -1189,7 +1189,7 @@
       rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Tanimbar'" ;
       issapr:confidence 0.3904 ;
-      schema:about <http://data-issa.cirad.fr/article/543654> ;
+      schema:about <http://data-issa.cirad.fr/document/543654> ;
       oa:hasBody <https://sws.geonames.org/1625029/> ;
       oa:hasTarget <http://data-issa.cirad.fr/ann/target/de606c20164127901e87414579c7a4ae60955f25> ;
       prov:wasAttributedTo
@@ -1197,14 +1197,14 @@
 
 <http://data-issa.cirad.fr/ann/target/16ae66be90810622b987af6d2bad871357347a13>
       oa:hasSelector <http://data-issa.cirad.fr/ann/selector/16ae66be90810622b987af6d2bad871357347a13> ;
-      oa:hasSource <http://data-issa.cirad.fr/article/543654#body_text> .
+      oa:hasSource <http://data-issa.cirad.fr/document/543654#body_text> .
 
 <http://data-issa.cirad.fr/ann/6fe0bd7ed59c7a9204450123e94907489cc7b01e>
       a       prov:Entity , issa:GeographicAnnotation ;
       rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Beforona'" ;
       issapr:confidence 0.6458 ;
-      schema:about <http://data-issa.cirad.fr/article/543654> ;
+      schema:about <http://data-issa.cirad.fr/document/543654> ;
       oa:hasBody <https://sws.geonames.org/1068315/> ;
       oa:hasTarget <http://data-issa.cirad.fr/ann/target/6fe0bd7ed59c7a9204450123e94907489cc7b01e> ;
       prov:wasAttributedTo
@@ -1221,7 +1221,7 @@
       rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Beforona'" ;
       issapr:confidence 0.6458 ;
-      schema:about <http://data-issa.cirad.fr/article/543654> ;
+      schema:about <http://data-issa.cirad.fr/document/543654> ;
       oa:hasBody <https://sws.geonames.org/1068315/> ;
       oa:hasTarget <http://data-issa.cirad.fr/ann/target/8f310ea53f4f4ad537aec8f6a411cc10fa2cf866> ;
       prov:wasAttributedTo
@@ -1232,7 +1232,7 @@
       rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Tanimbar'" ;
       issapr:confidence 0.3904 ;
-      schema:about <http://data-issa.cirad.fr/article/543654> ;
+      schema:about <http://data-issa.cirad.fr/document/543654> ;
       oa:hasBody <https://sws.geonames.org/1625029/> ;
       oa:hasTarget <http://data-issa.cirad.fr/ann/target/ff706213b7d74f4b60d1be44d03aaee816ba43a6> ;
       prov:wasAttributedTo
@@ -1243,7 +1243,7 @@
       rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Tanimbar'" ;
       issapr:confidence 0.3904 ;
-      schema:about <http://data-issa.cirad.fr/article/543654> ;
+      schema:about <http://data-issa.cirad.fr/document/543654> ;
       oa:hasBody <https://sws.geonames.org/1625029/> ;
       oa:hasTarget <http://data-issa.cirad.fr/ann/target/8d2e1f97406eb6ee3d6d1bb0ced8a9b8fab73136> ;
       prov:wasAttributedTo
@@ -1251,18 +1251,18 @@
 
 <http://data-issa.cirad.fr/ann/target/1c0e1db54e61585fe1bebbcf6ca6baa8eabc3e0a>
       oa:hasSelector <http://data-issa.cirad.fr/ann/selector/1c0e1db54e61585fe1bebbcf6ca6baa8eabc3e0a> ;
-      oa:hasSource <http://data-issa.cirad.fr/article/543654#body_text> .
+      oa:hasSource <http://data-issa.cirad.fr/document/543654#body_text> .
 
 <http://data-issa.cirad.fr/ann/target/40bf1413505eb95d61109d4030624ab87b8fe75a>
       oa:hasSelector <http://data-issa.cirad.fr/ann/selector/40bf1413505eb95d61109d4030624ab87b8fe75a> ;
-      oa:hasSource <http://data-issa.cirad.fr/article/543654#body_text> .
+      oa:hasSource <http://data-issa.cirad.fr/document/543654#body_text> .
 
 <http://data-issa.cirad.fr/ann/375eb76385c8cc154067fc1b022e53915b940cbd>
       a       prov:Entity , issa:GeographicAnnotation ;
       rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Beforona'" ;
       issapr:confidence 0.6458 ;
-      schema:about <http://data-issa.cirad.fr/article/543654> ;
+      schema:about <http://data-issa.cirad.fr/document/543654> ;
       oa:hasBody <https://sws.geonames.org/1068315/> ;
       oa:hasTarget <http://data-issa.cirad.fr/ann/target/375eb76385c8cc154067fc1b022e53915b940cbd> ;
       prov:wasAttributedTo
@@ -1276,7 +1276,7 @@
 
 <http://data-issa.cirad.fr/ann/target/c74fc5d30d301bb813f15f76d4845125184dc6fb>
       oa:hasSelector <http://data-issa.cirad.fr/ann/selector/c74fc5d30d301bb813f15f76d4845125184dc6fb> ;
-      oa:hasSource <http://data-issa.cirad.fr/article/543654#body_text> .
+      oa:hasSource <http://data-issa.cirad.fr/document/543654#body_text> .
 
 <http://data-issa.cirad.fr/ann/selector/3575026ec39332f4c74d91dfdbf84b1e7ef0beea>
       a       oa:TextPositionSelector , oa:TextQuoteSelector ;
@@ -1289,7 +1289,7 @@
       rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Tanimbar'" ;
       issapr:confidence 0.3904 ;
-      schema:about <http://data-issa.cirad.fr/article/543654> ;
+      schema:about <http://data-issa.cirad.fr/document/543654> ;
       oa:hasBody <https://sws.geonames.org/1625029/> ;
       oa:hasTarget <http://data-issa.cirad.fr/ann/target/8fd97b3c58db35a7efe88cdd47b9d1b3c93abf88> ;
       prov:wasAttributedTo
@@ -1315,8 +1315,8 @@
 
 <http://data-issa.cirad.fr/ann/target/e8046199cb3c1cd12ef6435e7c5f1f72840aa289>
       oa:hasSelector <http://data-issa.cirad.fr/ann/selector/e8046199cb3c1cd12ef6435e7c5f1f72840aa289> ;
-      oa:hasSource <http://data-issa.cirad.fr/article/543654#body_text> .
+      oa:hasSource <http://data-issa.cirad.fr/document/543654#body_text> .
 
 <http://data-issa.cirad.fr/ann/target/a0be6cf38133c7eae8243c93347352121084d61b>
       oa:hasSelector <http://data-issa.cirad.fr/ann/selector/a0be6cf38133c7eae8243c93347352121084d61b> ;
-      oa:hasSource <http://data-issa.cirad.fr/article/543654#body_text> .
+      oa:hasSource <http://data-issa.cirad.fr/document/543654#body_text> .

@@ -27,7 +27,7 @@ Below we use the following namespaces:
 ```
 
 ## Document metadata
-Document URIs are formatted as `http://data-issa.cirad.fr/documents/document_id` where document_id is a unique document identifier.
+Document URIs are formatted as `http://data-issa.cirad.fr/document/document_id` where document_id is a unique document identifier.
 
 RDF resources representing documents can be instances of various classes depending on their type:
 - conference article (`fabio:ConferencePaper`, `eprint:ConferencePaper`)
@@ -66,15 +66,15 @@ For each document, the available metadata are mapped as much as possible as foll
 
 
 Furthermore, documents are linked to their parts (title, abstract, body) as follows:
-- `issapr:hasTitle <http://data-issa.cirad.fr/documents/paper_id#title>`
-- `dct:abstract   <http://data-issa.cirad.fr/documents/paper_id#abstract>`
-- `issapr:hasBody  <http://data-issa.cirad.fr/documents/paper_id#body_text>`.
+- `issapr:hasTitle <http://data-issa.cirad.fr/document/paper_id#title>`
+- `dct:abstract   <http://data-issa.cirad.fr/document/paper_id#abstract>`
+- `issapr:hasBody  <http://data-issa.cirad.fr/document/paper_id#body_text>`.
 NOTE: only journal articles have associated body text 
 
 
 Here is an example of a journal article's metadata:
 ```turtle
-<http://data-issa.cirad.fr/documents/543654>
+<http://data-issa.cirad.fr/document/543654>
   a                      prov:Entity, fabio:ResearchPaper, bibo:AcademicArticle, eprint:JournalArticle, schema:ScholarlyArticle;
   dct:title              "Accounting for the ecological dimension in participatory research and development : lessons learned from Indonesia and Madagascar";
   dce:creator            "Pfund, Jean-Laurent", "Laumonier, Yves", "Bourgeois, Robin";
@@ -96,9 +96,9 @@ Here is an example of a journal article's metadata:
   prov:generatedAtTime   "2020-11-21T13:17:03Z"^^xsd:dateTime;
   prov:wasDerivedFrom    <http://agritrop.cirad.fr/543654/>.
 
-  issapr:hasBody         <http://data-issa.cirad.fr/documents/543654#body_text> ;
-  dct:abstract           <http://data-issa.cirad.fr/documents/543654#abstract> ;
-  issapr:hasTitle        <http://data-issa.cirad.fr/documents/543654#title> ;
+  issapr:hasBody         <http://data-issa.cirad.fr/document/543654#body_text> ;
+  dct:abstract           <http://data-issa.cirad.fr/document/543654#abstract> ;
+  issapr:hasTitle        <http://data-issa.cirad.fr/document/543654#title> ;
 ```
 
 ## Thematic descriptors
@@ -123,7 +123,7 @@ Example:
 <http://data-issa.cirad.fr/descr/3573cd52f16d7882c72210bca7c9b3ecef02d129>
   a                      prov:Entity , issa:ThematicDescriptorAnnotation;
   oa:hasBody             <http://aims.fao.org/aos/agrovoc/c_35332>;
-  oa:hasTarget           <http://data-issa.cirad.fr/documents/543654>;
+  oa:hasTarget           <http://data-issa.cirad.fr/document/543654>;
   prov:wasAttributedTo   issa:AgritropDocumentalist.
   rdfs:isDefinedBy       issa:issa-agritrop;
   
@@ -131,7 +131,7 @@ Example:
 <http://data-issa.cirad.fr/descr/e2ba273e40beccc2b8ae5f7792690dce7e6b2131>
   a                      prov:Entity , issa:ThematicDescriptorAnnotation;
   oa:hasBody             <http://aims.fao.org/aos/agrovoc/c_9000115>;
-  oa:hasTarget           <http://data-issa.cirad.fr/documents/543654>;
+  oa:hasTarget           <http://data-issa.cirad.fr/document/543654>;
   prov:wasAttributedTo   issa:AnnifSubjectIndexer.
   rdfs:isDefinedBy       issa:issa-agritrop;
 
@@ -160,13 +160,13 @@ Example:
 <http://data-issa.cirad.fr/ann/b46b064a5d1c58e9abea067e77f24c71d3a3e78d>
   a                      prov:Entity , oa:Annotation ;
   rdfs:label             "named entity 'natural resource management";
-  schema:about           <http://data-issa.cirad.fr/documents/543654> ;
+  schema:about           <http://data-issa.cirad.fr/document/543654> ;
   dct:subject            "Gas" , "Environment" ;
   issapr:confidence      0.7669;
 
   oa:hasBody             <http://wikidata.org/entity/Q3743137> ;
   oa:hasTarget [
-      oa:hasSource       <http://data-issa.cirad.fr/documents/543654#abstract> .
+      oa:hasSource       <http://data-issa.cirad.fr/document/543654#abstract> .
       oa:hasSelector [
           a              oa:TextPositionSelector, oa:TextQuoteSelector;
           oa:exact       "natural resource management";

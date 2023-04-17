@@ -21,11 +21,11 @@
 
 <http://data-issa.cirad.fr/ann/target/e6c0f7e44823c8453b82cbf129e2a35c698ea3ec>
       oa:hasSelector <http://data-issa.cirad.fr/ann/selector/e6c0f7e44823c8453b82cbf129e2a35c698ea3ec> ;
-      oa:hasSource <http://data-issa.cirad.fr/article/543654#title> .
+      oa:hasSource <http://data-issa.cirad.fr/document/543654#title> .
 
 <http://data-issa.cirad.fr/ann/target/db57b1880dae7381d901a4cf095e17fdf5e8d8ad>
       oa:hasSelector <http://data-issa.cirad.fr/ann/selector/db57b1880dae7381d901a4cf095e17fdf5e8d8ad> ;
-      oa:hasSource <http://data-issa.cirad.fr/article/543654#title> .
+      oa:hasSource <http://data-issa.cirad.fr/document/543654#title> .
 
 <http://data-issa.cirad.fr/ann/selector/e6c0f7e44823c8453b82cbf129e2a35c698ea3ec>
       a       oa:TextPositionSelector , oa:TextQuoteSelector ;
@@ -38,7 +38,7 @@
       rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Indonesia'" ;
       issapr:confidence 0.8092 ;
-      schema:about <http://data-issa.cirad.fr/article/543654> ;
+      schema:about <http://data-issa.cirad.fr/document/543654> ;
       oa:hasBody <https://sws.geonames.org/1643084/> ;
       oa:hasTarget <http://data-issa.cirad.fr/ann/target/db57b1880dae7381d901a4cf095e17fdf5e8d8ad> ;
       prov:wasAttributedTo
@@ -49,7 +49,7 @@
       rdfs:isDefinedBy issa:issa-agritrop ;
       rdfs:label "named entity 'Madagascar'" ;
       issapr:confidence 0.6659 ;
-      schema:about <http://data-issa.cirad.fr/article/543654> ;
+      schema:about <http://data-issa.cirad.fr/document/543654> ;
       oa:hasBody <https://sws.geonames.org/1062947/> ;
       oa:hasTarget <http://data-issa.cirad.fr/ann/target/e6c0f7e44823c8453b82cbf129e2a35c698ea3ec> ;
       prov:wasAttributedTo
