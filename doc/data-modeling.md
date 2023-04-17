@@ -1,6 +1,6 @@
 # ISSA RDF data modeling
 
-An article analyzed by the ISSA pipeline is described in three parts: general metadata (title, authors, publication date etc.), thematic descriptors characterizing the article, and named entities extracted from the article full-text.
+A document analyzed by the ISSA pipeline is described in three parts: general metadata (title, authors, publication date etc.), thematic descriptors characterizing a document, and named entities extracted from a document's parts (title, abstract, body_text).
 
 
 ## Namespaces
@@ -27,9 +27,9 @@ Below we use the following namespaces:
 ```
 
 ## Document metadata
-Article URIs are formatted as http://data-issa.cirad.fr/article/article_id where article_id is a unique article identifier.
+Document URIs are formatted as `http://data-issa.cirad.fr/documents/document_id` where document_id is a unique document identifier.
 
-RDF resources representing documents can be instances of various classes depending in their type:
+RDF resources representing documents can be instances of various classes depending on their type:
 - conference article (`fabio:ConferencePaper`, `eprint:ConferencePaper`)
 - journal article (`fabio:ResearchPaper`, `schema:ScholarlyArticle`, `bibo:AcademicArticle`, `eprint:JournalArticle`)
 - book (`fabio:Book`, `eprint:Book`)
@@ -53,7 +53,7 @@ For each document, the available metadata are mapped as much as possible as foll
     - archive internal identifier (`dct:identifier`)
     - DOI (`bibo:doi`)
 - source (API) from which the metadata information was retrieved (`dct:source`)
-- article page URL (`schema:url`)
+- document page URL (`schema:url`)
 - source PDF download URL (`schema:downloadUrl`)
 - alternate PDF download URLs (`schema:sameAs`)
 - language
@@ -65,16 +65,16 @@ For each document, the available metadata are mapped as much as possible as foll
     - source data creation timestamp (`prov:generatedAtTime`), i.e. at which the article was added to the archive
 
 
-Furthermore, articles are linked to their parts (title, abstract, body) as follows:
-- `issapr:hasTitle <http://data-issa.cirad.fr/article/paper_id#title>`
-- `dct:abstract   <http://data-issa.cirad.fr/article/paper_id#abstract>`
-- `issapr:hasBody  <http://data-issa.cirad.fr/article/paper_id#body_text>`.
+Furthermore, documents are linked to their parts (title, abstract, body) as follows:
+- `issapr:hasTitle <http://data-issa.cirad.fr/documents/paper_id#title>`
+- `dct:abstract   <http://data-issa.cirad.fr/documents/paper_id#abstract>`
+- `issapr:hasBody  <http://data-issa.cirad.fr/documents/paper_id#body_text>`.
 NOTE: only journal articles have associated body text 
 
 
-Here is the example of journal article's metadata:
+Here is an example of a journal article's metadata:
 ```turtle
-<http://data-issa.cirad.fr/article/543654>
+<http://data-issa.cirad.fr/documents/543654>
   a                      prov:Entity, fabio:ResearchPaper, bibo:AcademicArticle, eprint:JournalArticle, schema:ScholarlyArticle;
   dct:title              "Accounting for the ecological dimension in participatory research and development : lessons learned from Indonesia and Madagascar";
   dce:creator            "Pfund, Jean-Laurent", "Laumonier, Yves", "Bourgeois, Robin";
@@ -96,21 +96,21 @@ Here is the example of journal article's metadata:
   prov:generatedAtTime   "2020-11-21T13:17:03Z"^^xsd:dateTime;
   prov:wasDerivedFrom    <http://agritrop.cirad.fr/543654/>.
 
-  issapr:hasBody         <http://data-issa.cirad.fr/article/543654#body_text> ;
-  dct:abstract           <http://data-issa.cirad.fr/article/543654#abstract> ;
-  issapr:hasTitle        <http://data-issa.cirad.fr/article/543654#title> ;
+  issapr:hasBody         <http://data-issa.cirad.fr/documents/543654#body_text> ;
+  dct:abstract           <http://data-issa.cirad.fr/documents/543654#abstract> ;
+  issapr:hasTitle        <http://data-issa.cirad.fr/documents/543654#title> ;
 ```
 
 ## Thematic descriptors
 
-The global thematic descriptors are concepts characterizing the article as a whole. They are described as **annotations** using the **[Web Annotations Vocabulary](https://www.w3.org/TR/annotation-vocab/)**.
+The global thematic descriptors are concepts characterizing a document as a whole. They are described as **annotations** using the **[Web Annotations Vocabulary](https://www.w3.org/TR/annotation-vocab/)**.
 
 Each annotation consists of the following information:
-- the annotation target (`oa:hasTarget`) is the article it is about (`schema:about`)
+- the annotation target (`oa:hasTarget`) is the document it is about (`schema:about`)
 - the annotation body (`oa:hasBody`) gives the URI of the resource identified as representing the thematic descriptor (e.g. an **[Agrovoc category URI](https://agrovoc.fao.org/)** ).
 - provenance 
     - dataset name and version (`rdfs:isDefinedBy`)
-    - the agent that assigned this descriptor to the article (`prov:wasAttributedTo`)
+    - the agent that assigned this descriptor to a document (`prov:wasAttributedTo`)
         - a human documentalist (`issa:AgritropDocumentalist`)
         - an automated indexing system (e.g. **[Annif](https://annif.org/)** ) (`issa:AnnifSubjectIndexer`)
 - (optional) an automated indexer confidence score (`issapr:confidence`)
@@ -123,7 +123,7 @@ Example:
 <http://data-issa.cirad.fr/descr/3573cd52f16d7882c72210bca7c9b3ecef02d129>
   a                      prov:Entity , issa:ThematicDescriptorAnnotation;
   oa:hasBody             <http://aims.fao.org/aos/agrovoc/c_35332>;
-  oa:hasTarget           <http://data-issa.cirad.fr/article/543654>;
+  oa:hasTarget           <http://data-issa.cirad.fr/documents/543654>;
   prov:wasAttributedTo   issa:AgritropDocumentalist.
   rdfs:isDefinedBy       issa:issa-agritrop;
   
@@ -131,7 +131,7 @@ Example:
 <http://data-issa.cirad.fr/descr/e2ba273e40beccc2b8ae5f7792690dce7e6b2131>
   a                      prov:Entity , issa:ThematicDescriptorAnnotation;
   oa:hasBody             <http://aims.fao.org/aos/agrovoc/c_9000115>;
-  oa:hasTarget           <http://data-issa.cirad.fr/article/543654>;
+  oa:hasTarget           <http://data-issa.cirad.fr/documents/543654>;
   prov:wasAttributedTo   issa:AnnifSubjectIndexer.
   rdfs:isDefinedBy       issa:issa-agritrop;
 
@@ -141,17 +141,17 @@ Example:
 
 ## Named entities
 
-The named entities identified in an article are described as **annotations** using the **[Web Annotations Vocabulary](https://www.w3.org/TR/annotation-vocab/)**.
+The named entities identified in a document are described as **annotations** using the **[Web Annotations Vocabulary](https://www.w3.org/TR/annotation-vocab/)**.
 
 Each annotation consists of the following information:
-- the article it is about (`schema:about`)
-- the annotation target (`oa:hasTarget`) describes the piece of text identified as a named entity as follows:
-    - the source (`oa:hasSource`) is the part of the article where the named entity was detected (title, abstract or body)
+- the document it is about (`schema:about`)
+- the annotation target (`oa:hasTarget`) describes the piece of the text identified as a named entity as follows:
+    - the source (`oa:hasSource`) is a part of a document  where the named entity was detected (title, abstract, or body)
     - the selecor (`oa:hasSelector`) gives the named entity raw text (`oa:exact`) and its location whithin the source (`oa:start` and `oa:end`)
 - the annotation body (`oa:hasBody`) gives the URI of the resource identified as representing the named entity (e.g. a Wikidata URI, DBPedia URI, or Geonames URI)
 - provenance
     - dataset name and version (`rdfs:isDefinedBy`)
-    - the software that assigned this descriptor to the article (`prov:wasAttributedTo`)
+    - the software that assigned this named entity to the document (`prov:wasAttributedTo`)
 - (optional) domains related to the named entity (`dct:subject`)
 - (optional) the annotating tool confidence (`issapr:confidence`)
 
@@ -159,14 +159,14 @@ Example:
 ```turtle
 <http://data-issa.cirad.fr/ann/b46b064a5d1c58e9abea067e77f24c71d3a3e78d>
   a                      prov:Entity , oa:Annotation ;
-  rdfs:label             "named entity 'natural resource management'";
-  schema:about           <http://data-issa.cirad.fr/article/543654> ;
+  rdfs:label             "named entity 'natural resource management";
+  schema:about           <http://data-issa.cirad.fr/documents/543654> ;
   dct:subject            "Gas" , "Environment" ;
   issapr:confidence      0.7669;
 
   oa:hasBody             <http://wikidata.org/entity/Q3743137> ;
   oa:hasTarget [
-      oa:hasSource       <http://data-issa.cirad.fr/article/543654#abstract> .
+      oa:hasSource       <http://data-issa.cirad.fr/documents/543654#abstract> .
       oa:hasSelector [
           a              oa:TextPositionSelector, oa:TextQuoteSelector;
           oa:exact       "natural resource management";
