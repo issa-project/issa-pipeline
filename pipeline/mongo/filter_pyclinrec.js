@@ -16,7 +16,8 @@ db.pyclinrec.aggregate([
             { $ne: ["$$this.concept_id", undefined] },
             { $gte: ["$$this.confidence_score", 0.75] },
             { $regexMatch: {input: "$$this.matched_text", regex: "^[a-z,A-Z,À-ÿ,\p{Greek},µ]" } },
-            { $gte: [{$strLenCP: { $convert: { input: "$$this.matched_text", to: "string"}}}, 3] }
+            { $gte: [{$strLenCP: { $convert: { input: "$$this.matched_text", to: "string"}}}, 3] },
+            { $eq: ["$$this.overlap", undefined] }
         ]}}},
 
         
@@ -24,14 +25,16 @@ db.pyclinrec.aggregate([
             { $ne: ["$$this.concept_id", undefined] },
             { $gte: ["$$this.confidence_score", 0.75] },
             { $regexMatch: {input: "$$this.matched_text", regex: "^[a-z,A-Z,À-ÿ,\p{Greek},µ]" } },
-            { $gte: [{$strLenCP: { $convert: { input: "$$this.matched_text", to: "string"}}}, 3] }
+            { $gte: [{$strLenCP: { $convert: { input: "$$this.matched_text", to: "string"}}}, 3] },
+            { $eq: ["$$this.overlap", undefined] }
         ]}}},
 
         'body_text.concepts': { $filter: { input: "$body_text.concepts",  cond: { $and: [
             { $ne: ["$$this.concept_id", undefined] },
             { $gte: ["$$this.confidence_score", 0.75] },
             { $regexMatch: {input: "$$this.matched_text", regex: "^[a-z,A-Z,À-ÿ,\p{Greek},µ]" } },
-            { $gte: [{$strLenCP: { $convert: { input: "$$this.matched_text", to: "string"}}}, 3] }
+            { $gte: [{$strLenCP: { $convert: { input: "$$this.matched_text", to: "string"}}}, 3] },
+            { $eq: ["$$this.overlap", undefined] }
         ]}}}
 
 

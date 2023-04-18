@@ -70,6 +70,11 @@ python3 ./annotation_agrovoc.py
 
 docker stop agrovoc-pyclinrec
 
+echo "************************************************************************"
+echo "Detect overlapping named entities..."
+echo "************************************************************************"
+
+python3 ./overlap_detection.py
 
 popd
 

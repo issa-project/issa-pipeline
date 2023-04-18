@@ -27,21 +27,27 @@ db.spotlight.aggregate([
             { $ne: ["$$this.URI", undefined] },
             { $gte: ["$$this.similarityScore", 0.75] },
             { $regexMatch: {input: { $convert: { input: "$$this.surfaceForm", to: "string"}}, regex: "^[a-z,A-Z,À-ÿ,\p{Greek},µ]" } },
-            { $gte: [{$strLenCP: { $convert: { input: "$$this.surfaceForm", to: "string"}}}, 3] }
+            { $gte: [{$strLenCP: { $convert: { input: "$$this.surfaceForm", to: "string"}}}, 3] },
+            { $eq: ["$$this.overlap", undefined] }
+
         ]}}},
         
         'abstract.Resources': { $filter: { input: "$abstract.Resources",  cond: { $and: [
             { $ne: ["$$this.URI", undefined] },
             { $gte: ["$$this.similarityScore", 0.75] },
 	       { $regexMatch: {input: { $convert: { input: "$$this.surfaceForm", to: "string"}}, regex: "^[a-z,A-Z,À-ÿ,\p{Greek},µ]" } },
-            { $gte: [{$strLenCP: { $convert: { input: "$$this.surfaceForm", to: "string"}}}, 3] }
+            { $gte: [{$strLenCP: { $convert: { input: "$$this.surfaceForm", to: "string"}}}, 3] },
+            { $eq: ["$$this.overlap", undefined] }
+
         ]}}},
 
         'body_text.Resources': { $filter: { input: "$body_text.Resources",  cond: { $and: [
             { $ne: ["$$this.URI", undefined] },
             { $gte: ["$$this.similarityScore", 0.75] },
             { $regexMatch: {input: { $convert: { input: "$$this.surfaceForm", to: "string"}}, regex: "^[a-z,A-Z,À-ÿ,\p{Greek},µ]" } },
-            { $gte: [{$strLenCP: { $convert: { input: "$$this.surfaceForm", to: "string"}}}, 3] }
+            { $gte: [{$strLenCP: { $convert: { input: "$$this.surfaceForm", to: "string"}}}, 3] },
+            { $eq: ["$$this.overlap", undefined] }
+
         ]}}}
 
 

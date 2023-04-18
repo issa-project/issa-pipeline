@@ -16,14 +16,14 @@ def read_env_var(var_name):
     return os.environ[var_name] if var_name in os.environ else None
 
 
-_ISSA_DATA_ROOT	= read_env_var('ISSA_DATA_ROOT') 			or os.path.expanduser('~/ISSA/data')
-_ISSA_DATASET    	= read_env_var('ISSA_DATASET') 				or 'dataset-1-0'
+_ISSA_DATA_ROOT	= read_env_var('ISSA_DATA_ROOT') 			or os.path.expanduser('~/Documents/ISSA/ISSA/data')
+_ISSA_DATASET    	= read_env_var('ISSA_DATASET') 				or 'dataset-1-2'
 
 _METADATA_PREFIX 	= read_env_var('METADATA_PREFIX') 			or 'corpus'  
 _ANNIF_SUFFIX    	= read_env_var('ANNIF_SUFFIX') 				or 'annif'
 
-_PDF_CACHE       	= read_env_var('PDF_CACHE') 				or os.path.expanduser('~/ISSA/data/pdf_cache')
-_PDF_CACHE_UNREADABLE = read_env_var('PDF_CACHE_UNREADABLE') 	or os.path.expanduser('~/ISSA/data/pdf_cache/unreadable')
+_PDF_CACHE       	= read_env_var('PDF_CACHE') 				or os.path.expanduser('~/Documents/ISSA/ISSA/data/pdf_cache')
+_PDF_CACHE_UNREADABLE = read_env_var('PDF_CACHE_UNREADABLE') 	or os.path.expanduser('~/Documents/ISSA/ISSA/data/pdf_cache/unreadable')
 
 # Directories of data files relative to LATEST_UPDATE_DIR
 
@@ -397,7 +397,7 @@ class cfg_annotation(cfg_pipeline):
 
     OUTPUT_PATH = '' # has to be overwritten
     OUTPUT_SUFFIX = '.json'
-    OUTPUT_OVERWRITE_EXISTING = False
+    OUTPUT_OVERWRITE_EXISTING = True
 
     # json path to                 text                      language      
     JSON_TEXT_MAP= { 'title':    (['metadata', 'title'],     ['metadata', 'title_lang', 'code']),
@@ -420,10 +420,10 @@ class cfg_annotation_dbpedia(cfg_annotation):
     OUTPUT_PATH = FILES_LOC['annotation_dbpedia']
    
     SPOTLIGHT_ENDPOINTS = {
-        'en': 'http://localhost:2222/rest/annotate',
-        'fr': 'http://localhost:2223/rest/annotate',
-        #'en': 'https://api.dbpedia-spotlight.org/en/annotate',
-        #'fr': 'https://api.dbpedia-spotlight.org/fr/annotate',
+        #'en': 'http://localhost:2222/rest/annotate',
+        #'fr': 'http://localhost:2223/rest/annotate',
+        'en': 'https://api.dbpedia-spotlight.org/en/annotate',
+        'fr': 'https://api.dbpedia-spotlight.org/fr/annotate',
 
     }
     
@@ -501,7 +501,7 @@ class cfg_overlap_detection(cfg_pipeline): #cfg_pipeline
                    }
     }
 
-    ASYNCH_PROCESSING = True
+    ASYNCH_PROCESSING = False
     ASYNCH_MAX_WORKERS = 10
 
     REMOVE_OVERLAPS = False

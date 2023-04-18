@@ -14,7 +14,7 @@ import sys
 #%%
 def always_log_exceptions(exctype, value, tb):
     
-    #read last element in hope that this is the one we need
+    #read the last element in hope that this is the one we need
     #TODO:refactor
     logger=[logging.getLogger(name) for name in logging.root.manager.loggerDict][-1]
     
@@ -31,14 +31,14 @@ def open_timestamp_logger(log_prefix=None,
     logger = logging.getLogger(log_prefix)
     logger.setLevel(file_level)
     
-    # remove all previously created streams to begin a new ones 
+    # remove all previously created streams to begin a new one 
     if logger.hasHandlers():
         for i in range(len(logger.handlers)-1, -1, -1) :
             handler = logger.handlers[i]
             handler.close()
             logger.removeHandler(handler)
     
-    # create console handler with a higher log level
+    # create a console handler with a higher log level
     console = logging.StreamHandler()
     console.setLevel(console_level)
     logger.addHandler(console)
@@ -48,7 +48,7 @@ def open_timestamp_logger(log_prefix=None,
         if not os.path.exists(log_dir):
             os.makedirs(log_dir)
     
-    # create file handler with lower log level
+    # create file handler with a lower log level
     if log_prefix is not None:
         fname = '%s_%s.log' % (log_prefix, datetime.datetime.now().strftime('%Y%m%d_%H%M%S'))
         log_file = logging.FileHandler(os.path.join(log_dir, fname) )
@@ -73,8 +73,8 @@ import pandas as pd
 
 def read_metadata(filePath):
     """
-    Read raw or processed metadata file converting columns into lists when
-    nesessary
+    Read a raw or processed metadata file converting columns into lists when
+    necessary
 
     """
     df = pd.read_csv(filePath, sep='\t', encoding='utf-8')
@@ -243,7 +243,7 @@ def get_nested_dict_value(nested_dict, path_list, default=None):
     
 def set_nested_dict_value(nested_dict, path_list, value):
     """
-    Assign value to a key mapped by path as list of strings and indices.
+    Assign value to a key mapped by path as list of strings and indecies.
     Creates list if an index in a path os 0 but nested value is empty.
     In other cases if index is out of range then exception will be thrown.
 
@@ -252,7 +252,7 @@ def set_nested_dict_value(nested_dict, path_list, value):
     nested_dict : dict
 
     path_list : list 
-        list of list of strings and/or indices
+        list of list of strings and/or indecies
 
     value : any type
         value to assign
@@ -278,7 +278,7 @@ def set_nested_dict_value(nested_dict, path_list, value):
 # https://gist.github.com/angstwad/bf22d1822c38a92ec0a9?permalink_comment_id=4038517#gistcomment-4038517
 def merge_nested_dicts(dict_a: dict, dict_b: dict):
     """
-    Recursively merge nested dictionaries. The values of the second dictionary
+    Recursivly merge nested dictionaries. The values of the second dictionary
     will overwrite the values for the same key in first dictionary. 
 
     Parameters
