@@ -26,10 +26,12 @@ from util import get_nested_dict_value, set_nested_dict_value
 
 #%% 
 from logging import INFO, DEBUG
+
+
 logger = open_timestamp_logger(log_prefix= os.path.splitext(os.path.basename(__file__))[0], 
                                log_dir=cfg.LOG_PATH, 
                                file_level=DEBUG if cfg.DEBUG else INFO,
-                               first_line = 'Detecting overlapping names entities ...')
+                               first_line = 'Detecting overlapping named entities ...')
 #%%
 # 
 def _strlen(v):
@@ -73,13 +75,18 @@ def remove_overlaps(terms, text_elem_name='surfaceForm',
     # Check if the end offset of the previous term is greater than the start offset of the current term
     remove_idx = []
     for i in range(1, len(terms)):
-        if terms[i][offset_elem_name] < terms[i-1][offset_elem_name] + _strlen(terms[i-1][text_elem_name]):
+        j = i-1
+        # check if a previous term is already marked
+        while ('overlap' in terms[j].keys() ): 
+            j -= 1
+
+        if terms[i][offset_elem_name] < terms[j][offset_elem_name] + _strlen(terms[j][text_elem_name]):
 
             if how == 'length':
-                remove_idx.append( i-1 if _strlen(terms[i-1][text_elem_name]) < _strlen(terms[i][text_elem_name]) else i) 
+                remove_idx.append( j if _strlen(terms[j][text_elem_name]) < _strlen(terms[i][text_elem_name]) else i) 
 
             elif how == 'score':
-                remove_idx.append( i-1 if terms[i-1][score_elem_name] < terms[i][score_elem_name]  else i) 
+                remove_idx.append( j if terms[j][score_elem_name] < terms[i][score_elem_name]  else i) 
 
     remove_idx = sorted(remove_idx, reverse=True)
 
@@ -100,20 +107,28 @@ def mark_overlaps(terms, text_elem_name='surfaceForm',
     # Sort the terms based on their starting offset
     terms = sorted(terms, key=lambda x: x[offset_elem_name])
 
+    # Clear previous flags to allow multiple reprocessing
+    _ = [t.pop('overlap', '') for t in terms]
+
     # Check if the end offset of the previous term is greater than the start offset of the current term
     remove_idx = []
     for i in range(1, len(terms)):
-        if terms[i][offset_elem_name] < terms[i-1][offset_elem_name] + _strlen(terms[i-1][text_elem_name]):
+        j = i-1
+        # check if a previous term is already marked
+        while ('overlap' in terms[j].keys() ): 
+            j -= 1
+
+        if terms[i][offset_elem_name] < terms[j][offset_elem_name] + _strlen(terms[j][text_elem_name]):
             
             if how == 'length':
-                idx = i-1 if _strlen(terms[i-1][text_elem_name]) < _strlen(terms[i][text_elem_name]) else i
+                idx = j if _strlen(terms[j][text_elem_name]) < _strlen(terms[i][text_elem_name]) else i
 
             else:
-                idx = i-1 if terms[i-1][score_elem_name] < terms[i][score_elem_name]  else i
+                idx = j if terms[j][score_elem_name] < terms[i][score_elem_name]  else i
 
             terms[idx]['overlap'] = True
 
-            logger.debug('    overlap detected: "%s" (%d) and "%s" (%d)', terms[i-1][text_elem_name], terms[i-1][offset_elem_name],
+            logger.debug('    overlap detected: "%s" (%d) and "%s" (%d)', terms[j][text_elem_name], terms[j][offset_elem_name],
                                                                           terms[i][text_elem_name], terms[i][offset_elem_name]   )
 
     return terms
@@ -185,7 +200,7 @@ def detect_overlaps_dir():
   
     files = glob.glob(os.path.join(cfg.INPUT_PATH, cfg.INPUT_PATTERN))
     logger.info('found %d files with pattern %s', len(files), cfg.INPUT_PATTERN) 
-    
+
     if cfg.ASYNCH_PROCESSING:
        with concurrent.futures.ThreadPoolExecutor(max_workers=cfg.ASYNCH_MAX_WORKERS) as executor:
            executor.map(detect_overlaps_file, files)
