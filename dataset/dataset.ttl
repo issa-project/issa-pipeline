@@ -58,7 +58,7 @@ issa:issa-agritrop
 
     # updatable properties
     dct:modified            "2022-08-15"^^xsd:date; 
-    prov:wasGeneratedAtTime "2022-08-15"^^xsd:date;
+    prov:generatedAtTime    "2022-08-15"^^xsd:date;
     void:triples            "66767136"^^xsd:integer;
     owl:versionInfo         "1.1.20220815";
     dcat:version            "1.1.20220815";
