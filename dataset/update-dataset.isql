@@ -48,12 +48,12 @@ PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
 PREFIX dct: <http://purl.org/dc/terms/>
 
 WITH <http://data-issa.cirad.fr/graph/dataset>
-DELETE { issa:issa-agritrop prov:wasGeneratedAtTime ?date_old .
+DELETE { issa:issa-agritrop prov:generatedAtTime ?date_old .
          issa:issa-agritrop dct:modified ?date_old }
-INSERT { issa:issa-agritrop prov:wasGeneratedAtTime ?date_new .
+INSERT { issa:issa-agritrop prov:generatedAtTime ?date_new .
          issa:issa-agritrop dct:modified ?date_new}
 WHERE {
-    issa:issa-agritrop prov:wasGeneratedAtTime ?date_old . 
+    issa:issa-agritrop prov:generatedAtTime ?date_old . 
     BIND (xsd:date(NOW()) as ?date_new)
   }
 ;
