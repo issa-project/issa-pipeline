@@ -54,7 +54,7 @@ for lang in $SPOTLIGHT_LANGUAGES; do
       # download model
       curl -O  $result
 
-      tar -C "$SPOTLIGHT_MODEL_DIR" -xvf spotlight-model_lang=$lang.tar.gz
+      tar -C $SPOTLIGHT_MODEL_DIR -xvf spotlight-model_lang=$lang.tar.gz
       rm spotlight-model_lang=$lang.tar.gz
       echo "$lang model is downloaded "
 

@@ -14,7 +14,7 @@ echo "************************************************************************"
 echo " Loading and processing corpus metadata..."
 echo "************************************************************************"
 
-#activate virtual environment
+#activate the virtual environment
 source ${ISSA_VENV}/bin/activate
 
 pushd ./metadata
@@ -25,7 +25,7 @@ pushd ./metadata
 
 popd
 
-# deactivate virtual environment
+# deactivate the virtual environment
 deactivate
 
 

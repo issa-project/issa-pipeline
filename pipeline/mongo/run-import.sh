@@ -12,11 +12,11 @@ IDIR=$MONGODB_IMPORT_DIR
 
 CONTAINER=${MONGODB_CONT_NAME:-mongodb}
 
+docker start $CONTAINER
 
 log_dir=../logs 
 mkdir -p $log_dir
 log=$log_dir/import_mongodb_$(date "+%Y%m%d_%H%M%S").log
-
 
 if [ $( docker ps -f name=$CONTAINER| wc -l ) -gt 1 ]; then 
 
