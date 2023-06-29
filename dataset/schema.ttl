@@ -61,18 +61,35 @@ issap:rank
     dct:description         "Indexing rank is a place of a descriptor in the list of descriptors orderd by descending confidence score";
     .
 
+# The body of this annotation would be a URI of a thematic vocabulary; for example, an Agrovoc concept.
 issa:ThematicDesciptorAnnotation
     a                       owl:Class;
     rdfs:subClassOf         oa:Annotation;
     rdfs:label              "thematic descriptor";
-    dct:description         "Document's non-geographical Agrovoc descriptor";
-    # How should we link this to Agrovoc?
+    dct:description         "Document's non-geographical thematic descriptor";
     .
 
-issa:GeographicAnnotation
+# The body of this annotation would be a URI of a georgaphical vocabulary; for example, an Agrovoc concept or a GeoName concept.
+issa:GeographicDescriptorAnnotation
     a                       owl:Class;
     rdfs:subClassOf         oa:Annotation;
     rdfs:label              "geographical annotation";
     dct:description         "Document's geographical descriptor";
-    # How should we link this to GeoNames?
     .
+
+# The body of this annotation would be a URI of a domain vocabulary; for example, an AGRIS concept.
+issa:DomainAnnotation
+    a                       owl:Class;
+    rdfs:subClassOf         oa:Annotation;
+    rdfs:label              "domain annotation";
+    dct:description         "Document's domain/discipline (branch of knowledge)";
+    .
+
+# The body of this annotation would be a blank node [ a oa:TextualBody ; rdf:value "keyword"; dc:language "en" ; dc:format "text"].
+issa:AuthorKeywordAnnotation
+    a                       owl:Class;
+    rdfs:subClassOf         oa:Annotation;
+    rdfs:label              "author keyword annotation";
+    dct:description         "Document's author keyword descriptor";
+    .
+

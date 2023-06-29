@@ -125,3 +125,8 @@ WIKIDATA_IMPORT_DIR=$VIRTUOSO_DATABASE_DIR/import    # copy wikidata RDF dump an
 
 # DBpedia labels and hierarchies dump
 DBPEDIA_IMPORT_DIR=$VIRTUOSO_DATABASE_DIR/import     # copy DBpedia RDF dump and import scripts to this dir for upload 
+
+# AgrIST thesaurus
+AGRIST_GRAPH=http://dist.cirad.fr/agrist-thema/graph  # graph name for AgrIST triples
+AGRIST_IMPORT_DIR=$VIRTUOSO_DATABASE_DIR/import       # copy AgrIST RDF and import scripts to this dir for upload 
+

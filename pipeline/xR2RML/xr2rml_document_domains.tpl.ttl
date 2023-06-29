@@ -31,7 +31,7 @@
 
 # Template file: replace placeholders
 # - {{dataset}}: RDF dataset name e.g. "dataset-1-0"
-# - {{collection}}: the MongoDB collection to query, e.g. document_descriptors
+# - {{collection}}: the MongoDB collection to query, e.g. document_domains
 
 <#LS>
     a           xrr:LogicalSource;
@@ -44,7 +44,7 @@
     xrr:logicalSource <#LS>;
     rr:subjectMap    [ 
         rr:template "http://data-issa.cirad.fr/descr/sha1(td_{$.paper_id}_{$.uri}})";
-        rr:class     issa:ThematicDescriptorAnnotation, prov:Entity;
+        rr:class     issa:DomainAnnotation, prov:Entity;
     ];
     rr:predicateObjectMap [
         rr:predicate oa:hasTarget;
@@ -54,10 +54,10 @@
         rr:predicate oa:hasBody;
        rr:objectMap [ xrr:reference "$.uri"; rr:termType rr:IRI ];
     ];
-    rr:predicateObjectMap [
-        rr:predicate rdfs:label;
-        rr:objectMap [ rr:template "descriptor '{$.label}'"; rr:termType rr:Literal ];
-    ];
+    #rr:predicateObjectMap [
+    #    rr:predicate rdfs:label;
+    #    rr:objectMap [ rr:template "descriptor '{$.label}'"; rr:termType rr:Literal ];
+    #];
     rr:predicateObjectMap [
         rr:predicate issapr:rank;
         rr:objectMap [ xrr:reference "$.rank"; rr:datatype xsd:integer ];
@@ -77,10 +77,9 @@
 
 # Output should look like this:
 #<http://data-issa.cirad.fr/descr/sha1 hash>
-#    a                    issa:ThematicDescriptorAnnotation, prov:Entity;
-#    rdfs:label           "descriptor 'riz'";
-#    issapr:rank          6;
-#    oa:hasBody           <http://aims.fao.org/aos/agrovoc/c_6599> ;
+#    a                    issa:DisciplineDescriptorAnnotation, prov:Entity;
+#    issapr:rank          1;
+#    oa:hasBody           <http://dist.cirad.fr/agrist-thema/A50> ;
 #    oa:hasTarget         <http://data-issa.cirad.fr/document/349640>;
 #    rdfs:isDefinedBy     issa:issa-agritrop ;
 #    prov:wasAttributedTo issa:Documentalist.

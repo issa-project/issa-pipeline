@@ -5,8 +5,9 @@ ECHO "Clearing ISSA graphs...\n";
 -- For metadata and thematic descriptors the full graph is updated
 SPARQL CLEAR GRAPH  <http://data-issa.cirad.fr/graph/documents>;
 SPARQL CLEAR GRAPH  <http://data-issa.cirad.fr/graph/thematic-descriptors>;
+SPARQL CLEAR GRAPH  <http://data-issa.cirad.fr/graph/document-domains>;
 
--- For other graphs updates are incremental (uncomment only for the first load of a dataset)
+-- For other graphs, updates are incremental (uncomment only for the first load of a dataset)
 --SPARQL CLEAR GRAPH  <http://data-issa.cirad.fr/graph/documents/text>;
 --SPARQL CLEAR GRAPH  <http://data-issa.cirad.fr/graph/annif-descriptors>;
 --SPARQL CLEAR GRAPH  <http://data-issa.cirad.fr/graph/dbpedia-spotlight-nes>;
@@ -22,6 +23,7 @@ ECHO "Load files:\n";
 
 ld_dir ('$ARGV[$I]', 'issa-document-metadata.ttl', 'http://data-issa.cirad.fr/graph/documents');
 ld_dir ('$ARGV[$I]', 'issa-document-descriptors.ttl', 'http://data-issa.cirad.fr/graph/thematic-descriptors');
+ld_dir ('$ARGV[$I]', 'issa-document-domains.ttl', 'http://data-issa.cirad.fr/graph/document-domains');
 
 ld_dir ('$ARGV[$I]', 'issa-article-text.ttl', 'http://data-issa.cirad.fr/graph/documents/text');
 
@@ -36,6 +38,7 @@ ld_dir ('$ARGV[$I]', 'issa-document-geonames-*.ttl', 'http://data-issa.cirad.fr/
 ld_dir ('$ARGV[$I]', 'issa-document-pyclinrec-*.ttl', 'http://data-issa.cirad.fr/graph/pyclinrec-nes');
 
 -- List files and graphs to load
+ECHO "Graphs to load\n";
 SELECT ll_file, ll_graph FROM DB.DBA.load_list ORDER BY ll_graph, ll_file;
 
 ECHO "Loading ISSA graphs...\n";
@@ -43,6 +46,7 @@ rdf_loader_run ();
 checkpoint;
 
 -- Check for load errors
+ECHO "Graphs loaded (check for errors)\n";
 SELECT * FROM DB.DBA.load_list;
 
 -- Report the number of triples in the graphs

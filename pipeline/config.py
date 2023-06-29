@@ -107,8 +107,8 @@ class cfg_download_corpus_metadata(cfg_pipeline):
     OUTPUT_PATH = './output'
 
     SINGLE_FIELD_MAP = {'paper_id' : 'oai:header/oai:identifier',
-                         'datestamp' :  'oai:header/oai:datestamp',
-                         'uri' : 'oai:metadata/oai_dc:dc/dc:identifier',
+                        'datestamp' :  'oai:header/oai:datestamp',
+                        'uri' : 'oai:metadata/oai_dc:dc/dc:identifier',
                         'title' : 'oai:metadata/oai_dc:dc/dc:title',
                         'language' : 'oai:metadata/oai_dc:dc/dc:language',
                         'year' : 'oai:metadata/oai_dc:dc/dc:date',
@@ -133,6 +133,7 @@ class cfg_download_corpus_metadata(cfg_pipeline):
                        'geo_descriptors' : 'oai:metadata/oai_dc:dc/dc:coverage',
                        'descriptors_uris' :'' ,
                        'descriptors_labels': '',
+                       'domain_codes' : '', 
                        'identifiers' : 'oai:metadata/oai_dc:dc/dc:identifier',
                        'licenses' : 'oai:metadata/oai_dc:dc/dc:rights',
                        'relations' : 'oai:metadata/oai_dc:dc/dc:relation', #ideally it should have XML path expression [starts-with(.,"http")] butit is not supported
@@ -195,6 +196,9 @@ class cfg_process_corpus_metadata(cfg_pipeline):
     PAPER_ID_REGEX = r'[^:]+$'
     REMOVE_STR_LIST = ["\(Résumé d'auteur\)", "\(Résumé d'auteurs\)"] 
     SOURCE_NAMESPACE = 'http://agritrop.cirad.fr/'
+    
+    DOMAIN_CODE_REGEX = r'^[A-Z]\d{2}\b'
+    DOMAIN_NAMESPACE = 'http://dist.cirad.fr/agrist-thema/'
 
 
 class cfg_create_dataset_repository(cfg_pipeline):

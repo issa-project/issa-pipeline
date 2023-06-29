@@ -35,10 +35,14 @@ issa:EntityFishing
     dct:description         "A machine learning tool for fishing Wikidata entities in text";
     .
 
-issa:AgritropDocumentalist
-    a                       prov:Organization;
-    prov:actedOnBehalfOf    <https://agritrop.cirad.fr/>;
-    dct:description         "A human documentalist who assigns or verifies Agrovoc descriptors of documents";
+issa:Documentalist
+    a                       prov:Person;
+    dct:description         "A human documentalist who assigns or verifies descriptors/keywords of documents";
+    .
+	
+issa:Author
+    a                       prov:Person;
+    dct:description         "An author of a document";
     .
 
 issa:AnnifSubjectIndexer

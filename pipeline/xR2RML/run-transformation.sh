@@ -27,6 +27,9 @@ echo "Generate documents metadata..."
 
 echo "Generate documents thematic descriptors by documentalists"
 ./run_xr2rml.sh $DS document_descriptors xr2rml_document_descriptors.tpl.ttl   $ODIR/issa-document-descriptors.ttl
+
+echo "Generate domain descriptors by documentalists"
+./run_xr2rml.sh $DS document_domains xr2rml_document_domains.tpl.ttl   $ODIR/issa-document-domains.ttl
  
 echo "Generate articles' full text RDF"
 ./run_xr2rml.sh  $DS article_text xr2rml_article_text.tpl.ttl  $ODIR/issa-article-text.ttl
@@ -53,7 +56,6 @@ echo "Generate annotations for Agrovoc Pyclinrec"
 ./run_xr2rml_annotation.sh $DS title     pyclinrec_filtered xr2rml_pyclinrec_annot.tpl.ttl $ODIR/issa-document-pyclinrec-title.ttl
 ./run_xr2rml_annotation.sh $DS abstract  pyclinrec_filtered xr2rml_pyclinrec_annot.tpl.ttl $ODIR/issa-document-pyclinrec-abstract.ttl
 ./run_xr2rml_annotation.sh $DS body_text pyclinrec_filtered xr2rml_pyclinrec_annot.tpl.ttl $ODIR/issa-document-pyclinrec-body.ttl
-
 
 # Generate annotations for Entity-fishing (body)
 #collections=$(mongo $MONGODB_DB --eval "db.getCollectionNames()" | cut -d'"' -f2 | egrep "entityfishing_._body")

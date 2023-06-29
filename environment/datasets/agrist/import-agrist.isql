@@ -1,0 +1,16 @@
+log_enable(3,1);
+SPARQL CLEAR GRAPH  <http://dist.cirad.fr/agrist-thema/graph>;
+
+DELETE FROM DB.DBA.load_list;
+ld_dir ('/database/import', 'AgrIST-Thema.ttl', 'http://dist.cirad.fr/agrist-thema/graph');
+
+rdf_loader_run ();
+checkpoint;
+
+-- Check for loading errors 
+SELECT * FROM DB.DBA.load_list;
+
+SPARQL SELECT DISTINCT ('<http://dist.cirad.fr/agrist-thema/graph>' as ?g)  (COUNT(*) as ?triples)  
+WHERE { GRAPH <http://dist.cirad.fr/agrist-thema/graph> {?s ?p ?o} };
+
+exit;

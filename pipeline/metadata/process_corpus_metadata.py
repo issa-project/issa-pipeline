@@ -148,6 +148,32 @@ def get_descriptors_uris(dl, prefix=''):
     dl = list(filter(lambda x: x is not None , dl))
     return list(filter(lambda x: re.match(uri_regex, x)  , dl))
 
+def get_domain_codes(dl):
+    """
+    Helper function that separates AGRIS domain 
+    from the mixture of text and uris and creates URIs for them
+
+    Parameters
+    ----------
+    dl : list 
+         List of strings
+    prefix : string
+         Specific uri prefix e.g. http 
+
+    Returns
+    -------
+    list
+        list of uri descriptors only
+    """
+    uri_regex = cfg.DOMAIN_CODE_REGEX
+
+    dl = list(filter(lambda x: x is not None , dl))
+    dl = list(filter(lambda x: re.match(uri_regex, x)  , dl))
+    dl = list(map(lambda x: re.match(uri_regex, x)[0]  , dl))
+    dl = list(map(lambda x: cfg.DOMAIN_NAMESPACE + x  , dl))
+
+    return dl
+
 #%%    
 def remove_with_prefix(dl, prefix):
     """
@@ -177,6 +203,7 @@ def split_descriptors(df):
     
     df.descriptors_uris = df.descriptors.apply(lambda x: get_descriptors_uris(x))
     df.descriptors = df.descriptors.apply(lambda x: get_descriptors_text(x))
+    df.domain_codes = df.descriptors.apply(lambda x: get_domain_codes(x))
     return df
 #%%
 def split_license(df):
