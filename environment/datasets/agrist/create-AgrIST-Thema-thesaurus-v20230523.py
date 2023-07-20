@@ -5,7 +5,7 @@
 # 
 # Note: *rdflib* does not output the triples in the order they are added, we slightly modify the serialization from a straight forward way. 
 
-# In[1]:
+# In[32]:
 
 
 import pandas as pd
@@ -15,7 +15,7 @@ import datetime
 import re
 
 
-# In[2]:
+# In[33]:
 
 
 agrist_fn = 'Plan de catégorisation AgrIST-Thema-20230523.xlsx'
@@ -27,29 +27,30 @@ agrist_df = pd.read_excel(agrist_fn, 0,
                           index_col=None)
 
 schema_title_en = u'AgrIST-Thema categorization scheme'
-schema_title_fr = u'Plan de classement AgrIST-Thema'
+schema_title_fr = u'Plan de catégorisation AgrIST-Thema'
 
 # this comment is needed to put the rdfs prefix as early as posible 
-schema_comment = u'Nouveau plan de classement Agris-Agritrop (version du 23 mai 2023)'
+schema_comment = u'Plan de catégorisation utlisé dans Agritrop (version du 23 mai 2023)'
 
 schema_creator     = 'https://ror.org/05kpkpg04' #CIRAD
 schema_contributor = 'https://ror.org/02kvxyf05' #INRIA
 
 schema_version = '2023.05.23'
-schema_created = '2023-06-30'
-schema_issued  = '2023-06-30'
+schema_created = '2023-06-29'
+schema_issued  = '2023-06-29'
 schema_modified = datetime.datetime.now().strftime('%Y-%m-%d')
 
-schema_license = 'http://opendatacommons.org/licenses/by/1.0'
+schema_license = 'https://creativecommons.org/licenses/by-nc/4.0/'
 schema_access =  'http://purl.org/eprint/accessRights/OpenAccess'
 
 sparql_endpoint = 'https://data-issa.cirad.fr/sparql'
 
 agrist_ttl = 'AgrIST-Thema-v20230523.ttl'
-agrist_ns = 'http://dist.cirad.fr/agrist-thema/'
+agrist_ns = 'https://agrist.cirad.fr/agrist-thema'
+agrist_schema = agrist_ns
 
 
-# In[3]:
+# In[34]:
 
 
 agrist_df['category'] = agrist_df['category'].fillna(method='ffill')
@@ -59,7 +60,7 @@ agrist_df = agrist_df.dropna(subset='sub-category').apply(lambda x: x.str.strip(
 #agrist_df['category'] = agrist_df['sub-category'].str[0]
 
 
-# In[4]:
+# In[35]:
 
 
 agrist_df
@@ -67,10 +68,10 @@ agrist_df
 
 # #### start the graph with namespaces
 
-# In[5]:
+# In[36]:
 
 
-def new_Graph(agrist_ns = 'http://dist.cirad.fr/agrist-thema/'):
+def new_Graph(agrist_ns = 'https://agrist.cirad.fr/'):
     g = Graph()
 
     g.bind('skos', SKOS)
@@ -79,7 +80,7 @@ def new_Graph(agrist_ns = 'http://dist.cirad.fr/agrist-thema/'):
     g.bind('rdfs', RDFS)
     g.bind('dcat', DCAT)
     g.bind('void', VOID)
-    g.bind('agrist', Namespace(agrist_ns))
+    g.bind('agrist-thema', Namespace(agrist_ns))
     
     return g
 
@@ -103,11 +104,11 @@ def serialize_Graph(g, file_name=agrist_ttl, append=False):
 
 # #### define schema
 
-# In[6]:
+# In[37]:
 
 
-g = new_Graph()
-schema=URIRef(agrist_ns) # URIRef('http://dist.cirad.fr/agrist-thema/AGRIS')
+g = new_Graph(agrist_ns)
+schema=URIRef(agrist_schema) 
 
 g.add( (schema , RDF.type, SKOS.ConceptScheme ))
 g.add( (schema , RDFS.comment, Literal(schema_comment, lang='fr') ))
@@ -135,13 +136,7 @@ g.add( (schema , VOID.uriSpace , URIRef(agrist_ns) ))
 g.add( (schema , DCAT.version , Literal(schema_version) ))
 
 
-# In[7]:
-
-
-print(g.serialize(format="turtle").decode('utf-8'))
-
-
-# In[8]:
+# In[38]:
 
 
 serialize_Graph(g, agrist_ttl)
@@ -149,10 +144,10 @@ serialize_Graph(g, agrist_ttl)
 
 # #### define top concepts (categories)
 
-# In[9]:
+# In[39]:
 
 
-g = new_Graph()
+g = new_Graph(agrist_ns)
 for ind, row in agrist_df.drop_duplicates(subset=['category','category-label-fr','category-label-en']).iterrows():
     
     category = URIRef(agrist_ns + row['category'])
@@ -165,13 +160,13 @@ for ind, row in agrist_df.drop_duplicates(subset=['category','category-label-fr'
     g.add( (category , SKOS.prefLabel,  lbl_en))
 
 
-# In[10]:
+# In[40]:
 
 
 print(g.serialize(format="turtle").decode('utf-8'))
 
 
-# In[11]:
+# In[41]:
 
 
 serialize_Graph(g, agrist_ttl, append=True)
@@ -179,10 +174,10 @@ serialize_Graph(g, agrist_ttl, append=True)
 
 # #### define all concepts (sub-categories) 
 
-# In[12]:
+# In[42]:
 
 
-g = new_Graph()
+g = new_Graph(agrist_ns)
 for ind, row in agrist_df.iterrows():
     
     category = URIRef(agrist_ns + row['category'])
@@ -196,7 +191,7 @@ for ind, row in agrist_df.iterrows():
     g.add( (sub_category , SKOS.prefLabel,  lbl_en))
 
 
-# In[13]:
+# In[43]:
 
 
 print(g.serialize(format="turtle").decode('utf-8'))
@@ -204,7 +199,7 @@ print(g.serialize(format="turtle").decode('utf-8'))
 
 # #### add scopeNotes
 
-# In[14]:
+# In[44]:
 
 
 for ind, row in agrist_df.iterrows():
@@ -219,7 +214,7 @@ for ind, row in agrist_df.iterrows():
 
 # #### add seeAlso
 
-# In[15]:
+# In[45]:
 
 
 agrist_df['editorialNotes'] = agrist_df['editorialNote'].apply(lambda x: x.split('\n'))
@@ -227,7 +222,7 @@ agrist_df['editorialNotes'] = agrist_df['editorialNote'].apply(lambda x: x.split
 agrist_df = agrist_df.explode('editorialNotes')
 
 
-# In[16]:
+# In[46]:
 
 
 sub_categories_codes = sorted(agrist_df['sub-category'].unique())
@@ -260,14 +255,14 @@ def validate_code(code):
     return code if code in sub_categories_codes + categories_codes else ''
 
 
-# In[17]:
+# In[47]:
 
 
 s = 'les codes E'
 re.findall(r'\b[A-Z]\b', s)
 
 
-# In[18]:
+# In[48]:
 
 
 agrist_df['seeAlso'] = agrist_df['editorialNotes'].apply(lambda x: x.split(' voir ')[-1].strip() ) 
@@ -277,13 +272,13 @@ agrist_df = agrist_df.explode('seeAlso')
 agrist_df['seeAlso'] = agrist_df['seeAlso'].apply(validate_code)
 
 
-# In[19]:
+# In[49]:
 
 
 agrist_df.tail()
 
 
-# In[20]:
+# In[50]:
 
 
 for ind, row in agrist_df.iterrows():
@@ -295,13 +290,13 @@ for ind, row in agrist_df.iterrows():
         g.add( (sub_category , RDFS.seeAlso, see_also ))
 
 
-# In[21]:
+# In[51]:
 
 
 print(g.serialize(format='turtle').decode("utf-8"))
 
 
-# In[22]:
+# In[52]:
 
 
 serialize_Graph(g, agrist_ttl, append=True)

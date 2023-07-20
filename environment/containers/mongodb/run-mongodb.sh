@@ -14,6 +14,12 @@ echo "mongo database dir: $MONGODB_HOST_DATABASE_DIR"
 echo "issa data dir     : $MONGODB_HOST_DATA_DIR"
 echo "issa import script: $MONGODB_HOST_SCRIPT_DIR"
 
+# Make folders to be used for ISSA data uploads
+mkdir -p $MONGODB_HOST_DATA_DIR
+mkdir -p $MONGODB_HOST_SCRIPT_DIR
+mkdir -p $MONGODB_HOST_DATABASE_DIR
+
+
 # Run MongoDB docker container 
 CONTAINER_NAME=${MONGODB_CONT_NAME:-mongodb}
 
@@ -21,7 +27,7 @@ if [ $( docker ps -f name=$CONTAINER_NAME | wc -l ) -eq 1 ]; then
      echo "starting $CONTAINER_NAME container"
 	docker run --name $CONTAINER_NAME \
                 -d \
-                -p 27017:27017 \
+                -p $MONGODB_HOST_PORT:27017 \
                 -v $MONGODB_HOST_DATABASE_DIR:/data/db \
                 -v $MONGODB_HOST_DATA_DIR:$MONGODB_CONT_DATA_DIR \
                 -v $MONGODB_HOST_SCRIPT_DIR:$MONGODB_CONT_SCRIPT_DIR \

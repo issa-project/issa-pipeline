@@ -2,7 +2,7 @@ log_enable(3,1);
 SPARQL CLEAR GRAPH  <http://dist.cirad.fr/agrist-thema/graph>;
 
 DELETE FROM DB.DBA.load_list;
-ld_dir ('/database/import', 'AgrIST-Thema.ttl', 'http://dist.cirad.fr/agrist-thema/graph');
+ld_dir ('/database/import', 'AgrIST-Thema*.ttl', 'http://dist.cirad.fr/agrist-thema/graph');
 
 rdf_loader_run ();
 checkpoint;

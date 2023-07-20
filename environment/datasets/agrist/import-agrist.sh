@@ -18,7 +18,7 @@ echo "Loading AgrIST..."                                   >>$log
 
 rm -v "$AGRIST_IMPORT_DIR"/*AgrIST*                         >>$log
 
-cp -v AgrIST-Thema.ttl "$AGRIST_IMPORT_DIR"
+cp -v AgrIST-Thema*.ttl "$AGRIST_IMPORT_DIR"
 cp -v import-agrist.isql "$AGRIST_IMPORT_DIR"               >>$log
 
 docker exec virtuoso \

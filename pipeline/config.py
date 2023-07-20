@@ -198,7 +198,7 @@ class cfg_process_corpus_metadata(cfg_pipeline):
     SOURCE_NAMESPACE = 'http://agritrop.cirad.fr/'
     
     DOMAIN_CODE_REGEX = r'^[A-Z]\d{2}\b'
-    DOMAIN_NAMESPACE = 'http://dist.cirad.fr/agrist-thema/'
+    DOMAIN_NAMESPACE = 'http://agrist.cirad.fr/agrist-thema/'
 
 
 class cfg_create_dataset_repository(cfg_pipeline):

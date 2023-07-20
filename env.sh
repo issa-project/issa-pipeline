@@ -52,6 +52,7 @@ export PDF_CACHE_UNREADABLE=$PDF_CACHE/unreadable # separate the unreadable PDFs
 
 # MongoDB (docker container)
 MONGODB_CONT_NAME=mongodb                        # docker container name 
+MONGODB_HOST_PORT=27017					   # host port to the mongodb container	
 MONGODB_DB=$ISSA_DATASET-$LATEST_UPDATE          # each data update is stored in a separate database in Mongo 
 MONGODB_HOST_DATABASE_DIR=~/ISSA/volumes/mongodb # map to /data/db in the container FS for data persistency 
 MONGODB_HOST_DATA_DIR=$ISSA_DATA_ROOT            # map host data dir
