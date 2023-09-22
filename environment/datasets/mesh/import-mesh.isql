@@ -1,0 +1,16 @@
+log_enable(3,1);
+SPARQL CLEAR GRAPH  <http://id.nlm.nih.gov/mesh/graph>;
+
+DELETE FROM DB.DBA.load_list;
+ld_dir ('/database/import', 'mesh*.nt', 'http://id.nlm.nih.gov/mesh/graph');
+
+rdf_loader_run ();
+checkpoint;
+
+-- Check for loading errors 
+SELECT * FROM DB.DBA.load_list;
+
+SPARQL SELECT DISTINCT ('<http://id.nlm.nih.gov/mesh/graph>' as ?g)  (COUNT(*) as ?triples)  
+WHERE { GRAPH <http://id.nlm.nih.gov/mesh/graph> {?s ?p ?o} };
+
+exit;

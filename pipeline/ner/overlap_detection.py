@@ -18,11 +18,13 @@ import json
 #import datetime
 
 sys.path.append('..')  
-
-from config import cfg_overlap_detection as cfg
 from util import read_paper_json, save_paper_json
 from util import open_timestamp_logger, close_timestamp_logger
 from util import get_nested_dict_value, set_nested_dict_value
+from util import add_path_to_config
+
+add_path_to_config()
+from config import cfg_overlap_detection as cfg
 
 #%% 
 from logging import INFO, DEBUG

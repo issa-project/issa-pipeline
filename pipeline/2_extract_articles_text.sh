@@ -18,8 +18,8 @@ source ${ISSA_VENV}/bin/activate
 
 pushd ./fulltext
 
-	python3 ./extract_text_from_pdf.py
-	python3 ./coalesce_meta_json.py
+	python3 ./extract_text_from_pdf.py $ISSA_PIPELINE_CONFIG
+	python3 ./coalesce_meta_json.py $ISSA_PIPELINE_CONFIG
 
 popd
 

@@ -1,4 +1,8 @@
 #!/bin/bash
+# Authors: Anna BOBASHEVA, University Cote d'Azur, Inria
+#
+# Licensed under the Apache License, Version 2.0 (http://www.apache.org/licenses/LICENSE-2.0)
+#
 # Query Wikidata to retrieve the hierarchy of classes of each URI in file wikidata-ne-uris.txt
 # Script takes one parameter for language, default is en, no quotation marks
 

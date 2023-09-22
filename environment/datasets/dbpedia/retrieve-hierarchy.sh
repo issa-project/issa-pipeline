@@ -1,4 +1,8 @@
 #!/bin/bash
+# Authors: Anna BOBASHEVA, University Cote d'Azur, Inria
+#
+# Licensed under the Apache License, Version 2.0 (http://www.apache.org/licenses/LICENSE-2.0)
+#
 # Query DBpedia for each of the URIs to retrieve the hierarchy of classes of each URI.
 
 # Script takes one parameter for language, default is en, no quotation marks
@@ -14,7 +18,7 @@ elif [ $lang == "fr" ]; then
 fi
 
 # Define log file
-log_dir=../../logs
+log_dir=${ISSA_ENV_LOG:-../../logs}
 mkdir -p $log_dir 
 log=$log_dir/dbpedia_dump_$lang-$(date "+%Y%m%d_%H%M%S").log
 

@@ -1,12 +1,18 @@
 certifi==2021.5.30
 charset-normalizer==2.0.4
 cord-19-tools==0.3.3
+decorator==5.1.1
+et-xmlfile==1.1.0
 idna==3.2
 isodate==0.6.0
 joblib==1.1.0
+jsonpath-ng==1.5.3
+langdetect==1.0.9
 lxml==4.6.3
 numpy==1.19.5
+openpyxl==3.1.2
 pandas==1.1.5
+ply==3.11
 pycld2==0.41
 pyparsing==2.4.7
 python-dateutil==2.8.2
@@ -21,4 +27,5 @@ SPARQLWrapper==1.8.5
 threadpoolctl==3.1.0
 tqdm==4.62.3
 urllib3==1.26.6
+xlrd==2.0.1
 xmltodict==0.12.0

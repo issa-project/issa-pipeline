@@ -13,12 +13,13 @@ import shutil
 from sklearn.model_selection import train_test_split
 
 sys.path.append('..')  
-
-from config import cfg_indexing_training as cfg
 from util import open_timestamp_logger, close_timestamp_logger
 from util import get_nested_dict_value
 from util import read_paper_json, read_metadata
+from util import add_path_to_config
 
+add_path_to_config()
+from config import cfg_indexing_training as cfg
 
 #%%
 logger = open_timestamp_logger(log_prefix= os.path.splitext(os.path.basename(__file__))[0], 

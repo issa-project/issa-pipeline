@@ -1,0 +1,16 @@
+log_enable(3,1);
+SPARQL CLEAR GRAPH  <http://data.archives-ouvertes.fr/subject/graph>;
+
+DELETE FROM DB.DBA.load_list;
+ld_dir ('/database/import', 'hal-domains-dump.ttl', 'http://data.archives-ouvertes.fr/subject/graph');
+
+rdf_loader_run ();
+checkpoint;
+
+-- output possible load errors
+SELECT * FROM DB.DBA.load_list;
+
+SPARQL SELECT DISTINCT ('<http://data.archives-ouvertes.fr/subject/graph>' as ?g)  (COUNT(*) as ?triples)  
+WHERE { GRAPH <http://data.archives-ouvertes.fr/subject/graph> {?s ?p ?o} };
+
+exit;

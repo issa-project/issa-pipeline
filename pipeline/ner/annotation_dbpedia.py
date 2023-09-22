@@ -11,11 +11,13 @@ import glob
 import concurrent.futures
 
 sys.path.append('..')  
-
-from config import cfg_annotation_dbpedia as cfg
 from util import read_paper_json, save_paper_json
 from util import open_timestamp_logger, close_timestamp_logger
 from util import get_nested_dict_value
+from util import add_path_to_config
+
+add_path_to_config()
+from config import cfg_annotation_dbpedia as cfg
 
 from wrapper_annotator import WrapperAnnotator, string2number
 wa = WrapperAnnotator(dbpedia_spotlight_endpoint= cfg.SPOTLIGHT_ENDPOINTS,

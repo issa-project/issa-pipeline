@@ -10,11 +10,13 @@ import sys
 import glob
 
 sys.path.append('..')  
-
-from config import cfg_indexing_preprocess as cfg
 from util import read_paper_json
 from util import open_timestamp_logger, close_timestamp_logger
 from util import get_nested_dict_value
+from util import add_path_to_config
+
+add_path_to_config()
+from config import cfg_indexing_preprocess as cfg
 
 #%% 
 logger = open_timestamp_logger(log_prefix= os.path.splitext(os.path.basename(__file__))[0], 

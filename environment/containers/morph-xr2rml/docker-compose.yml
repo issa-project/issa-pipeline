@@ -1,0 +1,31 @@
+version: '3.2'
+services:
+
+  morph-xr2rml:
+    image: frmichel/morph-xr2rml:v1.3.2
+    container_name: morph-xr2rml
+    networks:
+      - xr2rml-net
+    volumes:
+      - "/home/issa/ISSA-2/volumes/morph-xr2rml/xr2rml_config:/xr2rml_config"
+      - "/home/issa/ISSA-2/volumes/morph-xr2rml/xr2rml_output:/xr2rml_output"
+      - "/home/issa/ISSA-2/pipeline/logs/agritrop:/log"
+      - "/home/issa/ISSA-2/data:/issa/data"
+      - "/home/issa/ISSA-2/pipeline/morph-xr2rml/xR2RML:/issa/template"
+
+  mongo-xr2rml:
+    image: mongo:5.0.3
+    container_name: mongo-xr2rml
+    networks:
+      - xr2rml-net
+    volumes:
+      - "/home/issa/ISSA-2/volumes/morph-xr2rml/mongo_db:/data/db"
+      - "/home/issa/ISSA-2/volumes/morph-xr2rml/mongo_tools:/mongo_tools"
+      - "/home/issa/ISSA-2/volumes/morph-xr2rml/mongo_import:/mongo_import"
+      - "/home/issa/ISSA-2/data:/issa/data"
+      - "/home/issa/ISSA-2/pipeline/morph-xr2rml/mongo:/issa/script"
+
+networks:
+  xr2rml-net:
+    driver: bridge
+

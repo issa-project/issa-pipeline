@@ -1,8 +1,9 @@
 log_enable(3,1);
---SPARQL CLEAR GRAPH  <http://data-issa.cirad.fr/graph/wikidata-named-entities>;
+--SPARQL CLEAR GRAPH  <$ARGV[$I]graph/wikidata-named-entities>;
+
 
 DELETE FROM DB.DBA.load_list;
-ld_dir ('/database/import', 'wikidata-dump*.ttl', 'http://data-issa.cirad.fr/graph/wikidata-named-entities');
+ld_dir ('/database/import', 'wikidata-dump*.ttl', '$ARGV[$I]graph/wikidata-named-entities');
 
 rdf_loader_run ();
 checkpoint;
@@ -10,7 +11,7 @@ checkpoint;
 -- output possible load errors
 SELECT * FROM DB.DBA.load_list;
 
-SPARQL SELECT DISTINCT ('<http://data-issa.cirad.fr/graph/wikidata-named-entities>' as ?g)  (COUNT(*) as ?triples)  
-WHERE { GRAPH <http://data-issa.cirad.fr/graph/wikidata-named-entities> {?s ?p ?o} };
+SPARQL SELECT DISTINCT (<$ARGV[$I]graph/wikidata-named-entities> as ?g)  (COUNT(*) as ?triples)  
+WHERE { GRAPH <$ARGV[$I]graph/wikidata-named-entities> {?s ?p ?o} };
 
 exit;

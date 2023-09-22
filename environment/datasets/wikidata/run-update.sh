@@ -13,13 +13,13 @@ echo "*************************************************"
 ./retrieve-uris.sh
 
 echo "*************************************************"
-echo " Fetching hierarchis from Wikidata..."
+echo " Fetching hierarchies from Wikidata..."
 echo "*************************************************"
 ./retrieve-hierarchy.sh en
 ./retrieve-hierarchy.sh fr
 
 echo "*************************************************"
-echo " Fetching hierarchis from Wikidata..."
+echo " Fetching hierarchies from Wikidata..."
 echo "*************************************************"
 ./import-hierarchy.sh
 

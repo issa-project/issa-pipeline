@@ -12,6 +12,23 @@ from copy import deepcopy
 import sys
 
 #%%
+# config module by default is in the same directory as this module
+# but it can be moved to a different location and the location should be passed 
+# as a first argument to a script that requires config 
+def add_path_to_config():
+    if len(sys.argv) > 1:
+        sys.path.append(sys.argv[1]) 
+
+#%%
+# Functions to set up uniform logging with attached time stamp
+
+# propagate logging levels for caller modules convenience  
+INFO = logging.INFO
+DEBUG = logging.DEBUG
+WARNING = logging.WARNING
+ERROR = logging.ERROR
+CRITICAL = logging.CRITICAL
+
 def always_log_exceptions(exctype, value, tb):
     
     #read the last element in hope that this is the one we need
@@ -148,7 +165,7 @@ except:
             textBytesFound = len(text)
             details = (('ENGLISH', 'en', 99, 100.0), ('Unknown', 'un', 0, 0.0), ('Unknown', 'un', 0, 0.0) )
             return isReliable, textBytesFound, details
-    
+
 
 def detect_lang(text, hint_language=None, best_effort=False,
                 all_details=False, return_score=False,

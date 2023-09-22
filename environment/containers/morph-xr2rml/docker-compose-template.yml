@@ -1,0 +1,31 @@
+version: '3.2'
+services:
+
+  morph-xr2rml:
+    image: frmichel/morph-xr2rml:v1.3.2
+    container_name: ${MORPH_XR2RML_CONT_NAME}
+    networks:
+      - xr2rml-net
+    volumes:
+      - "${MORPH_XR2RML_HOST_VOLUME}/xr2rml_config:/xr2rml_config"
+      - "${MORPH_XR2RML_HOST_VOLUME}/xr2rml_output:/xr2rml_output"
+      - "${MORPH_XR2RML_HOST_LOG_DIR}:/log"
+      - "${MORPH_XR2RML_HOST_DATA_DIR}:${MORPH_XR2RML_CONT_DATA_DIR}"
+      - "${MORPH_XR2RML_HOST_TEMPL_DIR}:${MORPH_XR2RML_CONT_TEMPL_DIR}"
+
+  mongo-xr2rml:
+    image: mongo:5.0.3
+    container_name: ${MONGO_XR2RML_CONT_NAME}
+    networks:
+      - xr2rml-net
+    volumes:
+      - "${MORPH_XR2RML_HOST_VOLUME}/mongo_db:/data/db"
+      - "${MORPH_XR2RML_HOST_VOLUME}/mongo_tools:/mongo_tools"
+      - "${MORPH_XR2RML_HOST_VOLUME}/mongo_import:/mongo_import"
+      - "${MORPH_XR2RML_HOST_DATA_DIR}:${MORPH_XR2RML_CONT_DATA_DIR}"
+      - "${MORPH_XR2RML_HOST_SCRIPT_DIR}:${MORPH_XR2RML_CONT_SCRIPT_DIR}"
+
+networks:
+  xr2rml-net:
+    driver: bridge
+

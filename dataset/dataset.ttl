@@ -15,17 +15,39 @@
 @prefix eprint: <http://purl.org/eprint/type/> .
 @prefix oa:     <http://www.w3.org/ns/oa#>.
 @prefix foaf:   <http://xmlns.com/foaf/0.1/>.
+@prefix geonames: <http://www.geonames.org/ontology#>.
 
-@prefix issa:   <http://data-issa.cirad.fr/>.
-@prefix issap:  <http://data-issa.cirad.fr/property/>.
+@prefix issa:   <http://data-issa.instance.fr/>.
+@prefix issap:  <http://data-issa.instance.fr/property/>.
+
+###############################################################################
+# This is a template for a ISSA dataset metadata. To adapt this template to 
+# a concrete use case instance:
+# - define the dataset name e.g. 'issa-agritrop'
+# - define the source dataset name e.g. 'agritrop'
+# - provide specific title (dct:title, schema:name)
+# - provide description (dct:description)
+# - provide subjects  (dct:subjects) and keywords (schema:keywords)
+# - provide additional pubisher(s) (dct:publisher, schema:publisher)
+# - provide the funding entity(s) (foaf:fundedBy)
+# - assign the source dataset to the issa-dataset (schema:isBasedOn, prov:hadPrimarySource)
+# - provide the namespace uri e.g. http://data-issa.cirad.fr/ (void:uriSpace)
+# - provide the SPARQL endpoint url e.g. http://data-issa.cirad.fr/sparql (void:sparqlEndpoint)
+# - provide additional vocabularies if needed (void:vocabulary)
+# - provide dataset distribution information e.g. reference to Zenodo 
+#  (void:dataDump, dct:identifier, dcat:distribution)
+# After adapting this file to a use case instance:
+# - either leave it in this dir 
+# - or move to the /config/instance dir
+#################################################################################
 
 
 # --- Dataset description
-issa:issa-agritrop
+issa:issa-instance
     a               dcat:Dataset, void:Dataset, schema:Dataset;
-    dct:title       "ISSA Agritrop dataset";
-    schema:name     "ISSA Agritrop dataset";
-    dct:description "This RDF dataset was produced by processing articles from Agritrop - the open repository of CIRAD publications. It contains articles' metadata and text, Agrovoc and GeoNames descriptors, named entities identified and disambiguated by Entity-fishing and DBpedia Spotlight.";
+    dct:title       "ISSA dataset";
+    schema:name     "ISSA dataset";
+    dct:description "This RDF dataset was produced by processing documents...";
     
     dct:licence     <http://opendatacommons.org/licenses/by/1.0>;
     schema:licence  <http://opendatacommons.org/licenses/by/1.0>;
@@ -35,48 +57,57 @@ issa:issa-agritrop
     schema:keywords "agricultural research", "rural development", "agritrop", "literature", "annotation", "named entity",
                     "named entity recognition", "NER";
     
-    dct:publisher    <https://ror.org/0496p8026>, <https://ror.org/02kvxyf05>, <https://ror.org/02feahw73>, <https://ror.org/05kpkpg04>, <https://ror.org/051escj72>, <https://ror.org/03e8rf594>;
-    schema:publisher <https://ror.org/0496p8026>, <https://ror.org/02kvxyf05>, <https://ror.org/02feahw73>, <https://ror.org/05kpkpg04>, <https://ror.org/051escj72>, <https://ror.org/03e8rf594>;
-    foaf:fundedBy    <https://ror.org/0496p8026>, <https://ror.org/02kvxyf05>, <https://ror.org/02feahw73>, <https://ror.org/05kpkpg04>, <https://ror.org/051escj72>, <https://ror.org/03e8rf594>;
+    dct:publisher   <https://ror.org/0496p8026>, #Délégation Côte d'Azur
+ 					<https://ror.org/02kvxyf05>, #Inria
+ 					<https://ror.org/02feahw73>, #CNRS
+ 					<https://ror.org/05kpkpg04>; #CIRAD
+ 
 
+    schema:publisher <https://ror.org/0496p8026>,# Délégation Côte d'Azur
+					<https://ror.org/02kvxyf05>, #Inria
+					<https://ror.org/02feahw73>, #CNRS
+					<https://ror.org/05kpkpg04>; #CIRAD
+
+    foaf:fundedBy   <https://ror.org/0496p8026>,# Délégation Côte d'Azur
+					<https://ror.org/02kvxyf05>, #Inria
+					<https://ror.org/02feahw73>, #CNRS
+					<https://ror.org/05kpkpg04>; #CIRAD
+	
     a prov:Entity;
-    schema:isBasedOn        issa:agritrop;
-    prov:hadPrimarySource   issa:agritrop;
+    schema:isBasedOn        issa:source_dataset;
+    prov:hadPrimarySource   issa:source_dataset;
     prov:wasGeneratedBy     issa:RdfGeneration;
     
-    void:uriSpace       "http://data-issa.cirad.fr/";
-    void:sparqlEndpoint <https://data-issa.cirad.fr/sparql>; 
+    void:uriSpace       "http://data-issa.instance.fr/";
+    void:sparqlEndpoint <https://data-issa.instance.fr/sparql>; 
  
     void:vocabulary
-        bibo:, dcat:, dce:, dct:, fabio:, foaf:, frbr:, oa:, prov:, schema:, void:,
-        <http://aims.fao.org/aos/agrontology#>,  # Agrovoc 
-        <http://www.geonames.org/ontology#>;     # GeoNames
+        bibo:, dcat:, dce:, dct:, fabio:, foaf:, frbr:, oa:, prov:, schema:, void:, geonames;
     
-    dct:issued              "2022-04-29"^^xsd:date;
-    schema:dateCreated      "2022-04-29"^^xsd:date;
-    schema:datePublished    "2022-08-15"^^xsd:date;
+    dct:issued              "2022-01-01"^^xsd:date;
+    schema:dateCreated      "2022-01-01"^^xsd:date;
+    schema:datePublished    "2022-01-01"^^xsd:date;
 
     # updatable properties
-    dct:modified            "2022-08-15"^^xsd:date; 
-    prov:generatedAtTime    "2022-08-15"^^xsd:date;
-    void:triples            "66767136"^^xsd:integer;
-    owl:versionInfo         "1.1.20220815";
-    dcat:version            "1.1.20220815";
+    dct:modified            "2022-01-01"^^xsd:date; 
+    prov:generatedAtTime    "2022-01-01"^^xsd:date;
+    void:triples            "0"^^xsd:integer;
+    owl:versionInfo         "1.0";
+    dcat:version            "1.0";
 
     # manualy updatable properties
-    void:dataDump           <https://doi.org/10.5281/zenodo.6505847>; # update when obtained new
-    dct:identifier          "https://doi.org/10.5281/zenodo.6505847";
+    void:dataDump           <https://doi.org/10.5281/zenodo.123456>; # update when obtained new
+    dct:identifier          "https://doi.org/10.5281/zenodo.123456";
 
     dcat:distribution [
         a                   dcat:Distribution;
-        dct:issued          "2022-04-22"^^xsd:date;
+        dct:issued          "2022-01-01"^^xsd:date;
         dct:description     "Distribution of ISSA Agritrop as an archive of RDF Turtle files";
-        dcat:accessURL      <https://doi.org/10.5281/zenodo.6505847>;
-        dcat:downloadURL    <https://zenodo.org/record/6505847/files/issa-agritrop-1.0.zip>;
+        dcat:accessURL      <https://doi.org/10.5281/zenodo.123456>;
+        dcat:downloadURL    <https://zenodo.org/record/6505847/files/issa-instance-1.0.zip>;
         dcat:mediaType      <http://www.iana.org/assignments/media-types/text/turtle>;
         dcat:compressFormat <http://www.iana.org/assignments/media-types/application/zip>;
     ]
-
    .
 
 # --- Organizations involved
@@ -97,30 +128,31 @@ issa:issa-agritrop
 issa:sparql-service
     a                    sd:Service, dcat:DataService;
     sd:supportedLanguage sd:SPARQL10Query, sd:SPARQL11Query;
-    sd:endpoint          <https://data-issa.cirad.fr/sparql>;
-    dcat:endpointURL     <https://data-issa.cirad.fr/sparql>;
-    rdfs:label           "SPARQL endpoint serving the ISSA Agritrop dataset";
-    dcat:servesDataset   issa:issa-agritrop;
+    sd:endpoint          <https://data-issa.instance.fr/sparql>;
+    dcat:endpointURL     <https://data-issa.instance.fr/sparql>;
+    rdfs:label           "SPARQL endpoint serving the ISSA  dataset";
+    dcat:servesDataset   issa:issa-instance;
     sd:availableGraphs [
         a                sd:GraphCollection;
         sd:namedGraph 
-            <http://data-issa.cirad.fr/graph/dataset>, 
-            <http://data-issa.cirad.fr/graph/articles>,
-            <http://data-issa.cirad.fr/graph/articles/text>,
-            <http://data-issa.cirad.fr/graph/thematic-descriptors>,
-            <http://data-issa.cirad.fr/graph/annif-descriptors>,
-            <http://data-issa.cirad.fr/graph/geographic-nes>,
-            <http://data-issa.cirad.fr/graph/entity-fishing-nes>,
-            <http://data-issa.cirad.fr/graph/dbpedia-spotlight-nes>,
-            <http://data-issa.cirad.fr/graph/pyclinrec-nes>
+            <http://data-issa.instance.fr/graph/dataset>, 
+            <http://data-issa.instance.fr/graph/documents>,
+            <http://data-issa.instance.fr/graph/documents/text>,
+            <http://data-issa.instance.fr/graph/thematic-descriptors>,
+            <http://data-issa.instance.fr/graph/annif-descriptors>,
+            <http://data-issa.instance.fr/graph/geographic-nes>,
+            <http://data-issa.instance.fr/graph/entity-fishing-nes>,
+            <http://data-issa.instance.fr/graph/dbpedia-spotlight-nes>,
+            <http://data-issa.instance.fr/graph/pyclinrec-nes>,
+		    <http://data-issa.instance.fr/graph/document-domains>
     ].
 
-# --- Agritrop dataset and provenance information
-issa:agritrop
+# --- Source dataset and provenance information
+issa:source_dataset
     a               dcat:Dataset, schema:Dataset;
-    dct:title       "Open Repository of CIRAD publications (Agritrop)";
-    schema:name     "Open Repository of CIRAD publications (Agritrop)";
-    schema:url      <https://agritrop.cirad.fr/>;
+    dct:title       "Open Repository of publications";
+    schema:name     "Open Repository of publications";
+    schema:url      <https://source.dataset.fr/>;
     .
 
 # --- VOID Linksets
@@ -137,7 +169,7 @@ issa:issa2wikidata
    void:objectsTarget issa:Wikidata;
    
    # updatable property
-   void:triples "2174769"^^xsd:integer;
+   void:triples "0"^^xsd:integer;
    .
 
 issa:DBpedia
@@ -152,22 +184,7 @@ issa:issa2dbpedia
    void:objectsTarget issa:DBpedia;   
    
    # updatable property
-   void:triples "1469774"^^xsd:integer;
-   .
-
-<http://aims.fao.org/aos/agrovoc/void.ttl#Agrovoc>
-   dct:title "Agrovoc"@en;
-   a void:Dataset;
-   foaf:homepage <http://aims.fao.org/agrovoc>.
-
-issa:issa2agrovoc
-   a void:Linkset;
-   void:linkPredicate oa:hasBody;
-   void:subjectsTarget issa:issa-agritrop;
-   void:objectsTarget <http://aims.fao.org/aos/agrovoc/void.ttl#Agrovoc>;   
-   
-   # updatable property
-   void:triples "313876"^^xsd:integer;
+   void:triples "0"^^xsd:integer;
    .
 
 <http://www.geonames.org/ontology>
@@ -182,6 +199,21 @@ issa:issa2geonames
    void:objectsTarget <http://www.geonames.org/ontology>;   
    
    # updatable property
-   void:triples "152808"^^xsd:integer;
+   void:triples "0"^^xsd:integer;
+   .
+
+<http://aims.fao.org/aos/agrovoc/void.ttl#Agrovoc>
+   dct:title "Agrovoc"@en;
+   a void:Dataset;
+   foaf:homepage <http://aims.fao.org/agrovoc>.
+
+issa:issa2agrovoc
+   a void:Linkset;
+   void:linkPredicate oa:hasBody;
+   void:subjectsTarget issa:issa-agritrop;
+   void:objectsTarget <http://aims.fao.org/aos/agrovoc/void.ttl#Agrovoc>;   
+   
+   # updatable property
+   void:triples "0"^^xsd:integer;
    .
 

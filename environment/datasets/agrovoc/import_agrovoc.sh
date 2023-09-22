@@ -7,15 +7,17 @@
 # ISSA environment definitions
 . ../../../env.sh
 
-log_dir=../../logs
+log_dir=$ISSA_ENV_LOG
 mkdir -p $log_dir 
 log=$log_dir/agrovoc_import_$(date "+%Y%m%d_%H%M%S").log
 
-docker start virtuoso
+
+CONTAINER_NAME=${VIRTUOSO_CONT_NAME:-virtuoso}
+docker start $CONTAINER_NAME
 
 cp -v import-agrovoc.isql "$AGROVOC_IMPORT_DIR"                 >>$log
 
-docker exec virtuoso \
+docker exec $CONTAINER_NAME \
             isql -H localhost -U dba -P $VIRTUOSO_PWD \
             exec="LOAD /database/import/import-agrovoc.isql"    &>>$log
 

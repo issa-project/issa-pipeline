@@ -12,10 +12,12 @@ import glob
 import pandas as pd
 
 sys.path.append('..')  
-
-from config import cfg_indexing_postprocess as cfg
 from util import save_paper_json
 from util import open_timestamp_logger, close_timestamp_logger
+from util import add_path_to_config  
+
+add_path_to_config()
+from config import cfg_indexing_postprocess as cfg
 
 #%% 
 logger = open_timestamp_logger(log_prefix= os.path.splitext(os.path.basename(__file__))[0], 

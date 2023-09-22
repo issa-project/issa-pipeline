@@ -20,13 +20,15 @@ import json
 import copy
 
 sys.path.append('..')  
-
-from config import cfg_extract_text_from_pdf as cfg
-from util import detect_lang
-from util import open_timestamp_logger, close_timestamp_logger
+from util import open_timestamp_logger, close_timestamp_logger, INFO, DEBUG
 from util import set_nested_dict_value, get_nested_dict_value
 from util import copy_file
-from logging import INFO, DEBUG
+from util import detect_lang
+from util import add_path_to_config  
+
+add_path_to_config()
+from config import cfg_extract_text_from_pdf as cfg
+
 #%% 
 logger = open_timestamp_logger(log_prefix=os.path.splitext(os.path.basename(__file__))[0],
                                    file_level=DEBUG if cfg.DEBUG else INFO,

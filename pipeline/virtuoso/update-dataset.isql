@@ -1,0 +1,126 @@
+-- $ARGV[$I] - should contain dataset name e.g. issa-agritrop
+-- $ARGV[$+ $I 1] should contain a namespace
+-- $ARGV[$+ $I 2] should contain a version
+
+set u{dataset} $ARGV[$I];
+set u{namespace} $ARGV[$+ $I 1];
+set u{version} $ARGV[$+ $I 2];
+
+
+ECHO 'Updating dataset metadata for  ' $u{dataset} ' version ' $u{version} ;
+ECHO ' in the graph ' <$u{namespace}graph/dataset> '\n';
+
+log_enable(3,1);
+
+-- Update the number of triples
+SPARQL 
+PREFIX void: <http://rdfs.org/ns/void#> 
+PREFIX sd:   <http://www.w3.org/ns/sparql-service-description#>
+#PREFIX issa: <http://data-issa.cirad.fr/>
+PREFIX issa: <$u{namespace}>
+
+#WITH <http://data-issa.cirad.fr/graph/dataset>
+WITH <$u{namespace}graph/dataset>
+DELETE { issa:$u{dataset} void:triples ?triples_old . }
+INSERT { issa:$u{dataset} void:triples ?triples_new . }
+WHERE {
+    issa:$u{dataset} void:triples ?triples_old . 
+
+	{ SELECT (COUNT(*) as ?triples_new) 
+	  WHERE { 
+ 		GRAPH ?g {?s ?p ?o} 
+   
+  		{ SELECT ?g 
+		  WHERE { ?dataset sd:availableGraphs [ sd:namedGraph ?g] . }
+  		}  
+   }} 
+  }
+
+;
+
+
+-- Update dataset version
+SPARQL 
+PREFIX owl:    <http://www.w3.org/2002/07/owl#>
+PREFIX dcat:   <http://www.w3.org/ns/dcat#>
+PREFIX issa: <$u{namespace}>
+
+#WITH <http://data-issa.cirad.fr/graph/dataset>
+WITH <$u{namespace}graph/dataset>
+DELETE { issa:$u{dataset} owl:versionInfo ?version_old . 
+         issa:$u{dataset} dcat:version    ?version_old . }
+INSERT { issa:$u{dataset} owl:versionInfo "$u{version}" .
+         issa:$u{dataset} dcat:version "$u{version}" .}
+WHERE  { issa:$u{dataset} owl:versionInfo ?version_old . }
+
+;
+
+-- Update dataset dates
+SPARQL 
+
+PREFIX issa: <$u{namespace}>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#> 
+PREFIX dct: <http://purl.org/dc/terms/>
+
+WITH <$u{namespace}graph/dataset>
+DELETE { issa:$u{dataset} prov:generatedAtTime ?date_old .
+         issa:$u{dataset} dct:modified ?date_old }
+INSERT { issa:$u{dataset} prov:generatedAtTime ?date_new .
+         issa:$u{dataset} dct:modified ?date_new}
+WHERE {
+    issa:$u{dataset} prov:generatedAtTime ?date_old . 
+    BIND (xsd:date(NOW()) as ?date_new)
+  }
+;
+
+
+-- Update linked sets
+SPARQL 
+PREFIX void:   <http://rdfs.org/ns/void#> 
+PREFIX issa:   <$u{namespace}>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX oa: <http://www.w3.org/ns/oa#>
+
+DELETE { GRAPH <$u{namespace}graph/dataset> { ?linked_set void:triples ?triples_old . } }
+INSERT { GRAPH <$u{namespace}graph/dataset> { ?linked_set void:triples ?triples_new . } }
+
+WHERE 
+{
+  ?linked_set a void:Linkset; void:triples ?triples_old.
+  
+  { SELECT (issa:issa2wikidata as ?linked_set) (COUNT(*) as ?triples_new) 
+    WHERE { ?ann prov:wasAttributedTo issa:EntityFishing; oa:hasBody ?link. }
+  } 
+  UNION
+  { SELECT (issa:issa2dbpedia as ?linked_set) (COUNT(*) as ?triples_new) 
+    WHERE { ?ann prov:wasAttributedTo issa:DBPediaSpotlight; oa:hasBody ?link. }
+  } 
+  UNION
+  { SELECT (issa:issa2geonames as ?linked_set) (COUNT(*) as ?triples_new) 
+    WHERE { ?ann prov:wasAttributedTo issa:GeographicEntityExtractor; oa:hasBody ?link. }
+  }
+  UNION
+  { SELECT (issa:issa2agrovoc as ?linked_set) (COUNT(*) as ?triples_new) 
+    WHERE { ?ann prov:wasAttributedTo ?annotator; oa:hasBody ?link. FILTER (?annotator IN (issa:AnnifSubjectIndexer , issa:AgritropDocumentalist, issa:Pyclinrec ) )}  } 
+
+}
+;
+
+SPARQL 
+PREFIX void: <http://rdfs.org/ns/void#> 
+PREFIX owl:    <http://www.w3.org/2002/07/owl#>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX issa: <$u{namespace}>
+
+SELECT * WHERE { 
+issa:$u{dataset} void:triples ?triples.
+issa:$u{dataset} owl:versionInfo ?version.
+issa:$u{dataset} dct:modified ?date.
+}
+;
+
+EXIT;
+
+
+
