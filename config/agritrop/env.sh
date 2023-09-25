@@ -5,7 +5,7 @@
 # Tune the variables in this file according to the environment
 
 # ISSA dataset nomenclature
-ISSA_INSTANCE=hal
+ISSA_INSTANCE=agritrop
 ISSA_VERSION=1.3                            		# version with dots 
 ISSA_VERSION_DASH=1-3                       		# version with dashes
 ISSA_NAMESPACE=http://data-issa.cirad.fr/         # instance namespace
