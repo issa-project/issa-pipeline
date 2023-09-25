@@ -7,7 +7,7 @@
 . ../env.sh
 
 # Run Annif docker container 
-IMAGE=quay.io/natlibfi/annif:0.56 
+IMAGE=quay.io/natlibfi/annif:0.55 
 CONTAINER_NAME=annif-training
 
 if [ $( docker ps -f name=$CONTAINER_NAME | wc -l ) -eq 1 ]; then 
