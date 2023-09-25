@@ -28,11 +28,6 @@ docker exec -w $VIRTUOSO_CONT_SCRIPT_DIR $CONTAINER_NAME \
                  -i $ISSA_NAMESPACE &>> $log
 
 
-# Pause the script and wait for user input
-echo "Press Enter to continue..."
-read
-
-
 for directory in  $(ls -d $VIRTUOSO_HOST_DATA_DIR/$ISSA_DATASET/**/$REL_RDF/); do
 
 	echo $directory
