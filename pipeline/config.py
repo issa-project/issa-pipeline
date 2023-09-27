@@ -352,7 +352,7 @@ class cfg_indexing_postprocess(cfg_pipeline):
 
 # This config may go somewhere else because this step is not a part of the 
 # pipeline. Try to keep it independent    
-class cfg_indexing_training(object):
+class cfg_indexing_training(cfg_pipeline):
     
     LOG_PATH = '../logs' 
     
