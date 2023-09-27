@@ -18,7 +18,7 @@ This process is semi-automatic.
 
 ## Install Annif docker container
 
-Annif Docker image installation instructions can be found [here](https://github.com/issa-project/issa-pipeline/tree/main/environment/container#annif).
+Annif Docker image installation instructions can be found [here](https://github.com/issa-project/issa-pipeline/tree/main/environment/containers#annif).
 
 ## Configure the Annif Projects
 
@@ -27,7 +27,7 @@ For the Agritrop use case we did some preliminary studies and as a result we cre
 - TFIDF (term frequency model)
 - Omikuji Parabel  (tree-based associative machine learning model)
 - MLLM  (lexical algorithm)
-- ensemble of Omikuji Parabel and MLLM models (combines results from the projects)
+- an ensemble of Omikuji Parabel and MLLM models (combines results from the projects)
 - neural network ensemble Omikuji Parabel and MLLM models (combines results from the projects and trains NN on these results)
 
 Notice that each model relies on a language version of a vocabulary. In the use case of Agritrop the languages are French and English.
