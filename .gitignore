@@ -31,6 +31,4 @@ __pycache__
 *.csv
 *.xlsx
 
-#ttl
-#!*.tpl.ttl
 

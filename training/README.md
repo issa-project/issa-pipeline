@@ -18,7 +18,7 @@ This process is semi-automatic.
 
 ## Install Annif docker container
 
-Annif Docker image installation instructions can be found [here](https://github.com/issa-project/issa-pipeline/tree/main/environment/container#annif).
+Annif Docker image installation instructions can be found [here](https://github.com/issa-project/issa-pipeline/tree/main/environment/containers#annif).
 
 ## Configure the Annif Projects
 
