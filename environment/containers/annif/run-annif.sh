@@ -13,7 +13,7 @@ pushd $(dirname $(readlink -f "$0" ))
 
 # Run Annif docker container 
 CONTAINER_NAME=annif
-IMAGE=quay.io/natlibfi/annif:0.56 
+IMAGE=quay.io/natlibfi/annif:0.55 
 
 if [ $( docker ps -f name=$CONTAINER_NAME | wc -l ) -eq 1 ]; then 
      echo "starting annif container"
