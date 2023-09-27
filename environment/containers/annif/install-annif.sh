@@ -8,7 +8,7 @@
 . ../../../env.sh
 
 echo "Puling original Annif image..."
-docker pull quay.io/natlibfi/annif:0.56
+docker pull quay.io/natlibfi/annif:0.55
 
 cp ./projects.cfg $ANNIF_PROJECTS_DIR
 
