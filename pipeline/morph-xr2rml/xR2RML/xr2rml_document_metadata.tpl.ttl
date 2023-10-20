@@ -136,6 +136,12 @@
 		rr:objectMap [ xrr:reference "JSONPath($.authors)/JSONPath($.*)"; ];
 	];
 
+	
+	# Authors as linked list
+     rr:predicateObjectMap [
+  		rr:predicate bibo:authorList;
+  	    rr:objectMap [ xrr:reference "JSONPath($.authors)/JSONPath($.*)"; rr:termType xrr:RdfList ];
+	];
 
     # Provenance
     rr:predicateObjectMap [

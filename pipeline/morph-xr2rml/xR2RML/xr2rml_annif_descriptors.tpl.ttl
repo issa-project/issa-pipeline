@@ -24,12 +24,15 @@
 @prefix schema: <http://schema.org/>.
 @prefix wd:     <http://www.wikidata.org/entity/>.
 
-@prefix issa:  <http://data-issa.cirad.fr/>.
-@prefix issapr:<http://data-issa.cirad.fr/property/>.
-
 # Template file: replace placeholders
 # - {{dataset}}: RDF dataset name e.g. "dataset-1-0"
-# - {{collection}}: the MongoDB collection to query, e.g. annif_descriptors
+# - {{collection}}: the MongoDB collection to query, e.g. document_domains
+# - {{namespace}}: The ISSA instance specific namespace,  e.g  http://data-issa.dhm.euromov.fr/
+
+@prefix issa:     <{{namespace}}>.
+@prefix issapr:   <{{namespace}}property/>.
+@prefix issa-doc: <{{namespace}}document/>.
+@prefix issa-descr: <{{namespace}}descr/>.
 
 
 <#LS>
@@ -43,12 +46,12 @@
     xrr:logicalSource <#LS>;
     rr:subjectMap   [
         # Template to yield a unique blank node id for each annotation
-        rr:template     "http://data-issa.cirad.fr/descr/sha1(annif_{$.paper_id}_{$.uri})";
+        rr:template     "{{namespace}}descr/sha1(annif_{$.paper_id}_{$.uri})";
         rr:class     issa:ThematicDescriptorAnnotation, prov:Entity;
     ];
     rr:predicateObjectMap [
         rr:predicate oa:hasTarget;
-        rr:objectMap [ rr:template "http://data-issa.cirad.fr/document/{$.paper_id}";  rr:termType rr:IRI ];
+        rr:objectMap [ rr:template "{{namespace}}document/{$.paper_id}";  rr:termType rr:IRI ];
     ];
     rr:predicateObjectMap [
         rr:predicate oa:hasBody;

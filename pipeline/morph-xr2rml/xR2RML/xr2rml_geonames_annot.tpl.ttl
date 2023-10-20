@@ -1,4 +1,4 @@
-# Mapping file generating the annotations for the named entities found by entity-fishing.
+# Mapping file generating the annotations for the geographical named entities found by entity-fishing.
 #
 # Author: Franck MICHEL, University Cote d'Azur, CNRS, Inria
 #

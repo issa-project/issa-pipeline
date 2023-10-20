@@ -24,13 +24,16 @@
 @prefix schema: <http://schema.org/>.
 @prefix wd:     <http://www.wikidata.org/entity/>.
 
-@prefix issa:  <http://data-issa.cirad.fr/>.
-@prefix issapr:<http://data-issa.cirad.fr/property/>.
-
 # Template file: replace placeholders
 # - {{dataset}}: RDF dataset name e.g. "dataset-1-0"
 # - {{collection}}: the MongoDB collection to query, e.g. spotlight
-# - {{documentpart}}: document part about which to produce annotations. One of the title, abstract, body_text
+# - {{documentpart}}: document part about which to produce annotations. One of title, abstract, body_text
+# - {{namespace}}: The ISSA instance specific namespace,  e.g  http://data-issa.dhm.euromov.fr/
+
+@prefix issa:       <{{namespace}}>.
+@prefix issapr:     <{{namespace}}property/>.
+@prefix issa-doc:   <{{namespace}}document/>.
+@prefix issa-ann:   <{{namespace}}ann/>.
 
 <#LS_entities>
     a               xrr:LogicalSource;
@@ -43,7 +46,7 @@
     xrr:logicalSource <#LS_entities>;
     rr:subjectMap   [
         # Template to yield a unique blank node id for each annotation
-        rr:template     "http://data-issa.cirad.fr/ann/sha1(pyclinrec_{$.paper_id}_{{documentpart}}_{$.matched_text}_{$.start})";
+        rr:template     "{{namespace}}ann/sha1(pyclinrec_{$.paper_id}_{{documentpart}}_{$.matched_text}_{$.start})";
         rr:class        oa:Annotation, prov:Entity;
     ];
     rr:predicateObjectMap [
@@ -60,14 +63,14 @@
     ];
     rr:predicateObjectMap [
         rr:predicate schema:about;
-        rr:objectMap [ rr:template "http://data-issa.cirad.fr/document/{$.paper_id}" ];
+        rr:objectMap [ rr:template "{{namespace}}document/{$.paper_id}" ];
     ];
 
     # Annotation target
     rr:predicateObjectMap [
         rr:predicate oa:hasTarget;
         rr:objectMap [
-            rr:template "http://data-issa.cirad.fr/ann/target/sha1(pyclinrec_{$.paper_id}_{{documentpart}}_{$.matched_text}_{$.start})";
+            rr:template "{{namespace}}ann/target/sha1(pyclinrec_{$.paper_id}_{{documentpart}}_{$.matched_text}_{$.start})";
             rr:termType rr:IRI;
         ];
     ];
@@ -100,16 +103,16 @@
     a rr:TriplesMap;
     xrr:logicalSource <#LS_entities>;
     rr:subjectMap [
-        rr:template "http://data-issa.cirad.fr/ann/target/sha1(pyclinrec_{$.paper_id}_{{documentpart}}_{$.matched_text}_{$.start})"
+        rr:template "{{namespace}}ann/target/sha1(pyclinrec_{$.paper_id}_{{documentpart}}_{$.matched_text}_{$.start})"
     ];
     rr:predicateObjectMap [
         rr:predicate oa:hasSource;
-        rr:objectMap [ rr:template "http://data-issa.cirad.fr/document/{$.paper_id}#{{documentpart}}" ];
+        rr:objectMap [ rr:template "{{namespace}}document/{$.paper_id}#{{documentpart}}" ];
     ];
     rr:predicateObjectMap [
         rr:predicate oa:hasSelector;
         rr:objectMap [
-            rr:template "http://data-issa.cirad.fr/ann/selector/sha1(pyclinrec_{$.paper_id}_{{documentpart}}_{$.matched_text}_{$.start})";
+            rr:template "{{namespace}}ann/selector/sha1(pyclinrec_{$.paper_id}_{{documentpart}}_{$.matched_text}_{$.start})";
             rr:termType rr:IRI;
         ];
     ].
@@ -119,7 +122,7 @@
     a rr:TriplesMap;
     xrr:logicalSource <#LS_entities>;
     rr:subjectMap [
-        rr:template "http://data-issa.cirad.fr/ann/selector/sha1(pyclinrec_{$.paper_id}_{{documentpart}}_{$.matched_text}_{$.start})";
+        rr:template "{{namespace}}ann/selector/sha1(pyclinrec_{$.paper_id}_{{documentpart}}_{$.matched_text}_{$.start})";
         rr:class oa:TextPositionSelector, oa:TextQuoteSelector;
     ];
     rr:predicateObjectMap [
