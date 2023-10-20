@@ -6,6 +6,7 @@
 # Reference:
 # https://hub.docker.com/r/openlink/virtuoso-closedsource-8
 
+export INSTANCE=agritrop
 
 # ISSA environment definitions
 . ../../../env.sh
@@ -14,6 +15,9 @@
 docker pull openlink/virtuoso-opensource-7:7.2
 
 CONTAINER_NAME=${VIRTUOSO_CONT_NAME:-virtuoso}
+HOST_ISQL_PORT=${VIRTUOSO_HOST_ISQL_PORT:-1111}
+HOST_HTTP_PORT=${VIRTUOSO_HOST_HTTP_PORT:-8890}
+
 
 # Prompt  to create a dba password 
 if [[ -z "${VIRTUOSO_PWD}" ]]; then
@@ -30,9 +34,10 @@ fi
 mkdir -p $VIRTUOSO_DATABASE_DIR/import
 chmod -R 775 $VIRTUOSO_DATABASE_DIR
 
-sudo docker run --name $CONTAINER_NAME \
+docker run --name $CONTAINER_NAME \
           --rm -d \
-          -p 8890:8890 -p 1111:1111 \
+          -p $HOST_HTTP_PORT:8890 \
+          -p $HOST_ISQL_PORT:1111 \
 		  -e DBA_PASSWORD=$VIRTUOSO_PWD \
           -v $VIRTUOSO_DATABASE_DIR:/database \
          openlink/virtuoso-opensource-7:7.2

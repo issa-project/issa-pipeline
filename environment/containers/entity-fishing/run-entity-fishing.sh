@@ -3,12 +3,10 @@
 #
 # Licensed under the Apache License, Version 2.0 (http://www.apache.org/licenses/LICENSE-2.0)
 
-# This script can be called by a symbolic link from another dir  
-# so we need to make sure that the relative path still works
-pushd $(dirname $(readlink -f "$0" ))
-
 # ISSA environment definitions
 . ../../../env.sh
+
+echo $EF_MODELS_DIR
 
 # Run EF docker container 
 CONTAINER_NAME=${EF_CONT_NAME:-entity-fishing}
