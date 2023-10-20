@@ -19,14 +19,21 @@ from util import add_path_to_config
 add_path_to_config()
 from config import cfg_indexing_postprocess as cfg
 
-#%% 
+#%% Set up logging
 logger = open_timestamp_logger(log_prefix= os.path.splitext(os.path.basename(__file__))[0], 
                                log_dir=cfg.LOG_PATH, 
                                first_line = 'Postprocessing subjects tsv files for Annif indexing...')
-#%%
+#%% Helper functions
 def postprocess_one(f_tsv, f_json):
     """
-    Reformat output of Annif indexing (tsv file) into json 
+    Reformat output of Annif indexing result tsv file into json 
+
+    Parameters:
+        f_tsv (str): path to tsv file
+        f_json (str): path to output json file
+
+    Returns:
+        f_json (str): path to output json file
 
     """
     try:
@@ -54,10 +61,9 @@ def postprocess_one(f_tsv, f_json):
 
     return f_json
         
-#%%
 def postprocess_tsv_to_json():
     """
-    Loop over output files produced by Annif indexing
+    Loop through output files produced by Annif indexing and convert them to json format
 
     """
     files = glob.glob(os.path.join(cfg.INPUT_TSV_PATH, cfg.INPUT_PATTERN), recursive=True )
@@ -76,7 +82,7 @@ def postprocess_tsv_to_json():
        
     return
 
-#%%     
+#%%  Main loop 
 if __name__ == '__main__':
     postprocess_tsv_to_json()
         

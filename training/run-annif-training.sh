@@ -23,10 +23,12 @@ if [ $( docker ps -f name=$CONTAINER_NAME | wc -l ) -eq 1 ]; then
      echo "started $CONTAINER_NAME container"
 fi
 
+docker start $CONTAINER_NAME
+
 echo "$CONTAINER_NAME container is running"
 
 # Copy training scripts 
-cp -v ./projects.cfg $ANNIF_PROJECTS_DIR 
+#cp -v ./projects.cfg $ANNIF_PROJECTS_DIR 
 cp -v ./train-and-evaluate_en.sh $ANNIF_PROJECTS_DIR
 cp -v ./train-and-evaluate_fr.sh $ANNIF_PROJECTS_DIR
 
