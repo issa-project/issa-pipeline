@@ -13,7 +13,7 @@ echo "input rdf dir: $VIRTUOSO_CONT_DATA_IMPORT_DIR"
 
 log_dir=$ISSA_PIPELINE_LOG
 mkdir -p $log_dir 
-log=$log_dir/dataset_meta_import_$(date "+%Y%m%d_%H%M%S").log
+log=$log_dir/import_dataset_meta_$(date "+%Y%m%d_%H%M%S").log
 
 # Copy dataset schema, provenance, and metadata with prefix substitution
 sed "s#http://data-issa.instance.fr/#$ISSA_NAMESPACE#g" $DATASET_META_DIR/schema.ttl > $DATASET_META_IMPORT_DIR/schema.ttl
@@ -32,5 +32,5 @@ docker start $CONTAINER_NAME
 
 docker exec -w $VIRTUOSO_CONT_SCRIPT_DIR $CONTAINER_NAME \
    	       isql -H localhost -U dba -P $VIRTUOSO_PWD \
-                 exec="LOAD ./import-dataset.isql" -i $VIRTUOSO_CONT_DATA_IMPORT_DIR $ISSA_NAMESPACE &>> $log
+                 exec="LOAD ./import-dataset-meta.isql" -i $VIRTUOSO_CONT_DATA_IMPORT_DIR $ISSA_NAMESPACE &>> $log
 
