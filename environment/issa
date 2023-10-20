@@ -1,0 +1,8 @@
+00 11 04 * * . $HOME/.bashrc; cd $HOME/ISSA-2/environment/datasets/agrovoc && ./run-update.sh
+00 23 05 * * . $HOME/.bashrc; cd $HOME/ISSA-2/pipeline && ./run-pipeline.sh agritrop
+00 05 06 * * . $HOME/.bashrc; cd $HOME/ISSA-2/environment/datasets/wikidata && ./run-update.sh agritrop
+00 06 06 * * . $HOME/.bashrc; cd $HOME/ISSA-2/environment/datasets/dbpedia && ./run-update.sh agritrop
+00 05 01 * * . $HOME/.bashrc; cd $HOME/ISSA-2/pipeline && ./run-pipeline.sh hal
+00 07 01 * * . $HOME/.bashrc; cd $HOME/ISSA-2/environment/datasets/wikidata && ./run-update.sh hal
+00 06 01 * * . $HOME/.bashrc; cd $HOME/ISSA-2/environment/datasets/dbpedia && ./run-update.sh hal
+
