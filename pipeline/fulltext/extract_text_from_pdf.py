@@ -29,16 +29,22 @@ from util import add_path_to_config
 add_path_to_config()
 from config import cfg_extract_text_from_pdf as cfg
 
-#%% 
+#%% Set up logging
 logger = open_timestamp_logger(log_prefix=os.path.splitext(os.path.basename(__file__))[0],
                                    file_level=DEBUG if cfg.DEBUG else INFO,
                                    log_dir=cfg.LOG_PATH)
 
-#%%
-def get_xml_element(root, element_name_or_path):
+#%% Helper functions for XML processing
+def get_xml_element(root, element_name_or_path)->list:
     """
-    Retrieve an xml elemnt by path mapped in the cfg.XML_DICT_MAP
-       
+    Retrieve an xml element by path mapped in the cfg.XML_DICT_MAP
+
+    Parameters:
+        root : lxml.etree.ElementTree, root of the xml tree
+        element_name_or_path : string, name of the element or path to the element
+
+    Returns:
+        list of lxml.etree.ElementTree, list of elements
     """
     
     if element_name_or_path.startswith('//'):
@@ -46,11 +52,17 @@ def get_xml_element(root, element_name_or_path):
     else:
         return root.xpath(cfg.XML_DICT_MAP[element_name_or_path][0], namespaces=cfg.TEI_NS)
 
-def get_first_text (root, element_name_or_path):
+def get_first_text (root, element_name_or_path)->str:
     """
     Return text of the first item of the list of items for the path.
-    Useful for retieving an abstract and title.
+    Useful for retrieving an abstract and title.
 
+    Parameters:
+        root : lxml.etree.ElementTree, root of the xml tree
+        element_name_or_path : string, name of the element or path to the element
+
+    Returns:
+        string, text of the first item of the list of items for the path
     """
     
     text_list = get_xml_element(root, element_name_or_path)
@@ -63,9 +75,16 @@ def get_first_text (root, element_name_or_path):
         
     return ''    
 
-def get_all_text_as_list (root, element_name_or_path):
+def get_all_text_as_list (root, element_name_or_path)->list:
     """
     Return all of the items for the xml path as list. 
+
+    Parameters:
+        root : lxml.etree.ElementTree, root of the xml tree
+        element_name_or_path : string, name of the element or path to the element
+
+    Returns:
+        list of strings, text of all the items of the list for the path
 
     """
    
@@ -84,22 +103,33 @@ def get_all_text_as_list (root, element_name_or_path):
             
     return text_list  
 
-def get_all_text_as_one (root, element_name_or_path, sep=os.linesep):
+def get_all_text_as_one (root, element_name_or_path, sep=os.linesep)->str:
     """
-    Return concatenated text of all the items of the list for the path. 
+    Return concatenated text of all the items of the list for the path.
 
+    Parameters:
+        root : lxml.etree.ElementTree, root of the xml tree
+        element_name_or_path : string, name of the element or path to the element   
+        sep : string, separator between the items of the list
+
+    Returns:
+        string, concatenated text of all the items of the list for the path
+        
     """
-    
     text_list = get_all_text_as_list(root, element_name_or_path)
             
     return sep.join(text_list)  
 
-#%%
+#%% Helper functions for language detection
 def detect_lang_wrapper(text):
     """
-    Wrapper around the utility function to detect language according to 
-    the config
+    Wrapper around the utility function to detect language according to the config.
 
+    Parameters:
+       text : string, text to detect language for
+
+    Returns:
+        string, language code   
     """
     #hint = cfg.DEFAULT_LANGUAGE if cfg.DEFAULT_LANGUAGE != 'en' else None
     bf = cfg.BEST_EFFORT_LANG_DETECTION
@@ -109,6 +139,15 @@ def detect_lang_wrapper(text):
     return lang, score
 
 def detect_language(pdf_dict):
+    """
+    Detect language of title, abstract and body text and add it to the metadata.
+
+    Parameters:
+       pdf_dict : dict, json dictionary with the data       
+
+    Returns:
+        dict, json dictionary with the data and language metadata
+    """
     
     #detect title language
     lang, score = detect_lang_wrapper(pdf_dict['metadata']['title'])
@@ -130,11 +169,16 @@ def detect_language(pdf_dict):
     set_nested_dict_value(pdf_dict, ['metadata' , 'body_lang'], {'code': lang, 'score': score})
     
     return pdf_dict
-#%%
+#%% Helper functions for text processing
 def replace_doublequotes(text):
     """
-    Replace double quotes in string
-    Double quotes cause problems in conversion to Turtle
+    Replace double quotes in string. Double quotes cause problems in conversion to RDF.
+
+    Parameters:
+         text : string, text to replace double quotes in
+
+    Returns:
+        string, text with double quotes replaced by single quotes
     """
     if isinstance(text, str):
         return text.replace('""' , "'")
@@ -153,22 +197,35 @@ def replace_doublequotes(text):
                         x[k] = x[k].replace('""' , "'")
             return text
     
+def dict_to_text(pdf_dict):
+    """
+    Concatenate title, abstract and body as plain text separated by EOL
+
+    Parameters:
+        pdf_dict : dict, json dictionary with the data
+
+    Returns:
+        string, concatenated text of title, abstract and body
+    """
+    text_list = []
+    for key, (_, path) in cfg.XML_DICT_MAP.items():
+        text = get_nested_dict_value(pdf_dict, path)
+        if isinstance(text, list):
+            text_list = text_list + [ t['text'] for t in text ]
+        elif isinstance(text, str):
+            text_list = text_list + [text]
+            
+    text_list = list(filter(None, text_list))
+    text = os.linesep.join(text_list)
+    return text
     
-#%%
-def create_cache():
-    """
-    Create a dedicated cache location for pdf files
+#%% Global variables and helper functions for pdf processing
 
-    """
-    if cfg.CACHE_PDF:
-        os.makedirs(cfg.CACHE_PATH, exist_ok=True)
-    os.makedirs(cfg.CACHE_UNREADABLE_PATH, exist_ok=True) 
-
-# This global asyncronous timer helps taking the time of processing  
+# This global asynchronous timer helps taking the time of processing  
 # a pdf into account of a delay time between pdf downloads.
-# Delay between pdf dowloads prevents blacklisting. 
-timer = threading.Thread()
-timer.start()
+# Delay between pdf downloads prevents blacklisting. 
+TIMER = threading.Thread()
+TIMER.start()
 
 # Using set of strings is the quickest option to check if file exists
 PDF_FILES = set([os.path.basename(f) for f in glob.glob('%s/**/*.pdf' % (cfg.DATASET_ROOT_PATH), recursive = True)] )
@@ -176,13 +233,14 @@ PDF_FILES = set([os.path.basename(f) for f in glob.glob('%s/**/*.pdf' % (cfg.DAT
 @retry(stop_max_delay=10000, stop_max_attempt_number=5, wait_random_min=10, wait_random_max=2000)
 def download_pdf(pdf_url):
     """
-    Donload pdf file from Agrotrop portal. Support global pdf cache storage and 
+    Download pdf file from a source portal. Support global pdf cache storage and 
     dataset storage.
     
-    Parameters
-    ----------
-    pdf_url : either url to pdf or file containing url to pdf with extension url
+    Parameters:
+        pdf_url : string, either url to pdf or file containing url to pdf with extension url
 
+    Returns:
+        pdf_path : string, path to the downloaded pdf file
     """
   
     filename = pdf_url.split('/')[-1]
@@ -209,10 +267,9 @@ def download_pdf(pdf_url):
         #lookup in the current dataset
         is_new = filename not in PDF_FILES
  
-    global timer
-    timer.join(cfg.DOWNLOAD_DELAY)
+    global TIMER
+    TIMER.join(cfg.DOWNLOAD_DELAY)
     if is_new:
-        
         headers = {'User-Agent': '%s' % cfg.USER_AGENT }
 
         pdf = requests.get(pdf_url, verify=True , headers=headers)
@@ -224,37 +281,45 @@ def download_pdf(pdf_url):
         #time.sleep(cfg.DOWNLOAD_DELAY)
 
     delay = [cfg.DOWNLOAD_DELAY] if is_new else [0.001]
-    timer = threading.Thread( name='download timer', target=time.sleep, args=delay)
-    timer.start()
+    TIMER = threading.Thread( name='download timer', target=time.sleep, args=delay)
+    TIMER.start()
         
    
     return pdf_path, pdf_content
-#%%
+
 @retry(stop_max_delay=10000, stop_max_attempt_number=5, wait_random_min=10, wait_random_max=2000)
 def pdf_to_xml(pdf_path, pdf_content=None):
     """
     Convert pdf file to xml string using Grobid API.
 
+    Parameters:
+        pdf_path : string, path to the pdf file
+        pdf_content : binary stream, previously read pdf_content
+
+    Returns:
+        xml : string, xml string with the extracted data
     """
     if not pdf_content:
         if os.path.exists(pdf_path):
             with open(pdf_path, "rb") as pdf_file:
                 pdf_content = pdf_file.read()
 
-    # http://localhost:8070
-    url = cfg.GROBID_API_URL
-
-    xml = requests.post(url, files={'input': pdf_content})
+    xml = requests.post(cfg.GROBID_API_URL, files={'input': pdf_content}, timeout=cfg.GROBID_TIMEOUT)
     
     return xml.text 
 
-#%%
 def xml_to_dict(paper_id, xml):
     """
     Extract the data from xml format and represent it as nested dictionary 
     that can be dumped as json. 
     Extracted elements: title, abstract, body text, authors   
 
+    Parameters:
+        paper_id : string, paper id
+        xml : string, xml string with the extracted data
+
+    Returns:
+        output_dict : dict, json dictionary with the data
     """
     # pattern of xml tag
     pattern = re.compile(r'<\?xml.*\?>')
@@ -301,23 +366,6 @@ def xml_to_dict(paper_id, xml):
         set_nested_dict_value(output_dict, json_path, body)
 
     return output_dict
-#%%
-def dict_to_text(pdf_dict):
-    """
-    Concatenate title, abstract and body as plain text separateed by EOL 
-
-    """
-    text_list = []
-    for key, (_, path) in cfg.XML_DICT_MAP.items():
-        text = get_nested_dict_value(pdf_dict, path)
-        if isinstance(text, list):
-            text_list = text_list + [ t['text'] for t in text ]
-        elif isinstance(text, str):
-            text_list = text_list + [text]
-            
-    text_list = list(filter(None, text_list))
-    text = os.linesep.join(text_list)
-    return text
 
 
 #%%
@@ -326,36 +374,29 @@ def process_pdf(pdf_file_path, json_file_path,
                                xml_file_path=None,
                                text_file_path=None,):
     """
-    Processing pipeline: call Grobid for PDF -> parse XML to JSON according 
-    to the schema -> {optionally detect text language} -> save JSON ->
-    {optionally save intermediate XML} -> {optionally save plain text file}}}
+    Processing pipeline: call Grobid for PDF -> 
+                         parse XML to JSON according to the schema -> 
+                         (optionally) detect text language -> 
+                         save JSON ->
+                         (optionally) save intermediate XML ->
+                         (optionally) save plain text file
 
-    Parameters
-    ----------
-    pdf_file_path : string
-        Input PDF file path.
-    json_file_path: string, optional
-        Output json file. 
-    pdf_content: binary stream
-        Previously read pdf_content    
-    xml_file_path string, optional
-        Optional file path for Grobid output XML. The default is None.
-        If not specified and config.SAVE_XML=true it would be created from the
-        repository configuration for the xml output file and pdf file name.
-        Otherwise it would not be saved.
-    text_file_path string, optional
-        Optional file path for plain text. The default is None.
-        If not specified and config.SAVE_TEXT=true it would be created from the
-        repository configuration for the txt output file and pdf file name  
-        Otherwise it would not be saved.
+    Parameters:
+        pdf_file_path : string, input PDF file path.
+        json_file_path: string, optional output json file. 
+        pdf_content: binary stream, previously read pdf_content    
+        xml_file_path string, optional file path for Grobid output XML. The default is None.
+                        If not specified and config.SAVE_XML=true it would be created from the
+                        repository configuration for the xml output file and pdf file name.
+                        Otherwise it would not be saved.
+        text_file_path string, optional file path for plain text. The default is None.
+                        If not specified and config.SAVE_TEXT=true it would be created from the
+                        repository configuration for the txt output file and pdf file name  
+                        Otherwise it would not be saved.
 
-    Returns
-    -------
-    json_file_path : 
-        Resulting file path.
-    pdf_dict : dict
-        Resulting json dictionary
-
+    Returns:
+        json_file_path : string, resulting file path
+        pdf_dict : dict, resulting json dictionary
     """
     pdf_dict = cfg.OUTPUT_SCHEMA if cfg.OUTPUT_IF_BAD_PDF else {}
     xml = ''
@@ -410,8 +451,11 @@ def process_pdf(pdf_file_path, json_file_path,
     return json_file_path, pdf_dict
 
         
-def process_only_all():
-    
+def process_all():
+    """
+    Process all the pdf files in the input directory according to the config.
+
+    """
     pdf_path  = cfg.INPUT_PATH
     json_path = cfg.OUTPUT_PATH
     
@@ -423,7 +467,6 @@ def process_only_all():
         logger.info(f_pdf + '--->')
          
         f_json = os.path.join(json_path, os.path.basename(f_pdf).split('.')[0] + cfg.OUTPUT_SUFFIX + '.json')
-        #f_json = os.path.realpath(os.path.normpath(f_json))
         
         if not cfg.OVERWRITE_EXISTING and os.path.exists(f_json):
             logger.info(f_json + ' already exists')
@@ -434,8 +477,22 @@ def process_only_all():
         
     return
 
+def create_cache():
+    """
+    Create a dedicated cache location for the PDF files
+
+    """
+    if cfg.CACHE_PDF:
+        os.makedirs(cfg.CACHE_PATH, exist_ok=True)
+    os.makedirs(cfg.CACHE_UNREADABLE_PATH, exist_ok=True) 
+
 def download_and_process_all():
-    
+    """
+    Download all the pdf files in the input directory according to the config 
+    and immediately process each file. The processing occurs while waiting for 
+    the next file download.
+
+    """
     create_cache()
     
     url_path  = cfg.INPUT_PATH
@@ -470,12 +527,11 @@ def download_and_process_all():
         
     return
 
-
-#%%
+#%% Main
 if __name__ == '__main__':
-    
+
     if cfg.INPUT_PATTERN.endswith('pdf'):
-        process_only_all()
+        process_all()
     elif cfg.INPUT_PATTERN.endswith('url'):
        download_and_process_all()
 
