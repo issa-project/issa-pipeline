@@ -8,13 +8,12 @@
 # ISSA environment definitions
 . ../../../env.sh
 
-CONTAINER_NAME=${VIRTUOSO_CONT_NAME:-virtuoso}
-
-log_dir=../../logs
+log_dir=${ISSA_ENV_LOG:-../../logs}
 mkdir -p $log_dir 
 log=$log_dir/wikidata_import_$(date "+%Y%m%d_%H%M%S").log
 
 # Start container if needed
+CONTAINER_NAME=${VIRTUOSO_CONT_NAME:-virtuoso}
 docker start $CONTAINER_NAME
 
 # Remove previously imported ttl files
