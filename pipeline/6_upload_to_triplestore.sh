@@ -20,8 +20,8 @@ echo "************************************************************************"
 echo " Updating dataset metadata..."
 echo "************************************************************************"
 
- 	./import-dataset.sh
-	./update-dataset.sh
+ 	./import-dataset-meta.sh
+	./update-dataset-meta.sh
 
 
 popd

@@ -30,5 +30,5 @@ __pycache__
 *.pkl
 *.csv
 *.xlsx
-
+*.pdf
 
