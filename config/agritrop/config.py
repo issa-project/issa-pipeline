@@ -3,54 +3,50 @@
 Created on Thu Jul  8 19:14:38 2021
 
 @author: abobashe
-"""
 
+This module contains configuration settings for the ISSA pipeline Python scripts.
+Each class defines a set of settings for a specific module of the pipeline.
+
+"""
 import os
 import datetime
-from  util import SPARQL_Endpoint_Wrapper
 import numpy as np
+from  util import SPARQL_Endpoint_Wrapper, read_env_var
 
-# read environment variables defined and exported in env.sh
+#%%
+# Read environment variables defined in env.sh
 # if an environment variable is not specified default is assigned
+#                                        var name               default value                                                
+_ISSA_DATA_ROOT	        = read_env_var('ISSA_DATA_ROOT' ,       os.path.expanduser('~/ISSA-2/data/agritrop') )
+_ISSA_DATASET    	    = read_env_var('ISSA_DATASET' ,         'dataset-2-0')
+_ISSA_LOG               = read_env_var('ISSA_PIPELINE_LOG',     '../logs')
 
-def read_env_var(var_name):
-    return os.environ[var_name] if var_name in os.environ else None
+_METADATA_PREFIX 	    = read_env_var('METADATA_PREFIX',       'agritrop_meta_test' )
+_ANNIF_SUFFIX    	    = read_env_var('ANNIF_SUFFIX',          'annif')
 
+_PDF_CACHE       	    = read_env_var('PDF_CACHE',             os.path.expanduser('~/ISSA-2/data/agritrop/pdf_cache') )
+_PDF_CACHE_UNREADABLE   = read_env_var('PDF_CACHE_UNREADABLE',  os.path.expanduser('~/ISSA-2/data/agritrop/pdf_cache/unreadable'))
 
-_ISSA_DATA_ROOT	= read_env_var('ISSA_DATA_ROOT') 			or os.path.expanduser('~/Documents/ISSA/ISSA/data')
-_ISSA_DATASET    	= read_env_var('ISSA_DATASET') 				or 'dataset-1-0'
-_ISSA_LOG         = read_env_var('ISSA_PIPELINE_LOG') 			or '../logs'
+# Directories of data files relative to the LATEST_UPDATE_DIR
 
-_METADATA_PREFIX 	= read_env_var('METADATA_PREFIX') 			or 'agritrop_meta_test' 
-_ANNIF_SUFFIX    	= read_env_var('ANNIF_SUFFIX') 				or 'annif'
+_REL_META 		        = read_env_var('REL_META',              '.' )
+_REL_META_JSON 	        = read_env_var('REL_META_JSON',         'json/metadata')
+_REL_PDF  		        = read_env_var('REL_PDF',               'pdf')
 
-_PDF_CACHE       	= read_env_var('PDF_CACHE') 				or os.path.expanduser('~/ISSA/data/pdf_cache')
-_PDF_CACHE_UNREADABLE = read_env_var('PDF_CACHE_UNREADABLE') 	or os.path.expanduser('~/ISSA/data/pdf_cache/unreadable')
+_REL_GROBID_XML  	    = read_env_var('REL_GROBID_XML',        'xml' )
+_REL_GROBID_JSON  	    = read_env_var('REL_GROBID_JSON',       'json/fulltext')
+_REL_COAL_JSON  	    = read_env_var('REL_COAL_JSON',         'json/coalesced')
 
-# Directories of data files relative to LATEST_UPDATE_DIR
+_REL_ANNIF_LABELS 	    = read_env_var('REL_ANNIF_LABELS',      'labels')
+_REL_ANNIF_TEXT   	    = read_env_var('REL_ANNIF_TEXT',        'txt')
+_REL_ANNIF		        = read_env_var('REL_ANNIF',             'indexing')
 
-_REL_META 		= read_env_var('REL_META') 					or '.'
-_REL_META_JSON 	= read_env_var('REL_META_JSON') 			or 'json/metadata'
-_REL_PDF  		= read_env_var('REL_PDF') 					or 'pdf'
+_REL_SPOTLIGHT	        = read_env_var('REL_SPOTLIGHT',         'annotation/dbpedia')
+_REL_EF			        = read_env_var('REL_EF',                'annotation/wikidata')
+_REL_GEONAMES		    = read_env_var('REL_GEONAMES',          'annotation/geonames')
+_REL_PYCLINREC	        = read_env_var('REL_PYCLINREC',         'annotation/agrovoc')
 
-_REL_GROBID_XML  	= read_env_var('REL_GROBID_XML') 			or 'xml'
-_REL_GROBID_JSON  	= read_env_var('REL_GROBID_JSON') 			or 'json/fulltext'
-_REL_COAL_JSON  	= read_env_var('REL_COAL_JSON') 			or 'json/coalesced'
-
-_REL_ANNIF_LABELS 	= read_env_var('REL_ANNIF_LABELS') 			or 'labels'
-_REL_ANNIF_TEXT   	= read_env_var('REL_ANNIF_TEXT') 			or 'txt'
-_REL_ANNIF		= read_env_var('REL_ANNIF') 			   	or 'indexing'
-
-_REL_ANNIF		= read_env_var('REL_ANNIF') 			    	or 'indexing'
-
-_REL_SPOTLIGHT	= read_env_var('REL_SPOTLIGHT') 		   	or 'annotation/dbpedia'
-_REL_EF			= read_env_var('REL_EF')		 		    	or 'annotation/wikidata'
-_REL_GEONAMES		= read_env_var('REL_GEONAMES') 		     	or 'annotation/geonames'
-_REL_PYCLINREC	= read_env_var('REL_PYCLINREC') 		     or 'annotation/agrovoc'
-
-_REL_RDF			= read_env_var('REL_RDF') 		     		or 'rdf'
-
-
+_REL_RDF			    = read_env_var('REL_RDF',                'rdf')
 
 class cfg_pipeline(object):
     """
@@ -129,7 +125,7 @@ class cfg_download_corpus_metadata(cfg_pipeline):
                        'relations' : 'oai:metadata/oai_dc:dc/dc:relation',
                        'types' : 'oai:metadata/oai_dc:dc/dc:type',
                       }
-    DEBUG = True
+    DEBUG = False
 
 
 class cfg_process_corpus_metadata(cfg_pipeline):
@@ -189,7 +185,7 @@ class cfg_process_corpus_metadata(cfg_pipeline):
 
     BEFORE_COMMA_REGEX = r'[^\r\n,]+'
     TIDY_TEXT_REGEX = r'^\s+|\t|\n|\r|\s+$'
-    DOUBLE_QUOTES_REGEX = r'"{2,}'
+    DOUBLE_QUOTES_REGEX = r'"' # r'"{2,}'
 
     ACCESS_REGEX = r'^info:eu-repo/semantics.+'
     LICENSE_URI_REGEX = r'^https?:.+licenses.+'
@@ -322,14 +318,7 @@ class cfg_process_corpus_metadata(cfg_pipeline):
 
         return row
 
-    POST_PROCESSING_MAP = { 
-                            #  'get Agrovoc labels' : ('map_to_value_sparql_by_lang',{'sparql_endpoint':   AGROVOC_SPARQL_WRAPPER,
-                            #                                                         'sparql_query':   AGROVOC_QUERY_TEMPLATE,
-                            #                                                         'input_column':   'descriptor_uris',
-                            #                                                         'output_column':  'descriptor_labels',
-                            #                                                         'doc_lang_column':'language',
-                            #                                                         'axis':            1} ),
-                             'drop columns'  :   ('drop', {'axis':1 , 'columns': ['identifiers', 'relations', 'types' ]} ), 
+    POST_PROCESSING_MAP = { 'drop columns'  :   ('drop', {'axis':1 , 'columns': ['identifiers', 'relations', 'types' ]} ), 
                             'filter open access':             ('query',   {'expr': OPEN_ACCESS_FILTER } ), 
                             'fill lang na'       :            ('apply', {'func': fillna_with_doc_language , 'axis' : 1} ),
                             'remove PDFs from non-articles' : ('apply', {'func': remove_pdfs_from_non_articles, 'axis' : 1} ),  
@@ -367,9 +356,9 @@ class cfg_create_dataset_repository(cfg_pipeline):
                              'abstract'    : ['abstract', 0, 'text'],
                              'authors'              : ['metadata', 'authors'],
                              'title_lang'           : ['metadata', 'title_lang','code'] ,
-                             #'title_lang_score'     : ['metadata', 'title_lang','score'] ,
+                             'title_lang_score'     : ['metadata', 'title_lang','score'] ,
                              'abstract_lang'        : ['metadata', 'abstract_lang','code'] ,
-                             #'abstract_lang_score'  : ['metadata', 'abstract_lang','score'] ,
+                             'abstract_lang_score'  : ['metadata', 'abstract_lang','score'] ,
                             }
 
 class cfg_extract_text_from_pdf(cfg_pipeline):
@@ -398,6 +387,7 @@ class cfg_extract_text_from_pdf(cfg_pipeline):
 
     GROBID_URL = 'http://localhost:8070'
     GROBID_API_URL = f'{GROBID_URL}/api/processFulltextDocument'
+    GROBID_TIMEOUT = 300 #sec
     
     
     TEI_BASE_URL = "http://www.tei-c.org/ns/1.0/"
@@ -460,12 +450,12 @@ class cfg_indexing_preprocess(cfg_pipeline):
     # json path to                 text                      language      
     JSON_TEXT_MAP= { 'title':    (['metadata', 'title'],     ['metadata', 'title_lang', 'code']),
                     'abstract':  (['abstract', 0, 'text'],   ['metadata', 'abstract_lang', 'code']),
-                    'keywords':  (['metadata', 'keywords'],  ['metadata', 'body_lang', 'code']),
+                    #'keywords':  (['metadata', 'keywords'],  ['metadata', 'body_lang', 'code']),
                     'body_text': (['body_text' , 0, 'text'], ['metadata', 'body_lang', 'code']) 
         
                    }
     # order in which determine a document language
-    LANGUAGE_DETERMINATORS = ['body_text', 'abstract', 'title']
+    LANGUAGE_DETERMINERS = ['body_text', 'abstract', 'title']
  
 class cfg_indexing_postprocess(cfg_pipeline): 
 
@@ -495,16 +485,14 @@ class cfg_indexing_training(cfg_pipeline):
     INPUT_PATH=os.path.join(_ISSA_DATA_ROOT, _ISSA_DATASET)
     INPUT_PATTERN = '**/coalesced/*.json'
     LABEL_PATTERN='**/labels/'
- 
-    #METADATA_FILE = os.path.join(INPUT_PATH,
-    #                             sorted(os.listdir(INPUT_PATH), reverse=True) [0], #LATEST_UPDATE,
-    #                             f'{_METADATA_PREFIX}.tsv')
     
+    CREATE_LABELS = True
+    METADATA_FILENAME=f'{_METADATA_PREFIX}.tsv'
+
     OUTPUT_SUFFIX = '.txt'
     
     PARTS_SEPARATOR = os.linesep + os.linesep
-    
-    
+     
     OUTPUT_PATH = os.path.join(_ISSA_DATA_ROOT, 'training')
     
     TRAINING_FILES_LOC = {'en' : { 'train' : os.path.join(OUTPUT_PATH, 'en', 'train'),
@@ -514,18 +502,20 @@ class cfg_indexing_training(cfg_pipeline):
                           }
 
     # json path to                 text                      language      
-    JSON_TEXT_MAP= { 'title':    (['metadata', 'title'],     ['metadata', 'title_lang', 'code']),
-                    'abstract':  (['abstract', 0, 'text'],   ['metadata', 'abstract_lang', 'code']),
-                    'keywords':  (['metadata', 'keywords'],  ['metadata', 'body_lang', 'code']),
-                    'body_text': (['body_text' , 0, 'text'], ['metadata', 'body_lang', 'code']) 
-        
+    JSON_TEXT_MAP= { 'title':    (['metadata', 'title'],     ['metadata', 'title_lang']),
+                    'abstract':  (['abstract', 0, 'text'],   ['metadata', 'abstract_lang']),
+                    #'keywords':  (['metadata', 'keywords'],  ['metadata', 'body_lang']),
+                    'body_text': (['body_text' , 0, 'text'], ['metadata', 'body_lang'])  
                    }
     # order in which to determine a document language
-    LANGUAGE_DETERMINATORS = ['body_text', 'abstract', 'title']
+    LANGUAGE_DETERMINERS = ['body_text', 'abstract'] #, 'title']
+    LANGUAGE_SCORE_THRESHOLD = 0.75
     
-    MIN_TEXT_LENGTH = 0
+    MIN_TEXT_LENGTH = 240
     PARTS_SEPARATOR = os.linesep + os.linesep
-    TEST_SET_SIZE = 0.2
+    FILES_SORT_KEY = lambda x: int(os.path.basename(x).split('.')[0]) # str.lower (alphabetical)
+    FILES_SET_SIZE = 25000
+    TEST_SET_SPLIT = 0.2
 
 
 # Common config setting for the annotation scripts
@@ -560,9 +550,11 @@ class cfg_annotation_dbpedia(cfg_annotation):
     OUTPUT_PATH = FILES_LOC['annotation_dbpedia']
    
     SPOTLIGHT_ENDPOINTS = {
+        # local API endpoints
         'en': 'http://localhost:2222/rest/annotate',
         'fr': 'http://localhost:2223/rest/annotate',
-        #'en': 'https://api.dbpedia-spotlight.org/en/annotate',
+        # external API endpoints
+        #'en': 'https://api.dbpedia-spotlight.org/en/annotate', 
         #'fr': 'https://api.dbpedia-spotlight.org/fr/annotate',
 
     }
@@ -575,7 +567,9 @@ class cfg_annotation_wikidata(cfg_annotation):
 
     OUTPUT_PATH = FILES_LOC['annotation_wikidata']
 
+    # Local API endpoint
     ENTITY_FISHING_ENDPOINT = 'http://localhost:8090/service/disambiguate'
+    # External API endpoint
     #ENTITY_FISHING_ENDPOINT = 'https://cloud.science-miner.com/nerd/service/disambiguate'
     
     REMOVE_GLOBAL_CATEGORIES = True
@@ -595,8 +589,10 @@ class cfg_annotation_geonames(cfg_annotation):
   
     
     ENTITY_FISHING_ENDPOINTS = {
+        # local API endpoints   
         'disambiguation' : 'http://localhost:8090/service/disambiguate',
         'concept_lookup': 'http://localhost:8090/service/kb/concept'}
+        # external API endpoints
         #'disambiguation' : 'https://cloud.science-miner.com/nerd//service/disambiguate/',
         #'concept_lookup': 'https://cloud.science-miner.com/nerd//service/kb/concept/',}
 
@@ -645,8 +641,3 @@ class cfg_overlap_detection(cfg_pipeline): #cfg_pipeline
     ASYNCH_MAX_WORKERS = 10
 
     REMOVE_OVERLAPS = False
-
-
-    
-
-    

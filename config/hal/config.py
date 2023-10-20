@@ -3,52 +3,45 @@
 Created on Thu Jul  8 19:14:38 2021
 
 @author: abobashe
+
+This module contains configuration settings for the ISSA pipeline Python scripts.
+Each class defines a set of settings for a specific module of the pipeline.
+
 """
 
 import os
 import datetime
-from  util import SPARQL_Endpoint_Wrapper
+import numpy as np
+from  util import SPARQL_Endpoint_Wrapper, read_env_var
 
-# read environment variables defined and exported in env.sh
+#%%
+# Read environment variables defined in env.sh
 # if an environment variable is not specified default is assigned
+#                                        var name               default value                                                
+_ISSA_DATA_ROOT	        = read_env_var('ISSA_DATA_ROOT' ,       os.path.expanduser('~/ISSA-2/data/hal') )
+_ISSA_DATASET    	    = read_env_var('ISSA_DATASET' ,         'dataset-2-0')
+_ISSA_LOG               = read_env_var('ISSA_PIPELINE_LOG',     '../logs')
 
-def read_env_var(var_name):
-    return os.environ[var_name] if var_name in os.environ else None
+_METADATA_PREFIX 	    = read_env_var('METADATA_PREFIX',       'hal_meta_test' )
+_ANNIF_SUFFIX    	    = read_env_var('ANNIF_SUFFIX',          'annif')
 
+_PDF_CACHE       	    = read_env_var('PDF_CACHE',             os.path.expanduser('~/ISSA-2/data/hal/pdf_cache') )
+_PDF_CACHE_UNREADABLE   = read_env_var('PDF_CACHE_UNREADABLE',  os.path.expanduser('~/ISSA-2/data/hal/pdf_cache/unreadable'))
 
-_ISSA_DATA_ROOT	= read_env_var('ISSA_DATA_ROOT') 			or os.path.expanduser('~/Documents/ISSA/ISSA/data')
-_ISSA_DATASET    	= read_env_var('ISSA_DATASET') 				or 'dataset-1-2'
-_ISSA_LOG         = read_env_var('ISSA_PIPELINE_LOG') 			or '../logs'
+# Directories of data files relative to the LATEST_UPDATE_DIR
 
+_REL_META 		    = read_env_var('REL_META',              '.' )
+_REL_META_JSON 	    = read_env_var('REL_META_JSON',         'json/metadata')
+_REL_PDF  		    = read_env_var('REL_PDF',               'pdf')
 
-_METADATA_PREFIX 	= read_env_var('METADATA_PREFIX') 			or 'hal_meta_test'  
-_ANNIF_SUFFIX    	= read_env_var('ANNIF_SUFFIX') 				or 'annif'
+_REL_GROBID_XML  	    = read_env_var('REL_GROBID_XML',        'xml' )
+_REL_GROBID_TXT  	    = read_env_var('REL_GROBID_TXT',        'txt' )
+_REL_GROBID_JSON  	    = read_env_var('REL_GROBID_JSON',       'json/fulltext')
+_REL_COAL_JSON  	    = read_env_var('REL_COAL_JSON',         'json/coalesced')
 
-_PDF_CACHE       	= read_env_var('PDF_CACHE') 				or os.path.expanduser('~/ISSA/data/pdf_cache')
-_PDF_CACHE_UNREADABLE = read_env_var('PDF_CACHE_UNREADABLE') 	or os.path.expanduser('~/ISSA/data/pdf_cache/unreadable')
-
-# Directories of data files relative to LATEST_UPDATE_DIR
-
-_REL_META 		= read_env_var('REL_META') 					or '.'
-_REL_META_JSON 	= read_env_var('REL_META_JSON') 			or 'json/metadata'
-_REL_PDF  		= read_env_var('REL_PDF') 					or 'pdf'
-
-_REL_GROBID_XML  	= read_env_var('REL_GROBID_XML') 			or 'xml'
-_REL_GROBID_JSON  	= read_env_var('REL_GROBID_JSON') 			or 'json/fulltext'
-_REL_COAL_JSON  	= read_env_var('REL_COAL_JSON') 			or 'json/coalesced'
-
-_REL_ANNIF_LABELS 	= read_env_var('REL_ANNIF_LABELS') 			or 'labels'
-_REL_ANNIF_TEXT   	= read_env_var('REL_ANNIF_TEXT') 			or 'txt'
-_REL_ANNIF		= read_env_var('REL_ANNIF') 			   	or 'indexing'
-
-_REL_ANNIF		= read_env_var('REL_ANNIF') 			    	or 'indexing'
-
-_REL_SPOTLIGHT	= read_env_var('REL_SPOTLIGHT') 		   	or 'annotation/dbpedia'
-_REL_EF			= read_env_var('REL_EF')		 		    	or 'annotation/wikidata'
-_REL_GEONAMES		= read_env_var('REL_GEONAMES') 		     	or 'annotation/geonames'
-_REL_PYCLINREC	= read_env_var('REL_PYCLINREC') 		     or 'annotation/agrovoc'
-
-_REL_RDF			= read_env_var('REL_RDF') 		     		or 'rdf'
+_REL_SPOTLIGHT	         = read_env_var('REL_SPOTLIGHT',         'annotation/dbpedia')
+_REL_EF			    = read_env_var('REL_EF',                'annotation/wikidata')
+_REL_GEONAMES		    = read_env_var('REL_GEONAMES',          'annotation/geonames')
 
 
 class cfg_pipeline(object):
@@ -67,17 +60,15 @@ class cfg_pipeline(object):
 
     LATEST_UPDATE = LATEST_UPDATE[0] if LATEST_UPDATE else CURRENT_DATE
 
-    FILES_LOC = {'metadata' :      os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, _REL_META ),
-               'txt' :             os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, _REL_ANNIF_TEXT ),
+    FILES_LOC = {
+               'metadata' :        os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, _REL_META ),
                'url' :             os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, _REL_PDF ),
                'pdf' :             os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, _REL_PDF ),
                'metadata_json' :   os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, _REL_META_JSON ),
                'fulltext_json' :   os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, _REL_GROBID_JSON  ),
                'coalesced_json' :  os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, _REL_COAL_JSON  ),
                'xml' :             os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, _REL_GROBID_XML ),
-               #'tsv' :             os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, _REL_ANNIF_LABELS ),
-               'indexing_text' :   os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, _REL_ANNIF ),
-               'indexing_json' :   os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, _REL_ANNIF ),
+                'txt' :             os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, _REL_GROBID_TXT ),
               
                'annotation_dbpedia': os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, _REL_SPOTLIGHT ),
                'annotation_wikidata':os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, _REL_EF ),
@@ -150,9 +141,44 @@ class cfg_process_corpus_metadata(cfg_pipeline):
     
     INPUT_PATH = cfg_download_corpus_metadata.OUTPUT_PATH
     OUTPUT_PATH = INPUT_PATH
+
+    DETECT_LANG = True
+    LANG_DETECTION_METHOD = 'langdetect' # 'cld2' | 'langdetect', 
+    BEST_EFFORT_LANG_DETECTION = False
+    FILL_NOT_DETECTED_LANG = True
   
-    MESH_SPARQL_WRAPPER = SPARQL_Endpoint_Wrapper('http://localhost:8891/sparql') #https://id.nlm.nih.gov/mesh/sparql
-    # the mapping query have to follow a rule: the first returned variable is a lookup key, the second is a lookup value 
+    PAPER_ID_REGEX = r'[^:]+$'
+    YEAR_REGEX = r'\b\d{4}\b'
+
+    DOI_REGEX = r'\b10\.\d{4,9}/[-.;()/:\w]+'
+    URI_REGEX = r'\w+:(\/?\/?)[^\s]+'
+    URL_REGEX = r'^https?:(\/?\/?)[^\s]+'
+
+    DESCRIPTOR_URI_REGEX = r'^http:(\/?\/?)[^\s]+'
+
+    DOMAIN_CODE_REGEX = r'^[A-Z]\d{2}\b'
+    DOMAIN_NAMESPACE = 'https://data.archives-ouvertes.fr/subject/' 
+
+    BEFORE_COMMA_REGEX = r'[^\r\n,]+'
+    TIDY_TEXT_REGEX = r'^\s+|\t|\n|\r|\s+$'
+    DOUBLE_QUOTES_REGEX = r'"' #  r'"{2,}'
+    #TABS_AND_QUOTES_REGEX = r'[\n\r\t\"]+'
+    #MULTIPLE_WHITESPACES_REGEX = r'\s+'
+    #AUDIENCE_REGEX = r'International audience|National audience'
+    NON_SOURCES_REGEX = r'^EISSN:|^ISSN:|^http|^[0-9]+$' # use with remove # this might not be nessesary
+    SOURCES_REFEX = r'^(?!EISSN:|ISSN:|http:|https:|[0-9]+).*$' #use with filter 
+    ACCESS_REGEX = r'^info:eu-repo/semantics.+'
+    LICENSE_URI_REGEX = r'^http:.+licenses.+'
+    HAL_URL_REGEX = r'^https?:\S*-\d+$'
+    PDF_URI_REGEX = r'^https?:.+\.pdf$'
+    DOMAINS_SUBJECTS_REGEX= r'\[(.*?)\]'
+    MESH_REGEX = r'^MESH:\s' #r'^MESH:\s(.+)$'
+
+    MESH_SPARQL_WRAPPER = SPARQL_Endpoint_Wrapper('http://localhost:8891/sparql') 
+                                                  #'https://id.nlm.nih.gov/mesh/sparql'
+
+    # NOTE: The mapping query have to follow a rule: the first returned variable 
+    # is a lookup key, the second is a lookup value 
     MESH_QUERY_TEMPLATE = '''
     PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
     PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -167,41 +193,6 @@ class cfg_process_corpus_metadata(cfg_pipeline):
                  rdfs:label ?label. 
             }
     '''
-    
-    DETECT_LANG = True
-    LANG_DETECTION_METHOD = 'langdetect' #cld2, langdetect, 
-    BEST_EFFORT_LANG_DETECTION = False
-    FILL_NOT_DETECTED_LANG = True
-
-    PAPER_ID_REGEX = r'[^:]+$'
-    YEAR_REGEX = r'\b\d{4}\b'
-
-    DOI_REGEX = r'\b10\.\d{4,9}/[-.;()/:\w]+'
-    URI_REGEX = r'\w+:(\/?\/?)[^\s]+'
-    URL_REGEX = r'^https?:(\/?\/?)[^\s]+'
-
-    DESCRIPTOR_URI_REGEX = r'^http:(\/?\/?)[^\s]+'
-    #DESCRIPTOR_NAMESPACE = 'http://agritrop.cirad.fr/'
-
-    DOMAIN_CODE_REGEX = r'^[A-Z]\d{2}\b'
-    DOMAIN_NAMESPACE = 'https://data.archives-ouvertes.fr/subject/' 
-
-    BEFORE_COMMA_REGEX = r'[^\r\n,]+'
-    TIDY_TEXT_REGEX = r'^\s+|\t|\n|\r|\s+$'
-    DOUBLE_QUOTES_REGEX = r'"{2,}'
-    #TABS_AND_QUOTES_REGEX = r'[\n\r\t\"]+'
-    #MULTIPLE_WHITESPACES_REGEX = r'\s+'
-    #AUDIENCE_REGEX = r'International audience|National audience'
-    NON_SOURCES_REGEX = r'^EISSN:|^ISSN:|^http|^[0-9]+$' # use with remove # this might not be nessesary
-    SOURCES_REFEX = r'^(?!EISSN:|ISSN:|http:|https:|[0-9]+).*$' #use with filter 
-    ACCESS_REGEX = r'^info:eu-repo/semantics.+'
-    LICENSE_URI_REGEX = r'^http:.+licenses.+'
-    HAL_URL_REGEX = r'^https?:\S*-\d+$'
-    PDF_URI_REGEX = r'^https?:.+\.pdf$'
-    DOMAINS_SUBJECTS_REGEX= r'\[(.*?)\]'
-    MESH_REGEX = r'^MESH:\s' #r'^MESH:\s(.+)$'
-
-
 
     DOCUMENT_TYPE_MAP = {'Journal articles':       ['fabio:ResearchPaper', 'eprint:JournalArticle',
                                                     'schema:ScholarlyArticle', 'bibo:AcademicArticle'],                                  
@@ -225,7 +216,6 @@ class cfg_process_corpus_metadata(cfg_pipeline):
                         'bibo': 'http://purl.org/ontology/bibo/',
     }
 
-    #####################################################################
     PRE_PROCESSING_MAP = { }
 
     FIELD_PROCESSING_MAP = {'paper_id': ('extract_string', (PAPER_ID_REGEX,) ),
@@ -284,7 +274,13 @@ class cfg_process_corpus_metadata(cfg_pipeline):
 
     OPEN_ACCESS_FILTER = 'not access_rights.str.contains("closed|restricted|embargoed", case=False, na="OpenAccess", regex=True)'
 
+    # instance specific processing function
+    # TODO: possibly move to a separate module
     def select_part_text(row, textPart='title'):
+        """ 
+        Select text in a given language from a list of texts in different languages
+        
+        """
         doc_lang = row['language']
         part_text_list = row[f'{textPart}s'] if isinstance(row[f'{textPart}s'], list) else []
         part_lang_list = row[f'{textPart}s_lang'] if isinstance(row[f'{textPart}s_lang'], list) else []
@@ -307,8 +303,6 @@ class cfg_process_corpus_metadata(cfg_pipeline):
 
     POST_PROCESSING_MAP = { 'select title' :    ('apply', { 'func' : select_part_text, 'args': ('title',) , 'axis':1} ),
                             'select abstract' : ('apply', { 'func' : select_part_text, 'args': ('abstract',) , 'axis':1} ),
-                            #'select title' :    ('select_text_by_lang', {'textPart': 'title',    'axis':1} ),
-                            #'select abstract' : ('select_text_by_lang', {'textPart': 'abstract', 'axis':1} ),
                             'drop columns'  :   ('drop', {'axis':1 , 'columns': ['contributors', 'publishers', 'coverage',
                                                                                 'types','sources',
                                                                                 'relations', 'identifiers',
@@ -316,7 +310,6 @@ class cfg_process_corpus_metadata(cfg_pipeline):
                                                                                 'descriptions', 'abstracts', 'abstracts_lang',
                                                                                 'subjects' ]} ), 
                             'filter open access' : ('query', {'expr': OPEN_ACCESS_FILTER } ), 
-                  
     }
 
 
@@ -381,8 +374,8 @@ class cfg_extract_text_from_pdf(cfg_pipeline):
 
     GROBID_URL = 'http://localhost:8070'
     GROBID_API_URL = f'{GROBID_URL}/api/processFulltextDocument'
-    
-    
+    GROBID_TIMEOUT = 300 #sec
+
     TEI_BASE_URL = "http://www.tei-c.org/ns/1.0/"
     TEI_NS = {'tei': 'http://www.tei-c.org/ns/1.0'}
     
@@ -427,90 +420,6 @@ class cfg_coalesce_meta_json(cfg_pipeline):
    
     DO_COALESE = True
     
-class cfg_indexing_preprocess(cfg_pipeline):
-        
-    FILES_LOC = cfg_pipeline.FILES_LOC
-   
-    INPUT_PATTERN = '*.json.noindex'
-    OUTPUT_SUFFIX = '.txt'
-    
-    PARTS_SEPARATOR = os.linesep + os.linesep
-
-    INPUT_PATH = FILES_LOC['coalesced_json']
-    OUTPUT_PATH = FILES_LOC['indexing_text']
-    OUTPUT_LANG = ['en', 'fr']
-   
-    # json path to                 text                      language      
-    JSON_TEXT_MAP= { 'title':    (['metadata', 'title'],     ['metadata', 'title_lang', 'code']),
-                    'abstract':  (['abstract', 0, 'text'],   ['metadata', 'abstract_lang', 'code']),
-                    'keywords':  (['metadata', 'keywords'],  ['metadata', 'body_lang', 'code']),
-                    'body_text': (['body_text' , 0, 'text'], ['metadata', 'body_lang', 'code']) 
-        
-                   }
-    # order in which determine a document language
-    LANGUAGE_DETERMINATORS = ['body_text', 'abstract', 'title']
- 
-class cfg_indexing_postprocess(cfg_pipeline): 
-
-    FILES_LOC = cfg_pipeline.FILES_LOC  
-    
-    INPUT_PATTERN= '**/*%s*' % _ANNIF_SUFFIX
-    INPUT_TSV_PATH = FILES_LOC['indexing_text']    
-    
-    OUTPUT_SUFFIX = '%s.json' % _ANNIF_SUFFIX
-    OUTPUT_JSON_PATH = FILES_LOC['indexing_json']
-    
-    OUTPUT_SCHEMA={'paper_id' : '',
-                   'model': '',
-                   'language': '',
-                   'subjects' : [{'uri': '',
-                                  'label': '',
-                                   'conf_score': 0.0,
-                                   'rank': 0}]
-                   }
-
-# This config may go somewhere else because this step is not a part of the 
-# pipeline. Try to keep it independent    
-class cfg_indexing_training(object):
-    
-    LOG_PATH = '../logs' 
-    
-    INPUT_PATH=os.path.join(_ISSA_DATA_ROOT, _ISSA_DATASET)
-    INPUT_PATTERN = '**/coalesced/*.json'
-    LABEL_PATTERN='**/labels/'
- 
-    #METADATA_FILE = os.path.join(INPUT_PATH,
-    #                             sorted(os.listdir(INPUT_PATH), reverse=True) [0], #LATEST_UPDATE,
-    #                             f'{_METADATA_PREFIX}.tsv')
-    
-    OUTPUT_SUFFIX = '.txt'
-    
-    PARTS_SEPARATOR = os.linesep + os.linesep
-    
-    
-    OUTPUT_PATH = os.path.join(_ISSA_DATA_ROOT, 'training')
-    
-    TRAINING_FILES_LOC = {'en' : { 'train' : os.path.join(OUTPUT_PATH, 'en', 'train'),
-                                   'test'  : os.path.join(OUTPUT_PATH, 'en', 'test') },
-                          'fr' : { 'train' : os.path.join(OUTPUT_PATH, 'fr', 'train'),
-                                   'test'  : os.path.join(OUTPUT_PATH, 'fr', 'test') }
-                          }
-
-    # json path to                 text                      language      
-    JSON_TEXT_MAP= { 'title':    (['metadata', 'title'],     ['metadata', 'title_lang', 'code']),
-                    'abstract':  (['abstract', 0, 'text'],   ['metadata', 'abstract_lang', 'code']),
-                    'keywords':  (['metadata', 'keywords'],  ['metadata', 'body_lang', 'code']),
-                    'body_text': (['body_text' , 0, 'text'], ['metadata', 'body_lang', 'code']) 
-        
-                   }
-    # order in which to determine a document language
-    LANGUAGE_DETERMINATORS = ['body_text', 'abstract', 'title']
-    
-    MIN_TEXT_LENGTH = 0
-    PARTS_SEPARATOR = os.linesep + os.linesep
-    TEST_SET_SIZE = 0.2
-
-
 # Common config setting for the annotation scripts
 class cfg_annotation(cfg_pipeline): 
     FILES_LOC = cfg_pipeline.FILES_LOC    
@@ -543,11 +452,12 @@ class cfg_annotation_dbpedia(cfg_annotation):
     OUTPUT_PATH = FILES_LOC['annotation_dbpedia']
    
     SPOTLIGHT_ENDPOINTS = {
+        # local API endpoints
         'en': 'http://localhost:2222/rest/annotate',
         'fr': 'http://localhost:2223/rest/annotate',
-        #'en': 'https://api.dbpedia-spotlight.org/en/annotate',
+        # external API endpoints
+        #'en': 'https://api.dbpedia-spotlight.org/en/annotate', 
         #'fr': 'https://api.dbpedia-spotlight.org/fr/annotate',
-
     }
     
     SPOTLIGHT_CONFIDENCE= 0.50
@@ -558,7 +468,9 @@ class cfg_annotation_wikidata(cfg_annotation):
 
     OUTPUT_PATH = FILES_LOC['annotation_wikidata']
 
+    # Local API endpoint
     ENTITY_FISHING_ENDPOINT = 'http://localhost:8090/service/disambiguate'
+    # External API endpoint
     #ENTITY_FISHING_ENDPOINT = 'https://cloud.science-miner.com/nerd/service/disambiguate'
     
     REMOVE_GLOBAL_CATEGORIES = True
@@ -578,23 +490,16 @@ class cfg_annotation_geonames(cfg_annotation):
   
     
     ENTITY_FISHING_ENDPOINTS = {
+        # local API endpoints   
         'disambiguation' : 'http://localhost:8090/service/disambiguate',
         'concept_lookup': 'http://localhost:8090/service/kb/concept'}
+        # external API endpoints
         #'disambiguation' : 'https://cloud.science-miner.com/nerd//service/disambiguate/',
         #'concept_lookup': 'https://cloud.science-miner.com/nerd//service/kb/concept/',}
 
     USE_CACHE = True
-    
 
-# class cfg_annotation_agrovoc(cfg_annotation): 
-#     FILES_LOC = cfg_pipeline.FILES_LOC    
 
-#     OUTPUT_PATH = FILES_LOC['annotation_agrovoc']
-    
-#     PYCLINREC_ENDPOINT = 'http://localhost:5000/annotate'
-    
-#     PYCLINREC_CONFIDENCE= 0.15
-    
 class cfg_overlap_detection(cfg_pipeline): #cfg_pipeline
     FILES_LOC = cfg_pipeline.FILES_LOC    
 
@@ -616,20 +521,9 @@ class cfg_overlap_detection(cfg_pipeline): #cfg_pipeline
                                                'abstract':  (['abstract', 'Resources'],  'surfaceForm', 'offset' , 'similarityScore', 'length'  ),
                                                'body_text': (['body_text' ,'Resources'], 'surfaceForm', 'offset' , 'similarityScore', 'length'  )},
                              },
-                # 'agrovoc' : {   'INPUT_PATH' : FILES_LOC['annotation_agrovoc'],
-                #                 'OUTPUT_PATH' : FILES_LOC['annotation_agrovoc'],
-                #                 'JSON_MAP' :  { 'title':     (['title', 'concepts'] ,    'matched_text', 'start' , 'confidence_score', 'length'  ),
-                #                                 'abstract':  (['abstract', 'concepts'],  'matched_text', 'start' , 'confidence_score', 'length'  ),
-                #                                 'body_text': (['body_text' ,'concepts'], 'matched_text', 'start' , 'confidence_score', 'length'  )}
-                #    }
     }
 
     ASYNCH_PROCESSING = True
     ASYNCH_MAX_WORKERS = 10
 
     REMOVE_OVERLAPS = False
-
-
-    
-
-    

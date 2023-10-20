@@ -6,8 +6,8 @@
 
 # ISSA dataset nomenclature
 ISSA_INSTANCE=hal
-ISSA_VERSION=1.3                            		# version with dots 
-ISSA_VERSION_DASH=1-3                       		# version with dashes
+ISSA_VERSION=2.0                            		# version with dots 
+ISSA_VERSION_DASH=2-0                       		# version with dashes
 ISSA_NAMESPACE=http://data-issa.dhm.euromov.fr/ 	# instance namespace
 ISSA_DATASET_NAME=issa-hal-euromov-dhm      		# this dataset name is used in the RDF dataset definition 
 
@@ -22,7 +22,7 @@ export ISSA_PIPELINE_CONFIG=$ISSA_ROOT/config/$ISSA_INSTANCE
 export ISSA_PIPELINE_LOG=$ISSA_ROOT/pipeline/logs/$ISSA_INSTANCE 
 
 # Python virtual environment name and location
-export ISSA_VENV=~/ISSA/environment/python/issa_venv
+export ISSA_VENV=~/ISSA-2/environment/python/issa_venv
 
 ###############################################################################
 #                              DATA LOCATION
@@ -45,15 +45,13 @@ export REL_SPOTLIGHT=annotation/dbpedia	     # DBpedia Spotlight annotations
 export REL_EF=annotation/wikidata            # Entity-Fishing annotations 
 export REL_GEONAMES=annotation/geonames	     # GeoNames annotations
 export REL_PYCLINREC=annotation/agrovoc      # Agrovoc annotations (use case specific vocabulary) 
-export REL_ANNIF=indexing				# Relative directory of Annif output
 export REL_RDF=rdf						# Relative directory of RDF output
 
 # - dirs used for intermediate and debug files 
-export REL_ANNIF_LABELS=labels			# label tsv files for Annif training
-export REL_ANNIF_TEXT=txt				# text files that can be used for ANNIF training
 export REL_PDF=pdf						# document pdfs
-export REL_GROBID_XML=xml				# Grobid extracted data (xml)
-export REL_META_JSON=json/metadata		     # text contained in metadata formatted as json 
+export REL_GROBID_TXT                    # Grobid extracted data (txt) optional
+export REL_GROBID_XML=xml				# Grobid extracted data (xml) optional
+export REL_META_JSON=json/metadata		# text contained in metadata formatted as json 
 export REL_GROBID_JSON=json/fulltext	     # text extracted by Grobid formatted as json
 export REL_COAL_JSON=json/coalesced		# json coalesced from the two above with metadata replacing Grobit when present 
 
@@ -113,20 +111,14 @@ VIRTUOSO_HOST_SCRIPT_DIR=$ISSA_SRC_ROOT/virtuoso # map host script dir
 VIRTUOSO_CONT_SCRIPT_DIR=/issa/script            # to the container's FS to access scripts that have to be executed in the container 
 VIRTUOSO_CONT_DATA_IMPORT_DIR=$VIRTUOSO_CONT_DATA_DIR/$ISSA_DATASET/$LATEST_UPDATE/$REL_RDF # path to the latest files to import 
 
-
-#TODO:rename VIRTUOSO_IMP_DIR to VIRTUOSO_IMPORT_DIR 
-# and VIRTUOSO_IMPORT_DIR to VIRTUOSO_CONT_DATA_IMPORT_DIR
-# and remove duplicates
-
-
 # DBPedia-Spotlight (docker container)
 SPOTLIGHT_CONT_NAME=dbpedia-spotlight                # docker container name
-SPOTLIGHT_MODELS_DIR=~/ISSA/volumes/spotlight/models # map to /opt/spotlight/models in the container FS for data persistency
+SPOTLIGHT_MODELS_DIR=$ISSA_ROOT/volumes/spotlight/models # map to /opt/spotlight/models in the container FS for data persistency
 SPOTLIGHT_LANGUAGES=en\ fr                           # list of available language models
 
 # Wikidata Entity-Fishing (docker container)
 EF_CONT_NAME=entity-fishing                          # docker container name
-EF_MODELS_DIR=~/ISSA/volumes/entity-fishing/models   # map to /opt/entity-fishing/data/db in the container FS for data persistency
+EF_MODELS_DIR=$ISSA_ROOT/volumes/entity-fishing/models   # map to /opt/entity-fishing/data/db in the container FS for data persistency
 EF_LANGUAGES=en\ fr                                  # list of available language models
 
 
@@ -136,25 +128,25 @@ EF_LANGUAGES=en\ fr                                  # list of available languag
 
 # GeoNames dump
 GEONAMES_DUMP_URL=https://download.geonames.org/all-geonames-rdf.zip # URL for Geonames RDF data dump
-GEONAMES_GRAPH=http://geonames.org/graph             # graph name for GeoNames triples
-GEONAMES_IMPORT_DIR=$VIRTUOSO_DATABASE_DIR/import    # copy Geonames RDF dump and import scripts to this dir for upload 
+GEONAMES_GRAPH=http://geonames.org/graph         # graph name for GeoNames triples
+GEONAMES_IMPORT_DIR=$VIRTUOSO_IMPORT_DIR         # copy Geonames RDF dump and import scripts to this dir for upload 
 
 # Wikidata labels and hierarchies dump
-WIKIDATA_IMPORT_DIR=$VIRTUOSO_DATABASE_DIR/import    # copy wikidata RDF dump and import scripts to this dir for upload 
+WIKIDATA_IMPORT_DIR=$VIRTUOSO_IMPORT_DIR         # copy wikidata RDF dump and import scripts to this dir for upload 
 
 # DBpedia labels and hierarchies dump
-DBPEDIA_IMPORT_DIR=$VIRTUOSO_DATABASE_DIR/import     # copy DBpedia RDF dump and import scripts to this dir for upload 
+DBPEDIA_IMPORT_DIR=$VIRTUOSO_IMPORT_DIR           # copy DBpedia RDF dump and import scripts to this dir for upload 
 
 ###############################################################################
 #                              ENVIRONMENT - INSTANCE SPECIFIC DATASETS
 ###############################################################################
 
 # HAL domains thesaurus dump
-HAL_DOMAINS_IMPORT_DIR=$VIRTUOSO_DATABASE_DIR/import    # copy HAL Domains RDF dump and import scripts to this dir for upload
+HAL_DOMAINS_IMPORT_DIR=$VIRTUOSO_IMPORT_DIR      # copy HAL Domains RDF dump and import scripts to this dir for upload
 HAL_DOMAINS_GRAPH_NAME=http://data.archives-ouvertes.fr/subject/graph 
 
 # MESH descriptors thesaurus dump
 MESH_URL=https://nlmpubs.nlm.nih.gov/projects/mesh/rdf/2022/mesh2022.nt.gz # URL for MESH RDF data dump
 MESH_GRAPH_NAME=http://id.nlm.nih.gov/mesh/graph
-MESH_IMPORT_DIR=$VIRTUOSO_DATABASE_DIR/import    # copy MESH  RDF dump and import scripts to this dir for upload 
+MESH_IMPORT_DIR=$VIRTUOSO_IMPORT_DIR             # copy MESH  RDF dump and import scripts to this dir for upload 
 

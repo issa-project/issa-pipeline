@@ -4,7 +4,7 @@
 # Licensed under the Apache License, Version 2.0 (http://www.apache.org/licenses/LICENSE-2.0)
 # Integration of ISSA pipeline steps 
 
-export PIPELINE_INSTANCE=$1
+export ISSA_INSTANCE=$1
 
 # ISSA environment definitions
 . ../env.sh

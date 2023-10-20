@@ -6,8 +6,8 @@
 
 # ISSA dataset nomenclature
 ISSA_INSTANCE=agritrop
-ISSA_VERSION=1.3                            		# version with dots 
-ISSA_VERSION_DASH=1-3                       		# version with dashes
+ISSA_VERSION=2.0                            		# version with dots 
+ISSA_VERSION_DASH=2-0                       		# version with dashes
 ISSA_NAMESPACE=http://data-issa.cirad.fr/         # instance namespace
 ISSA_DATASET_NAME=issa-agritrop            		# this dataset name is used in the RDF dataset definition 
 
@@ -98,13 +98,13 @@ export MORPH_XR2RML_CONT_TEMPL_DIR=/issa/template
 
 
 # Virtuoso (docker container)
-VIRTUOSO_CONT_NAME=virtuoso-$ISSA_INSTANCE             # docker container name 
-VIRTUOSO_HOST_ISQL_PORT=1113                     # local port for internal access to Virtuoso (1111 port)
-VIRTUOSO_HOST_HTTP_PORT=8892				   # local port for http access to Virtuoso (8890 port)
-VIRTUOSO_HOST_HTTPS_PORT=4445                    # local port for https access to Virtuoso (4443 port)
+VIRTUOSO_CONT_NAME=virtuoso-$ISSA_INSTANCE       # docker container name 
+VIRTUOSO_HOST_ISQL_PORT=1111                     # local port for internal access to Virtuoso (1111 port)
+VIRTUOSO_HOST_HTTP_PORT=8890				    # local port for http access to Virtuoso (8890 port)
+VIRTUOSO_HOST_HTTPS_PORT=4443                    # local port for https access to Virtuoso (4443 port)
 VIRTUOSO_DATABASE_DIR=$ISSA_ROOT/volumes/virtuoso-$ISSA_INSTANCE/database    # map to /database in the container FS for data persistency  
-VIRTUOSO_IMPORT_DIR=$VIRTUOSO_DATABASE_DIR/import   # general purpose import dir is used for importing external datasets
-VIRTUOSO_DEAFAULT_GRAPH=$ISSA_NAMESPACE/graph   # default graph name
+VIRTUOSO_IMPORT_DIR=$VIRTUOSO_DATABASE_DIR/import # general purpose import dir is used for importing external datasets
+VIRTUOSO_DEAFAULT_GRAPH=$ISSA_NAMESPACE/graph    # default graph name
 VIRTUOSO_HOST_DATA_DIR=$ISSA_DATA_ROOT           # map host data dir
 
 # IMPORTANT: VIRTUOSO_CONT_DATA_DIR has to be added to DirsAllowed in virtuoso.ini
@@ -116,18 +116,18 @@ VIRTUOSO_CONT_DATA_IMPORT_DIR=$VIRTUOSO_CONT_DATA_DIR/$ISSA_DATASET/$LATEST_UPDA
 
 # DBPedia-Spotlight (docker container)
 SPOTLIGHT_CONT_NAME=dbpedia-spotlight                # docker container name
-SPOTLIGHT_MODELS_DIR=~/ISSA/volumes/spotlight/models # map to /opt/spotlight/models in the container FS for data persistency
+SPOTLIGHT_MODELS_DIR=$ISSA_ROOT/volumes/spotlight/models # map to /opt/spotlight/models in the container FS for data persistency
 SPOTLIGHT_LANGUAGES=en\ fr                           # list of available language models
 
 # Wikidata Entity-Fishing (docker container)
 EF_CONT_NAME=entity-fishing                          # docker container name
-EF_MODELS_DIR=~/ISSA/volumes/entity-fishing/models   # map to /opt/entity-fishing/data/db in the container FS for data persistency
+EF_MODELS_DIR=$ISSA_ROOT/volumes/entity-fishing/models   # map to /opt/entity-fishing/data/db in the container FS for data persistency
 EF_LANGUAGES=en\ fr                                  # list of available language models
 
 
 # Annif (docker container)
-ANNIF_CONT_NAME=annif-1                            # docker container name
-ANNIF_PROJECTS_DIR=~/ISSA/volumes/annif-projects # map to /annif-projects in the container FS for data persistency
+ANNIF_CONT_NAME=annif-2                          # docker container name
+ANNIF_PROJECTS_DIR=$ISSA_ROOT/volumes/$ANNIF_CONT_NAME/annif-projects # map to /annif-projects in the container FS for data persistency
 ANNIF_HOST_DATA_DIR=$ISSA_ROOT/data              # map host data dir
 ANNIF_CONT_DATA_DIR=/issa/data                   # to the container's FS to access data on the host.
 ANNIF_TRAINING_DIR=$ISSA_DATA_ROOT/training      # dir for Annif training data
@@ -142,7 +142,7 @@ ANNIF_LANGUAGES=en\ fr                           # list of languages to process
 PYCLINREC_CONT_NAME=agrovoc-pyclinrec                        # docker container name
 PYCLINREC_DICT_ENDPOINT=https://data-issa.cirad.fr/sparql    # endpoint to SKOS vocabulary to create concept dictionary
 PYCLINREC_DICT_GRAPH=http://agrovoc.fao.org/graph            # endpoint graph name to restrict a vocabulary
-PYCLINREC_HOST_CACHE=~/ISSA/volumes/agrovoc-pyclinrec/cache  # map to /app/cache dit on the container FS for dictionaries and recognizer objects persistency
+PYCLINREC_HOST_CACHE=$ISSA_ROOT/volumes/agrovoc-pyclinrec/cache  # map to /app/cache dit on the container FS for dictionaries and recognizer objects persistency
 
 ###############################################################################
 #                              ENVIRONMENT - EXTERNAL DATASETS IMPORT
@@ -150,14 +150,14 @@ PYCLINREC_HOST_CACHE=~/ISSA/volumes/agrovoc-pyclinrec/cache  # map to /app/cache
 
 # GeoNames dump
 GEONAMES_DUMP_URL=https://download.geonames.org/all-geonames-rdf.zip # URL for Geonames RDF data dump
-GEONAMES_GRAPH=http://geonames.org/graph             # graph name for GeoNames triples
-GEONAMES_IMPORT_DIR=$VIRTUOSO_DATABASE_DIR/import    # copy Geonames RDF dump and import scripts to this dir for upload 
+GEONAMES_GRAPH=http://geonames.org/graph         # graph name for GeoNames triples
+GEONAMES_IMPORT_DIR=$VIRTUOSO_IMPORT_DIR         # copy Geonames RDF dump and import scripts to this dir for upload 
 
 # Wikidata labels and hierarchies dump
-WIKIDATA_IMPORT_DIR=$VIRTUOSO_DATABASE_DIR/import    # copy wikidata RDF dump and import scripts to this dir for upload 
+WIKIDATA_IMPORT_DIR=$VIRTUOSO_IMPORT_DIR         # copy wikidata RDF dump and import scripts to this dir for upload 
 
 # DBpedia labels and hierarchies dump
-DBPEDIA_IMPORT_DIR=$VIRTUOSO_DATABASE_DIR/import     # copy DBpedia RDF dump and import scripts to this dir for upload 
+DBPEDIA_IMPORT_DIR=$VIRTUOSO_IMPORT_DIR          # copy DBpedia RDF dump and import scripts to this dir for upload 
 
 ###############################################################################
 #                              ENVIRONMENT - INSTANCE SPECIFIC DATASETS
@@ -166,11 +166,11 @@ DBPEDIA_IMPORT_DIR=$VIRTUOSO_DATABASE_DIR/import     # copy DBpedia RDF dump and
 # Agrovoc dump
 AGROVOC_URL=https://agrovoc.fao.org/latestAgrovoc/agrovoc_core.nt.zip # URL for Agrovoc RDF data dump
 AGROVOC_GRAPH=http://agrovoc.fao.org/graph 		   # graph name for Agrovoc triples
-AGROVOC_IMPORT_DIR=$VIRTUOSO_DATABASE_DIR/import     # copy Agrovoc RDF dump and import scripts to this dir for upload
+AGROVOC_IMPORT_DIR=$VIRTUOSO_IMPORT_DIR          # copy Agrovoc RDF dump and import scripts to this dir for upload
 
 # AgrIST thesaurus
 AGRIST_GRAPH=http://dist.cirad.fr/agrist-thema/graph  # graph name for AgrIST triples
-AGRIST_IMPORT_DIR=$VIRTUOSO_DATABASE_DIR/import       # copy AgrIST RDF and import scripts to this dir for upload 
+AGRIST_IMPORT_DIR=$VIRTUOSO_IMPORT_DIR           # copy AgrIST RDF and import scripts to this dir for upload 
 
 
 

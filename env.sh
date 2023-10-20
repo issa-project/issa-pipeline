@@ -6,7 +6,7 @@
 # ISSA environment definitions
 #. /home/issa/ISSA-2/HAL-EuroMov-DHM/config/hal/env.sh
 
-if [[ $PIPELINE_INSTANCE == "hal" ]] ; then 
+if [[ $ISSA_INSTANCE == "hal" ]] ; then 
 
 	. ~/ISSA-2/config/hal/env.sh
 
