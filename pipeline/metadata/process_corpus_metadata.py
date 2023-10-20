@@ -84,7 +84,7 @@ def to_upper(x:Union[str, list])->Union[str, list]:
         return [_x.upper() for _x in x]
     return x 
 
-def extract_string(x:Union[str, list], regex:str, group=0, default=np.NaN)->Union[str, list]:  
+def extract_string(x:Union[str, list], regex:str, group=0, default='')->Union[str, list]:  
     """ 
     Extract a string from a larger string or a list of strings using a regular expression pattern.
 
@@ -92,11 +92,11 @@ def extract_string(x:Union[str, list], regex:str, group=0, default=np.NaN)->Unio
         x: string or list of strings
         regex: regular expression pattern to match 
         group: group number to return (default: 0) 
-        default: default value if no match is found (default: np.NaN)
+        default: default value if no match is found (default: empty string)
 
     Returns:
         string  or list of strings
-    """  
+    """ 
     def _extract_string(x:str, regex:str, group:int, default)->str:
         match = re.search(regex,  str(x))
         return match.group(group) if match else default
@@ -104,7 +104,8 @@ def extract_string(x:Union[str, list], regex:str, group=0, default=np.NaN)->Unio
     if isinstance(x, str): 
         return _extract_string(x, regex, group, default)
     elif isinstance(x, list):
-        return [_extract_string(_x, regex, group, default) for _x in x]
+        return [_xx for _xx in [_extract_string(_x, regex, group, default) for _x in x] if _xx != default]
+        #return [_extract_string(_x, regex, group, default) for _x in x] 
     return x 
 
 def map_to_value(x:Union[str, list], map:dict , default=None)->Union[str, list]: 
@@ -247,8 +248,9 @@ def remove_from_list(dl:list, pattern:str)->list:
     Returns:
         list of strings
     """
+
     if isinstance(dl, list):
-        return list(filter(lambda x: not re.search(pattern, x)  , dl))
+        return list(filter(lambda x: x and not re.search(pattern, x)  , dl))
     return dl
 
 def keep_in_list(dl:list, pattern:str)->list:
@@ -263,7 +265,7 @@ def keep_in_list(dl:list, pattern:str)->list:
         list of strings
     """
     if isinstance(dl, list):
-        return list(filter(lambda x: re.search(pattern, x)  , dl))
+        return list(filter(lambda x: x and re.search(pattern, x)  , dl))
     return dl
 
 
