@@ -159,6 +159,20 @@ class cfg_process_corpus_metadata(cfg_pipeline):
     DOMAIN_CODE_REGEX = r'^[A-Z]\d{2}\b'
     DOMAIN_NAMESPACE = 'https://data.archives-ouvertes.fr/subject/' 
 
+    LANG_MAP = {'fr': 'fre',
+            'en': 'eng',
+            'es': 'spa',
+            'pt': 'por',
+            'de': 'ger',
+            'ar': 'ara',
+            'nl': 'dut',
+            'id': 'ind',
+            'lo': 'lao',
+            'mg': 'mlg',
+            'th': 'tha',
+            'vi': 'vie',
+            'default': 'eng'}
+
     BEFORE_COMMA_REGEX = r'[^\r\n,]+'
     TIDY_TEXT_REGEX = r'^\s+|\t|\n|\r|\s+$'
     DOUBLE_QUOTES_REGEX = r'"' #  r'"{2,}'
@@ -222,6 +236,8 @@ class cfg_process_corpus_metadata(cfg_pipeline):
 
                             'year'    : [('extract_string', (YEAR_REGEX,)   ),
                                          ('ffill', {'downcast':'infer'}, )], 
+
+                            'language': ('map_to_value', (LANG_MAP, LANG_MAP['default'] ), 'language_bib'), 
 
                             'types'    : ('take_at', (1,), 'type'),
                             'type'     : [('extract_string', (BEFORE_COMMA_REGEX,) ),
