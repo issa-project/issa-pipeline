@@ -1,0 +1,307 @@
+@prefix agrist-disciplines: <https://agrist.cirad.fr/agrist-disciplines/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+agrist-disciplines: a skos:ConceptScheme ;
+    dc:title "Référentiel disciplinaire du Cirad"@fr ;
+    dct:accessRights <http://purl.org/eprint/accessRights/OpenAccess> ;
+    dct:contributor <https://ror.org/02kvxyf05> ;
+    dct:created "2005"^^xsd:gYear ;
+    dct:creator <https://ror.org/05kpkpg04> ;
+    dct:description "Le référentiel scientifique du Cirad (Centre de coopération internationale en recherche agronomique pour le développement) a été élaboré en 2005 pour caractériser les domaines, les champs disciplinaires et les spécialités des personnels scientifiques du Cirad"@fr ;
+    dct:identifier <https://doi.org/10.18167/DVN1/JWPHJZ> ;
+    dct:isssued "2005"^^xsd:gYear ;
+    dct:license <https://creativecommons.org/licenses/by-nc/4.0/> ;
+    dct:modified "2023-11-07"^^xsd:date ;
+    dct:publisher <https://ror.org/02kvxyf05>,
+        <https://ror.org/05kpkpg04> ;
+    void:uriSpace agrist-disciplines: ;
+    rdfs:comment "Plan de classement AgrIST-Disciplines - Version du 23 octobre 2023"@fr ;
+    dcat:version "2023.10.23" ;
+    foaf:mbox <mailto:dist-com@cirad.fr> .
+
+agrist-disciplines:1-SVE a skos:Concept ;
+    skos:prefLabel "Sciences du Vivant et de l’Environnement"@fr ;
+    skos:topConceptOf agrist-disciplines: .
+	
+agrist-disciplines:2-ST a skos:Concept ;
+    skos:prefLabel "Sciences et Technologies"@fr ;
+    skos:topConceptOf agrist-disciplines: .
+
+agrist-disciplines:3-SHS a skos:Concept ;
+    skos:prefLabel "Sciences Humaines et Sociales"@fr ;
+    skos:topConceptOf agrist-disciplines: .
+
+agrist-disciplines:11 a skos:Concept ;
+    skos:broader agrist-disciplines:1-SVE ;
+    skos:prefLabel "Sciences biologiques"@fr .
+
+agrist-disciplines:12 a skos:Concept ;
+    skos:broader agrist-disciplines:1-SVE ;
+    skos:prefLabel "Sciences écologiques"@fr .
+
+agrist-disciplines:13 a skos:Concept ;
+    skos:broader agrist-disciplines:1-SVE ;
+    skos:prefLabel "Sciences de la santé"@fr .
+
+agrist-disciplines:14 a skos:Concept ;
+    skos:broader agrist-disciplines:1-SVE ;
+    skos:prefLabel "Sciences agronomiques"@fr .
+
+agrist-disciplines:15 a skos:Concept ;
+    skos:broader agrist-disciplines:1-SVE ;
+    skos:prefLabel "Sciences de l'environnement"@fr .
+
+agrist-disciplines:21 a skos:Concept ;
+    skos:broader agrist-disciplines:2-ST ;
+    skos:prefLabel "Mathématiques appliquées"@fr .
+
+agrist-disciplines:22 a skos:Concept ;
+    skos:broader agrist-disciplines:2-ST ;
+    skos:prefLabel "Sciences et technologies de l'information"@fr .
+
+agrist-disciplines:23 a skos:Concept ;
+    skos:broader agrist-disciplines:2-ST ;
+    skos:prefLabel "Physique"@fr .
+
+agrist-disciplines:24 a skos:Concept ;
+    skos:broader agrist-disciplines:2-ST ;
+    skos:prefLabel "Chimie"@fr .
+
+agrist-disciplines:31 a skos:Concept ;
+    skos:broader agrist-disciplines:3-SHS ;
+    skos:prefLabel "Sciences économiques et de gestion"@fr .
+
+agrist-disciplines:32 a skos:Concept ;
+    skos:broader agrist-disciplines:3-SHS ;
+    skos:prefLabel "Sciences politiques et juridiques"@fr .
+
+agrist-disciplines:33 a skos:Concept ;
+    skos:broader agrist-disciplines:3-SHS ;
+    skos:prefLabel "Sciences des comportements sociaux"@fr .
+
+agrist-disciplines:34 a skos:Concept ;
+    skos:broader agrist-disciplines:3-SHS ;
+    skos:prefLabel "Espaces et sociétés"@fr .
+
+agrist-disciplines:111 a skos:Concept ;
+    skos:broader agrist-disciplines:11 ;
+    skos:prefLabel "Génomique et 'autres omiques'"@fr ;
+    skos:scopeNote "Génomique structurale et fonctionnelle; Génomique comparative; Transcriptomique; Métabolomique; Protéomique; Génétique des populations; Diversité et phylogénétique, Procédomique (transformation des aliments), ..."@fr .
+
+agrist-disciplines:112 a skos:Concept ;
+    skos:broader agrist-disciplines:11 ;
+    skos:prefLabel "Génétique et sélection"@fr ;
+    skos:scopeNote "Génétique d’association et cartographie; Cytogénétique; Epigénétique; Génétique quantitative; Outils de la sélection; Ressources génétiques"@fr .
+
+agrist-disciplines:113 a skos:Concept ;
+    skos:broader agrist-disciplines:11 ;
+    skos:prefLabel "Biologie du développement"@fr ;
+    skos:scopeNote "Biologie cellulaire et organogénèse végétale; Biologie de la reproduction (végétal); Développement, croissance et architecture (végétal)"@fr .
+
+agrist-disciplines:114 a skos:Concept ;
+    skos:broader agrist-disciplines:11 ;
+    skos:prefLabel "Physiologie"@fr ;
+    skos:scopeNote "Ecophysiologie végétale; Interactions génome * environnement (végétal); Physiologie moléculaire; Ecophysiologie animale"@fr .
+
+agrist-disciplines:115 a skos:Concept ;
+    skos:broader agrist-disciplines:11 ;
+    skos:prefLabel "Botanique"@fr ;
+    skos:scopeNote "Systématique, taxonomie, biogéographie"@fr .
+
+agrist-disciplines:116 a skos:Concept ;
+    skos:broader agrist-disciplines:11 ;
+    skos:prefLabel "Microbiologie"@fr ;
+    skos:scopeNote "Microbiologie alimentaire: i) 'négative': flore microbienne de dégradation des aliments (incluant pathogènes), ii) 'positive': flore de fermentation / préservation des aliments. Ecologie microbienne: interactions entre les micro-organismes et l'écosystème les environnant. Utilisations en agroalimentaire (pour déterminer l'origine géographique d'un produit par exemple et assurer sa traçabilité) et en agriculture/sciences du sol (rhizobia, fertilité du sol) (travaux Eco&Sols, LSTM)."@fr .
+
+agrist-disciplines:121 a skos:Concept ;
+    skos:broader agrist-disciplines:12 ;
+    skos:prefLabel "Ecologie des populations"@fr ;
+    skos:scopeNote "Diversité et structure des peuplements et paysages; Dynamique spatiale des peuplements"@fr .
+
+agrist-disciplines:122 a skos:Concept ;
+    skos:broader agrist-disciplines:12 ;
+    skos:prefLabel "Ecologie des communautés"@fr ;
+    skos:scopeNote "Biologie et diversité des communautés; Perturbations-successions-invasions; Ecologie du paysage"@fr .
+
+agrist-disciplines:123 a skos:Concept ;
+    skos:broader agrist-disciplines:12 ;
+    skos:prefLabel "Ecologie fonctionnelle"@fr ;
+    skos:scopeNote "Biologie des sols; Diversité microbienne et floristiques; Fonctionnement des systèmes symbiotiques"@fr .
+
+agrist-disciplines:131 a skos:Concept ;
+    skos:broader agrist-disciplines:13 ;
+    skos:prefLabel "Pathologie animale"@fr ;
+    skos:scopeNote "Virologie, bactériologie, mycoplasme,  …:  Caractérisation des agents pathogènes; Génétique des populations; Interactions hôtes-pathogènes; Immunologie et vaccinologie"@fr .
+
+agrist-disciplines:132 a skos:Concept ;
+    skos:broader agrist-disciplines:13 ;
+    skos:prefLabel "Pathologie végétale"@fr ;
+    skos:scopeNote "Mycologie, bactériologie, virologie, …: Caractérisation et diversité des agents pathogènes; Génétique des populations; Interactions hôte-pathogène; Caractérisation des résistances génétiques"@fr .
+
+agrist-disciplines:133 a skos:Concept ;
+    skos:broader agrist-disciplines:13 ;
+    skos:prefLabel "Entomologie agricole et vétérinaire"@fr ;
+    skos:scopeNote "Caractérisation, taxonomie des bioagresseurs, auxiliaires et insectes vecteurs; Génétique des populations; Bioécologie et dynamique des populations; Interactions hôtes-bioagresseurs-auxiliaires; Biologie du comportement, éthologie; Ecologie chimique; Biologie de la vection"@fr .
+
+agrist-disciplines:134 a skos:Concept ;
+    skos:broader agrist-disciplines:13 ;
+    skos:prefLabel "Epidémiologie"@fr ;
+    skos:scopeNote "Epidémiologie végétale; Epidémiologie animale; Epidémiologie moléculaire; Epidémiologie quantitative; Eco-épidémiologie;  Epidémiologie environnementale"@fr .
+
+agrist-disciplines:141 a skos:Concept ;
+    skos:broader agrist-disciplines:14 ;
+    skos:prefLabel "Agronomie"@fr ;
+    skos:scopeNote "Agrophysiologie; Approche systémique; Approche globale de l'exploitation agricole; Bioclimatologie; Itinéraires techniques et systèmes de cultures; Agronomie globale"@fr .
+
+agrist-disciplines:142 a skos:Concept ;
+    skos:broader agrist-disciplines:14 ;
+    skos:prefLabel "Zootechnie"@fr ;
+    skos:scopeNote "Systèmes d'élevage; Aquaculture; Nutrition animale, itinéraires techniques, gestion du troupeau, physio animale"@fr .
+
+agrist-disciplines:143 a skos:Concept ;
+    skos:broader agrist-disciplines:14 ;
+    skos:prefLabel "Foresterie"@fr ;
+    skos:scopeNote "Sciences forestières, Fonctionnement des écosystèmes forestiers, modélisation d'arbre et de peuplement, gestion forestière"@fr .
+
+agrist-disciplines:151 a skos:Concept ;
+    skos:broader agrist-disciplines:15 ;
+    skos:prefLabel "Sciences de l'eau"@fr ;
+    skos:scopeNote "Hydrologie et hydrosystèmes, eau et agriculture, qualité de l'eau,"@fr .
+
+agrist-disciplines:152 a skos:Concept ;
+    skos:broader agrist-disciplines:15 ;
+    skos:prefLabel "Sciences du sol"@fr ;
+    skos:scopeNote "Pédologie ; Morphopédologie ; géochimie ; biogéochimie ; chimie et physique du sol ; fertilisation et fertilité  ; gestion des matières organiques et du statut organique du sol"@fr .
+
+agrist-disciplines:153 a skos:Concept ;
+    skos:broader agrist-disciplines:15 ;
+    skos:prefLabel "Ecotoxicologie"@fr ;
+    skos:scopeNote "Effet des substances toxiques sur les communautés vivantes ; mécanismes cellulaires et moléculaires de la toxicité ; devenir des toxiques dans l'environnement ; métrique des toxiques ; évaluation des risques"@fr .
+
+agrist-disciplines:211 a skos:Concept ;
+    skos:broader agrist-disciplines:21 ;
+    skos:prefLabel "Statistiques et probabilités"@fr ;
+    skos:scopeNote "Analyse de données,  analyse multivariée, inférence, estimateurs, sélection de modèles; Lois de probabilités; Chaines de markov discrètes et continues; Modélisation probabiliste; Approche bayésienne,…"@fr .
+
+agrist-disciplines:212 a skos:Concept ;
+    skos:broader agrist-disciplines:21 ;
+    skos:prefLabel "Modélisation mathématique de systèmes complexes"@fr ;
+    skos:scopeNote "Description de systèmes complexes à l’aide de formalisme déterministe, stochastique… via, par exemple des (in)équations aux différences,  différentielles (stochastiques), aux dérivées partielles (stochastiques), Analyses mathématiques; Eco-informatique; Systèmes  multi-agents et automates spatialisés; Approches multi-échelles, multi-modélisation"@fr .
+
+agrist-disciplines:213 a skos:Concept ;
+    skos:broader agrist-disciplines:21 ;
+    skos:prefLabel "Calcul scientifique et simulation"@fr ;
+    skos:scopeNote "Méthodes numériques (éléments finis, volumes finis; Méthodes spectrales,…); Méthodes inverses; Implémentation des algorithmes; Calcul parallèle; Développement de codes."@fr .
+
+agrist-disciplines:221 a skos:Concept ;
+    skos:broader agrist-disciplines:22 ;
+    skos:prefLabel "Informatique et ingénierie logicielle"@fr ;
+    skos:scopeNote "Plateformes logicielles; Simulateurs"@fr .
+
+agrist-disciplines:222 a skos:Concept ;
+    skos:broader agrist-disciplines:22 ;
+    skos:prefLabel "Bio-informatique"@fr ;
+    skos:scopeNote "Recherches méthodologiques et algorithmiques dans le domaine de l’analyse bioinformatique des séquences génomiques; Traitement et analyse haut débit de séquences; Développement de nouveaux standards pour la description des données génétiques; Exploitation statistique et modélisation des réactions biologiques et biochimiques (en termes de cinétique de réaction et de transformation de composés constitutifs)"@fr .
+
+agrist-disciplines:223 a skos:Concept ;
+    skos:broader agrist-disciplines:22 ;
+    skos:prefLabel "Ontologie et gestion des connaissances connaissances"@fr ;
+    skos:scopeNote "Ontologie informatique, dynamique des connaissances, 'knowledge management', sciences cognitives"@fr .
+
+agrist-disciplines:224 a skos:Concept ;
+    skos:broader agrist-disciplines:22 ;
+    skos:prefLabel "Systèmes d'information"@fr ;
+    skos:scopeNote "Développement de base d'image, de base de portrait robot; Plateformes multimédi; cours numériques; Films pédagogiques"@fr .
+
+agrist-disciplines:225 a skos:Concept ;
+    skos:broader agrist-disciplines:22 ;
+    skos:prefLabel "Géomatique"@fr ;
+    skos:scopeNote "Télédétection et analyse spatiale, modélisation spatiale, systèmes d'information géographiques"@fr .
+
+agrist-disciplines:231 a skos:Concept ;
+    skos:broader agrist-disciplines:23 ;
+    skos:prefLabel "Génie des procédés"@fr ;
+    skos:scopeNote "Opérations unitaires de transformation des aliments (séchage, salage, fermentation, déshydratation, fractionnement, maltage, filtration tangentielle) ou de la biomasse (déconstruction mécanique, usinage, torréfaction, carbonisation, combustion, pyrolyse, catalyseurs, séparation, extraction, etc.); transferts de chaleur, de matière, de quantité de mouvement et mécanismes réactionnels."@fr .
+
+agrist-disciplines:232 a skos:Concept ;
+    skos:broader agrist-disciplines:23 ;
+    skos:prefLabel "Instrumentation"@fr ;
+    skos:scopeNote "Capteurs utilisés dans les opérations relevant du génie des procédés (température, humidité, vitesse, pression, efforts et puissances de coupe, émissions sonorers, émissions acoustiques, vibrations) ou du génie fermentaire (pH, aération, etc.); instrumentation d'équipements pour la transformation des aliments (séchage, fumage) et pour la mesure des propriétés des matériaux (bois, coton, hévéa)."@fr .
+
+agrist-disciplines:233 a skos:Concept ;
+    skos:broader agrist-disciplines:23 ;
+    skos:prefLabel "Traitement du signal"@fr ;
+    skos:scopeNote "Exploitation des mesures obtenues à travers l'instrumentation ; traitement des données spectrales (NIRS par exemple), des données issues d'analyses chromatographiques et de calorimétrie différentielle et des données rhéologiques (mesure de la texture de produits alimentaires ou non alimentaires), nez électronique."@fr .
+
+agrist-disciplines:234 a skos:Concept ;
+    skos:broader agrist-disciplines:23 ;
+    skos:prefLabel "Physique des matériaux"@fr ;
+    skos:scopeNote "Etude des propriétés structurales et fonctionnelles des matériaux alimentaires et non alimentaires (microstructure, résistances mécaniques, rétractabilité, viscosité, dureté, friction, cisaillement, rhéologie et texture, élaboration de biocomposites, aptitude à la transformation, etc.)"@fr .
+
+agrist-disciplines:241 a skos:Concept ;
+    skos:broader agrist-disciplines:24 ;
+    skos:prefLabel "Chimie analytique"@fr ;
+    skos:scopeNote "Développement de méthodes analytiques diverses pour la détermination de molécules ou de composés constitutifs des matières premières ou issus de leurs transformations alimentaires ou non alimentaires (composés aromatiques, mycotoxines, dosage d'acides organiques produits lors de fermentations, etc.)"@fr .
+
+agrist-disciplines:242 a skos:Concept ;
+    skos:broader agrist-disciplines:24 ;
+    skos:prefLabel "Chimie organique"@fr ;
+    skos:scopeNote "Etude des réactions de pyrolyse et de carbonisation de la biomasse, étude des réactions de lipophilisation, chimie verte, huiles végétales, étude des schémas réactionnels ayant lieu au cours de la tranformation d'un aliment."@fr .
+
+agrist-disciplines:243 a skos:Concept ;
+    skos:broader agrist-disciplines:24 ;
+    skos:prefLabel "Biochimie"@fr ;
+    skos:scopeNote "Etude des composants des aliments (protéines, lipides, glucides, micronutriments), réactions enzymatiques, analyse sensorielle, évaluation de la qualité nutritionnelle et organoleptique des aliments, liants biosourcés,extractibles biocides, bioproduits."@fr .
+
+agrist-disciplines:311 a skos:Concept ;
+    skos:broader agrist-disciplines:31 ;
+    skos:prefLabel "Sciences de gestion / management"@fr ;
+    skos:scopeNote "Gestion des entreprises & exploitations, gestion de projets, management stratégique, finance"@fr .
+
+agrist-disciplines:312 a skos:Concept ;
+    skos:broader agrist-disciplines:31 ;
+    skos:prefLabel "Macroéconomie"@fr ;
+    skos:scopeNote "Economie internationale, économie publique (santé, risques), économie politique, modèles globaux, Bioéconomie"@fr .
+
+agrist-disciplines:313 a skos:Concept ;
+    skos:broader agrist-disciplines:31 ;
+    skos:prefLabel "Microéconomie"@fr ;
+    skos:scopeNote "Economie expérimentale et comportementale, économie de la production, économie de la consommation"@fr .
+
+agrist-disciplines:314 a skos:Concept ;
+    skos:broader agrist-disciplines:31 ;
+    skos:prefLabel "Mésoéconomie"@fr ;
+    skos:scopeNote "Economie des filières et des marchés, économie des chaines de valeur, économie Industrielle, économie de l’innovation, économie de l’environnement, economie sociale et solidaire, évaluation d'impact"@fr .
+
+agrist-disciplines:321 a skos:Concept ;
+    skos:broader agrist-disciplines:32 ;
+    skos:prefLabel "Droit"@fr ;
+    skos:scopeNote "Droit privé, droit public, droit foncier, droit de propriété intellectuelle, histoire du droit et des institutions"@fr .
+
+agrist-disciplines:322 a skos:Concept ;
+    skos:broader agrist-disciplines:32 ;
+    skos:prefLabel "Sciences politiques"@fr ;
+    skos:scopeNote "Action publique, politiques publiques (construction, transfert, mutiniveau), normes, gouvernance, évaluation de l'impact des politiques publiques sectorielles"@fr .
+
+agrist-disciplines:331 a skos:Concept ;
+    skos:broader agrist-disciplines:33 ;
+    skos:prefLabel "Anthropologie - ethnologie"@fr ;
+    skos:scopeNote "Anthropologie biologique, ethnobotanique,  anthropologie juridique, anthropologie des techniques, anthropologie des connaissances, ethnologie"@fr .
+
+agrist-disciplines:332 a skos:Concept ;
+    skos:broader agrist-disciplines:33 ;
+    skos:prefLabel "Sociologie"@fr ;
+    skos:scopeNote "Sociologie, démographie, sociologie des organisations et des institutions, sociologie de la participation et de la collaboration, action collective"@fr .
+
+agrist-disciplines:341 a skos:Concept ;
+    skos:broader agrist-disciplines:34 ;
+    skos:prefLabel "Géographie et aménagement"@fr ;
+    skos:scopeNote "Géographie physique, humaine, économique et régionale, aménagement de l’espace, urbanisme, développement territorial"@fr .
+
