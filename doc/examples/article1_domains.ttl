@@ -1,0 +1,47 @@
+@prefix schema:  <http://schema.org/> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix frbr:    <http://purl.org/vocab/frbr/core#> .
+@prefix wd:      <http://www.wikidata.org/entity/> .
+@prefix rml:     <http://semweb.mmlab.be/ns/rml#> .
+@prefix oa:      <http://www.w3.org/ns/oa#> .
+@prefix dct:     <http://purl.org/dc/terms/> .
+@prefix dce:     <http://purl.org/dc/elements/1.1/> .
+@prefix fabio:   <http://purl.org/spar/fabio/> .
+@prefix eprint:  <http://purl.org/eprint/type/> .
+@prefix bibo:    <http://purl.org/ontology/bibo/> .
+@prefix prov:    <http://www.w3.org/ns/prov#> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+
+@prefix issa:    <http://data-issa.cirad.fr/> .
+@prefix issapr:  <http://data-issa.cirad.fr/property/> .
+
+<http://data-issa.cirad.fr/descr/deb272aba1defbc45ffa8d7795087b9399c548aa>
+      a       prov:Entity , issa:DomainAnnotation ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
+      rdfs:label "descriptor 'E14 - Économie et politique du développement'" ;
+      issapr:rank 1 ;
+      oa:hasBody <http://agrist.cirad.fr/agrist-thema/E14> ;
+      oa:hasTarget <http://data-issa.cirad.fr/document/543654> ;
+      prov:wasAttributedTo issa:Documentalist .
+
+<http://data-issa.cirad.fr/descr/35462db55ca840a669000b542a82b5d25e496f21>
+      a       prov:Entity , issa:DomainAnnotation ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
+      rdfs:label "descriptor 'P01 - Conservation de la nature et ressources foncières'" ;
+      issapr:rank 2 ;
+      oa:hasBody <http://agrist.cirad.fr/agrist-thema/P01> ;
+      oa:hasTarget <http://data-issa.cirad.fr/document/543654> ;
+      prov:wasAttributedTo issa:Documentalist .
+
+<http://data-issa.cirad.fr/descr/9f429daf638f56790cf3e587816ead1667537e98>
+      a       prov:Entity , issa:DomainAnnotation ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
+      rdfs:label "descriptor 'K01 - Foresterie - Considérations générales'" ;
+      issapr:rank 3 ;
+      oa:hasBody <http://agrist.cirad.fr/agrist-thema/K01> ;
+      oa:hasTarget <http://data-issa.cirad.fr/document/543654> ;
+      prov:wasAttributedTo
+              issa:Documentalist .

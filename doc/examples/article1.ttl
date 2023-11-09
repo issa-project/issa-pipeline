@@ -26,17 +26,20 @@
       issapr:hasBody <http://data-issa.cirad.fr/document/543654#body_text> ;
       issapr:hasTitle <http://data-issa.cirad.fr/document/543654#title> ;
       dce:creator "Pfund, Jean-Laurent" , "Laumonier, Yves" , "Bourgeois, Robin" ;
+      bibo:authorList [ a       rdf:List ;
+                        rdf:first "Laumonier, Yves" ;
+                        rdf:rest ("Bourgeois, Robin" "Pfund, Jean-Laurent") ] ;
       dce:language "eng" ;
       dct:abstract <http://data-issa.cirad.fr/document/543654#abstract> ;
       dct:identifier "543654" ;
       dct:issued "2008"^^xsd:gYear ;
       dct:language <http://id.loc.gov/vocabulary/iso639-1/en> ;
       dct:rights <https://agritrop.cirad.fr/mention_legale.html> ;
-      dct:source "Agritrop-OAI2-API" ;
+      dct:accessRights <info:eu-repo/semantics/openAccess> ;
       dct:title "Accounting for the ecological dimension in participatory research and development : lessons learned from Indonesia and Madagascar" ;
       schema:downloadUrl <http://agritrop.cirad.fr/543654/1/document_543654.pdf> ;
       schema:publication "Ecology and Society" ;
-      schema:sameAs <http://www.ecologyandsociety.org/vol13/iss1/art15/> , <http://catalogue-bibliotheques.cirad.fr/cgi-bin/koha/opac-detail.pl?biblionumber=199720> ;
+      schema:sameAs <http://www.ecologyandsociety.org/vol13/iss1/art15/>;
       schema:url <http://agritrop.cirad.fr/543654/> ;
       prov:generatedAtTime "2020-11-21T13:17:03Z"^^xsd:dateTime ;
       prov:wasDerivedFrom <http://agritrop.cirad.fr/543654/> .
