@@ -8,8 +8,8 @@
 ISSA_INSTANCE=hal
 ISSA_VERSION=2.0                            		# version with dots 
 ISSA_VERSION_DASH=2-0                       		# version with dashes
-ISSA_NAMESPACE=http://data-issa.dhm.euromov.fr/ 	# instance namespace
-ISSA_DATASET_NAME=issa-hal-euromov-dhm      		# this dataset name is used in the RDF dataset definition 
+ISSA_NAMESPACE=http://data-issa.euromov.fr/ 	    # instance namespace
+ISSA_DATASET_NAME=issa-hal-euromov      		    # this dataset name is used in the RDF dataset definition 
 
 ISSA_ROOT=~/ISSA-2
 

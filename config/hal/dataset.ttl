@@ -16,12 +16,12 @@
 @prefix oa:     <http://www.w3.org/ns/oa#>.
 @prefix foaf:   <http://xmlns.com/foaf/0.1/>.
 
-@prefix issa:   <http://data-issa.dhm.euromov.fr/>.
-@prefix issap:  <http://data-issa.dhm.euromov.fr/property/>.
+@prefix issa:   <http://data-issa.euromov.fr/>.
+@prefix issap:  <http://data-issa.euromov.fr/property/>.
 
 
 # --- Dataset description
-issa:issa-hal-euromov-dhm
+issa:issa-hal-euromov
     a               dcat:Dataset, void:Dataset, schema:Dataset;
     dct:title       "ISSA HAL EuroMov-DHM dataset";
     schema:name     "ISSA HAL EuroMov-DHM dataset";
@@ -44,12 +44,12 @@ issa:issa-hal-euromov-dhm
     foaf:fundedBy    <https://ror.org/0496p8026>, <https://ror.org/02kvxyf05>, <https://ror.org/02feahw73>, <https://ror.org/05kpkpg04>, <https://ror.org/051escj72>, <https://ror.org/03e8rf594>;
 
     a prov:Entity;
-    schema:isBasedOn        issa:issa-hal-euromov-dhm;
-    prov:hadPrimarySource   issa:issa-hal-euromov-dhm;
+    schema:isBasedOn        issa:issa-hal-euromov;
+    prov:hadPrimarySource   issa:issa-hal-euromov;
     prov:wasGeneratedBy     issa:RdfGeneration;
     
-    void:uriSpace       "http://data-issa.dhm.euromov.fr/";
-    void:sparqlEndpoint <https://data-issa.dhm.euromov.fr/sparql>; 
+    void:uriSpace       "http://data-issa.euromov.fr/";
+    void:sparqlEndpoint <https://data-issa.euromov.fr/sparql>; 
  
     void:vocabulary
         bibo:, dcat:, dce:, dct:, fabio:, foaf:, frbr:, oa:, prov:, schema:, void:,
@@ -101,29 +101,29 @@ issa:issa-hal-euromov-dhm
 issa:sparql-service
     a                    sd:Service, dcat:DataService;
     sd:supportedLanguage sd:SPARQL10Query, sd:SPARQL11Query;
-    sd:endpoint          <https://data-issa.dhm.euromov.fr/sparql>;
-    dcat:endpointURL     <https://data-issa.dhm.euromov.fr/sparql>;
+    sd:endpoint          <https://data-issa.euromov.fr/sparql>;
+    dcat:endpointURL     <https://data-issa.euromov.fr/sparql>;
     rdfs:label           "SPARQL endpoint serving the ISSA HAL EUROMOV-DHM dataset";
-    dcat:servesDataset   issa:issa-hal-euromov-dhm;
+    dcat:servesDataset   issa:issa-hal-euromo;
     sd:availableGraphs [
         a                sd:GraphCollection;
         sd:namedGraph 
-            <http://data-issa.dhm.euromov.fr/graph/dataset>, 
-            <http://data-issa.dhm.euromov.fr/graph/documents>,
-            <http://data-issa.dhm.euromov.fr/graph/documents/text>,
-            <http://data-issa.dhm.euromov.fr/graph/thematic-descriptors>,
-            <http://data-issa.dhm.euromov.fr/graph/document-domains>,
-            <http://data-issa.dhm.euromov.fr/graph/document-keywords>,
-            <http://data-issa.dhm.euromov.fr/graph/entity-fishing-nes>,
-            <http://data-issa.dhm.euromov.fr/graph/dbpedia-spotlight-nes>,
+            <http://data-issa.euromov.fr/graph/dataset>, 
+            <http://data-issa.euromov.fr/graph/documents>,
+            <http://data-issa.euromov.fr/graph/documents/text>,
+            <http://data-issa.euromov.fr/graph/thematic-descriptors>,
+            <http://data-issa.euromov.fr/graph/document-domains>,
+            <http://data-issa.euromov.fr/graph/document-keywords>,
+            <http://data-issa.euromov.fr/graph/entity-fishing-nes>,
+            <http://data-issa.euromov.fr/graph/dbpedia-spotlight-nes>,
     ].
 
 # --- HAL EuroMov-DHM dataset and provenance information
-issa:hal-euromov-dhm
+issa:hal-euromov
     a               dcat:Dataset, schema:Dataset;
     dct:title       "Open Repository of HAL EuroMov-DHM publications";
     schema:name     "Open Repository of HAL EuroMov-DHM publications";
-    schema:url      <https://data-issa.dhm.euromov.fr/>;
+    schema:url      <https://data-issa.euromov.fr/>;
     .
 
 # --- VOID Linksets
@@ -136,7 +136,7 @@ issa:Wikidata
 issa:issa2wikidata
    a void:Linkset;
    void:linkPredicate oa:hasBody;
-   void:subjectsTarget issa:issa-hal-euromov-dhm;
+   void:subjectsTarget issa:issa-hal-euromov;
    void:objectsTarget issa:Wikidata;
    
    # updatable property
@@ -151,7 +151,7 @@ issa:DBpedia
 issa:issa2dbpedia
    a void:Linkset;
    void:linkPredicate oa:hasBody;
-   void:subjectsTarget issa:issa-hal-euromov-dhm;
+   void:subjectsTarget issa:issa-hal-euromov;
    void:objectsTarget issa:DBpedia;   
    
    # updatable property
@@ -166,7 +166,7 @@ issa:issa2dbpedia
 issa:issa2geonames
    a void:Linkset;
    void:linkPredicate oa:hasBody;
-   void:subjectsTarget issa:issa-hal-euromov-dhm;
+   void:subjectsTarget issa:issa-hal-euromov;
    void:objectsTarget <http://www.geonames.org/ontology>;   
    
    # updatable property
