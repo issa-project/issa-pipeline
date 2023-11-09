@@ -28,7 +28,6 @@ Below we use the following namespaces:
 
 >:point_right: The namespace *http://data-issa.cirad.fr/* is used for a specific ISSA instance (e.g. Agritrop). It can be replaced by any other namespace.
 
-
 ## Document metadata
 
 Document URIs are formatted as `http://data-issa.cirad.fr/document/document_id` where document_id is a unique document identifier.
@@ -256,3 +255,21 @@ Example:
   rdfs:isDefinedBy       issa:issa-agritrop;
   prov:wasAttributedTo   issa:EntityFishing .
 ```
+## Named Graphs
+
+As a result of the ISSA pipeline, the following named graphs are created:
+
+| Data type                                | Named Graph                                           |
+|--------------------------------------    |-------------------------------------------------------|
+| Metadata                                 | http://data-issa.cirad.fr/graph/documents             |
+| Annotated text                           | http://data-issa.cirad.fr/graph/documents/text        |
+| Human-validated thematic descriptors     | http://data-issa.cirad.fr/graph/thematic-descriptors  |
+| Annif-generated thematic descriptors     | http://data-issa.cirad.fr/graph/annif-descriptors     |
+| Documents' domains                       | http://data-issa.cirad.fr/graph/document-domains      |
+| Documents' keywords                      | http://data-issa.cirad.fr/graph/document-keywords     |
+| DBpedia annotations                      | http://data-issa.cirad.fr/graph/dbpedia-spotlight-nes |
+| Wikidata annotations                     | http://data-issa.cirad.fr/graph/entity-fishing-nes    |
+| GeoNames annotations                     | http://data-issa.cirad.fr/graph/geographic-nes        |
+| Instance-specific vocabulary annotations | http://data-issa.cirad.fr/graph/pyclinrec-nes     |
+
+>:point_right: As a reminder,  the namespace *http://data-issa.cirad.fr/* is used for a specific ISSA instance (e.g. Agritrop). It can be replaced by any other namespace (e.g. *http://data-issa.euromov.fr/* for the HAL Euromov instance).
