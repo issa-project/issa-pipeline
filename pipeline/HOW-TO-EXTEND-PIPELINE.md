@@ -47,7 +47,7 @@ The transformation of json|tsv output into Turtle formatted RDF happens in two s
 
 ### MongoDB
 
-In [mongodb](https://github.com/issa-project/issa-pipeline/tree/main/pipeline/mongo) directory there are scripts that assist an easy integration.
+In [MongoDB](./morph-xr2rml/mongo/) directory there are scripts that assist an easy integration.
 
 - for json output add a line to the [run_import.sh](https://github.com/issa-project/issa-pipeline/blob/main/pipeline/mongo/run-import.sh), where
   - _new-collection-name_ is an arbitrary new collection name
