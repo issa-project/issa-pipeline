@@ -27,7 +27,7 @@ mkdir -p $LATEST_UPDATE_DIR/$REL_RDF
 
 log_dir=$ISSA_PIPELINE_LOG 
 mkdir -p $log_dir
-log=$log_dir/transform_mongodb_$(date "+%Y%m%d_%H%M%S").log
+log=$log_dir/transform_xR2RML_$(date "+%Y%m%d_%H%M%S").log
 
 
 # Helper functions to declutter docker exec call
@@ -63,8 +63,12 @@ docker_exec_multipart() {
 # Check if the Docker container is running
 
 if [ $( docker ps -f name=$CONTAINER| wc -l ) -eq 1 ]; then 
-	"ERROR: $CONTAINER container is not running. Restart using docker-compose command." &>> $log
-	exit
+	"$CONTAINER container is not running. Restarting ..." &>> $log
+	pushd $MORPH_XR2RML_DOCKER_COMPOSE_DIR
+		#envsubst < "docker-compose-template.yml" > "docker-compose.yml"
+		docker-compose start
+     	sleep 5s
+	popd
 fi
 
 

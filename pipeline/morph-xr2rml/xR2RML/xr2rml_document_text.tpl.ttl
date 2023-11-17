@@ -38,7 +38,7 @@
 <#LS>
     a           xrr:LogicalSource;
     xrr:query   """db.{{collection}}.find( { paper_id: {$exists: true} } )""".
-    #xrr:query   """db.grobid_text.find( { paper_id: "543654" } )""".
+    #xrr:query    """db.{{collection}}.find( { paper_id: "543654" } )""".
 
 <#TM_body>
     a rr:TriplesMap;
@@ -56,8 +56,20 @@
         rr:objectMap [ xrr:reference "$.body_text[*].text" ];
     ].
 
+<#TM>
+    a rr:TriplesMap;
+    xrr:logicalSource <#LS>;
+    rr:subjectMap   [
+        rr:template "{{namespace}}document/{$.paper_id}" ;
+    ];
 
-# Uncomment lines below if titles and abstracts text are different from the metadata
+    rr:predicateObjectMap [
+        rr:predicate issapr:hasBody;
+        rr:objectMap [ rr:template "{{namespace}}document/{$.paper_id}#body_text"; ];
+    ].
+
+
+# Uncomment lines below if titles and abstract text are different from the metadata
 # otherwise this mapping is done in the document_metadata template
 
 # <#TM_title>

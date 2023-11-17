@@ -39,6 +39,7 @@
 <#LS_entities>
     a               xrr:LogicalSource;
     xrr:query       """db.{{collection}}.find()""";
+    #xrr:query       """db.{{collection}}.find( { paper_id: "543654" } )""";
     rml:iterator    "$.{{documentpart}}.Resources.*";
     xrr:pushDown    [ xrr:reference "$.paper_id"; xrr:as "paper_id" ].
 

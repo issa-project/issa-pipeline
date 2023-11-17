@@ -39,6 +39,7 @@
 <#LS>
     a           xrr:LogicalSource;
     xrr:query   """db.{{collection}}.find( { paper_id: {$exists: true} } )""".
+    #xrr:query  """db.{{collection}}.find( { paper_id: "543654" } )""".
     
 <#TM>
     a rr:TriplesMap;
@@ -95,8 +96,7 @@
     # Language
     rr:predicateObjectMap [
        rr:predicate dce:language;
-       # rr:objectMap [ xrr:reference "$.language" ];
-	  rr:objectMap [ rr:template "http://id.loc.gov/vocabulary/iso639-2/{$.language_bib}" ];
+       rr:objectMap [ xrr:reference "$.language_bib" ];
 
     ];
 	rr:predicateObjectMap [
