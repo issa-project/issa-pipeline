@@ -53,7 +53,7 @@ schema_contact = 'mailto:dist-com@cirad.fr'
 
 
 agrist_ttl = 'AgrIST-Disciplines-v20231023.ttl'
-agrist_ns = 'https://agrist.cirad.fr/agrist-disciplines/'
+agrist_ns = 'http://agrist.cirad.fr/agrist-disciplines/'
 agrist_schema = agrist_ns
 
 

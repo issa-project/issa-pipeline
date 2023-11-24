@@ -46,7 +46,7 @@ schema_access =  'http://purl.org/eprint/accessRights/OpenAccess'
 sparql_endpoint = 'https://data-issa.cirad.fr/sparql'
 
 agrist_ttl = 'AgrIST-Thema-v20230523.ttl'
-agrist_ns = 'https://agrist.cirad.fr/agrist-thema'
+agrist_ns = 'http://agrist.cirad.fr/agrist-thema/'
 agrist_schema = agrist_ns
 
 
