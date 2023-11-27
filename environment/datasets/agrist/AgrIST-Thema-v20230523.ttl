@@ -1,0 +1,2975 @@
+@prefix agrist-thema: <http://agrist.cirad.fr/agrist-thema/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+agrist-thema: a skos:ConceptScheme ;
+    dc:title "AgrIST-Thema categorization scheme"@en,
+        "Plan de catégorisation AgrIST-Thema"@fr ;
+    dct:accessRights <http://purl.org/eprint/accessRights/OpenAccess> ;
+    dct:contributor <https://ror.org/02kvxyf05> ;
+    dct:created "2023-06-29"^^xsd:date ;
+    dct:creator <https://ror.org/05kpkpg04> ;
+    dct:isssued "2023-06-29"^^xsd:date ;
+    dct:license <https://creativecommons.org/licenses/by-nc/4.0/> ;
+    dct:modified "2023-07-17"^^xsd:date ;
+    dct:publisher <https://ror.org/02kvxyf05>,
+        <https://ror.org/05kpkpg04> ;
+    void:sparqlEndpoint <https://data-issa.cirad.fr/sparql> ;
+    void:uriSpace agrist-thema: ;
+    rdfs:comment "Plan de catégorisation utlisé dans Agritrop (version du 23 mai 2023)"@fr ;
+    dcat:version "2023.05.23" .
+
+agrist-thema:A a skos:Concept ;
+    skos:prefLabel "AGRICULTURE"@en,
+        "AGRICULTURE"@fr ;
+    skos:topConceptOf agrist-thema: .
+
+agrist-thema:B a skos:Concept ;
+    skos:prefLabel "GEOGRAPHY AND HISTORY"@en,
+        "GÉOGRAPHIE ET HISTOIRE"@fr ;
+    skos:topConceptOf agrist-thema: .
+
+agrist-thema:C a skos:Concept ;
+    skos:prefLabel "EDUCATION, EXTENSION AND INFORMATION"@en,
+        "ENSEIGNEMENT, VULGARISATION ET INFORMATION"@fr ;
+    skos:topConceptOf agrist-thema: .
+
+agrist-thema:D a skos:Concept ;
+    skos:prefLabel "ADMINISTRATION AND LEGISLATION"@en,
+        "ADMINISTRATION ET LÉGISLATION"@fr ;
+    skos:topConceptOf agrist-thema: .
+
+agrist-thema:E a skos:Concept ;
+    skos:prefLabel "ECONOMICS, DEVELOPMENT AND RURAL SOCIOLOGY"@en,
+        "ÉCONOMIE, DÉVELOPPEMENT ET SOCIOLOGIE RURALE"@fr ;
+    skos:topConceptOf agrist-thema: .
+
+agrist-thema:F a skos:Concept ;
+    skos:prefLabel "PLANT SCIENCE AND PRODUCTION"@en,
+        "SCIENCES ET PRODUCTION VÉGÉTALES"@fr ;
+    skos:topConceptOf agrist-thema: .
+
+agrist-thema:H a skos:Concept ;
+    skos:prefLabel "PLANT PROTECTION"@en,
+        "PROTECTION DES VÉGÉTAUX"@fr ;
+    skos:topConceptOf agrist-thema: .
+
+agrist-thema:J a skos:Concept ;
+    skos:prefLabel "POSTHARVEST TECHNOLOGY"@en,
+        "TECHNOLOGIE APRÈS RÉCOLTE"@fr ;
+    skos:topConceptOf agrist-thema: .
+
+agrist-thema:K a skos:Concept ;
+    skos:prefLabel "FORESTRY"@en,
+        "FORESTERIE"@fr ;
+    skos:topConceptOf agrist-thema: .
+
+agrist-thema:L a skos:Concept ;
+    skos:prefLabel "ANIMAL SCIENCE, PRODUCTION AND PROTECTION"@en,
+        "SCIENCES ANIMALES, PRODUCTION ET PROTECTION ANIMALES"@fr ;
+    skos:topConceptOf agrist-thema: .
+
+agrist-thema:M a skos:Concept ;
+    skos:prefLabel "FISHERIES AND AQUACULTURE"@en,
+        "PÊCHE ET AQUACULTURE"@fr ;
+    skos:topConceptOf agrist-thema: .
+
+agrist-thema:N a skos:Concept ;
+    skos:prefLabel "AGRICULTURAL MACHINERY AND ENGINEERING"@en,
+        "MACHINISME AGRICOLE ET GÉNIE RURAL"@fr ;
+    skos:topConceptOf agrist-thema: .
+
+agrist-thema:P a skos:Concept ;
+    skos:prefLabel "NATURAL RESOURCES AND ENVIRONMENT"@en,
+        "RESSOURCES NATURELLES ET ENVIRONNEMENT"@fr ;
+    skos:topConceptOf agrist-thema: .
+
+agrist-thema:Q a skos:Concept ;
+    skos:prefLabel "FOOD SCIENCE AND TECHNOLOGY"@en,
+        "SCIENCES ET TECHNOLOGIE ALIMENTAIRES"@fr ;
+    skos:topConceptOf agrist-thema: .
+
+agrist-thema:S a skos:Concept ;
+    skos:prefLabel "HUMAN HEALTH AND NUTRITION"@en,
+        "SANTÉ ET NUTRITION HUMAINES"@fr ;
+    skos:topConceptOf agrist-thema: .
+
+agrist-thema:U a skos:Concept ;
+    skos:prefLabel "SCIENCE AND TECHNOLOGY"@en,
+        "SCIENCES ET TECHNIQUES"@fr ;
+    skos:topConceptOf agrist-thema: .
+
+agrist-thema:A01 a skos:Concept ;
+    skos:broader agrist-thema:A ;
+    skos:editorialNote ""@fr ;
+    skos:prefLabel "Agriculture - General aspects"@en,
+        "Agriculture - Considérations générales"@fr ;
+    skos:scopeNote "Considérations sur l'agriculture dans son sens large"@fr .
+
+agrist-thema:B10 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:F70,
+        agrist-thema:K10,
+        agrist-thema:L60,
+        agrist-thema:P10,
+        agrist-thema:P31,
+        agrist-thema:P40 ;
+    skos:broader agrist-thema:B ;
+    skos:editorialNote """cartographie climatique et cartographie météorologique, voir P40
+cartographie des eaux, voir P10
+cartographie des sols, voir P31
+cartographie forestière, voir K10
+distribution géographique des animaux, voir L60
+distribution géographique des plantes, voir F70"""@fr ;
+    skos:prefLabel "Geography"@en,
+        "Géographie"@fr ;
+    skos:scopeNote """Géographie physique relative à l'agriculture ou à la foresterie 
+Géographie humaine
+Livres de géographie, cartes, atlas, voyages relatifs à l'agriculture"""@fr .
+
+agrist-thema:B50 a skos:Concept ;
+    skos:broader agrist-thema:B ;
+    skos:editorialNote ""@fr ;
+    skos:prefLabel "History"@en,
+        "Histoire"@fr ;
+    skos:scopeNote """Histoire de l'agriculture, archéologie appliquée à l'agriculture
+Biographies dans le domaine de l'agriculture"""@fr .
+
+agrist-thema:D10 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:A50,
+        agrist-thema:C10,
+        agrist-thema:E10,
+        agrist-thema:E12,
+        agrist-thema:E14,
+        agrist-thema:E20,
+        agrist-thema:E50 ;
+    skos:broader agrist-thema:D ;
+    skos:editorialNote """administration de l'économie, voir E10
+administration de l'enseignement, voir C10
+administration de l'exploitation agricole, voir E20
+administration de la recherche, voir A50
+administration de la santé, voir E50
+administration des affaires sociales, voir E50
+administration du travail, voir E12
+objectifs, politiques, programmes de développement, voir E14"""@fr ;
+    skos:prefLabel "Public administration"@en,
+        "Administration publique"@fr ;
+    skos:scopeNote """Administration publique de l'agriculture en général
+Cadre institutionnel des structures agricoles chargées de fonctions gouvernementales"""@fr .
+
+agrist-thema:L75 a skos:Concept ;
+    skos:broader agrist-thema:L ;
+    skos:editorialNote ""@fr ;
+    skos:prefLabel "Pharmacology and Toxicology"@en,
+        "Pharmacologie et toxicologie"@fr ;
+    skos:scopeNote """Utilisation de médicaments en médecine vétérinaire (de la pharmacothérapie), principalement chez les animaux domestiques
+Classe de médicaments et indication de traitement
+Comprend également la pharmacopée traditionnelle
+Traite aussi de la toxicologie vétérinaire : identification des toxines et traitement des toxicoses"""@fr .
+
+agrist-thema:U01 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:A50 ;
+    skos:broader agrist-thema:U ;
+    skos:editorialNote "recherche agronomique, voir A50"@fr ;
+    skos:prefLabel "Scientific and applied research - General aspects"@en,
+        "Recherche scientifique et technique - Considérations générales"@fr ;
+    skos:scopeNote "La recherche scientifique en général : plans, politiques, programmes et projets de recherche, administration et financement de la recherche, science ouverte, éthique, etc."@fr .
+
+agrist-thema:U10 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:E10,
+        agrist-thema:E70,
+        agrist-thema:K10 ;
+    skos:broader agrist-thema:U ;
+    skos:editorialNote """économétrie en général, modèles économiques, voir E10
+modèles économétriques de marché, voir E70
+modèles informatiques de peuplements forestiers, voir K10"""@fr ;
+    skos:prefLabel "Computer science, mathematics and statistics"@en,
+        "Informatique, mathématiques et statistiques"@fr ;
+    skos:scopeNote """Concerne les différentes disciplines de l'informatique, des mathématiques et des statistiques
+Modélisation, programmation, informatique"""@fr .
+
+agrist-thema:U50 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:U30,
+        agrist-thema:U60 ;
+    skos:broader agrist-thema:U ;
+    skos:editorialNote """biochimie, voir U60
+télédétection, voir U30"""@fr ;
+    skos:prefLabel "Physical and chemical sciences"@en,
+        "Sciences physiques et chimie"@fr ;
+    skos:scopeNote """Concerne les différentes disciplines de la physique et de la chimie et les technologies associées sauf agricoles
+Physique : électromagnétisme, optique, acoustique, thermodynamique, mécanique des solides, mécanique des fluides, physiques classique et quantique, relativité générale et gravitation.
+Chimie : chimie générale et chimie physique, chimie minérale, chimie organique, chimie analytique, génie chimique, physico-chimie des polymères
+Technologies associées : électronique, télécommunications, énergie, métaux, métallurgie, génie mécanique, construction mécanique"""@fr .
+
+agrist-thema:C30 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:C20 ;
+    skos:broader agrist-thema:C ;
+    skos:editorialNote "communication, médias de masse, journalisme agricole, voir C20"@fr ;
+    skos:prefLabel "Documentation and information"@en,
+        "Documentation et information"@fr ;
+    skos:scopeNote """Documentation, bibliothéconomie et sciences de l'information relatives à l'agriculture
+Compilation, codage et diffusion de l'information
+Services d'information, activités des bibliothèques
+Bibliographies, glossaires, etc.
+Bases de données comme éléments des systèmes d'information
+Pour fouille de texte, data mining, terminologie, intelligence artificielle, Web sémantique, ontologies, traitement du langage, Big data, réseaux sociaux, etc., ajouter U10"""@fr .
+
+agrist-thema:H01 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:D50,
+        agrist-thema:H02,
+        agrist-thema:H10,
+        agrist-thema:H20,
+        agrist-thema:H60,
+        agrist-thema:J11,
+        agrist-thema:J12,
+        agrist-thema:L72,
+        agrist-thema:L73,
+        agrist-thema:L74,
+        agrist-thema:P02,
+        agrist-thema:Q03,
+        agrist-thema:Q53,
+        agrist-thema:S50 ;
+    skos:broader agrist-thema:H ;
+    skos:editorialNote """conservation des produits d'origine végétale, voir J11
+dégâts causés au milieu par les pesticides, voir P02
+effets phytotoxiques des pesticides, voir H02
+élevage d'organismes utilisés dans la lutte contre les bioagresseurs, voir H10, H20, L72, L73
+maladies des plantes, voir H20
+mauvaises herbes et désherbage, voir H60
+préservation du bois, voir J12
+ravageurs des plantes, voir H10
+réglementation relative aux résidus toxiques, voir D50
+résidus de pesticides dans l'air, le sol, l'eau, voir P02
+résidus de pesticides dans les aliments pour animaux, voir Q53
+résidus de pesticides dans les produits alimentaires, voir Q03
+toxicité des pesticides pour l'être humain, voir S50
+toxicité des pesticides pour les animaux utiles, voir L74
+toxicité des pesticides pour les plantes utiles, voir H02"""@fr ;
+    skos:prefLabel "Protection of plants - General aspects"@en,
+        "Protection des végétaux - Considérations générales"@fr ;
+    skos:scopeNote """Considérations générales sur les facteurs nuisibles (bioagresseurs) aux plantes utiles (y compris les arbres forestiers et les plantes aquatiques), mesures et moyens de lutte ou de protection
+Services et organismes de protection des végétaux"""@fr .
+
+agrist-thema:L40 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:H10,
+        agrist-thema:H20,
+        agrist-thema:L50,
+        agrist-thema:L51,
+        agrist-thema:L52,
+        agrist-thema:L53,
+        agrist-thema:L72,
+        agrist-thema:L73 ;
+    skos:broader agrist-thema:L ;
+    skos:editorialNote """anatomie et morphologie des organismes nuisibles, voir H10, L72
+anatomie et morphologie des organismes utilisés dans la lutte contre les organismes nuisibles et les maladies, voir H10, H20, L72, L73
+métamorphose des animaux, voir L52
+physiologie animale, voir L50-L53"""@fr ;
+    skos:prefLabel "Animal structure"@en,
+        "Anatomie et morphologie des animaux"@fr ;
+    skos:scopeNote "Anatomie, cytologie, histologie, ultrastructure et morphologie des animaux utiles aquatiques et terrestres (à l'exclusion des organismes utilisés dans la lutte contre les organismes nuisibles et les maladies)"@fr .
+
+agrist-thema:N02 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:N01,
+        agrist-thema:N10 ;
+    skos:broader agrist-thema:N ;
+    skos:editorialNote """bâtiments agricoles, voir N10
+génie rural, voir N01"""@fr ;
+    skos:prefLabel "Farm layout"@en,
+        "Aménagement de l'exploitation agricole"@fr ;
+    skos:scopeNote "Aménagement de l'exploitation agricole : tracé de routes, de chemins, emplacement de bâtiments, sites de travail, parcellaire, réseau de drainage de l'exploitation"@fr .
+
+agrist-thema:Q01 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:E70,
+        agrist-thema:Q02,
+        agrist-thema:Q51,
+        agrist-thema:Q52,
+        agrist-thema:Q60,
+        agrist-thema:Q70,
+        agrist-thema:Q80,
+        agrist-thema:S01,
+        agrist-thema:S20,
+        agrist-thema:S30,
+        agrist-thema:S40 ;
+    skos:broader agrist-thema:Q ;
+    skos:editorialNote """conditionnement, voir Q80
+étiquetage de contenu, normes, classement des produits agricoles, voir E70
+législation concernant le contrôle de la qualité des produits agricoles, voir E70
+nutrition humaine, voir S01-S40
+première transformation de produits agricoles non-alimentaires, voir Q60
+technologie des aliments pour animaux, voir Q51
+traitement des aliments pour animaux, voir Q52
+traitement des déchets agricoles, voir Q70
+traitement des produits alimentaires, voir Q02"""@fr ;
+    skos:prefLabel "Food science and technology - General aspects"@en,
+        "Sciences et technologie alimentaires - Considérations générales"@fr ;
+    skos:scopeNote "Sciences des aliments et technologie alimentaire en général"@fr .
+
+agrist-thema:U60 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:L20,
+        agrist-thema:P40,
+        agrist-thema:U30 ;
+    skos:broader agrist-thema:U ;
+    skos:editorialNote """écologie des animaux utiles, voir L20
+télédétection, photo-interprétation, voir U30
+météorologie et climatologie (agrométéorologie), voir P40"""@fr ;
+    skos:prefLabel "Life and Earth sciences"@en,
+        "Sciences de la vie et de la Terre"@fr ;
+    skos:scopeNote """Concerne les sciences biologiques fondamentales et appliquées, sauf les sciences et applications agricoles 
+Biologie et sciences associées : biologie moléculaire et cellulaire ; microbiologie ; immunologie fondamentale ; génétique ; évolution biologique et moléculaire ; cytologie, morphologie, systématique, floristique et évolution des végétaux ; physiologie végétale et développement, éthologie animale ; écologie animale, végétale et microbienne ; embryologie : invertébrés et vertébrés ; tératologie. Biochimie analytique, structurale et métabolique. Biophysique moléculaire ; biophysique des tissus, organes et organismes. Biotechnologie
+Sciences de la terre : géologie ; minéralogie géochimie ; tectonique des plaques ; hydrologie ; stratigraphie ; paléontologie. Géophysique externe ; géodésie et gravimétrie ; physique des océans ; neiges, glaces, glaciers. Astronomie, astrophysique"""@fr .
+
+agrist-thema:U70 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:C30,
+        agrist-thema:D50,
+        agrist-thema:E ;
+    skos:broader agrist-thema:U ;
+    skos:editorialNote """droit agricole, voir D50
+documentation, bibliothéconomie et sciences de l'information relatives à l'agriculture, voir C30
+économie agricole, développement et sociologie rurale, voir les codes E"""@fr ;
+    skos:prefLabel "Social sciences, economics and humanities"@en,
+        "Sciences humaines et sociales"@fr ;
+    skos:scopeNote """Sciences sociales : psychologie ; économie et gestion (économie, économétrie, relations industrielles, administration et gestion des entreprises) ; sciences de l'éducation (éducation en général, pédagogie, didactique) ; sociologie (sociologie, démographie, anthropologie, ethnologie, études sur les familles) ; droit (droit, criminologie, pénologie) ; science politique (sciences politiques, gestion publique, théorie de l'organisation) ; géographie sociale et économique : science de l'environnement (aspects sociaux), géographie culturelle et économique, études d'urbanisme (aménagement et développement urbains) : planification des transports et aspects sociaux des transports ; médias et communication (journalisme, science de l'information (aspects sociaux), bibliothéconomie, médias et communication socioculturelle).
+Sciences humaines (ou humanités) : histoire, histoire de l'art, archéologie ; langues et littérature (études générales de langue, langues particulières, études de littérature générale, théorie littéraire, littératures particulières, linguistique) ; philosophie, morale et religion (philosophie, histoire et philosophie des sciences et de la technologie, éthique, théologie, études religieuses) ; arts (arts, conception architecturale, études des arts de la scène (musicologie, science théâtrale, dramaturgie), études du folklore, études portant sur les films, la radio et la télévision)"""@fr .
+
+agrist-thema:E40 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:E13,
+        agrist-thema:E16,
+        agrist-thema:E20,
+        agrist-thema:E50,
+        agrist-thema:E70 ;
+    skos:broader agrist-thema:E ;
+    skos:editorialNote """coopératives de crédit, voir E13
+entreprises agricoles, voir E20
+évaluation économique des coopératives de commercialisation, voir E70
+économie de l'organisation et de la gestion coopératives des exploitations agricoles, voir E20
+organisation des coopératives pour l'habitat rural, voir E50
+économie de la production dans une entreprise coopérative, voir E16
+évaluation économique des coopératives de commercialisation, voir E70
+économie de l'organisation et de la gestion coopératives des exploitations agricoles, voir E20
+organisation des coopératives pour l'habitat rural, voir E50
+économie de la production dans une entreprise coopérative, voir E16"""@fr ;
+    skos:prefLabel "Cooperatives"@en,
+        "Coopératives"@fr ;
+    skos:scopeNote """Considérations générales sur les coopératives agricoles et les organisations paysannes
+Incidence des coopératives sur l'économie agricole"""@fr .
+
+agrist-thema:F50 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:F60,
+        agrist-thema:F61,
+        agrist-thema:F62,
+        agrist-thema:F63,
+        agrist-thema:H10,
+        agrist-thema:H20,
+        agrist-thema:H60,
+        agrist-thema:L72,
+        agrist-thema:L73 ;
+    skos:broader agrist-thema:F ;
+    skos:editorialNote """anatomie et morphologie des mauvaises herbes, voir H60
+anatomie et morphologie des organismes utilisés dans la lutte contre les bioagresseurs, voir H10, H20, L72, L73
+physiologie végétale, voir F60-F63"""@fr ;
+    skos:prefLabel "Plant structure"@en,
+        "Anatomie et morphologie des plantes"@fr ;
+    skos:scopeNote """Anatomie, cytologie, histologie, ultrastructure et morphologie des plantes utiles (y compris les arbres forestiers et les plantes aquatiques)
+Structure du bois
+Port de la plante : aspect général d'une plante"""@fr .
+
+agrist-thema:F60 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:F01,
+        agrist-thema:F04,
+        agrist-thema:F06,
+        agrist-thema:F40,
+        agrist-thema:F61,
+        agrist-thema:F62,
+        agrist-thema:F63,
+        agrist-thema:H10,
+        agrist-thema:H20,
+        agrist-thema:H50,
+        agrist-thema:H60,
+        agrist-thema:L72,
+        agrist-thema:L73 ;
+    skos:broader agrist-thema:F ;
+    skos:editorialNote """croissance et développement physiologique des plantes, voir F62
+effet du milieu sur les processus biologiques chez les plantes, voir F40
+immunité : résistance des plantes aux maladies, voir H20
+immunité : résistance des plantes aux bioagresseurs, voir H10
+métabolisme relatif à la nutrition, voir F61
+physiologie de la nutrition végétale, voir F61
+physiologie de la reproduction végétale, voir F63
+physiologie des mauvaises herbes, voir H60
+physiologie et biochimie des organismes utilisés dans la lutte contre les bioagresseurs, voir H10, H20, L72, L73
+réponse de la plante à l'irrigation, voir F06
+réponse de la plante aux engrais, voir F04
+réponse de la plante aux techniques culturales, voir F01
+rusticité des plantes, résistance aux conditions extrêmes, voir H50
+troubles physiologiques des plantes, voir H50"""@fr ;
+    skos:prefLabel "Plant physiology and biochemistry"@en,
+        "Physiologie et biochimie végétale"@fr ;
+    skos:scopeNote """Ne comprend pas les documents dans lesquels les plantes sont traitées comme des organismes d'expérimentation pour la recherche fondamentale en physiologie et en biochimie
+Aspects généraux de la physiologie et de la biochimie des plantes utiles (y compris les arbres forestiers et les plantes aquatiques) : circulation et émission de liquides et de gaz, relation plante-eau, exsudation, transpiration, respiration, etc.
+Composition chimique et constituants des plantes utiles"""@fr .
+
+agrist-thema:F70 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:F30,
+        agrist-thema:F40,
+        agrist-thema:H10,
+        agrist-thema:H20,
+        agrist-thema:H60,
+        agrist-thema:L72,
+        agrist-thema:L73,
+        agrist-thema:M40,
+        agrist-thema:P34 ;
+    skos:broader agrist-thema:F ;
+    skos:editorialNote """collecte et introduction des plantes, voir F30
+écologie des plantes aquatiques, voir M40
+écologie des plantes terrestres, voir F40
+flore du sol, voir P34
+génétique végétale, voir F30
+taxonomie des mauvaises herbes, voir H60
+taxonomie des organismes utilisés dans la lutte contre les bioagresseurs, voir H10, H20, L72, L73
+variation des plantes, voir F30"""@fr ;
+    skos:prefLabel "Plant taxonomy and geography"@en,
+        "Taxonomie végétale et phytogéographie"@fr ;
+    skos:scopeNote """Classification, identification, nomenclature et phylogénie ou évolution des plantes utiles (y compris les arbres forestiers et les plantes aquatiques)
+Distribution géographique naturelle des plantes ; flore ; listes de référence des plantes"""@fr .
+
+agrist-thema:K01 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:E12,
+        agrist-thema:E20,
+        agrist-thema:F40,
+        agrist-thema:K10,
+        agrist-thema:K11,
+        agrist-thema:P01 ;
+    skos:broader agrist-thema:K ;
+    skos:editorialNote """conservation de la biodiversité forestière, voir P01
+conservation des forêts utilisées pour les loisirs, voir P01
+conservation du milieu forestier, voir P01
+écologie forestière, voir F40
+génie forestier, voir K11
+géographie des forêts, répartition des forêts, influence de la forêt sur l'environnement, voir P01
+gestion forestière, voir E20
+production forestière, voir K10
+travail et emploi forestiers, voir E12
+utilisation de la forêt pour les loisirs, voir P01"""@fr ;
+    skos:prefLabel "Forestry - General aspects"@en,
+        "Foresterie - Considérations générales"@fr ;
+    skos:scopeNote """Considérations sur la forêt en général
+Influence des forêts : effets dus à la présence des forêts sur l'eau, le sol, le climat et la santé"""@fr .
+
+agrist-thema:K11 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:J12,
+        agrist-thema:N01,
+        agrist-thema:N20 ;
+    skos:broader agrist-thema:K ;
+    skos:editorialNote """matériels et équipements forestiers, voir N20
+routes rurales, voir N01
+transport des produits forestiers, voir J12"""@fr ;
+    skos:prefLabel "Forest engineering"@en,
+        "Génie forestier"@fr ;
+    skos:scopeNote """Génie forestier, défrichement, nivellement, stabilisation des pentes, etc.
+Routes forestières"""@fr .
+
+agrist-thema:L50 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:H10,
+        agrist-thema:H20,
+        agrist-thema:L51,
+        agrist-thema:L52,
+        agrist-thema:L53,
+        agrist-thema:L70,
+        agrist-thema:L72,
+        agrist-thema:L73,
+        agrist-thema:L74 ;
+    skos:broader agrist-thema:L ;
+    skos:editorialNote """immunité : résistance des animaux aux maladies, voir L73
+immunité : résistance des animaux aux organismes nuisibles, voir L72
+immunologie (en général), voir L70
+métamorphose, croissance et développement des animaux, voir L52
+physiologie de la nutrition animale, voir L51
+physiologie de la reproduction animale, voir L53
+physiologie des organismes nuisibles, voir H10, L72
+physiologie et biochimie des organismes utilisés dans la lutte contre les organismes nuisibles et les maladies, voir H10, H20, L72, L73
+résistance des animaux au climat, aux conditions extrêmes, voir L74"""@fr ;
+    skos:prefLabel "Animal physiology and biochemistry"@en,
+        "Physiologie et biochimie animales"@fr ;
+    skos:scopeNote """Ne comprend pas les documents dans lesquels les animaux sont traités comme matériel d'expérimentation pour la recherche fondamentale physiologique ou biochimique
+Aspects généraux de la physiologie et de la biochimie des animaux utiles aquatiques et terrestres (à l'exclusion des organismes utilisés dans la lutte contre les organismes nuisibles et les maladies) ; circulation, respiration, etc.
+Composition chimique, analyse chimique des animaux utiles (à l'exclusion des organismes utilisés dans la lutte contre les organismes nuisibles et les maladies)"""@fr .
+
+agrist-thema:L60 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:H10,
+        agrist-thema:H20,
+        agrist-thema:L10,
+        agrist-thema:L20,
+        agrist-thema:L72,
+        agrist-thema:L73,
+        agrist-thema:M40,
+        agrist-thema:P34 ;
+    skos:broader agrist-thema:L ;
+    skos:editorialNote """écologie animale : aquatique, voir M40
+écologie animale : terrestre, voir L20
+faune du sol, voir P34
+génétique animale, voir L10
+taxonomie et distribution des organismes nuisibles, voir H10, L72
+taxonomie et distribution des organismes utilisés dans la lutte contre les organismes nuisibles et les maladies, voir H10, H20, L72, L73"""@fr ;
+    skos:prefLabel "Animal taxonomy and geography"@en,
+        "Taxonomie et géographie animales"@fr ;
+    skos:scopeNote """Classification, identification, nomenclature et phylogénie des animaux utiles aquatiques et terrestres (à l'exclusion des organismes utilisés dans la lutte contre les organismes nuisibles et les maladies)
+Répartition géographique des animaux ; faune"""@fr .
+
+agrist-thema:P07 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:P05,
+        agrist-thema:P06 ;
+    skos:broader agrist-thema:P ;
+    skos:editorialNote """gestion des ressources énergétiques, voir P05
+sources d'énergie renouvelable, voir P06"""@fr ;
+    skos:prefLabel "Non-renewable energy resources"@en,
+        "Sources d'énergie non-renouvelable"@fr ;
+    skos:scopeNote "Développement de l'énergie utilisée pour la production agricole ou le traitement des produits après récolte à partir de sources d'énergie conventionnelle ou non-renouvelable (telles que pétrole, schistes bitumineux, gaz naturel, charbon, tourbe, etc.)"@fr .
+
+agrist-thema:Q05 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:Q03,
+        agrist-thema:Q04,
+        agrist-thema:Q55 ;
+    skos:broader agrist-thema:Q ;
+    skos:editorialNote """additifs aux aliments pour animaux, voir Q55
+composition des produits alimentaires, voir Q04
+santé publique et produits alimentaires, voir Q03"""@fr ;
+    skos:prefLabel "Food additives"@en,
+        "Additifs alimentaires"@fr ;
+    skos:scopeNote "Substances ajoutées aux produits alimentaires pour en améliorer la couleur, la flaveur, la texture ; assaisonnements, émulsifiants, stabilisants, édulcorants, etc."@fr .
+
+agrist-thema:Q70 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:F04,
+        agrist-thema:F06,
+        agrist-thema:N01,
+        agrist-thema:P02,
+        agrist-thema:P06,
+        agrist-thema:P10 ;
+    skos:broader agrist-thema:Q ;
+    skos:editorialNote """pollution et polluants, voir P02
+production d'énergie a partir des déchets, voir P06
+système d'élimination des déchets et des eaux usées, voir N01
+traitement des eaux usées, voir P10
+utilisation des déchets pour la fertilisation, voir F04
+utilisation des eaux usées pour l'irrigation, voir F06"""@fr ;
+    skos:prefLabel "Processing of agricultural wastes"@en,
+        "Traitement des déchets agricoles"@fr ;
+    skos:scopeNote """Transformation des déchets et sous-produits agricoles (à l'exclusion du traitement des eaux usées et de la production d'énergie à partir des déchets)
+Gestion des déchets (à l'exclusion de la gestion des eaux usées): élimination des déchets, recyclage des déchets
+Traitement des déchets (à l'exclusion du traitement des eaux usées) : méthodes d'épuration, traitements physique et mécanique, traitement biologique, etc."""@fr .
+
+agrist-thema:Q80 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:E80,
+        agrist-thema:J10,
+        agrist-thema:J11,
+        agrist-thema:J12,
+        agrist-thema:J13,
+        agrist-thema:J14,
+        agrist-thema:Q02,
+        agrist-thema:Q52 ;
+    skos:broader agrist-thema:Q ;
+    skos:editorialNote """conservation des aliments pour animaux, voir Q52
+conservation des produits alimentaires, voir Q02
+conservation des produits alimentaires à la maison, voir E80
+stockage des aliments pour animaux, voir J10-J14
+stockage des produits alimentaires, voir J10-J14"""@fr ;
+    skos:prefLabel "Packaging"@en,
+        "Conditionnement"@fr ;
+    skos:scopeNote """À utiliser pour l'emballage et le conditionnement des produits agricoles en général
+Conditionnement des produits agricoles : mise en boîte, embouteillage, emballage hermétique, emballage sous vide, empaquetage, enrobage, mise en balle, etc."""@fr .
+
+agrist-thema:A50 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:C10,
+        agrist-thema:E70,
+        agrist-thema:U30 ;
+    skos:broader agrist-thema:A ;
+    skos:editorialNote """méthodes et techniques de recherche, voir U30
+recherche de marché, voir E70
+stations et fermes expérimentales, voir C10"""@fr ;
+    skos:prefLabel "Agricultural research"@en,
+        "Recherche agronomique"@fr ;
+    skos:scopeNote """Administration de la recherche agronomique en général
+Plans, politiques, programmes et projets de recherche
+Administration et financement de la recherche
+Personnel de recherche"""@fr .
+
+agrist-thema:F02 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:F01,
+        agrist-thema:F03,
+        agrist-thema:F30,
+        agrist-thema:F63,
+        agrist-thema:K10 ;
+    skos:broader agrist-thema:F ;
+    skos:editorialNote """génétique et amélioration des plantes, voir F30
+multiplication des arbres forestiers, voir K10
+physiologie de la reproduction végétale, voir F63
+production et traitement des semences (à l'exclusion de la production et du traitement des semences forestières), voir F03
+production et traitement des semences forestières, voir K10
+semis, date de semis, profondeur de semis, densité de semis, voir F01"""@fr ;
+    skos:prefLabel "Plant propagation"@en,
+        "Multiplication végétative des plantes"@fr ;
+    skos:scopeNote """Techniques de multiplication végétative des plantes (à l'exclusion de la multiplication des arbres forestiers)
+Multiplication : greffage ; écussonnage ; culture de cellules et de méristèmes ; éclatement ; marcottage ; bouturage ; clonage, etc. (à l'exclusion de la multiplication des arbres forestiers par bouturage, clonage, etc.)"""@fr .
+
+agrist-thema:L52 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:H10,
+        agrist-thema:H20,
+        agrist-thema:L72,
+        agrist-thema:L73 ;
+    skos:broader agrist-thema:L ;
+    skos:editorialNote """croissance et développement des organismes nuisibles, voir H10, L72
+croissance et développement des organismes utilisés dans la lutte contre les organismes nuisibles et les maladies, voir H10, H20, L72, L73"""@fr ;
+    skos:prefLabel "Animal Physiology - Growth and development"@en,
+        "Physiologie animale - Croissance et développement"@fr ;
+    skos:scopeNote "Croissance et développement des animaux utiles aquatiques et terrestres (à l'exclusion des organismes utilisés dans la lutte contre les organismes nuisibles et les maladies) ; métamorphose, sénescence animale, différenciation cellulaire, etc."@fr .
+
+agrist-thema:M01 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:D50,
+        agrist-thema:E20,
+        agrist-thema:E21,
+        agrist-thema:M11,
+        agrist-thema:M12 ;
+    skos:broader agrist-thema:M ;
+    skos:editorialNote """industrie aquacole, voir E21
+industrie de la pêche, voir E21
+organisation, administration et gestion des entreprises de pêche et d'aquaculture, voir E20
+production de l'aquaculture, voir M12
+production de la pêche, voir M11
+réglementation de la pêche, voir D50"""@fr ;
+    skos:prefLabel "Fisheries and aquaculture - General aspects"@en,
+        "Pêche et aquaculture - Considérations générales"@fr ;
+    skos:scopeNote """Ne comprend pas l'information sur les études scientifiques en océanographie et limnologie, sauf si elle a des relations spécifiques avec la pêche et l'aquaculture
+Considérations générales sur la pêche et l'aquaculture
+Exploration et amélioration des ressources aquatiques, végétales et animales, pour leur utilisation
+Conservation des ressources aquatiques en général"""@fr .
+
+agrist-thema:N10 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:N20 ;
+    skos:broader agrist-thema:N ;
+    skos:editorialNote "machines et matériels agricoles, voir N20"@fr ;
+    skos:prefLabel "Agricultural structures"@en,
+        "Bâtiments agricoles"@fr ;
+    skos:scopeNote "Conception, matériaux, construction et entretien des édifices agricoles tels que bâtiments de ferme ; logement des animaux ; abris pour plantes : serres, etc. ; bâtiments de stockage des produits agricoles : granges, silos, etc. ; bâtiments pour les produits de récolte et leur manutention ; bâtiments annexes : garages, hangars à matériel, etc. ; enclos et installations de protection ; etc."@fr .
+
+agrist-thema:P30 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:E11,
+        agrist-thema:F04,
+        agrist-thema:F06,
+        agrist-thema:F07,
+        agrist-thema:P01,
+        agrist-thema:P10,
+        agrist-thema:P31,
+        agrist-thema:P35,
+        agrist-thema:P36 ;
+    skos:broader agrist-thema:P ;
+    skos:editorialNote """économie de la mise en valeur du sol, voir E11
+érosion du sol, voir P36
+façon culturale, voir F07
+fertilisation, voir F04
+fertilité du sol, voir P35
+irrigation, voir F06
+levés pédologiques, voir P31
+paysagisme, conservation du paysage et de la nature, voir P01
+pertes de sol, conservation du sol, voir P36
+récupération du sol, voir P36
+ressources en eau et leur gestion, voir P10
+ressources foncières, voir P01"""@fr ;
+    skos:prefLabel "Soil science and management"@en,
+        "Sciences et aménagement du sol"@fr ;
+    skos:scopeNote """Sciences du sol en général
+Potentialités des ressources en sol ; capabilité du sol
+Planification des ressources en sols et leur amélioration"""@fr .
+
+agrist-thema:P33 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:F06,
+        agrist-thema:P11,
+        agrist-thema:P31,
+        agrist-thema:P32,
+        agrist-thema:P34,
+        agrist-thema:P35,
+        agrist-thema:P36 ;
+    skos:broader agrist-thema:P ;
+    skos:editorialNote """biochimie du sol, voir P34
+classification des sols, voir P32
+drainage, voir P11
+érosion du sol, voir P36
+fertilité du sol, voir P35
+irrigation, voir F06
+levés pédologiques, voir P31"""@fr ;
+    skos:prefLabel "Soil chemistry and physics"@en,
+        "Chimie et physique du sol"@fr ;
+    skos:scopeNote """Chimie du sol : chimie organique et minérale du sol (mais non la biochimie)
+Analyse du sol ; évaluation du sol ; techniques d'expérimentation, expérimentation en plein champ
+Physique du sol ; propriétés physiques : aération, texture, etc. ; teneur en eau du sol et capacité de rétention en eau du sol, solution du sol, perméabilité ; absorption et adsorption, capillarité, infiltration ; phénomènes électriques et autres aspects physiques en relation avec le sol
+Mécanique et structure du sol, y compris l'état structural et la stabilité, la porosité
+Génie des sols"""@fr .
+
+agrist-thema:Q51 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:D50,
+        agrist-thema:L02,
+        agrist-thema:M12,
+        agrist-thema:Q01,
+        agrist-thema:Q52,
+        agrist-thema:Q53 ;
+    skos:broader agrist-thema:Q ;
+    skos:editorialNote """alimentation des animaux aquatiques, voir M12
+alimentation des animaux terrestres, voir L02
+contrôle sanitaire des aliments pour animaux, voir Q53
+législation concernant le contrôle de la qualité des aliments pour animaux, voir D50
+science et technologie alimentaires, voir Q01
+traitement des aliments pour animaux, voir Q52"""@fr ;
+    skos:prefLabel "Feed technology"@en,
+        "Technologie des aliments pour animaux"@fr ;
+    skos:scopeNote "Technologie des aliments pour animaux en général"@fr .
+
+agrist-thema:Q55 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:L02,
+        agrist-thema:M12,
+        agrist-thema:Q05,
+        agrist-thema:Q53,
+        agrist-thema:Q54 ;
+    skos:broader agrist-thema:Q ;
+    skos:editorialNote """additifs alimentaires (pour l'être humain), voir Q05
+alimentation des animaux aquatiques, voir M12
+alimentation des animaux terrestres, voir L02
+composition des aliments pour animaux, voir Q54
+inspection, contrôle sanitaire des aliments pour animaux, voir Q53"""@fr ;
+    skos:prefLabel "Feed additives"@en,
+        "Additifs aux aliments des animaux"@fr ;
+    skos:scopeNote "Additifs alimentaires pour animaux : substances ajoutées aux aliments ou concentrés pour animaux destinés à équilibrer les rations du bétail et améliorer la croissance des animaux"@fr .
+
+agrist-thema:C20 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:C10,
+        agrist-thema:E73 ;
+    skos:broader agrist-thema:C ;
+    skos:editorialNote """éducation et protection du consommateur, voir E73
+enseignement professionnel, voir C10
+planification de l'éducation, méthodes d'enseignement et de formation professionnelle, voir C10"""@fr ;
+    skos:prefLabel "Extension"@en,
+        "Vulgarisation"@fr ;
+    skos:scopeNote """Vulgarisation, assistance-conseil et démonstrations en agriculture
+Vulgarisation agricole comprenant la communication systématique et organisée avec les exploitants agricoles en vue de les aider à choisir les objectifs réalisables, acquérir les connaissances et techniques nécessaires, identifier leurs problèmes, formuler des solutions, résoudre les problèmes identifiés et évaluer les résultats obtenus
+Opérations et services de vulgarisation, comprenant la planification des programmes, l'organisation, la gestion et l'évaluation des services de vulgarisation, méthodes de communication, conseils et directives aux exploitants agricoles et aux ruraux, démonstrations
+Agents de vulgarisation
+Communication, développement et utilisation des médias de masse (tels que journaux, émissions de radio ou de télévision, films) destinés à la population rurale ; journalisme agricole"""@fr .
+
+agrist-thema:E71 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:D50,
+        agrist-thema:E72 ;
+    skos:broader agrist-thema:E ;
+    skos:editorialNote """commerce intérieur, voir E72
+droit du commerce international, voir D50
+réglementation des importations et des exportations, voir D50
+réglementation douanière, voir D50"""@fr ;
+    skos:prefLabel "International trade"@en,
+        "Commerce international"@fr ;
+    skos:scopeNote """Commerce international relatif aux produits agricoles de base ou aux produits utilisés pour la production agricole, et aux politiques concernant ce domaine, y compris les mesures pour le développement du commerce, les barrières douanières, le contrôle des importations, les politiques tarifaires
+Conditions du marché mondial
+Accords de commerce international, marchés communs, politiques agricoles communes, règles communes de conduite en matière de commerce international et de relations commerciales ; accords multinationaux qui peuvent comprendre des objectifs tels que l'accroissement de la productivité agricole, la stabilisation des marchés agricoles, des prix communautaires garantis pour les produits agricoles, le commerce sans restriction entre pays membres, les relations de systèmes de marché commun avec des pays non membres, etc."""@fr .
+
+agrist-thema:E72 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:E70,
+        agrist-thema:E71,
+        agrist-thema:E73 ;
+    skos:broader agrist-thema:E ;
+    skos:editorialNote """commerce en général, voir E70
+commerce international, voir E71
+distribution et commercialisation de produits agricoles, voir E70
+économie de la consommation, voir E73"""@fr ;
+    skos:prefLabel "Domestic trade"@en,
+        "Commerce intérieur"@fr ;
+    skos:scopeNote """Commerce intérieur comprenant les activités liées au passage des produits agricoles de base et des produits utilisés pour la production agricole, du producteur au consommateur, à l'intérieur d'un pays
+Commerce national et local"""@fr .
+
+agrist-thema:F62 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:F01,
+        agrist-thema:F03,
+        agrist-thema:H10,
+        agrist-thema:H20,
+        agrist-thema:H60,
+        agrist-thema:L72,
+        agrist-thema:L73 ;
+    skos:broader agrist-thema:F ;
+    skos:editorialNote """méthodes de contrôle de la croissance des plantes, voir F01
+aptitude à la germination des semences, voir F03
+croissance et développement des mauvaises herbes, voir H60
+croissance et développement des organismes utilisés dans la lutte contre les bioagresseurs, voir H10, H20, L72, L73"""@fr ;
+    skos:prefLabel "Plant physiology - Growth and development"@en,
+        "Physiologie végétale - Croissance et développement"@fr ;
+    skos:scopeNote """Croissance et développement des plantes utiles (y compris les arbres forestiers et les plantes aquatiques)
+Germination, morphogenèse, formation et développement d'organes, formation et développement de la graine cicatrisation, abscission, sénescence des plantes (etc.), physiologie des plantes après récolte"""@fr .
+
+agrist-thema:L01 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:E20,
+        agrist-thema:E70,
+        agrist-thema:H10,
+        agrist-thema:H20,
+        agrist-thema:J13,
+        agrist-thema:L02,
+        agrist-thema:L10,
+        agrist-thema:L50,
+        agrist-thema:L51,
+        agrist-thema:L52,
+        agrist-thema:L53,
+        agrist-thema:L70,
+        agrist-thema:L72,
+        agrist-thema:L73,
+        agrist-thema:L74,
+        agrist-thema:M11,
+        agrist-thema:M12,
+        agrist-thema:N10 ;
+    skos:broader agrist-thema:L ;
+    skos:editorialNote """alimentation des animaux (à l'exclusion des animaux aquatiques et des organismes utilisés dans la lutte contre les organismes nuisibles et les maladies), voir L02
+alimentation des animaux aquatiques, voir M12
+alimentation des organismes utilisés dans la lutte contre les organismes nuisibles et les maladies, voir H10, H20, L72, L73
+amélioration des animaux, voir L10
+aquaculture animale, voir M12
+distribution et commercialisation des produits d'origine animale, voir E70
+élevage d'organismes utilisés dans la lutte contre les organismes nuisibles et les maladies, voir H10, H20, L72, L73
+gestion de l'exploitation agricole, voir E20
+logement des animaux (constructions), voir N10
+manutention, transport, stockage et conservation des produits d'origine animale, voir J13
+physiologie et biochimie animales, voir L50-L53
+production d'animaux aquatiques, voir M12
+production de la pêche, voir M11
+protection des animaux, voir L70-L74"""@fr ;
+    skos:prefLabel "Animal husbandry"@en,
+        "Élevage - Considérations générales"@fr ;
+    skos:scopeNote """Élevage en général ; production et soins aux animaux utiles (à l'exclusion des animaux aquatiques et des organismes utilisés dans la lutte contre les organismes nuisibles et les maladies)
+Dressage, testage, sexage, marquage au fer et autres moyens pour identifier, exposer, juger les animaux
+Méthodes d'élevage des animaux utiles (autres que les animaux d'aquaculture et les organismes utilisés dans la lutte contre les organismes nuisibles et les maladies)
+Systèmes d'élevage : élevage protégé, en batterie, en liberté, extensif, intensif, à grande échelle, au sol, sur litière profonde; hivernage, sous abri
+Production de bétail : ânes, chevaux, bovins, buffles, chameaux, chèvres, porcs, moutons, etc. ; production de viande
+Production de lait, traite
+Aviculture : élevage de volailles, production d'œufs, production de viande de volaille
+Apiculture : élevage d'abeilles domestiques, conduite de la ruche, production de miel
+Sériciculture : élevage de vers à soie, production de soie
+Élevage d'autres animaux, tels que les animaux à fourrure, etc.
+Techniques d'abattage
+Rendements : quantité de produits ou de leurs dérivés découlant de l'élevage des animaux, poids à l'abattage, poids de carcasse ; récolte de produits d'origine animale"""@fr .
+
+agrist-thema:L20 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:H10,
+        agrist-thema:H20,
+        agrist-thema:L72,
+        agrist-thema:L73,
+        agrist-thema:L74,
+        agrist-thema:M40,
+        agrist-thema:P01 ;
+    skos:broader agrist-thema:L ;
+    skos:editorialNote """conservation des animaux, gestion de la faune sauvage, réserves de chasse et inventaires de gibier, chasse et pêche sportives, voir P01
+écologie des animaux aquatiques, voir M40
+écologie des organismes nuisibles, voir H10, L72
+écologie des organismes utilisés dans la lutte contre les organismes nuisibles et les maladies, voir H10, H20, L72, L73
+résistance des animaux au climat, aux conditions extrêmes, voir L74"""@fr ;
+    skos:prefLabel "Animal ecology"@en,
+        "Écologie animale"@fr ;
+    skos:scopeNote """Animaux utiles (à l'exclusion des animaux aquatiques et des organismes utilisés dans la lutte contre les organismes nuisibles et les maladies) en relation avec leur environnement ; écologie, phénologie
+Biologie du milieu ; effets des influences extérieures sur les processus biologiques chez les animaux terrestres utiles
+Comportement des animaux ; communication ; instinct ; apprentissage
+Habitat ; structure des populations animales
+Facteurs climatiques saisonniers : hibernation, migration
+Communautés animales, colonies, symbiose, etc."""@fr .
+
+agrist-thema:L53 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:H10,
+        agrist-thema:H20,
+        agrist-thema:L10,
+        agrist-thema:L40,
+        agrist-thema:L70,
+        agrist-thema:L72,
+        agrist-thema:L73,
+        agrist-thema:L74 ;
+    skos:broader agrist-thema:L ;
+    skos:editorialNote """anatomie et morphologie du système reproducteur, voir L40
+génétique et amélioration des animaux, voir L10
+intervention chirurgicale à la parturition (obstétrique), voir L70
+physiologie de la reproduction des organismes nuisibles, voir H10, L72
+physiologie de la reproduction des organismes utilisés dans la lutte contre les organismes nuisibles et les maladies, voir H10, H20, L72, L73
+troubles de la reproduction chez les animaux, voir L74"""@fr ;
+    skos:prefLabel "Animal physiology - Reproduction"@en,
+        "Physiologie animale - Reproduction"@fr ;
+    skos:scopeNote """Physiologie de la reproduction des animaux utiles aquatiques et terrestres (à l'exclusion des organismes utilisés dans la lutte contre les organismes nuisibles et les maladies)
+Spermatogenèse, ovogenèse, hormones sexuelles, œstrus, ovulation, gestation, parturition, fertilité, etc."""@fr .
+
+agrist-thema:P05 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:N01,
+        agrist-thema:P06,
+        agrist-thema:P07 ;
+    skos:broader agrist-thema:P ;
+    skos:editorialNote """électrification rurale, génies électrique et électronique, voir N01
+sources d'énergie non-renouvelable, voir P07
+sources d'énergie renouvelable, voir P06"""@fr ;
+    skos:prefLabel "Energy resources management"@en,
+        "Ressources énergétiques et leur gestion"@fr ;
+    skos:scopeNote """Politique de l'énergie ; état de la situation énergétique
+Économie de l'énergie, offre et demande; substances énergétiques, comptabilité énergétique, budget, subvention, coût ; flux d'énergie, ratio énergétique
+Conservation, besoins et utilisation de l'énergie (y compris l'énergie des animaux de trait et de la traction animale) pour la production, la transformation, la commercialisation et le transport des produits agricoles
+Stockage de l'énergie ; matériel pour la transformation de l'énergie ; distribution de l'énergie
+Centrales électriques utilisées par l'agriculture et le monde rural"""@fr .
+
+agrist-thema:P32 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:P31,
+        agrist-thema:P36 ;
+    skos:broader agrist-thema:P ;
+    skos:editorialNote """érosion du sol, voir P36
+levés des sols, voir P31"""@fr ;
+    skos:prefLabel "Soil classification and genesis"@en,
+        "Classification des sols et pédogenèse"@fr ;
+    skos:scopeNote """Distribution spatiale des sols ; classification génétique (zonale) et texturale
+Profils de sol ; horizons et profondeur du sol
+Formation du sol ; altérations du sol dues aux intempéries, sols d'apport, âge des sols"""@fr .
+
+agrist-thema:S40 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:E10,
+        agrist-thema:E14,
+        agrist-thema:S20,
+        agrist-thema:S30 ;
+    skos:broader agrist-thema:S ;
+    skos:editorialNote """aide alimentaire, voir E14
+normes nutritionnelles, voir S30
+physiologie de la nutrition humaine, voir S20
+planification des stocks alimentaires, politique d'approvisionnement alimentaire, voir E10
+régimes et maladies nutritionnelles, voir S30"""@fr ;
+    skos:prefLabel "Nutrition programmes"@en,
+        "Programmes alimentaires"@fr ;
+    skos:scopeNote """Planification, politique, administration de programmes alimentaires ; impacts et évaluation des programmes
+Programmes alimentaires communautaires
+Programmes d'alimentation infantile : repas scolaires, distribution de lait"""@fr .
+
+agrist-thema:E13 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:E10,
+        agrist-thema:E11,
+        agrist-thema:E20,
+        agrist-thema:E21,
+        agrist-thema:E80,
+        agrist-thema:E90 ;
+    skos:broader agrist-thema:E ;
+    skos:editorialNote """comptes et budgets familiaux, voir E80
+économie agricole en général, voir E10
+entreprises agricoles, voir E20
+imposition des terres, voir E11
+industries agricoles, voir E21
+structure agraire, voir E90"""@fr ;
+    skos:prefLabel "Investment, finance and credit"@en,
+        "Investissements, financement et crédit"@fr ;
+    skos:scopeNote """Finances : aspects monétaires des activités agricoles en général, y compris la circulation monétaire, l'octroi de crédits, les opérations d'investissement et la prestation de services bancaires. Microfinancement, microcrédit
+Aides et subventions agricoles : prêts gouvernementaux aux entreprises agricoles pour l'amélioration des exploitations ou des terres agricoles, dans le but d'accroître la production et la qualité des produits agricoles de base
+Coopératives de crédit agricole chargées de l'octroi de prêts basés sur un capital investi provenant de leurs membres et divisé en actions, chaque action représentant un droit de propriété proportionnel dans ce type de société"""@fr .
+
+agrist-thema:E51 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:E50 ;
+    skos:broader agrist-thema:E ;
+    skos:editorialNote "migration rurale, nomadisme, colonisation agraire, voir E50"@fr ;
+    skos:prefLabel "Rural population"@en,
+        "Population rurale"@fr ;
+    skos:scopeNote """Politique concernant la population rurale, y compris la régulation des naissances, le planning familial
+Structure, composition, répartition de la population rurale
+Dynamique de la population rurale : accroissement, baisse de la population, densité de population, équilibre de la population
+Recensements, études, statistiques de population rurale"""@fr .
+
+agrist-thema:F03 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:E21,
+        agrist-thema:F02,
+        agrist-thema:F62,
+        agrist-thema:K10 ;
+    skos:broader agrist-thema:F ;
+    skos:editorialNote """germination des semences, voir F62
+industrie des semences, voir E21
+multiplication d'arbres forestiers, voir K10
+multiplication végétative des plantes, voir F02
+production et traitement des semences forestières, voir K10"""@fr ;
+    skos:prefLabel "Seed production and processing"@en,
+        "Production et traitement des semences"@fr ;
+    skos:scopeNote """Production de semences pour la multiplication et traitement des semences (à l'exclusion de la production et du traitement des semences forestières)
+Traitement des semences : nettoyage, inoculation, enrobage, scarification, stratification, scarification du testa de la graine, etc. ; tests des semences, essais des semences, certification des semences ; contrôle de la qualité des semences
+Aptitude à la germination
+Stockage des semences"""@fr .
+
+agrist-thema:F07 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:F01,
+        agrist-thema:F04,
+        agrist-thema:F08,
+        agrist-thema:H60,
+        agrist-thema:K10,
+        agrist-thema:N20,
+        agrist-thema:P36 ;
+    skos:broader agrist-thema:F ;
+    skos:editorialNote """amélioration du sol, voir F04
+brûlage contrôlé ou dirigé en forêt, voir K10
+conservation du sol, voir P36
+culture des plantes, voir F01
+désherbage, voir H60
+emploi des engrais, voir F04
+matériel pour le travail du sol, voir N20
+systèmes avec jachère, voir F08
+systèmes de culture, voir F08"""@fr ;
+    skos:prefLabel "Soil cultivation"@en,
+        "Travail du sol"@fr ;
+    skos:scopeNote "Préparation du sol pour la culture des plantes : travail du sol, hersage, roulage, labour, mise en jachère, paillage, stérilisation, désinfection (état sanitaire du sol), brûlage, préparation du lit de semences, etc."@fr .
+
+agrist-thema:F63 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:F02,
+        agrist-thema:F30,
+        agrist-thema:H10,
+        agrist-thema:H20,
+        agrist-thema:H60,
+        agrist-thema:K10,
+        agrist-thema:L72,
+        agrist-thema:L73 ;
+    skos:broader agrist-thema:F ;
+    skos:editorialNote """génétique et amélioration des plantes, voir F30
+multiplication des arbres forestiers, voir K10
+multiplication des plantes, voir F02
+physiologie de la reproduction des organismes utilisés dans la lutte contre les bioagresseurs, voir H10, H20, L72, L73
+reproduction des mauvaises herbes, voir H60"""@fr ;
+    skos:prefLabel "Plant physiology - Reproduction"@en,
+        "Physiologie végétale - Reproduction"@fr ;
+    skos:scopeNote "Mécanismes de reproduction chez les plantes utiles (y compris les arbres forestiers et les plantes aquatiques) : formation de cellules germinales et de spores, formation de cellules sexuelles, pollinisation, parthénogénèse, fructification, apogamie, aposporie, reproduction végétative, etc."@fr .
+
+agrist-thema:J10 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:F01,
+        agrist-thema:J11,
+        agrist-thema:J12,
+        agrist-thema:J13,
+        agrist-thema:J14,
+        agrist-thema:J15,
+        agrist-thema:K10,
+        agrist-thema:K50,
+        agrist-thema:L01,
+        agrist-thema:M11,
+        agrist-thema:M12,
+        agrist-thema:N10,
+        agrist-thema:N20,
+        agrist-thema:Q02,
+        agrist-thema:Q03,
+        agrist-thema:Q52,
+        agrist-thema:Q53,
+        agrist-thema:Q60 ;
+    skos:broader agrist-thema:J ;
+    skos:editorialNote """altération des aliments pour animaux, voir Q53
+altération des produits alimentaires, voir Q03
+bâtiments de stockage, voir N10
+manutention, transport, stockage et conservation des produits agricoles non-alimentaires, voir J15
+manutention, transport, stockage et conservation des produits d'origine animale, voir J13
+manutention, transport, stockage et conservation des produits d'origine végétale, voir J11
+manutention, transport, stockage et conservation des produits des pêches et de l'aquaculture, voir J14
+manutention, transport, stockage et conservation des produits forestiers, voir J12
+matériel de manutention et de transport, voir N20
+première transformation des produits agricoles non-alimentaires, voir Q60
+récolte des produits de l'aquaculture, voir M12
+récolte des produits de la pêche, voir M11
+récolte des produits d'origine animale, voir L01
+récolte des produits d'origine végétale, voir F01
+récolte des produits forestiers, voir K10
+traitement des produits forestiers, voir K50
+traitement et conservation des aliments pour animaux, voir Q52
+traitement et conservation des produits alimentaires, voir Q02"""@fr ;
+    skos:prefLabel "Handling, transport, storage and protection of agricultural products"@en,
+        "Manutention, transport, stockage et conservation des produits agricoles"@fr ;
+    skos:scopeNote """Manutention, transport, stockage et conservation des produits agricoles, en général.
+Méthodes de stockage (à l'exclusion des bâtiments de stockage) de produits agricoles en général : stockage en vrac, centralisé, frigorifique, en atmosphère contrôlée, à la ferme, hors de la ferme, réfrigéré, souterrain, etc.
+Stockage à la ferme et gestion des entrepôts
+Dégâts et pertes de produits agricoles en général, pendant et après les récoltes (manutention, transport, stockage, etc.), mesures de prévention et de lutte
+Organismes et agents pathogènes nuisibles (bioagresseurs) aux produits agricoles en général ; présence et lutte
+Dégâts causés aux produits agricoles en général par les facteurs atmosphériques, le feu, les équipements et autres agents physiques; prévention et lutte"""@fr .
+
+agrist-thema:J15 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:F01,
+        agrist-thema:J12,
+        agrist-thema:K10,
+        agrist-thema:L01,
+        agrist-thema:M11,
+        agrist-thema:M12,
+        agrist-thema:Q60 ;
+    skos:broader agrist-thema:J ;
+    skos:editorialNote """manutention, transport, stockage et conservation des produits forestiers, voir J12
+première transformation des produits agricoles non-alimentaires, voir Q60
+récolte des produits d'origine animale non-alimentaires, voir L01
+récolte des produits d'origine végétale non alimentaires, voir F01
+récolte des produits de l'aquaculture non alimentaires, voir M12
+récolte des produits de la pêche non-alimentaires, voir M11
+récolte des produits forestiers, voir K10"""@fr ;
+    skos:prefLabel "Handling, transport, storage and protection of non-food or non-feed agricultural products"@en,
+        "Manutention, transport, stockage et conservation des produits agricoles non-alimentaires"@fr ;
+    skos:scopeNote """Manutention, transport, stockage et conservation des produits non-alimentaires d'origine végétale (à l'exclusion des produits forestiers) : fibres, tabac, coton, fleurs coupées, etc.
+Manutention, transport, stockage et conservation des produits non-alimentaire d'origine animale : laine, fourrure, peaux, cuir, soie, etc.
+Méthodes de stockage des produits agricoles non-alimentaires (à l'exclusion des produits forestiers) ; effets des conditions de stockage
+Dégâts et pertes de produits agricoles non-alimentaires d'origine animale et végétale (à l'exclusion des produits forestiers) pendant et après les récoltes (manutention, transport, stockage, etc.) ; mesures de prévention et lutte
+Bioagresseurs des produits agricoles non-alimentaires (à l'exclusion des produits forestiers) ; présence et lutte
+Dégâts causés aux produits agricoles non-alimentaires (à l'exclusion des produits forestiers) par les facteurs atmosphériques, le feu, les équipements et autres agents physiques ; prévention et lutte"""@fr .
+
+agrist-thema:K50 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:E21,
+        agrist-thema:E70,
+        agrist-thema:F50,
+        agrist-thema:J12,
+        agrist-thema:P06 ;
+    skos:broader agrist-thema:K ;
+    skos:editorialNote """bois-énergie, procédés de carbonisation et pyrolyse, voir P06
+classement, norme, marquage, voir E70
+conservation et protection des produits dérivés du bois, voir J12
+distribution et commercialisation des produits forestiers, voir E70
+économie de l'industrie des produits forestiers, voir E21
+structure du bois, voir F50
+traitements de préservation du bois, voir J12"""@fr ;
+    skos:prefLabel "Processing of forest products"@en,
+        "Technologie des produits forestiers"@fr ;
+    skos:scopeNote """Transformations primaire et secondaire et propriétés des produits et sous-produits forestiers
+Bois : bois d'œuvre et bois de sciage ; techniques de séchage et des parcs à bois ; travail du bois, sciage, rabotage, usinage, assemblage, etc. ; essai d'ignition du bois, traitement pour la résistance au feu, etc. ; contreplaqué, bois de placage, panneau de fibres, panneau de fibres dures, panneau de particules, etc.
+Pâte cellulosique et papier : papier, matériaux d'emballage, matériaux isolants, etc., fabriqués à partir de pâte cellulosique
+Produits chimiques dérivés du bois et produits de distillation : chimie de la cellulose et des lignines ; oléorésines, résines, térébenthine, goudrons, poix, etc. ; autres produits tels que gommes, huiles, cires, colorants, etc.
+Sous-produits de la forêt : fabrication de produits à base d'écorce, de sciure, de copeaux, de feuilles et branches d'arbres, etc.; produits secondaires tels que l'osier, les cannes, etc."""@fr .
+
+agrist-thema:K70 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:H10,
+        agrist-thema:H20,
+        agrist-thema:H50,
+        agrist-thema:H60,
+        agrist-thema:J12,
+        agrist-thema:K10,
+        agrist-thema:N20,
+        agrist-thema:P01 ;
+    skos:broader agrist-thema:K ;
+    skos:editorialNote """brûlage dirigé, voir K10
+conservation de la forêt, voir P01
+conservation des produits forestiers, voir J12
+maladies des arbres forestiers et lutte, voir H20
+matériel de détection et de lutte contre les incendies de forêt, voir N20
+mauvaises herbes forestières, plantes parasites des arbres forestiers et lutte, voir H60
+bioagresseurs des arbres forestiers et lutte, voir H10
+troubles physiologiques des arbres forestiers, voir H50"""@fr ;
+    skos:prefLabel "Forest injuries and protection"@en,
+        "Dégâts causés aux forêts et leur protection"@fr ;
+    skos:scopeNote """Techniques générales de protection de la forêt
+Dégâts causés à la forêt par les êtres humains, par les facteurs atmosphériques (chablis), par les équipements, par les produits chimiques toxiques et autres agents physiques (à l'exclusion des bioagresseurs et des maladies)
+Moyens, méthodes et programmes pour la prévention et la lutte contre les dégâts causés aux forêts
+Incendies de forêt : facteurs prédisposants et causes, estimation du danger d'incendie, prévention des incendies
+Techniques et programmes pour la détection et la lutte contre les incendies de forêt
+Effets de l'atmosphère sur les incendies de forêt"""@fr .
+
+agrist-thema:P35 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:F04,
+        agrist-thema:F07,
+        agrist-thema:F61,
+        agrist-thema:H50,
+        agrist-thema:P02,
+        agrist-thema:P33,
+        agrist-thema:P34,
+        agrist-thema:P36 ;
+    skos:broader agrist-thema:P ;
+    skos:editorialNote """analyse du sol, voir P33
+application d'engrais minéraux et organiques, voir F04
+apport d'éléments biologiques pour la fertilité du sol, voir P34
+carences minérales des plantes, voir H50
+chimie et physique du sol, voir P33
+conditionneur de sol, voir F04
+conservation du sol, voir P36
+façon culturale, voir F07
+fertilisation, voir F04
+physiologie de la nutrition des plantes, voir F61
+pollution du sol, voir P02 
+stérilisation du sol, voir F07
+utilisation des déchets, des eaux usées et des boues résiduaires comme engrais, voir F04"""@fr ;
+    skos:prefLabel "Soil fertility"@en,
+        "Fertilité du sol"@fr ;
+    skos:scopeNote """Conditions du sol favorables au développement de la plante
+Détermination de la fertilité du sol
+Dégradation du sol, détérioration, épuisement, appauvrissement et toxicité ; lessivage, salinité et dessalage ; disponibilité des éléments nutritifs, teneur en éléments nutritifs"""@fr .
+
+agrist-thema:P40 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:F08,
+        agrist-thema:H50,
+        agrist-thema:K70,
+        agrist-thema:L74,
+        agrist-thema:P02,
+        agrist-thema:P06,
+        agrist-thema:P10,
+        agrist-thema:P32,
+        agrist-thema:P36 ;
+    skos:broader agrist-thema:P ;
+    skos:editorialNote """altération due aux intempéries en relation avec la formation des sols, voir P32
+blessures causées aux animaux par les facteurs atmosphériques, voir L74
+culture sous des conditions climatiques particulières, voir F08
+dégâts causés aux forêts par les facteurs atmosphériques, voir K70
+dégâts causés aux plantes par les facteurs atmosphériques, voir H50
+énergie solaire, voir P06
+hydrologie, voir P10
+pollution de l'air, voir P02
+pollution de l'environnement, voir P02 
+vent et pluie en relation avec l'érosion du sol, voir P36"""@fr ;
+    skos:prefLabel "Meteorology and climatology"@en,
+        "Météorologie et climatologie"@fr ;
+    skos:scopeNote """Air et atmosphère ; agrométéorologie, y compris les prévisions météorologiques ; température
+Pression barométrique ; humidité ; vents ; hydrométéorologie, précipitations (à l'exclusion des aspects concernant les eaux superficielles) ; pluie provoquée
+Agroclimatologie, y compris bioclimat, microclimat, influence climatique, types, zones et changements climatiques
+Cartographie climatique et météorologique
+Matériels et instruments météorologiques"""@fr .
+
+agrist-thema:S20 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:L51,
+        agrist-thema:S30 ;
+    skos:broader agrist-thema:S ;
+    skos:editorialNote """normes nutritionnelles, voir S30
+physiologie de la nutrition animale, voir L51"""@fr ;
+    skos:prefLabel "Physiology of human nutrition"@en,
+        "Physiologie de la nutrition humaine"@fr ;
+    skos:scopeNote """Physiologie nutritionnelle de l'être humain : métabolisme et utilisation des substances alimentaires ; digestion
+Faim, soif, inanition, besoins nutritionnels et croissance, besoins nutritionnels et environnement"""@fr .
+
+agrist-thema:E14 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:C20,
+        agrist-thema:E11,
+        agrist-thema:E50 ;
+    skos:broader agrist-thema:E ;
+    skos:editorialNote """adaptation sociale à la colonisation agraire, aux migrations, voir E50
+animation rurale, voir E50
+aspects fonciers de la planification urbaine et rurale, zonage, voir E11
+assistance-conseil en agriculture aux exploitants agricoles et aux ruraux, voir C20
+développement communautaire, voir E50"""@fr ;
+    skos:prefLabel "Development economics and policies"@en,
+        "Économie et politique du développement"@fr ;
+    skos:scopeNote """Politique du développement agricole, y compris les programmes planifiés en vue de promouvoir la modernisation et le développement des techniques agricoles dans le but d'améliorer les conditions de vie sur le plan national
+Administration du développement du ressort de l'agriculture : dispositions pour mettre en oeuvre et coordonner les programmes de développement, comprenant des activités telles que l'identification des projets, la promotion pour le financement des projets de développement agricole, la création de zones de développement avec l'octroi de conditions favorables pour l'installation d'entreprises agricoles, le conseil en matière de techniques et de gestion
+Planification, politique et programmes de développement rural
+Coopération internationale pour le développement ; aide au développement, aide alimentaire
+Transferts technologiques, provoquant le changement et l'évolution, ainsi que les progrès techniques, la diffusion de l'innovation, le savoir-faire technique ainsi que l'adaptation de la technologie au niveau national ou international ; promotion des programmes d'assistance technique"""@fr .
+
+agrist-thema:E90 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:C10,
+        agrist-thema:E10,
+        agrist-thema:E11,
+        agrist-thema:E12,
+        agrist-thema:E13,
+        agrist-thema:E14,
+        agrist-thema:E16,
+        agrist-thema:E20,
+        agrist-thema:E50 ;
+    skos:broader agrist-thema:E ;
+    skos:editorialNote """crédits agricoles, voir E13
+économie agricole en général, voir E10
+économie de la production en général, voir E16
+économie et politique foncières, voir E11
+économie et politique du développement, voir E14
+fermes modèles, voir C10
+réforme agraire, voir E11
+sociologie rurale en général, voir E50
+systèmes agricoles, voir E20
+systèmes d'exploitation agricoles; fermes privées, collectives, d'Etat, métayage, fermage, etc., voir E20
+travail et emploi, voir E12"""@fr ;
+    skos:prefLabel "Agrarian structure"@en,
+        "Structure agraire"@fr ;
+    skos:scopeNote """Approche multidisciplinaire de l'agriculture, englobant des activités portant simultanément sur des aspects techniques, économiques et sociologiques
+Analyse des pratiques agricoles et évaluation de l'adéquation des technologies disponibles, compte tenu des demandes et contraintes du milieu bioécologique et socioculturel exercées sur les systèmes de faire-valoir : culture, forêts et élevage
+Analyse de l'évolution des exploitations agricoles ; suivi technique et économique de l'évolution des exploitations, en vue d'évaluer les capacités, les contraintes techniques, économiques et sociologiques et le niveau d'adéquation des innovations techniques
+Relations d'interdépendance dans les systèmes agraires, entre les facteurs physiques, biologiques, économiques et sociologiques
+Étude du territoire, par rapport au type d'exploitation et aux conditions socio-économiques en vigueur dans une région donnée ; organisation collective du territoire, des activités rurales et des pratiques agricoles
+Mode de faire-valoir des zones rurales, selon divers systèmes de production agricole et évolution du milieu naturel sous l'effet de ces pratiques
+Diffusion des critères techniques et des procédés méthodologiques se rapportant aux systèmes agraires, en veillant à maintenir un lien étroit entre la recherche et les utilisations pratiques"""@fr .
+
+agrist-thema:F08 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:E20,
+        agrist-thema:E90,
+        agrist-thema:F01,
+        agrist-thema:F06,
+        agrist-thema:F07,
+        agrist-thema:K10,
+        agrist-thema:L01,
+        agrist-thema:L02 ;
+    skos:broader agrist-thema:F ;
+    skos:editorialNote """culture des plantes, voir F01
+culture hydroponique et autre méthodes spéciales de culture des plantes, voir F01
+culture irriguée, voir F06
+élevage, voir L01
+gestion des parcours et des pâturages, voir F01
+façon culturale, voir F07
+pâturage en forêt, voir L02
+production forestière, voir K10
+système agraire, voir E90
+système d'exploitation, voir E20"""@fr ;
+    skos:prefLabel "Cropping patterns and systems"@en,
+        "Systèmes et modes de culture"@fr ;
+    skos:scopeNote """Succession des cultures, disposition des cultures dans l'espace, jachère et interaction avec l'élevage
+Monoculture, cultures multiples, cultures intercalaires, cultures dérobées, cultures intensives, cultures épuisantes
+Système de rotation des cultures : les différentes cultures sont effectuées successivement sur les mêmes terres suivant un ordre déterminé, surtout pour préserver la productivité du sol
+Culture itinérante relative à la culture des espaces naturels non exploités, comprenant les cultures de subsistance suivies par des jachères
+Système de jachère : succession d'années de culture et d'années de jachère
+Agroforesterie, y compris les systèmes agroforestiers (cultures forestières associées aux récoltes agricoles), systèmes sylvopastoraux (cultures forestières associées aux pâturages), ou systèmes agrosylvopastoraux (combinaison simultanée de la forêt avec la culture et le pâturage)
+Aridoculture (dry farming) ; culture en zone désertique ou en zone aride
+Agriculture biologique, agriculture biodynamique"""@fr .
+
+agrist-thema:F40 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:H10,
+        agrist-thema:H20,
+        agrist-thema:H50,
+        agrist-thema:H60,
+        agrist-thema:L72,
+        agrist-thema:L73,
+        agrist-thema:M40,
+        agrist-thema:P01,
+        agrist-thema:P34,
+        agrist-thema:P40 ;
+    skos:broader agrist-thema:F ;
+    skos:editorialNote """conservation des plantes et de la végétation, gestion de la flore sauvage, jardins botaniques, arboretum, voir P01
+écologie des mauvaises herbes, voir H60
+écologie des organismes utilisés dans la lutte contre les bioagresseurs, voir H10, H20, L72, L73
+écologie des plantes aquatiques, voir M40
+influences climatiques, voir P40
+influence de la rhizosphère, voir P34
+parcs nationaux, voir P01
+rusticité des plantes, voir H50"""@fr ;
+    skos:prefLabel "Plant ecology"@en,
+        "Écologie végétale"@fr ;
+    skos:scopeNote """Plantes utiles (autres qu'aquatiques) en relation avec leur milieu ; écologie, phénologie, biologie du milieu végétal, influences externes sur les processus biologiques des plantes utiles ; plantes indicatrices
+Écologie forestière"""@fr .
+
+agrist-thema:F61 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:F04,
+        agrist-thema:H10,
+        agrist-thema:H20,
+        agrist-thema:H50,
+        agrist-thema:L72,
+        agrist-thema:L73,
+        agrist-thema:P34 ;
+    skos:broader agrist-thema:F ;
+    skos:editorialNote """apport et effets des engrais, voir F04
+mycorhize, rhizobium, et autres micro-organismes en relation avec la nutrition des plantes, voir P34
+physiologie de la nutrition des organismes utilisés dans la lutte contre les bioagresseurs, voir H10, H20, L72, L73
+troubles nutritionnels des plantes, voir H50"""@fr ;
+    skos:prefLabel "Plant physiology - Nutrition"@en,
+        "Physiologie végétale - Nutrition"@fr ;
+    skos:scopeNote "Besoins nutritionnels des plantes utiles (y compris les arbres forestiers et les plantes aquatiques), diagnostic foliaire, absorption et assimilation de substances nutritives (ou nutriments), photosynthèse, élaboration de réserves, sécrétion, aspects physiologiques de la symbiose, métabiose, métabolisme, etc."@fr .
+
+agrist-thema:L51 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:H10,
+        agrist-thema:H20,
+        agrist-thema:L02,
+        agrist-thema:L72,
+        agrist-thema:L73,
+        agrist-thema:L74,
+        agrist-thema:M12,
+        agrist-thema:Q51,
+        agrist-thema:Q52,
+        agrist-thema:Q53,
+        agrist-thema:Q54,
+        agrist-thema:Q55,
+        agrist-thema:S20,
+        agrist-thema:S30 ;
+    skos:broader agrist-thema:L ;
+    skos:editorialNote """effets de l'alimentation des animaux aquatiques, voir M12
+effets de l'alimentation des animaux terrestres, voir L02
+physiologie de la nutrition des organismes nuisibles, voir H10, L72
+physiologie de la nutrition des organismes utilisés dans la lutte contre les organismes nuisibles et les maladies, voir H10, H20, L72, L73
+physiologie de la nutrition humaine, voir S20
+technologie des aliments pour animaux, voir Q51-Q55
+troubles nutritionnels humains, voir S30
+troubles nutritionnels des animaux, voir L74"""@fr ;
+    skos:prefLabel "Animal physiology - Nutrition"@en,
+        "Physiologie animale - Nutrition"@fr ;
+    skos:scopeNote "Physiologie de la nutrition animale, y compris les processus suivant lesquels les substances alimentaires sont transformées en éléments constitutifs chez les animaux utiles aquatiques ou terrestres (à l'exclusion des organismes utilisés dans la lutte contre les organismes nuisibles et les maladies) ; ingestion, digestion, absorption et assimilation de substances nutritives (ou nutriments), inanition, rumination, élaboration de réserves, élimination de déchets (excrétion), anabolisme, catabolisme, métabolisme"@fr .
+
+agrist-thema:L70 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:C10,
+        agrist-thema:D50,
+        agrist-thema:L72,
+        agrist-thema:L73,
+        agrist-thema:L74,
+        agrist-thema:Q03,
+        agrist-thema:U30 ;
+    skos:broader agrist-thema:L ;
+    skos:editorialNote """enseignement, formation vétérinaires, voir C10
+immunité des animaux aux maladies, voir L73
+immunité des animaux aux organismes nuisibles, voir L72
+inspection des viandes, voir Q03
+maladies des animaux, voir L73
+méthodes de recherche des laboratoires vétérinaires, voir U30
+organismes nuisibles des animaux, voir L72
+réglementation de quarantaine des animaux, voir D50
+résistance des animaux au climat, aux conditions extrêmes, voir L74
+troubles physiologiques et génétiques des animaux, voir L74"""@fr ;
+    skos:prefLabel "Veterinary science and hygiene - General aspects"@en,
+        "Sciences et hygiène vétérinaires - Considérations générales"@fr ;
+    skos:scopeNote """Considérations générales sur la médecine vétérinaire ; chirurgie, dentisterie, obstétrique vétérinaires
+Organisation et services vétérinaires
+Autopsie ; méthodes de diagnostic
+Hygiène vétérinaire ; inspection sanitaire des animaux
+Aspects fondamentaux de l'immunologie en médecine vétérinaire ; pharmacologie de médicaments vétérinaires"""@fr .
+
+agrist-thema:M40 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:H60,
+        agrist-thema:P02 ;
+    skos:broader agrist-thema:M ;
+    skos:editorialNote """effets de la pollution de l'eau, voir P02
+mauvaises herbes aquatiques, voir H60"""@fr ;
+    skos:prefLabel "Aquatic ecology"@en,
+        "Écologie aquatique"@fr ;
+    skos:scopeNote """Écologie et biologie de la vie animale et de la vie végétale dans les eaux douces, saumâtres et marines
+Vie littorale
+Comportement des organismes aquatiques : migration, mouvement, rythme biologique
+Dynamique des populations"""@fr .
+
+agrist-thema:P06 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:P05,
+        agrist-thema:P07 ;
+    skos:broader agrist-thema:P ;
+    skos:editorialNote """gestion des ressources énergétiques, voir P05
+sources d'énergie non-renouvelable, voir P07"""@fr ;
+    skos:prefLabel "Renewable energy resources"@en,
+        "Sources d'énergie renouvelable"@fr ;
+    skos:scopeNote """Développement de l'énergie utilisée pour la production agricole, le traitement des produits après récolte à partir des sources d'énergie renouvelable, telles que les énergies solaire, géothermique, marémotrice, hydraulique, éolienne, de la biomasse ou organique (y compris les déchets agro-industriels, les algues, les déchets animaux, les résidus de récolte, les cultures énergétiques, le fumier, le bois, etc.)
+Procédés de conversion (fermentation alcoolique, distillation, gazéification, etc.) pour la production de combustibles (alcool, biogaz, etc.) servant à des applications agricoles utilisant elles-mêmes des produits agricoles"""@fr .
+
+agrist-thema:P11 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:F06,
+        agrist-thema:N01,
+        agrist-thema:N20,
+        agrist-thema:P10,
+        agrist-thema:U30 ;
+    skos:broader agrist-thema:P ;
+    skos:editorialNote """aménagement de bassins versants, voir P10
+construction, fonctionnement et entretien des canalisations, canaux, etc., voir N01
+irrigation, voir F06
+matériel de drainage, voir N20
+méthodes de relevé, voir U30"""@fr ;
+    skos:prefLabel "Drainage"@en,
+        "Drainage"@fr ;
+    skos:scopeNote """Drainage en agriculture : élimination des eaux superficielles ou de l'eau du sol en excès dans les terres agricoles; drainage de surface, drainage souterrain
+Études de drainage pour déterminer les besoins en systèmes de drainage
+Systèmes de drainage : réseaux de sillons, fossés, tuyaux de poterie, etc., avec lesquels on draine les terres agricoles"""@fr .
+
+agrist-thema:P31 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:E11,
+        agrist-thema:K10,
+        agrist-thema:P10,
+        agrist-thema:P32,
+        agrist-thema:U30 ;
+    skos:broader agrist-thema:P ;
+    skos:editorialNote """classification des sols, voir P32
+enquêtes sur l'utilisation des terres et leurs potentialités, voir E11
+études et cartographie des eaux, voir P10
+inventaires forestiers et cartographie forestière, voir K10
+méthodes de relevé, voir U30"""@fr ;
+    skos:prefLabel "Soil surveys and mapping"@en,
+        "Levés et cartographie des sols"@fr ;
+    skos:scopeNote "Résultats des levés pédologiques ; cartographie des sols"@fr .
+
+agrist-thema:P34 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:F07,
+        agrist-thema:F61,
+        agrist-thema:H10,
+        agrist-thema:H20 ;
+    skos:broader agrist-thema:P ;
+    skos:editorialNote """agents pathogènes végétaux transmis par le sol, voir H20
+aspects physiologiques des phénomènes symbiotiques, voir F61
+ravageurs (ou organismes nuisibles) et parasites des plantes dans le sol, voir H10
+stérilisation et état sanitaire du sol, voir F07"""@fr ;
+    skos:prefLabel "Soil biology"@en,
+        "Biologie du sol"@fr ;
+    skos:scopeNote """Faune du sol (à l'exclusion des organismes nuisibles) et flore du sol (à l'exclusion des agents pathogènes végétaux transmis par le sol) ; relations sol-plante-animal
+Bactériologie et microbiologie du sol : ammonification, nitrification, dénitrification, fixation de l'azote, inoculation, nodulation racinaire, décomposition des composés non azotés du sol, transformation des substances minérales, rhizobium, mycorhize
+Biochimie du sol
+Décomposition de la litière ; humus"""@fr .
+
+agrist-thema:Q04 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:D50,
+        agrist-thema:E70,
+        agrist-thema:Q05,
+        agrist-thema:Q54,
+        agrist-thema:Q60,
+        agrist-thema:S30 ;
+    skos:broader agrist-thema:Q ;
+    skos:editorialNote """additifs alimentaires, voir Q05
+classement, normes et étiquetage de contenu des produits alimentaires, voir E70
+composition des aliments pour animaux, voir Q54
+législation concernant le contrôle de la qualité des produits alimentaires, voir D50
+normes nutritionnelles, voir S30
+propriétés des produits agricoles non-alimentaires, lorsqu'il n'est pas connu si l'utilisation finale est pour l'alimentation humaine ou animale, voir Q60"""@fr ;
+    skos:prefLabel "Food composition"@en,
+        "Composition des produits alimentaires"@fr ;
+    skos:scopeNote """Constituants et composition des produits alimentaires
+Analyse chimique des aliments
+Composition nutritionnelle des aliments : protéines, acides aminés, glucides, lipides, minéraux, enzymes, vitamines, etc.
+Qualité des aliments : valeur nutritive, valeur calorique ; analyse, analyse organoleptique (flaveur, odeur, aspect)"""@fr .
+
+agrist-thema:Q54 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:D50,
+        agrist-thema:E70,
+        agrist-thema:L02,
+        agrist-thema:M12,
+        agrist-thema:Q04,
+        agrist-thema:Q55,
+        agrist-thema:Q60 ;
+    skos:broader agrist-thema:Q ;
+    skos:editorialNote """additifs et compléments aux aliments pour animaux, voir Q55
+classement, normes et étiquetage des aliments pour animaux, voir E70
+composition des produits alimentaires, voir Q04
+effets de l'alimentation des animaux aquatiques, voir M12
+effets de l'alimentation des animaux terrestres, voir L02
+législation concernant le contrôle de la qualité des aliments pour animaux, voir D50
+méthodes d'alimentation des animaux aquatiques, voir M12
+méthodes d'alimentation des animaux terrestres, voir L02
+propriétés des produits agricoles non-alimentaires non traités, lorsqu'il n'est pas connu si l'utilisation finale est pour l'alimentation humaine ou animale, voir Q60"""@fr ;
+    skos:prefLabel "Feed composition"@en,
+        "Composition des aliments pour animaux"@fr ;
+    skos:scopeNote """Constituants et composition des aliments pour animaux
+Analyse chimique des aliments pour animaux
+Qualité des aliments pour animaux : analyse, évaluation
+Valeur nutritive des aliments pour animaux ; formulation d'aliments pour animaux"""@fr .
+
+agrist-thema:S01 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:C10,
+        agrist-thema:E10,
+        agrist-thema:E14,
+        agrist-thema:E73,
+        agrist-thema:E80,
+        agrist-thema:Q03,
+        agrist-thema:S20,
+        agrist-thema:S30,
+        agrist-thema:S40 ;
+    skos:broader agrist-thema:S ;
+    skos:editorialNote """aide alimentaire, voir E14
+alimentation familiale, voir E80
+économie de la consommation, voir E73
+éducation et formation en matière de nutrition, voir C10
+normes nutritionnelles, voir S30
+physiologie de la nutrition humaine, voir S20
+politique d'approvisionnement alimentaire, voir E10
+programme alimentaire, voir S40
+santé publique et produits alimentaires, voir Q03"""@fr ;
+    skos:prefLabel "Human nutrition - General aspects"@en,
+        "Nutrition humaine - Considérations générales"@fr ;
+    skos:scopeNote """Nutrition humaine en général ; états nutritionnels des populations
+Comportement alimentaire des êtres humains y compris les aspects psychologiques et sociaux ; habitudes alimentaires, préférences alimentaires"""@fr .
+
+agrist-thema:E10 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:E14,
+        agrist-thema:E16,
+        agrist-thema:E70,
+        agrist-thema:E71,
+        agrist-thema:E72,
+        agrist-thema:E73 ;
+    skos:broader agrist-thema:E ;
+    skos:editorialNote """aide alimentaire, voir E14
+commerce intérieur, voir E72
+commerce international, voir E71
+commerce en général, voir E70
+commercialisation et distribution, voir E70
+économie de la consommation, voir E73
+économie de la production, voir E16"""@fr ;
+    skos:prefLabel "Agricultural economics and policies"@en,
+        "Économie et politique agricoles"@fr ;
+    skos:scopeNote """Économie agricole en général
+Économie, politique et programmes agricoles sur les plans national, régional et international
+Sécurité alimentaire
+Planification économique, y compris la planification des stocks alimentaires, les besoins alimentaires, les politiques et les garanties d'approvisionnement alimentaire
+Analyse de l'économie agricole en général
+Économétrie en général : utilisation des formules mathématiques et des techniques statistiques pour tester et appliquer les théories économiques ; modèles économiques ; statistiques économiques
+Systèmes économiques"""@fr .
+
+agrist-thema:E12 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:C10,
+        agrist-thema:E13,
+        agrist-thema:E16,
+        agrist-thema:E40,
+        agrist-thema:E50,
+        agrist-thema:E51,
+        agrist-thema:E90 ;
+    skos:broader agrist-thema:E ;
+    skos:editorialNote """adaptation sociale aux migrations, voir E50
+assurance chômage, voir E50
+coopérative de crédit, voir E13
+coopératives en général, voir E40
+économie de la production, voir E16
+formation professionnelle agricole, voir C10
+population rurale, voir E51
+structure agraire, voir E90"""@fr ;
+    skos:prefLabel "Labour and employment"@en,
+        "Travail et emploi"@fr ;
+    skos:scopeNote """Travail et emploi
+Politique de l'emploi
+Administration, organisation et gestion du travail
+Marché du travail : facteurs touchant la demande et l'offre de main d'oeuvre ; emploi, chômage, mobilité de la main d'oeuvre, pénurie de main d'oeuvre, besoins et offre de main d'oeuvre
+Études d'efficacité, études des temps de travail et des mouvements au travail ; analyse des tâches
+Salaires et systèmes de rémunération
+Aspects économiques des travailleurs migrants ou sous contrat ; travailleurs agricoles saisonniers requis à une saison particulière, au moment des récoltes habituellement ; chômage saisonnier
+Relations patronat-travailleurs, comprenant les conventions collectives pour la fixation des salaires et le suivi des contrats
+Syndicats, participation et représentation des travailleurs"""@fr .
+
+agrist-thema:E16 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:E12,
+        agrist-thema:E14,
+        agrist-thema:E21,
+        agrist-thema:E70,
+        agrist-thema:E71,
+        agrist-thema:E72 ;
+    skos:broader agrist-thema:E ;
+    skos:editorialNote """agro-industrie, voir E21
+commerce en général, voir E70
+commerce intérieur, voir E72
+commerce international, voir E71
+économie et politique du développement, voir E14
+économie et politique du travail, voir E12"""@fr ;
+    skos:prefLabel "Production economics"@en,
+        "Économie de la production"@fr ;
+    skos:scopeNote """Économie de la production agricole en général
+Politique de la productivité
+Contrôle de la production : planification systématique, coordination et direction des activités de production en vue d'assurer dans les temps voulus la production et une qualité adéquate des produits ; objectifs de production, normes
+Capacité de production : production maximum qui peut être réalisée avec les moyens de production disponibles ; échelle de production, croissance de la production, surproduction
+Fonction de production, fonction input-output (entrées-sorties) : relations entre facteurs d'input et d'output de production (terres, travail, capital, gestion) ; coût des facteurs de production : coûts de la terre, de la main d'oeuvre, du capital et de la gestion qui interviennent dans le processus de production
+Systèmes de production ; statistiques de production"""@fr .
+
+agrist-thema:H02 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:D50,
+        agrist-thema:L74,
+        agrist-thema:N20,
+        agrist-thema:P02,
+        agrist-thema:Q03,
+        agrist-thema:Q53,
+        agrist-thema:S50 ;
+    skos:broader agrist-thema:H ;
+    skos:editorialNote """matériel de lutte pour la protection des plantes, voir N20
+dégâts causés au milieu par les pesticides, voir P02
+réglementation relative aux résidus toxiques, voir D50
+résidus de pesticides dans l'air, le sol, l'eau, voir P02
+résidus de pesticides dans les aliments pour animaux, voir Q53
+résidus de pesticides dans les produits alimentaires, voir Q03
+toxicité des pesticides pour l'être humain, voir S50
+toxicité des pesticides pour les animaux utiles, voir L74"""@fr ;
+    skos:prefLabel "Pesticides"@en,
+        "Pesticides"@fr ;
+    skos:scopeNote """Considérations générales sur les pesticides et biopesticides
+Utilisation, composition et toxicité"""@fr .
+
+agrist-thema:L10 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:D50,
+        agrist-thema:H10,
+        agrist-thema:H20,
+        agrist-thema:L53,
+        agrist-thema:L60,
+        agrist-thema:L72,
+        agrist-thema:L73,
+        agrist-thema:L74 ;
+    skos:broader agrist-thema:L ;
+    skos:editorialNote """amélioration génétique d'organismes utilisés dans la lutte contre les organismes nuisibles et les maladies, voir H10, H20, L72, L73
+aspects législatifs des droits de l'obtenteur, voir D50
+génétique des organismes utilisés dans la lutte contre les organismes nuisibles et les maladies, voir H10, H20, L72, L73
+inscription des races animales, voir D50
+physiologie de la reproduction animale, voir L53
+résistance des animaux au climat, aux conditions extrêmes, voir L74
+taxonomie animale, voir L60"""@fr ;
+    skos:prefLabel "Animal genetics and breeding"@en,
+        "Génétique et amélioration des animaux"@fr ;
+    skos:scopeNote """Génétique des animaux utiles aquatiques et terrestres (à l'exclusion des organismes utilisés dans la lutte contre les organismes nuisibles et les maladies) et ses applications à la production et au développement de races et de variétés améliorées ; pedigrees
+Nouvelles races animales
+Sélection pour la résistance aux organismes nuisibles, aux maladies et autres facteurs
+Programmes, méthodes, techniques d'amélioration : sélection, amélioration de lignées animales, consanguinité, croisement, hybridation, insémination artificielle, etc.
+Banque de matériel génétique"""@fr .
+
+agrist-thema:M11 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:E20,
+        agrist-thema:E21,
+        agrist-thema:E70,
+        agrist-thema:J14,
+        agrist-thema:M12,
+        agrist-thema:N01,
+        agrist-thema:N20,
+        agrist-thema:P01,
+        agrist-thema:Q03,
+        agrist-thema:Q53 ;
+    skos:broader agrist-thema:M ;
+    skos:editorialNote """conservation des produits de la pêche, voir J14
+distribution et commercialisation des produits de la pêche, voir E70
+exploitation excessive des ressources halieutiques, voir P01
+hygiène des produits de la pêche, voir Q03,Q53
+impact sur l'environnement de certaines techniques de pêche (chalutage, pêche électrique, etc.), voir P01
+industrie de la pêche, voir E21
+matériel de pêche, voir N20
+organisation, administration et gestion des entreprises de pêche, voir E20
+pêche sportive, voir P01
+port de pêche, voir N01
+production de l'aquaculture, voir M12
+récolte des produits de l'aquaculture, voir M12"""@fr ;
+    skos:prefLabel "Fisheries production"@en,
+        "Production de la pêche"@fr ;
+    skos:scopeNote """Méthodes de pêche en eau douce et en mer : y compris les stratégies de pêche, les champs de pêche, etc.
+Chasse à la baleine, au phoque et capture d'autres animaux marins. Remarque : la chasse industrielle à la baleine est interdite par la Commission baleinière internationale (CBI) ; la chasse traditionnelle est autorisée comme activité de subsistance dans certaines régions du monde
+Évaluation des stocks, échantillonnage, surpêche
+Rendement de la pêche ; récolte de produits de la pêche"""@fr .
+
+agrist-thema:E73 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:E70,
+        agrist-thema:E80,
+        agrist-thema:S01 ;
+    skos:broader agrist-thema:E ;
+    skos:editorialNote """économie familiale, voir E80
+habitudes alimentaires, préférences alimentaires, voir S01
+recherche de marché, voir E70"""@fr ;
+    skos:prefLabel "Consumer economics"@en,
+        "Économie de la consommation"@fr ;
+    skos:scopeNote """Politiques et orientations agricoles qui peuvent avoir des incidences sur le consommateur
+Économie de la consommation, y compris les programmes de défense des consommateurs ; éducation des consommateurs; services de conseil aux consommateurs
+Biens de consommation : produits utilisés principalement pour la consommation individuelle
+Comportement du consommateur, habitudes d'achat, études de consommation"""@fr .
+
+agrist-thema:F04 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:F61,
+        agrist-thema:H50,
+        agrist-thema:P35,
+        agrist-thema:P36 ;
+    skos:broader agrist-thema:F ;
+    skos:editorialNote """besoins nutritionnels des plantes, voir F61
+carences minérales des plantes, voir H50
+conservation du sol, voir P36
+fertilité du sol, voir P35"""@fr ;
+    skos:prefLabel "Fertilizing"@en,
+        "Fertilisation"@fr ;
+    skos:scopeNote """Apport d'engrais organiques et minéraux; utilisation des déchets, eaux usées, boues résiduaires comme engrais
+Composition et propriétés des engrais minéraux et organiques
+Réponse des plantes aux engrais
+Conditionneurs de sol"""@fr .
+
+agrist-thema:L02 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:F01,
+        agrist-thema:F08,
+        agrist-thema:H10,
+        agrist-thema:H20,
+        agrist-thema:L51,
+        agrist-thema:L72,
+        agrist-thema:L73,
+        agrist-thema:M12,
+        agrist-thema:Q04,
+        agrist-thema:Q51,
+        agrist-thema:Q52,
+        agrist-thema:Q53,
+        agrist-thema:Q54 ;
+    skos:broader agrist-thema:L ;
+    skos:editorialNote """alimentation des animaux aquatiques, voir M12
+alimentation des organismes utilisés dans la lutte contre les organismes nuisibles et les maladies, voir H10, H20, L72, L73
+composition des aliments pour animaux, voir Q54
+contamination et toxicologie des aliments pour animaux, voir Q53
+effets de l'alimentation animale sur la qualité des produits alimentaires, voir Q04
+gestion des parcours et des pâturages, voir F01
+physiologie de la nutrition animale, voir L51
+système sylvopastoral, voir F08
+technologie des aliments pour animaux, voir Q51
+traitement des aliments pour animaux, voir Q52
+valeur nutritive des aliments pour animaux, voir Q54"""@fr ;
+    skos:prefLabel "Animal feeding"@en,
+        "Alimentation animale"@fr ;
+    skos:scopeNote """Techniques d'alimentation des animaux utiles (à l'exclusion des animaux aquatiques et des organismes utilisés dans la lutte contre les organismes nuisibles et les maladies)
+Engraissement ; régimes alimentaires
+Effets de l'alimentation
+Systèmes d'alimentation : alimentation individuelle, forcée, entérale ; rations ; alimentation rationnée, parcs d'engraissement ; alimentation à satiété : broutement, pâturage (pâturage forestier, mixte, en parc, en rotation, par bandes, au piquet)"""@fr .
+
+agrist-thema:P02 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:D50,
+        agrist-thema:K70,
+        agrist-thema:L70,
+        agrist-thema:N01,
+        agrist-thema:P01,
+        agrist-thema:P10,
+        agrist-thema:P35,
+        agrist-thema:Q03,
+        agrist-thema:Q53,
+        agrist-thema:Q70 ;
+    skos:broader agrist-thema:P ;
+    skos:editorialNote """conservation et gestion de la nature, voir P01
+contrôle de la qualité de l'eau, voir P10
+contrôle sanitaire des aliments pour animaux, voir Q53
+contrôle sanitaire des produits alimentaires, voir Q03
+déchets agricoles, voir Q70
+dégâts causés à la forêt par les êtres humains, les facteurs atmosphériques, les équipements, les produits chimiques toxiques et autres agents physiques, voir K70
+gestion des déchets: élimination, traitement, recyclage, voir Q70
+législation pour la lutte antipollution, voir D50
+santé publique dans le domaine vétérinaire, voir L70
+santé publique et produits alimentaires, voir Q03
+système d'élimination des déchets et des eaux usées, voir N01
+toxicité du sol, voir P35"""@fr ;
+    skos:prefLabel "Pollution"@en,
+        "Pollution"@fr ;
+    skos:scopeNote """Pollution et polluants de l'air, du sol et de l'eau causés par ou affectant l'agriculture ; prévention et lutte
+Dégradation ou prédisposition à la dégradation de l'environnement due aux phénomènes naturels ou aux conséquences des activités humaines en agriculture ; dégâts causés au milieu par les herbicides et les pesticides
+Contamination radioactive concernant l'agriculture"""@fr .
+
+agrist-thema:S50 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:D50,
+        agrist-thema:L70,
+        agrist-thema:P01,
+        agrist-thema:Q03,
+        agrist-thema:S30 ;
+    skos:broader agrist-thema:S ;
+    skos:editorialNote """législation sur la santé publique, voir D50
+maladies liées à la nutrition, voir S30
+médecine légale vétérinaire, voir L70
+santé humaine et environnement, voir P01
+toxines alimentaires, voir Q03
+zoonoses (maladies des animaux transmissibles entre les animaux et les êtres humains), pour L73"""@fr ;
+    skos:prefLabel "Human health"@en,
+        "Santé humaine"@fr ;
+    skos:scopeNote """Traite de tous les aspects de la santé humaine et de l'hygiène, des sciences et spécialités médicales (biologie médicale (dont génétique médicale), chirurgie, pathologies infectieuses (parasites, vecteurs, pathogènes dont prion, virus, bactéries, et champignons pathogènes), réanimation, pharmacie, radiologie (imagerie médicale), toxicologie).
+Comprend aussi les médecines alternatives et les médecines traditionnelles
+Éducation de la santé
+Éthique médicale
+Médecine générale (médecine de famille)
+Médecine d'urgence
+Médecine du travail, inclus : maladies et risques professionnels (accidents du travail, blessures, risques, etc.)
+Comprend aussi la médecine légale (sauf médecine vétérinaire)"""@fr .
+
+agrist-thema:C10 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:C20,
+        agrist-thema:E50,
+        agrist-thema:E73 ;
+    skos:broader agrist-thema:C ;
+    skos:editorialNote """agent de vulgarisation, voir C20
+communication, voir C20
+éducation du consommateur, voir E73
+journalisme agricole, voir C20
+programme d'éducation de protection sanitaire, voir E50
+programme d'enseignement pour la prévention des accidents, voir E50"""@fr ;
+    skos:prefLabel "Education"@en,
+        "Enseignement"@fr ;
+    skos:scopeNote """Enseignement, formation, e-Learning, formation et apprentissage en ligne (autres que vulgarisation) en agriculture
+Plans, politiques, programmes d'enseignement agricole et leur évaluation
+Méthodes d'enseignement et de formation agricoles (autres que la vulgarisation), par exemple : MOOC, e-Learning, webinaire, etc.
+Établissements d'enseignement et de formation agricoles, personnel enseignant et matériel d'enseignement, y compris les stations expérimentales et les fermes pilotes
+Enseignement professionnel et apprentissage des personnes travaillant dans le domaine agricole ou se préparant à y entrer
+Éducation nutritionnelle, formation en matière de nutrition
+Enseignement vétérinaire, formation vétérinaire"""@fr .
+
+agrist-thema:E80 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:D50,
+        agrist-thema:E20,
+        agrist-thema:E50,
+        agrist-thema:E70,
+        agrist-thema:E73,
+        agrist-thema:Q03,
+        agrist-thema:S01,
+        agrist-thema:S30 ;
+    skos:broader agrist-thema:E ;
+    skos:editorialNote """entreprises agricoles, voir E20
+recherche de marché, voir E70
+habitudes alimentaires, voir S01
+habitudes d'achat, voir E73
+législation pour la défense des consommateurs, voir D50
+préférences alimentaires, voir S01
+protection du consommateur, voir E73
+régime alimentaire, voir S30
+santé et bien-être, voir E50
+santé publique et produits alimentaires, voir Q03
+sociologie rurale, voir E50"""@fr ;
+    skos:prefLabel "Home economics and crafts"@en,
+        "Économie familiale et artisanale"@fr ;
+    skos:scopeNote """Économie de l'agriculture familiale y compris la gestion familiale et l'aptitude du ménage nécessaire à l'instauration et au maintien d'un milieu familial sain
+Travaux ménagers ; habitudes de vie familiale et gestion ménagère (cuisine, couture, budget, achats familiaux, comptabilité familiale, etc.) ; soin aux enfants à la maison
+Alimentation familiale ; préparation des repas et cuisson des aliments (à l'exclusion des recettes), stockage domestique des aliments, conservation domestique des aliments
+Industries familiales pour artisanat (bois, cuir, textile, cordage, etc.) : procédés familiaux pour la fabrication ou la transformation d'objets à la maison en vue de compléter les revenus de l'exploitation agricole"""@fr .
+
+agrist-thema:F06 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:N20,
+        agrist-thema:P10,
+        agrist-thema:P11,
+        agrist-thema:P33,
+        agrist-thema:P36 ;
+    skos:broader agrist-thema:F ;
+    skos:editorialNote """alimentation en eau, voir P10
+conservation du sol, voir P36
+conservation et maîtrise de l'eau, voir P10
+drainage, voir P11
+matériel d'irrigation, voir N20
+perméabilité du sol, voir P33
+qualité de l'eau, voir P10
+récupération du sol, voir P36
+relations sol-eau, voir P33"""@fr ;
+    skos:prefLabel "Irrigation"@en,
+        "Irrigation"@fr ;
+    skos:scopeNote """Irrigation : fourniture d'eau au sol par des moyens artificiels pour la culture des plantes
+Méthodes, systèmes et projets d'irrigation : irrigation à la raie, par aspersion, souterraine, par goutte à goutte, etc.
+Culture irriguée
+Réponse des plantes à l'irrigation"""@fr .
+
+agrist-thema:F30 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:D50,
+        agrist-thema:F63,
+        agrist-thema:F70,
+        agrist-thema:H10,
+        agrist-thema:H20,
+        agrist-thema:H50,
+        agrist-thema:H60,
+        agrist-thema:L72,
+        agrist-thema:L73 ;
+    skos:broader agrist-thema:F ;
+    skos:editorialNote """aspects législatifs des droits de l'obtenteur, voir D50
+élevage des organismes utilisés dans la lutte contre les bioagresseurs, voir H10, H20, L72, L73
+génétique des mauvaises herbes, voir H60
+génétique des organismes utilisés dans la lutte contre les bioagresseurs, voir H10, H20, L72, L73
+physiologie de la reproduction végétale, voir F63
+résistance des plantes au climat, aux conditions extrêmes, voir H50
+taxonomie végétale, voir F70
+troubles héréditaires et génétiques des plantes, voir H50"""@fr ;
+    skos:prefLabel "Plant genetics and breeding"@en,
+        "Génétique et amélioration des plantes"@fr ;
+    skos:scopeNote """Génétique des plantes utiles (y compris les arbres forestiers et les plantes aquatiques) et ses applications pour la production et le développement de variétés améliorées et de cultivars
+Nouvelle variété végétale
+Amélioration des plantes pour la résistance aux organismes nuisibles, maladies et autres facteurs
+Programmes, méthodes et techniques d'amélioration des plantes ; sélection, croisement, hybridation, mutation provoquée
+Exploration pour collectes botaniques dans le but d'améliorer et de développer des nouvelles cultures
+Introduction de plantes sauvages en culture
+Matériel génétique végétal, banques de gènes végétaux"""@fr .
+
+agrist-thema:S30 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:E80,
+        agrist-thema:L02,
+        agrist-thema:L74,
+        agrist-thema:M12,
+        agrist-thema:S01,
+        agrist-thema:S40 ;
+    skos:broader agrist-thema:S ;
+    skos:editorialNote """alimentation des animaux aquatiques, voir M12
+alimentation des animaux terrestres, voir L02
+habitudes alimentaires, voir S01
+maladies et troubles nutritionnels et métaboliques des animaux, voir L74
+préparation des aliments et repas à la maison, voir E80
+programmes alimentaires, voir S40"""@fr ;
+    skos:prefLabel "Diet and diet-related diseases"@en,
+        "Régimes alimentaires et maladies nutritionnelles"@fr ;
+    skos:scopeNote """Maladies et troubles nutritionnels et métaboliques, carences, allergies alimentaires, malnutrition ; prévention et lutte
+Normes nutritionnelles ; études sur les régimes alimentaires
+Alimentation entérale (ou parentérale)"""@fr .
+
+agrist-thema:U30 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:A50,
+        agrist-thema:C10,
+        agrist-thema:E11,
+        agrist-thema:E51,
+        agrist-thema:E70,
+        agrist-thema:K10,
+        agrist-thema:P10,
+        agrist-thema:P11,
+        agrist-thema:P31 ;
+    skos:broader agrist-thema:U ;
+    skos:editorialNote """administration de la recherche agricole, voir A50
+recherche de marché, voir E70
+station et ferme expérimentales, utilisées pour l'enseignement, voir C10
+enquêtes sur l'utilisation du sol, voir E11
+enquêtes sur les populations rurales, voir E51
+études de drainage, voir P11
+inventaires forestiers, voir K10
+levés et études pédologiques, voir P31
+recherches sur les eaux, voir P10"""@fr ;
+    skos:prefLabel "Research methods"@en,
+        "Méthodes et techniques de recherche"@fr ;
+    skos:scopeNote """Considérations générales sur les méthodes et les techniques de recherche
+Matériel de recherche et de laboratoire
+Considérations générales sur les méthodes et les techniques de relevé
+Relevés de terrain, relevés aériens, photo-interprétation, télédétection, y compris l'utilisation des satellites : satellites météorologiques et de l'environnement (Metéosat), satellites d'observation de la terre (Landsat)
+Drone, pièges photos, caméras de suivi"""@fr .
+
+agrist-thema:H50 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:F30,
+        agrist-thema:H02,
+        agrist-thema:H60,
+        agrist-thema:J11,
+        agrist-thema:K70 ;
+    skos:broader agrist-thema:H ;
+    skos:editorialNote """phytotoxicité des pesticides, voir H02
+amélioration pour la résistance au climat, aux conditions extrêmes, voir F30
+dégâts causés aux forêts et leur protection, voir K70
+dégâts causés aux produits d'origine végétale, voir J11
+envahissement par les mauvaises herbes, voir H60
+lutte contre les incendies de forêt, voir K70"""@fr ;
+    skos:prefLabel "Miscellaneous plant disorders"@en,
+        "Troubles divers des plantes"@fr ;
+    skos:scopeNote """Troubles physiologiques des plantes en général (y compris les arbres forestiers et les plantes aquatiques), troubles nutritionnels, troubles génétiques des plantes utiles; maladies de carence
+Dégâts causés aux plantes utiles (sauf les arbres forestiers) par les facteurs atmosphériques (tels que la chaleur, le froid, les crues, le vent), le feu, les équipements et autres agents physiques
+Moyens, méthodes et programmes pour la prévention et la lutte contre les troubles et les nuisances des plantes
+Phytotoxicité, effets de substances toxiques sur les plantes (sauf pour les pesticides)
+Rusticité des plantes; résistance au climat, aux conditions extrêmes"""@fr .
+
+agrist-thema:J13 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:J14,
+        agrist-thema:J15,
+        agrist-thema:L01,
+        agrist-thema:M11,
+        agrist-thema:M12,
+        agrist-thema:Q02,
+        agrist-thema:Q03,
+        agrist-thema:Q52,
+        agrist-thema:Q53,
+        agrist-thema:Q60 ;
+    skos:broader agrist-thema:J ;
+    skos:editorialNote """abattage d'animaux, voir L01
+altération des aliments pour animaux, voir Q53
+altération des produits alimentaires, voir Q03
+manutention, transport, stockage et conservation des produits de la pêche et de l'aquaculture animale, voir J14
+manutention, transport, stockage et conservation des produits d'origine animale non-alimentaires, voir J15
+première transformation des produits d'origine animale non-alimentaires, voir Q60
+récolte des produits de l'aquaculture animale, voir M12
+récolte des produits de la pêche, voir M11
+récolte des produits d'origine animale (à l'exclusion des produits de l'aquaculture animale), voir L01
+traite, voir L01
+traitement et conservation des aliments pour animaux, voir Q52
+traitement et conservation des produits alimentaires, voir Q02"""@fr ;
+    skos:prefLabel "Handling, transport, storage and protection of animal products"@en,
+        "Manutention, transport, stockage et conservation des produits d'origine animale"@fr ;
+    skos:scopeNote """Manutention, transport, stockage et conservation des produits d'origine animale (autres que les produits de la pêche, de l'aquaculture animale et des produits d'origine animale non-alimentaires)
+Manutention et transport d'animaux domestiques
+Méthodes de stockage des produits d'origine animale (à l'exclusion des produits de la pêche, de l'aquaculture animale et des produits d'origine animale non-alimentaires)
+Méthodes de stockage des aliments transformés d'origine animale (pour les êtres humains ou les animaux) ; effets des conditions de stockage sur la qualité des produits alimentaires et des aliments pour animaux : température, atmosphère contrôlée, etc. ; durée de conservation
+Dégâts et pertes des produits d'origine animale (à l'exclusion des produits de la pêche, de l'aquaculture animale et des produits d'origine animale non-alimentaires) pendant et après les récoltes (manutention, transport, stockage, etc.) ; mesures de prévention et de lutte
+Organismes et agents pathogènes nuisibles aux produits d'origine animale (à l'exclusion des produits de la pêche, de l'aquaculture animale et des produits agricoles non-alimentaires) ; présence et lutte
+Dégâts causés aux produits d'origine animale (à l'exclusion des produits de la pêche, de l'aquaculture animale et des produits d'origine animale non-alimentaires) par les facteurs atmosphériques, le feu, les équipements et autres agents physiques; prévention et lutte"""@fr .
+
+agrist-thema:J14 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:J15,
+        agrist-thema:M11,
+        agrist-thema:M12,
+        agrist-thema:Q02,
+        agrist-thema:Q03,
+        agrist-thema:Q52,
+        agrist-thema:Q53,
+        agrist-thema:Q60 ;
+    skos:broader agrist-thema:J ;
+    skos:editorialNote """altération des aliments pour animaux, voir Q53
+altération des produits alimentaires, voir Q03
+manutention, transport, stockage et conservation des produits non-alimentaires de la pêche et de l'aquaculture, voir J15
+première transformation des produits non-alimentaires de la pêche et de l'aquaculture, voir Q60
+récolte des produits de l'aquaculture, voir M12
+récolte des produits de la pêche, voir M11
+traitement et conservation des aliments pour animaux, voir Q52
+traitement et conservation des produits alimentaires, voir Q02"""@fr ;
+    skos:prefLabel "Handling, transport, storage and protection of fisheries and aquacultural products"@en,
+        "Manutention, transport, stockage et conservation des produits de la pêche et de l'aquaculture"@fr ;
+    skos:scopeNote """Manutention, transport, stockage et conservation des produits de la pêche et de l'aquaculture (à l'exclusion des produits non-alimentaires de la pêche et de l'aquaculture)
+Déchargement et autres opérations à quai
+Méthodes de stockage des produits frais de la pêche et de l'aquaculture (à l'exclusion des produits non-alimentaires de la pêche et de l'aquaculture) ; effet des conditions de stockage
+Méthodes de stockage des produits alimentaires transformés de la pêche et de l'aquaculture (pour les êtres humains ou les animaux) ; effets des conditions de stockage sur la qualité des produits alimentaires et des aliments pour animaux: température, atmosphère contrôlée, etc. ; durée de conservation
+Dégâts et pertes causés aux produits de la pêche et de l'aquaculture (à l'exclusion des produits non-alimentaires de la pêche et de l'aquaculture) pendant et après les récoltes (manutention, transport, stockage, etc.) ; mesures de prévention et de lutte
+Organismes et agents pathogènes nuisibles aux produits de la pêche et de l'aquaculture (à l'exclusion des produits non-alimentaires de la pêche et de l'aquaculture); présence et lutte
+Dégâts causés aux produits de la pêche et de l'aquaculture (à l'exclusion des produits non-alimentaires de la pêche et de l'aquaculture) par les facteurs atmosphériques, le feu, les équipements et autres agents physiques ; prévention et lutte"""@fr .
+
+agrist-thema:N01 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:E11,
+        agrist-thema:E20,
+        agrist-thema:E50,
+        agrist-thema:E51,
+        agrist-thema:F01,
+        agrist-thema:F40,
+        agrist-thema:K01,
+        agrist-thema:L20,
+        agrist-thema:M01,
+        agrist-thema:M40,
+        agrist-thema:P05,
+        agrist-thema:P10,
+        agrist-thema:P30,
+        agrist-thema:P36 ;
+    skos:broader agrist-thema:N ;
+    skos:editorialNote """conservation du sol, voir P36
+écologie aquatique, voir M40
+écologie de la population rurale, voir E51
+écologie des animaux aquatiques, voir M40
+écologie des animaux terrestres, voir L20
+écologie des plantes aquatiques, voir M40
+écologie des plantes terrestres, voir F40
+écologie forestière, voir F40
+écologie humaine, voir E50
+écologie marine, voir M40
+économie de la mise en valeur de l'exploitation des terres, voir E11
+gestion de l'aquaculture, voir E20
+gestion de la pêche, voir E20
+gestion des ressources énergétiques, voir P05
+gestion forestière, voir E20
+jardinage, voir F01
+réforme foncière, voir E11
+ressources biologiques aquatiques en général, voir M01
+ressources en eau et leur gestion, voir P10
+ressources en sol, voir P30
+ressources forestières en général, voir K01
+tourisme en milieu rural, en tant qu'activité connexe de l'exploitation agricole, voir E20
+vacances à la ferme en tant qu'activité connexe de l'exploitation agricole, voir E20"""@fr ;
+    skos:prefLabel "Agricultural engineering"@en,
+        "Génie rural"@fr ;
+    skos:scopeNote """Considérations générales sur le génie rural
+Sécurité agricole ; détection des incendies et lutte (incendies de forêt exceptés) ; dispositifs de sécurité, matériel de prévention des accidents
+Génies électrique et électronique : électrification, chauffage, éclairage, téléphone en milieu rural, etc.
+Conception, construction et entretien, au niveau de l'exploitation agricole, des systèmes d'approvisionnement en eau, d'assainissement, d'évacuation des eaux usées et des déchets
+Conception, construction et entretien des routes rurales, des chemins de fer, des ports de pêche, etc.
+Génie hydraulique en zone rurale ; modèle hydraulique, ouvrages : brise-lames, barrages, passes à poissons, etc. ; construction, fonctionnement et entretien des réservoirs d'eau, citernes, canalisations et canaux, puits, etc."""@fr .
+
+agrist-thema:E21 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:E11,
+        agrist-thema:E12,
+        agrist-thema:E13,
+        agrist-thema:E16,
+        agrist-thema:E20,
+        agrist-thema:E70,
+        agrist-thema:E80,
+        agrist-thema:F03,
+        agrist-thema:K10,
+        agrist-thema:K50,
+        agrist-thema:Q02,
+        agrist-thema:Q52,
+        agrist-thema:Q60 ;
+    skos:broader agrist-thema:E ;
+    skos:editorialNote """distribution et commercialisation des produits agricoles de base ou des produits utilisés pour la production agricole, voir E70
+économie de la production en général, voir E16
+économie foncière en général, voir E11
+industries familiales et artisanat, voir E80
+input-output agricoles au niveau de l'exploitation, voir E20
+investissements, financement et crédit, voir E13
+organisation et gestion de l'entreprise agricole, voir E20
+production et traitement des semences (à l'exclusion de la production et du traitement des semences forestières), voir F03
+production et traitement des semences forestières, voir K10
+traitement des produits agricoles non-alimentaires, voir Q60
+traitement des produits forestiers, voir K50
+traitement et conservation d'aliments pour animaux, voir Q52
+traitement et conservation des produits alimentaires, voir Q02
+travail et emploi, voir E12"""@fr ;
+    skos:prefLabel "Agro-industry"@en,
+        "Agro-industrie"@fr ;
+    skos:scopeNote """Planification et développement des industries agricoles, forestières, de la pêche et de l'aquaculture, des industries alimentaires et d'aliments pour animaux en incluant les industries agricoles d'amont
+Agro-industrie : y compris les activités industrielles (exception faite des opérations et techniques de transformation) destinées à la fourniture pour le commerce de produits alimentaires ou non-alimentaires (par exemple alimentation humaine ou animale, papier, bois, etc.) fabriqués à partir de produits agricoles ; agro-industrie rurale, système agro-alimentaire localisé
+Planification et développement des industries agricoles comprenant la foresterie, les pêches, l'aquaculture, les industries alimentaires, les industries agricoles d'amont : industrie du machinisme agricole (machines, équipements, outils), industrie agrochimique (pesticides, herbicides), industrie des engrais, industrie de l'alimentation animale, industrie des semences
+Plan agro-industriel: concernant la localisation des industries agricoles, grandes et petites, ainsi que les facteurs qui influent sur leur localisation et leur développement, tels que les ressources agricoles disponibles et les matières premières à transformer, l'énergie, la distance des marchés, les communications, l'interdépendance des industries, etc."""@fr .
+
+agrist-thema:E50 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:E11,
+        agrist-thema:E12,
+        agrist-thema:E51,
+        agrist-thema:E73,
+        agrist-thema:E80,
+        agrist-thema:E90,
+        agrist-thema:N01,
+        agrist-thema:S01,
+        agrist-thema:S50,
+        agrist-thema:U70 ;
+    skos:broader agrist-thema:E ;
+    skos:editorialNote """aspects économiques concernant les travailleurs migrants ou sous contrat, voir E12
+aspects sociaux de l'alimentation humaine, voir S01
+construction de routes rurales, voir N01
+dispositif de prévention des accidents, voir N01
+économie de la consommation, voir E73
+électrification rurale, voir N01
+industries familiales et artisanat, voir E80
+médecine et santé rurale, voir S50
+sociologie en général (non agricole ou non rurale), voir U70
+réforme agraire, voir E11
+structure démographique des populations rurales, voir E51
+structure agraire, voir E90
+travaux ménagers, voir E80"""@fr ;
+    skos:prefLabel "Rural sociology"@en,
+        "Sociologie rurale"@fr ;
+    skos:scopeNote """Sociologie rurale concernant l'organisation sociale des communautés rurales, l'étude de la vie rurale et des conditions de vie, ainsi que les relations humaines sur le plan rural
+Études des zones rurales, des villages et des villes ; relations ville-campagne
+Colonisation agraire ; migration, nomadisme
+Animation rurale : instauration et maintien d'une compréhension mutuelle entre les ruraux pour favoriser la modernisation ; environnement rural ; développement communautaire
+Services communautaires ruraux, y compris la planification, le financement et la mise en œuvre de services publics pour promouvoir le développement communautaire
+Politique, planification et programmes d'habitat rural
+Services sociaux ruraux
+Services et personnels de médecine et de santé rurales ; programmes d'enseignement de la prévention des accidents et programmes d'enseignement de protection sanitaire ; services sociaux ruraux et services de réhabilitation sociale, bien-être social, sécurité sociale, retraites, soins aux personnes âgées, dispensaires de jour, centres de loisirs, assurance accident, assurance maladie, assurance vie, assurance chômage
+Structures sociales, stratification sociale
+Changement social, aspects sociaux de la réforme agraire
+Adaptation sociale à la colonisation agraire, migration
+Psychologie sociale de la famille agricole ; comportement social, croyances, coutumes
+Facteurs culturels, impact de nouvelles techniques et tendances culturelles sur l'environnement rural, conflits, leadership ; écologie humaine"""@fr .
+
+agrist-thema:F01 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:E20,
+        agrist-thema:E70,
+        agrist-thema:F02,
+        agrist-thema:F03,
+        agrist-thema:F04,
+        agrist-thema:F06,
+        agrist-thema:F07,
+        agrist-thema:F08,
+        agrist-thema:F30,
+        agrist-thema:F60,
+        agrist-thema:F61,
+        agrist-thema:F62,
+        agrist-thema:F63,
+        agrist-thema:H,
+        agrist-thema:H60,
+        agrist-thema:J11,
+        agrist-thema:K10,
+        agrist-thema:M12,
+        agrist-thema:P01 ;
+    skos:broader agrist-thema:F ;
+    skos:editorialNote """amélioration des plantes, voir F30
+conservation des produits d'origine végétale, voir J11
+désherbage, voir H60
+distribution et commercialisation des produits agricoles, voir E70
+façon culturale, voir F07
+fertilisation, voir F04
+gestion de l'exploitation agricole, voir E20
+gestion des paysages, voir P01
+irrigation, voir F06
+manutention des produits d'origine végétale, voir J11
+multiplication d'arbres forestiers, voir K10
+multiplication des plantes (à l'exclusion de la multiplication des arbres forestiers), voir F02
+physiologie de la croissance et du développement des plantes, voir F62
+physiologie et biochimie végétales, voir F60-F63
+préparation du lit de semences, voir F07
+production d'arbres forestiers, voir K10
+production de plantes aquatiques, voir M12
+production de semences (à l'exclusion de la production de semences forestières), voir F03
+production de semences forestières, voir K10
+protection des plantes, voir H01-H60
+systèmes et modes de culture, voir F08
+transport et stockage des produits d'origine végétale, voir J11"""@fr ;
+    skos:prefLabel "Plant cultivation"@en,
+        "Culture des plantes"@fr ;
+    skos:scopeNote """Culture des plantes en général: culture ou production de plantes (à l'exclusion des arbres forestiers et des plantes aquatiques)
+Prévision des récoltes
+Horticulture et jardinage : culture des jardins et vergers, y compris la culture des légumes, des fruits, la viticulture, l'entretien des gazons, la culture des plantes ornementales
+Cultures de plein champ, production de fourrages, gestion des pâturages et parcours
+Techniques de culture des plantes: taille, repiquage ; empotage ; transplantation ; pépinières ; espacement ; semis, date de semis, profondeur de semis, densité de semis
+Méthodes spéciales de culture des plantes : utilisation de l'éclairage artificiel, de la chaleur, du réchauffement du sol, etc. ; culture protégée : serres, serre chaude, culture sous film transparent, etc. ; culture hydroponique, culture sur sable, etc.
+Méthodes pour le contrôle de la croissance des plantes (à l'exclusion des mauvaises herbes) : retardement, inhibition, floraison, déclenchement artificiel de la floraison ; formation du fruit, mûrissement artificiel, etc.
+Réponse de la plante aux techniques culturales
+Rendement des cultures : quantité de produits ou de leurs dérivés découlant de la culture des plantes; récolte des cultures"""@fr .
+
+agrist-thema:J11 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:F01,
+        agrist-thema:F03,
+        agrist-thema:J12,
+        agrist-thema:J14,
+        agrist-thema:J15,
+        agrist-thema:K10,
+        agrist-thema:K50,
+        agrist-thema:M12,
+        agrist-thema:Q02,
+        agrist-thema:Q03,
+        agrist-thema:Q52,
+        agrist-thema:Q53,
+        agrist-thema:Q60 ;
+    skos:broader agrist-thema:J ;
+    skos:editorialNote """altération des aliments pour animaux, voir Q53
+altération des produits alimentaires, voir Q03
+manutention, transport, stockage et conservation des produits forestiers, voir J12
+manutention, transport, stockage et conservation des produits d'origine végétale non-alimentaires, voir J15
+manutention, transport, stockage et conservation des produits végétaux d'origine aquatique, voir J14
+première transformation des produits d'origine végétale non-alimentaires, voir Q60
+récolte des produits d'origine végétale (à l'exclusion des produits végétaux d'origine aquatique), voir F01
+récolte des produits végétaux d'origine aquatique, voir M12
+récolte des produits forestiers, voir K10
+stockage des semences, voir F03
+traitement des produits d'origine forestière, voir K50
+traitement des semences forestières, voir K10
+traitement des semences (à l'exclusion des semences forestières), voir F03
+traitement et conservation des aliments pour animaux, voir Q52
+traitement et conservation des produits alimentaires, voir Q02"""@fr ;
+    skos:prefLabel "Handling, transport, storage and protection of plant products"@en,
+        "Manutention, transport, stockage et conservation des produits d'origine végétale"@fr ;
+    skos:scopeNote """Manutention, transport, stockage et conservation des produits d'origine végétale (autres que les plantes aquatiques, les produits forestiers et les produits d'origine végétale non-alimentaires)
+Méthodes de stockage des produits d'origine végétale (à l'exclusion des forêts, des plantes aquatiques et des produits d'origine végétale non-alimentaires)
+Méthodes de stockage des produits alimentaires transformés d'origine végétale (pour les êtres humains ou les animaux) ; effets des conditions de stockage sur la qualité des produits alimentaires et des aliments pour animaux: température, atmosphère contrôlée, etc. ; durée de conservation
+Dégâts et pertes de produits d'origine végétale (à l'exclusion des produits forestiers, des plantes aquatiques, des produits d'origine végétale non-alimentaires) pendant et après les récoltes (manutention, transport, stockage, etc.) ; mesures de prévention et de lutte
+Bioagresseurs des produits d'origine végétale (à l'exclusion des produits forestiers, des plantes aquatiques et des produits d'origine végétale non-alimentaires) ; présence et lutte
+Dégâts causés aux produits d'origine végétale (à l'exclusion des produits forestiers, des plantes aquatiques et des produits d'origine végétale non-alimentaires) par les facteurs atmosphériques, le feu, les équipements et autres agents physiques; prévention et lutte"""@fr .
+
+agrist-thema:P01 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:E11,
+        agrist-thema:E20,
+        agrist-thema:E50,
+        agrist-thema:E51,
+        agrist-thema:F01,
+        agrist-thema:F40,
+        agrist-thema:K01,
+        agrist-thema:L20,
+        agrist-thema:M01,
+        agrist-thema:M40,
+        agrist-thema:P05,
+        agrist-thema:P10,
+        agrist-thema:P30,
+        agrist-thema:P36 ;
+    skos:broader agrist-thema:P ;
+    skos:editorialNote """conservation du sol, voir P36
+écologie aquatique, voir M40
+écologie de la population rurale, voir E51
+écologie des animaux aquatiques, voir M40
+écologie des animaux terrestres, voir L20
+écologie des plantes aquatiques, voir M40
+écologie des plantes terrestres, voir F40
+écologie forestière, voir F40
+écologie humaine, voir E50
+écologie marine, voir M40
+économie de la mise en valeur de l'exploitation des terres, voir E11
+gestion de l'aquaculture, voir E20
+gestion de la pêche, voir E20
+gestion des ressources énergétiques, voir P05
+gestion forestière, voir E20
+jardinage, voir F01
+réforme foncière, voir E11
+ressources biologiques aquatiques en général, voir M01
+ressources en eau et leur gestion, voir P10
+ressources en sol, voir P30
+ressources forestières en général, voir K01
+tourisme en milieu rural, en tant qu'activité connexe de l'exploitation agricole, voir E20
+vacances à la ferme en tant qu'activité connexe de l'exploitation agricole, voir E20"""@fr ;
+    skos:prefLabel "Nature conservation and land resources"@en,
+        "Conservation de la nature et ressources foncières"@fr ;
+    skos:scopeNote """Ne comprend pas l'information sur l'écologie en général
+Aspects généraux des ressources naturelles
+Biodiversité
+Conservation des plantes et de la végétation ; gestion de la flore sauvage ; jardins botaniques, arboretum
+Conservation des animaux ; gestion de la faune sauvage, réserves et inventaires de gibier ; chasse et pêche sportives, exploitation excessive des ressources halieutiques
+Ressources foncières en général
+Conservation et restauration du milieu naturel ; parcs nationaux
+Utilisation de la forêt et des terres agricoles pour les loisirs
+Territoires, paysages, conservation de la nature"""@fr .
+
+agrist-thema:P10 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:F04,
+        agrist-thema:F06,
+        agrist-thema:M01,
+        agrist-thema:N01,
+        agrist-thema:P02,
+        agrist-thema:P06,
+        agrist-thema:P11,
+        agrist-thema:P33,
+        agrist-thema:P36,
+        agrist-thema:P40,
+        agrist-thema:U30 ;
+    skos:broader agrist-thema:P ;
+    skos:editorialNote """drainage, voir P11
+eau en tant que source d'énergie, voir P06
+eau dans le sol, voir P33
+érosion hydrique, voir P36
+génie hydraulique, voir N01
+hydrométéorologie, voir P40
+irrigation, voir F06
+limnologie, voir M01
+lutte anti-érosion, voir P36
+météorologie et climatologie, voir P40
+méthodes de relevé, voir U30
+océanographie, voir M01
+pluie provoquée, voir P40
+pollution de l'eau, voir P02
+réservoirs, citernes, canaux, etc., voir N01
+utilisation des eaux usées comme engrais, voir F04
+utilisation des eaux usées pour l'irrigation, voir F06"""@fr ;
+    skos:prefLabel "Water resources and management"@en,
+        "Ressources en eau et leur gestion"@fr ;
+    skos:scopeNote """Potentialités et évaluation des ressources en eau pour leur emploi en agriculture
+Gestion, planification et mise en valeur des ressources en eau : prospection des eaux souterraines, développement intégré des eaux souterraines et superficielles, mise en valeur des bassins fluviaux, aménagement de bassins versants
+Conservation des eaux
+Prévision des crues, contrôle des crues et régularisation des cours d'eau et des torrents
+Occurrence, distribution et circulation de l'eau à travers le cycle hydrologique des précipitations, du ruissellement, de l'infiltration et du stockage, de l'évaporation possible et de la transpiration
+Hydrogéologie, hydrographie
+Hydromécanique
+Résultats des recherches d'eaux ; cartographie des eaux ; recherches de puits
+Analyse de l'eau : biologique, chimique, physique
+Nature et qualité de l'eau : eaux saumâtre, dessalée, de boisson, douce, salée, de mer
+Contrôle de la qualité de l'eau
+Traitement des eaux : épuration, recyclage, adoucissement, chloruration, clarification, déionisation, déminéralisation, désalinisation, distillation, filtration, fluoration, etc.
+Alimentation en eau et utilisation de l'eau ; disponibilité de l'eau, distribution de l'eau, service des eaux, consommation d'eau
+Stockage d'eau
+Traitement des eaux usées"""@fr .
+
+agrist-thema:P36 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:E11,
+        agrist-thema:K10,
+        agrist-thema:P11,
+        agrist-thema:P35 ;
+    skos:broader agrist-thema:P ;
+    skos:editorialNote """ceintures de protection forestière et brise-vents, voir K10
+dégradation du sol, voir P35
+drainage, voir P11
+économie du développement foncier et de l'exploitation des terres, voir E11
+lessivage du sol, voir P35
+salinité du sol, voir P35"""@fr ;
+    skos:prefLabel "Soil erosion, conservation and reclamation"@en,
+        "Érosion, conservation et récupération des sols"@fr ;
+    skos:scopeNote """Perte et mouvement de la couche arable du sol
+Érosion hydrique ou éolienne
+Conservation du sol ; prévention et lutte contre l'érosion par les techniques agricoles, fixation du sol et des terres, et autres méthodes
+Récupération du sol, restauration du sol pour la culture"""@fr .
+
+agrist-thema:Q02 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:D50,
+        agrist-thema:E21,
+        agrist-thema:E70,
+        agrist-thema:E80,
+        agrist-thema:J,
+        agrist-thema:J10,
+        agrist-thema:J11,
+        agrist-thema:J12,
+        agrist-thema:J13,
+        agrist-thema:J14,
+        agrist-thema:Q03,
+        agrist-thema:Q04,
+        agrist-thema:Q52,
+        agrist-thema:Q60,
+        agrist-thema:S01,
+        agrist-thema:S20,
+        agrist-thema:S30,
+        agrist-thema:S40 ;
+    skos:broader agrist-thema:Q ;
+    skos:editorialNote """conservation des produits agricoles, voir J10-J15
+conservation domestique des aliments, voir E80
+constituants et composition des aliments, voir Q04
+contamination et toxicologie alimentaire, voir Q03
+distribution et commercialisation des aliments, voir E70
+industries alimentaires, voir E21
+législation concernant le contrôle de la qualité des produits alimentaires, voir D50
+législation concernant le contrôle sanitaire des produits alimentaires, voir D50
+normes alimentaires, voir E70
+nutrition humaine, voir S01-S40
+première transformation et conservation des produits agricoles non-alimentaires, voir Q60
+qualité des produits alimentaires, voir Q04
+stockage des produits agricoles, voir J10-J15
+stockage des produits alimentaires, voir J10-J14
+traitement et conservation des aliments pour animaux, voir Q52
+transport des produits agricoles, voir J10-J15"""@fr ;
+    skos:prefLabel "Food processing and preservation"@en,
+        "Traitement et conservation des produits alimentaires"@fr ;
+    skos:scopeNote """Techniques de base appliquées à la transformation de produits bruts en produits alimentaires
+Traitement des produits alimentaires
+Micro-organismes utiles des produits alimentaires; microbiologie alimentaire, méthodes d'utilisation des microbes dans le traitement des produits alimentaires : procédés de fermentation, etc.
+Matériels et technologie de fabrication dans les industries alimentaires et des boissons
+Moyens et méthodes pour la conservation des matières premières et des produits finis dans le domaine alimentaire y compris la conservation par :
+ - fumage et méthodes chimiques de conservation et de salaison (gaz, salage, conservation par le vinaigre)
+ - traitement thermique (ébullition, pasteurisation, etc.)
+ - le froid (réfrigération, refroidissement, congélation, surgélation)
+ - pression, vibration, irradiation, électricité
+ - séchage, déshydratation, dessiccation
+etc."""@fr .
+
+agrist-thema:Q60 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:J12,
+        agrist-thema:J15,
+        agrist-thema:K50,
+        agrist-thema:Q02,
+        agrist-thema:Q52 ;
+    skos:broader agrist-thema:Q ;
+    skos:editorialNote """conservation des produits agricoles non-alimentaires, voir J15
+manutention des produits agricoles non-alimentaires, voir J15
+manutention, transport, stockage et protection des produits forestiers, voir J12
+stockage des produits agricoles non-alimentaires, voir J15
+traitement des aliments pour animaux, voir Q52
+traitement des produits alimentaires, voir Q02
+traitement des produits forestiers, voir K50
+transport des produits agricoles non-alimentaires, voir J15"""@fr ;
+    skos:prefLabel "Processing of non-food or non-feed agricultural products"@en,
+        "Traitement des produits agricoles non alimentaires"@fr ;
+    skos:scopeNote """Première transformation des produits d'origine végétale non-alimentaires (à l'exclusion des produits forestiers) : fibres, tabac, coton, etc.
+Première transformation des produits d'origine animale non-alimentaires : laine, fourrure, peaux, cuirs, soie, etc.
+Propriétés des produits agricoles non-alimentaires non-traités, lorsqu'il n'est pas connu si l'utilisation finale est pour l'alimentation humaine ou animale"""@fr .
+
+agrist-thema:E11 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:E16,
+        agrist-thema:E20,
+        agrist-thema:E90,
+        agrist-thema:P01,
+        agrist-thema:P30,
+        agrist-thema:P31,
+        agrist-thema:P32 ;
+    skos:broader agrist-thema:E ;
+    skos:editorialNote """capabilité du sol, voir P30
+classification et genèse des sols, voir P32
+conservation et restauration du milieu naturel, voir P01
+levés et cartographie des sols, voir P31
+ressources en sol et gestion, voir P30
+structure agraire, voir E90
+systèmes d'exploitation, voir E20
+terre, comme facteur de production, voir E16
+territoires vus sous l'angle des ressources et du paysage, voir P01
+utilisation des terres agricoles et des forêts pour les loisirs, voir P01"""@fr ;
+    skos:prefLabel "Land economics and policies"@en,
+        "Économie et politique foncières"@fr ;
+    skos:scopeNote """Économie du développement foncier ; planification de l'utilisation des terres y compris la formulation des méthodes et moyens nécessaires pour leur exploitation ; enquêtes sur l'utilisation des terres pour déterminer l'état de la situation dans ce domaine
+Potentiel des terres : aptitude des terres à une utilisation agricole, y compris la prise en compte des risques ou des difficultés dûs aux conditions physiques du sol découlant de leur exploitation
+Classification des types de terres naturelles, selon leurs caractéristiques propres ou leurs possibilités d'utilisation
+Évaluation foncière : estimation effectuée sur la propriété agricole en vue de l'imposition fiscale par le gouvernement ; impôt foncier sur la valeur des terres, à l'exclusion des bâtiments et autres améliorations apportées à la propriété
+Propriété foncière ; régime foncier : possession des terres et droits afférents tels que tenure et/ou exploitation d'une terre possédée par autrui ; revenu foncier : paiement pour l'utilisation des terres
+Aspects fonciers de la planification urbaine et rurale, zonage
+Réforme agraire : moyens d'amélioration de l'accès à des ressources productives pour toutes les catégories de la population rurale à travers la redistribution de la propriété des terres et la réorganisation des structures de production et services annexes ; réforme foncière : mesures destinées à distribuer plus équitablement les terres agricoles
+Sécurité foncière, conflits fonciers ; attributions foncières, gestion des droits fonciers ; territoires vus sous l'angle socio-économique"""@fr .
+
+agrist-thema:Q52 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:D50,
+        agrist-thema:E21,
+        agrist-thema:E70,
+        agrist-thema:J,
+        agrist-thema:J10,
+        agrist-thema:J11,
+        agrist-thema:J12,
+        agrist-thema:J13,
+        agrist-thema:J14,
+        agrist-thema:L02,
+        agrist-thema:M12,
+        agrist-thema:Q02,
+        agrist-thema:Q53,
+        agrist-thema:Q54,
+        agrist-thema:Q60 ;
+    skos:broader agrist-thema:Q ;
+    skos:editorialNote """alimentation des animaux aquatiques, voir M12
+alimentation des animaux terrestres, voir L02
+conservation des produits agricoles, voir J10-J15
+constituants et composition des aliments pour animaux, voir Q54
+contamination et toxicologie des aliments pour animaux, voir Q53
+distribution et commercialisation des aliments pour animaux, voir E70
+industrie des aliments pour animaux, voir E21
+inspection, contrôle sanitaire des aliments pour animaux, voir Q53
+législation concernant le contrôle de la qualité des aliments pour animaux, voir D50
+normes des aliments pour animaux, voir E70
+première transformation et conservation des produits agricoles non-alimentaires, voir Q60
+protection des produits agricoles, voir J10-J15
+qualité des aliments pour animaux, voir Q54
+stockage des aliments pour animaux, voir J10-J14
+stockage des produits agricoles, voir J10-J15
+traitement et conservation des produits alimentaires, voir Q02"""@fr ;
+    skos:prefLabel "Feed processing and preservation"@en,
+        "Traitement et conservation des aliments pour animaux"@fr ;
+    skos:scopeNote """Techniques de base appliquées à la transformation de produits bruts en aliments pour animaux
+Traitement des aliments pour animaux
+Préparation des fourrages et ensilages
+Micro-organismes utiles des aliments pour animaux ; microbiologie des aliments pour animaux ; méthodes d'utilisation des microbes pour la transformation des aliments pour animaux ; procédés de fermentation ; levures fourragères, etc.
+Matériels et technologies de la fabrication des aliments pour animaux
+Moyens et méthodes pour la conservation des aliments pour animaux"""@fr .
+
+agrist-thema:N20 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:E21,
+        agrist-thema:N01,
+        agrist-thema:P40,
+        agrist-thema:Q02,
+        agrist-thema:Q52,
+        agrist-thema:U30 ;
+    skos:broader agrist-thema:N ;
+    skos:editorialNote """industrie du machinisme agricole, voir E21
+matériels de prévention des accidents, voir N01
+matériels de recherche, voir U30
+matériels de technologie agro-alimentaire, voir Q02
+matériels et instruments météorologiques, voir P40
+matériels pour la préparation des aliments pour animaux, voir Q52"""@fr ;
+    skos:prefLabel "Agricultural machinery and equipment"@en,
+        "Machines et matériels agricoles"@fr ;
+    skos:scopeNote "Machines et matériels agricoles manuels et motorisés (y compris drones pour un usage agricole, systèmes automatisés) utilisés pour le transport des produits agricoles, la lutte contre les organismes nuisibles et les maladies des plantes (bioagresseurs) et des animaux, la production et la protection des plantes, la production et la protection des forêts (y compris le matériel de détection et de lutte contre les incendies de forêt), la production et la protection des animaux, la pêche et l'aquaculture (y compris les navires de pêche), la maîtrise de l'eau (y compris les machines et matériels de drainage, d'irrigation et le matériel hydraulique), etc."@fr .
+
+agrist-thema:H60 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:H02,
+        agrist-thema:L74,
+        agrist-thema:M12,
+        agrist-thema:P02,
+        agrist-thema:Q03,
+        agrist-thema:Q53,
+        agrist-thema:S50 ;
+    skos:broader agrist-thema:H ;
+    skos:editorialNote """culture et récolte d'algues marines, voir M12
+dégâts causés au milieu par les herbicides, voir P02
+effets des plantes toxiques sur les animaux utiles, voir L74
+résidus d'herbicides dans l'air, le sol, l'eau, voir P02
+résidus d'herbicides dans les aliments pour animaux, voir Q53
+résidus d'herbicides dans les produits alimentaires, voir Q03
+toxicité des herbicides pour l'être humain, voir S50
+toxicité des herbicides pour les animaux utiles, voir L74
+toxicité des herbicides pour les plantes utiles, voir H02"""@fr ;
+    skos:prefLabel "Weeds and weed control"@en,
+        "Mauvaises herbes et désherbage"@fr ;
+    skos:scopeNote """Mauvaises herbes (y compris les mauvaises herbes forestières et aquatiques) et plantes supérieures parasites (bioagresseurs) ; leurs effets nuisibles, lutte, présence et distribution géographique
+Plantes toxiques pour les êtres humains et les animaux d'élevage
+Résistance à l'envahissement par les mauvaises herbes
+Écologie, anatomie, morphologie, physiologie, biochimie et taxonomie des mauvaises herbes"""@fr .
+
+agrist-thema:J12 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:K10,
+        agrist-thema:K50,
+        agrist-thema:K70 ;
+    skos:broader agrist-thema:J ;
+    skos:editorialNote """abattage et débardage du bois et autres formes de récolte, voir K10
+dégâts causés aux forêts et leur protection, voir K70
+traitement des produits forestiers, voir K50
+traitement des semences forestières, voir K10"""@fr ;
+    skos:prefLabel "Handling, transport, storage and protection of forest products"@en,
+        "Manutention, transport, stockage et conservation des produits forestiers"@fr ;
+    skos:scopeNote """Manutention, transport, stockage et conservation des produits forestiers
+Transport des produits forestiers dans les forêts, jusqu'à la scierie, par flottage, etc.
+Stockage sur place et autres méthodes de stockage des produits forestiers
+Dégâts et pertes des produits forestiers pendant et après les récoltes (manutention, transport, stockage, etc.) ; mesures de prévention et de lutte
+Préservation du bois
+Bioagresseurs des produits forestiers ; présence et lutte
+Dégâts causés aux produits forestiers par les facteurs atmosphériques, le feu, les équipements et autres agents physiques ; prévention et lutte"""@fr .
+
+agrist-thema:L74 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:J13,
+        agrist-thema:L10 ;
+    skos:broader agrist-thema:L ;
+    skos:editorialNote """amélioration des animaux pour la résistance au climat, aux conditions extrêmes, voir L10
+dégâts causés aux produits d'origine animale, voir J13"""@fr ;
+    skos:prefLabel "Miscellaneous animal disorders"@en,
+        "Troubles divers des animaux"@fr ;
+    skos:scopeNote """Troubles physiologiques en général, troubles nutritionnels et génétiques des animaux utiles aquatiques et terrestres ; maladies de carence
+Blessures causées par les facteurs atmosphériques (tels que la chaleur, le froid), le feu, les équipements et autres agents physiques
+Moyens, méthodes et programmes pour la prévention et la lutte contre les troubles et les blessures des animaux
+Empoisonnement des animaux utiles par des substances toxiques (agents chimiques toxiques, poisons, toxines, venins), par des plantes toxiques
+Résistance des animaux au climat, aux conditions extrêmes"""@fr .
+
+agrist-thema:E20 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:C10,
+        agrist-thema:C20,
+        agrist-thema:E10,
+        agrist-thema:E11,
+        agrist-thema:E12,
+        agrist-thema:E13,
+        agrist-thema:E16,
+        agrist-thema:E21,
+        agrist-thema:E40,
+        agrist-thema:E50,
+        agrist-thema:E80,
+        agrist-thema:E90,
+        agrist-thema:F08,
+        agrist-thema:K10,
+        agrist-thema:M11,
+        agrist-thema:M12,
+        agrist-thema:N02,
+        agrist-thema:P01 ;
+    skos:broader agrist-thema:E ;
+    skos:editorialNote """aménagement de l'exploitation agricole, voir N02
+assurance accident individuelle, voir E50
+coopératives en général, voir E40
+économie agricole en général, voir E10
+économie de la production en général, voir E16
+économie foncière en général, voir E11
+ferme pilote, voir C10
+industries agricoles, voir E21
+industries familiales, artisanat, voir E80
+investissement, financement et crédit, voir E13
+modes et systèmes de culture, voir F08
+production de l'aquaculture, voir M12
+production de la pêche, voir M11
+production forestière, voir K10
+structure agraire, voir E90
+travail et emploi, voir E12
+utilisation des terres agricoles et des forêts pour les loisirs, voir P01
+vulgarisation agricole et conseil technique, voir C20"""@fr ;
+    skos:prefLabel "Organization, administration and management of agricultural enterprises or farms"@en,
+        "Organisation, administration et gestion des entreprises ou exploitations agricoles"@fr ;
+    skos:scopeNote """Planification et développement d'activités agricoles en termes d'exploitations individuelles
+Organisation, gestion et administration des ressources de l'exploitation, y compris le choix des terres, des cultures, du bétail, des machines et de l'équipement nécessaires au travail de l'exploitation agricole, conseil de gestion
+Tourisme en milieu rural en tant qu'activité connexe de l'exploitation agricole, activité non agricole pratiquée sur la ferme, revenu non agricole, vacances à la ferme, camping, emplacement pour caravane, chambre d'hôte
+Systèmes d'agriculture : fermes ou exploitations agricoles privées, collectives, d'État ; exploitations sous contrat, intégrées, mixtes, fermage : en espèces, métayage
+Budget de l'exploitation : estimation de la production, du revenu brut, des dépenses et du revenu net résultant de la gestion de l'exploitation
+Tenue à jour des comptes, comptabilité de l'exploitation ; prix de revient et bénéfices de l'exploitation, analyse des coûts ; analyse input-output des activités de l'exploitation
+Assurance des animaux, des cultures, de la propriété contre les risques entraînés par les activités agricoles, forestières, de l'aquaculture et des pêches ; couverture par contrat des pertes ou dégâts aux animaux, aux cultures ou à la propriété, occasionnés par différents types d'accidents"""@fr .
+
+agrist-thema:M12 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:E20,
+        agrist-thema:E21,
+        agrist-thema:E70,
+        agrist-thema:F30,
+        agrist-thema:J14,
+        agrist-thema:L10,
+        agrist-thema:L51,
+        agrist-thema:N20,
+        agrist-thema:Q03,
+        agrist-thema:Q04,
+        agrist-thema:Q53 ;
+    skos:broader agrist-thema:M ;
+    skos:editorialNote """amélioration des animaux aquatiques, voir L10
+amélioration des plantes aquatiques, voir F30
+conservation des produits de l'aquaculture, voir J14
+distribution et commercialisation de produits de l'aquaculture, voir E70
+effets de l'alimentation des animaux aquatiques sur la qualité des produits alimentaires, voir Q04
+hygiène des produits de l'aquaculture, voir Q03,Q53
+industrie aquacole, voir E21
+matériels d'aquaculture, voir N20
+organisation, administration et gestion des entreprises aquacoles, voir E20
+physiologie de la nutrition animale, voir L51
+physiologie de la nutrition des animaux aquatiques, voir L51"""@fr ;
+    skos:prefLabel "Aquaculture production"@en,
+        "Production de l'aquaculture"@fr ;
+    skos:scopeNote """Méthodes pour l'aquaculture animale et l'aquaculture végétale
+Élevage et soins aux poissons, coquillages et autres animaux aquatiques, pisciculture
+Aquaculture en eau douce, en eau de mer, en eau saumâtre : étang, écloserie, vivier, casier, etc.
+Alimentation des animaux aquatiques : plancton, necton, etc.
+Culture des plantes aquatiques pour l'alimentation humaine, l'alimentation animale, l'énergie, etc.
+Rendement de l'aquaculture : récolte de plantes et d'animaux aquatiques"""@fr .
+
+agrist-thema:Q53 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:D50,
+        agrist-thema:J10,
+        agrist-thema:J11,
+        agrist-thema:J12,
+        agrist-thema:J13,
+        agrist-thema:J14,
+        agrist-thema:Q03,
+        agrist-thema:Q52,
+        agrist-thema:Q54 ;
+    skos:broader agrist-thema:Q ;
+    skos:editorialNote """conservation des aliments pour animaux, voir Q52
+contamination et toxicologie des produits alimentaires, voir Q03
+législation concernant le contrôle de la qualité des aliments pour animaux, voir D50
+micro-organismes utiles des aliments pour animaux, voir Q52
+protection des aliments pour animaux, voir J10-J14
+qualité des aliments pour animaux, voir Q54
+stockage des aliments pour animaux, voir J10-J14"""@fr ;
+    skos:prefLabel "Feed contamination and toxicology"@en,
+        "Contamination et toxicologie des aliments pour animaux"@fr ;
+    skos:scopeNote """Micro-organismes nuisibles des aliments pour animaux
+Toxicologie, adultération, contamination, détérioration des aliments pour animaux
+Altération ; agents pathogènes des aliments pour animaux
+Inspection, contrôle sanitaire des aliments pour animaux"""@fr .
+
+agrist-thema:K10 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:E20,
+        agrist-thema:E70,
+        agrist-thema:F06,
+        agrist-thema:F08,
+        agrist-thema:F30,
+        agrist-thema:F40,
+        agrist-thema:F50,
+        agrist-thema:H10,
+        agrist-thema:H20,
+        agrist-thema:H60,
+        agrist-thema:J12,
+        agrist-thema:K11,
+        agrist-thema:K70,
+        agrist-thema:N20,
+        agrist-thema:P11,
+        agrist-thema:U30 ;
+    skos:broader agrist-thema:K ;
+    skos:editorialNote """anatomie et morphologie des arbres forestiers, voir F50
+agroforesterie, voir F08
+classement, norme, marquage de produits forestiers, voir E70
+conservation des produits forestiers, voir J12
+désherbage, voir H60
+distribution et commercialisation des produits forestiers, voir E70
+drainage, voir P11
+écologie forestière, voir F40
+génétique des arbres, voir F30
+génie forestier, voir K11
+incendies de forêt, voir K70
+irrigation, voir F06
+maladies des arbres forestiers, voir H20
+matériels et équipements forestiers, voir N20
+méthodes de relevé, voir U30
+organisation, administration et gestion des entreprises forestières, voir E20
+bioagresseurs des arbres forestiers, voir H10"""@fr ;
+    skos:prefLabel "Forestry production"@en,
+        "Production forestière"@fr ;
+    skos:scopeNote """Opérations forestières (y compris l'abattage et l'arrachage des arbres) ; méthodes de production forestière en général, forêts expérimentales, privées, paysannes, etc.
+Dendrométrie : systèmes et unités de mesure pour les dimensions des troncs et le volume des arbres, peuplements, forêts et bois ; tables d'accroissement et de production forestières ; modèles informatiques pour peuplement forestier
+Estimation de la qualité de la station ; cartographie forestière, inventaires et reconnaissance
+Foresterie urbaine ; ceintures de protection et brise-vents
+Entretien des forêts pour la sylviculture extensive ; méthodes de sylviculture intensive
+Régime sylvicole, rotation sylvicole, éclaircie, coupe rase, système de sélection, amélioration des peuplements forestiers, contrôle de la croissance et de la composition des forêts, formation des peuplements, régime de futaie
+Renouvellement par : reproduction naturelle par graine ou reproduction végétative, coupe de rajeunissement, régénération naturelle, régénération par coupe ou par abattage, etc. ; renouvellement par ensemencement ou plantation, régénération artificielle, boisement et reboisement, pépinières, plants élevés en conteneur, semis direct, plantation en sous étage, plantation d'abri, etc.
+Brûlage dirigé ou contrôlé des forêts
+Plantations forestières ; production d'arbres d'ombrage, d'ornement, de Noël
+Production et traitement des semences forestières
+Rendements forestiers : quantité de produits ou de leurs dérivés découlant de la production forestière ; abattage et débardage du bois et autres formes de récolte de produits forestiers"""@fr .
+
+agrist-thema:Q03 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:D50,
+        agrist-thema:J10,
+        agrist-thema:J11,
+        agrist-thema:J12,
+        agrist-thema:J13,
+        agrist-thema:J14,
+        agrist-thema:Q02,
+        agrist-thema:Q04,
+        agrist-thema:Q53 ;
+    skos:broader agrist-thema:Q ;
+    skos:editorialNote """conservation des produits alimentaires, voir Q02
+contamination et toxicologie des aliments pour animaux, voir Q53
+législation concernant le contrôle de la qualité des produits alimentaires, voir D50
+micro-organismes utiles des produits alimentaires, voir Q02
+protection des produits alimentaires, voir J10-J14
+qualité des produits alimentaires, voir Q04
+stockage des produits alimentaires, voir J10-J14"""@fr ;
+    skos:prefLabel "Food contamination"@en,
+        "Contamination et toxicologie alimentaires"@fr ;
+    skos:scopeNote """Micro-organismes nuisibles des produits alimentaires
+Toxicologie et altération des produits alimentaires : défauts, agents pathogènes, adultération, contamination détérioration
+Santé publique et produits alimentaires : inspection des viandes, hygiène alimentaire, lutte contre les agents pathogènes des aliments, etc."""@fr .
+
+agrist-thema:L72 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:D50,
+        agrist-thema:H02,
+        agrist-thema:J13,
+        agrist-thema:L10,
+        agrist-thema:L73,
+        agrist-thema:L74,
+        agrist-thema:N20,
+        agrist-thema:S50 ;
+    skos:broader agrist-thema:L ;
+    skos:editorialNote """conservation des produits stockés d'origine animale, voir J13
+maladies des animaux, voir L73
+matériels de lutte contre les organismes nuisibles des animaux, voir N20
+propriété et examen des agents pathogènes des animaux, des organismes provoquant des maladies, voir L73
+réglementation de quarantaine des animaux, voir D50
+sélection pour la résistance des animaux aux organismes nuisibles, voir L10
+toxicité des pesticides pour les êtres humains, voir S50
+toxicité des pesticides pour les animaux d'élevage, voir L74
+toxicité des pesticides pour les plantes utiles, voir H02
+troubles physiologiques et génétiques des animaux, voir L74"""@fr ;
+    skos:prefLabel "Pests of animals"@en,
+        "Organismes nuisibles des animaux"@fr ;
+    skos:scopeNote """Ne comprend pas l'information dans laquelle les organismes nuisibles des animaux sont utilisés pour l'étude des processus biologiques généraux, par exemple la génétique, et qui n'a pas de relation directe avec la lutte menée contre eux ou avec les blessures ou les irritations infligées par ces organismes aux animaux utiles
+Organismes nuisibles des animaux utiles aquatiques et terrestres, tels que parasites, prédateurs ou vecteurs d'agents pathogènes
+Insectes, acariens, tiques, helminthes, protozoaires, oiseaux, mammifères nuisibles aux animaux utiles aquatiques et terrestres
+Moyens, méthodes et programmes de lutte contre les organismes nuisibles des animaux (y compris la lutte culturale, chimique, physique, mécanique, intégrée et biologique) ; élevage d'organismes utilisés dans la lutte contre les organismes nuisibles des animaux ; génétique, écologie, anatomie, morphologie, physiologie, biochimie et taxonomie des organismes de lutte
+Inventaire des organismes nuisibles
+Immunité : résistance des animaux aux organismes nuisibles, résistance des organismes nuisibles aux pesticides, etc. ; immunisation
+Écologie, anatomie, physiologie, biochimie et taxonomie des organismes nuisibles des animaux"""@fr .
+
+agrist-thema:L73 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:D50,
+        agrist-thema:H02,
+        agrist-thema:J13,
+        agrist-thema:L10,
+        agrist-thema:L72,
+        agrist-thema:L74,
+        agrist-thema:N20,
+        agrist-thema:S50 ;
+    skos:broader agrist-thema:L ;
+    skos:editorialNote """conservation des produits stockés d'origine animale, voir J13
+maladies de carence des animaux, voir L74
+matériels de lutte contre les maladies des animaux, voir N20
+organismes nuisibles des animaux, voir L72
+réglementation de quarantaine des animaux, voir D50
+santé humaine, voir S50
+sélection pour la résistance des animaux aux maladies, voir L10
+toxicité des pesticides pour les êtres humains, voir S50
+toxicité des pesticides pour les animaux d'élevage, voir L74
+toxicité des pesticides pour les plantes utiles, voir H02
+troubles génétiques des animaux, voir L74
+troubles nutritionnels des animaux, voir L74
+troubles physiologiques des animaux, voir L74
+zoonoses (maladies des animaux transmissibles entre les animaux et les êtres humains), voir S50"""@fr ;
+    skos:prefLabel "Animal diseases"@en,
+        "Maladies des animaux"@fr ;
+    skos:scopeNote """Maladies des animaux utiles aquatiques et terrestres et les organismes qui les provoquent : bactéries, champignons, mycoplasmes, virus, etc.
+Zoonoses (maladies des animaux transmissibles entre les animaux et les êtres humains)
+Moyens, méthodes et programmes de lutte contre les maladies des animaux (y compris la lutte culturale, chimique, physique, mécanique, intégrée et biologique) ; élevage d'organismes utilisés dans la lutte contre les maladies des animaux ; génétique, écologie, anatomie, morphologie, physiologie, biochimie et taxonomie des organismes de lutte
+Enquête épidémiologique sur les animaux
+Immunité : résistance des animaux aux infections; résistance des agents pathogènes aux pesticides, etc. ; immunisation
+Propriété et examen des agents pathogènes des animaux, des organismes provoquant des maladies"""@fr .
+
+agrist-thema:D50 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:E70,
+        agrist-thema:L70,
+        agrist-thema:Q03,
+        agrist-thema:Q53 ;
+    skos:broader agrist-thema:D ;
+    skos:editorialNote """classement, normes, étiquetage de contenu, voir E70
+hygiène, vétérinaire, voir L70
+inspection et contrôle sanitaire des aliments (alimentation humaine), voir Q03
+inspection et contrôle sanitaire des aliments pour animaux, voir Q53"""@fr ;
+    skos:prefLabel "Legislation"@en,
+        "Législation"@fr ;
+    skos:scopeNote """Droit agricole émanant des autorités gouvernementales et intergouvernementales
+Réglementation des importations et des exportations, réglementation douanière
+Réglementation de quarantaine des animaux et de quarantaine des plantes
+Brevets
+Législation sur les droits des sélectionneurs (ou obtenteurs) : inscription et brevets de variétés végétales et de races animales
+Aspects législatifs des contrôles de la qualité, réglementation sanitaire
+Aspects législatifs de la lutte antipollution ; réglementation relative aux résidus toxiques
+Réglementation relative au classement des produits
+Droit des eaux"""@fr .
+
+agrist-thema:E70 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:E71,
+        agrist-thema:E72,
+        agrist-thema:E73,
+        agrist-thema:J,
+        agrist-thema:Q,
+        agrist-thema:Q03,
+        agrist-thema:Q53,
+        agrist-thema:Q80 ;
+    skos:broader agrist-thema:E ;
+    skos:editorialNote """commerce intérieur, voir E72
+commerce international, voir E71
+ conditionnement, voir Q80
+ conservation des produits agricoles, voir J10-J15
+ économie de la consommation, voir E73
+ inspection sanitaire des aliments pour animaux, voir Q53
+ inspection sanitaire des produits alimentaires, voir Q03
+ prix communautaires garantis dans le commerce international, voir E71
+ stockage des produits agricoles, voir J10-J15
+ traitement des produits agricoles, voir Q01-Q80
+ transport des produits agricoles, voir J10-J15"""@fr ;
+    skos:prefLabel "Trade, marketing and distribution"@en,
+        "Commerce, commercialisation et distribution"@fr ;
+    skos:scopeNote """Commerce : échange, achat ou vente de produits agricoles de base ou des produits utilisés pour la production agricole
+Commercialisation, y compris les activités en relation avec le passage des produits agricoles de base ou des produits utilisés pour la production agricole, du producteur au consommateur, telles que la coordination de la fabrication, la normalisation, l'achat, la vente, la promotion des ventes, la publicité, l'expédition, la distribution ; commerces de gros et de détail ; vente aux enchères et autres méthodes de vente ; foires commerciales et expositions
+Politique, coûts et méthodes de distribution
+Offre et demande ; étude et analyse de marchés, prévision des ventes, modèles économétriques concernant les marchés
+Fixation et stabilisation des prix
+Qualité, norme et étiquetage de contenu ; marque de fabrique utilisée pour l'identification des produits commercialisés
+Classement : classification des produits agricoles suivant les normes d'uniformité, de taille, d'absence de défauts ou de maladies, de finesse, de qualité, etc."""@fr .
+
+agrist-thema:H10 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:D50,
+        agrist-thema:F30,
+        agrist-thema:H01,
+        agrist-thema:H02,
+        agrist-thema:H20,
+        agrist-thema:H50,
+        agrist-thema:H60,
+        agrist-thema:J11,
+        agrist-thema:J12,
+        agrist-thema:L74,
+        agrist-thema:N20,
+        agrist-thema:S50 ;
+    skos:broader agrist-thema:H ;
+    skos:editorialNote """amélioration des plantes pour la résistance aux ravageurs, voir F30
+conservation des produits d'origine végétale, voir J11
+effets phytotoxiques des pesticides, voir H02
+maladies des plantes, voir H20
+matériel de lutte contre les organismes nuisibles des plantes, voir N20
+mauvaises herbes et désherbage, voir H60
+préservation du bois, voir J12
+propriété et examen des agents pathogènes des plantes, des organismes provoquant des maladies, voir H20
+protection des plantes en général, voir H01
+réglementation de quarantaine des plantes, voir D50
+toxicité des pesticides pour l'être humain, voir S50
+toxicité des pesticides pour les animaux utiles, voir L74
+toxicité des pesticides pour les plantes utiles, voir H02
+troubles physiologiques et génétiques des plantes, voir H50"""@fr ;
+    skos:prefLabel "Pests of plants"@en,
+        "Ravageurs des plantes"@fr ;
+    skos:scopeNote """Ne concerne pas les bioagresseurs utilisés pour l'étude des phénomènes biologiques généraux, par exemple la génétique, et qui n'ont pas de relation directe avec la lutte menée contre eux, ou sur les dégâts ou pertes de récolte qu'ils causent
+Ravageurs (ou organismes nuisibles, ou bioagresseurs) des plantes utiles (y compris les arbres forestiers et les plantes aquatiques) et les dégâts qu'ils provoquent
+Insectes, acariens, nématodes, protozoaires, mollusques, oiseaux, mammifères, etc., nuisibles aux plantes utiles ou vecteurs d'agents pathogènes des plantes
+Moyens, méthodes et programmes de lutte contre les ravageurs (y compris la lutte culturale, chimique, physique, mécanique, intégrée et biologique) ; élevage d'organismes utilisés dans la lutte contre les ravageurs ; génétique, écologie, anatomie, morphologie, physiologie, biochimie et taxonomie des organismes de lutte
+Inventaires des ravageurs des plantes
+Immunité : résistance des plantes aux ravageurs, résistance des ravageurs aux pesticides
+Écologie, anatomie, morphologie, biochimie et taxonomie des ravageurs"""@fr .
+
+agrist-thema:H20 a skos:Concept ;
+    rdfs:seeAlso agrist-thema:D50,
+        agrist-thema:F30,
+        agrist-thema:H02,
+        agrist-thema:H10,
+        agrist-thema:H50,
+        agrist-thema:H60,
+        agrist-thema:J11,
+        agrist-thema:J12,
+        agrist-thema:L74,
+        agrist-thema:N20,
+        agrist-thema:S50 ;
+    skos:broader agrist-thema:H ;
+    skos:editorialNote """amélioration des plantes pour la résistance aux maladies, voir F30
+conservation des produits d'origine végétale, voir J11
+maladies de carence des plantes, voir H60
+matériel de lutte contre les maladies des plantes, voir N20
+mauvaises herbes et désherbage, voir H60
+préservation du bois, voir J12
+ravageurs des plantes, voir H10
+réglementation de quarantaine des plantes, voir D50
+toxicité des pesticides pour l'être humain, voir S50
+toxicité des pesticides pour les animaux utiles, voir L74
+toxicité des pesticides pour les plantes utiles, voir H02
+troubles nutritionnels des plantes, voir H50
+troubles physiologiques et génétiques des plantes, voir H50"""@fr ;
+    skos:prefLabel "Plant diseases"@en,
+        "Maladies des plantes"@fr ;
+    skos:scopeNote """Pathologie végétale (bioagresseurs) ; maladies des plantes utiles (y compris les arbres forestiers et les plantes aquatiques) et organismes qui les provoquent: bactéries, champignons, mycoplasmes, virus, etc.
+Moyens, méthodes et programmes de lutte contre les maladies des plantes (y compris la lutte culturale, chimique, physique, mécanique, intégrée et biologique) ; élevage d'organismes utilisés dans la lutte contre les maladies des plantes ; génétique, écologie, anatomie, morphologie, physiologie, biochimie et taxonomie des organismes utilisés dans la lutte
+Inventaire des maladies des plantes
+Immunité : résistance des plantes aux infections ; résistance des agents pathogènes des plantes aux pesticides
+Propriété et examen des agents pathogènes des plantes, organismes provoquant des maladies"""@fr .
+
