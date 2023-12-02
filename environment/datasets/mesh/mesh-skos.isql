@@ -1,0 +1,87 @@
+-- Adding SKOS triples to the MeSH graph
+-- to help creating dictionary for pyclinrec
+-- annotations
+
+ECHO 'Updating MeSH graph <http://id.nlm.nih.gov/mesh/graph> with SKOS triples..' ;
+
+log_enable(3,1);
+
+SPARQL 
+PREFIX mesh:  <http://id.nlm.nih.gov/mesh/vocab#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+-- count MeSH concepts
+SELECT (count(distinct *) as ?count)
+FROM NAMED <http://id.nlm.nih.gov/mesh/graph> 
+WHERE {
+    GRAPH ?g {?x a mesh:Concept; rdfs:label ?xl.}
+}
+;
+
+-- Make MeSH Concepts also SKOS Concepts 
+SPARQL
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX mesh:  <http://id.nlm.nih.gov/mesh/vocab#>
+
+WITH <http://id.nlm.nih.gov/mesh/graph> 
+INSERT { ?x a skos:Concept. }
+WHERE  { ?x a mesh:Concept. }
+;
+
+-- Make MeSH lables also SKOS prefLabel 
+SPARQL
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX mesh:  <http://id.nlm.nih.gov/mesh/vocab#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+WITH <http://id.nlm.nih.gov/mesh/graph> 
+INSERT { ?x skos:prefLabel ?xl. }
+WHERE  { ?x a mesh:Concept; 
+            rdfs:label ?xl. }
+;
+
+-- Make MeSH narrowerConcept also SKOS narrower 
+SPARQL
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX mesh:  <http://id.nlm.nih.gov/mesh/vocab#>
+
+WITH <http://id.nlm.nih.gov/mesh/graph> 
+INSERT { ?x skos:narrower ?n. }
+WHERE  { ?x mesh:narrowerConcept ?n. }
+;
+
+-- Make MeSH broaderConcept also SKOS broader 
+SPARQL
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX mesh:  <http://id.nlm.nih.gov/mesh/vocab#>
+
+WITH <http://id.nlm.nih.gov/mesh/graph> 
+INSERT { ?x skos:broader ?b. }
+WHERE  { ?x mesh:broaderConcept ?b. }
+;
+
+-- Make MeSH relatedConcept also SKOS related 
+SPARQL
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX mesh:  <http://id.nlm.nih.gov/mesh/vocab#>
+
+WITH <http://id.nlm.nih.gov/mesh/graph> 
+INSERT { ?x skos:related ?r. }
+WHERE  { ?x mesh:relatedConcept ?r. }
+;
+
+chcekpoint;
+
+-- count SKOS concepts
+SPARQL
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT (count(distinct ?x) as ?count)
+FROM NAMED <http://id.nlm.nih.gov/mesh/graph> 
+WHERE {
+    GRAPH ?g {?x a skos:Concept; skos:prefLabel ?xl.}
+}
+;
+
+EXIT;
