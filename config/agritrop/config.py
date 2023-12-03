@@ -80,7 +80,8 @@ class cfg_pipeline(object):
                'annotation_wikidata':os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, _REL_EF ),
                'annotation_geonames':os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, _REL_GEONAMES ),
                
-               'annotation_agrovoc':os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, _REL_PYCLINREC ),             
+               #'annotation_agrovoc':os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, _REL_PYCLINREC ),
+               'annotation_pyclinrec':os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, _REL_PYCLINREC ),                      
                }
 
     
@@ -599,14 +600,28 @@ class cfg_annotation_geonames(cfg_annotation):
     USE_CACHE = True
     
 
-class cfg_annotation_agrovoc(cfg_annotation): 
+#class cfg_annotation_agrovoc(cfg_annotation): 
+#    FILES_LOC = cfg_pipeline.FILES_LOC    
+
+#    OUTPUT_PATH = FILES_LOC['annotation_agrovoc']
+    
+#    PYCLINREC_ENDPOINT = 'http://localhost:5000/annotate'
+    
+#    PYCLINREC_CONFIDENCE= 0.15
+
+class cfg_annotation_pyclinrec(cfg_annotation): 
     FILES_LOC = cfg_pipeline.FILES_LOC    
 
-    OUTPUT_PATH = FILES_LOC['annotation_agrovoc']
+    OUTPUT_PATH = FILES_LOC['annotation_pyclinrec']
     
-    PYCLINREC_ENDPOINT = 'http://localhost:5000/annotate'
+    PYCLINREC_ENDPOINT = 'http://localhost:5002/annotate'
+
+    PYCLINREC_DICTIONARIES = ['agrovoc'] 
     
     PYCLINREC_CONFIDENCE= 0.15
+
+    DO_ANNOTATE=True
+
     
 class cfg_overlap_detection(cfg_pipeline): #cfg_pipeline
     FILES_LOC = cfg_pipeline.FILES_LOC    
@@ -629,8 +644,8 @@ class cfg_overlap_detection(cfg_pipeline): #cfg_pipeline
                                                'abstract':  (['abstract', 'Resources'],  'surfaceForm', 'offset' , 'similarityScore', 'length'  ),
                                                'body_text': (['body_text' ,'Resources'], 'surfaceForm', 'offset' , 'similarityScore', 'length'  )},
                              },
-                 'agrovoc' : {   'INPUT_PATH' : FILES_LOC['annotation_agrovoc'],
-                                 'OUTPUT_PATH' : FILES_LOC['annotation_agrovoc'],
+                 'agrovoc' : {   'INPUT_PATH' : FILES_LOC['annotation_pyclinrec'],
+                                 'OUTPUT_PATH' : FILES_LOC['annotation_pyclinrec'],
                                  'JSON_MAP' :  { 'title':     (['title', 'concepts'] ,    'matched_text', 'start' , 'confidence_score', 'length'  ),
                                                  'abstract':  (['abstract', 'concepts'],  'matched_text', 'start' , 'confidence_score', 'length'  ),
                                                  'body_text': (['body_text' ,'concepts'], 'matched_text', 'start' , 'confidence_score', 'length'  )}

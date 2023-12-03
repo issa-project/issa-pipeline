@@ -2,7 +2,6 @@
 # Authors: Franck MICHEL, University Cote d'Azur, CNRS, Inria
 #        : Anna BOBASHEVA, University Cote d'Azur, Inria
 
-
 # ISSA environment definitions
 . ../../../env.sh
 
@@ -65,7 +64,6 @@ docker_exec_multipart() {
 if [ $( docker ps -f name=$CONTAINER| wc -l ) -eq 1 ]; then 
 	"$CONTAINER container is not running. Restarting ..." &>> $log
 	pushd $MORPH_XR2RML_DOCKER_COMPOSE_DIR
-		#envsubst < "docker-compose-template.yml" > "docker-compose.yml"
 		docker-compose start
      	sleep 5s
 	popd
@@ -121,12 +119,11 @@ docker_exec_multipart "Generate annotations for GeoNames" \
 ############################################################################
 ## use-case specific annotations 
 ############################################################################
-if [[ $ISSA_INSTANCE == "agritrop" ]] ; then 
 
-	docker_exec_multipart "Generate annotations for Pyclinrec" \
+docker_exec_multipart "Generate annotations for Pyclinrec" \
      	                 xr2rml_pyclinrec_annot.tpl.ttl \
           	            issa-document-pyclinrec-part.ttl \
                	       pyclinrec_filtered 
 
-fi
+
 

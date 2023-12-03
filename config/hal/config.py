@@ -42,6 +42,7 @@ _REL_COAL_JSON  	    = read_env_var('REL_COAL_JSON',         'json/coalesced')
 _REL_SPOTLIGHT	         = read_env_var('REL_SPOTLIGHT',         'annotation/dbpedia')
 _REL_EF			    = read_env_var('REL_EF',                'annotation/wikidata')
 _REL_GEONAMES		    = read_env_var('REL_GEONAMES',          'annotation/geonames')
+_REL_PYCLINREC	         = read_env_var('REL_PYCLINREC',         'annotation/mesh')
 
 
 class cfg_pipeline(object):
@@ -74,7 +75,7 @@ class cfg_pipeline(object):
                'annotation_wikidata':os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, _REL_EF ),
                'annotation_geonames':os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, _REL_GEONAMES ),
                
-               #'annotation_agrovoc':os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, _REL_PYCLINREC ),             
+               'annotation_pyclinrec':os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, _REL_PYCLINREC ),            
                }
 
     
@@ -516,6 +517,20 @@ class cfg_annotation_geonames(cfg_annotation):
     USE_CACHE = True
 
 
+class cfg_annotation_pyclinrec(cfg_annotation): 
+    FILES_LOC = cfg_pipeline.FILES_LOC    
+
+    OUTPUT_PATH = FILES_LOC['annotation_pyclinrec']
+    
+    PYCLINREC_ENDPOINT = 'http://localhost:5002/annotate'
+
+    PYCLINREC_DICTIONARIES = ['mesh'] 
+    
+    PYCLINREC_CONFIDENCE= 0.15
+
+    DO_ANNOTATE=True
+
+
 class cfg_overlap_detection(cfg_pipeline): #cfg_pipeline
     FILES_LOC = cfg_pipeline.FILES_LOC    
 
@@ -537,6 +552,13 @@ class cfg_overlap_detection(cfg_pipeline): #cfg_pipeline
                                                'abstract':  (['abstract', 'Resources'],  'surfaceForm', 'offset' , 'similarityScore', 'length'  ),
                                                'body_text': (['body_text' ,'Resources'], 'surfaceForm', 'offset' , 'similarityScore', 'length'  )},
                              },
+                 'mesh' : {   'INPUT_PATH' : FILES_LOC['annotation_pyclinrec'],
+                                 'OUTPUT_PATH' : FILES_LOC['annotation_pyclinrec'],
+                                 'JSON_MAP' :  { 'title':     (['title', 'concepts'] ,    'matched_text', 'start' , 'confidence_score', 'length'  ),
+                                                 'abstract':  (['abstract', 'concepts'],  'matched_text', 'start' , 'confidence_score', 'length'  ),
+                                                 'body_text': (['body_text' ,'concepts'], 'matched_text', 'start' , 'confidence_score', 'length'  )}
+         }
+
     }
 
     ASYNCH_PROCESSING = True

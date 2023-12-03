@@ -58,23 +58,21 @@ python3 ./annotation_geonames.py $ISSA_PIPELINE_CONFIG
 echo "Stopping entity-fishing..."
 docker stop entity-fishing
 
-if [[ $ISSA_INSTANCE == "agritrop" ]] ; then 
 echo "************************************************************************"
-echo "Annotate with Agrovoc Pyclinrec..."
+echo "Annotate with a custom dictionary and Pyclinrec..."
 echo "************************************************************************"
 
-echo "Starting agrovoc-pyclinrec..."
-docker start agrovoc-pyclinrec
+echo "Starting pyclinrec..."
+docker start pyclinrec
 
 echo "Waiting for recognizers to load (~1 min)..."
 sleep 1m
-echo "Started agrovoc-pyclinrec..."
+echo "Started pyclinrec..."
 
-python3 ./annotation_agrovoc.py  $ISSA_PIPELINE_CONFIG
+python3 ./annotation_pyclinrec.py  $ISSA_PIPELINE_CONFIG
 
-docker stop agrovoc-pyclinrec
+docker stop pyclinrec
 
-fi
 
 echo "************************************************************************"
 echo "Detect overlapping named entities..."

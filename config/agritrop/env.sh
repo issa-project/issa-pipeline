@@ -139,10 +139,12 @@ ANNIF_THRESHOLD=0.1                              # confidence threshold of  retu
 ANNIF_LANGUAGES=en\ fr                           # list of languages to process
 
 # Pyclinrec concept recognizer with Agrovoc vocabulary (docker container)
-PYCLINREC_CONT_NAME=agrovoc-pyclinrec                        # docker container name
-PYCLINREC_DICT_ENDPOINT=https://data-issa.cirad.fr/sparql    # endpoint to SKOS vocabulary to create concept dictionary
-PYCLINREC_DICT_GRAPH=http://agrovoc.fao.org/graph            # endpoint graph name to restrict a vocabulary
-PYCLINREC_HOST_CACHE=$ISSA_ROOT/volumes/agrovoc-pyclinrec/cache  # map to /app/cache dit on the container FS for dictionaries and recognizer objects persistency
+PYCLINREC_CONT_NAME=pyclinrec                    # docker container name
+PYCLINREC_DICT_NAME=agrovoc                      # docker container name
+PYCLINREC_DICT_ENDPOINT=https://data-issa.cirad.fr/sparql  # endpoint to SKOS vocabulary to create concept dictionary
+PYCLINREC_DICT_GRAPH=http://agrovoc.fao.org/graph          # endpoint graph name to restrict a vocabulary
+PYCLINREC_SKOS_XL_LABELS=True                    # set this flag to use skosXL labels
+PYCLINREC_HOST_CACHE=$ISSA_ROOT/volumes/pyclinrec/cache    # map to /app/cache dit on the container FS for dictionaries and recognizer objects persistency
 
 ###############################################################################
 #                              ENVIRONMENT - EXTERNAL DATASETS IMPORT
