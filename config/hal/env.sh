@@ -124,7 +124,7 @@ EF_LANGUAGES=en\ fr                                  # list of available languag
 # Pyclinrec concept recognizer with Agrovoc vocabulary (docker container)
 PYCLINREC_CONT_NAME=pyclinrec                        # docker container name
 PYCLINREC_HOST_CACHE=$ISSA_ROOT/volumes/pyclinrec/cache       # map to /app/cache dit on the container FS for dictionaries and recognizer objects persistency
-PYCLINREC_DICT_ENDPOINT=http://localhost:8891/sparql #http://localhost:8891http://data-issa.euromov.fr/sparql    # endpoint to SKOS vocabulary to create concept dictionary
+PYCLINREC_DICT_ENDPOINT=http://data-issa.euromov.fr/sparql    # endpoint to SKOS vocabulary to create concept dictionary
 PYCLINREC_DICT_GRAPH=http://id.nlm.nih.gov/mesh/graph         # endpoint graph name to restrict a vocabulary
 PYCLINREC_DICT_NAME=mesh                             # endpoint graph name to restrict a vocabulary
 
