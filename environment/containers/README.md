@@ -4,7 +4,7 @@ All of the tools used in the ISSA pipeline are executed within a Docker containe
 
 ### Configuration
 
-Variable aspects of Docker containers such as directories, languages, etc. are configured in [env.sh](../../env.sh) file.
+Variable aspects of Docker containers such as directories, languages, etc. are configured in env.sh files in [config](../../config) sub-directories.
 
 ### Execution
 
@@ -40,6 +40,8 @@ We deploy [Annif Docker Image](https://github.com/NatLibFi/Annif/wiki/Usage-with
  
  >:point_right: The [training](../../training) process has to be run at least once before the automated indexing is feasible.
 
+ More details about usage and configuration of `annif` container can be found [in the Annif documentation]](https://github.com/NatLibFi/Annif/wiki/Usage-with-Docker).
+
 ### dbpedia-spotlight
 Two dbpeadia-spotlight containers are created from the [DBpedia Spotlight Docker image](https://hub.docker.com/r/dbpedia/dbpedia-spotlight) one per language `dbpedia-spotlight.en` and `dbpedia-spotlight.fr`. Each container relies on the downloaded language model. The model download is lengthy (on our machine 11 and 4 min for English and French) and is included in the installation script. The models are stored in the host FS.
 
@@ -53,9 +55,10 @@ Two dbpeadia-spotlight containers are created from the [DBpedia Spotlight Docker
   - ```curl -X POST http://localhost:2223/rest/annotate --data-urlencode "text=Cultiver des bananes en Irlande" --data-urlencode "lang=fr" --data-urlencode "confidence=0.15" -H "Accept: application/json"```
 
 >:point_right:  The `dbpedia-spotlight.en` container requires a lot of memory and fails to execute on a 32Gb RAM machine if any other container besides `virtuoso` is running. It is also slow to launch and cannot be accessed immediately. We allocate a 2 min delay after the container start command.
- https://nerd.readthedocs.io/en/latest/docker.html
+
 >:point_right: To update the models it is sufficient to delete the model folder and re-run the container installation script.
 
+Read the docs for the `dbpedia-spotlight` container: https://hub.docker.com/r/dbpedia/dbpedia-spotlight
 
 ### entity-fishing
 
@@ -86,7 +89,7 @@ We deploy the [CRF-only image](https://grobid.readthedocs.io/en/latest/Grobid-do
 
 ### Morph-xR2RML
 
-New in ISSA-2 is the utilization of Morph-xR2RML docker container network which provides the seamless mapping of the JSON documents to the RDF dataset. In fact the transformation is a two step process: the first step loads the set of JSON documents or a tab delimited file to the MongoDB database and the second step maps the MongoDB database to the RDF triples.
+New in ISSA-2 is the utilization of Morph-xR2RML docker container network which provides the seamless mapping of the JSON documents to the RDF dataset. In fact, the transformation is a two step process: the first step loads the set of JSON documents or a tab-delimited file to the MongoDB database and the second step maps the MongoDB database to the RDF triples.
 
 The container network deployment is adapted from the [Morph-xR2RML](https://github.com/frmichel/morph-xr2rml/tree/master/docker) repository. The tool connects two Docker images [MongoDb Docker Image](https://hub.docker.com/_/mongo) and [morph-xr2rml](https://hub.docker.com/r/frmichel/morph-xr2rml) and contains the preloaded scripts to execute transformation.
 
@@ -101,8 +104,6 @@ The container network deployment is adapted from the [Morph-xR2RML](https://gith
 The `pyclinrec` container runs the text annotation service to annotate text with concepts from a custom dictionary such as [Agrovoc Multilingual Thesaurus](https://agrovoc.fao.org) or [MeSH](https://www.nlm.nih.gov/mesh/meshhome.html).
 
 We build a Docker image to create the execution environment for the [Python Concept Recognition Library](https://github.com/twktheainur/pyclinrec) and access the functionality through a web application similar to other annotation Dockers, e.g. `dbpedia-spotlight` or `entity-fishing`.
-
-NOTE: we forked the library from its original repository for consistency reasons. The forked repository is located [here](https://github.com/issa-project/pyclinrec).
 
 - to build the image and initialize pyclinrec container invoke [install-pyclinrec.sh](pyclinrec/install-pyclinrec.sh) script.
 
