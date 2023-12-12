@@ -1,17 +1,21 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## Translating MeSH Lables into French
-# Downloaded *fredesc2022.xml* with MeSH concepts in english and French
+# Translating MeSH labels into French
+# Manually download *fredesc2022.xml* with MeSH concepts in English and French
 # from https://mesh.inserm.fr/FrenchMesh/
 # 
-# *mesh-en.tsv* was created by pyclinrec
-
-#!/usr/bin/env python
-# coding: utf-8
+# Assuming *mesh-en.tsv* was created by pyclinrec Docker already
 
 import xml.etree.ElementTree as ET
 import pandas as pd
+import os
+
+# Read App cache dir from environment variable
+APP_CACHE_DIR = os.environ.get('PYCLINREC_HOST_CACHE') or ''
+MESH_FR_XML = 'fredesc2022.xml'
+INPUT_MESH_FILE = os.path.join(APP_CACHE_DIR, 'mesh-en.tsv')
+OUTPUT_MESH_FILE = os.path.join(APP_CACHE_DIR, 'mesh-fr.tsv')
 
 def parse_mesh_xml(xml_file):
     tree = ET.parse(xml_file)
@@ -42,12 +46,8 @@ def translate_mesh_labels(mesh_dict, input_file, output_file):
                            encoding='utf-8', line_terminator='\n')
 
 if __name__ == "__main__":
-    mesh_xml_file = 'fredesc2022.xml'
-    input_mesh_file = 'mesh-en.tsv'
-    output_mesh_file = 'mesh-fr.tsv'
-
-    mesh_dict = parse_mesh_xml(mesh_xml_file)
+    mesh_dict = parse_mesh_xml(MESH_FR_XML)
     print(f"Number of English-French translations: {len(mesh_dict)}")
 
-    translate_mesh_labels(mesh_dict, input_mesh_file, output_mesh_file)
-    print(f"Translations saved to {output_mesh_file}")
+    translate_mesh_labels(mesh_dict, INPUT_MESH_FILE, OUTPUT_MESH_FILE)
+    print(f"Translations saved to {OUTPUT_MESH_FILE}")
