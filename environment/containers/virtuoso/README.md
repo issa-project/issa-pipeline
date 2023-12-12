@@ -11,7 +11,7 @@ To enable Faceted Browser in Virtuoso, you need to follow these steps:
 1. Open the Virtuoso Conductor web interface http://localhost:8890/conductor.
 2. Login with the credentials `dba` and the password that you have set during the Virtuoso installation.
 2. Navigate to the `System Admin/Packages` tab.
-3. Check `fct` package and click `Install/Upgrade` button.
+3. Check `fct` package and click the `Install/Upgrade` button.
 4. Restart the Virtuoso container.
 
 >:point_right: Optionally run the ISQL commands suggested in the [Virtuoso documentation](https://vos.openlinksw.com/owiki/wiki/VOS/VirtFacetBrowserInstallConfig) to speed up the Faceted Browser tasks.

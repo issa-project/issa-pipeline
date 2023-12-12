@@ -51,3 +51,7 @@ Optionally and depending on a use case some additional external datasets can be 
 To facilitate quick access to the Wikidata and DBpedia labels and hierarchical relationships between named entities for visualization applications such as [ARViz](https://github.com/Wimmics/arviz) we recreate the hierarchies for named entities in the ISSA triple store.
 
 See the [datasets](../datasets) folder for more details.
+
+## Scheduling updates
+
+The pipeline is designed to be run periodically. The update frequency depends on the use case and the data source. For the _Agritrop_ and _HAL_ use cases, we run the pipeline monthly scheduling the runs with the [cron](https://en.wikipedia.org/wiki/Cron) utility. The scheduling [file](issa.crontab) is included in this repository for demonstration purposes.

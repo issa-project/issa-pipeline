@@ -1,6 +1,6 @@
 # Docker containers
 
-Almost all of the tools used in the ISSA pipeline are executed within a Docker container context. That provides greater portability and maintainability of the execution environment.
+All of the tools used in the ISSA pipeline are executed within a Docker container context. That provides greater portability and maintainability of the execution environment.
 
 ### Configuration
 
@@ -39,29 +39,6 @@ We deploy [Annif Docker Image](https://github.com/NatLibFi/Annif/wiki/Usage-with
   - ```docker exec annif annif list-projects```
  
  >:point_right: The [training](../../training) process has to be run at least once before the automated indexing is feasible.
-
-### agrovoc-pyclinrec
-
-The `agrovoc-pyclinrec` container runs the text annotation service to annotate text in English or French with concepts from the [Agrovoc Multilingual Thesaurus](https://agrovoc.fao.org).
-
-We build a Docker image to create the execution environment for the [Python Concept Recognition Library](https://github.com/twktheainur/pyclinrec) and to create a web application similar to other annotation Dockers, e.g. `dbpedia-spotlight` and `entity-fishing`. NOTE: we forked the library for consistensy reasons). 
-
-By default, this container is created specifically for Agrovoc vocabulary but it can be reconfigured for another SKOS thesaurus by providing its SPARQL endpoint in `DICT_ENDPOINT` environment variable. If graph name filtering is required then a graph name can be passed in 'DICT_GRAPH' variable of the `docker run` command.
-
->:point_right: Concept recognition is currently available only for English and French.
-
-- to build the image and initialize pyclinrec container invoke [install-pyclinrec.sh](agrovoc-pyclinrec/install-pyclinrec.sh) script.
-
-- to run the container invoke [run-pyclinrec.sh](agrovoc-pyclinrec/run-pyclinrec.sh) script. 
-
-- to get help call ```http://localhost:5000/```
-
-- to test annotation call 
-
-  - ```curl -X POST http://localhost:5000/annotate --data-urlencode "text=Growing bananas in Ireland" --data-urlencode "lang=en" --data-urlencode "conf=0.15" -H "Accept: application/json"``` 
-  - ```curl -X POST http://localhost:5000/annotate --data-urlencode "text=Cultiver des bananes en Irlande" --data-urlencode "lang=fr" --data-urlencode "conf=0.15" -H "Accept: application/json"```
-
->:point_right: The internal vocabulary and concept indexing is taking place during the installation and it may take a long time. On our machine, the initialization takes about 10 minutes. 
 
 ### dbpedia-spotlight
 Two dbpeadia-spotlight containers are created from the [DBpedia Spotlight Docker image](https://hub.docker.com/r/dbpedia/dbpedia-spotlight) one per language `dbpedia-spotlight.en` and `dbpedia-spotlight.fr`. Each container relies on the downloaded language model. The model download is lengthy (on our machine 11 and 4 min for English and French) and is included in the installation script. The models are stored in the host FS.
@@ -119,6 +96,30 @@ The container network deployment is adapted from the [Morph-xR2RML](https://gith
 
 >:point_right: TO run the Morph-xR2RML tool the Docker Compose hast to be installed. See [Docker Compose installation](https://docs.docker.com/compose/install/).
 
+### pyclinrec
+
+The `pyclinrec` container runs the text annotation service to annotate text with concepts from a custom dictionary such as [Agrovoc Multilingual Thesaurus](https://agrovoc.fao.org) or [MeSH](https://www.nlm.nih.gov/mesh/meshhome.html).
+
+We build a Docker image to create the execution environment for the [Python Concept Recognition Library](https://github.com/twktheainur/pyclinrec) and access the functionality through a web application similar to other annotation Dockers, e.g. `dbpedia-spotlight` or `entity-fishing`.
+
+NOTE: we forked the library from its original repository for consistency reasons. The forked repository is located [here](https://github.com/issa-project/pyclinrec).
+
+- to build the image and initialize pyclinrec container invoke [install-pyclinrec.sh](pyclinrec/install-pyclinrec.sh) script.
+
+- to run the container invoke [run-pyclinrec.sh](pyclinrec/run-pyclinrec.sh) script.
+
+- to get help call `http://localhost:5002/`
+
+- to test annotation call
+
+  - ```curl -X POST http://localhost:5002/annotate --data-urlencode "text=Growing bananas in Ireland" --data-urlencode "lang=en" --data-urlencode "conf=0.15" -H "Accept: application/json"``` 
+  - ```curl -X POST http://localhost:5002/annotate --data-urlencode "text=Cultiver des bananes en Irlande" --data-urlencode "lang=fr" --data-urlencode "conf=0.15" -H "Accept: application/json"```
+
+
+>:point_right: The internal vocabulary and concept indexing is taking place during the first run of the Docker container and may take a long time. On our machine, the initialization takes about 10 minutes for Agrovoc dictionaries.
+
+More details on the container configuration and usage can be found in the [pyclinrec](pyclinrec/README.md) folder.
+
 ### virtuoso
 
 The `virtuoso` container provides storage for pipeline-generated Knowledge Graph and access to it via the SPARQL endpoint.
@@ -136,3 +137,5 @@ Before running the container for the first time it is necessary to create a dba 
 >:point_right: This container should not be stopped except for maintenance reasons.
 
 >:point_right: Each instance of ISSA knowledge graph requires a separate Virtuoso container.
+
+More details on the container configuration and usage can be found in the [virtuoso](virtuoso/README.md) folder.
