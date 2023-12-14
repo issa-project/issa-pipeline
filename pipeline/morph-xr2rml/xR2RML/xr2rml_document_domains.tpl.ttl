@@ -1,5 +1,5 @@
-# Mapping file to generate RDF triples for thematic descriptors identified by documentalists that
-# are extracted from the metadata 
+# Mapping file to generate RDF triples for scientific domains identified by documentalists 
+# that are extracted from the metadata 
 #
 # Author: Anna BOBASHEVA, University Cote d'Azur, CNRS, Inria
 #
@@ -83,7 +83,7 @@
 
 # Output should look like this:
 #<http://data-issa.cirad.fr/descr/sha1 hash>
-#    a                    issa:DisciplineDescriptorAnnotation, prov:Entity;
+#    a                    issa:DomainAnnotation, prov:Entity;
 #    issapr:rank          1;
 #    oa:hasBody           <http://dist.cirad.fr/agrist-thema/A50> ;
 #    oa:hasTarget         <http://data-issa.cirad.fr/document/349640>;
