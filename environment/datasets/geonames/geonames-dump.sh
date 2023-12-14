@@ -7,7 +7,7 @@
 # ISSA environment definitions
 . ../../../env.sh
 
-log_dir=../../logs
+log_dir=${ISSA_ENV_LOG:-../../logs}
 mkdir -p $log_dir 
 log=$log_dir/geonames_dump_$(date "+%Y%m%d_%H%M%S").log
 

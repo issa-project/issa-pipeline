@@ -1,0 +1,175 @@
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix owl:    <http://www.w3.org/2002/07/owl#>.
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
+@prefix schema: <http://schema.org/>.
+
+@prefix dct:    <http://purl.org/dc/terms/>.
+@prefix dcat:   <http://www.w3.org/ns/dcat#>.
+@prefix fabio:  <http://purl.org/spar/fabio/> .
+@prefix frbr:   <http://purl.org/vocab/frbr/core#>.
+@prefix prov:   <http://www.w3.org/ns/prov#>.
+@prefix sd:     <http://www.w3.org/ns/sparql-service-description#>.
+@prefix void:   <http://rdfs.org/ns/void#> .
+@prefix bibo:   <http://purl.org/ontology/bibo/> .
+@prefix dce:    <http://purl.org/dc/elements/1.1/>.
+@prefix eprint: <http://purl.org/eprint/type/> .
+@prefix oa:     <http://www.w3.org/ns/oa#>.
+@prefix foaf:   <http://xmlns.com/foaf/0.1/>.
+
+@prefix issa:   <http://data-issa.euromov.fr/>.
+@prefix issap:  <http://data-issa.euromov.fr/property/>.
+
+
+# --- Dataset description
+issa:issa-hal-euromov
+    a               dcat:Dataset, void:Dataset, schema:Dataset;
+    dct:title       "ISSA HAL EuroMov-DHM dataset";
+    schema:name     "ISSA HAL EuroMov-DHM dataset";
+    dct:description "This RDF dataset was produced by processing articles from HAL EuroMov-DHM collection. Open archive HAL (Hyper Articles en Ligne) EuroMov-DHM collection contains scholarly documents curated by EuroMov Digital Health in Motion laboratory of IMT Mines Ales. This dataset includes  documents' metadata, text, vocabulary-based descriptors, named entities identified and disambiguated by Named Entity Recognition services such as Entity-fishing and DBpedia Spotlight.";
+    
+    dct:licence     <http://opendatacommons.org/licenses/by/1.0>;
+    schema:licence  <http://opendatacommons.org/licenses/by/1.0>;
+      
+    dct:subject     "medical research", "literature", "annotation", "named entity",  "named entity recognition", "NER";
+    schema:keywords "medical research", "literature", "annotation", "named entity",  "named entity recognition", "NER";
+    
+    dct:publisher   <https://ror.org/0496p8026>, # Délégation Côte d'Azur
+ 					<https://ror.org/02kvxyf05>, #Inria
+ 					<https://ror.org/02feahw73>, #CNRS
+ 					<https://ror.org/05kpkpg04>, #CIRAD (while the dataset is on their server)
+ 					<https://ror.org/051escj72>, #University of Montpellier
+ 					<https://ror.org/03e8rf594>; #École des Mines d'Alès
+
+    schema:publisher <https://ror.org/0496p8026>, <https://ror.org/02kvxyf05>, <https://ror.org/02feahw73>, <https://ror.org/05kpkpg04>, <https://ror.org/051escj72>, <https://ror.org/03e8rf594>;
+    foaf:fundedBy    <https://ror.org/0496p8026>, <https://ror.org/02kvxyf05>, <https://ror.org/02feahw73>, <https://ror.org/05kpkpg04>, <https://ror.org/051escj72>, <https://ror.org/03e8rf594>;
+
+    a prov:Entity;
+    schema:isBasedOn        issa:issa-hal-euromov;
+    prov:hadPrimarySource   issa:issa-hal-euromov;
+    prov:wasGeneratedBy     issa:RdfGeneration;
+    
+    void:uriSpace       "http://data-issa.euromov.fr/";
+    void:sparqlEndpoint <https://data-issa.euromov.fr/sparql>; 
+ 
+    void:vocabulary
+        bibo:, dcat:, dce:, dct:, fabio:, foaf:, frbr:, oa:, prov:, schema:, void:,
+        <https://nlmpubs.nlm.nih.gov/projects/mesh/rdf/2022#>,  # MESH
+        <https://data.hal.science/subject/>,      # HAL domains
+        <http://www.geonames.org/ontology#>;     # GeoNames
+    
+    dct:issued              "2023-07-31"^^xsd:date;
+    schema:dateCreated      "2023-07-31"^^xsd:date;
+    schema:datePublished    "2023-07-31"^^xsd:date;
+
+    # updatable properties
+    dct:modified            "2023-07-31"^^xsd:date; 
+    prov:generatedAtTime    "2023-07-31"^^xsd:date;
+    void:triples            "0"^^xsd:integer;
+    owl:versionInfo         "1.3";
+    dcat:version            "1.3";
+
+    # manualy updatable properties
+    #void:dataDump           <https://doi.org/10.5281/zenodo.6505847>; # update when obtained new
+    #dct:identifier          "https://doi.org/10.5281/zenodo.6505847";
+
+    dcat:distribution [
+        a                   dcat:Distribution;
+    #    dct:issued          "2023-07-31"^^xsd:date;
+    #    dct:description     "Distribution of ISSA dataset as an archive of RDF Turtle files";
+    #    dcat:accessURL      <https://doi.org/10.5281/zenodo.6505847>;
+    #    dcat:downloadURL    <https://zenodo.org/record/6505847/files/issa-agritrop-1.0.zip>;
+    #    dcat:mediaType      <http://www.iana.org/assignments/media-types/text/turtle>;
+    #    dcat:compressFormat <http://www.iana.org/assignments/media-types/application/zip>;
+    ]
+   .
+
+# --- Organizations involved
+<https://ror.org/0496p8026> a foaf:Organization; foaf:name "University Côte d'Azur";
+    foaf:homepage <http://www.univ-cotedazur.fr>.
+<https://ror.org/02kvxyf05> a foaf:Organization; foaf:name "Inria";
+    foaf:homepage <https://www.inria.fr>.
+<https://ror.org/02feahw73> a foaf:Organization; foaf:name "CNRS";
+    foaf:homepage <https://www.cnrs.fr>.
+<https://ror.org/05kpkpg04> a foaf:Organization; foaf:name "Centre de Coopération Internationale en Recherche Agronomique pour le Développement";
+    foaf:homepage <https://www.cirad.fr>.
+<https://ror.org/051escj72> a foaf:Organization; foaf:name "Université de Montpellier";
+    foaf:homepage <https://www.umontpellier.fr/>.
+<https://ror.org/03e8rf594> a foaf:Organization; foaf:name "IMT Mines Alès";
+    foaf:homepage <https://www.imt-mines-ales.fr/>.
+
+# --- SPARQL Service Description and DCAT DataService
+issa:sparql-service
+    a                    sd:Service, dcat:DataService;
+    sd:supportedLanguage sd:SPARQL10Query, sd:SPARQL11Query;
+    sd:endpoint          <https://data-issa.euromov.fr/sparql>;
+    dcat:endpointURL     <https://data-issa.euromov.fr/sparql>;
+    rdfs:label           "SPARQL endpoint serving the ISSA HAL EUROMOV-DHM dataset";
+    dcat:servesDataset   issa:issa-hal-euromo;
+    sd:availableGraphs [
+        a                sd:GraphCollection;
+        sd:namedGraph 
+            <http://data-issa.euromov.fr/graph/dataset>, 
+            <http://data-issa.euromov.fr/graph/documents>,
+            <http://data-issa.euromov.fr/graph/documents/text>,
+            <http://data-issa.euromov.fr/graph/thematic-descriptors>,
+            <http://data-issa.euromov.fr/graph/document-domains>,
+            <http://data-issa.euromov.fr/graph/document-keywords>,
+            <http://data-issa.euromov.fr/graph/entity-fishing-nes>,
+            <http://data-issa.euromov.fr/graph/dbpedia-spotlight-nes>,
+    ].
+
+# --- HAL EuroMov-DHM dataset and provenance information
+issa:hal-euromov
+    a               dcat:Dataset, schema:Dataset;
+    dct:title       "Open Repository of HAL EuroMov-DHM publications";
+    schema:name     "Open Repository of HAL EuroMov-DHM publications";
+    schema:url      <https://data-issa.euromov.fr/>;
+    .
+
+# --- VOID Linksets
+
+issa:Wikidata
+   dct:title "Wikidata"@en;
+   a void:Dataset;
+   foaf:homepage <https://wikidata.org>.
+
+issa:issa2wikidata
+   a void:Linkset;
+   void:linkPredicate oa:hasBody;
+   void:subjectsTarget issa:issa-hal-euromov;
+   void:objectsTarget issa:Wikidata;
+   
+   # updatable property
+   void:triples "0"^^xsd:integer;
+   .
+
+issa:DBpedia
+   dct:title "DBpedia"@en;
+   a void:Dataset;
+   foaf:homepage <http://dbpedia.org>.
+
+issa:issa2dbpedia
+   a void:Linkset;
+   void:linkPredicate oa:hasBody;
+   void:subjectsTarget issa:issa-hal-euromov;
+   void:objectsTarget issa:DBpedia;   
+   
+   # updatable property
+   void:triples "0"^^xsd:integer;
+   .
+
+<http://www.geonames.org/ontology>
+   dct:title "GeoNames"@en;
+   a void:Dataset;
+   foaf:homepage <http://www.geonames.org/ontology/documentation.html>.
+
+issa:issa2geonames
+   a void:Linkset;
+   void:linkPredicate oa:hasBody;
+   void:subjectsTarget issa:issa-hal-euromov;
+   void:objectsTarget <http://www.geonames.org/ontology>;   
+   
+   # updatable property
+   void:triples "0"^^xsd:integer;
+   .
+

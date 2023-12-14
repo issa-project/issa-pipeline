@@ -9,8 +9,8 @@
 @prefix foaf:   <http://xmlns.com/foaf/0.1/>.
 @prefix bibo:   <http://purl.org/ontology/bibo/> .
 
-@prefix issa:   <http://data-issa.cirad.fr/>.
-@prefix issap:  <http://data-issa.cirad.fr/property/>.
+@prefix issa:   <http://data-issa.instance.fr/>.
+@prefix issap:  <http://data-issa.instance.fr/property/>.
 
 
 issa:ProvenanceEF

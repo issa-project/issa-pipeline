@@ -1,4 +1,4 @@
-## Initialize piclinrec annoatators
+## Initialize pyclinrec annotators
 import os
 import json 
 from ConceptAnnotator import ConceptDictionaryGenerator, ConceptAnnotatorCached
@@ -21,7 +21,7 @@ for lang in ['en', 'fr']:
                                         language=lang, cache_dir=APP_CACHE)
     print(f'annotator is ready:  {len(annotators[lang].concept_recognizer.concept_index)} {lang} concepts')                                    
 
-## Initialose Web App 
+## Initialise Web App 
 
 from flask import Flask
 from flask import request
@@ -32,7 +32,7 @@ app = Flask('Agrovoc Annotation WebServer')
 
 @app.route('/')
 def get_data():
-    return """Welcome to text annottaion application. <br>
+    return """Welcome to text annotation application. <br>
     To submit a text for annotation use POST request http://localhost:5000/annotate with parameters:<br>
     <ul>
     <li><strong>text</strong> - text to annotate</li>
@@ -48,9 +48,9 @@ def get_data():
 # Simple get for verification purposes only
 @app.route('/annotate_text/<lang>/<text>/')
 def annotate_get(text, lang):
-    annottaions = annotators[lang].annotate_text(text)
+    annotations = annotators[lang].annotate_text(text)
     return json.dumps( {'text':  text,
-                            'concepts' : annottaions})
+                            'concepts' : annotations})
     #return annotators[lang].annotate_text(text)
 
 # Post request for long text
@@ -61,9 +61,9 @@ def annotate_post():
         lang = request.form.get('lang') or 'en'
         conf = float(request.form.get('conf') or '0.0')
         
-        annottaions = annotators[lang].annotate_text(text, conf_score=conf)
+        annotations = annotators[lang].annotate_text(text, conf_score=conf)
         return json.dumps( {'text':  text,
-                            'concepts' : annottaions})
+                            'concepts' : annotations})
     
 
 

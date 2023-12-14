@@ -1,0 +1,239 @@
+# Mapping file for the CORD19 metadata CSV file. The article URIs are built using the sha field.
+#
+# Author: Ann BOBASHEVA, University Cote d'Azur, CNRS, Inria
+#
+# Licensed under the Apache License, Version 2.0 (http://www.apache.org/licenses/LICENSE-2.0)
+
+@prefix xrr:    <http://i3s.unice.fr/xr2rml#> .
+@prefix rr:     <http://www.w3.org/ns/r2rml#> .
+@prefix rml:    <http://semweb.mmlab.be/ns/rml#> .
+
+@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix owl:    <http://www.w3.org/2002/07/owl#>.
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
+
+@prefix bibo:   <http://purl.org/ontology/bibo/> .
+@prefix dce:    <http://purl.org/dc/elements/1.1/>.
+@prefix dct:    <http://purl.org/dc/terms/>.
+@prefix fabio:  <http://purl.org/spar/fabio/> .
+@prefix eprint: <http://purl.org/eprint/type/> .
+@prefix foaf:   <http://xmlns.com/foaf/0.1/>.
+@prefix frbr:   <http://purl.org/vocab/frbr/core#>.
+@prefix oa:     <http://www.w3.org/ns/oa#>.
+@prefix prov:   <http://www.w3.org/ns/prov#>.
+@prefix schema: <http://schema.org/>.
+@prefix wd:     <http://www.wikidata.org/entity/>.
+
+
+# Template file: replace placeholders
+# - {{dataset}}: RDF dataset name e.g. "dataset-1-0"
+# - {{collection}}: the MongoDB collection to query, e.g. document_metadata
+# - {{namespace}}: The ISSA instance specific namespace,  e.g  http://data-issa.dhm.euromov.fr/
+
+@prefix issa:     <{{namespace}}>.
+@prefix issapr:   <{{namespace}}property/>.
+@prefix issa-doc: <{{namespace}}document/>.
+
+
+<#LS>
+    a           xrr:LogicalSource;
+    xrr:query   """db.{{collection}}.find( { paper_id: {$exists: true} } )""".
+    #xrr:query  """db.{{collection}}.find( { paper_id: "543654" } )""".
+    
+<#TM>
+    a rr:TriplesMap;
+    xrr:logicalSource <#LS>;
+    rr:subjectMap   [
+        rr:template "{{namespace}}document/{$.paper_id}" ;
+        rr:class    prov:Entity;
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:objectMap [ xrr:reference "JSONPath($.classes)/JSONPath($.*)"; rr:termType rr:IRI ];
+
+    ];
+
+
+    rr:predicateObjectMap [
+        rr:predicate rdf:type;
+        rr:objectMap [ xrr:reference "JSONPath($.classes)/JSONPath($.*)"; rr:termType rr:IRI ];
+
+    ];
+
+
+    # Publication
+    rr:predicateObjectMap [
+        rr:predicate dct:issued;
+        rr:objectMap [ xrr:reference "$.year"; rr:datatype xsd:gYear ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate schema:publication;
+        rr:objectMap [ xrr:reference "$.publication" ];
+    ];
+    #rr:predicateObjectMap [
+    #    rr:predicate dct:source;
+    #    rr:objectMap [ rr:constant "Agritrop-OAI2-API"; rr:termType rr:Literal ];
+    #];
+
+    # License and access rights
+    rr:predicateObjectMap [
+        rr:predicate dct:license;
+        #rr:objectMap [ xrr:reference "$.license"; rr:termType rr:IRI ];
+	    rr:objectMap [ xrr:reference "JSONPath($.license)/JSONPath($.*)"; rr:termType rr:IRI ];
+    ];
+	rr:predicateObjectMap [
+        rr:predicate dct:accessRights;
+        rr:objectMap [ xrr:reference "$.access_rights"; rr:termType rr:IRI ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate dct:rights;
+        #rr:objectMap [ xrr:reference "$.rights"; rr:termType rr:IRI ];
+	   rr:objectMap [ xrr:reference "JSONPath($.rights)/JSONPath($.*)"; rr:termType rr:IRI ];
+    ];
+
+    # Language
+    rr:predicateObjectMap [
+       rr:predicate dce:language;
+       rr:objectMap [ xrr:reference "$.language_bib" ];
+
+    ];
+	rr:predicateObjectMap [
+        rr:predicate dct:language;
+        rr:objectMap [ rr:template "http://id.loc.gov/vocabulary/iso639-1/{$.language}" ];
+    ];
+
+    # Identifiers
+    rr:predicateObjectMap [
+        rr:predicate dct:identifier;
+        rr:objectMap [ xrr:reference "$.paper_id" ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate bibo:doi;
+        rr:objectMap [ xrr:reference "$.doi" ];
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate schema:url;
+        rr:objectMap [ xrr:reference "$.url" ; rr:termType rr:IRI ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate schema:downloadUrl;
+		rr:objectMap [ xrr:reference "$.pdf_url" ; rr:termType rr:IRI ];
+    ];
+
+	# Same as
+	rr:predicateObjectMap [
+        rr:predicate schema:sameAs;
+		#rr:objectMap [ xrr:reference "$.same_as" ];
+		rr:objectMap [ xrr:reference "JSONPath($.same_as)/JSONPath($.*)"; rr:termType rr:IRI ];
+    ];
+
+	# Authors
+	rr:predicateObjectMap [
+		rr:predicate dce:creator;
+		rr:objectMap [ xrr:reference "JSONPath($.authors)/JSONPath($.*)"; ];
+	];
+
+	
+	# Authors as linked list
+     rr:predicateObjectMap [
+  		rr:predicate bibo:authorList;
+  	    rr:objectMap [ xrr:reference "JSONPath($.authors)/JSONPath($.*)"; rr:termType xrr:RdfList ];
+	];
+
+    # Provenance
+    rr:predicateObjectMap [
+        rr:predicate rdfs:isDefinedBy;
+        rr:objectMap [ rr:constant issa:{{dataset}}; rr:termType rr:IRI ];
+    ];
+    
+    rr:predicateObjectMap [
+        rr:predicate prov:wasDerivedFrom;
+		rr:objectMap [ xrr:reference "$.uri" ; rr:termType rr:IRI ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate prov:generatedAtTime;
+		rr:objectMap [ xrr:reference "$.datestamp" ; rr:datatype xsd:dateTime];
+    ];
+
+
+    # Parts title, abstract, body (body - only for articles and mapped below)
+    rr:predicateObjectMap [
+        rr:predicate dct:title;
+        rr:objectMap [ xrr:reference "$.title" ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate issapr:hasTitle;
+        rr:objectMap [ rr:template "{{namespace}}document/{$.paper_id}#title"; ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate dct:abstract;
+        rr:objectMap [ rr:template "{{namespace}}document/{$.paper_id}#abstract"; ];
+    ]
+    .
+
+
+<#TM_title>
+    a rr:TriplesMap;
+    xrr:logicalSource <#LS>;
+    rr:subjectMap    [ rr:template "{{namespace}}document/{$.paper_id}#title" ];
+    rr:predicateObjectMap [
+        rr:predicate frbr:partOf;
+        rr:objectMap [ rr:template "{{namespace}}document/{$.paper_id}"; ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:value;
+        rr:objectMap [ xrr:reference "$.title" ];
+    ].
+
+<#TM_abstract>
+    a rr:TriplesMap;
+    xrr:logicalSource <#LS>;
+    rr:subjectMap    [
+        rr:template "{{namespace}}document/{$.paper_id}#abstract";
+        rr:class    fabio:Abstract
+    ];
+    rr:predicateObjectMap [
+        rr:predicate frbr:partOf;
+        rr:objectMap [ rr:template "{{namespace}}document/{$.paper_id}"; ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:value;
+        rr:objectMap [ xrr:reference "$.abstract" ];
+    ].
+
+
+    
+#Expected output:
+#<http://data-issa.cirad.fr/document/584469>
+#      a                     prov:Entity, fabio:ConferencePaper , eprint:ConferencePaper ;
+#      dct:identifier        "584469" ;
+#      dct:title             "Analysis of sahelian herders market behaviours..." ;
+#      dce:creator           dce:creator "Mballo, Aliou Diouf" , "Njiru, Nelly" , "Wane, Abdrahmane" , "Touré, Ibra" ;
+#      schema:publication    "INAPG";
+#      dct:issued            "2017"^^xsd:gYear ;
+#      dce:language          <http://id.loc.gov/vocabulary/iso639-2/eng> ;
+#      dct:language          <http://id.loc.gov/vocabulary/iso639-1/en> ;
+#      dct:license           <http://creativecommons.org/licenses/by/> ;
+#      dct:accessRights      <info:eu-repo/semantics/openAccess> ;
+#      dct:rights            <https://agritrop.cirad.fr/mention_legale.html> ;
+#      dct:source            "Agritrop-OAI2-API" ;
+#      schema:downloadUrl    <http://agritrop.cirad.fr/557484/1/document_584469.pdf> ;
+#      schema:sameAs        <http://ageconsearch.umn.edu/record/260892/files/Analysis%20Of%20Sahelian%20Herders%20Market%20Behaviours%20To%20Facilitate%20Moving%20Towards%20Structural%20And%20Sustainable%20Transformation%20Of%20Pastoral%20Economies.pdf> ;
+#      schema:url            <http://agritrop.cirad.fr/557484/> ;
+#      dct:abstract          <http://data-issa.cirad.fr/document/584469#abstract> ;
+#      issapr:hasTitle       <http://data-issa.cirad.fr/document/584469#title> ;
+#      rdfs:isDefinedBy      issa:issa-agritrop ;
+#      prov:generatedAtTime  "2015-09-09T16:19:07Z"^^xsd:dateTime ;
+#      prov:wasDerivedFrom   <http://agritrop.cirad.fr/584469/> . 
+#
+#<http://data-issa.cirad.fr/document/584469#title>
+#      rdf:value            "Analysis of sahelian herders market behaviours to facilitate moving towards structural and sustainable transformation of pastoral economies" ;
+#      frbr:partOf          <http://data-issa.cirad.fr/document/584469> .
+#
+#<http://data-issa.cirad.fr/document/584469#abstract>
+#      a                   fabio:Abstract ;
+#      rdf:value           "Many research and development institutions..." ;
+#      frbr:partOf         <http://data-issa.cirad.fr/document/584469> .

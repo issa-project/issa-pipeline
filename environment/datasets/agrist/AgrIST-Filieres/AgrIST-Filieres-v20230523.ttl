@@ -1,0 +1,292 @@
+@prefix agrist-filieres: <http://agrist.cirad.fr/agrist-filieres/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+agrist-filieres: a skos:ConceptScheme ;
+    dc:title "AgrIST-Filieres classification"@en,
+        "Plan de classification AgrIST-Filières"@fr ;
+    dct:accessRights <http://purl.org/eprint/accessRights/OpenAccess> ;
+    dct:contributor <https://ror.org/02kvxyf05> ;
+    dct:created "2023-07-03"^^xsd:date ;
+    dct:creator <https://ror.org/05kpkpg04> ;
+    dct:isssued "2023-07-03"^^xsd:date ;
+    dct:license <https://creativecommons.org/licenses/by-nc/4.0/> ;
+    dct:modified "2023-07-17"^^xsd:date ;
+    dct:publisher <https://ror.org/02kvxyf05>,
+        <https://ror.org/05kpkpg04> ;
+    void:sparqlEndpoint <https://data-issa.cirad.fr/sparql> ;
+    void:uriSpace agrist-filieres: ;
+    rdfs:comment "Plan de classement AgrIST-Filières - Version du 5 décembre 2022"@fr ;
+    dcat:version "2022.12.05" .
+
+agrist-filieres:X a skos:Concept ;
+    skos:prefLabel "FILIÈRE VÉGÉTALE"@fr ;
+    skos:topConceptOf agrist-filieres: .
+
+agrist-filieres:XA a skos:Concept ;
+    skos:prefLabel "Céréales"@fr .
+
+agrist-filieres:XB a skos:Concept ;
+    skos:prefLabel "Plantes sucrières"@fr .
+
+agrist-filieres:XC a skos:Concept ;
+    skos:prefLabel "Plantes oléagineuses"@fr .
+
+agrist-filieres:XD a skos:Concept ;
+    skos:prefLabel "Plantes à fibres"@fr .
+
+agrist-filieres:XE a skos:Concept ;
+    skos:prefLabel "Plantes fruitières"@fr .
+
+agrist-filieres:XF a skos:Concept ;
+    skos:prefLabel "Plantes légumières"@fr .
+
+agrist-filieres:XG a skos:Concept ;
+    skos:prefLabel "Plantes fourragères, prairies et pâturages"@fr .
+
+agrist-filieres:XH a skos:Concept ;
+    skos:prefLabel "Plantes stimulantes"@fr .
+
+agrist-filieres:XI a skos:Concept ;
+    skos:prefLabel "Plantes à latex, à cire et à caoutchouc"@fr .
+
+agrist-filieres:XJ a skos:Concept ;
+    skos:prefLabel "Plantes à usage divers"@fr .
+
+agrist-filieres:XK a skos:Concept ;
+    skos:prefLabel "Ressources forestières"@fr .
+
+agrist-filieres:Y a skos:Concept ;
+    skos:prefLabel "FILIÈRE ANIMALE"@fr ;
+    skos:topConceptOf agrist-filieres: .
+
+agrist-filieres:YA a skos:Concept ;
+    skos:prefLabel "Pêche et aquaculture"@fr .
+
+agrist-filieres:YB a skos:Concept ;
+    skos:prefLabel "Élevage"@fr .
+
+agrist-filieres:YC a skos:Concept ;
+    skos:prefLabel "Lait et produits laitiers"@fr .
+
+agrist-filieres:YD a skos:Concept ;
+    skos:prefLabel "Faune sauvage"@fr .
+
+agrist-filieres:XA1 a skos:Concept ;
+    skos:broader agrist-filieres:XA ;
+    skos:editorialNote ""@fr ;
+    skos:prefLabel "Maïs"@fr .
+
+agrist-filieres:XA2 a skos:Concept ;
+    skos:broader agrist-filieres:XA ;
+    skos:editorialNote ""@fr ;
+    skos:prefLabel "Mil"@fr .
+
+agrist-filieres:XA3 a skos:Concept ;
+    skos:broader agrist-filieres:XA ;
+    skos:editorialNote ""@fr ;
+    skos:prefLabel "Riz"@fr .
+
+agrist-filieres:XA4 a skos:Concept ;
+    skos:broader agrist-filieres:XA ;
+    skos:editorialNote ""@fr ;
+    skos:prefLabel "Sorgho"@fr .
+
+agrist-filieres:XA5 a skos:Concept ;
+    skos:broader agrist-filieres:XA ;
+    skos:editorialNote ""@fr ;
+    skos:prefLabel "Blé"@fr .
+
+agrist-filieres:XA6 a skos:Concept ;
+    skos:broader agrist-filieres:XA ;
+    skos:editorialNote ""@fr ;
+    skos:prefLabel "Quinoa"@fr .
+
+agrist-filieres:XA7 a skos:Concept ;
+    skos:broader agrist-filieres:XA ;
+    skos:editorialNote ""@fr ;
+    skos:prefLabel "Fonio"@fr .
+
+agrist-filieres:XB1 a skos:Concept ;
+    skos:broader agrist-filieres:XB ;
+    skos:editorialNote ""@fr ;
+    skos:prefLabel "Canne à sucre"@fr .
+
+agrist-filieres:XC1 a skos:Concept ;
+    skos:broader agrist-filieres:XC ;
+    skos:editorialNote ""@fr ;
+    skos:prefLabel "Arachide"@fr .
+
+agrist-filieres:XC2 a skos:Concept ;
+    skos:broader agrist-filieres:XC ;
+    skos:editorialNote ""@fr ;
+    skos:prefLabel "Cocotier"@fr .
+
+agrist-filieres:XC3 a skos:Concept ;
+    skos:broader agrist-filieres:XC ;
+    skos:editorialNote ""@fr ;
+    skos:prefLabel "Palmier à huile"@fr .
+
+agrist-filieres:XC4 a skos:Concept ;
+    skos:broader agrist-filieres:XC ;
+    skos:editorialNote ""@fr ;
+    skos:prefLabel "Jojoba"@fr .
+
+agrist-filieres:XC5 a skos:Concept ;
+    skos:broader agrist-filieres:XC ;
+    skos:editorialNote ""@fr ;
+    skos:prefLabel "Soja"@fr .
+
+agrist-filieres:XC6 a skos:Concept ;
+    skos:broader agrist-filieres:XC ;
+    skos:editorialNote ""@fr ;
+    skos:prefLabel "Colza"@fr .
+
+agrist-filieres:XD1 a skos:Concept ;
+    skos:broader agrist-filieres:XD ;
+    skos:editorialNote ""@fr ;
+    skos:prefLabel "Cotonnier"@fr .
+
+agrist-filieres:XD2 a skos:Concept ;
+    skos:broader agrist-filieres:XD ;
+    skos:editorialNote ""@fr ;
+    skos:prefLabel "Sisal"@fr .
+
+agrist-filieres:XD3 a skos:Concept ;
+    skos:broader agrist-filieres:XD ;
+    skos:editorialNote ""@fr ;
+    skos:prefLabel "Hibiscus textile"@fr .
+
+agrist-filieres:XD4 a skos:Concept ;
+    skos:broader agrist-filieres:XD ;
+    skos:editorialNote ""@fr ;
+    skos:prefLabel "Agave"@fr .
+
+agrist-filieres:XE1 a skos:Concept ;
+    skos:broader agrist-filieres:XE ;
+    skos:editorialNote ""@fr ;
+    skos:prefLabel "Agrumes"@fr .
+
+agrist-filieres:XE2 a skos:Concept ;
+    skos:broader agrist-filieres:XE ;
+    skos:editorialNote ""@fr ;
+    skos:prefLabel "Ananas"@fr .
+
+agrist-filieres:XE3 a skos:Concept ;
+    skos:broader agrist-filieres:XE ;
+    skos:editorialNote ""@fr ;
+    skos:prefLabel "Avocatier"@fr .
+
+agrist-filieres:XE4 a skos:Concept ;
+    skos:broader agrist-filieres:XE ;
+    skos:editorialNote ""@fr ;
+    skos:prefLabel "Bananier et plantain"@fr .
+
+agrist-filieres:XE5 a skos:Concept ;
+    skos:broader agrist-filieres:XE ;
+    skos:editorialNote ""@fr ;
+    skos:prefLabel "Manguier"@fr .
+
+agrist-filieres:XF1 a skos:Concept ;
+    skos:broader agrist-filieres:XF ;
+    skos:editorialNote ""@fr ;
+    skos:prefLabel "Légumineuses alimentaires"@fr .
+
+agrist-filieres:XF2 a skos:Concept ;
+    skos:broader agrist-filieres:XF ;
+    skos:editorialNote "Exemples : Manioc, patate douce, igname, pomme de terre, etc."@fr ;
+    skos:prefLabel "Racines et tubercules"@fr .
+
+agrist-filieres:XF3 a skos:Concept ;
+    skos:broader agrist-filieres:XF ;
+    skos:editorialNote ""@fr ;
+    skos:prefLabel "Légumes : feuilles, bulbes, fruits"@fr .
+
+agrist-filieres:XG1 a skos:Concept ;
+    skos:broader agrist-filieres:XG ;
+    skos:editorialNote ""@fr ;
+    skos:prefLabel "Graminées  fourragères"@fr .
+
+agrist-filieres:XG2 a skos:Concept ;
+    skos:broader agrist-filieres:XG ;
+    skos:editorialNote ""@fr ;
+    skos:prefLabel "Légumineuses fourragères"@fr .
+
+agrist-filieres:XG3 a skos:Concept ;
+    skos:broader agrist-filieres:XG ;
+    skos:editorialNote ""@fr ;
+    skos:prefLabel "Arbres et arbustes fourragers"@fr .
+
+agrist-filieres:XH1 a skos:Concept ;
+    skos:broader agrist-filieres:XH ;
+    skos:editorialNote ""@fr ;
+    skos:prefLabel "Caféier"@fr .
+
+agrist-filieres:XH2 a skos:Concept ;
+    skos:broader agrist-filieres:XH ;
+    skos:editorialNote ""@fr ;
+    skos:prefLabel "Cacaoyer"@fr .
+
+agrist-filieres:XH3 a skos:Concept ;
+    skos:broader agrist-filieres:XH ;
+    skos:editorialNote ""@fr ;
+    skos:prefLabel "Théier"@fr .
+
+agrist-filieres:XI1 a skos:Concept ;
+    skos:broader agrist-filieres:XI ;
+    skos:editorialNote ""@fr ;
+    skos:prefLabel "Hévéa"@fr .
+
+agrist-filieres:XI2 a skos:Concept ;
+    skos:broader agrist-filieres:XI ;
+    skos:editorialNote ""@fr ;
+    skos:prefLabel "Guayule"@fr .
+
+agrist-filieres:XJ1 a skos:Concept ;
+    skos:broader agrist-filieres:XJ ;
+    skos:editorialNote ""@fr ;
+    skos:prefLabel "Plantes condimentaires"@fr .
+
+agrist-filieres:XJ2 a skos:Concept ;
+    skos:broader agrist-filieres:XJ ;
+    skos:editorialNote ""@fr ;
+    skos:prefLabel "Plantes à épices"@fr .
+
+agrist-filieres:XJ3 a skos:Concept ;
+    skos:broader agrist-filieres:XJ ;
+    skos:editorialNote ""@fr ;
+    skos:prefLabel "Plantes médicinales"@fr .
+
+agrist-filieres:XJ4 a skos:Concept ;
+    skos:broader agrist-filieres:XJ ;
+    skos:editorialNote ""@fr ;
+    skos:prefLabel "Plantes pesticides"@fr .
+
+agrist-filieres:XJ5 a skos:Concept ;
+    skos:broader agrist-filieres:XJ ;
+    skos:editorialNote ""@fr ;
+    skos:prefLabel "Plantes ornementales"@fr .
+
+agrist-filieres:XK1 a skos:Concept ;
+    skos:broader agrist-filieres:XK ;
+    skos:editorialNote ""@fr ;
+    skos:prefLabel "Bois"@fr .
+
+agrist-filieres:XK2 a skos:Concept ;
+    skos:broader agrist-filieres:XK ;
+    skos:editorialNote ""@fr ;
+    skos:prefLabel "Produits forestiers non ligneux"@fr .
+
+agrist-filieres:YA skos:editorialNote ""@fr .
+
+agrist-filieres:YB skos:editorialNote "Y compris viande, œufs, laine, fourrure, cuir, santé animale, etc."@fr .
+
+agrist-filieres:YC skos:editorialNote "Note : reste en tant que telle en raison de la filière Cirad"@fr .
+
+agrist-filieres:YD skos:editorialNote "Ex. Viande de brousse"@fr .
+

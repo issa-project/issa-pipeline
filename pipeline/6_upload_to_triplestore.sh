@@ -13,19 +13,15 @@ echo "************************************************************************"
 
 pushd ./virtuoso
 
-	./import-all.sh
+	./run-import.sh
 
-popd
 
 echo "************************************************************************"
 echo " Updating dataset metadata..."
 echo "************************************************************************"
 
-pushd ../dataset
-     
-     ./import-dataset.sh
- 	./update-dataset.sh
+ 	./import-dataset-meta.sh
+	./update-dataset-meta.sh
 
-     cp *.ttl $XR2RML_OUTPUT_DIR
 
 popd

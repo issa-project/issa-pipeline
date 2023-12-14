@@ -7,7 +7,7 @@ The repository consists of various tools, scripts and configuration files involv
 - retrieve the articles metadata from the archive's API;
 - download and pre-process the PDF files of the articles;
 - process the output to extract thematic descriptors and named  entities;
-- translate the output of each treatment into a unified, consistent RDF dataset;
+- translate the output of each processing step into a unified, consistent RDF dataset;
 - upload the resulting dataset to a triple store equipped with a SPARQL endpoint.
 
 These steps are summurized in the following diagram.

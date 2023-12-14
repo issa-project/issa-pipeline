@@ -4,10 +4,8 @@
 @prefix dce:     <http://purl.org/dc/elements/1.1/> .
 @prefix fabio:   <http://purl.org/spar/fabio/> .
 @prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
-@prefix issa:    <http://data-issa.cirad.fr/> .
 @prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix frbr:    <http://purl.org/vocab/frbr/core#> .
-@prefix issapr:  <http://data-issa.cirad.fr/property/> .
 @prefix wd:      <http://www.wikidata.org/entity/> .
 @prefix rml:     <http://semweb.mmlab.be/ns/rml#> .
 @prefix oa:      <http://www.w3.org/ns/oa#> .
@@ -18,7 +16,8 @@
 @prefix prov:    <http://www.w3.org/ns/prov#> .
 @prefix foaf:    <http://xmlns.com/foaf/0.1/> .
 
-
+@prefix issa:    <http://data-issa.cirad.fr/> .
+@prefix issapr:  <http://data-issa.cirad.fr/property/> .
 
 <http://data-issa.cirad.fr/ann/e0aeb59c8a57ee309c2f9fd51fbdf2a4673efa65>
       a       prov:Entity , oa:Annotation ;

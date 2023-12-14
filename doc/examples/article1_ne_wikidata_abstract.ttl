@@ -1,0 +1,571 @@
+@prefix rr:      <http://www.w3.org/ns/r2rml#> .
+@prefix schema:  <http://schema.org/> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix dce:     <http://purl.org/dc/elements/1.1/> .
+@prefix fabio:   <http://purl.org/spar/fabio/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix frbr:    <http://purl.org/vocab/frbr/core#> .
+@prefix wd:      <http://www.wikidata.org/entity/> .
+@prefix rml:     <http://semweb.mmlab.be/ns/rml#> .
+@prefix oa:      <http://www.w3.org/ns/oa#> .
+@prefix dct:     <http://purl.org/dc/terms/> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xrr:     <http://i3s.unice.fr/xr2rml#> .
+@prefix bibo:    <http://purl.org/ontology/bibo/> .
+@prefix prov:    <http://www.w3.org/ns/prov#> .
+@prefix issa-ann:  <http://data-issa.cirad.fr/ann/> .
+@prefix foaf:    <http://xmlns.com/foaf/0.1/> .
+
+@prefix issa:    <http://data-issa.cirad.fr/> .
+@prefix issapr:  <http://data-issa.cirad.fr/property/> .
+@prefix issa-doc:  <http://data-issa.cirad.fr/document/> .
+
+<http://data-issa.cirad.fr/ann/selector/d8d0afd42fc57741c3b821978f359a475f268909>
+      a       oa:TextPositionSelector , oa:TextQuoteSelector ;
+      oa:end  1133 ;
+      oa:exact "traditional ecological knowledge" ;
+      oa:start 1101 .
+
+<http://data-issa.cirad.fr/ann/selector/fe9d09e9258e32990b4df0b0a1e21b6312865876>
+      a       oa:TextPositionSelector , oa:TextQuoteSelector ;
+      oa:end  555 ;
+      oa:exact "socio-cultural" ;
+      oa:start 541 .
+
+<http://data-issa.cirad.fr/ann/63f907164b6ad0852f6d39fec482f63a537b35af>
+      a       prov:Entity , oa:Annotation ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
+      rdfs:label "named entity 'Future research'" ;
+      issapr:confidence 0.4165 ;
+      dct:subject "Biology" ;
+      schema:about <http://data-issa.cirad.fr/document/543654> ;
+      oa:hasBody wd:Q188867 ;
+      oa:hasTarget <http://data-issa.cirad.fr/ann/target/63f907164b6ad0852f6d39fec482f63a537b35af> ;
+      prov:wasAttributedTo
+              issa:EntityFishing .
+
+<http://data-issa.cirad.fr/ann/target/249c109a0f52419c47fdc138e695150ea3db5d5c>
+      oa:hasSelector <http://data-issa.cirad.fr/ann/selector/249c109a0f52419c47fdc138e695150ea3db5d5c> ;
+      oa:hasSource <http://data-issa.cirad.fr/document/543654#abstract> .
+
+<http://data-issa.cirad.fr/ann/selector/84efd7fc396d140880747b6982d6229566ea5e4e>
+      a       oa:TextPositionSelector , oa:TextQuoteSelector ;
+      oa:end  2069 ;
+      oa:exact "resource management" ;
+      oa:start 2050 .
+
+<http://data-issa.cirad.fr/ann/target/2765d4c34dcdcb19c1e85269457565206b2e8518>
+      oa:hasSelector <http://data-issa.cirad.fr/ann/selector/2765d4c34dcdcb19c1e85269457565206b2e8518> ;
+      oa:hasSource <http://data-issa.cirad.fr/document/543654#abstract> .
+
+<http://data-issa.cirad.fr/ann/selector/4a4bc1a92013c76b96b1c26ac5caf681901e04d2>
+      a       oa:TextPositionSelector , oa:TextQuoteSelector ;
+      oa:end  736 ;
+      oa:exact "natural resources" ;
+      oa:start 719 .
+
+<http://data-issa.cirad.fr/ann/target/f213ea5339bf64eb3d39146b87c711e3a93a86aa>
+      oa:hasSelector <http://data-issa.cirad.fr/ann/selector/f213ea5339bf64eb3d39146b87c711e3a93a86aa> ;
+      oa:hasSource <http://data-issa.cirad.fr/document/543654#abstract> .
+
+issa-ann:c7b7b0dda48d0bfa76f812f29b9978ce5516f9fd
+      a       prov:Entity , oa:Annotation ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
+      rdfs:label "named entity 'sustainability'" ;
+      issapr:confidence 0.3864 ;
+      dct:subject "Sociology" ;
+      schema:about <http://data-issa.cirad.fr/document/543654> ;
+      oa:hasBody wd:Q219416 ;
+      oa:hasTarget <http://data-issa.cirad.fr/ann/target/c7b7b0dda48d0bfa76f812f29b9978ce5516f9fd> ;
+      prov:wasAttributedTo
+              issa:EntityFishing .
+
+<http://data-issa.cirad.fr/ann/selector/29fa1b7e06d0da861012896112ca0775b318b66d>
+      a       oa:TextPositionSelector , oa:TextQuoteSelector ;
+      oa:end  502 ;
+      oa:exact "participatory development" ;
+      oa:start 477 .
+
+<http://data-issa.cirad.fr/ann/target/72954ddeed5c6347e1ee192860f909ff2601c93e>
+      oa:hasSelector <http://data-issa.cirad.fr/ann/selector/72954ddeed5c6347e1ee192860f909ff2601c93e> ;
+      oa:hasSource <http://data-issa.cirad.fr/document/543654#abstract> .
+
+<http://data-issa.cirad.fr/ann/1e3f1d3643f023a4253cff400eb7e77dc6514c32>
+      a       prov:Entity , oa:Annotation ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
+      rdfs:label "named entity 'local communities'" ;
+      issapr:confidence 0.4317 ;
+      dct:subject "Sociology" , "Biology" ;
+      schema:about <http://data-issa.cirad.fr/document/543654> ;
+      oa:hasBody wd:Q490933 ;
+      oa:hasTarget <http://data-issa.cirad.fr/ann/target/1e3f1d3643f023a4253cff400eb7e77dc6514c32> ;
+      prov:wasAttributedTo
+              issa:EntityFishing .
+
+<http://data-issa.cirad.fr/ann/selector/5eedb16f813f3d741d7a6d710af89b88f82bd805>
+      a       oa:TextPositionSelector , oa:TextQuoteSelector ;
+      oa:end  1286 ;
+      oa:exact "Participatory development" ;
+      oa:start 1261 .
+
+<http://data-issa.cirad.fr/ann/target/9088ba24ad189dcdfc037e9a22c9146d71316100>
+      oa:hasSelector <http://data-issa.cirad.fr/ann/selector/9088ba24ad189dcdfc037e9a22c9146d71316100> ;
+      oa:hasSource <http://data-issa.cirad.fr/document/543654#abstract> .
+
+<http://data-issa.cirad.fr/ann/selector/f9dfed0034b5178a9234305e18b4332762d50d58>
+      a       oa:TextPositionSelector , oa:TextQuoteSelector ;
+      oa:end  678 ;
+      oa:exact "indigenous knowledge" ;
+      oa:start 658 .
+
+<http://data-issa.cirad.fr/ann/target/586003f9fd5b21ffaf8e879d3cf7d29fe8a5561f>
+      oa:hasSelector <http://data-issa.cirad.fr/ann/selector/586003f9fd5b21ffaf8e879d3cf7d29fe8a5561f> ;
+      oa:hasSource <http://data-issa.cirad.fr/document/543654#abstract> .
+
+<http://data-issa.cirad.fr/ann/target/b46b064a5d1c58e9abea067e77f24c71d3a3e78d>
+      oa:hasSelector <http://data-issa.cirad.fr/ann/selector/b46b064a5d1c58e9abea067e77f24c71d3a3e78d> ;
+      oa:hasSource <http://data-issa.cirad.fr/document/543654#abstract> .
+
+<http://data-issa.cirad.fr/ann/target/34b8486955f1c1a0849bb96edc31374125d845dd>
+      oa:hasSelector <http://data-issa.cirad.fr/ann/selector/34b8486955f1c1a0849bb96edc31374125d845dd> ;
+      oa:hasSource <http://data-issa.cirad.fr/document/543654#abstract> .
+
+<http://data-issa.cirad.fr/ann/target/572cc6f3fbd4b0d800a82da90872b39c3d735156>
+      oa:hasSelector <http://data-issa.cirad.fr/ann/selector/572cc6f3fbd4b0d800a82da90872b39c3d735156> ;
+      oa:hasSource <http://data-issa.cirad.fr/document/543654#abstract> .
+
+<http://data-issa.cirad.fr/ann/selector/9088ba24ad189dcdfc037e9a22c9146d71316100>
+      a       oa:TextPositionSelector , oa:TextQuoteSelector ;
+      oa:end  346 ;
+      oa:exact "natural resources" ;
+      oa:start 329 .
+
+<http://data-issa.cirad.fr/ann/72954ddeed5c6347e1ee192860f909ff2601c93e>
+      a       prov:Entity , oa:Annotation ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
+      rdfs:label "named entity 'socio-cultural'" ;
+      issapr:confidence 0.3916 ;
+      dct:subject "Sociology" ;
+      schema:about <http://data-issa.cirad.fr/document/543654> ;
+      oa:hasBody wd:Q1050187 ;
+      oa:hasTarget <http://data-issa.cirad.fr/ann/target/72954ddeed5c6347e1ee192860f909ff2601c93e> ;
+      prov:wasAttributedTo
+              issa:EntityFishing .
+
+<http://data-issa.cirad.fr/ann/586003f9fd5b21ffaf8e879d3cf7d29fe8a5561f>
+      a       prov:Entity , oa:Annotation ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
+      rdfs:label "named entity 'developing countries'" ;
+      issapr:confidence 0.8665 ;
+      dct:subject "Sociology" , "Biology" ;
+      schema:about <http://data-issa.cirad.fr/document/543654> ;
+      oa:hasBody wd:Q177323 ;
+      oa:hasTarget <http://data-issa.cirad.fr/ann/target/586003f9fd5b21ffaf8e879d3cf7d29fe8a5561f> ;
+      prov:wasAttributedTo
+              issa:EntityFishing .
+
+<http://data-issa.cirad.fr/ann/selector/34b8486955f1c1a0849bb96edc31374125d845dd>
+      a       oa:TextPositionSelector , oa:TextQuoteSelector ;
+      oa:end  1639 ;
+      oa:exact "financial resources" ;
+      oa:start 1620 .
+
+<http://data-issa.cirad.fr/ann/target/fe9d09e9258e32990b4df0b0a1e21b6312865876>
+      oa:hasSelector <http://data-issa.cirad.fr/ann/selector/fe9d09e9258e32990b4df0b0a1e21b6312865876> ;
+      oa:hasSource <http://data-issa.cirad.fr/document/543654#abstract> .
+
+<http://data-issa.cirad.fr/ann/target/c7b7b0dda48d0bfa76f812f29b9978ce5516f9fd>
+      oa:hasSelector <http://data-issa.cirad.fr/ann/selector/c7b7b0dda48d0bfa76f812f29b9978ce5516f9fd> ;
+      oa:hasSource <http://data-issa.cirad.fr/document/543654#abstract> .
+
+<http://data-issa.cirad.fr/ann/target/5eedb16f813f3d741d7a6d710af89b88f82bd805>
+      oa:hasSelector <http://data-issa.cirad.fr/ann/selector/5eedb16f813f3d741d7a6d710af89b88f82bd805> ;
+      oa:hasSource <http://data-issa.cirad.fr/document/543654#abstract> .
+
+<http://data-issa.cirad.fr/ann/target/4a4bc1a92013c76b96b1c26ac5caf681901e04d2>
+      oa:hasSelector <http://data-issa.cirad.fr/ann/selector/4a4bc1a92013c76b96b1c26ac5caf681901e04d2> ;
+      oa:hasSource <http://data-issa.cirad.fr/document/543654#abstract> .
+
+<http://data-issa.cirad.fr/ann/2765d4c34dcdcb19c1e85269457565206b2e8518>
+      a       prov:Entity , oa:Annotation ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
+      rdfs:label "named entity 'economic systems'" ;
+      issapr:confidence 0.4046 ;
+      dct:subject "Sociology" , "Economy" ;
+      schema:about <http://data-issa.cirad.fr/document/543654> ;
+      oa:hasBody wd:Q273005 ;
+      oa:hasTarget <http://data-issa.cirad.fr/ann/target/2765d4c34dcdcb19c1e85269457565206b2e8518> ;
+      prov:wasAttributedTo
+              issa:EntityFishing .
+
+<http://data-issa.cirad.fr/ann/target/29fa1b7e06d0da861012896112ca0775b318b66d>
+      oa:hasSelector <http://data-issa.cirad.fr/ann/selector/29fa1b7e06d0da861012896112ca0775b318b66d> ;
+      oa:hasSource <http://data-issa.cirad.fr/document/543654#abstract> .
+
+<http://data-issa.cirad.fr/ann/target/48d6354573b50fd7037120b1ce39ddac576fc58e>
+      oa:hasSelector <http://data-issa.cirad.fr/ann/selector/48d6354573b50fd7037120b1ce39ddac576fc58e> ;
+      oa:hasSource <http://data-issa.cirad.fr/document/543654#abstract> .
+
+<http://data-issa.cirad.fr/ann/selector/48d6354573b50fd7037120b1ce39ddac576fc58e>
+      a       oa:TextPositionSelector , oa:TextQuoteSelector ;
+      oa:end  166 ;
+      oa:exact "tropical forest" ;
+      oa:start 151 .
+
+<http://data-issa.cirad.fr/ann/878b6dfad85f9b824eca152f058050c699cf53c9>
+      a       prov:Entity , oa:Annotation ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
+      rdfs:label "named entity 'anthropological'" ;
+      issapr:confidence 0.3731 ;
+      dct:subject "Sociology" ;
+      schema:about <http://data-issa.cirad.fr/document/543654> ;
+      oa:hasBody wd:Q23404 ;
+      oa:hasTarget <http://data-issa.cirad.fr/ann/target/878b6dfad85f9b824eca152f058050c699cf53c9> ;
+      prov:wasAttributedTo
+              issa:EntityFishing .
+
+issa-ann:c285f7bcc76d81ddb05db285c8450ad1c0b5e9b5
+      a       prov:Entity , oa:Annotation ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
+      rdfs:label "named entity 'economic systems'" ;
+      issapr:confidence 0.4046 ;
+      dct:subject "Sociology" , "Economy" ;
+      schema:about <http://data-issa.cirad.fr/document/543654> ;
+      oa:hasBody wd:Q273005 ;
+      oa:hasTarget <http://data-issa.cirad.fr/ann/target/c285f7bcc76d81ddb05db285c8450ad1c0b5e9b5> ;
+      prov:wasAttributedTo
+              issa:EntityFishing .
+
+<http://data-issa.cirad.fr/ann/84efd7fc396d140880747b6982d6229566ea5e4e>
+      a       prov:Entity , oa:Annotation ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
+      rdfs:label "named entity 'resource management'" ;
+      issapr:confidence 0.5187 ;
+      dct:subject "Enterprise" , "Environment" ;
+      schema:about <http://data-issa.cirad.fr/document/543654> ;
+      oa:hasBody wd:Q14431238 ;
+      oa:hasTarget <http://data-issa.cirad.fr/ann/target/84efd7fc396d140880747b6982d6229566ea5e4e> ;
+      prov:wasAttributedTo
+              issa:EntityFishing .
+
+<http://data-issa.cirad.fr/ann/966ca69c44d4f253fd005c4e4bcaa2b2bac1d689>
+      a       prov:Entity , oa:Annotation ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
+      rdfs:label "named entity 'environmental concerns'" ;
+      issapr:confidence 0.4152 ;
+      dct:subject "Biology" ;
+      schema:about <http://data-issa.cirad.fr/document/543654> ;
+      oa:hasBody wd:Q2144359 ;
+      oa:hasTarget <http://data-issa.cirad.fr/ann/target/966ca69c44d4f253fd005c4e4bcaa2b2bac1d689> ;
+      prov:wasAttributedTo
+              issa:EntityFishing .
+
+<http://data-issa.cirad.fr/ann/572cc6f3fbd4b0d800a82da90872b39c3d735156>
+      a       prov:Entity , oa:Annotation ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
+      rdfs:label "named entity 'biophysical'" ;
+      issapr:confidence 0.3701 ;
+      dct:subject "Biology" ;
+      schema:about <http://data-issa.cirad.fr/document/543654> ;
+      oa:hasBody wd:Q2249676 ;
+      oa:hasTarget <http://data-issa.cirad.fr/ann/target/572cc6f3fbd4b0d800a82da90872b39c3d735156> ;
+      prov:wasAttributedTo
+              issa:EntityFishing .
+
+issa-ann:d8d0afd42fc57741c3b821978f359a475f268909
+      a       prov:Entity , oa:Annotation ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
+      rdfs:label "named entity 'traditional ecological knowledge'" ;
+      issapr:confidence 0.9734 ;
+      dct:subject "Environment" ;
+      schema:about <http://data-issa.cirad.fr/document/543654> ;
+      oa:hasBody wd:Q7832334 ;
+      oa:hasTarget <http://data-issa.cirad.fr/ann/target/d8d0afd42fc57741c3b821978f359a475f268909> ;
+      prov:wasAttributedTo
+              issa:EntityFishing .
+
+<http://data-issa.cirad.fr/ann/target/63f907164b6ad0852f6d39fec482f63a537b35af>
+      oa:hasSelector <http://data-issa.cirad.fr/ann/selector/63f907164b6ad0852f6d39fec482f63a537b35af> ;
+      oa:hasSource <http://data-issa.cirad.fr/document/543654#abstract> .
+
+<http://data-issa.cirad.fr/ann/selector/9267a9631e82044b57e4e2213486726c95d04e62>
+      a       oa:TextPositionSelector , oa:TextQuoteSelector ;
+      oa:end  124 ;
+      oa:exact "natural resource management" ;
+      oa:start 97 .
+
+<http://data-issa.cirad.fr/ann/894af801eb7982422875e4fa41b9ac13074c196f>
+      a       prov:Entity , oa:Annotation ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
+      rdfs:label "named entity 'tropical forest'" ;
+      issapr:confidence 0.9126 ;
+      dct:subject "Gas" , "Environment" ;
+      schema:about <http://data-issa.cirad.fr/document/543654> ;
+      oa:hasBody wd:Q1048194 ;
+      oa:hasTarget <http://data-issa.cirad.fr/ann/target/894af801eb7982422875e4fa41b9ac13074c196f> ;
+      prov:wasAttributedTo
+              issa:EntityFishing .
+
+<http://data-issa.cirad.fr/ann/selector/c7b7b0dda48d0bfa76f812f29b9978ce5516f9fd>
+      a       oa:TextPositionSelector , oa:TextQuoteSelector ;
+      oa:end  147 ;
+      oa:exact "sustainability" ;
+      oa:start 133 .
+
+<http://data-issa.cirad.fr/ann/target/966ca69c44d4f253fd005c4e4bcaa2b2bac1d689>
+      oa:hasSelector <http://data-issa.cirad.fr/ann/selector/966ca69c44d4f253fd005c4e4bcaa2b2bac1d689> ;
+      oa:hasSource <http://data-issa.cirad.fr/document/543654#abstract> .
+
+issa-ann:f9dfed0034b5178a9234305e18b4332762d50d58
+      a       prov:Entity , oa:Annotation ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
+      rdfs:label "named entity 'indigenous knowledge'" ;
+      issapr:confidence 0.5976 ;
+      dct:subject "Sociology" , "Commerce" , "Enterprise" , "Agriculture" ;
+      schema:about <http://data-issa.cirad.fr/document/543654> ;
+      oa:hasBody wd:Q1428168 ;
+      oa:hasTarget <http://data-issa.cirad.fr/ann/target/f9dfed0034b5178a9234305e18b4332762d50d58> ;
+      prov:wasAttributedTo
+              issa:EntityFishing .
+
+<http://data-issa.cirad.fr/ann/34b8486955f1c1a0849bb96edc31374125d845dd>
+      a       prov:Entity , oa:Annotation ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
+      rdfs:label "named entity 'financial resources'" ;
+      issapr:confidence 0.4025 ;
+      schema:about <http://data-issa.cirad.fr/document/543654> ;
+      oa:hasBody wd:Q159810 ;
+      oa:hasTarget <http://data-issa.cirad.fr/ann/target/34b8486955f1c1a0849bb96edc31374125d845dd> ;
+      prov:wasAttributedTo
+              issa:EntityFishing .
+
+issa-ann:b46b064a5d1c58e9abea067e77f24c71d3a3e78d
+      a       prov:Entity , oa:Annotation ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
+      rdfs:label "named entity 'natural resource management'" ;
+      issapr:confidence 0.851 ;
+      dct:subject "Gas" , "Environment" ;
+      schema:about <http://data-issa.cirad.fr/document/543654> ;
+      oa:hasBody wd:Q3743137 ;
+      oa:hasTarget <http://data-issa.cirad.fr/ann/target/b46b064a5d1c58e9abea067e77f24c71d3a3e78d> ;
+      prov:wasAttributedTo
+              issa:EntityFishing .
+
+<http://data-issa.cirad.fr/ann/selector/1e3f1d3643f023a4253cff400eb7e77dc6514c32>
+      a       oa:TextPositionSelector , oa:TextQuoteSelector ;
+      oa:end  2137 ;
+      oa:exact "local communities" ;
+      oa:start 2120 .
+
+<http://data-issa.cirad.fr/ann/target/9267a9631e82044b57e4e2213486726c95d04e62>
+      oa:hasSelector <http://data-issa.cirad.fr/ann/selector/9267a9631e82044b57e4e2213486726c95d04e62> ;
+      oa:hasSource <http://data-issa.cirad.fr/document/543654#abstract> .
+
+<http://data-issa.cirad.fr/ann/selector/63f907164b6ad0852f6d39fec482f63a537b35af>
+      a       oa:TextPositionSelector , oa:TextQuoteSelector ;
+      oa:end  1729 ;
+      oa:exact "Future research" ;
+      oa:start 1714 .
+
+<http://data-issa.cirad.fr/ann/48d6354573b50fd7037120b1ce39ddac576fc58e>
+      a       prov:Entity , oa:Annotation ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
+      rdfs:label "named entity 'tropical forest'" ;
+      issapr:confidence 0.9126 ;
+      dct:subject "Gas" , "Environment" ;
+      schema:about <http://data-issa.cirad.fr/document/543654> ;
+      oa:hasBody wd:Q1048194 ;
+      oa:hasTarget <http://data-issa.cirad.fr/ann/target/48d6354573b50fd7037120b1ce39ddac576fc58e> ;
+      prov:wasAttributedTo
+              issa:EntityFishing .
+
+<http://data-issa.cirad.fr/ann/target/894af801eb7982422875e4fa41b9ac13074c196f>
+      oa:hasSelector <http://data-issa.cirad.fr/ann/selector/894af801eb7982422875e4fa41b9ac13074c196f> ;
+      oa:hasSource <http://data-issa.cirad.fr/document/543654#abstract> .
+
+issa-ann:f213ea5339bf64eb3d39146b87c711e3a93a86aa
+      a       prov:Entity , oa:Annotation ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
+      rdfs:label "named entity 'ecological issues'" ;
+      issapr:confidence 0.3911 ;
+      dct:subject "Environment" ;
+      schema:about <http://data-issa.cirad.fr/document/543654> ;
+      oa:hasBody wd:Q7150 ;
+      oa:hasTarget <http://data-issa.cirad.fr/ann/target/f213ea5339bf64eb3d39146b87c711e3a93a86aa> ;
+      prov:wasAttributedTo
+              issa:EntityFishing .
+
+<http://data-issa.cirad.fr/ann/29fa1b7e06d0da861012896112ca0775b318b66d>
+      a       prov:Entity , oa:Annotation ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
+      rdfs:label "named entity 'participatory development'" ;
+      issapr:confidence 0.4873 ;
+      dct:subject "Sociology" , "Architecture" , "Health" ;
+      schema:about <http://data-issa.cirad.fr/document/543654> ;
+      oa:hasBody wd:Q7140447 ;
+      oa:hasTarget <http://data-issa.cirad.fr/ann/target/29fa1b7e06d0da861012896112ca0775b318b66d> ;
+      prov:wasAttributedTo
+              issa:EntityFishing .
+
+<http://data-issa.cirad.fr/ann/selector/72954ddeed5c6347e1ee192860f909ff2601c93e>
+      a       oa:TextPositionSelector , oa:TextQuoteSelector ;
+      oa:end  614 ;
+      oa:exact "socio-cultural" ;
+      oa:start 600 .
+
+<http://data-issa.cirad.fr/ann/selector/586003f9fd5b21ffaf8e879d3cf7d29fe8a5561f>
+      a       oa:TextPositionSelector , oa:TextQuoteSelector ;
+      oa:end  1029 ;
+      oa:exact "developing countries" ;
+      oa:start 1009 .
+
+<http://data-issa.cirad.fr/ann/249c109a0f52419c47fdc138e695150ea3db5d5c>
+      a       prov:Entity , oa:Annotation ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
+      rdfs:label "named entity 'socio-cultural'" ;
+      issapr:confidence 0.3916 ;
+      dct:subject "Sociology" ;
+      schema:about <http://data-issa.cirad.fr/document/543654> ;
+      oa:hasBody wd:Q1050187 ;
+      oa:hasTarget <http://data-issa.cirad.fr/ann/target/249c109a0f52419c47fdc138e695150ea3db5d5c> ;
+      prov:wasAttributedTo
+              issa:EntityFishing .
+
+<http://data-issa.cirad.fr/ann/selector/2765d4c34dcdcb19c1e85269457565206b2e8518>
+      a       oa:TextPositionSelector , oa:TextQuoteSelector ;
+      oa:end  577 ;
+      oa:exact "economic systems" ;
+      oa:start 561 .
+
+<http://data-issa.cirad.fr/ann/target/1e3f1d3643f023a4253cff400eb7e77dc6514c32>
+      oa:hasSelector <http://data-issa.cirad.fr/ann/selector/1e3f1d3643f023a4253cff400eb7e77dc6514c32> ;
+      oa:hasSource <http://data-issa.cirad.fr/document/543654#abstract> .
+
+<http://data-issa.cirad.fr/ann/9088ba24ad189dcdfc037e9a22c9146d71316100>
+      a       prov:Entity , oa:Annotation ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
+      rdfs:label "named entity 'natural resources'" ;
+      issapr:confidence 0.416 ;
+      dct:subject "Gas" , "Environment" ;
+      schema:about <http://data-issa.cirad.fr/document/543654> ;
+      oa:hasBody wd:Q188460 ;
+      oa:hasTarget <http://data-issa.cirad.fr/ann/target/9088ba24ad189dcdfc037e9a22c9146d71316100> ;
+      prov:wasAttributedTo
+              issa:EntityFishing .
+
+<http://data-issa.cirad.fr/ann/selector/966ca69c44d4f253fd005c4e4bcaa2b2bac1d689>
+      a       oa:TextPositionSelector , oa:TextQuoteSelector ;
+      oa:end  1568 ;
+      oa:exact "environmental concerns" ;
+      oa:start 1546 .
+
+<http://data-issa.cirad.fr/ann/target/c285f7bcc76d81ddb05db285c8450ad1c0b5e9b5>
+      oa:hasSelector <http://data-issa.cirad.fr/ann/selector/c285f7bcc76d81ddb05db285c8450ad1c0b5e9b5> ;
+      oa:hasSource <http://data-issa.cirad.fr/document/543654#abstract> .
+
+<http://data-issa.cirad.fr/ann/target/d8d0afd42fc57741c3b821978f359a475f268909>
+      oa:hasSelector <http://data-issa.cirad.fr/ann/selector/d8d0afd42fc57741c3b821978f359a475f268909> ;
+      oa:hasSource <http://data-issa.cirad.fr/document/543654#abstract> .
+
+<http://data-issa.cirad.fr/ann/target/84efd7fc396d140880747b6982d6229566ea5e4e>
+      oa:hasSelector <http://data-issa.cirad.fr/ann/selector/84efd7fc396d140880747b6982d6229566ea5e4e> ;
+      oa:hasSource <http://data-issa.cirad.fr/document/543654#abstract> .
+
+<http://data-issa.cirad.fr/ann/9267a9631e82044b57e4e2213486726c95d04e62>
+      a       prov:Entity , oa:Annotation ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
+      rdfs:label "named entity 'natural resource management'" ;
+      issapr:confidence 0.851 ;
+      dct:subject "Gas" , "Environment" ;
+      schema:about <http://data-issa.cirad.fr/document/543654> ;
+      oa:hasBody wd:Q3743137 ;
+      oa:hasTarget <http://data-issa.cirad.fr/ann/target/9267a9631e82044b57e4e2213486726c95d04e62> ;
+      prov:wasAttributedTo
+              issa:EntityFishing .
+
+<http://data-issa.cirad.fr/ann/selector/894af801eb7982422875e4fa41b9ac13074c196f>
+      a       oa:TextPositionSelector , oa:TextQuoteSelector ;
+      oa:end  446 ;
+      oa:exact "tropical forest" ;
+      oa:start 431 .
+
+<http://data-issa.cirad.fr/ann/selector/249c109a0f52419c47fdc138e695150ea3db5d5c>
+      a       oa:TextPositionSelector , oa:TextQuoteSelector ;
+      oa:end  1354 ;
+      oa:exact "socio-cultural" ;
+      oa:start 1340 .
+
+<http://data-issa.cirad.fr/ann/target/f9dfed0034b5178a9234305e18b4332762d50d58>
+      oa:hasSelector <http://data-issa.cirad.fr/ann/selector/f9dfed0034b5178a9234305e18b4332762d50d58> ;
+      oa:hasSource <http://data-issa.cirad.fr/document/543654#abstract> .
+
+<http://data-issa.cirad.fr/ann/selector/572cc6f3fbd4b0d800a82da90872b39c3d735156>
+      a       oa:TextPositionSelector , oa:TextQuoteSelector ;
+      oa:end  812 ;
+      oa:exact "biophysical" ;
+      oa:start 801 .
+
+<http://data-issa.cirad.fr/ann/selector/f213ea5339bf64eb3d39146b87c711e3a93a86aa>
+      a       oa:TextPositionSelector , oa:TextQuoteSelector ;
+      oa:end  63 ;
+      oa:exact "ecological issues" ;
+      oa:start 46 .
+
+<http://data-issa.cirad.fr/ann/selector/b46b064a5d1c58e9abea067e77f24c71d3a3e78d>
+      a       oa:TextPositionSelector , oa:TextQuoteSelector ;
+      oa:end  1760 ;
+      oa:exact "natural resource management" ;
+      oa:start 1733 .
+
+issa-ann:fe9d09e9258e32990b4df0b0a1e21b6312865876
+      a       prov:Entity , oa:Annotation ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
+      rdfs:label "named entity 'socio-cultural'" ;
+      issapr:confidence 0.3916 ;
+      dct:subject "Sociology" ;
+      schema:about <http://data-issa.cirad.fr/document/543654> ;
+      oa:hasBody wd:Q1050187 ;
+      oa:hasTarget <http://data-issa.cirad.fr/ann/target/fe9d09e9258e32990b4df0b0a1e21b6312865876> ;
+      prov:wasAttributedTo
+              issa:EntityFishing .
+
+<http://data-issa.cirad.fr/ann/selector/878b6dfad85f9b824eca152f058050c699cf53c9>
+      a       oa:TextPositionSelector , oa:TextQuoteSelector ;
+      oa:end  634 ;
+      oa:exact "anthropological" ;
+      oa:start 619 .
+
+<http://data-issa.cirad.fr/ann/target/878b6dfad85f9b824eca152f058050c699cf53c9>
+      oa:hasSelector <http://data-issa.cirad.fr/ann/selector/878b6dfad85f9b824eca152f058050c699cf53c9> ;
+      oa:hasSource <http://data-issa.cirad.fr/document/543654#abstract> .
+
+<http://data-issa.cirad.fr/ann/5eedb16f813f3d741d7a6d710af89b88f82bd805>
+      a       prov:Entity , oa:Annotation ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
+      rdfs:label "named entity 'Participatory development'" ;
+      issapr:confidence 0.4783 ;
+      dct:subject "Sociology" , "Architecture" , "Health" ;
+      schema:about <http://data-issa.cirad.fr/document/543654> ;
+      oa:hasBody wd:Q7140447 ;
+      oa:hasTarget <http://data-issa.cirad.fr/ann/target/5eedb16f813f3d741d7a6d710af89b88f82bd805> ;
+      prov:wasAttributedTo
+              issa:EntityFishing .
+
+<http://data-issa.cirad.fr/ann/selector/c285f7bcc76d81ddb05db285c8450ad1c0b5e9b5>
+      a       oa:TextPositionSelector , oa:TextQuoteSelector ;
+      oa:end  1376 ;
+      oa:exact "economic systems" ;
+      oa:start 1360 .
+
+<http://data-issa.cirad.fr/ann/4a4bc1a92013c76b96b1c26ac5caf681901e04d2>
+      a       prov:Entity , oa:Annotation ;
+      rdfs:isDefinedBy issa:issa-agritrop ;
+      rdfs:label "named entity 'natural resources'" ;
+      issapr:confidence 0.416 ;
+      dct:subject "Gas" , "Environment" ;
+      schema:about <http://data-issa.cirad.fr/document/543654> ;
+      oa:hasBody wd:Q188460 ;
+      oa:hasTarget <http://data-issa.cirad.fr/ann/target/4a4bc1a92013c76b96b1c26ac5caf681901e04d2> ;
+      prov:wasAttributedTo
+              issa:EntityFishing .

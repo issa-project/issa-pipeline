@@ -1,0 +1,36 @@
+-- $ARGV[$I] - should contain a data import dir path in the container
+-- $ARGV[$+ $I 1] should contain a namespace
+
+SET u{IDIR} $ARGV[$I];
+SET u{namespace} $ARGV[$+ $I 1];
+
+ECHO 'Loading dataset metadata from ' $u{IDIR} ' to the graph ' <$u{namespace}graph/dataset> '\n';
+
+log_enable(3,1);
+
+SPARQL CLEAR GRAPH  <$u{namespace}graph/dataset>;
+
+DELETE FROM DB.DBA.load_list;
+checkpoint;
+
+ld_dir ('$u{IDIR}', 'schema.ttl',      					'$u{namespace}graph/dataset');
+ld_dir ('$u{IDIR}', 'provenance.ttl',  					'$u{namespace}graph/dataset');
+ld_dir ('$u{IDIR}', 'dataset.ttl',     					'$u{namespace}graph/dataset');
+
+
+rdf_loader_run ();
+checkpoint;
+
+-- This query is useful for checking for load errors
+SELECT * FROM DB.DBA.load_list;
+
+SPARQL 
+SELECT ?graph (COUNT(*) as ?triples) 
+WHERE { 
+VALUES (?graph) {(<$u{namespace}graph/dataset> )}
+GRAPH ?graph {?s ?p ?o} } 
+;
+
+
+
+EXIT;

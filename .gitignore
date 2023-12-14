@@ -30,7 +30,6 @@ __pycache__
 *.pkl
 *.csv
 *.xlsx
-
-*.ttl
-!*.tpl.ttl
+*.pdf
+*.pptx
 

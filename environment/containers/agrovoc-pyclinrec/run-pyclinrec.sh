@@ -3,12 +3,10 @@
 #
 # Licensed under the Apache License, Version 2.0 (http://www.apache.org/licenses/LICENSE-2.0)
 
-# This script can be called by a symbolic link from a different dir 
-# so we need to make sure that the relative path still works
-pushd $(dirname $(readlink -f "$0" ))
-
 # ISSA environment definitions
 . ../../../env.sh
+
+echo $PYCLINREC_HOST_CACHE
 
 # Run pyclinrec docker container 
 CONTAINER_NAME=${PYCLINREC_CONT_NAME:-agrovoc-pyclinrec}
@@ -46,6 +44,5 @@ else
 	echo "$CONTAINER_NAME is running"
 fi
 
-popd
 
 

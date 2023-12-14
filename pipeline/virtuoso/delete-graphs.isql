@@ -1,12 +1,19 @@
+-- $ARGV[$I] - should contain namespace
+
 log_enable(3,1);
-SPARQL CLEAR GRAPH  <http://data-issa.cirad.fr/graph/articles>;
-SPARQL CLEAR GRAPH  <http://data-issa.cirad.fr/graph/thematic-descriptors>;
-SPARQL CLEAR GRAPH  <http://data-issa.cirad.fr/graph/articles/text>;
-SPARQL CLEAR GRAPH  <http://data-issa.cirad.fr/graph/annif-descriptors>;
-SPARQL CLEAR GRAPH  <http://data-issa.cirad.fr/graph/dbpedia-spotlight-nes>;
-SPARQL CLEAR GRAPH  <http://data-issa.cirad.fr/graph/entity-fishing-nes>;
-SPARQL CLEAR GRAPH  <http://data-issa.cirad.fr/graph/geographic-nes>;
-SPARQL CLEAR GRAPH  <http://data-issa.cirad.fr/graph/pyclinrec-nes>;
+
+SPARQL CLEAR GRAPH  <$ARGV[$I]graph/documents>;
+SPARQL CLEAR GRAPH  <$ARGV[$I]graph/thematic-descriptors>;
+SPARQL CLEAR GRAPH  <$ARGV[$I]graph/document-keywords>;
+SPARQL CLEAR GRAPH  <$ARGV[$I]graph/document-domains>;
+SPARQL CLEAR GRAPH  <$ARGV[$I]graph/documents/text>;
+SPARQL CLEAR GRAPH  <$ARGV[$I]graph/annif-descriptors>;
+SPARQL CLEAR GRAPH  <$ARGV[$I]graph/dbpedia-spotlight-nes>;
+SPARQL CLEAR GRAPH  <$ARGV[$I]graph/entity-fishing-nes>;
+SPARQL CLEAR GRAPH  <$ARGV[$I]graph/geographic-nes>;
+SPARQL CLEAR GRAPH  <$ARGV[$I]graph/pyclinrec-nes>;
+SPARQL CLEAR GRAPH  <$ARGV[$I]graph/dataset>;
+
 
 checkpoint;
 SPARQL SELECT DISTINCT ?g (COUNT(*) as ?triples) WHERE { GRAPH ?g {?s ?p ?o} };

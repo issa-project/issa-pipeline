@@ -1,3 +1,5 @@
+# This code as adapted from COVID-on-the-Web project
+
 import json
 import requests
 from retrying import retry
@@ -8,8 +10,13 @@ from math import isnan, isinf
 def string2number(value):
     """
     Convert a string to a number
-    :param value: string to convert
-    :return: integer, float or string
+
+    Parameters:
+        value (str): string to convert
+
+    Returns:
+        int, float or string (if not convertible)
+
     """
     try:
         return int(value)
@@ -44,12 +51,16 @@ class WrapperAnnotator(object):
     @retry(stop_max_attempt_number=5, wait_random_min=1000, wait_random_max=2000)
     def request_dbpedia_spotlight(self, text, lang='en', confidence=0.15, support=10, postprocess_callback=None):
         """
-        Wrapper around DBpedia Spotlight
-        :param text: String, text to be annotated
-        :param lang: string, language model to use
-        :param confidence: float, confidence score for disambiguation/linking
-        :param support: integer, how prominent is this entity in Lucene Model, i.e. number of inlinks in Wikipedia
-        :return: annotations in a JSON array
+        Wrapper around DBpedia Spotlight http request
+
+        Parameters:
+            text (str) - text to be annotated
+            lang (str) - language model to use
+            confidence (float) - confidence score for disambiguation/linking
+            support (int) - how prominent is this entity in Lucene Model, i.e. number of inlinks in Wikipedia
+
+        Returns:
+            annotations in a JSON array 
         """
         try:
             if not lang:
@@ -88,11 +99,16 @@ class WrapperAnnotator(object):
     @retry(stop_max_attempt_number=5, wait_random_min=1000, wait_random_max=2000 , retry_on_exception=(lambda e: not isinstance(e, requests.exceptions.ReadTimeout)) )
     def request_entity_fishing(self, text, lang='en', postprocess_callback=None):
         """
-        Wrapper around Entity-fishing (language set in English)
-        :param text: string, text to be annotated
-        :param lang: string, language model to use
-        :return: annotations in JSON
+        Wrapper around Entity-fishing  http request
+
+        Parameters:
+            text (str) - text to be annotated
+            lang (str) - language model to use
+
+        Returns:
+            annotations in JSON array
         """
+        
         try:
             if not lang:
                 lang = 'en'
@@ -134,10 +150,14 @@ class WrapperAnnotator(object):
     @retry(stop_max_attempt_number=5, wait_random_min=1000, wait_random_max=2000)
     def request_entity_fishing_short(self, text, lang='en', postprocess_callback=None):
         """
-        Wrapper around Entity-fishing (language set in English)
-        :param text: string, text to be annotated
-        :param lang: string, language model to use
-        :return: annotations in JSON
+        Wrapper around Entity-fishing http request for a short text
+        
+        Parameters:
+            text (str) - text to be annotated
+            lang (str) - language model to use
+
+        Returns:
+            annotations in JSON array
         """
         try:
             if not lang:
@@ -179,10 +199,14 @@ class WrapperAnnotator(object):
     @retry(stop_max_attempt_number=5, wait_random_min=1000, wait_random_max=2000)
     def request_entity_fishing_concept_lookup(self, wikidataID, postprocess_callback=None):
         """
-        Wrapper around Entity-fishing (language set in English)
-        :param text: string, text to be annotated
-        :param lang: string, language model to use
-        :return: annotations in JSON
+        Wrapper around Entity-fishing concept lookup http request
+
+        Parameters:
+            text (str) - text to be annotated
+            lang (str) - language model to use
+
+        Returns:
+            annotations in JSON array
         """
         try:
                
@@ -204,15 +228,20 @@ class WrapperAnnotator(object):
         except json.decoder.JSONDecodeError:
             return None
 
+    # this code is untested by the ISSA project
     @retry(stop_max_attempt_number=5, wait_random_min=1000, wait_random_max=2000)
     def request_ncbo_plus(self, text, lang='en', ncbo_api='https://bioportal.bioontology.org/'):
         """
         Wrapper around the API of the Bioportal AnnotatorPlus
         API link: http://data.bioontology.org/documentation
-        :param text: String, text to be annotated
-        :param ncbo_api: Dict, Contains a list with API key to access the NCBO API Web Service and the endpoint
-        :param lang: string, language model to use
-        :return: annotations in JSON
+
+        Parameters:
+            text (str) - text to be annotated
+            lang (str) - language model to use
+            ncbo_api (str) - API endpoint
+
+        Returns:
+            annotations in JSON array
         """
         try:
             if lang not in ('en', 'fr'):
@@ -242,13 +271,19 @@ class WrapperAnnotator(object):
             return None
 
     @retry(stop_max_attempt_number=5, wait_random_min=1000, wait_random_max=2000)
-    def request_concept_annotator(self, text, lang='en', confidence=0.15, postprocess_callback=None):
+    def request_concept_annotator(self, text, dictionary, lang='en', confidence=0.15, postprocess_callback=None):
         """
-        Wrapper around Pyclinrec Annotator
-        :param text: String, text to be annotated
-        :param lang: string, language model to use
-        :param confidence: float, confidence score for disambiguation / linking
-        :return: annotations in an Json array
+        Wrapper around Pyclinrec Annotator that can annotate using any dictionary
+
+        Parameters:
+            text (str) - text to be annotated
+            dictionary (str) - name of the dictionary to use
+            lang (str) - language model to use
+            confidence (float) - confidence score for disambiguation/linking
+            postprocess_callback (function) - function to process the response
+
+        Returns:    
+            annotations in JSON array
         """
         try:
             if not lang:
@@ -260,6 +295,7 @@ class WrapperAnnotator(object):
             headers = {'accept': 'application/json'}
             params = {
                 'text': text,
+                'dictionary': dictionary,
                 'lang': lang,
                 'conf': confidence,
             }

@@ -2,13 +2,15 @@
 # Author: Anna BOBASHEVA, University Cote d'Azur, Inria
 #
 # Licensed under the Apache License, Version 2.0 (http://www.apache.org/licenses/LICENSE-2.0)
-# ISSA create metadata
+# 
+# Create ISSA metadata
 
 # ISSA environment definitions
 . ../env.sh
 
 echo "$ISSA_DATASET"
 echo "$LATEST_UPDATE"
+
 
 echo "************************************************************************"
 echo " Loading and processing corpus metadata..."
@@ -19,9 +21,9 @@ source ${ISSA_VENV}/bin/activate
 
 pushd ./metadata
 
-	python3 ./download_corpus_metadata.py
-	python3 ./process_corpus_metadata.py
-	python3 ./create_dataset_repository.py
+	python3 ./download_corpus_metadata.py $ISSA_PIPELINE_CONFIG
+	python3 ./process_corpus_metadata.py  $ISSA_PIPELINE_CONFIG	
+	python3 ./create_dataset_repository.py $ISSA_PIPELINE_CONFIG
 
 popd
 

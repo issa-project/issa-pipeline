@@ -21,7 +21,7 @@ echo "Generating training corpus..."
 
 pushd ../pipeline/indexing
 
-python3 ./training_dataset.py          &>>$log_file
+python3 ./training_dataset.py $ISSA_PIPELINE_CONFIG          &>>$log_file
 
 popd
 

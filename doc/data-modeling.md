@@ -1,9 +1,9 @@
 # ISSA RDF data modeling
 
-A document analyzed by the ISSA pipeline is described in three parts: general metadata (title, authors, publication date etc.), thematic descriptors characterizing a document, and named entities extracted from a document's parts (title, abstract, body_text).
-
+A document analyzed by the ISSA pipeline can be described in three parts: general metadata (title, authors, publication date etc.), thematic descriptors characterizing a document as well as documents domains and authors' keywords, and named entities extracted from a document's parts (title, abstract, body_text).
 
 ## Namespaces
+
 Below we use the following namespaces:
 
 ```turtle
@@ -26,28 +26,37 @@ Below we use the following namespaces:
 @prefix issapr: <http://data-issa.cirad.fr/property/>.
 ```
 
+>:point_right: The namespace *http://data-issa.cirad.fr/* is used for a specific ISSA instance (e.g. Agritrop). It can be replaced by any other namespace.
+
 ## Document metadata
+
 Document URIs are formatted as `http://data-issa.cirad.fr/document/document_id` where document_id is a unique document identifier.
 
 RDF resources representing documents can be instances of various classes depending on their type:
+
+- article (`fabio:ResearchPaper`, `schema:ScholarlyArticle`, `bibo:AcademicArticle`, `eprint:JournalArticle`)
 - conference article (`fabio:ConferencePaper`, `eprint:ConferencePaper`)
-- journal article (`fabio:ResearchPaper`, `schema:ScholarlyArticle`, `bibo:AcademicArticle`, `eprint:JournalArticle`)
-- book (`fabio:Book`, `eprint:Book`)
-- book section (`fabio:BookChapter`, `eprint:BookItem`)
-- thesis (`fabio:Thesis`, `eprint:Thesis`)
+- book (`fabio:Book`, `bibo:Book`, `eprint:Book`)
+- book section (`fabio:BookChapter`, `bibo:BookSection`, `eprint:BookItem`)
+- thesis (`fabio:Thesis`, `bibo:Thesis`, `eprint:Thesis`)
 - application (`fabio:ComputerApplication`)
 - data management plan (`fabio:DataManagementPlan`)
-- film (`fabio:Film`)
-- map (`bibo:Map`)
-- monograph (`fabio:Expression`, `bibo:Document`)
+- film (`fabio:Film` , `bibo:AudioVisualDocument`)
+- map (`fabio:StillImage`, `bibo:Map`)
+- monograph (`fabio:Expression`, `bibo:Document`, `eprint:Text`)
 - patent (`fabio:Patent`, `eprint:Patent`)
+- report (`fabio:Report`, `bibo:Report`, `eprint:Report`)
+- review (`fabio:Review`)
 
 For each document, the available metadata are mapped as much as possible as follows (not all metadata exist for all types of documents):
+
 - title (`dct:title`)
 - authors (`dce:creator`)
+- authors in ordered list (`bibo:authorList`)
 - publication date (`dct:issued`)
 - journal (`schema:publication`)
 - license (`dct:license`)
+- access rights (`dct:accessRights`)
 - terms and conditions (`dct:rights`)
 - identifiers
     - archive internal identifier (`dct:identifier`)
@@ -62,32 +71,39 @@ For each document, the available metadata are mapped as much as possible as foll
 - provenance
     - dataset name and version (`rdfs:isDefinedBy`)
     - source data URI (`prov:wasDerivedFrom`)
-    - source data creation timestamp (`prov:generatedAtTime`), i.e. at which the article was added to the archive
-
+    - source data creation timestamp (`prov:generatedAtTime`), i.e. at which time the article was added to the source archive
 
 Furthermore, documents are linked to their parts (title, abstract, body) as follows:
 - `issapr:hasTitle <http://data-issa.cirad.fr/document/paper_id#title>`
 - `dct:abstract   <http://data-issa.cirad.fr/document/paper_id#abstract>`
 - `issapr:hasBody  <http://data-issa.cirad.fr/document/paper_id#body_text>`.
-NOTE: only journal articles have associated body text 
+
+>:point_right: In the Agritrop use case only journal articles have associated body text
 
 
 Here is an example of a journal article's metadata:
+
 ```turtle
 <http://data-issa.cirad.fr/document/543654>
   a                      prov:Entity, fabio:ResearchPaper, bibo:AcademicArticle, eprint:JournalArticle, schema:ScholarlyArticle;
   dct:title              "Accounting for the ecological dimension in participatory research and development : lessons learned from Indonesia and Madagascar";
   dce:creator            "Pfund, Jean-Laurent", "Laumonier, Yves", "Bourgeois, Robin";
+  bibo:authorList        [ a       rdf:List ;
+                            rdf:first "Laumonier, Yves" ;
+                            rdf:rest ("Bourgeois, Robin" "Pfund, Jean-Laurent")
+                         ] ;
+  
   schema:publication     "Ecology and Society";
   dct:issued             "2008.0"^^xsd:gYear;
+
+  dct:accessRights       <info:eu-repo/semantics/openAccess> ;
   dct:rights             <https://agritrop.cirad.fr/mention_legale.html>;
 
-  dct:source             "Agritrop-OAI2-API";
   dct:identifier         "543654";
   
   schema:url             <http://agritrop.cirad.fr/543654/> ;
   schema:downloadUrl     <http://agritrop.cirad.fr/543654/1/document_543654.pdf>;
-  schema:sameAs          <http://www.ecologyandsociety.org/vol13/iss1/art15/>, <http://catalogue-bibliotheques.cirad.fr/cgi-bin/koha/opac-detail.pl?biblionumber=199720>;
+  schema:sameAs          <http://www.ecologyandsociety.org/vol13/iss1/art15/>;
 
   dce:language           "eng";
   dct:language           <http://id.loc.gov/vocabulary/iso639-1/en>;
@@ -96,36 +112,38 @@ Here is an example of a journal article's metadata:
   prov:generatedAtTime   "2020-11-21T13:17:03Z"^^xsd:dateTime;
   prov:wasDerivedFrom    <http://agritrop.cirad.fr/543654/>.
 
-  issapr:hasBody         <http://data-issa.cirad.fr/document/543654#body_text> ;
-  dct:abstract           <http://data-issa.cirad.fr/document/543654#abstract> ;
   issapr:hasTitle        <http://data-issa.cirad.fr/document/543654#title> ;
+  dct:abstract           <http://data-issa.cirad.fr/document/543654#abstract> ;
+  issapr:hasBody         <http://data-issa.cirad.fr/document/543654#body_text> .
 ```
 
 ## Thematic descriptors
 
-The global thematic descriptors are concepts characterizing a document as a whole. They are described as **annotations** using the **[Web Annotations Vocabulary](https://www.w3.org/TR/annotation-vocab/)**.
+The thematic descriptors are concepts characterizing a document as a whole. They are described as **annotations** using the **[Web Annotations Vocabulary](https://www.w3.org/TR/annotation-vocab/)**.
 
 Each annotation consists of the following information:
+
 - the annotation target (`oa:hasTarget`) is the document it is about (`schema:about`)
 - the annotation body (`oa:hasBody`) gives the URI of the resource identified as representing the thematic descriptor (e.g. an **[Agrovoc category URI](https://agrovoc.fao.org/)** ).
 - provenance 
     - dataset name and version (`rdfs:isDefinedBy`)
     - the agent that assigned this descriptor to a document (`prov:wasAttributedTo`)
-        - a human documentalist (`issa:AgritropDocumentalist`)
+        - a human documentalist (`issa:Documentalist`)
         - an automated indexing system (e.g. **[Annif](https://annif.org/)** ) (`issa:AnnifSubjectIndexer`)
 - (optional) an automated indexer confidence score (`issapr:confidence`)
 - (optional) an automated indexer rank of the descriptor among all assigned (`issapr:rank`)
 
 	
 Example:
+
 ```turtle
 # sustainable development
 <http://data-issa.cirad.fr/descr/3573cd52f16d7882c72210bca7c9b3ecef02d129>
   a                      prov:Entity , issa:ThematicDescriptorAnnotation;
   oa:hasBody             <http://aims.fao.org/aos/agrovoc/c_35332>;
   oa:hasTarget           <http://data-issa.cirad.fr/document/543654>;
-  prov:wasAttributedTo   issa:AgritropDocumentalist.
-  rdfs:isDefinedBy       issa:issa-agritrop;
+  prov:wasAttributedTo   issa:Documentalist.
+  rdfs:isDefinedBy       issa:issa-agritrop.
   
 # natural resource management  
 <http://data-issa.cirad.fr/descr/e2ba273e40beccc2b8ae5f7792690dce7e6b2131>
@@ -136,7 +154,66 @@ Example:
   rdfs:isDefinedBy       issa:issa-agritrop;
 
   issapr:confidence      0.82;
-  issapr:rank            1;
+  issapr:rank            1.
+```
+
+>:point_right: In the ISSA Agritrop instance some of the Agrovoc categories are geographical entities (e.g. countries, regions, cities) and can be categorized as Geographical (Geo) descriptors. To identify if a descriptor has a geographical meaning, the following SPARQL query can be used:
+
+```turtle
+  OPTIONAL {
+      ?descriptorUri <http://aims.fao.org/aos/agrontology#isPartOfSubvocabulary> ?subVocabulary .
+      BIND ( REGEEX ?subVocabulary, "^Geographical", "i") as ?isGeographicalDescriptor )
+  }
+```
+
+## Domains
+
+Each source archive may associate a set of domains with each document. The domains are can be  proprietary (e.g. [AgrIST-thema](https://agrist.cirad.fr/agrist-thema) in Agritrop) or controlled vocabularies (e.g. [HAL subjects](https://aurehal.archives-ouvertes.fr/domain/index) in HAL).
+
+The domain annotation consists of the following information:
+
+- the annotation target (`oa:hasTarget`) is a document
+- the annotation body (`oa:hasBody`) is the URI of the resource representing the domain
+- provenance 
+    - dataset name and version (`rdfs:isDefinedBy`)
+    - the agent that assigned this descriptor to a document (`prov:wasAttributedTo`) and typically is a human documentalist (`issa:Documentalist`)
+- (optional) an automated indexer rank of the descriptor among all assigned (`issapr:rank`)
+
+Example:
+
+```turtle
+<http://data-issa.cirad.fr/descr/9f429daf638f56790cf3e587816ead1667537e98>
+  a                      prov:Entity , issa:DomainAnnotation ;
+  oa:hasBody             <http://agrist.cirad.fr/agrist-thema/K01> ;
+  oa:hasTarget           <http://data-issa.cirad.fr/document/543654> ;
+  rdfs:isDefinedBy       issa:issa-agritrop ;
+  prov:wasAttributedTo   issa:Documentalist ;
+
+  issapr:rank            3.
+
+<http://agrist.cirad.fr/agrist-thema/K01>
+  rdfs:label             "K01 - Foresterie - Considérations générales". 
+```
+
+## Authors Keywords
+
+Some of the document archives (e.g. HAL) may provide a list of keywords assigned by the authors of a document. These keywords are described as **annotations** as well.
+
+```turtle
+<http://data-issa.euromov.fr/descr/f71f792c418b4a959b798d06367453b4b9005d0b>
+  a                      prov:Entity , issa:AuthorKeywordAnnotation ;
+  oa:hasBody             <http://data-issa.euromov.fr/keywords/f71f792c418b4a959b798d06367453b4b9005d0b> ;
+  oa:hasTarget           <http://data-issa.euromov.fr/document/hal-03598013v1> ;
+  rdfs:isDefinedBy       issa:issa-hal-euromov ;
+  prov:wasAttributedTo   issa:Author;
+
+  issapr:rank            3.
+
+<http://data-issa.euromov.fr/keywords/f71f792c418b4a959b798d06367453b4b9005d0b>
+  a                      oa:TextualBody ;
+  rdf:value              "Coronavirus" ;
+  dct:format             "text" ;
+  dct:language           "en".
 ```
 
 ## Named entities
@@ -178,3 +255,21 @@ Example:
   rdfs:isDefinedBy       issa:issa-agritrop;
   prov:wasAttributedTo   issa:EntityFishing .
 ```
+## Named Graphs
+
+As a result of the ISSA pipeline, the following named graphs are created:
+
+| Data type                                | Named Graph                                           |
+|--------------------------------------    |-------------------------------------------------------|
+| Metadata                                 | http://data-issa.cirad.fr/graph/documents             |
+| Annotated text                           | http://data-issa.cirad.fr/graph/documents/text        |
+| Human-validated thematic descriptors     | http://data-issa.cirad.fr/graph/thematic-descriptors  |
+| Annif-generated thematic descriptors     | http://data-issa.cirad.fr/graph/annif-descriptors     |
+| Documents' domains                       | http://data-issa.cirad.fr/graph/document-domains      |
+| Documents' keywords                      | http://data-issa.cirad.fr/graph/document-keywords     |
+| DBpedia annotations                      | http://data-issa.cirad.fr/graph/dbpedia-spotlight-nes |
+| Wikidata annotations                     | http://data-issa.cirad.fr/graph/entity-fishing-nes    |
+| GeoNames annotations                     | http://data-issa.cirad.fr/graph/geographic-nes        |
+| Instance-specific vocabulary annotations | http://data-issa.cirad.fr/graph/pyclinrec-nes     |
+
+>:point_right: As a reminder,  the namespace *http://data-issa.cirad.fr/* is used for a specific ISSA instance (e.g. Agritrop). It can be replaced by any other namespace (e.g. *http://data-issa.euromov.fr/* for the HAL Euromov instance).

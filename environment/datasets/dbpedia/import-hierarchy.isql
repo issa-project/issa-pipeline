@@ -1,8 +1,10 @@
 log_enable(3,1);
---SPARQL CLEAR GRAPH  <http://data-issa.cirad.fr/graph/dbpedia-named-entities>;
+
+--SPARQL CLEAR GRAPH  <$ARGV[$I]graph/dbpedia-named-entities>;
+
 
 DELETE FROM DB.DBA.load_list;
-ld_dir ('/database/import', 'dbpedia-dump*.ttl', 'http://data-issa.cirad.fr/graph/dbpedia-named-entities');
+ld_dir ('/database/import', 'dbpedia-dump*.ttl', '$ARGV[$I]graph/dbpedia-named-entities');
 
 rdf_loader_run ();
 checkpoint;
@@ -10,7 +12,7 @@ checkpoint;
 -- output possible load errors
 SELECT * FROM DB.DBA.load_list;
 
-SPARQL SELECT DISTINCT ('<http://data-issa.cirad.fr/graph/dbpedia-named-entities>' as ?g)  (COUNT(*) as ?triples)  
-WHERE { GRAPH <http://data-issa.cirad.fr/graph/dbpedia-named-entities> {?s ?p ?o} };
+SPARQL SELECT DISTINCT (<$ARGV[$I]graph/dbpedia-named-entities> as ?g)  (COUNT(*) as ?triples)  
+WHERE { GRAPH <$ARGV[$I]graph/dbpedia-named-entities> {?s ?p ?o} };
 
 exit;

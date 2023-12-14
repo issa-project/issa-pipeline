@@ -23,44 +23,46 @@ Possible outputs:
 - json files one per document (preferred) in the same folder
 - tsv file
 
-Update the [env.sh](https://github.com/issa-project/issa-pipeline/blob/main/env.sh) with the relative path of the output folder. for example
+Update the *env.sh* in the corresponding instance [config](../config/) directory with the relative path of the output folder.
+
+For example:
 
 ```bash
 export REL_NEW_NER=annotation/new_ner      # New annotations 
 ```
 
->:point_right: the  [env.sh](https://github.com/issa-project/issa-pipeline/blob/main/env.sh) contains variables that are used across ISSA pipeline and environment
+>:point_right: the *env.sh* contains variables that are used across ISSA pipeline and environment
 
 ## Implementation
 
 If a new processing step is developed in Python preferably:
 
-- update the [config.py](https://github.com/issa-project/issa-pipeline/blob/main/pipeline/config.py) file with a new configuration class derived from cfg_annotation class specifying input-output locations and other configurable parameters  (follow the example of existing steps)
-- take advantage of logging, file access and dictionary utility functions implemented in [util.py](https://github.com/issa-project/issa-pipeline/blob/main/pipeline/util.py)
-- if a new step can be classified as NER or indexing then put its code into a respective folder, otherwise create a new folder for it.
+- update the *config.py* in the corresponding instance [config](../config/) directory  with a new configuration class derived from the *cfg_annotation* class specifying input-output locations and other configurable parameters (follow the example of a similar existing steps)
+- take advantage of logging, file access and dictionary utility functions implemented in [util.py](./util.py)
+- if a new step can be classified as [NER(./ner/)] or [indexing](./indexing/) then put its code into a respective directory, otherwise create a new folder for it.
 
-If a new step is not a Python code make sure that the output files are put into a location defined in [env.sh](https://github.com/issa-project/issa-pipeline/blob/main/env.sh).
+If a new step is not a Python code make sure that the output files are put into a location defined in *env.sh*.
 
 ## Mapping new output to RDF
 
-The transformation of json|tsv output into Turtle formatted RDF happens in two steps: loading to MongoDB and mapping fields from a MongoDB collection to Turtle using xR2RML mapping language.
+The transformation of JSON|TSV output into Turtle formatted RDF happens in two steps: loading to MongoDB and mapping fields from a MongoDB collection to Turtle using xR2RML mapping language.
 
-### MongoDB
+#### MongoDB
 
-In [mongodb](https://github.com/issa-project/issa-pipeline/tree/main/pipeline/mongo) directory there are scripts that assist an easy integration.
+In [mongo](./morph-xr2rml/mongo/) directory there are scripts that assist an easy integration.
 
-- for json output add a line to the [run_import.sh](https://github.com/issa-project/issa-pipeline/blob/main/pipeline/mongo/run-import.sh), where
+- for JSON output add a line to the [run_import.sh](./morph-xr2rml/mongo//run-import.sh), where
   - _new-collection-name_ is an arbitrary new collection name
   - _document-id_ - a name of json element that would be a key of the collection (typically paper_id)
-  - _relative-path-to-output-directory_ - output path stored in [env.sh](https://github.com/issa-project/issa-pipeline/blob/main/env.sh)
+  - _relative-path-to-output-directory_ - output path defined in *env.sh* (see above)
   - _post-load-script.js_ - optional custom script that executes after the load of the target collection and can include aggregation or filtering of unnecessary elements
 
 ```bash
 docker exec -w $WDIR $CONTAINER \
-           ./import-json-dir.sh \
-           $DB new-collection-name document-id \
-           $IDIR/$relative-path-to-output-directory \
-           post-load-script.js &>> $log
+           /bin/bash ./import-json-dir.sh \
+                      $DB <new-collection-name> <document_id> \
+                      $IDIR//<relative-path-to-output-directory> \
+                      $SDIR/<post-load-script.js>   &>> $log
 
 ```
 
@@ -70,18 +72,20 @@ docker exec -w $WDIR $CONTAINER \
 
 ```bash
 docker exec -w $WDIR $CONTAINER \
-            ./import-tsv-file.sh $DB new-collection-name document-id \
-            $IDIR/$file-name.tsv \
-            post-load-script.js &>> $log
+            /bin/bash ./import-file.sh \
+                      $IDIR/<new-tsv-file.tsv> tsv \
+                      $DB <new-collection-name> <document_id> \
+                      $SDIR/<post-load-script.js>   &>> $log
+
 ```
 
-The only work besides adding a line to a script would be to develop an __optional__ post-load script that requires some familiarity with [MongoDB scripting](https://www.mongodb.com/docs/mongodb-shell/write-scripts/).
+The only work besides adding a line to the script would be to develop an __optional__ post-load script that requires some familiarity with [MongoDB scripting](https://www.mongodb.com/docs/mongodb-shell/write-scripts/).
 
-### xR2RML
+#### xR2RML
 
-In [xR2RML](https://github.com/issa-project/issa-pipeline/tree/main/pipeline/xR2RML) directory there are tools that transform MongoDB collections into an RDF using the R2RML language templates. The transformation templates for the existing pipeline are also stored here.
+In [xR2RML](./morph-xr2rml/xR2RML) directory there are tools that transform MongoDB collections into an RDF using the R2RML language templates. The transformation templates for the existing pipeline are also stored here.
 
-For new data, a new transformation template has to be added. The easiest way to develop such a template is to choose an existing one whose input resembles new data and adapt. More details about the transformation tool can be found [here](https://github.com/issa-project/issa-pipeline/tree/main/pipeline/xR2RML).
+For new kind of data, a new transformation template has to be added. The easiest way to develop such template is to choose an existing one whose input resembles new data and adapt.
 
 >:point_right: to make the RDF files of manageable size the named entities annotations can be split into separate files for title, abstract and body text.
 
@@ -95,13 +99,13 @@ New data should be entered into the graph with its provenance information. At mi
     ];
     rr:predicateObjectMap [
         rr:predicate prov:wasAttributedTo;
-        rr:objectMap [ rr:constant issa:AgritropDocumentalist; rr:termType rr:IRI ];
+        rr:objectMap [ rr:constant issa:Documentalist; rr:termType rr:IRI ];
     ]
 ```
 
-A new step has to be defined as an _Agent_ according to the [prov-o](https://www.w3.org/TR/prov-o/) ontology, it could be _Person_, _Organization_, or _SoftwareAgent_. A new _agent has to be described in the [provenance.ttl](https://github.com/issa-project/issa-pipeline/blob/main/dataset/provenance.ttl) file.
+A new step has to be defined as an _Agent_ according to the [PROV-O](https://www.w3.org/TR/prov-o/) ontology, it could be _Person_, _Organization_, or _SoftwareAgent_. A new _agent has to be described in the [provenance.ttl](https://github.com/issa-project/issa-pipeline/blob/main/dataset/provenance.ttl) file.
 
-After the template is developed add a line to the [run-transformation.sh](https://github.com/issa-project/issa-pipeline/blob/main/pipeline/xR2RML/run-transformation.sh) script:
+After the template is developed add a line to the [run-transformation.sh](./morph-xr2rml/xR2RML/run-transformation.sh) script:
 
 - for non-annotation data
   - _new-collection-name_ is the same new collection name
@@ -109,9 +113,10 @@ After the template is developed add a line to the [run-transformation.sh](https:
   - _new-rdf-output.ttl_ - target output
 
 ```bash
-./run_xr2rml.sh $DS new-collection-name \
-                new-xr2rml_template.tpl.ttl \
-                $ODIR/new-rdf-output.ttl
+docker_exec "Generate new output..." \
+            <new-xr2rml_template.tpl.ttl> \
+            <new-rdf-output.ttl> \
+            <new-collection-name>
 ```
 
 - for NE annotations split by article part
@@ -121,34 +126,39 @@ After the template is developed add a line to the [run-transformation.sh](https:
 ./run_xr2rml_annotation.sh $DS article-part new-collection-name \
                 new-xr2rml_template.tpl.ttl \
                 $ODIR/new-rdf-output.ttl
+docker_exec_multipart "Generate new output..." \
+                      <new-xr2rml_template.tpl.ttl> \
+                      <new-rdf-output-part.ttl> \
+                      <new-collection-name> 
 ```
+>:point_right: The word **part** in the name of the output file is important. It will be substituted by the actual annotated part such as title, abstract or body_text. 
 
-### Virtuoso
+### Publishing new RDF in Virtuoso triple store
 
-Identify a graph where new triples will be uploaded. Most likely it has to be a new graph. Use the existing naming convention to name a graph.
+Identify a named graph where new triples will be uploaded. Most likely it has to be a new graph. Use the existing naming convention to name a graph.
 
 Determine if this graph has to be fully or incrementally updated (most likely the second).
 
-Modify [import-all.isql](https://github.com/issa-project/issa-pipeline/blob/main/pipeline/virtuoso/import-all.isql) script. Add a line:
+Modify [import-all.isql](./virtuoso/import-all.isql) script. Add a line:
 
 ```bash
-ld_dir ('$ARGV[$I]', 'new-rdf-output-*.ttl', 'new-graph-name');
+ld_dir ('$u{IDIR}', 'new-rdf-output*.ttl',    $u{namespace}graph/new-graph-name);
 ```
 
 In the case of full update add line at the top of the script:
 
 ```bash
-SPARQL CLEAR GRAPH  <new-graph-name>;
+SPARQL CLEAR GRAPH  <$u{namespace}graph/new-graph-name>;
 ```
 
->:point_right: punctuation is important. MAke sure that angle brackets and quotation marks are correctly applied.
+>:point_right: punctuation is important. Make sure that angle brackets and quotation marks are correctly applied.
 
 ## Integration into pipeline
 
-If a new processing step performs indexation (e.g. associating terms with entire text) add an execution call to the [3_index_articles.sh](https://github.com/issa-project/issa-pipeline/blob/main/pipeline/3_index_articles.sh) script.
+If a new processing step performs indexation (e.g. associating terms with entire text) add an execution call to the [3_index_articles.sh](./3_index_articles.sh) script.
 
-If a processing step is named entity recognition (NER) (eg. associating entities with an exact word or phrase) add a call to [4_annotate_articles](https://github.com/issa-project/issa-pipeline/blob/main/pipeline/4_annotate_articles.sh) script.
+If a processing step is named entity recognition (NER) (eg. associating entities with an exact word or phrase) add a call to [4_annotate_articles](./4_annotate_articles.sh) script.
 
-If non of the above  then a call can be added to [run-pipeline.sh](https://github.com/issa-project/issa-pipeline/blob/main/pipeline/run-pipeline.sh).
+If non of the above  then a call can be added to [run-pipeline.sh](./run-pipeline.sh).
 
 >:point_right: Make sure that a new step is called after the pre-requisite steps are called.

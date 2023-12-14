@@ -2,15 +2,15 @@
 # Author: Anna BOBASHEVA, University Cote d'Azur, CNRS, Inria
 #
 # Licensed under the Apache License, Version 2.0 (http://www.apache.org/licenses/LICENSE-2.0)
-
-# This script can be called by symbolic link from another dir 
-# so we need to make sure that the relative path still works
-pushd $(dirname $(readlink -f "$0" ))
+#
+# Run DBPedia-Spotlight docker containers, one per language
 
 # ISSA environment definitions
 . ../../../env.sh
 
-# Run DBPedia-Spoltight docker containers, one per language
+
+
+echo $SPOTLIGHT_MODELS_DIR
 
 port=2222
 wait=0
