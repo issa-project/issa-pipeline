@@ -18,7 +18,7 @@ if [ $( docker ps -f name=$CONTAINER_NAME | wc -l ) -eq 1 ]; then
                 -d \
                 -p 8090:8090 \
                 -v $EF_MODELS_DIR:/opt/entity-fishing/data/db \
-                entity-fishing			 
+                grobid/entity-fishing:0.0.6			 
      
      echo "started $CONTAINER_NAME container"
      echo "waiting for models to load" 
@@ -27,4 +27,3 @@ fi
 
 echo "$CONTAINER_NAME is running"
 
-popd
