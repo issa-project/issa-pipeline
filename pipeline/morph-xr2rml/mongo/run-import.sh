@@ -48,14 +48,5 @@ docker exec -w $WDIR $CONTAINER \
 docker exec -w $WDIR $CONTAINER \
            /bin/bash ./import-json-dir.sh $DB geonames paper_id $IDIR/$REL_GEONAMES $SDIR/filter_geonames.js &>> $log   
 
-
-####################################################################################
-## use-case specific annotations 
-####################################################################################
-
-if [[ $ISSA_INSTANCE == "agritrop" ]] ; then 
-
-	docker exec -w $WDIR $CONTAINER \
+docker exec -w $WDIR $CONTAINER \
            /bin/bash ./import-json-dir.sh $DB pyclinrec paper_id $IDIR/$REL_PYCLINREC $SDIR/filter_pyclinrec.js &>> $log   
-
-fi
