@@ -1,4 +1,5 @@
 dumps/
 bak/
 *.ttl
+!namespaces.ttl
 *.txt
