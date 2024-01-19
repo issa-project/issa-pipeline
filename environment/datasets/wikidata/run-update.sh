@@ -21,8 +21,10 @@ echo "*************************************************"
 echo "*************************************************"
 echo " Fetching hierarchies from Wikidata..."
 echo "*************************************************"
-./retrieve-hierarchy.sh en
-./retrieve-hierarchy.sh fr
+./retrieve-hierarchy.sh query-hierarchy.sparql           wikidata-dump-en.ttl           en
+./retrieve-hierarchy.sh query-hierarchy.sparql           wikidata-dump-fr.ttl           fr
+./retrieve-hierarchy.sh query-hierarchy-inferred.sparql  wikidata-dump-inferred-en.ttl  en
+./retrieve-hierarchy.sh query-hierarchy-inferred.sparql  wikidata-dump-inferred-fr.ttl  fr
 
 echo "*************************************************"
 echo " Fetching hierarchies from Wikidata..."
@@ -30,7 +32,7 @@ echo "*************************************************"
 ./import-hierarchy.sh
 
 echo "*************************************************"
-echo " Move files to instance the directory..."
+echo " Move files to the instance directory..."
 echo "*************************************************"
 mkdir -p ./$ISSA_INSTANCE
 mv -f ./wikidata-*.txt ./$ISSA_INSTANCE

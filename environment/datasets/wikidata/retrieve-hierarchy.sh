@@ -1,16 +1,25 @@
 #!/bin/bash
-# Authors: Anna BOBASHEVA, University Cote d'Azur, Inria
+# Authors: Anna BOBASHEVA & Franck MICHEL, University Cote d'Azur, Inria
 #
 # Licensed under the Apache License, Version 2.0 (http://www.apache.org/licenses/LICENSE-2.0)
 #
 # Query Wikidata to retrieve the hierarchy of classes of each URI in file wikidata-ne-uris.txt
+#
+# Parameters:
+#   $1: SPARQL query template file name
+#   $2: output file name
+#   $3: language, default is en, no quotation marks
+
 
 # ISSA environment definitions
 . ../../../env.sh
-# Script takes one parameter for language, default is en, no quotation marks
 
 
-lang=${1:-en}
+# Read input parameters
+sparql_query=$1
+result_file=$2
+lang=${3:-en}
+
 
 log_dir=${ISSA_ENV_LOG:-../../logs}
 mkdir -p $log_dir 
@@ -24,23 +33,40 @@ urilist=wikidata-ne-uris.txt
 MAXURIS=10
 
 # Initialize the result file with the prefixes
-result_file=wikidata-dump-$lang.ttl
 cp namespaces.ttl $result_file
 result_tmp=/tmp/sparql-response-$$.ttl
 
 # SPARQL query pattern
-fullquery_pattern=`cat query-hierarchy.sparql`
+fullquery_pattern=$(cat $sparql_query)
 fullquery_pattern=${fullquery_pattern//\{\{lang\}\}/$lang}
 
 
 # SPARQL parttern for one URI
 subquery_pattern='
-  { BIND(iri("{{uri}}") as ?uri)
-    {?uri wdt:P279+ ?uriParent.}
+  { 
+    {   # When uri is an instance
+        BIND(iri("{{uri}}") as ?uri)
+        ?uri wdt:P31 ?uriClass.
+        OPTIONAL { 
+            ?uriClass   wdt:P279    ?uriFirstParent.
+            ?uriClass   wdt:P279+   ?uriAnyParent.
+            OPTIONAL { ?uriAnyParent wdt:P279 ?uriParent. }
+        }
+    }
     UNION
-    {?uri wdt:P31/wdt:P279* ?uriClass.}
+    {   # When uri is a class
+        BIND(iri("{{uri}}") as ?uriClass)
+        ?uriClass   wdt:P279    ?uriFirstParent.
+        ?uriClass   wdt:P279+   ?uriAnyParent.
+        OPTIONAL { ?uriAnyParent wdt:P279 ?uriParent. }
+    }
     UNION
-    {?uri wdt:P171* ?uriParent.}
+    {   # When uri is a taxon
+        BIND(iri("{{uri}}") as ?uriClass)
+        ?uriClass   wdt:P171    ?uriFirstParent.
+        ?uriClass   wdt:P171+   ?uriAnyParent.
+        OPTIONAL { ?uriAnyParent wdt:P171 ?uriParent. }
+    }
   }
 '
 
@@ -71,21 +97,21 @@ for _uri_file_list in `ls ${uri_split}*`; do
          -H "Content-Type: application/sparql-query" \
          --fail \
          --retry 10 \
-		--silent --show-error \
+         --silent --show-error \
          --w "    received %{size_download} bytes in %{time_total} sec; HTTP code: %{response_code}\n" \
          -d "${fullquery_pattern/\{\{pattern\}\}/$_subquery}" \
-         https://query.wikidata.org/sparql                              >>$log
+         https://query.wikidata.org/sparql                          >>$log
 
     # Check for errors and output failed uris
     res="$?"
-	if [ $res -ne 0  ]; then
-         echo "ERROR: $res.   Affected IRIs:" 						>>$log
-    		echo $(cat $_uri_file_list) 								>>$log
-         echo ""													>>$log
-         echo $(cat $result_tmp) 									>>$log
-         #empty temp file 
-         > $result_tmp
-	fi
+    if [ $res -ne 0  ]; then
+        echo "ERROR: $res.   Affected IRIs:"                        >>$log
+        echo $(cat $_uri_file_list)                                 >>$log
+        echo ""                                                     >>$log
+        echo $(cat $result_tmp)                                     >>$log
+        #empty temp file 
+        > $result_tmp
+    fi
 
     rm -f $_uri_file_list
 

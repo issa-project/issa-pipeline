@@ -1,4 +1,12 @@
-# Dump the hierarchy of Wikidata entities with all labels
+# Dump the hierarchy of Wikidata entities with all labels and all inferred 
+# rdf:type and rdfs:subClassOf properties.
+#
+# Example. For:
+#   a rdfs:type B. B subClassOf C. C subClassOf D.
+# we will generate:
+#   a rdf:type B, C, D.
+#   B subClassOf C, D.
+#   C subClassOf D.
 
 construct {
   ?uri          rdfs:label ?uriLabel.
@@ -12,7 +20,8 @@ construct {
   ?uriAnyParent skos:altLabel ?uriAnyParentAltLabel.
 
   ?uri          a               ?uriClass.
-  ?uriClass     rdfs:subClassOf ?uriFirstParent.
+  ?uri          a               ?uriAnyParent.
+  ?uriClass     rdfs:subClassOf ?uriAnyParent.
   ?uriAnyParent rdfs:subClassOf ?uriParent.      
 }
 where {
