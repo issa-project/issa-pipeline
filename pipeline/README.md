@@ -14,7 +14,7 @@ ISSA pipeline's source code is a combination of Python scripts for data processi
 
 ## Configuration
 
-ISSA pipeline can be configured for running multiple instances of document corpora, e.g. *agritrop* or 'hal'. Each instance is configured in a separate directory in the [config](../config) sub-directory. The configuration files are:
+ISSA pipeline can be configured for running multiple instances of document corpora, e.g. *agritrop* or *hal*. Each instance is configured in a separate directory in the [config](../config) sub-directory. The configuration files are:
 
 - [env.sh](../config/agritrop/env.sh) - defines the environment variables for the pipeline execution such as data location, Docker containers configuration, etc.
 - [config.py](../config/agritrop/config.py) - defines the processing options for Python scripts such as which steps to run, which models to use, etc.
@@ -30,11 +30,17 @@ Alternatively, in the case of a single instance, the configuration files may be 
 
 ## Running Pipeline
 
-After configuring the pipeline it can be run manually step-by-step by running numbered scripts in this directory or by invoking [run-pipeline.sh](run-pipeline.sh) with an instance name (e.g. *agritrop*) as an argument to run the entire pipeline automatically.
+After configuring the pipeline it can be run manually step-by-step by running numbered scripts in this directory or by invoking [run-pipeline.sh](run-pipeline.sh) with an instance name (e.g. *agritrop*) as an argument to run the entire pipeline automatically. Here is an example:
+
+```
+./run_pipeline.sh agritrop
+```
 
 We would recommend running the pipeline manually for the first time to be able to catch potential configuration issues earlier. Updates can be run automatically.
 
 Each step of the pipeline outputs a log file that would be stored in the *./logs* directory.
+
+>:point_right: The pipeline step scripts do not take the instance name as a parameter. To execute a single step on an ISSA instance set the *ISSA_INSTANCE* environment variable to the name of the instance before running a script.
 
 ## Data Updates
 
