@@ -21,10 +21,8 @@ echo "*************************************************"
 echo "*************************************************"
 echo " Fetching hierarchies from Wikidata..."
 echo "*************************************************"
-./retrieve-hierarchy.sh query-hierarchy.sparql           wikidata-dump-en.ttl           en
-./retrieve-hierarchy.sh query-hierarchy.sparql           wikidata-dump-fr.ttl           fr
-./retrieve-hierarchy.sh query-hierarchy-inferred.sparql  wikidata-dump-inferred-en.ttl  en
-./retrieve-hierarchy.sh query-hierarchy-inferred.sparql  wikidata-dump-inferred-fr.ttl  fr
+./retrieve-hierarchy.sh     wikidata-dump-en.ttl    en
+#./retrieve-hierarchy.sh     wikidata-dump-fr.ttl    fr
 
 echo "*************************************************"
 echo " Fetching hierarchies from Wikidata..."
@@ -37,5 +35,3 @@ echo "*************************************************"
 mkdir -p ./$ISSA_INSTANCE
 mv -f ./wikidata-*.txt ./$ISSA_INSTANCE
 mv -f ./wikidata-*.ttl ./$ISSA_INSTANCE
-
-

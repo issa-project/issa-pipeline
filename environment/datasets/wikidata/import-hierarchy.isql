@@ -1,13 +1,10 @@
 log_enable(3,1);
 --SPARQL CLEAR GRAPH  <$ARGV[$I]graph/wikidata-named-entities>;
---SPARQL CLEAR GRAPH  <$ARGV[$I]graph/wikidata-named-entities-inferred>;
 
 
 DELETE FROM DB.DBA.load_list;
 ld_dir ('/database/import', 'wikidata-dump-en.ttl', '$ARGV[$I]graph/wikidata-named-entities');
-ld_dir ('/database/import', 'wikidata-dump-fr.ttl', '$ARGV[$I]graph/wikidata-named-entities');
-ld_dir ('/database/import', 'wikidata-dump-inferred-en.ttl', '$ARGV[$I]graph/wikidata-named-entities-inferred');
-ld_dir ('/database/import', 'wikidata-dump-inferred-fr.ttl', '$ARGV[$I]graph/wikidata-named-entities-inferred');
+--ld_dir ('/database/import', 'wikidata-dump-fr.ttl', '$ARGV[$I]graph/wikidata-named-entities');
 
 rdf_loader_run ();
 checkpoint;
@@ -17,8 +14,5 @@ SELECT * FROM DB.DBA.load_list;
 
 SPARQL SELECT DISTINCT (<$ARGV[$I]graph/wikidata-named-entities> as ?g)  (COUNT(*) as ?triples)  
 WHERE { GRAPH <$ARGV[$I]graph/wikidata-named-entities> {?s ?p ?o} };
-
-SPARQL SELECT DISTINCT (<$ARGV[$I]graph/wikidata-named-entities-inferred> as ?g)  (COUNT(*) as ?triples)  
-WHERE { GRAPH <$ARGV[$I]graph/wikidata-named-entities-inferred> {?s ?p ?o} };
 
 exit;

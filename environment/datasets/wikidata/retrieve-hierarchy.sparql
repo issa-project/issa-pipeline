@@ -1,5 +1,7 @@
-# Dump the hierarchy of Wikidata entities with all labels and all inferred 
-# rdf:type and rdfs:subClassOf properties.
+# Dump the hierarchy of Wikidata entities with all their labels.
+# The query adds all inferred properties resulting of transitive properties
+# P31 (instance of), subclass of (P279), part of (P361) and parent taxon (P171).
+# In the end, they are all mapped to rdfs:subClassOf.
 #
 # Example. For:
 #   a rdfs:type B. B subClassOf C. C subClassOf D.
@@ -11,18 +13,15 @@
 construct {
   ?uri          rdfs:label ?uriLabel.
   ?uriClass     rdfs:label ?uriClassLabel.
-  ?uriParent    rdfs:label ?uriParentLabel.
   ?uriAnyParent rdfs:label ?uriAnyParentLabel.
 
   ?uri          skos:altLabel ?uriAltLabel.
   ?uriClass     skos:altLabel ?uriClassAltLabel.
-  ?uriParent    skos:altLabel ?uriParentAltLabel.
   ?uriAnyParent skos:altLabel ?uriAnyParentAltLabel.
 
-  ?uri          a               ?uriClass.
-  ?uri          a               ?uriAnyParent.
+  ?uri          rdfs:subClassOf ?uriClass.
+  ?uri          rdfs:subClassOf ?uriAnyParent.
   ?uriClass     rdfs:subClassOf ?uriAnyParent.
-  ?uriAnyParent rdfs:subClassOf ?uriParent.      
 }
 where {
     {{pattern}}

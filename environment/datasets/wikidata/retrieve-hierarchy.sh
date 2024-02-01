@@ -3,34 +3,34 @@
 #
 # Licensed under the Apache License, Version 2.0 (http://www.apache.org/licenses/LICENSE-2.0)
 #
-# Query Wikidata to retrieve the hierarchy of classes of each URI in file wikidata-ne-uris.txt
+# Query Wikidata to retrieve the hierarchy of instances classes of each URI in file wikidata-ne-uris.txt.
+# The hierarchy involves properties P31 (rdf:type), subclass of (P279), part of (P361) and parent taxon (P171).
+# In the result RDF, all properties are mapped to rdfs:subClassOf to make it easier to exploit afterwards.
 #
 # Parameters:
-#   $1: SPARQL query template file name
-#   $2: output file name
-#   $3: language, default is en, no quotation marks
+#   $1: output file name
+#   $2: language, default is en, no quotation marks
 
 
 # ISSA environment definitions
 . ../../../env.sh
 
-
 # Read input parameters
-sparql_query=$1
-result_file=$2
-lang=${3:-en}
+result_file=$1
+lang=${2:-en}
 
-
+# Init log
 log_dir=${ISSA_ENV_LOG:-../../logs}
 mkdir -p $log_dir 
 log=$log_dir/wikidata_dump_$lang-$(date "+%Y%m%d_%H%M%S").log
 
+sparql_query=retrieve-hierarchy.sparql
 
 # List of URIs to query
 urilist=wikidata-ne-uris.txt
 
 # Max number of URIs to query at once
-MAXURIS=10
+MAXURIS=5
 
 # Initialize the result file with the prefixes
 cp namespaces.ttl $result_file
@@ -44,28 +44,20 @@ fullquery_pattern=${fullquery_pattern//\{\{lang\}\}/$lang}
 # SPARQL parttern for one URI
 subquery_pattern='
   { 
-    {   # When uri is an instance
+    {   # When uri is an instance of (P31) a class
         BIND(iri("{{uri}}") as ?uri)
         ?uri wdt:P31 ?uriClass.
-        OPTIONAL { 
-            ?uriClass   wdt:P279    ?uriFirstParent.
-            ?uriClass   wdt:P279+   ?uriAnyParent.
-            OPTIONAL { ?uriAnyParent wdt:P279 ?uriParent. }
-        }
+        OPTIONAL { ?uriClass   (wdt:P279|wdt:P361)+   ?uriAnyParent. }
     }
     UNION
-    {   # When uri is a class
+    {   # When uri is a subclass of (P279) a class or a part of (P361) another entity
         BIND(iri("{{uri}}") as ?uriClass)
-        ?uriClass   wdt:P279    ?uriFirstParent.
-        ?uriClass   wdt:P279+   ?uriAnyParent.
-        OPTIONAL { ?uriAnyParent wdt:P279 ?uriParent. }
+        ?uriClass   (wdt:P279|wdt:P361)+   ?uriAnyParent.
     }
     UNION
     {   # When uri is a taxon
         BIND(iri("{{uri}}") as ?uriClass)
-        ?uriClass   wdt:P171    ?uriFirstParent.
         ?uriClass   wdt:P171+   ?uriAnyParent.
-        OPTIONAL { ?uriAnyParent wdt:P171 ?uriParent. }
     }
   }
 '
@@ -86,7 +78,7 @@ for _uri_file_list in `ls ${uri_split}*`; do
     _subquery='  {}'
     for _uri in `cat $_uri_file_list`; do
         # Add the subquery once for each URI
-        _subquery="$_subquery UNION ${subquery_pattern/\{\{uri\}\}/$_uri}"
+        _subquery="$_subquery UNION ${subquery_pattern//\{\{uri\}\}/$_uri}"
     done
     
     _fileIndex=$(($_fileIndex + 1))
