@@ -457,6 +457,8 @@ class cfg_indexing_preprocess(cfg_pipeline):
                    }
     # order in which determine a document language
     LANGUAGE_DETERMINERS = ['body_text', 'abstract', 'title']
+
+    DO_INDEX = True
  
 class cfg_indexing_postprocess(cfg_pipeline): 
 
@@ -476,6 +478,8 @@ class cfg_indexing_postprocess(cfg_pipeline):
                                    'conf_score': 0.0,
                                    'rank': 0}]
                    }
+    
+    DO_INDEX = True
 
 # This config may go somewhere else because this step is not a part of the 
 # pipeline. Try to keep it independent    

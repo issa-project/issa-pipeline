@@ -84,6 +84,9 @@ def postprocess_tsv_to_json():
 
 #%%  Main loop 
 if __name__ == '__main__':
-    postprocess_tsv_to_json()
+    if cfg.DO_INDEX:
+        postprocess_tsv_to_json()
+    else:
+        logger.info('Indexing is turned off. Set DO_INDEX to True in the config file to enable indexing.')
         
 close_timestamp_logger(logger)

@@ -436,6 +436,15 @@ class cfg_coalesce_meta_json(cfg_pipeline):
     OUTPUT_PATH = FILES_LOC['coalesced_json']
    
     DO_COALESE = True
+
+class cfg_indexing_preprocess(cfg_pipeline):
+
+    DO_INDEX = False
+ 
+class cfg_indexing_postprocess(cfg_pipeline): 
+   
+    DO_INDEX = False
+
     
 # Common config setting for the annotation scripts
 class cfg_annotation(cfg_pipeline): 
