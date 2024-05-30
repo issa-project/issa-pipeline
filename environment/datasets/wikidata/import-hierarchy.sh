@@ -19,8 +19,7 @@ docker start $CONTAINER_NAME
 # Remove previously imported ttl files
 rm -f -v $WIKIDATA_IMPORT_DIR/wikidata-dump*.ttl 		   >>$log
 
-cp -v wikidata-dump-en.ttl  $WIKIDATA_IMPORT_DIR              >>$log
-cp -v wikidata-dump-fr.ttl  $WIKIDATA_IMPORT_DIR              >>$log
+cp -v wikidata-dump-*.ttl   $WIKIDATA_IMPORT_DIR              >>$log
 cp -v import-hierarchy.isql $WIKIDATA_IMPORT_DIR              >>$log
 
 docker exec -w /database/import $CONTAINER_NAME \

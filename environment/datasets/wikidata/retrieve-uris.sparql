@@ -1,0 +1,16 @@
+PREFIX rdfs:    <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX oa:      <http://www.w3.org/ns/oa#>
+
+SELECT DISTINCT ?uri
+FROM <{{NES_GRAPH}}>
+FROM NAMED <{{WD_GRAPH}}>
+WHERE {
+    # Only target the named entities in the abstracts
+    ?annot oa:hasTarget [ oa:hasSource ?abstract ]. 
+    FILTER (strEnds(str(?abstract), "#abstract"))
+
+    ?annot oa:hasBody ?uri.
+    FILTER NOT EXISTS {GRAPH <{{WD_GRAPH}}> {?uri rdfs:label ?wdLabel .}}
+}
+LIMIT {{limit}}
+OFFSET {{offset}}

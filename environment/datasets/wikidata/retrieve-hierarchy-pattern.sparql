@@ -1,0 +1,17 @@
+  { 
+    {   # When uri is an instance of (P31) a class
+        BIND(iri("{{uri}}") as ?uri)
+        ?uri wdt:P31 ?uriClass.
+        OPTIONAL { ?uriClass   (wdt:P279|wdt:P361)+   ?uriAnyParent. }
+    }
+    UNION
+    {   # When uri is a subclass of (P279) a class or a part of (P361) another entity
+        BIND(iri("{{uri}}") as ?uriClass)
+        ?uriClass   (wdt:P279|wdt:P361)+   ?uriAnyParent.
+    }
+    UNION
+    {   # When uri is a taxon
+        BIND(iri("{{uri}}") as ?uriClass)
+        ?uriClass   wdt:P171+   ?uriAnyParent.
+    }
+  }

@@ -3,7 +3,8 @@ log_enable(3,1);
 
 
 DELETE FROM DB.DBA.load_list;
-ld_dir ('/database/import', 'wikidata-dump*.ttl', '$ARGV[$I]graph/wikidata-named-entities');
+ld_dir ('/database/import', 'wikidata-dump-en.ttl', '$ARGV[$I]graph/wikidata-named-entities');
+--ld_dir ('/database/import', 'wikidata-dump-fr.ttl', '$ARGV[$I]graph/wikidata-named-entities');
 
 rdf_loader_run ();
 checkpoint;
