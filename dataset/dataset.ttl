@@ -57,18 +57,18 @@ issa:issa-instance
     schema:keywords "agricultural research", "rural development", "agritrop", "literature", "annotation", "named entity",
                     "named entity recognition", "NER";
     
-    dct:publisher   <https://ror.org/0496p8026>, #Délégation Côte d'Azur
+    dct:publisher   <https://ror.org/0496p8026>, #Délégation Côte d_Azur
  					<https://ror.org/02kvxyf05>, #Inria
  					<https://ror.org/02feahw73>, #CNRS
  					<https://ror.org/05kpkpg04>; #CIRAD
  
 
-    schema:publisher <https://ror.org/0496p8026>,# Délégation Côte d'Azur
+    schema:publisher <https://ror.org/0496p8026>,# Délégation Côte d_Azur
 					<https://ror.org/02kvxyf05>, #Inria
 					<https://ror.org/02feahw73>, #CNRS
 					<https://ror.org/05kpkpg04>; #CIRAD
 
-    foaf:fundedBy   <https://ror.org/0496p8026>,# Délégation Côte d'Azur
+    foaf:fundedBy   <https://ror.org/0496p8026>,# Délégation Côte d_Azur
 					<https://ror.org/02kvxyf05>, #Inria
 					<https://ror.org/02feahw73>, #CNRS
 					<https://ror.org/05kpkpg04>; #CIRAD
@@ -111,7 +111,7 @@ issa:issa-instance
    .
 
 # --- Organizations involved
-<https://ror.org/0496p8026> a foaf:Organization; foaf:name "University Côte d'Azur";
+<https://ror.org/0496p8026> a foaf:Organization; foaf:name "University Côte d_Azur";
     foaf:homepage <http://www.univ-cotedazur.fr>.
 <https://ror.org/02kvxyf05> a foaf:Organization; foaf:name "Inria";
     foaf:homepage <https://www.inria.fr>.

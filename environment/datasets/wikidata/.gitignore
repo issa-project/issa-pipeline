@@ -3,3 +3,4 @@ bak/
 *.ttl
 !namespaces.ttl
 *.txt
+clear-graph.sh

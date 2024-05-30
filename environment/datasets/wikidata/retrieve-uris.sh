@@ -13,50 +13,31 @@ ISSA_NS=${ISSA_NAMESPACE:-http://data-issa.cirad.fr/}
 NES_GRAPH=${ISSA_NS}graph/entity-fishing-nes
 WD_GRAPH=${ISSA_NS}graph/wikidata-named-entities
 
-# Set the number of URIs to retrieve
-query=$(cat << EOF
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX oa: <http://www.w3.org/ns/oa#>
-SELECT (count(distinct ?uri) as ?cnt)
-FROM <${NES_GRAPH}>
-FROM <${WD_GRAPH}>
-WHERE { ?annot oa:hasBody ?uri. 
-        ?annot oa:hasTarget [ oa:hasSource ?abstract ]. 
-        FILTER (strEnds(str(?abstract), "#abstract"))
-        FILTER NOT EXISTS {GRAPH <${WD_GRAPH}> {?uri rdfs:label ?wdLabel .}}
-}
-EOF
-)
+# Compute the number of URIs to retrieve
+query=$(cat retrieve-uris-count.sparql)
+query=${query//\{\{NES_GRAPH\}\}/$NES_GRAPH}
+query=${query//\{\{WD_GRAPH\}\}/$WD_GRAPH}
 
+echo "Retrieving number of unique URIs..."
+echo
+echo "${query}"
 
 size=$(curl -H "accept: text/csv" \
             --data-urlencode "query=${query}" \
      	    http://localhost:$VIRTUOSO_PORT/sparql \
 			| grep -o -E '[0-9]+' )
+echo
+echo "*** Number of unique URIs to retrieve: $size ***"
 
 
-
-# Max number of URIs to retrieve at once (limit of the SPARQL endpoint)
+# Max number of URIs to retrieve at once
 limit=10000
 
-query=$(cat << EOF
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX oa: <http://www.w3.org/ns/oa#>
-SELECT DISTINCT ?uri
-FROM <${NES_GRAPH}>
-FROM <${WD_GRAPH}>
-WHERE { ?annot oa:hasBody ?uri.
-        ?annot oa:hasTarget [ oa:hasSource ?abstract ]. 
-        FILTER (strEnds(str(?abstract), "#abstract"))
-        FILTER NOT EXISTS {GRAPH <${WD_GRAPH}> {?uri rdfs:label ?wdLabel .}}}
-LIMIT ${limit}
-OFFSET 
+query_tpl=$(cat retrieve-uris.sparql)
+query_tpl=${query_tpl//\{\{NES_GRAPH\}\}/$NES_GRAPH}
+query_tpl=${query_tpl//\{\{WD_GRAPH\}\}/$WD_GRAPH}
 
-EOF
-)
- 
 result=wikidata-ne-uris.txt
-
 resulttmp=/tmp/sparql-response-$$.ttl
 echo -n "" > $resulttmp
 
@@ -64,12 +45,16 @@ offset=0
 
 while [ "$offset" -lt "$size" ]
 do
-    echo "Retrieving URIs starting at $offset..."
+    query=$query_tpl
+    query=${query//\{\{limit\}\}/$limit}
+    query=${query//\{\{offset\}\}/$offset}
 
-    echo "${query}${offset}"
+    echo
+    echo "*** Retrieving URIs starting at $offset..."
+    echo "${query}"
 
     curl -H "accept: text/csv" \
-		--data-urlencode "query=${query}${offset}" \
+		--data-urlencode "query=${query}" \
      	http://localhost:$VIRTUOSO_PORT/sparql \
         | grep -v '"uri"' | sed 's|"||g' >> $resulttmp
      offset=$(($offset + $limit))
@@ -78,4 +63,3 @@ done
 
 cat $resulttmp | sort | uniq > $result
 rm $resulttmp
-
