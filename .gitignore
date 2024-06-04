@@ -24,7 +24,6 @@ __pycache__
 *.zip
 *.gz
 *.pdf
-*.json
 *.tsv
 *.html
 *.pkl

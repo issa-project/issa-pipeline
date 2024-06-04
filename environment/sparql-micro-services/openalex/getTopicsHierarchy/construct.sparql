@@ -1,0 +1,41 @@
+@prefix skos:   <http://www.w3.org/2004/02/skos/core#>.
+@prefix dct:    <http://purl.org/dc/elements/1.1/>.
+
+CONSTRUCT {
+    ?topic
+        a               skos:Concept;
+        skos:prefLabel  ?topicLabel;
+        skos:definition ?topicDescription;
+        skos:broader    ?subfield;
+        dct:subject     ?keyword;
+        dct:dateModified ?updatedDate;
+    .
+
+    ?subfield
+        a               skos:Concept;
+        skos:prefLabel  ?subfieldLabel;
+        skos:broader    ?field.
+    ?field
+        a               skos:Concept;
+        skos:prefLabel  ?fieldLabel;
+        skos:broader    ?domain.
+    ?domain
+        a               skos:Concept;
+        skos:prefLabel  ?domainLabel;
+
+} WHERE {
+    ?topic
+        api:display_name    ?topicLabel;
+        api:description     ?topicDescription;
+        api:keywords        ?keyword;
+        api:updated_date    ?updatedDate;
+        
+        api:subfield        ?subfield;
+        api:field           ?field;
+        api:domain          ?domain;        
+    .
+    
+    ?subfield   api:display_name    ?subfieldLabel.
+    ?field      api:display_name    ?fieldLabel.
+    ?domain     api:display_name    ?domainLabel.
+}
