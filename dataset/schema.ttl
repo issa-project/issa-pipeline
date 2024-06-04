@@ -93,3 +93,36 @@ issa:AuthorKeywordAnnotation
     dct:description         "Document's author keyword descriptor";
     .
 
+
+
+# The body of this annotation would be the URI of an OpenAlex domain https://docs.openalex.org/api-entities/topics/topic-object#domain
+issa:OpenAlexDomainAnnotation
+    a                       owl:Class;
+    rdfs:subClassOf         oa:Annotation;
+    rdfs:label              "OpenAlex's domain annotation";
+    dct:description         "Document's domain according to OpenAlex topics/subfield/field/domain classification";
+    .
+
+# The body of this annotation would be the URI of an OpenAlex field https://docs.openalex.org/api-entities/topics/topic-object#field
+issa:OpenAlexFieldAnnotation
+    a                       owl:Class;
+    rdfs:subClassOf         oa:Annotation;
+    rdfs:label              "OpenAlex's field annotation";
+    dct:description         "Document's field according to OpenAlex topics/subfield/field/domain classification";
+    .
+
+# The body of this annotation would be the URI of an OpenAlex subfield https://docs.openalex.org/api-entities/topics/topic-object#subfield
+issa:OpenAlexSubfieldAnnotation
+    a                       owl:Class;
+    rdfs:subClassOf         oa:Annotation;
+    rdfs:label              "OpenAlex's subfield annotation";
+    dct:description         "Document's subfield according to OpenAlex topics/subfield/field/domain classification";
+    .
+
+# The body of this annotation would be the URI of an OpenAlex topic https://docs.openalex.org/api-entities/topics/topic-object#id
+issa:OpenAlexTopicAnnotation
+    a                       owl:Class;
+    rdfs:subClassOf         oa:Annotation;
+    rdfs:label              "OpenAlex's topic annotation";
+    dct:description         "Document's topic according to OpenAlex topics/subfield/field/domain classification";
+    .
