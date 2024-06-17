@@ -1,0 +1,17 @@
+log_enable(3,1);
+SPARQL CLEAR GRAPH  <$ARGV[$I]graph/sdgs-metadata>;
+
+
+DELETE FROM DB.DBA.load_list;
+ld_dir ('/database/import', 'sdgs-metadata.ttl', '$ARGV[$I]graph/sdgs-metadata');
+
+rdf_loader_run ();
+checkpoint;
+
+-- output possible load errors
+SELECT * FROM DB.DBA.load_list;
+
+SPARQL SELECT DISTINCT (<$ARGV[$I]graph/sdgs-metadata> as ?g)  (COUNT(*) as ?triples)  
+WHERE { GRAPH <$ARGV[$I]graph/sdgs-metadata> {?s ?p ?o} };
+
+exit;

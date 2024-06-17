@@ -1,0 +1,17 @@
+log_enable(3,1);
+SPARQL CLEAR GRAPH  <$ARGV[$I]graph/openalex-topics-hierarchy>;
+
+
+DELETE FROM DB.DBA.load_list;
+ld_dir ('/database/import', 'openalex-topics-dump.ttl', '$ARGV[$I]graph/openalex-topics-hierarchy');
+
+rdf_loader_run ();
+checkpoint;
+
+-- output possible load errors
+SELECT * FROM DB.DBA.load_list;
+
+SPARQL SELECT DISTINCT (<$ARGV[$I]graph/openalex-topics-hierarchy> as ?g)  (COUNT(*) as ?triples)  
+WHERE { GRAPH <$ARGV[$I]graph/openalex-topics-hierarchy> {?s ?p ?o} };
+
+exit;

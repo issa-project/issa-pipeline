@@ -94,6 +94,13 @@ issa:AuthorKeywordAnnotation
     .
 
 
+# The body of this annotation would be the URI of an SDG in the form https://metadata.un.org/sdg/xx
+issa:OpenAlexSdgAnnotation
+    a                       owl:Class;
+    rdfs:subClassOf         oa:Annotation;
+    rdfs:label              "OpenAlex's Sustainable Development Goal annotation";
+    dct:description         "Document's Sustainable Development Goal according to OpenAlex classification";
+    .
 
 # The body of this annotation would be the URI of an OpenAlex domain https://docs.openalex.org/api-entities/topics/topic-object#domain
 issa:OpenAlexDomainAnnotation

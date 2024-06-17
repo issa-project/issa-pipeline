@@ -1,0 +1,925 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ns1: <http://www.w3.org/2002/07/owl#> .
+@prefix sdg: <http://metadata.un.org/sdg/> .
+@prefix sdgo: <http://metadata.un.org/sdg/ontology#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unbist: <http://metadata.un.org/thesaurus/> .
+
+sdg:1 a sdgo:Goal,
+        skos:Concept ;
+    sdgo:hasTarget sdg:1.1,
+        sdg:1.2,
+        sdg:1.3,
+        sdg:1.4,
+        sdg:1.5,
+        sdg:1.a,
+        sdg:1.b ;
+    dcterms:subject <http://eurovoc.europa.eu/2281>,
+        unbist:1005064,
+        unbist:1005065 ;
+    ns1:deprecated "false" ;
+    skos:altLabel " القضاء على الفقر "@ar,
+        "No poverty"@en ;
+    skos:exactMatch <http://purl.unep.org/sdg/SDGIO_00000035>,
+        <http://www.wikidata.org/entity/Q50214636> ;
+    skos:inScheme <http://metadata.un.org/sdg> ;
+    skos:narrower sdg:1.1,
+        sdg:1.2,
+        sdg:1.3,
+        sdg:1.4,
+        sdg:1.5,
+        sdg:1.a,
+        sdg:1.b ;
+    skos:notation "1" ;
+    skos:note "الهدف ١"@ar,
+        "Goal 1"@en,
+        "Objetivo 1"@es,
+        "Objectif 1"@fr ;
+    skos:prefLabel "القضاء على الفقر بجميع أشكاله في كل مكان"@ar,
+        "End poverty in all its forms everywhere"@en,
+        "Poner fin a la pobreza en todas sus formas y en todo el mundo"@es,
+        "Éliminer la pauvreté sous toutes ses formes et partout dans le monde"@fr,
+        "Повсеместная ликвидация нищеты во всех ее формах"@ru,
+        "在全世界消除一切形式的贫穷"@zh ;
+    skos:topConceptOf <http://metadata.un.org/sdg> .
+
+
+
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ns1: <http://www.w3.org/2002/07/owl#> .
+@prefix sdg: <http://metadata.un.org/sdg/> .
+@prefix sdgo: <http://metadata.un.org/sdg/ontology#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unbist: <http://metadata.un.org/thesaurus/> .
+
+sdg:2 a sdgo:Goal,
+        skos:Concept ;
+    sdgo:hasTarget sdg:2.1,
+        sdg:2.2,
+        sdg:2.3,
+        sdg:2.4,
+        sdg:2.5,
+        sdg:2.a,
+        sdg:2.b,
+        sdg:2.c ;
+    dcterms:subject <http://eurovoc.europa.eu/2318>,
+        <http://eurovoc.europa.eu/6308>,
+        <http://eurovoc.europa.eu/c_4523e1dd>,
+        unbist:1002439,
+        unbist:1002440,
+        unbist:1003004,
+        unbist:1006317 ;
+    ns1:deprecated "false" ;
+    skos:altLabel "القضاء التام على الجوع "@ar,
+        "Zero hunger"@en ;
+    skos:exactMatch <http://purl.unep.org/sdg/SDGIO_00000036>,
+        <http://www.wikidata.org/entity/Q50215926> ;
+    skos:inScheme <http://metadata.un.org/sdg> ;
+    skos:narrower sdg:2.1,
+        sdg:2.2,
+        sdg:2.3,
+        sdg:2.4,
+        sdg:2.5,
+        sdg:2.a,
+        sdg:2.b,
+        sdg:2.c ;
+    skos:notation "2" ;
+    skos:note "الهدف ٢"@ar,
+        "Goal 2"@en,
+        "Objetivo 2"@es,
+        "Objectif 2"@fr ;
+    skos:prefLabel "القضاء على الجوع وتوفير الأمن الغذائي والتغذية المحسّنة وتعزيز الزراعة المستدامة"@ar,
+        "End hunger, achieve food security and improved nutrition and promote sustainable agriculture"@en,
+        "Poner fin al hambre, lograr la seguridad alimentaria y la mejora de la nutrición y promover la agricultura sostenible"@es,
+        "Éliminer la faim, assurer la sécurité alimentaire, améliorer la nutrition et promouvoir l’agriculture durable"@fr,
+        "Ликвидация голода, обеспечение продовольственной безопасности и улучшение питания и содействие устойчивому развитию сельского хозяйства"@ru,
+        "消除饥饿，实现粮食安全，改善营养状况和促进可持续农业"@zh ;
+    skos:topConceptOf <http://metadata.un.org/sdg> .
+
+
+
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ns1: <http://www.w3.org/2002/07/owl#> .
+@prefix sdg: <http://metadata.un.org/sdg/> .
+@prefix sdgo: <http://metadata.un.org/sdg/ontology#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unbist: <http://metadata.un.org/thesaurus/> .
+
+sdg:3 a sdgo:Goal,
+        skos:Concept ;
+    sdgo:hasTarget sdg:3.1,
+        sdg:3.2,
+        sdg:3.3,
+        sdg:3.4,
+        sdg:3.5,
+        sdg:3.6,
+        sdg:3.7,
+        sdg:3.8,
+        sdg:3.9,
+        sdg:3.a,
+        sdg:3.b,
+        sdg:3.c,
+        sdg:3.d ;
+    dcterms:subject <http://eurovoc.europa.eu/3885>,
+        unbist:1002824 ;
+    ns1:deprecated "false" ;
+    skos:altLabel "الصحة الجيدة والرفاه"@ar,
+        "Good health and well-being"@en ;
+    skos:exactMatch <http://purl.unep.org/sdg/SDGIO_00000037>,
+        <http://www.wikidata.org/entity/Q50216838> ;
+    skos:inScheme <http://metadata.un.org/sdg> ;
+    skos:narrower sdg:3.1,
+        sdg:3.2,
+        sdg:3.3,
+        sdg:3.4,
+        sdg:3.5,
+        sdg:3.6,
+        sdg:3.7,
+        sdg:3.8,
+        sdg:3.9,
+        sdg:3.a,
+        sdg:3.b,
+        sdg:3.c,
+        sdg:3.d ;
+    skos:notation "3" ;
+    skos:note "الهدف ٣"@ar,
+        "Goal 3"@en,
+        "Objetivo 3"@es,
+        "Objectif 3"@fr ;
+    skos:prefLabel "ضمان تمتّع الجميع بأنماط عيش صحية وبالرفاهية في جميع الأعمار"@ar,
+        "Ensure healthy lives and promote well-being for all at all ages"@en,
+        "Garantizar una vida sana y promover el bienestar de todos a todas las edades"@es,
+        "Permettre à tous de vivre en bonne santé et promouvoir le bien-être de tous à tout âge"@fr,
+        "Обеспечение здорового образа жизни и содействие благополучию для всех в любом возрасте"@ru,
+        "确保各年龄段人群的健康生活方式，促进他们的福祉"@zh ;
+    skos:topConceptOf <http://metadata.un.org/sdg> .
+
+
+
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ns1: <http://www.w3.org/2002/07/owl#> .
+@prefix sdg: <http://metadata.un.org/sdg/> .
+@prefix sdgo: <http://metadata.un.org/sdg/ontology#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unbist: <http://metadata.un.org/thesaurus/> .
+
+sdg:4 a sdgo:Goal,
+        skos:Concept ;
+    sdgo:hasTarget sdg:4.1,
+        sdg:4.2,
+        sdg:4.3,
+        sdg:4.4,
+        sdg:4.5,
+        sdg:4.6,
+        sdg:4.7,
+        sdg:4.a,
+        sdg:4.b,
+        sdg:4.c ;
+    dcterms:subject <http://eurovoc.europa.eu/512>,
+        <http://eurovoc.europa.eu/668>,
+        unbist:1001893 ;
+    ns1:deprecated "false" ;
+    skos:altLabel "التعليم الجيد "@ar,
+        "Quality education"@en ;
+    skos:exactMatch <http://purl.unep.org/sdg/SDGIO_00000038>,
+        <http://www.wikidata.org/entity/Q53581209> ;
+    skos:inScheme <http://metadata.un.org/sdg> ;
+    skos:narrower sdg:4.1,
+        sdg:4.2,
+        sdg:4.3,
+        sdg:4.4,
+        sdg:4.5,
+        sdg:4.6,
+        sdg:4.7,
+        sdg:4.a,
+        sdg:4.b,
+        sdg:4.c ;
+    skos:notation "4" ;
+    skos:note "الهدف ٤"@ar,
+        "Goal 4"@en,
+        "Objetivo 4"@es,
+        "Objectif 4"@fr ;
+    skos:prefLabel "ضمان أن تتاح للجميع سبل متكافئة للحصول على التعليم الجيد وتعزيز فرص التعلم مدى الحياة للجميع"@ar,
+        "Ensure inclusive and equitable quality education and promote lifelong learning opportunities for all"@en,
+        "Garantizar una educación inclusiva y equitativa de calidad y promover oportunidades de aprendizaje permanente para todos"@es,
+        "Assurer à tous une éducation équitable, inclusive et de qualité et des possibilités d’apprentissage    tout au long de la vie"@fr,
+        "Обеспечение всеохватного и справедливого качественного образования и поощрение возможности обучения на протяжении всей жизни для всех"@ru,
+        "确保包容和公平的优质教育，让全民终身享有学习机会"@zh ;
+    skos:topConceptOf <http://metadata.un.org/sdg> .
+
+
+
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ns1: <http://www.w3.org/2002/07/owl#> .
+@prefix sdg: <http://metadata.un.org/sdg/> .
+@prefix sdgo: <http://metadata.un.org/sdg/ontology#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unbist: <http://metadata.un.org/thesaurus/> .
+
+sdg:5 a sdgo:Goal,
+        skos:Concept ;
+    sdgo:hasTarget sdg:5.1,
+        sdg:5.2,
+        sdg:5.3,
+        sdg:5.4,
+        sdg:5.5,
+        sdg:5.6,
+        sdg:5.a,
+        sdg:5.b,
+        sdg:5.c ;
+    dcterms:subject <http://eurovoc.europa.eu/2265>,
+        <http://eurovoc.europa.eu/3913>,
+        <http://eurovoc.europa.eu/585>,
+        <http://eurovoc.europa.eu/81>,
+        unbist:1002612,
+        unbist:1002684,
+        unbist:1007029 ;
+    ns1:deprecated "false" ;
+    skos:altLabel " المساواة بين الجنسين "@ar,
+        "Gender equality"@en ;
+    skos:exactMatch <http://purl.unep.org/sdg/SDGIO_00000039>,
+        <http://www.wikidata.org/entity/Q53581210> ;
+    skos:inScheme <http://metadata.un.org/sdg> ;
+    skos:narrower sdg:5.1,
+        sdg:5.2,
+        sdg:5.3,
+        sdg:5.4,
+        sdg:5.5,
+        sdg:5.6,
+        sdg:5.a,
+        sdg:5.b,
+        sdg:5.c ;
+    skos:notation "5" ;
+    skos:note "الهدف ٥ "@ar,
+        "Goal 5"@en,
+        "Objetivo 5"@es,
+        "Objectif 5"@fr ;
+    skos:prefLabel "تحقيق المساواة بين الجنسين وتمكين كل النساء والفتيات"@ar,
+        "Achieve gender equality and empower all women and girls"@en,
+        "Lograr la igualdad de género y empoderar a todas las mujeres y las niñas"@es,
+        "Parvenir à l’égalité des sexes et autonomiser toutes les femmes et les filles"@fr,
+        "Обеспечение гендерного равенства и расширение прав и возможностей всех женщин и девочек"@ru,
+        "实现性别平等，增强所有妇女和女童的权能"@zh ;
+    skos:topConceptOf <http://metadata.un.org/sdg> .
+
+
+
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ns1: <http://www.w3.org/2002/07/owl#> .
+@prefix sdg: <http://metadata.un.org/sdg/> .
+@prefix sdgo: <http://metadata.un.org/sdg/ontology#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unbist: <http://metadata.un.org/thesaurus/> .
+
+sdg:6 a sdgo:Goal,
+        skos:Concept ;
+    sdgo:hasTarget sdg:6.1,
+        sdg:6.2,
+        sdg:6.3,
+        sdg:6.4,
+        sdg:6.5,
+        sdg:6.6,
+        sdg:6.a,
+        sdg:6.b ;
+    dcterms:subject <http://eurovoc.europa.eu/3371>,
+        <http://eurovoc.europa.eu/4628>,
+        <http://eurovoc.europa.eu/597>,
+        unbist:030500,
+        unbist:1005701,
+        unbist:1006948 ;
+    ns1:deprecated "false" ;
+    skos:altLabel "المياه النظيفة والنظافة الصحية"@ar,
+        "Clean water and sanitation"@en ;
+    skos:exactMatch <http://purl.unep.org/sdg/SDGIO_00000040>,
+        <http://www.wikidata.org/entity/Q48741129> ;
+    skos:inScheme <http://metadata.un.org/sdg> ;
+    skos:narrower sdg:6.1,
+        sdg:6.2,
+        sdg:6.3,
+        sdg:6.4,
+        sdg:6.5,
+        sdg:6.6,
+        sdg:6.a,
+        sdg:6.b ;
+    skos:notation "6" ;
+    skos:note "الهدف ٦"@ar,
+        "Goal 6"@en,
+        "Objetivo 6"@es,
+        "Objectif 6"@fr ;
+    skos:prefLabel "كفالة توافر المياه وخدمات الصرف الصحي للجميع وإدارتها إدارة مستدامة"@ar,
+        "Ensure availability and sustainable management of water and sanitation for all"@en,
+        "Garantizar la disponibilidad y la gestión sostenible del agua y el saneamiento para todos"@es,
+        "Garantir l’accès de tous à des services d’alimentation en eau et d’assainissement gérés de façon durable"@fr,
+        "Обеспечение наличия и рационального использования водных ресурсов и санитарии для всех"@ru,
+        "为所有人提供水和环境卫生并对其进行可持续管理"@zh ;
+    skos:topConceptOf <http://metadata.un.org/sdg> .
+
+
+
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ns1: <http://www.w3.org/2002/07/owl#> .
+@prefix sdg: <http://metadata.un.org/sdg/> .
+@prefix sdgo: <http://metadata.un.org/sdg/ontology#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unbist: <http://metadata.un.org/thesaurus/> .
+
+sdg:7 a sdgo:Goal,
+        skos:Concept ;
+    sdgo:hasTarget sdg:7.1,
+        sdg:7.2,
+        sdg:7.3,
+        sdg:7.a,
+        sdg:7.b ;
+    dcterms:subject <http://eurovoc.europa.eu/4886>,
+        unbist:1006320 ;
+    ns1:deprecated "false" ;
+    skos:altLabel "طاقة نظيفة وبأسعار معقولة"@ar,
+        "Affordable and clean energy"@en ;
+    skos:exactMatch <http://purl.unep.org/sdg/SDGIO_00000041>,
+        <http://www.wikidata.org/entity/Q53581213> ;
+    skos:inScheme <http://metadata.un.org/sdg> ;
+    skos:narrower sdg:7.1,
+        sdg:7.2,
+        sdg:7.3,
+        sdg:7.a,
+        sdg:7.b ;
+    skos:notation "7" ;
+    skos:note "الهدف ٧"@ar,
+        "Goal 7"@en,
+        "Objetivo 7"@es,
+        "Objectif 7"@fr ;
+    skos:prefLabel "كفالة حصول الجميع بتكلفة ميسورة على خدمات الطاقة الحديثة الموثوقة والمستدامة"@ar,
+        "Ensure access to affordable, reliable, sustainable and modern energy for all"@en,
+        "Garantizar el acceso a una energía asequible, fiable, sostenible y moderna para todos"@es,
+        "Garantir l’accès de tous à des services énergétiques fiables, durables et modernes, à un coût abordable"@fr,
+        "Обеспечение доступа к недорогим, надежным, устойчивым и современным источникам энергии для всех"@ru,
+        "确保人人获得负担得起的、可靠和可持续的现代能源"@zh ;
+    skos:topConceptOf <http://metadata.un.org/sdg> .
+
+
+
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ns1: <http://www.w3.org/2002/07/owl#> .
+@prefix sdg: <http://metadata.un.org/sdg/> .
+@prefix sdgo: <http://metadata.un.org/sdg/ontology#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unbist: <http://metadata.un.org/thesaurus/> .
+
+sdg:8 a sdgo:Goal,
+        skos:Concept ;
+    sdgo:hasTarget sdg:8.1,
+        sdg:8.10,
+        sdg:8.2,
+        sdg:8.3,
+        sdg:8.4,
+        sdg:8.5,
+        sdg:8.6,
+        sdg:8.7,
+        sdg:8.8,
+        sdg:8.9,
+        sdg:8.a,
+        sdg:8.b ;
+    dcterms:subject <http://eurovoc.europa.eu/2427>,
+        <http://eurovoc.europa.eu/310>,
+        <http://eurovoc.europa.eu/5974>,
+        unbist:1001854,
+        unbist:1002007,
+        unbist:1002563,
+        unbist:1006773 ;
+    ns1:deprecated "false" ;
+    skos:altLabel " العمل اللائق ونمو الاقتصاد"@ar,
+        "Decent work and economic growth"@en ;
+    skos:exactMatch <http://purl.unep.org/sdg/SDGIO_00000042>,
+        <http://www.wikidata.org/entity/Q53581217> ;
+    skos:inScheme <http://metadata.un.org/sdg> ;
+    skos:narrower sdg:8.1,
+        sdg:8.10,
+        sdg:8.2,
+        sdg:8.3,
+        sdg:8.4,
+        sdg:8.5,
+        sdg:8.6,
+        sdg:8.7,
+        sdg:8.8,
+        sdg:8.9,
+        sdg:8.a,
+        sdg:8.b ;
+    skos:notation "8" ;
+    skos:note "الهدف ٨"@ar,
+        "Goal 8"@en,
+        "Objetivo 8"@es,
+        "Objectif 8"@fr ;
+    skos:prefLabel "تعزيز النمو الاقتصادي المطرد، والشامل للجميع، والمستدام، والعمالة الكاملة والمنتجة، وتوفير العمل اللائق للجميع"@ar,
+        "Promote sustained, inclusive and sustainable economic growth, full and productive employment and decent work for all"@en,
+        "Promover el crecimiento económico sostenido, inclusivo y sostenible, el empleo pleno y productivo y el trabajo decente para todos"@es,
+        "Promouvoir une croissance économique soutenue, partagée et durable, le plein emploi productif et un travail décent pour tous"@fr,
+        "Содействие поступательному, всеохватному и устойчивому экономическому росту, полной и производительной занятости и достойной работе для всех"@ru,
+        "促进持久、包容和可持续经济增长，促进充分的生产性就业和人人获得体面工作"@zh ;
+    skos:topConceptOf <http://metadata.un.org/sdg> .
+
+
+
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ns1: <http://www.w3.org/2002/07/owl#> .
+@prefix sdg: <http://metadata.un.org/sdg/> .
+@prefix sdgo: <http://metadata.un.org/sdg/ontology#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unbist: <http://metadata.un.org/thesaurus/> .
+
+sdg:9 a sdgo:Goal,
+        skos:Concept ;
+    sdgo:hasTarget sdg:9.1,
+        sdg:9.2,
+        sdg:9.3,
+        sdg:9.4,
+        sdg:9.5,
+        sdg:9.a,
+        sdg:9.b,
+        sdg:9.c ;
+    dcterms:subject <http://eurovoc.europa.eu/1434>,
+        <http://eurovoc.europa.eu/1439>,
+        unbist:1003177,
+        unbist:1003223 ;
+    ns1:deprecated "false" ;
+    skos:altLabel "الصناعة  والابتكار والهياكل الأساسية"@ar,
+        "Industry, innovation and infrastructure"@en ;
+    skos:exactMatch <http://purl.unep.org/sdg/SDGIO_00000043>,
+        <http://www.wikidata.org/entity/Q53581219> ;
+    skos:inScheme <http://metadata.un.org/sdg> ;
+    skos:narrower sdg:9.1,
+        sdg:9.2,
+        sdg:9.3,
+        sdg:9.4,
+        sdg:9.5,
+        sdg:9.a,
+        sdg:9.b,
+        sdg:9.c ;
+    skos:notation "9" ;
+    skos:note "الهدف ٩"@ar,
+        "Goal 9"@en,
+        "Objetivo 9"@es,
+        "Objectif 9"@fr ;
+    skos:prefLabel "إقامة هياكل أساسية قادرة على الصمود، وتحفيز التصنيع الشامل للجميع، وتشجيع الابتكار"@ar,
+        "Build resilient infrastructure, promote inclusive and sustainable industrialization and foster innovation"@en,
+        "Construir infraestructuras resilientes, promover la industrialización inclusiva y sostenible y fomentar la innovación"@es,
+        "Bâtir une infrastructure résiliente, promouvoir une industrialisation durable qui profite à tous et encourager l’innovation"@fr,
+        "Создание стойкой инфраструктуры, содействие всеохватной и устойчивой индустриализации и инновациям"@ru,
+        "建造具备抵御灾害能力的基础设施，促进具有包容性的可持续工业化，推动创新"@zh ;
+    skos:topConceptOf <http://metadata.un.org/sdg> .
+
+
+
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ns1: <http://www.w3.org/2002/07/owl#> .
+@prefix sdg: <http://metadata.un.org/sdg/> .
+@prefix sdgo: <http://metadata.un.org/sdg/ontology#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unbist: <http://metadata.un.org/thesaurus/> .
+
+sdg:10 a sdgo:Goal,
+        skos:Concept ;
+    sdgo:hasTarget sdg:10.1,
+        sdg:10.2,
+        sdg:10.3,
+        sdg:10.4,
+        sdg:10.5,
+        sdg:10.6,
+        sdg:10.7,
+        sdg:10.a,
+        sdg:10.b,
+        sdg:10.c ;
+    dcterms:subject <http://eurovoc.europa.eu/1420>,
+        unbist:1002102 ;
+    ns1:deprecated "false" ;
+    skos:altLabel " الحد من أوجه عدم المساواة "@ar,
+        "Reduced inequalities"@en ;
+    skos:exactMatch <http://purl.unep.org/sdg/SDGIO_00000044>,
+        <http://www.wikidata.org/entity/Q53581222> ;
+    skos:inScheme <http://metadata.un.org/sdg> ;
+    skos:narrower sdg:10.1,
+        sdg:10.2,
+        sdg:10.3,
+        sdg:10.4,
+        sdg:10.5,
+        sdg:10.6,
+        sdg:10.7,
+        sdg:10.a,
+        sdg:10.b,
+        sdg:10.c ;
+    skos:notation "10" ;
+    skos:note "الهدف ١٠"@ar,
+        "Goal 10"@en,
+        "Objetivo 10"@es,
+        "Objectif 10"@fr ;
+    skos:prefLabel "الحد من عدم المساواة داخل البلدان وفيما بينها"@ar,
+        "Reduce inequality within and among countries"@en,
+        "Reducir la desigualdad en los países y entre ellos"@es,
+        "Réduire les inégalités dans les pays et d’un pays à l’autre"@fr,
+        "Сокращение неравенства внутри стран и между ними"@ru,
+        "减少国家内部和国家之间的不平等"@zh ;
+    skos:topConceptOf <http://metadata.un.org/sdg> .
+
+
+
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ns1: <http://www.w3.org/2002/07/owl#> .
+@prefix sdg: <http://metadata.un.org/sdg/> .
+@prefix sdgo: <http://metadata.un.org/sdg/ontology#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unbist: <http://metadata.un.org/thesaurus/> .
+
+sdg:11 a sdgo:Goal,
+        skos:Concept ;
+    sdgo:hasTarget sdg:11.1,
+        sdg:11.2,
+        sdg:11.3,
+        sdg:11.4,
+        sdg:11.5,
+        sdg:11.6,
+        sdg:11.7,
+        sdg:11.a,
+        sdg:11.b,
+        sdg:11.c ;
+    dcterms:subject <http://eurovoc.europa.eu/4809>,
+        unbist:1000995,
+        unbist:1002986 ;
+    ns1:deprecated "false" ;
+    skos:altLabel "مدن ومجتمعات محلية مستدامة"@ar,
+        "Sustainable cities and communities"@en ;
+    skos:exactMatch <http://purl.unep.org/sdg/SDGIO_00000045>,
+        <http://www.wikidata.org/entity/Q53581228> ;
+    skos:inScheme <http://metadata.un.org/sdg> ;
+    skos:narrower sdg:11.1,
+        sdg:11.2,
+        sdg:11.3,
+        sdg:11.4,
+        sdg:11.5,
+        sdg:11.6,
+        sdg:11.7,
+        sdg:11.a,
+        sdg:11.b,
+        sdg:11.c ;
+    skos:notation "11" ;
+    skos:note "الهدف ١١"@ar,
+        "Goal 11"@en,
+        "Objetivo 11"@es,
+        "Objectif 11"@fr ;
+    skos:prefLabel "جعل المدن والمستوطنات البشرية شاملة للجميع وآمنة وقادرة على الصمود ومستدامة"@ar,
+        "Make cities and human settlements inclusive, safe, resilient and sustainable"@en,
+        "Lograr que las ciudades y los asentamientos humanos sean inclusivos, seguros, resilientes y sostenibles"@es,
+        "Faire en sorte que les villes et les établissements humains soient ouverts à tous, sûrs, résilients et durables"@fr,
+        "Обеспечение открытости, безопасности, жизнестойкости и экологической устойчивости городов и населенных пунктов"@ru,
+        "建设包容、安全、有抵御灾害能力和可持续的城市和人类住区"@zh ;
+    skos:topConceptOf <http://metadata.un.org/sdg> .
+
+
+
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ns1: <http://www.w3.org/2002/07/owl#> .
+@prefix sdg: <http://metadata.un.org/sdg/> .
+@prefix sdgo: <http://metadata.un.org/sdg/ontology#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unbist: <http://metadata.un.org/thesaurus/> .
+
+sdg:12 a sdgo:Goal,
+        skos:Concept ;
+    sdgo:hasTarget sdg:12.1,
+        sdg:12.2,
+        sdg:12.3,
+        sdg:12.4,
+        sdg:12.5,
+        sdg:12.6,
+        sdg:12.7,
+        sdg:12.8,
+        sdg:12.a,
+        sdg:12.b,
+        sdg:12.c ;
+    dcterms:subject <http://eurovoc.europa.eu/139>,
+        <http://eurovoc.europa.eu/2707>,
+        unbist:1001264,
+        unbist:1005146,
+        unbist:1006318 ;
+    ns1:deprecated "false" ;
+    skos:altLabel " الإنتاج والاستهلاك  المسؤولان"@ar,
+        "Responsible consumption and production"@en ;
+    skos:exactMatch <http://purl.unep.org/sdg/SDGIO_00000046>,
+        <http://www.wikidata.org/entity/Q53581232> ;
+    skos:inScheme <http://metadata.un.org/sdg> ;
+    skos:narrower sdg:12.1,
+        sdg:12.2,
+        sdg:12.3,
+        sdg:12.4,
+        sdg:12.5,
+        sdg:12.6,
+        sdg:12.7,
+        sdg:12.8,
+        sdg:12.a,
+        sdg:12.b,
+        sdg:12.c ;
+    skos:notation "12" ;
+    skos:note "الهدف ١٢"@ar,
+        "Goal 12"@en,
+        "Objetivo 12"@es,
+        "Objectif 12"@fr ;
+    skos:prefLabel "كفالة وجود أنماط استهلاك وإنتاج مستدامة"@ar,
+        "Ensure sustainable consumption and production patterns"@en,
+        "Garantizar modalidades de consumo y producción sostenibles"@es,
+        "Établir des modes de consommation et de production durables"@fr,
+        "Обеспечение перехода к рациональным моделям потребления и производства"@ru,
+        "确保采用可持续的消费和生产模式"@zh ;
+    skos:topConceptOf <http://metadata.un.org/sdg> .
+
+
+
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ns1: <http://www.w3.org/2002/07/owl#> .
+@prefix sdg: <http://metadata.un.org/sdg/> .
+@prefix sdgo: <http://metadata.un.org/sdg/ontology#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unbist: <http://metadata.un.org/thesaurus/> .
+
+sdg:13 a sdgo:Goal,
+        skos:Concept ;
+    sdgo:hasTarget sdg:13.1,
+        sdg:13.2,
+        sdg:13.3,
+        sdg:13.a,
+        sdg:13.b ;
+    dcterms:subject <http://eurovoc.europa.eu/5482>,
+        unbist:1001030 ;
+    ns1:deprecated "false" ;
+    skos:altLabel "العمل المناخي"@ar,
+        "Climate action"@en ;
+    skos:exactMatch <http://purl.unep.org/sdg/SDGIO_00000047>,
+        <http://www.wikidata.org/entity/Q53581236> ;
+    skos:inScheme <http://metadata.un.org/sdg> ;
+    skos:narrower sdg:13.1,
+        sdg:13.2,
+        sdg:13.3,
+        sdg:13.a,
+        sdg:13.b ;
+    skos:notation "13" ;
+    skos:note "الهدف ١٣"@ar,
+        "Goal 13"@en,
+        "Objetivo 13"@es,
+        "Objectif 13"@fr ;
+    skos:prefLabel "اتخاذ إجراءات عاجلة للتصدي لتغير المناخ وآثاره"@ar,
+        "Take urgent action to combat climate change and its impacts"@en,
+        "Adoptar medidas urgentes para combatir el cambio climático y sus efectos"@es,
+        "Prendre d’urgence des mesures pour lutter contre les changements climatiques et leurs répercussions"@fr,
+        "Принятие срочных мер по борьбе с изменением климата и его последствиями"@ru,
+        "采取紧急行动应对气候变化及其影响"@zh ;
+    skos:topConceptOf <http://metadata.un.org/sdg> .
+
+
+
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ns1: <http://www.w3.org/2002/07/owl#> .
+@prefix sdg: <http://metadata.un.org/sdg/> .
+@prefix sdgo: <http://metadata.un.org/sdg/ontology#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unbist: <http://metadata.un.org/thesaurus/> .
+
+sdg:14 a sdgo:Goal,
+        skos:Concept ;
+    sdgo:hasTarget sdg:14.1,
+        sdg:14.2,
+        sdg:14.3,
+        sdg:14.4,
+        sdg:14.5,
+        sdg:14.6,
+        sdg:14.7,
+        sdg:14.a,
+        sdg:14.b,
+        sdg:14.c ;
+    dcterms:subject <http://eurovoc.europa.eu/1870>,
+        <http://eurovoc.europa.eu/2107>,
+        <http://eurovoc.europa.eu/3149>,
+        <http://eurovoc.europa.eu/5742>,
+        unbist:030800,
+        unbist:1003922,
+        unbist:170600 ;
+    ns1:deprecated "false" ;
+    skos:altLabel "الحياة تحت المياه"@ar,
+        "Life below water"@en ;
+    skos:exactMatch <http://purl.unep.org/sdg/SDGIO_00000048>,
+        <http://www.wikidata.org/entity/Q53581239> ;
+    skos:inScheme <http://metadata.un.org/sdg> ;
+    skos:narrower sdg:14.1,
+        sdg:14.2,
+        sdg:14.3,
+        sdg:14.4,
+        sdg:14.5,
+        sdg:14.6,
+        sdg:14.7,
+        sdg:14.a,
+        sdg:14.b,
+        sdg:14.c ;
+    skos:notation "14" ;
+    skos:note "الهدف ١٤"@ar,
+        "Goal 14"@en,
+        "Objetivo 14"@es,
+        "Objectif 14"@fr ;
+    skos:prefLabel "حفظ المحيطات والبحار والموارد البحرية واستخدامها على نحو مستدام لتحقيق التنمية المستدامة"@ar,
+        "Conserve and sustainably use the oceans, seas and marine resources for sustainable development"@en,
+        "Conservar y utilizar sosteniblemente los océanos, los mares y los recursos marinos para el desarrollo sostenible"@es,
+        "Conserver et exploiter de manière durable les océans, les mers et les ressources marines aux fins du développement durable"@fr,
+        "Сохранение и рациональное использование океанов, морей и морских ресурсов в интересах устойчивого развития"@ru,
+        "保护和可持续利用海洋和海洋资源以促进可持续发展"@zh ;
+    skos:topConceptOf <http://metadata.un.org/sdg> .
+
+
+
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ns1: <http://www.w3.org/2002/07/owl#> .
+@prefix sdg: <http://metadata.un.org/sdg/> .
+@prefix sdgo: <http://metadata.un.org/sdg/ontology#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unbist: <http://metadata.un.org/thesaurus/> .
+
+sdg:15 a sdgo:Goal,
+        skos:Concept ;
+    sdgo:hasTarget sdg:15.1,
+        sdg:15.2,
+        sdg:15.3,
+        sdg:15.4,
+        sdg:15.5,
+        sdg:15.6,
+        sdg:15.7,
+        sdg:15.8,
+        sdg:15.9,
+        sdg:15.a,
+        sdg:15.b,
+        sdg:15.c ;
+    dcterms:subject <http://eurovoc.europa.eu/339>,
+        <http://eurovoc.europa.eu/416>,
+        <http://eurovoc.europa.eu/5463>,
+        unbist:030600,
+        unbist:1001550 ;
+    ns1:deprecated "false" ;
+    skos:altLabel " الحياة في البر "@ar,
+        "Life on land"@en ;
+    skos:exactMatch <http://purl.unep.org/sdg/SDGIO_00000049>,
+        <http://www.wikidata.org/entity/Q53581245> ;
+    skos:inScheme <http://metadata.un.org/sdg> ;
+    skos:narrower sdg:15.1,
+        sdg:15.2,
+        sdg:15.3,
+        sdg:15.4,
+        sdg:15.5,
+        sdg:15.6,
+        sdg:15.7,
+        sdg:15.8,
+        sdg:15.9,
+        sdg:15.a,
+        sdg:15.b,
+        sdg:15.c ;
+    skos:notation "15" ;
+    skos:note "الهدف ١٥"@ar,
+        "Goal 15"@en,
+        "Objetivo 15"@es,
+        "Objectif 15"@fr ;
+    skos:prefLabel "حفظ المحيطات والبحار والموارد البحرية واستخدامها على نحو مستدام لتحقيق التنمية المستدامة"@ar,
+        "Protect, restore and promote sustainable use of terrestrial ecosystems, sustainably manage forests, combat desertification, and halt and reverse land degradation and halt biodiversity loss"@en,
+        "Proteger, restablecer y promover el uso sostenible de los ecosistemas terrestres, gestionar sosteniblemente los bosques, luchar contra la desertificación, detener e invertir la degradación de las tierras y detener la pérdida de biodiversidad"@es,
+        "Préserver et restaurer les écosystèmes terrestres, en veillant à les exploiter de façon durable, gérer durablement les forêts, lutter contre la désertification, enrayer et inverser le processus de dégradation des terres et mettre fin à l’appauvrissement de la biodiversité"@fr,
+        "Защита и восстановление экосистем суши и содействие их рациональному использованию, рациональное лесопользование, борьба с опустыниванием, прекращение и обращение вспять процесса деградации земель и прекращение процесса утраты биологического разнообразия"@ru,
+        "保护、恢复和促进可持续利用陆地生态系统，可持续管理森林，防治荒漠化，制止和扭转土地退化，遏制生物多样性的丧失"@zh ;
+    skos:topConceptOf <http://metadata.un.org/sdg> .
+
+
+
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ns1: <http://www.w3.org/2002/07/owl#> .
+@prefix sdg: <http://metadata.un.org/sdg/> .
+@prefix sdgo: <http://metadata.un.org/sdg/ontology#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unbist: <http://metadata.un.org/thesaurus/> .
+
+sdg:16 a sdgo:Goal,
+        skos:Concept ;
+    sdgo:hasTarget sdg:16.1,
+        sdg:16.10,
+        sdg:16.2,
+        sdg:16.3,
+        sdg:16.4,
+        sdg:16.5,
+        sdg:16.6,
+        sdg:16.7,
+        sdg:16.8,
+        sdg:16.9,
+        sdg:16.a,
+        sdg:16.b ;
+    dcterms:subject <http://eurovoc.europa.eu/516>,
+        <http://eurovoc.europa.eu/5585>,
+        unbist:1001012,
+        unbist:1003500,
+        unbist:1004777,
+        unbist:1005254,
+        unbist:1005970,
+        unbist:1006319 ;
+    ns1:deprecated "false" ;
+    skos:altLabel " السلام والعدل  والمؤسسات القوية"@ar,
+        "Peace, justice and strong institutions"@en ;
+    skos:exactMatch <http://purl.unep.org/sdg/SDGIO_00000050>,
+        <http://www.wikidata.org/entity/Q53581248> ;
+    skos:inScheme <http://metadata.un.org/sdg> ;
+    skos:narrower sdg:16.1,
+        sdg:16.10,
+        sdg:16.2,
+        sdg:16.3,
+        sdg:16.4,
+        sdg:16.5,
+        sdg:16.6,
+        sdg:16.7,
+        sdg:16.8,
+        sdg:16.9,
+        sdg:16.a,
+        sdg:16.b ;
+    skos:notation "16" ;
+    skos:note "الهدف ١٦"@ar,
+        "Goal 16"@en,
+        "Objetivo 16"@es,
+        "Objectif 16"@fr ;
+    skos:prefLabel "حماية النظم الإيكولوجية البرية وترميمها وتعزيز استخدامها على نحو مستدام، وإدارة الغابات على نحو مستدام، ومكافحة التصحر، ووقف تدهور الأراضي وعكس مساره، ووقف فقدان التنوع البيولوجي"@ar,
+        "Promote peaceful and inclusive societies for sustainable development, provide access to justice for all and build effective, accountable and inclusive institutions at all levels"@en,
+        "Promover sociedades pacíficas e inclusivas para el desarrollo sostenible, facilitar el acceso a la justicia para todos y construir a todos los niveles instituciones eficaces e inclusivas que rindan cuentas"@es,
+        "Promouvoir l’avènement de sociétés pacifiques et inclusives aux fins du développement durable, assurer l’accès de tous à la justice et mettre en place, à tous les niveaux, des institutions efficaces, responsables et ouvertes à tous"@fr,
+        "Содействие построению миролюбивого и открытого общества в интересах устойчивого развития, обеспечение доступа к правосудию для всех и создание эффективных, подотчетных и основанных на широком участии учреждений на всех уровнях"@ru,
+        "创建和平、包容的社会以促进可持续发展，让所有人都能诉诸司法，在各级建立有效、负责和包容的机构"@zh ;
+    skos:topConceptOf <http://metadata.un.org/sdg> .
+
+
+
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix ns1: <http://www.w3.org/2002/07/owl#> .
+@prefix sdg: <http://metadata.un.org/sdg/> .
+@prefix sdgo: <http://metadata.un.org/sdg/ontology#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix unbist: <http://metadata.un.org/thesaurus/> .
+
+sdg:17 a sdgo:Goal,
+        skos:Concept ;
+    sdgo:hasTarget sdg:17.1,
+        sdg:17.10,
+        sdg:17.11,
+        sdg:17.12,
+        sdg:17.13,
+        sdg:17.14,
+        sdg:17.15,
+        sdg:17.16,
+        sdg:17.17,
+        sdg:17.18,
+        sdg:17.19,
+        sdg:17.2,
+        sdg:17.3,
+        sdg:17.4,
+        sdg:17.5,
+        sdg:17.6,
+        sdg:17.7,
+        sdg:17.8,
+        sdg:17.9 ;
+    dcterms:subject <http://eurovoc.europa.eu/4199>,
+        <http://eurovoc.europa.eu/5585>,
+        unbist:1004748,
+        unbist:1006319 ;
+    ns1:deprecated "false" ;
+    skos:altLabel " عقد الشراكات لتحقيق الأهداف"@ar,
+        "Partnerships for the goals"@en ;
+    skos:exactMatch <http://purl.unep.org/sdg/SDGIO_00000051>,
+        <http://www.wikidata.org/entity/Q53581254> ;
+    skos:inScheme <http://metadata.un.org/sdg> ;
+    skos:narrower sdg:17.1,
+        sdg:17.10,
+        sdg:17.11,
+        sdg:17.12,
+        sdg:17.13,
+        sdg:17.14,
+        sdg:17.15,
+        sdg:17.16,
+        sdg:17.17,
+        sdg:17.18,
+        sdg:17.19,
+        sdg:17.2,
+        sdg:17.3,
+        sdg:17.4,
+        sdg:17.5,
+        sdg:17.6,
+        sdg:17.7,
+        sdg:17.8,
+        sdg:17.9 ;
+    skos:notation "17" ;
+    skos:note "الهدف ١٧ "@ar,
+        "Goal 17"@en,
+        "Objetivo 17"@es,
+        "Objectif 17"@fr ;
+    skos:prefLabel "التشجيع على إقامة مجتمعات مسالمة لا يهمش فيها أحد من أجل تحقيق التنمية المستدامة، وإتاحة إمكانية وصول الجميع إلى العدالة، وبناء مؤسسات فعالة وخاضعة للمساءلة وشاملة للجميع على جميع المستويات"@ar,
+        "Strengthen the means of implementation and revitalize the Global Partnership for Sustainable Development"@en,
+        "Fortalecer los medios de implementación y revitalizar la Alianza Mundial para el Desarrollo Sostenible"@es,
+        "Renforcer les moyens de mettre en œuvre le Partenariat mondial pour le développement durable et le revitaliser"@fr,
+        "Укрепление средств осуществления и активизация работы в рамках Глобального партнерства в интересах устойчивого развития Финансирование"@ru,
+        "加强执行手段，重振可持续发展全球伙伴关系"@zh ;
+    skos:topConceptOf <http://metadata.un.org/sdg> .
+
+
+
