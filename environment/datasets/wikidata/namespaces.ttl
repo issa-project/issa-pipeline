@@ -39,3 +39,7 @@
 @prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
 @prefix dct: <http://purl.org/dc/terms/> .
 
+
+
+wdt:P496    rdfs:label  "has ORCID".
+wdt:P6782   rdfs:label  "has ROR id".
