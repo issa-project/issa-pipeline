@@ -139,3 +139,11 @@ issa:OpenAlexTopicAnnotation
     rdfs:label              "OpenAlex's topic annotation";
     dct:description         "Document's topic according to OpenAlex topics/subfield/field/domain classification";
     .
+
+# The body of this annotation would be a node with an rdf:value representing the Rao-Stirling interdisciplinarity score
+issa:RaoStirlingAnnotation
+    a                       owl:Class;
+    rdfs:subClassOf         oa:Annotation;
+    rdfs:label              "Rao-Stirling score annotation";
+    dct:description         "The score of a article wrt. the Rao-Stirling interdisciplinarity score";
+    .
