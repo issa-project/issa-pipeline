@@ -196,19 +196,7 @@ Scripts are provided in the directories [mongo](./morph-xr2rml/mongo/) and [xR2R
 
 RDF files generated at the previous stage are imported into a [dockerized Virtuoso OS instance](https://hub.docker.com/r/openlink/virtuoso-opensource-7/) as separate named graphs.
 
-For example:
-
-| Data type                            | Named Graph                                           |
-|--------------------------------------|-------------------------------------------------------|
-| Metadata                             | http://data-issa.cirad.fr/graph/documents             |
-| Annotated text                       | http://data-issa.cirad.fr/graph/documents/text        |
-| Human-validated thematic descriptors | http://data-issa.cirad.fr/graph/thematic-descriptors  |
-| Annif-generated thematic descriptors | http://data-issa.cirad.fr/graph/annif-descriptors     |
-| DBpedia annotations                  | http://data-issa.cirad.fr/graph/dbpedia-spotlight-nes |
-| Wikidata annotations                 | http://data-issa.cirad.fr/graph/entity-fishing-nes    |
-| GeoNames annotations                 | http://data-issa.cirad.fr/graph/geographic-nes        |
-
-The full list of the named graphs is can be found [here](../doc/data-modeling.md#named-graphs).
+The full list of named graphs can be found [here](../doc/data-modeling.md#named-graphs).
 
 Scripts are provided in the directory [virtuoso](./virtuoso/).
 

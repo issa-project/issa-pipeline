@@ -117,6 +117,19 @@ Here is an example of a journal article's metadata:
   issapr:hasBody         <http://data-issa.cirad.fr/document/543654#body_text> .
 ```
 
+## Additional authorship metadata retrieved from OpenAlex
+
+By default, ISSA only retrieves the non-ordered list of authors of each document, and each author only consists of a string literal.
+
+To compensate for this issue, we download from OpenAlex additional metadata that are not available through the APIs of Agritrop and HAL. These are: 
+  * ordered list of authors for each document
+  * authors ORCID,
+  * authors ordered list of institutions,
+  * intitutions name and ROR id.
+
+The RDF model to represent these metadata is described along with the [SPARQL micro-service](../environment/sparql-micro-services/openalex/getAuthorshipsByDoi) that retrieves them.
+
+
 ## Thematic descriptors
 
 The thematic descriptors are concepts characterizing a document as a whole. They are described as **annotations** using the **[Web Annotations Vocabulary](https://www.w3.org/TR/annotation-vocab/)**.
@@ -261,15 +274,31 @@ As a result of the ISSA pipeline, the following named graphs are created:
 
 | Data type                                | Named Graph                                           |
 |--------------------------------------    |-------------------------------------------------------|
-| Metadata                                 | http://data-issa.cirad.fr/graph/documents             |
+| Documents Metadata                       | http://data-issa.cirad.fr/graph/documents             |
+| Documents authorship (from OpenAlex)      | <http://data-issa.cirad.fr/graph/openalex-authorships> |
 | Annotated text                           | http://data-issa.cirad.fr/graph/documents/text        |
 | Human-validated thematic descriptors     | http://data-issa.cirad.fr/graph/thematic-descriptors  |
 | Annif-generated thematic descriptors     | http://data-issa.cirad.fr/graph/annif-descriptors     |
 | Documents' domains                       | http://data-issa.cirad.fr/graph/document-domains      |
 | Documents' keywords                      | http://data-issa.cirad.fr/graph/document-keywords     |
-| DBpedia annotations                      | http://data-issa.cirad.fr/graph/dbpedia-spotlight-nes |
-| Wikidata annotations                     | http://data-issa.cirad.fr/graph/entity-fishing-nes    |
-| GeoNames annotations                     | http://data-issa.cirad.fr/graph/geographic-nes        |
-| Instance-specific vocabulary annotations | http://data-issa.cirad.fr/graph/pyclinrec-nes     |
+| DBpedia named entities annotations       | http://data-issa.cirad.fr/graph/dbpedia-spotlight-nes |
+| Wikidata named entities annotations      | http://data-issa.cirad.fr/graph/entity-fishing-nes    |
+| GeoNames named entities annotations      | http://data-issa.cirad.fr/graph/geographic-nes        |
+| Instance-specific vocabulary annotations | http://data-issa.cirad.fr/graph/pyclinrec-nes         |
+| Documents annotations wrt. SDGs (from OpenAlex) | <http://data-issa.cirad.fr/graph/openalex-sdgs>       |
+| Documents annotations wrt. OpenAlex topics/fields/domains | <http://data-issa.cirad.fr/graph/openalex-topics> |
+| Documents annotations wrt. Rao Stirling score | <http://data-issa.cirad.fr/graph/rao-stirling-index> |
+
+
+Additionally, static named graphs provide reference information that are not regenerated:
+
+| Data type                                | Named Graph                                           |
+|--------------------------------------    |-------------------------------------------------------|
+| Metadata of the ISSA dataset | <http://data-issa.cirad.fr/graph/dataset> |
+| List and hierarchy of the OpenAlex topics/subfields/fields/domains | <http://data-issa.cirad.fr/graph/openalex-topics-hierarchy> |
+| Metadata about the SDG retrived from URIs <http://metadata.un.org/sdg/xxx> | <http://data-issa.cirad.fr/graph/sdgs-metadata> |
+| Labels and hierarchy of the DBpedia named entities | <http://data-issa.cirad.fr/graph/dbpedia-named-entities> |
+| Labels and hierarchy of the Wikidata named entities | <http://data-issa.cirad.fr/graph/wikidata-named-entities> |
+
 
 >:point_right: As a reminder,  the namespace *http://data-issa.cirad.fr/* is used for a specific ISSA instance (e.g. Agritrop). It can be replaced by any other namespace (e.g. *http://data-issa.euromov.fr/* for the HAL Euromov instance).
