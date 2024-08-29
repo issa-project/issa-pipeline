@@ -1,0 +1,31 @@
+prefix agron:   <http://aims.fao.org/aos/agrontology#>
+prefix dct:     <http://purl.org/dc/terms/>
+prefix dce:     <http://purl.org/dc/elements/1.1/>
+prefix oa:      <http://www.w3.org/ns/oa#>
+prefix skos:    <http://www.w3.org/2004/02/skos/core#>
+prefix skosxl:  <http://www.w3.org/2008/05/skos-xl#>
+
+SELECT distinct (?author as ?s) (?topic as ?o) ?p ?date ?label ("fst" as ?style1) ("snd" as ?style2) (concat("http://issa.i3s.unice.fr/notice/?uri=", ?p) as ?url)
+WHERE {
+    { # Sort the authors with the highest number of articles in this topic
+      SELECT ?author (count(?p) as ?count)
+      WHERE {
+          ?p  dce:creator ?author ; 
+              ^oa:hasTarget [ oa:hasBody ?topicUri ].
+          ?topicUri skosxl:prefLabel [ skosxl:literalForm ?topic ].
+          filter (langMatches(lang(?topic), "en"))
+          ?topicUri (skos:broader|^agron:includes)* ?entity.
+          ?entity skosxl:prefLabel [ skosxl:literalForm "$value1"@en ].
+      } group by ?author order by desc(?count) limit 100
+    } 
+
+    ?p	dct:title ?label; dct:issued ?date;
+	  	dce:creator ?author;
+        ^oa:hasTarget [ oa:hasBody ?topicUri ].
+  
+    ?topicUri skosxl:prefLabel [ skosxl:literalForm ?topic ].
+    filter (langMatches(lang(?topic), "en"))
+    ?topicUri (skos:broader|^agron:includes)* ?entity.
+    ?entity skosxl:prefLabel [ skosxl:literalForm "$value1"@en ].
+
+} limit 10000

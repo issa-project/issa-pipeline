@@ -1,0 +1,21 @@
+PREFIX oa:      <http://www.w3.org/ns/oa#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+prefix skosxl:  <http://www.w3.org/2008/05/skos-xl#>
+prefix xsd:     <http://www.w3.org/2001/XMLSchema#>
+
+SELECT distinct ?p ?s ?o ?label ?date (concat("http://issa.i3s.unice.fr/notice/?uri=", ?p) as ?url)
+from <http://agrovoc.fao.org/graph>
+from <http://data-issa.cirad.fr/graph/thematic-descriptors>
+from <http://data-issa.cirad.fr/graph/annif-descriptors>
+from <http://data-issa.cirad.fr/graph/documents>
+WHERE {
+    ?p ^oa:hasTarget ?a1 , ?a2 . 
+  	?a1 oa:hasBody [ skosxl:prefLabel [ skosxl:literalForm ?s ]].
+  	?a2 oa:hasBody [ skosxl:prefLabel [ skosxl:literalForm ?o ]] .
+    filter (langMatches(lang(?o), "en"))
+    filter (?s = "$value1"@en)	
+    filter (?s != ?o)
+  
+    ?p dcterms:title ?label ; dcterms:issued ?date .
+    
+} limit 5000

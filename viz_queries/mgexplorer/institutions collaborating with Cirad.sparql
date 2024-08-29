@@ -1,0 +1,39 @@
+PREFIX rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:   <http://www.w3.org/2000/01/rdf-schema#>
+prefix dct:    <http://purl.org/dc/terms/>
+prefix issapr: <http://data-issa.cirad.fr/property/>
+
+SELECT DISTINCT (?instName1 as ?s) (?instName2 as ?o) (?doc as ?p) ?date ?label (concat("http://issa.i3s.unice.fr/notice/?uri=", ?doc) as ?url)
+FROM <http://data-issa.cirad.fr/graph/openalex-authorships>
+FROM NAMED <http://data-issa.cirad.fr/graph/documents>
+WHERE {
+#    {
+#      # Build a list (string) of the institutions that most frequently publish with Cirad
+#      SELECT (group_concat(DISTINCT ?institution; separator = "_") as ?institutions)
+#      WHERE {
+#	    # Select the institutions that most frequently publish with Cirad
+#        SELECT ?institution
+#        WHERE {
+#          ?doc dct:creator ?c1, ?c2.
+#          ?c1 issapr:institutionList/rdf:first <https://openalex.org/I131077856>. # Cirad
+#          ?c2 issapr:institutionList/rdf:first ?institution.
+#          FILTER(?institution != <https://openalex.org/I131077856>)
+#		} group by ?institution order by desc(count(distinct ?doc)) limit 30}
+#	}
+
+  	# This whole query, including the subquery, times out.
+	# So as a workaround, the BIND below generates what should be done by the subquery.
+	BIND("https://openalex.org/I131077856_https://openalex.org/I1294671590_https://openalex.org/I1320745970_https://openalex.org/I198105771_https://openalex.org/I19894307_https://openalex.org/I22248866_https://openalex.org/I24906876_https://openalex.org/I251321805_https://openalex.org/I4210087127_https://openalex.org/I4210087514_https://openalex.org/I4210088668_https://openalex.org/I4210091717_https://openalex.org/I4210094754_https://openalex.org/I4210097770_https://openalex.org/I4210100404_https://openalex.org/I4210105147_https://openalex.org/I4210112109_https://openalex.org/I4210120904_https://openalex.org/I4210121611_https://openalex.org/I4210122476_https://openalex.org/I4210123768_https://openalex.org/I4210126969_https://openalex.org/I4210132755_https://openalex.org/I4210135772_https://openalex.org/I4210147278_https://openalex.org/I4210147367_https://openalex.org/I4210153406_https://openalex.org/I4210158756_https://openalex.org/I4210160965_https://openalex.org/I4210166444_https://openalex.org/I96840727" as ?institutions)
+
+    ?doc dct:creator ?c1, ?c2.
+    ?c1 issapr:institutionList/rdf:first ?institution1.
+    ?c2 issapr:institutionList/rdf:first ?institution2.
+    FILTER(?institution1 != ?institution2)
+  	FILTER(contains(str(?institutions), str(?institution1)) && contains(str(?institutions), str(?institution2)))
+    
+  	?institution1 rdfs:label ?instName1.
+  	?institution2 rdfs:label ?instName2.
+  
+	graph <http://data-issa.cirad.fr/graph/documents> { ?doc dct:title ?label; dct:issued ?date. }
+  
+} limit 5000

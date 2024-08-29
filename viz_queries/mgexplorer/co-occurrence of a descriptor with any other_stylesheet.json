@@ -1,0 +1,21 @@
+{
+    "appli": {
+        "name": "<your-app-name>",
+        "debug": true
+    },
+    "node": {
+        "radius": {
+            "variable": "qtItems"
+        },
+        "default": {
+            "color": "steelblue"
+        },
+        "mix": {
+            "color": "yellow"
+        }
+    },
+    "edge": {
+        "color": "green"
+    },
+    "services": []
+}

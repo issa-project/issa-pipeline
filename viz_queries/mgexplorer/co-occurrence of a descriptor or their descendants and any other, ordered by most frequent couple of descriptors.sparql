@@ -1,0 +1,50 @@
+prefix agron:   <http://aims.fao.org/aos/agrontology#>
+prefix agrovoc: <http://aims.fao.org/aos/agrovoc/>
+prefix dct:     <http://purl.org/dc/terms/>
+prefix oa:      <http://www.w3.org/ns/oa#>
+prefix skos:    <http://www.w3.org/2004/02/skos/core#>
+prefix skosxl:  <http://www.w3.org/2008/05/skos-xl#>
+prefix xsd:     <http://www.w3.org/2001/XMLSchema#>
+
+SELECT distinct ?p ?s ?o ?label ?date ("fst" as ?style1) ("snd" as ?style2) (concat("http://issa.i3s.unice.fr/notice/?uri=", ?p) as ?url)
+from <http://agrovoc.fao.org/graph>
+from <http://data-issa.cirad.fr/graph/thematic-descriptors>
+from <http://data-issa.cirad.fr/graph/annif-descriptors>
+from named <http://data-issa.cirad.fr/graph/documents>
+WHERE {
+    ?p  ^oa:hasTarget ?a1, ?a2.
+    ?a1 oa:hasBody ?s_uri.
+    ?a2 oa:hasBody ?o_uri.
+    filter (?a1 != ?a2)
+    
+    {   select distinct (count(distinct ?p) as ?n) ?s ?s_uri ?o ?o_uri
+        WHERE {
+            ?p ^oa:hasTarget ?a1, ?a2 .
+            filter (?a1 != ?a2)
+
+            { select ?a1 ?s ?s_uri where {
+                {   ?a1 oa:hasBody ?s_uri.
+                    ?s_uri skosxl:prefLabel [ skosxl:literalForm ?s ].
+                    filter (?s = "$value1"@en) }
+                union
+                {   ?a1 oa:hasBody ?s_uri.
+                    ?s_uri skosxl:prefLabel [ skosxl:literalForm ?s ].
+                    ?s_uri (skos:broader|^agron:includes)+ ?entity.
+                    ?entity skosxl:prefLabel [ skosxl:literalForm "$value1"@en ].
+                    filter (langMatches(lang(?s), "en")) }
+            }}
+
+            {   ?a2 oa:hasBody ?o_uri.
+                ?o_uri skosxl:prefLabel [ skosxl:literalForm ?o ].
+                filter (langMatches(lang(?o), "en")) }
+
+            filter (?s_uri != ?o_uri)
+            
+        } group by ?s ?s_uri ?o ?o_uri order by desc(?n) limit 30
+    }
+    
+    graph <http://data-issa.cirad.fr/graph/documents> {
+        ?p  dct:title ?label; dct:issued ?date.
+    }
+        
+} order by desc(?n) limit 5000

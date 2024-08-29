@@ -1,0 +1,57 @@
+prefix agron:   <http://aims.fao.org/aos/agrontology#>
+prefix agrovoc: <http://aims.fao.org/aos/agrovoc/>
+prefix dcterms: <http://purl.org/dc/terms/>
+prefix oa:      <http://www.w3.org/ns/oa#>
+prefix skos:    <http://www.w3.org/2004/02/skos/core#>
+prefix skosxl:  <http://www.w3.org/2008/05/skos-xl#>
+prefix xsd:     <http://www.w3.org/2001/XMLSchema#>
+
+SELECT distinct ?p ?s ?o ?label ?date ("fst" as ?style1) ("snd" as ?style2) ("rst" as ?mix) (concat("http://issa.i3s.unice.fr/notice/?uri=", ?p) as ?url)
+from <http://agrovoc.fao.org/graph>
+from <http://data-issa.cirad.fr/graph/thematic-descriptors>
+from <http://data-issa.cirad.fr/graph/annif-descriptors>
+from <http://data-issa.cirad.fr/graph/documents>
+WHERE {
+
+  ?p ^oa:hasTarget ?a1, ?a2 .
+  filter (?a1 != ?a2)
+
+  { select ?a1 ?s where {
+    {
+      ?a1 oa:hasBody ?uri.
+      ?uri skosxl:prefLabel [ skosxl:literalForm ?s ].
+      filter (?s = "$value1"@en)
+    }
+    union
+    {
+      ?uri skosxl:prefLabel [ skosxl:literalForm ?s1 ].
+      filter (?s1 = "$value1"@en)
+
+      ?a1 oa:hasBody ?uri1.
+      ?uri1 (skos:broader|^agron:includes|skos:related){1,3} ?uri.
+      ?uri1 skosxl:prefLabel [ skosxl:literalForm ?s ].
+      filter (langMatches(lang(?s), "en"))
+    }
+  }}
+
+  { select ?a2 ?o where {
+    {
+      ?uri skosxl:prefLabel [ skosxl:literalForm ?o ].
+      filter (?o = "$value2"@en)
+      ?a2 oa:hasBody ?uri.
+    }
+    union
+    {
+      ?uri skosxl:prefLabel [ skosxl:literalForm ?s1 ].
+      filter (?s1 = "$value2"@en)
+
+      ?a2 oa:hasBody ?uri1.
+      ?uri1 (skos:broader|^agron:includes|skos:related){1,3} ?uri.
+      ?uri1 skosxl:prefLabel [ skosxl:literalForm ?o ].
+      filter (langMatches(lang(?o), "en"))
+    }
+  }}
+
+  ?p dcterms:title ?label ; dcterms:issued ?date .
+
+} limit 5000

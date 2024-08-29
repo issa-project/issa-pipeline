@@ -1,0 +1,47 @@
+delete data {
+    graph <http://data-issa.cirad.fr/graph/wikidata-named-entities> {
+        <http://www.wikidata.org/entity/Q1138571> rdfs:subClassOf <http://www.wikidata.org/entity/Q125928>.
+        <http://www.wikidata.org/entity/Q503> rdfs:subClassOf <http://www.wikidata.org/entity/Q125928>. # banana
+        <http://www.wikidata.org/entity/Q5090> rdfs:subClassOf <http://www.wikidata.org/entity/Q125928>. # rice
+        <http://www.wikidata.org/entity/Q42385> rdfs:subClassOf <http://www.wikidata.org/entity/Q125928>.  # cacao
+        <http://www.wikidata.org/entity/Q1566> rdfs:subClassOf <http://www.wikidata.org/entity/Q125928>. # tobacco
+        <http://www.wikidata.org/entity/Q11004> rdfs:subClassOf <http://www.wikidata.org/entity/Q125928>. # vegetable
+        <http://www.wikidata.org/entity/Q379813> rdfs:subClassOf <http://www.wikidata.org/entity/Q125928>. # 
+        <http://www.wikidata.org/entity/Q196> rdfs:subClassOf <http://www.wikidata.org/entity/Q125928>. # 
+        <http://www.wikidata.org/entity/Q81513> rdfs:subClassOf <http://www.wikidata.org/entity/Q125928>. # citrus
+        <http://www.wikidata.org/entity/Q13191> rdfs:subClassOf <http://www.wikidata.org/entity/Q125928>. # orange
+        <http://www.wikidata.org/entity/Q13099586> rdfs:subClassOf <http://www.wikidata.org/entity/Q125928>.
+        <http://www.wikidata.org/entity/Q184357> rdfs:subClassOf <http://www.wikidata.org/entity/Q125928>.
+        <http://www.wikidata.org/entity/Q3342808> rdfs:subClassOf <http://www.wikidata.org/entity/Q125928>.
+        <http://www.wikidata.org/entity/Q3342808> rdfs:subClassOf <http://www.wikidata.org/entity/Q125928>.
+        <http://www.wikidata.org/entity/Q81Q89> rdfs:subClassOf <http://www.wikidata.org/entity/Q125928>.
+        <http://www.wikidata.org/entity/Q89> rdfs:subClassOf <http://www.wikidata.org/entity/Q125928>.
+        <http://www.wikidata.org/entity/Q904653> rdfs:subClassOf <http://www.wikidata.org/entity/Q125928>.
+        <http://www.wikidata.org/entity/Q10978> rdfs:subClassOf <http://www.wikidata.org/entity/Q125928>.
+        <http://www.wikidata.org/entity/Q12371971> rdfs:subClassOf <http://www.wikidata.org/entity/Q125928>.
+        <http://www.wikidata.org/entity/Q208021> rdfs:subClassOf <http://www.wikidata.org/entity/Q125928>.
+        <http://www.wikidata.org/entity/Q3314483> rdfs:subClassOf <http://www.wikidata.org/entity/Q125928>.
+        <http://www.wikidata.org/entity/Q3434007> rdfs:subClassOf <http://www.wikidata.org/entity/Q125928>.
+        <http://www.wikidata.org/entity/Q7885904> rdfs:subClassOf <http://www.wikidata.org/entity/Q125928>.
+        <http://www.wikidata.org/entity/Q7885904> rdfs:subClassOf <http://www.wikidata.org/entity/Q125928>.
+        
+        <http://www.wikidata.org/entity/Q844144> rdfs:subClassOf <http://www.wikidata.org/entity/Q125928>.
+        <http://www.wikidata.org/entity/Q165449> rdfs:subClassOf <http://www.wikidata.org/entity/Q125928>.
+        <http://www.wikidata.org/entity/Q165449> rdfs:subClassOf <http://www.wikidata.org/entity/Q125928>.
+        <http://www.wikidata.org/entity/Q81> rdfs:subClassOf <http://www.wikidata.org/entity/Q125928>.
+        <http://www.wikidata.org/entity/Q11577> rdfs:subClassOf <http://www.wikidata.org/entity/Q125928>.
+        <http://www.wikidata.org/entity/Q13195> rdfs:subClassOf <http://www.wikidata.org/entity/Q125928>.
+        <http://www.wikidata.org/entity/Q8047551> rdfs:subClassOf <http://www.wikidata.org/entity/Q125928>.
+        <http://www.wikidata.org/entity/Q35051> rdfs:subClassOf <http://www.wikidata.org/entity/Q125928>.
+        <http://www.wikidata.org/entity/Q3845301> rdfs:subClassOf <http://www.wikidata.org/entity/Q125928>.
+        <http://www.wikidata.org/entity/Q1066624> rdfs:subClassOf <http://www.wikidata.org/entity/Q125928>.
+        <http://www.wikidata.org/entity/Q1093742> rdfs:subClassOf <http://www.wikidata.org/entity/Q125928>.
+        <http://www.wikidata.org/entity/Q465934> rdfs:subClassOf <http://www.wikidata.org/entity/Q125928>.
+        <http://www.wikidata.org/entity/Q361073> rdfs:subClassOf <http://www.wikidata.org/entity/Q125928>.
+        <http://www.wikidata.org/entity/Q361073> rdfs:subClassOf <http://www.wikidata.org/entity/Q125928>.
+        <http://www.wikidata.org/entity/Q1093742> rdfs:subClassOf <http://www.wikidata.org/entity/Q125928>.
+        <http://www.wikidata.org/entity/Q235352> rdfs:subClassOf <http://www.wikidata.org/entity/Q125928>.
+        <http://www.wikidata.org/entity/> rdfs:subClassOf <http://www.wikidata.org/entity/Q125928>.
+        <http://www.wikidata.org/entity/> rdfs:subClassOf <http://www.wikidata.org/entity/Q125928>.
+    }
+}

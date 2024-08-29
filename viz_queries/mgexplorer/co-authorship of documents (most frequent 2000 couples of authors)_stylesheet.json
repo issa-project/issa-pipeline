@@ -1,0 +1,22 @@
+{
+    "appli": {
+        "name": "ISSA",
+        "debug": true
+    },
+    "node": {
+        "radius": {
+            "variable": "qtItems"
+        },
+        "default": {
+            "color": "steelblue",
+            "label": "author"
+        },
+        "mix": {
+            "color": "yellow"
+        }
+    },
+    "edge": {
+        "color": "green"
+    },
+    "services": []
+}
