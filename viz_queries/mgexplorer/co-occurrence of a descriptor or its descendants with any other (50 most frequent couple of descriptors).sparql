@@ -36,11 +36,15 @@ WHERE {
 
             {   ?a2 oa:hasBody ?o_uri.
                 ?o_uri skosxl:prefLabel [ skosxl:literalForm ?o ].
-                filter (langMatches(lang(?o), "en")) }
-
+                filter (langMatches(lang(?o), "en")) 
+                # make sure that ?o is never one of the concepts that are expected in ?s
+                filter not exists {
+                    ?o_uri (skos:broader|^agron:includes)* ?parent2.
+                    ?parent2 skosxl:prefLabel [ skosxl:literalForm "$value1"@en ].
+                }
+            }
             filter (?s_uri != ?o_uri)
-            
-        } group by ?s ?s_uri ?o ?o_uri order by desc(?n) limit 30
+        } group by ?s ?s_uri ?o ?o_uri order by desc(?n) limit 50
     }
     
     graph <http://data-issa.cirad.fr/graph/documents> {

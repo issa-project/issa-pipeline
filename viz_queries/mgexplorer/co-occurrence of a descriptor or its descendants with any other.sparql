@@ -1,12 +1,9 @@
 PREFIX agron:   <http://aims.fao.org/aos/agrontology#>
 PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX oa:      <http://www.w3.org/ns/oa#>
-prefix skos:    <http://www.w3.org/2004/02/skos/core#>
-prefix skosxl:  <http://www.w3.org/2008/05/skos-xl#>
-prefix xsd:     <http://www.w3.org/2001/XMLSchema#>
-
-# Pb with this query: some nodes "health" appear in orange whereas they should be green.
-# Why is that?
+PREFIX skos:    <http://www.w3.org/2004/02/skos/core#>
+PREFIX skosxl:  <http://www.w3.org/2008/05/skos-xl#>
+PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
 
 SELECT distinct ?p ?s ?o ?label ?date ("fst" as ?style1) ("snd" as ?style2) (concat("http://issa.i3s.unice.fr/notice/?uri=", ?p) as ?url)
 from <http://agrovoc.fao.org/graph>
@@ -14,30 +11,30 @@ from <http://data-issa.cirad.fr/graph/thematic-descriptors>
 from <http://data-issa.cirad.fr/graph/annif-descriptors>
 from <http://data-issa.cirad.fr/graph/documents>
 WHERE {
-
     ?p ^oa:hasTarget ?a1 , ?a2 .
     filter (?a1 != ?a2)
 
     {   ?a1 oa:hasBody ?uri1.
         ?uri1 skosxl:prefLabel [ skosxl:literalForm ?s ].
-        filter (?s = "$value1"@en)
-    }
-    union
-    {   ?a1 oa:hasBody ?uri1.
+        filter(?s = "$value1"@en)
+    } union {
+        ?a1 oa:hasBody ?uri1.
         ?uri1 skosxl:prefLabel [ skosxl:literalForm ?s ].
         filter (langMatches(lang(?s), "en"))
 
-        ?parent skosxl:prefLabel [ skosxl:literalForm ?sparent ].
-        filter (?sparent = "$value1"@en)
-
-        ?uri1 (skos:broader|^agron:includes)+ ?parent.
+        ?uri1 (skos:broader|^agron:includes)+ ?parent1.
+        ?parent1 skosxl:prefLabel [ skosxl:literalForm "$value1"@en ].
     }
 
     ?a2 oa:hasBody ?uri2.
     ?uri2 skosxl:prefLabel [ skosxl:literalForm ?o ].
-    filter(?uri2 != ?uri1)
-    filter(?uri2 != ?parent)
     filter (langMatches(lang(?o), "en"))
 
+  	# make sure that ?o is never one of the concepts that are expected in ?s
+  	filter not exists {
+    	?uri2 (skos:broader|^agron:includes)* ?parent2.
+        ?parent2 skosxl:prefLabel [ skosxl:literalForm "$value1"@en ].
+  	}
+    
     ?p dcterms:title ?label ; dcterms:issued ?date .
 } limit 10000
