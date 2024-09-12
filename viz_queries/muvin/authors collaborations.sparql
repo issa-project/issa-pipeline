@@ -1,0 +1,41 @@
+# Run with $value1 = Le Coq, Jean-François
+
+PREFIX dce:     <http://purl.org/dc/elements/1.1/>
+PREFIX dct:     <http://purl.org/dc/terms/>
+PREFIX fabio:   <http://purl.org/spar/fabio/>
+PREFIX issa:    <http://data-issa.cirad.fr/>
+PREFIX issapr:  <http://data-issa.cirad.fr/property/>
+PREFIX rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:    <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX schema:  <http://schema.org/>
+PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
+
+SELECT DISTINCT ?uri ?title ?date ?link ?type ?ego ?alter
+FROM <http://data-issa.cirad.fr/graph/documents>
+WHERE {
+    ?uri dce:creator ?ego .
+    FILTER(?ego = "$value1")
+
+    OPTIONAL {
+    	?uri dce:creator ?alter . 
+    	#FILTER(?alter != ?ego)
+  	}
+
+    ?uri a ?documentType ;
+         dct:title ?title ;
+         dct:issued ?date ;
+         schema:url ?link .
+    FILTER(?date > "2000"^^xsd:gYear && ?date < "2024"^^xsd:gYear)
+  
+	FILTER(contains(str(?documentType), "http://purl.org/spar/fabio/"))
+    BIND (
+        IF (?documentType = fabio:ResearchPaper, "Journal Article",
+        IF (?documentType = fabio:Expression, "Monograph",
+        IF (?documentType = fabio:Thesis, "Thesis",
+        IF (?documentType = fabio:Book, "Book",
+        IF (?documentType = fabio:BookChapter, "Book Section",
+        IF (?documentType = fabio:ConferencePaper, "Conference Paper",
+        "Other"
+        ))))))
+    AS ?type)
+} 

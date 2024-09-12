@@ -49,4 +49,4 @@ WHERE {
             
         } group by ?s ?s_uri ?o ?o_uri order by desc(?n) limit 1000
     }
-} order by desc(?n) limit 5000     
+} order by desc(?n) limit 5000

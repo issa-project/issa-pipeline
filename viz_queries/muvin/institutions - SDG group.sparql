@@ -1,0 +1,66 @@
+# Run with $value1  = Centre de Coopération Internationale en Recherche Agronomique pour le Développement
+
+PREFIX dct:     <http://purl.org/dc/terms/>
+PREFIX issa:    <http://data-issa.cirad.fr/>
+PREFIX issapr:  <http://data-issa.cirad.fr/property/>
+PREFIX oa:      <http://www.w3.org/ns/oa#>
+PREFIX rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:    <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX schema:  <http://schema.org/>
+PREFIX skos:    <http://www.w3.org/2004/02/skos/core#>
+PREFIX xsd:     <http://www.w3.org/2001/XMLSchema#>
+
+SELECT DISTINCT (?doc as ?uri) ?title ?date ?link ?type (?labelInst1 as ?ego) (?labelInst2 as ?alter)
+FROM NAMED <http://data-issa.cirad.fr/graph/documents>
+FROM NAMED <http://data-issa.cirad.fr/graph/openalex-authorships>
+FROM NAMED <http://data-issa.cirad.fr/graph/openalex-sdgs>
+FROM NAMED <http://data-issa.cirad.fr/graph/sdgs-metadata>
+WHERE {
+    BIND("https://openalex.org/I131077856_https://openalex.org/I1294671590_https://openalex.org/I1320745970_https://openalex.org/I198105771_https://openalex.org/I19894307_https://openalex.org/I22248866_https://openalex.org/I24906876_https://openalex.org/I251321805_https://openalex.org/I4210087127_https://openalex.org/I4210087514_https://openalex.org/I4210088668_https://openalex.org/I4210091717_https://openalex.org/I4210094754_https://openalex.org/I4210097770_https://openalex.org/I4210100404_https://openalex.org/I4210105147_https://openalex.org/I4210112109_https://openalex.org/I4210120904_https://openalex.org/I4210121611_https://openalex.org/I4210122476_https://openalex.org/I4210123768_https://openalex.org/I4210126969_https://openalex.org/I4210132755_https://openalex.org/I4210135772_https://openalex.org/I4210147278_https://openalex.org/I4210147367_https://openalex.org/I4210153406_https://openalex.org/I4210158756_https://openalex.org/I4210160965_https://openalex.org/I4210166444_https://openalex.org/I96840727" AS ?institutions)
+
+    graph <http://data-issa.cirad.fr/graph/documents> {
+      ?doc dct:title ?title ;
+           dct:issued ?date ;
+           schema:url ?link .
+      FILTER(?date > "2008"^^xsd:gYear)
+    }
+
+    graph <http://data-issa.cirad.fr/graph/openalex-authorships> {
+      ?doc dct:creator/issapr:institutionList/rdf:first ?inst1.
+      ?doc dct:creator/issapr:institutionList/rdf:first ?inst2.
+      FILTER(?inst1 != ?inst2)
+      ?inst1 rdfs:label ?labelInst1 .
+      FILTER(?labelInst1 = "$value1")
+      ?inst2 rdfs:label ?labelInst2 .
+      FILTER(contains(?institutions, str(?inst1)) && contains(?institutions, str(?inst2)))
+  	}
+  
+    graph <http://data-issa.cirad.fr/graph/openalex-sdgs> {
+      ?annotationSdg 
+        oa:hasTarget ?doc ;
+        oa:hasBody ?sdg;
+        a issa:OpenAlexSdgAnnotation .
+    }
+
+    graph <http://data-issa.cirad.fr/graph/sdgs-metadata> {
+      ?sdg skos:altLabel ?sdgLabel .
+      FILTER (lang(?sdgLabel) = "en")
+    
+      BIND (
+          # Climate action ; Life below water ; Life on land
+          IF (?sdg in (<http://metadata.un.org/sdg/13>, <http://metadata.un.org/sdg/14>, <http://metadata.un.org/sdg/15>), "Environment",
+          # Zero hunger ; Good health and well-being ; Clean water and sanitation
+          IF (?sdg in (<http://metadata.un.org/sdg/2>, <http://metadata.un.org/sdg/3>, <http://metadata.un.org/sdg/6>, <http://metadata.un.org/sdg/7>), "Basic Needs",
+          # Decent work and economic growth ; Industry, innovation and infrastructure ; Sustainable cities and communities
+          IF (?sdg in (<http://metadata.un.org/sdg/8>, <http://metadata.un.org/sdg/9>, <http://metadata.un.org/sdg/11>), "Economic Growth",
+          # No poverty, Quality education, Gender equality, Reduced inequalities
+          IF (?sdg in (<http://metadata.un.org/sdg/1>, <http://metadata.un.org/sdg/4>, <http://metadata.un.org/sdg/5>, <http://metadata.un.org/sdg/10>), "Social Equality",
+          # Responsible consumption and production
+          IF (?sdg = <http://metadata.un.org/sdg/12>, "Consumption",
+          # Peace, justice and strong institutions
+          IF (?sdg = <http://metadata.un.org/sdg/16>, "Governance", 
+          # Partnerships for the goals
+          "Partnerships")))))) AS ?type
+      )
+    }
+} limit 5000

@@ -1,0 +1,76 @@
+# Run with $value1  = Agricultural and Biological Sciences
+
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX fabio: <http://purl.org/spar/fabio/>
+PREFIX dc: <http://purl.org/dc/elements/1.1/>
+PREFIX bibo: <http://purl.org/ontology/bibo/>
+PREFIX issa: <http://data-issa.cirad.fr/>
+PREFIX issapr: <http://data-issa.cirad.fr/property/>
+PREFIX oa: <http://www.w3.org/ns/oa#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+PREFIX dct: <http://purl.org/dc/terms/>
+PREFIX schema: <http://schema.org/>
+PREFIX dce: <http://purl.org/dc/elements/1.1/>
+
+SELECT DISTINCT ?uri ?title ?date ?type ?link ?ego ?alter  
+FROM NAMED <http://data-issa.cirad.fr/graph/documents>
+FROM NAMED <http://data-issa.cirad.fr/graph/openalex-sdgs>
+FROM NAMED <http://data-issa.cirad.fr/graph/sdgs-metadata>
+FROM NAMED <http://data-issa.cirad.fr/graph/openalex-topics>
+FROM NAMED <http://data-issa.cirad.fr/graph/openalex-topics-hierarchy>
+WHERE {
+
+  GRAPH <http://data-issa.cirad.fr/graph/documents> {
+      ?uri dct:title ?title ;
+           dct:issued ?date ;
+           schema:url ?link .
+    FILTER(?date > "2000"^^xsd:gYear)
+  }
+
+  GRAPH <http://data-issa.cirad.fr/graph/openalex-topics> {
+    ?annotation1 
+        oa:hasTarget ?uri ;
+        oa:hasBody ?field1 ;
+        a issa:OpenAlexFieldAnnotation .
+  }
+
+  GRAPH <http://data-issa.cirad.fr/graph/openalex-topics-hierarchy> {
+    ?field1 skos:prefLabel ?ego .
+    FILTER (?ego = "$value1")
+  }
+
+  OPTIONAL{
+    GRAPH <http://data-issa.cirad.fr/graph/openalex-topics> {
+      ?annotation2 
+          oa:hasTarget ?uri ;
+          oa:hasBody ?field2 ;
+          a issa:OpenAlexFieldAnnotation .
+    }
+
+    GRAPH <http://data-issa.cirad.fr/graph/openalex-topics-hierarchy> {
+      ?field2 skos:prefLabel ?alter .
+    }
+  }
+
+  GRAPH <http://data-issa.cirad.fr/graph/openalex-sdgs> {
+      ?annotationSdg 
+        oa:hasTarget ?uri ;
+        oa:hasBody ?sdg;
+        a issa:OpenAlexSdgAnnotation .
+  }
+
+  GRAPH <http://data-issa.cirad.fr/graph/sdgs-metadata> {
+      ?sdg skos:altLabel ?sdgLabel .
+      FILTER (lang(?sdgLabel) = "en")
+      BIND (
+        IF (?sdg IN (<http://metadata.un.org/sdg/15>, <http://metadata.un.org/sdg/2>, <http://metadata.un.org/sdg/3>, 
+                     <http://metadata.un.org/sdg/14>, <http://metadata.un.org/sdg/13>, <http://metadata.un.org/sdg/6>),
+          ?sdgLabel, "Other"
+        ) AS ?type
+      )
+  }
+
+} LIMIT 10000
