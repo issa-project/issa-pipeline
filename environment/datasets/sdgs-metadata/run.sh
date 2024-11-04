@@ -14,6 +14,10 @@ mkdir -p $backup_dir
 cp -f ./$ISSA_INSTANCE/$dump   $backup_dir
 
 
+echo "Fecthing the SDG descriptions..."
+python fetch_sdg_description.py
+
+
 echo "Importing files in Virtuoso..."
 ./import.sh     $dump      import-sdgs-metadata.isql
 
