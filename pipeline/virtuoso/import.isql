@@ -30,18 +30,18 @@ checkpoint;
 
 ECHO "Load files:\n";
 
-ld_dir ('$u{IDIR}', 'issa-document-metadata.ttl',    		'$u{namespace}graph/documents');
-ld_dir ('$u{IDIR}', 'issa-document-descriptors.ttl', 		'$u{namespace}graph/thematic-descriptors');
-ld_dir ('$u{IDIR}', 'issa-document-domains.ttl',     		'$u{namespace}graph/document-domains');
-ld_dir ('$u{IDIR}', 'issa-document-keywords.ttl',    		'$u{namespace}graph/document-keywords');
+ld_dir ('$u{IDIR}', 'issa-document-metadata.ttl',           '$u{namespace}graph/documents');
+ld_dir ('$u{IDIR}', 'issa-document-descriptors.ttl',        '$u{namespace}graph/thematic-descriptors');
+ld_dir ('$u{IDIR}', 'issa-document-domains.ttl',            '$u{namespace}graph/document-domains');
+ld_dir ('$u{IDIR}', 'issa-document-keywords.ttl',           '$u{namespace}graph/document-keywords');
 
-ld_dir ('$u{IDIR}', 'issa-document-annif-descriptors.ttl',	'$u{namespace}graph/annif-descriptors');
-ld_dir ('$u{IDIR}', 'issa-document-text.ttl',         	     '$u{namespace}graph/documents/text');
+ld_dir ('$u{IDIR}', 'issa-document-annif-descriptors.ttl',  '$u{namespace}graph/annif-descriptors');
+ld_dir ('$u{IDIR}', 'issa-document-text.ttl',               '$u{namespace}graph/documents/text');
 
-ld_dir ('$u{IDIR}', 'issa-document-spotlight-*.ttl', 		'$u{namespace}graph/dbpedia-spotlight-nes');
-ld_dir ('$u{IDIR}', 'issa-document-entityfishing-*.ttl',	'$u{namespace}graph/entity-fishing-nes');
-ld_dir ('$u{IDIR}', 'issa-document-geonames-*.ttl', 		'$u{namespace}graph/geographic-nes');
-ld_dir ('$u{IDIR}', 'issa-document-pyclinrec-*.ttl',	     '$u{namespace}graph/pyclinrec-nes');
+ld_dir ('$u{IDIR}', 'issa-document-spotlight-*.ttl',        '$u{namespace}graph/dbpedia-spotlight-nes');
+ld_dir ('$u{IDIR}', 'issa-document-entityfishing-*.ttl',    '$u{namespace}graph/entity-fishing-nes');
+ld_dir ('$u{IDIR}', 'issa-document-geonames-*.ttl',         '$u{namespace}graph/geographic-nes');
+ld_dir ('$u{IDIR}', 'issa-document-pyclinrec-*.ttl',        '$u{namespace}graph/pyclinrec-nes');
 
 
 -- List files and graphs to load
