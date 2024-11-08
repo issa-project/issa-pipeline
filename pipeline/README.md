@@ -33,8 +33,14 @@ Alternatively, in the case of a single instance, the configuration files may be 
 
 Before running the pipeline, the needed Docker containers must be installed.
 To do so, go to each individual container directory in [../environment/containers/](../environment/containers/) and run the `install-<contianer>.sh` script.
-
 Check the dedicated [README](../environment/containers/README.md) for more details.
+
+Then start the `virtuoso` and `sparql-micro-service` containers that must be up all the time, using the `run-<contianer>.sh` scripts.
+
+CD to `pipeline` and run the following command
+```
+chmod 755 *.sh
+```
 
 
 ## Running the Pipeline

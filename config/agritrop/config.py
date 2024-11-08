@@ -11,7 +11,7 @@ Each class defines a set of settings for a specific module of the pipeline.
 import os
 import datetime
 import numpy as np
-from  util import SPARQL_Endpoint_Wrapper, read_env_var
+from util import SPARQL_Endpoint_Wrapper, read_env_var
 
 #%%
 # Read environment variables defined in env.sh
@@ -51,7 +51,6 @@ _REL_RDF			    = read_env_var('REL_RDF',                'rdf')
 class cfg_pipeline(object):
     """
     Shared settings
-    
     """
 
     LOG_PATH = _ISSA_LOG 
@@ -65,7 +64,7 @@ class cfg_pipeline(object):
     LATEST_UPDATE = LATEST_UPDATE[0] if LATEST_UPDATE else CURRENT_DATE
 
     FILES_LOC = {
-               'metadata' :      os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, _REL_META ),
+               'metadata' :        os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, _REL_META ),
                'tsv' :             os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, _REL_ANNIF_LABELS ),
                'txt' :             os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, _REL_ANNIF_TEXT ),
                'url' :             os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, _REL_PDF ),
@@ -76,16 +75,19 @@ class cfg_pipeline(object):
                'xml' :             os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, _REL_GROBID_XML ),
                'indexing_text' :   os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, _REL_ANNIF ),
                'indexing_json' :   os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, _REL_ANNIF ),
+               'rdf' :             os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, _REL_RDF ),
               
                'annotation_dbpedia': os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, _REL_SPOTLIGHT ),
                'annotation_wikidata':os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, _REL_EF ),
                'annotation_geonames':os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, _REL_GEONAMES ),
-               
                #'annotation_agrovoc':os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, _REL_PYCLINREC ),
                'annotation_pyclinrec':os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, _REL_PYCLINREC ),                      
                }
     
     USER_AGENT = 'ISSA extraction script' 
+
+    # TSV metadata file where to look for new documents
+    DOCUMENT_URI_TEMPLATE = 'http://data-issa.cirad.fr/document/%s'
     
     DEBUG=False    
 
@@ -361,6 +363,50 @@ class cfg_create_dataset_repository(cfg_pipeline):
                              'abstract_lang'        : ['metadata', 'abstract_lang','code'] ,
                              'abstract_lang_score'  : ['metadata', 'abstract_lang','score'] ,
                             }
+
+
+class cfg_openalex_data(cfg_pipeline):
+    
+    FILES_LOC = cfg_pipeline.FILES_LOC
+
+    INPUT_PATH = FILES_LOC['metadata']
+
+    DOCUMENT_URI_TEMPLATE = cfg_pipeline.DOCUMENT_URI_TEMPLATE
+
+    METADATA_FILENAME = cfg_process_corpus_metadata.PROCESSED_DATA_FILENAME
+    
+    SPARQL_PREFIXES = """
+PREFIX bibo:   <http://purl.org/ontology/bibo/>
+PREFIX dce:    <http://purl.org/dc/elements/1.1/>
+PREFIX dct:    <http://purl.org/dc/terms/>
+PREFIX foaf:   <http://xmlns.com/foaf/0.1/>
+PREFIX gn:     <http://www.geonames.org/ontology#>
+PREFIX issapr: <http://data-issa.cirad.fr/property/>
+PREFIX rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:   <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wdt:    <http://www.wikidata.org/prop/direct/>
+        """
+
+    OPENALEX_API = {
+        'base_url' : 'https://api.openalex.org/works/',
+        'use_mailto' : True,
+        'mailto_param' : 'franck.michel@inria.fr',
+        'max_workers' : 20,
+        'pause_duration' : 0.1
+    }
+    
+    SERVICES = {
+        'authorships':  "http://localhost:81/service/openalex/getAuthorshipsByDoi",
+        'sdg':          "http://localhost:81/service/openalex/getSdgsByDoi",
+        'topics':       "http://localhost:81/service/openalex/getTopicsByDoi",
+    }
+
+    OUTPUT_FILES = {
+        'authorship_data':  os.path.join(FILES_LOC['rdf'], "issa-document-openalex-authorship.ttl"),
+        'sdg_data':         os.path.join(FILES_LOC['rdf'], "issa-document-openalex-sdg.ttl"),
+        'topic_data':       os.path.join(FILES_LOC['rdf'], "issa-document-openalex-topic.ttl")
+    }
+
 
 class cfg_extract_text_from_pdf(cfg_pipeline):
 
