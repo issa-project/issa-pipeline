@@ -64,7 +64,8 @@ class cfg_pipeline(object):
 
     LATEST_UPDATE = LATEST_UPDATE[0] if LATEST_UPDATE else CURRENT_DATE
 
-    FILES_LOC = {'metadata' :      os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, _REL_META ),
+    FILES_LOC = {
+               'metadata' :      os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, _REL_META ),
                'tsv' :             os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, _REL_ANNIF_LABELS ),
                'txt' :             os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, _REL_ANNIF_TEXT ),
                'url' :             os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, _REL_PDF ),
@@ -83,7 +84,6 @@ class cfg_pipeline(object):
                #'annotation_agrovoc':os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, _REL_PYCLINREC ),
                'annotation_pyclinrec':os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, _REL_PYCLINREC ),                      
                }
-
     
     USER_AGENT = 'ISSA extraction script' 
     
