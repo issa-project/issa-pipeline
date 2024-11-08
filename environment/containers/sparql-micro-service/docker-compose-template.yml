@@ -1,0 +1,39 @@
+version: '3.2'
+services:
+
+  corese4sms:
+    image: frmichel/corese4sms:v4.4.1
+    container_name: corese4sms
+    networks:
+      - sms-net
+    volumes:
+      - "${SPARQL_MICRO_SERVICE_HOST_LOG_DIR}:/usr/local/corese/log"
+      - "${SPARQL_MICRO_SERVICE_HOST_SERVICES_DIR}:/services"
+    restart: always
+
+  mongo4sms:
+    image: mongo:4.4.6
+    container_name: mongo4sms
+    networks:
+      - sms-net
+    restart: always
+
+  sparql-micro-service:
+    image: frmichel/sparql-micro-service:v0.5.8
+    container_name: ${SPARQL_MICRO_SERVICE_CONT_NAME}
+    networks:
+      - sms-net
+    ports:
+      - "81:80"
+    volumes:
+      - "${SPARQL_MICRO_SERVICE_HOST_LOG_DIR}:/var/www/sparql-ms/logs"
+      - "${SPARQL_MICRO_SERVICE_HOST_SERVICES_DIR}:/services"
+      - "${SPARQL_MICRO_SERVICE_DOCKER_COMPOSE_DIR}/config:/etc/apache2/sites-enabled"
+      - type: bind
+        source: "${SPARQL_MICRO_SERVICE_DOCKER_COMPOSE_DIR}/config/sparql-micro-service.ini"
+        target: "/var/www/sparql-ms/src/sparqlms/config.ini"
+    restart: always
+
+networks:
+  sms-net:
+    driver: bridge

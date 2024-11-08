@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """     
-Crating directory structure for the dataset repository and saving metadata
+Crafting directory structure for the dataset repository and saving metadata
 in different formats.
 
 Created on Thu Apr  8 16:35:35 2021

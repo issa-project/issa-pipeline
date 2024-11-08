@@ -128,6 +128,13 @@ PYCLINREC_DICT_ENDPOINT=http://data-issa.euromov.fr/sparql    # endpoint to SKOS
 PYCLINREC_DICT_GRAPH=http://id.nlm.nih.gov/mesh/graph         # endpoint graph name to restrict a vocabulary
 PYCLINREC_DICT_NAME=mesh                            # endpoint graph name to restrict a vocabulary
 
+# SPARQL micro-service (docker container)
+export SPARQL_MICRO_SERVICE_CONT_NAME=sparql-micro-service          # docker container name
+export SPARQL_MICRO_SERVICE_DOCKER_COMPOSE_DIR=$ISSA_ROOT/environment/containers/sparql-micro-service
+export SPARQL_MICRO_SERVICE_HOST_SERVICES_DIR=$ISSA_ROOT/environment/containers/sparql-micro-service/services
+export SPARQL_MICRO_SERVICE_HOST_LOG_DIR=$ISSA_PIPELINE_LOG
+
+
 ###############################################################################
 #                              ENVIRONMENT - EXTERNAL DATASETS IMPORT
 ############################################################################### 

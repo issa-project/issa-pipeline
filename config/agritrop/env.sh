@@ -76,7 +76,7 @@ DATASET_META_IMPORT_DIR=$LATEST_UPDATE_DIR/$REL_RDF
 ISSA_ENV_LOG=$ISSA_ROOT/environment/logs
 #ISSA_MONGODB_TRANSIENT=true
 
-# Morph-xR2RMLtools (docker container network)
+# Morph-xR2RML tools (docker container network)
 export MORPH_XR2RML_DOCKER_COMPOSE_DIR=$ISSA_ROOT/environment/containers/morph-xr2rml
 export MORPH_XR2RML_HOST_VOLUME=$ISSA_ROOT/volumes/morph-xr2rml
 export MORPH_XR2RML_HOST_DATA_DIR=$ISSA_ROOT/data
@@ -145,6 +145,13 @@ PYCLINREC_DICT_ENDPOINT=https://data-issa.cirad.fr/sparql  # endpoint to SKOS vo
 PYCLINREC_DICT_GRAPH=http://agrovoc.fao.org/graph          # endpoint graph name to restrict a vocabulary
 PYCLINREC_SKOS_XL_LABELS=True                    # set this flag to use skosXL labels
 PYCLINREC_HOST_CACHE=$ISSA_ROOT/volumes/pyclinrec/cache    # map to /app/cache dit on the container FS for dictionaries and recognizer objects persistency
+
+# SPARQL micro-service (docker container)
+export SPARQL_MICRO_SERVICE_CONT_NAME=sparql-micro-service          # docker container name
+export SPARQL_MICRO_SERVICE_DOCKER_COMPOSE_DIR=$ISSA_ROOT/environment/containers/sparql-micro-service
+export SPARQL_MICRO_SERVICE_HOST_SERVICES_DIR=$ISSA_ROOT/environment/containers/sparql-micro-service/services
+export SPARQL_MICRO_SERVICE_HOST_LOG_DIR=$ISSA_PIPELINE_LOG
+
 
 ###############################################################################
 #                              ENVIRONMENT - EXTERNAL DATASETS IMPORT

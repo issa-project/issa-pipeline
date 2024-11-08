@@ -28,7 +28,16 @@ Alternatively, in the case of a single instance, the configuration files may be 
 - Python scripts configuration config.py in the [pipeline](../pipeline) directory
 - dataset metadata *dataset.ttl* in the [dataset](../dataset) directory
 
-## Running Pipeline
+
+### Installation
+
+Before running the pipeline, the needed Docker containers must be installed.
+To do so, go to each individual container directory in [../environment/containers/](../environment/containers/) and run the `install-<contianer>.sh` script.
+
+Check the dedicated [README](../environment/containers/README.md) for more details.
+
+
+## Running the Pipeline
 
 After configuring the pipeline it can be run manually step-by-step by running numbered scripts in this directory or by invoking [run-pipeline.sh](run-pipeline.sh) with an instance name (e.g. *agritrop*) as an argument to run the entire pipeline automatically. Here is an example:
 

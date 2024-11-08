@@ -1,0 +1,39 @@
+version: '3.2'
+services:
+
+  corese4sms:
+    image: frmichel/corese4sms:v4.4.1
+    container_name: corese4sms
+    networks:
+      - sms-net
+    volumes:
+      - "/home/issa/ISSA-2/pipeline/logs/agritrop:/usr/local/corese/log"
+      - "/home/issa/ISSA-2/environment/containers/sparql-micro-service/services:/services"
+    restart: always
+
+  mongo4sms:
+    image: mongo:4.4.6
+    container_name: mongo4sms
+    networks:
+      - sms-net
+    restart: always
+
+  sparql-micro-service:
+    image: frmichel/sparql-micro-service:v0.5.8
+    container_name: sparql-micro-service
+    networks:
+      - sms-net
+    ports:
+      - "81:80"
+    volumes:
+      - "/home/issa/ISSA-2/pipeline/logs/agritrop:/var/www/sparql-ms/logs"
+      - "/home/issa/ISSA-2/environment/containers/sparql-micro-service/services:/services"
+      - "/home/issa/ISSA-2/environment/containers/sparql-micro-service/config:/etc/apache2/sites-enabled"
+      - type: bind
+        source: "/home/issa/ISSA-2/environment/containers/sparql-micro-service/config/sparql-micro-service.ini"
+        target: "/var/www/sparql-ms/src/sparqlms/config.ini"
+    restart: always
+
+networks:
+  sms-net:
+    driver: bridge

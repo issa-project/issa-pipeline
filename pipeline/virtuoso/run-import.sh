@@ -19,7 +19,7 @@ CONTAINER_NAME=${VIRTUOSO_CONT_NAME:-virtuoso}
 docker start $CONTAINER_NAME
 
 docker exec -w $VIRTUOSO_CONT_SCRIPT_DIR $CONTAINER_NAME \
-    	  isql -H localhost -U dba -P $VIRTUOSO_PWD \
-       exec="LOAD ./import.isql" \
-                 -i $VIRTUOSO_CONT_DATA_IMPORT_DIR $ISSA_NAMESPACE &>> $log
+    isql -H localhost -U dba -P $VIRTUOSO_PWD \
+        exec="LOAD ./import.isql" \
+        -i $VIRTUOSO_CONT_DATA_IMPORT_DIR $ISSA_NAMESPACE &>> $log
 
