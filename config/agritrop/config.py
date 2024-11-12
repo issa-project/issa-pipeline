@@ -6,8 +6,8 @@ Created on Thu Jul  8 19:14:38 2021
 
 This module contains configuration settings for the ISSA pipeline Python scripts.
 Each class defines a set of settings for a specific module of the pipeline.
-
 """
+
 import os
 import datetime
 import numpy as np
@@ -81,6 +81,7 @@ class cfg_pipeline(object):
                'annotation_wikidata':os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, _REL_EF ),
                'annotation_geonames':os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, _REL_GEONAMES ),
                #'annotation_agrovoc':os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, _REL_PYCLINREC ),
+               
                'annotation_pyclinrec':os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, _REL_PYCLINREC ),                      
                }
     
@@ -389,22 +390,22 @@ PREFIX wdt:    <http://www.wikidata.org/prop/direct/>
 
     OPENALEX_API = {
         'base_url' : 'https://api.openalex.org/works/',
-        'use_mailto' : True,
-        'mailto_param' : 'franck.michel@inria.fr',
-        'max_workers' : 20,
-        'pause_duration' : 0.1
+        'use_mailto' : False,           # use if special rate limit agreement with OpenAlex, denoted by param mailto in the API query
+        'max_workers' : 30,             # used if use_mailto = True, max number of parallel workers
+        'pause_sequential' : 0.1,       # used if use_mailto = False, pause between two sequential invokations
+        'pause_error' : 2.0             # pause when an error occurs
     }
     
     SERVICES = {
-        'authorships':  "http://localhost:81/service/openalex/getAuthorshipsByDoi",
+        'authorship':   "http://localhost:81/service/openalex/getAuthorshipsByDoi",
         'sdg':          "http://localhost:81/service/openalex/getSdgsByDoi",
         'topics':       "http://localhost:81/service/openalex/getTopicsByDoi",
     }
 
     OUTPUT_FILES = {
-        'authorship_data':  os.path.join(FILES_LOC['rdf'], "issa-document-openalex-authorship.ttl"),
-        'sdg_data':         os.path.join(FILES_LOC['rdf'], "issa-document-openalex-sdg.ttl"),
-        'topic_data':       os.path.join(FILES_LOC['rdf'], "issa-document-openalex-topic.ttl")
+        'authorship':   os.path.join(FILES_LOC['rdf'], "issa-document-openalex-authorship.ttl"),
+        'sdg':          os.path.join(FILES_LOC['rdf'], "issa-document-openalex-sdg.ttl"),
+        'topics':       os.path.join(FILES_LOC['rdf'], "issa-document-openalex-topics.ttl")
     }
 
 

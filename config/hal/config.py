@@ -6,13 +6,12 @@ Created on Thu Jul  8 19:14:38 2021
 
 This module contains configuration settings for the ISSA pipeline Python scripts.
 Each class defines a set of settings for a specific module of the pipeline.
-
 """
 
 import os
 import datetime
 import numpy as np
-from  util import SPARQL_Endpoint_Wrapper, read_env_var
+from util import SPARQL_Endpoint_Wrapper, read_env_var
 
 #%%
 # Read environment variables defined in env.sh
@@ -30,25 +29,26 @@ _PDF_CACHE_UNREADABLE   = read_env_var('PDF_CACHE_UNREADABLE',  os.path.expandus
 
 # Directories of data files relative to the LATEST_UPDATE_DIR
 
-_REL_META 		    = read_env_var('REL_META',              '.' )
-_REL_META_JSON 	    = read_env_var('REL_META_JSON',         'json/metadata')
-_REL_PDF  		    = read_env_var('REL_PDF',               'pdf')
+_REL_META 		        = read_env_var('REL_META',              '.' )
+_REL_META_JSON 	        = read_env_var('REL_META_JSON',         'json/metadata')
+_REL_PDF  		        = read_env_var('REL_PDF',               'pdf')
 
 _REL_GROBID_XML  	    = read_env_var('REL_GROBID_XML',        'xml' )
 _REL_GROBID_TXT  	    = read_env_var('REL_GROBID_TXT',        'txt' )
 _REL_GROBID_JSON  	    = read_env_var('REL_GROBID_JSON',       'json/fulltext')
 _REL_COAL_JSON  	    = read_env_var('REL_COAL_JSON',         'json/coalesced')
 
-_REL_SPOTLIGHT	         = read_env_var('REL_SPOTLIGHT',         'annotation/dbpedia')
-_REL_EF			    = read_env_var('REL_EF',                'annotation/wikidata')
+_REL_SPOTLIGHT	        = read_env_var('REL_SPOTLIGHT',         'annotation/dbpedia')
+_REL_EF			        = read_env_var('REL_EF',                'annotation/wikidata')
 _REL_GEONAMES		    = read_env_var('REL_GEONAMES',          'annotation/geonames')
-_REL_PYCLINREC	         = read_env_var('REL_PYCLINREC',         'annotation/mesh')
+_REL_PYCLINREC	        = read_env_var('REL_PYCLINREC',         'annotation/mesh')
+
+_REL_RDF			    = read_env_var('REL_RDF',                'rdf')
 
 
 class cfg_pipeline(object):
     """
     Shared settings
-    
     """
 
     LOG_PATH = _ISSA_LOG 
@@ -69,7 +69,8 @@ class cfg_pipeline(object):
                'fulltext_json' :   os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, _REL_GROBID_JSON  ),
                'coalesced_json' :  os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, _REL_COAL_JSON  ),
                'xml' :             os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, _REL_GROBID_XML ),
-                'txt' :             os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, _REL_GROBID_TXT ),
+               'txt' :             os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, _REL_GROBID_TXT ),
+               'rdf' :             os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, _REL_RDF ),
               
                'annotation_dbpedia': os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, _REL_SPOTLIGHT ),
                'annotation_wikidata':os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, _REL_EF ),
@@ -81,7 +82,10 @@ class cfg_pipeline(object):
     
     USER_AGENT = 'ISSA extraction script' 
     
-    DEBUG=False    
+    # TSV metadata file where to look for new documents
+    DOCUMENT_URI_TEMPLATE = 'http://data-issa.cirad.fr/document/%s'
+    
+    DEBUG=False
 
 class cfg_download_corpus_metadata(cfg_pipeline):
 
@@ -364,6 +368,50 @@ class cfg_create_dataset_repository(cfg_pipeline):
                              'abstract_lang'        : ['metadata', 'abstract_lang','code'] ,
                              #'abstract_lang_score'  : ['metadata', 'abstract_lang','score'] ,
                             }
+
+
+class cfg_openalex_data(cfg_pipeline):
+    
+    FILES_LOC = cfg_pipeline.FILES_LOC
+
+    INPUT_PATH = FILES_LOC['metadata']
+
+    DOCUMENT_URI_TEMPLATE = cfg_pipeline.DOCUMENT_URI_TEMPLATE
+
+    METADATA_FILENAME = cfg_process_corpus_metadata.PROCESSED_DATA_FILENAME
+    
+    SPARQL_PREFIXES = """
+PREFIX bibo:   <http://purl.org/ontology/bibo/>
+PREFIX dce:    <http://purl.org/dc/elements/1.1/>
+PREFIX dct:    <http://purl.org/dc/terms/>
+PREFIX foaf:   <http://xmlns.com/foaf/0.1/>
+PREFIX gn:     <http://www.geonames.org/ontology#>
+PREFIX issapr: <http://data-issa.cirad.fr/property/>
+PREFIX rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:   <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX wdt:    <http://www.wikidata.org/prop/direct/>
+        """
+
+    OPENALEX_API = {
+        'base_url' : 'https://api.openalex.org/works/',
+        'use_mailto' : False,           # use if special rate limit agreement with OpenAlex, denoted by param mailto in the API query
+        'max_workers' : 30,             # used if use_mailto = True, max number of parallel workers
+        'pause_sequential' : 0.1,       # used if use_mailto = False, pause between two sequential invokations
+        'pause_error' : 2.0             # pause when an error occurs
+    }
+    
+    SERVICES = {
+        'authorship':   "http://localhost:81/service/openalex/getAuthorshipsByDoi",
+        'sdg':          "http://localhost:81/service/openalex/getSdgsByDoi",
+        'topics':       "http://localhost:81/service/openalex/getTopicsByDoi",
+    }
+
+    OUTPUT_FILES = {
+        'authorship':   os.path.join(FILES_LOC['rdf'], "issa-document-openalex-authorship.ttl"),
+        'sdg':          os.path.join(FILES_LOC['rdf'], "issa-document-openalex-sdg.ttl"),
+        'topics':       os.path.join(FILES_LOC['rdf'], "issa-document-openalex-topics.ttl")
+    }
+
 
 class cfg_extract_text_from_pdf(cfg_pipeline):
 

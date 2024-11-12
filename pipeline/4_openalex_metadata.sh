@@ -19,7 +19,9 @@ source ${ISSA_VENV}/bin/activate
 
 pushd ./openalex
 
-	python3 ./retrieve_openalex_authorship.py	$ISSA_PIPELINE_CONFIG
+	python3 ./retrieve_openalex_data.py	$ISSA_PIPELINE_CONFIG 	--datatype authorship
+	python3 ./retrieve_openalex_data.py	$ISSA_PIPELINE_CONFIG 	--datatype sdg
+	python3 ./retrieve_openalex_data.py	$ISSA_PIPELINE_CONFIG 	--datatype topics
 
 popd
 

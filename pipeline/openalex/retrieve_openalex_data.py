@@ -1,16 +1,18 @@
 # -*- coding: utf-8 -*-
 """ 
-
+Retrieve from OpenAlex 3 types of metadata about the documents: 'authorship', 'sdg' and 'topics'.
+These 3 types must be spelled as in config.cfg_openalex_data
 @author: Franck Michel
 """
+import argparse
 import os
 import sys
 import requests
 import time
+from traceback import format_exc
 from tqdm import tqdm
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from urllib.parse import quote, urlencode
-
 
 sys.path.append("..")
 from util import read_metadata
@@ -28,9 +30,9 @@ logger = open_timestamp_logger(
 )
 
 
-def fetch_doi_list():
+def fetch_doi_list() -> list:
     """
-    Retrieve the list of DOIs from the metadata file (keep only articles with a DOI)
+    Retrieve the list of articles from the metadata file, that have a DOI
 
     Returns:
         list: list of dictionaries with keys 'paper_id' and 'doi'
@@ -40,21 +42,24 @@ def fetch_doi_list():
 
     try:
         df = read_metadata(metadata_file)
-        doi_list = df.loc[df["doi"].notnull(), ["doi", "paper_id"]].to_dict(
-            orient="records"
+        doi_list = (
+            df.loc[df["doi"].notnull(), ["doi", "paper_id"]]
+            .drop_duplicates()
+            .to_dict(orient="records")
         )
-        return doi_list[:10]  # TODO remove the limit 5
+        return doi_list
     except Exception as e:
         logger.error("Error in processing metadata: %s" % e)
         raise e
 
 
-def fetch_data(document_uri, doi) -> str:
+def fetch_data(data_type, document_uri, doi) -> str:
     """
-    Fetch authorship data for a given DOI and document URI
-    from the SPARQL microservice
+    Fetch data from one of the SPARQL microservices,
+    for a given DOI and document URI
 
     Args:
+        data_type (str): one of 'authorship', 'sdg', 'topics'
         document_uri (str): document URI
         doi (str): document DOI
 
@@ -66,31 +71,51 @@ def fetch_data(document_uri, doi) -> str:
         encoded_doi = quote(doi, safe="")
         sparql_query = cfg.SPARQL_PREFIXES + " CONSTRUCT WHERE { ?s ?p ?o. }"
         encoded_sparql_query = urlencode({"query": sparql_query})
-        url = f"{cfg.SERVICES['authorships']}?documentUri={encoded_document_uri}&documentDoi={encoded_doi}&{encoded_sparql_query}"
+        url = f"{cfg.SERVICES[data_type]}?documentUri={encoded_document_uri}&documentDoi={encoded_doi}&{encoded_sparql_query}"
 
-        logger.debug(f"Fetching authorship data for {document_uri}, DOI {doi}")
+        logger.debug(f"Fetching {data_type} data for {document_uri}, DOI {doi}")
         response = requests.get(url, headers={"Accept": "text/turtle"})
         response.raise_for_status()
         return response.text
 
     except requests.exceptions.HTTPError as e:
-        logger.error(f"Could not retrieve authorship for document {document_uri}, DOI {doi}: {e.response.text}")
+        logger.error(
+            f"Could not retrieve {data_type} for document {document_uri}, DOI {doi}: {e.response.text}"
+        )
         return None
     except requests.exceptions.RequestException as e:
-        logger.error(f"Could not retrieve authorship for document {document_uri}, DOI {doi}: {e}")
+        logger.error(
+            f"Could not retrieve {data_type} for document {document_uri}, DOI {doi}: {e}"
+        )
         return None
 
 
 # %% Main processing loop
 if __name__ == "__main__":
 
+    # Parse the inline parameters
+    parser = argparse.ArgumentParser(
+        description="Retrieve from OpenAlex 3 types of metadata about the documents: authorship, SDG and topics"
+    )
+    parser.add_argument(
+        "config_file",
+        help="path to the configuration file contaning class cfg_openalex_data",
+    )
+    parser.add_argument(
+        "--datatype",
+        dest="data_type",
+        help="type of data to fetch from OpenAlex, one of 'authorship', 'sdg', 'topics'",
+        choices=["authorship", "sdg", "topics"],
+    )
+    args = parser.parse_args()
+
     # Initialize lists and counters
     rdf_results = []
     error_count = 0
 
-    # Fetch DOI list and document URIs
+    # Fetch list of document URIs and DOIs
     document_list = fetch_doi_list()
-    logger.info(f"No. of documents with a DOI: {len(document_list)}")
+    logger.info(f"No. documents with a DOI: {len(document_list)}")
 
     if cfg.OPENALEX_API["use_mailto"]:
         # Parallel execution with ThreadPoolExecutor
@@ -101,12 +126,10 @@ if __name__ == "__main__":
             future_to_doi = {
                 executor.submit(
                     fetch_data,
+                    args.data_type,
                     cfg.DOCUMENT_URI_TEMPLATE % item["paper_id"],
                     item["doi"],
-                ): (
-                    cfg.DOCUMENT_URI_TEMPLATE % item["paper_id"],
-                    item["doi"],
-                )
+                ): (cfg.DOCUMENT_URI_TEMPLATE % item["paper_id"], item["doi"])
                 for item in document_list
             }
             for future in tqdm(as_completed(future_to_doi), total=len(document_list)):
@@ -115,32 +138,43 @@ if __name__ == "__main__":
                     rdf_data = future.result()
                     if rdf_data:
                         rdf_results.append(rdf_data)
-                        logger.debug(f"Recorded authorship data for {document_uri}, DOI {doi}")
+                        logger.debug(
+                            f"Recorded {args.data_type} data for {document_uri}, DOI {doi}"
+                        )
                     else:
                         error_count += 1
+                        time.sleep(cfg.OPENALEX_API["pause_error"])
                 except Exception as exc:
-                    logger.error(f"Exception while processing document {document_uri}, DOI {doi}: {exc}")
+                    logger.error(
+                        f"Exception while processing document {document_uri}, DOI {doi}: {exc}"
+                    )
                     error_count += 1
+                    time.sleep(cfg.OPENALEX_API["pause_error"])
     else:
         # Sequential execution
         logger.info("Running in sequential execution mode")
-        for item in document_list:
+        for item in tqdm(document_list):
             (doi, paper_id) = (item["doi"], item["paper_id"])
             document_uri = cfg.DOCUMENT_URI_TEMPLATE % paper_id
             try:
-                rdf_data = fetch_data(document_uri, doi)
+                rdf_data = fetch_data(args.data_type, document_uri, doi)
                 if rdf_data:
                     rdf_results.append(rdf_data)
-                    logger.debug(f"Recorded authorship data for {document_uri}, DOI {doi}")
+                    logger.debug(
+                        f"Recorded {args.data_type} data for {document_uri}, DOI {doi}"
+                    )
+                    time.sleep(cfg.OPENALEX_API["pause_sequential"])
                 else:
                     error_count += 1
+                    time.sleep(cfg.OPENALEX_API["pause_error"])
             except Exception as exc:
                 logger.error(f"Exception while processing DOI {doi} : {exc}")
+                logger.error(format_exc())
                 error_count += 1
-            time.sleep(cfg.OPENALEX_API["pause_duration"])
+                time.sleep(cfg.OPENALEX_API["pause_error"])
 
     # Save RDF results to a Turtle file
-    output = cfg.OUTPUT_FILES['authorship_data']
+    output = cfg.OUTPUT_FILES[args.data_type]
     with open(output, "w", encoding="utf-8") as rdf_file:
         rdf_file.write(cfg.SPARQL_PREFIXES)
         for rdf_data in rdf_results:
@@ -149,7 +183,7 @@ if __name__ == "__main__":
                     rdf_file.write(line + "\n")
 
     # Summary logging
-    logger.info(f"Authorship data saved in {output}")
+    logger.info(f"{args.data_type} data saved in {output}")
     logger.info(f"Number of successful records: {len(rdf_results)}")
     logger.info(f"Number of errors: {error_count}")
 
