@@ -153,9 +153,6 @@ DBPEDIA_IMPORT_DIR=$VIRTUOSO_IMPORT_DIR          # copy DBpedia RDF dump and imp
 # OpenAlex labels and hierarchies dump
 OPENALEX_IMPORT_DIR=$VIRTUOSO_IMPORT_DIR         # copy OpenAlex RDF dump and import scripts to this dir for upload 
 
-# OpenAlex labels and hierarchies dump
-RAO_STIRLING_IMPORT_DIR=$VIRTUOSO_IMPORT_DIR     # copy Rao Stirling RDF dump and import scripts to this dir for upload
-
 
 ###############################################################################
 #                              ENVIRONMENT - INSTANCE SPECIFIC DATASETS

@@ -8,7 +8,6 @@ services:
       - xr2rml-net
     volumes:
       - "/home/issa/ISSA-2/volumes/morph-xr2rml/xr2rml_config:/xr2rml_config"
-      - "/home/issa/ISSA-2/volumes/morph-xr2rml/xr2rml_output:/xr2rml_output"
       - "/home/issa/ISSA-2/pipeline/logs/agritrop:/log"
       - "/home/issa/ISSA-2/data:/issa/data"
       - "/home/issa/ISSA-2/pipeline/morph-xr2rml/xR2RML:/issa/template"

@@ -30,6 +30,10 @@ echo "Annotating with named entities..."
 ./4_annotate_articles.sh
 "    done"
 
+echo "Retrieve additional metadata from OpenAlex..."
+./4_openalex_metadata.sh
+"    done"
+
 echo "Transforming to RDF..."
 ./5_transform_to_rdf.sh
 echo "    done"

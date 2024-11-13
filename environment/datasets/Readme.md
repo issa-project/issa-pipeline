@@ -1,8 +1,8 @@
 # External Datasets 
 
-In addition to the ISSA pipeline generated data other RDF datasets can be loaded into the same triple store. Especially it makes sense to load the external datasets containing the entities that are referenced by the ISSA data, such as GeoNames, Wikidata, or DBpedia. The dataset might also contain the related entities that allow for more elaborate reasoning on the ISSA knowledge graph.
+In addition to the ISSA pipeline generated data, other RDF datasets can be loaded into the same triple store. Especially it makes sense to load the external datasets containing the entities that are referenced by the ISSA data, such as GeoNames, Wikidata, or DBpedia. The dataset might also contain the related entities that allow for more elaborate reasoning on the ISSA knowledge graph.
 
-Each external dataset is an open-source dataset and  has a unique process of obtaining and loading the data as well as a specific update schedule.
+Each external dataset is an open-source dataset and has a unique process of obtaining and loading the data as well as a specific update schedule.
 
 ## Common datasets
 
@@ -13,6 +13,7 @@ Three datasets, GeoNames, Wikidata and DBpedia, are referred to by the Named Ent
 - [Wikidata](https://www.wikidata.org/) is a free and open knowledge base that can be read and edited by both humans and machines. It is not possible to store it locally due to its size and frequent updates. Therefore we periodically extract and store the entities that are already referenced and their hierarchical relationships.
 
 - [DBpedia](https://www.dbpedia.org/) is a project aiming to extract structured content from the information created in Wikipedia. For the same reason, it's quite unreasonable to store the entire datasets and we periodically extract and store only referenced entities and their hierarchical relationships.
+
 
 ## Instance-specific datasets 
 

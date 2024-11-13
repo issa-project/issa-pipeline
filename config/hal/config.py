@@ -75,7 +75,6 @@ class cfg_pipeline(object):
                'annotation_dbpedia': os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, _REL_SPOTLIGHT ),
                'annotation_wikidata':os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, _REL_EF ),
                'annotation_geonames':os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, _REL_GEONAMES ),
-               
                'annotation_pyclinrec':os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, _REL_PYCLINREC ),            
                }
 
@@ -86,6 +85,7 @@ class cfg_pipeline(object):
     DOCUMENT_URI_TEMPLATE = 'http://data-issa.cirad.fr/document/%s'
     
     DEBUG=False
+
 
 class cfg_download_corpus_metadata(cfg_pipeline):
 
@@ -350,35 +350,40 @@ class cfg_create_dataset_repository(cfg_pipeline):
     
     OUTPUT_SUFFIX = '.meta'
     
-    JSON_SCHEMA={'paper_id' : '',
-                   'metadata' : {'title': '',
-                               'authors': '',
-                               'title_lang': {'code': '', 'score': 0.0},
-                               'abstract_lang': {'code': '', 'score': 0.0},
-                               },
-                   'abstract' : [{'text' : ''}],
-                 }
+    JSON_SCHEMA={
+        'paper_id' : '',
+        'metadata' : {
+            'doi': '',
+            'title': '',
+            'authors': '',
+            'title_lang': {'code': '', 'score': 0.0},
+            'abstract_lang': {'code': '', 'score': 0.0},
+        },
+        'abstract' : [{'text' : ''}],
+    }
     
-    METADATA_TO_JSON_MAP = {'paper_id' : ['paper_id'],
-                             'title'       : ['metadata', 'title'],
-                             'abstract'    : ['abstract', 0, 'text'],
-                             'authors'              : ['metadata', 'authors'],
-                             'title_lang'           : ['metadata', 'title_lang','code'] ,
-                             #'title_lang_score'     : ['metadata', 'title_lang','score'] ,
-                             'abstract_lang'        : ['metadata', 'abstract_lang','code'] ,
-                             #'abstract_lang_score'  : ['metadata', 'abstract_lang','score'] ,
-                            }
-
+    METADATA_TO_JSON_MAP = {
+        'paper_id'             : ['paper_id'],
+        'doi'                  : ['metadata', 'doi'],
+        'title'                : ['metadata', 'title'],
+        'abstract'             : ['abstract', 0, 'text'],
+        'authors'              : ['metadata', 'authors'],
+        'title_lang'           : ['metadata', 'title_lang','code'] ,
+        #'title_lang_score'     : ['metadata', 'title_lang','score'] ,
+        'abstract_lang'        : ['metadata', 'abstract_lang','code'] ,
+        #'abstract_lang_score'   : ['metadata', 'abstract_lang','score'] ,
+    }
+    
 
 class cfg_openalex_data(cfg_pipeline):
     
     FILES_LOC = cfg_pipeline.FILES_LOC
 
-    INPUT_PATH = FILES_LOC['metadata']
+    INPUT_PATTERN = '*.json'
+
+    INPUT_PATH = FILES_LOC['metadata_json']
 
     DOCUMENT_URI_TEMPLATE = cfg_pipeline.DOCUMENT_URI_TEMPLATE
-
-    METADATA_FILENAME = cfg_process_corpus_metadata.PROCESSED_DATA_FILENAME
     
     SPARQL_PREFIXES = """
 PREFIX bibo:   <http://purl.org/ontology/bibo/>
@@ -394,21 +399,21 @@ PREFIX wdt:    <http://www.wikidata.org/prop/direct/>
 
     OPENALEX_API = {
         'base_url' : 'https://api.openalex.org/works/',
-        'use_mailto' : False,           # use if special rate limit agreement with OpenAlex, denoted by param mailto in the API query
+        'use_mailto' : True,           # use if special rate limit agreement with OpenAlex, denoted by param mailto in the API query
         'max_workers' : 30,             # used if use_mailto = True, max number of parallel workers
         'pause_sequential' : 0.1,       # used if use_mailto = False, pause between two sequential invokations
         'pause_error' : 2.0             # pause when an error occurs
     }
     
     SERVICES = {
-        'authorship':   "http://localhost:81/service/openalex/getAuthorshipsByDoi",
-        'sdg':          "http://localhost:81/service/openalex/getSdgsByDoi",
+        'authorships':  "http://localhost:81/service/openalex/getAuthorshipsByDoi",
+        'sdgs':         "http://localhost:81/service/openalex/getSdgsByDoi",
         'topics':       "http://localhost:81/service/openalex/getTopicsByDoi",
     }
 
     OUTPUT_FILES = {
-        'authorship':   os.path.join(FILES_LOC['rdf'], "issa-document-openalex-authorship.ttl"),
-        'sdg':          os.path.join(FILES_LOC['rdf'], "issa-document-openalex-sdg.ttl"),
+        'authorships':  os.path.join(FILES_LOC['rdf'], "issa-document-openalex-authorships.ttl"),
+        'sdgs':         os.path.join(FILES_LOC['rdf'], "issa-document-openalex-sdgs.ttl"),
         'topics':       os.path.join(FILES_LOC['rdf'], "issa-document-openalex-topics.ttl")
     }
 
@@ -472,6 +477,7 @@ class cfg_extract_text_from_pdf(cfg_pipeline):
     #INCLUDE_AUTHORS = False
     #INCLUDE_BIB = False
 
+
 class cfg_coalesce_meta_json(cfg_pipeline):
    
     FILES_LOC = cfg_pipeline.FILES_LOC
@@ -485,15 +491,17 @@ class cfg_coalesce_meta_json(cfg_pipeline):
    
     DO_COALESE = True
 
+
 class cfg_indexing_preprocess(cfg_pipeline):
 
     DO_INDEX = False
- 
+
+
 class cfg_indexing_postprocess(cfg_pipeline): 
    
     DO_INDEX = False
 
-    
+
 # Common config setting for the annotation scripts
 class cfg_annotation(cfg_pipeline): 
     FILES_LOC = cfg_pipeline.FILES_LOC    
@@ -536,7 +544,8 @@ class cfg_annotation_dbpedia(cfg_annotation):
     
     SPOTLIGHT_CONFIDENCE= 0.50
     SPOTLIGHT_SUPPORT   = 10
-    
+
+
 class cfg_annotation_wikidata(cfg_annotation): 
     FILES_LOC = cfg_pipeline.FILES_LOC    
 
@@ -548,8 +557,8 @@ class cfg_annotation_wikidata(cfg_annotation):
     #ENTITY_FISHING_ENDPOINT = 'https://cloud.science-miner.com/nerd/service/disambiguate'
     
     REMOVE_GLOBAL_CATEGORIES = True
-    
-   
+
+
 class cfg_annotation_geonames(cfg_annotation): 
     FILES_LOC = cfg_pipeline.FILES_LOC    
 

@@ -5,13 +5,15 @@ These 3 types must be spelled as in config.cfg_openalex_data
 @author: Franck Michel
 """
 import argparse
+import glob
+import json
 import os
-import sys
 import requests
+import sys
 import time
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from traceback import format_exc
 from tqdm import tqdm
-from concurrent.futures import ThreadPoolExecutor, as_completed
 from urllib.parse import quote, urlencode
 
 sys.path.append("..")
@@ -32,22 +34,31 @@ logger = open_timestamp_logger(
 
 def fetch_doi_list() -> list:
     """
-    Retrieve the list of articles from the metadata file, that have a DOI
+    Retrieve the list of documents that have a DOI from the JSON metadata files
 
     Returns:
         list: list of dictionaries with keys 'paper_id' and 'doi'
     """
-    metadata_file = os.path.join(cfg.INPUT_PATH, cfg.METADATA_FILENAME)
-    logger.info("Processing %s metadata file..." % metadata_file)
+
+    metadata_files = glob.glob(os.path.join(cfg.INPUT_PATH, cfg.INPUT_PATTERN))
+    logger.info(
+        "found %d files with pattern %s", len(metadata_files), cfg.INPUT_PATTERN
+    )
 
     try:
-        df = read_metadata(metadata_file)
-        doi_list = (
-            df.loc[df["doi"].notnull(), ["doi", "paper_id"]]
-            .drop_duplicates()
-            .to_dict(orient="records")
-        )
-        return doi_list
+        document_list = []
+        for f_json in metadata_files:
+            json_data = json.load(open(f_json))
+            metadata = json_data["metadata"]
+            if "doi" in metadata.keys() and metadata["doi"] != "":
+                document_list.append(
+                    {"paper_id": json_data["paper_id"], "doi": metadata["doi"]}
+                )
+                logger.info(f"{f_json}: DOI = {metadata['doi']}")
+            else:
+                logger.info(f"{f_json}: no DOI")
+
+        return document_list
     except Exception as e:
         logger.error("Error in processing metadata: %s" % e)
         raise e
@@ -105,7 +116,7 @@ if __name__ == "__main__":
         "--datatype",
         dest="data_type",
         help="type of data to fetch from OpenAlex, one of 'authorship', 'sdg', 'topics'",
-        choices=["authorship", "sdg", "topics"],
+        choices=["authorships", "sdgs", "topics"],
     )
     args = parser.parse_args()
 
