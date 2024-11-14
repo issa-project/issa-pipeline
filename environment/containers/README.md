@@ -10,11 +10,10 @@ Variable aspects of Docker containers such as directories, languages, etc. are c
 ### Execution
 
 Each container folder typically contains:
-
 - Docker image installation or build script `install-<contianer>.sh`
 - Docker container run script `run-<contianer>.sh`
 
-All of the containers, except for `virtuoso` and `sparql-micro-service`, are started and stopped as they are needed. The `virtuoso` and `sparql-micro-service` containers should be constantly running to provide access respectively to the generated Knowledge Graph and the SPARQL micro-services retrieving data from OpenAlex.
+All of the containers, except for `virtuoso`, are started and stopped as they are needed. The `virtuoso` container should be constantly running to provide access to the generated Knowledge Graph.
 
 >:point_right:  The `dbpedia-spotlight.en` container requires a lot of memory and fails to execute on a 32Gb RAM machine if any other container besides `virtuoso` is running.
 
@@ -129,7 +128,7 @@ More details on the container configuration and usage can be found in the [virtu
 
 [SPARQL micro-services](https://github.com/frmichel/sparql-micro-service) translate the result of Web APIs into an RDF representation.
 
-In ISSA, they are used to invoke several services of the [OpenAlex API](https://docs.openalex.org/) to retrieve, for each article having a DOI, the follwing items:
-- the ordered list of authors and affiliations with their ids (OpenAlexID and ORCID)
-- the Sustainable Development Goals (SDG) that the article pertains to
-- the OpenAlex topics/sub-fields/fields/domains
+In ISSA, they are used to invoke several services of the [OpenAlex API](https://docs.openalex.org/) to retrieve, for each document having a DOI, the following items:
+- the ordered list of authors and affiliations with their ids (OpenAlexID and ORCID),
+- the Sustainable Development Goals (SDG) that the document pertains to,
+- the OpenAlex topics/sub-fields/fields/domains assigned to the document.

@@ -25,8 +25,11 @@ echo "script dir (container): $SDIR"
 
 # Check if the Docker container is running
 if [ $( docker ps -f name=$CONTAINER| wc -l ) -eq 1 ]; then
-	"ERROR: $CONTAINER container is not running. Restart using docker-compose command." &>> $log
-	exit
+	echo "ERROR: $CONTAINER container is not running. Restart using docker-compose command." &>> $log
+	pushd $MORPH_XR2RML_DOCKER_COMPOSE_DIR
+		docker-compose start
+     	sleep 5s
+	popd
 fi
 
 
