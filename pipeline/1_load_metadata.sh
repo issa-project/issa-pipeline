@@ -21,7 +21,16 @@ source ${ISSA_VENV}/bin/activate
 
 pushd ./metadata
 
+	echo "*********************************************************************" >> $log
+	echo "Downloading metadata..."
 	python3 ./download_corpus_metadata.py $ISSA_PIPELINE_CONFIG
+
+	echo "*********************************************************************" >> $log
+	echo "Processing metadata..."
+	python3 ./process_corpus_metadata.py  $ISSA_PIPELINE_CONFIG	
+
+	echo "*********************************************************************" >> $log
+	echo "Creating the dataset repository..."
 	python3 ./process_corpus_metadata.py  $ISSA_PIPELINE_CONFIG	
 	python3 ./create_dataset_repository.py $ISSA_PIPELINE_CONFIG
 

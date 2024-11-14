@@ -60,9 +60,8 @@ docker_exec_multipart() {
 }
 
 # Check if the Docker container is running
-
 if [ $( docker ps -f name=$CONTAINER| wc -l ) -eq 1 ]; then 
-	echo "$CONTAINER container is not running. Restarting ..." &>> $log
+	echo "$CONTAINER container is not running. Restarting ..." >> $log 2>&1
 	pushd $MORPH_XR2RML_DOCKER_COMPOSE_DIR
 		docker-compose start
      	sleep 5s

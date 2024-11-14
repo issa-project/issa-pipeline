@@ -16,6 +16,7 @@ elif [[ $ISSA_INSTANCE == "agritrop" ]] ; then
 else
 
     echo "Specify the ISSA instance in the ISSA_INSTANCE environment variable."
+	exit
 
 fi
 

@@ -1,7 +1,11 @@
 # -*- coding: utf-8 -*-
 """ 
-Retrieve from OpenAlex 3 types of metadata about the documents: 'authorship', 'sdg' and 'topics'.
-These 3 types must be spelled as in config.cfg_openalex_data
+Retrieve from OpenAlex 3 types of metadata about the documents: 'authorships', 'sdgs' and 'topics'.
+
+This script is invoked with the following command line arguments:
+    - the path to the configuration file containing the class cfg_openalex_data
+    - the type of data to fetch from OpenAlex, one of 'authorships', 'sdgs', 'topics'
+
 @author: Franck Michel
 """
 import argparse
@@ -106,7 +110,7 @@ if __name__ == "__main__":
 
     # Parse the inline parameters
     parser = argparse.ArgumentParser(
-        description="Retrieve from OpenAlex 3 types of metadata about the documents: authorship, SDG and topics"
+        description="Retrieve from OpenAlex 3 types of metadata about the documents: authorships, SDGs and topics"
     )
     parser.add_argument(
         "config_file",
@@ -115,7 +119,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--datatype",
         dest="data_type",
-        help="type of data to fetch from OpenAlex, one of 'authorship', 'sdg', 'topics'",
+        help="type of data to fetch from OpenAlex, one of 'authorships', 'sdgs', 'topics'",
         choices=["authorships", "sdgs", "topics"],
     )
     args = parser.parse_args()

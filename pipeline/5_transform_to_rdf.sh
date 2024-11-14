@@ -14,9 +14,8 @@ echo "************************************************************************"
 pushd $MORPH_XR2RML_DOCKER_COMPOSE_DIR
 
 	envsubst < "docker-compose-template.yml" > "docker-compose.yml"
-
 	docker-compose start
-     sleep 5s
+    sleep 5s
 
 popd
 
@@ -61,4 +60,5 @@ echo "************************************************************************"
 pushd $MORPH_XR2RML_DOCKER_COMPOSE_DIR
 
 	docker-compose stop
+
 popd

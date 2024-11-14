@@ -1,4 +1,3 @@
-
 #!/bin/bash
 # Author: Anna BOBASHEVA, University Cote d'Azur, Inria
 #
