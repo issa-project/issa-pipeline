@@ -1,6 +1,24 @@
 # -*- coding: utf-8 -*-
 """ 
-'subject' refers to one of the levels in the classification of OpenAlex: topics < subfields < fields < domains
+Compute the Rao Stirling index of an article, which measures the diversity of subjects in an article.
+It is computed using the subjects assigned, not to the article itself, but to the articles it cites.
+See [1]
+
+Here, we use the subjects assigned to articles by Open Alex, which consists of a thesaurus of topics 
+grouped into subfields, then fields, then domains at the more genereal level.
+
+The Rao Stirling index relies on the concept of "distance" or "dissimilarity" between two subjects, 
+which is a value in [0,1]. This distance will be different depending on the level that we consider for the subject
+(topic, subfield, field, domain). This level can be configured in config.py, parameter RAO_STIRLING_CALC_LEVEL.
+Below, we use the term 'subject' to refer to one of the levels in the classification of
+OpenAlex: topics < subfields < fields < domains.
+
+This script is invoked with one command line argument: the path 
+the path to the configuration file containing the class cfg_openalex_data
+
+
+[1] Loet Leydesdorff, Caroline S. Wagner, Lutz Bornmann. Interdisciplinarity as diversity in citation patterns among journals: Rao-Stirling diversity, relative variety, and the Gini coefficient.
+Journal of Informetrics, Volume 13, Issue 1, 2019. https://doi.org/10.1016/j.joi.2018.12.006.
 
 @author: Quentin Scordo, Franck Michel
 """

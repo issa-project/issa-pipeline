@@ -426,10 +426,10 @@ PREFIX wdt:    <http://www.wikidata.org/prop/direct/>
     }
 
     # One of: "Topic", "Subfield", "Field", "Domain"
-    RAO_STIRLING_CALC_LEVEL = "Topic"
+    RAO_STIRLING_CALC_LEVEL = "Subfield"
 
     # Sort Rao Stirling index values into intervals of this size
-    RAO_STIRLING_INTERVAL = 0.1
+    RAO_STIRLING_INTERVAL = 0.01
 
     SAVE_SUBJECT_CITATION_MATRIX = True
 
