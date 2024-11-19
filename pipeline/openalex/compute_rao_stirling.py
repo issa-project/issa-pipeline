@@ -29,18 +29,6 @@ logger = open_timestamp_logger(
 )
 
 
-def append_level_to_filepath(filepath, subject_level):
-    """
-    Appends the level (topics, subfields, fields, domains) to the filename with full path
-
-    Args:
-        filepath (str): the full path to the file
-        subject_level (str): one of TOPIC, SUBFIELD, FIELD, DOMAIN
-    """
-    base, ext = os.path.splitext(filepath)
-    return f"{base}_{subject_level}{ext}"
-
-
 def load_article_data(filepath):
     """
     Load the JSON file previsouly generated and containing article citation data
@@ -53,7 +41,7 @@ def load_article_data(filepath):
 def create_article_subjects_citation(article, subject_level) -> tuple:
     """
     Calculate, for one article, the proportion of "cited subjects" (topics/subfields/fields/domains)
-    based on the occurrence of each subject in the articles that this article cites.
+    based on the occurrence of each subject in the articles cited by this article.
     That is, count the number of times each subject appears in the cited articles,
     and divide by the total number of articles.
 
@@ -72,18 +60,21 @@ def create_article_subjects_citation(article, subject_level) -> tuple:
 
     subject_count = defaultdict(int)
 
+    no_cited_articles = len(article["Cited_articles"])
     for cited_article in article["Cited_articles"]:
         for subject_subtree in cited_article["Subjects"]:
             subject_name = subject_subtree[subject_level]["Name"]
             subject_count[subject_name] += 1
 
-    logger.info(f"Found {len(subject_count)} {subject_level}(s) in the cited articles")
+    logger.info(
+        f"Found {len(subject_count)} {subject_level}(s) in {no_cited_articles} cited article(s)"
+    )
     article_subjects = {}
 
     if len(subject_count) > 0:
         for subject, count in subject_count.items():
-            article_subjects[subject] = count / len(article)
-        logger.debug(f"Proportion of subjects: {article_subjects}")
+            article_subjects[subject] = count / no_cited_articles
+        logger.debug(f"Proportion of {subject_level}s: {article_subjects}")
 
     return article_subjects
 
@@ -179,13 +170,20 @@ def precompute_subject_trees(articles: dict, subject_level: str) -> dict:
                 name = subject_tree[subject_level]["Name"]
                 subject_levels[name] = subject_tree
 
-    logger.info(f"Precomputed the tree info of {len(subject_levels)} {subject_level}'s")
+    logger.info(
+        f"Precomputed the tree info of {len(subject_levels)} {subject_level}(s)"
+    )
     return subject_levels
 
 
-def calculate_distance(sub_i: dict, sub_j: dict) -> float:
+def calculate_distance(sub_i: dict, sub_j: dict, subject_level: str) -> float:
     """
     Return a distance in [0,1] between two subjects based on their proximity in the OpenAlex tree of subjects.
+
+    Args:
+        sub_i (dict): first subject to compare
+        sub_j (dict): 2nd subject to compare
+        subject_level (str): the level of the subject of interest, one of vars TOPIC, SUBFIELD, FIELD, DOMAIN
 
     Here, each subject is given by a dictionary with the keys 'Topic', 'Subfield', 'Field', 'Domain',
     obtained from a JSON document like the following:
@@ -213,8 +211,9 @@ def calculate_distance(sub_i: dict, sub_j: dict) -> float:
         float: distance in [0,1]
     ```
     """
+
     distances = {
-        # distance between a topic and itself
+        # distance between twice the same topic
         TOPIC: 0,
         # distance between 2 different topics in the same subfield
         SUBFIELD: 0.125,
@@ -229,30 +228,23 @@ def calculate_distance(sub_i: dict, sub_j: dict) -> float:
     if not sub_i or not sub_j:
         return distances["max"]
 
-    if (
-        TOPIC in sub_i
-        and TOPIC in sub_j
-        and sub_i[TOPIC]["Name"] == sub_j[TOPIC]["Name"]
-    ):
+    if subject_level in (TOPIC) and sub_i[TOPIC]["Name"] == sub_j[TOPIC]["Name"]:
         return distances[TOPIC]
 
     if (
-        SUBFIELD in sub_i
-        and SUBFIELD in sub_j
+        subject_level in (TOPIC, SUBFIELD)
         and sub_i[SUBFIELD]["Name"] == sub_j[SUBFIELD]["Name"]
     ):
         return distances[SUBFIELD]
 
     if (
-        FIELD in sub_i
-        and FIELD in sub_j
+        subject_level in (TOPIC, SUBFIELD, FIELD)
         and sub_i[FIELD]["Name"] == sub_j[FIELD]["Name"]
     ):
         return distances[FIELD]
 
     if (
-        DOMAIN in sub_i
-        and DOMAIN in sub_j
+        subject_level in (TOPIC, SUBFIELD, FIELD, DOMAIN)
         and sub_i[DOMAIN]["Name"] == sub_j[DOMAIN]["Name"]
     ):
         return distances[DOMAIN]
@@ -260,13 +252,16 @@ def calculate_distance(sub_i: dict, sub_j: dict) -> float:
     return distances["max"]
 
 
-def calculate_rao_stirling_index(article_subjects_citation: dict, subject_trees: dict):
+def calculate_rao_stirling_index(
+    article_subjects_citation: dict, subject_trees: dict, subject_level: str
+):
     """
     Calculate the Rao-Stirling index for a single article
 
     Args:
         article_subjects_citation (dict): dictionary whose key is the subject name, and the value is the proportion of occurrences of this subject in the cited articles
         subject_trees (dict): dictionary whose key is a subject name, and the value is a dictionary of its corresponding topic, subfield, field, and domain
+        subject_level (str): the level of the subject of interest, one of vars TOPIC, SUBFIELD, FIELD, DOMAIN
 
     Returns:
         float: Normalized Rao-Stirling index in [0,1]
@@ -276,19 +271,20 @@ def calculate_rao_stirling_index(article_subjects_citation: dict, subject_trees:
     sum_rao_stirling = 0.0
     no_combinations = 0
 
-    for sub_i in subjects:
-        for sub_j in subjects:
-            if sub_i != sub_j:
-                p_i = article_subjects_citation[sub_i]
-                p_j = article_subjects_citation[sub_j]
-                d_i_j = calculate_distance(
-                    subject_trees.get(sub_i), subject_trees.get(sub_j)
-                )
-                no_combinations += 1
-                sum_rao_stirling += p_i * p_j * d_i_j
+    for sub_i, sub_j in combinations(subjects, 2):
+        p_i = article_subjects_citation[sub_i]
+        p_j = article_subjects_citation[sub_j]
+        d_i_j = calculate_distance(
+            subject_trees.get(sub_i), subject_trees.get(sub_j), subject_level
+        )
+        sum_rao_stirling += p_i * p_j * d_i_j
+        no_combinations += 1
 
     # Normalize the index to have a value in [0,1]
     sum_rao_stirling_idx = sum_rao_stirling / no_combinations
+    logger.debug(
+        f"Rao Stirling index: {sum_rao_stirling}, normalized by {no_combinations} couples of {subject_level}s: {sum_rao_stirling_idx}"
+    )
     return sum_rao_stirling_idx
 
 
@@ -377,7 +373,7 @@ def main():
         all_subjects.update(cited_subjects)
 
         rao_stirling_index = calculate_rao_stirling_index(
-            article_subjects_citation, subject_trees
+            article_subjects_citation, subject_trees, level
         )
         rao_stirling_results.append(
             {
@@ -396,13 +392,15 @@ def main():
             articles, all_subjects_list, level
         )
 
-        header_row = ["DOI", "ISSA_Document_URI", "OpenAlex_ID"] + all_subjects_list
-        matrix_file = cfg.OUTPUT_FILES["subject_citation_matrix"]
+        header_row = ["DOI", "OpenAlex_ID", "ISSA_Document_URI"] + all_subjects_list
+        matrix_file = cfg.OUTPUT_FILES["subject_citation_matrix"].replace(
+            "subject", level
+        )
         save_citation_matrix_with_topics(
             subjects_citation_matrix, header_row, matrix_file
         )
 
-    result_file = cfg.OUTPUT_FILES["rao_stirling_index"]
+    result_file = cfg.OUTPUT_FILES["rao_stirling_index"].replace("subject", level)
     logger.info(f"Saving Rao-Stirling index results to {result_file}")
     with open(result_file, "w", encoding="utf-8") as f:
         json.dump(rao_stirling_results, f, ensure_ascii=False, indent=4)
@@ -413,7 +411,9 @@ def main():
     rao_stirling_index_intervals = calculate_rao_stirling_occurrence_intevals(
         rao_stirling_results, cfg.RAO_STIRLING_INTERVAL
     )
-    result_file = cfg.OUTPUT_FILES["rao_stirling_index_intervals"]
+    result_file = cfg.OUTPUT_FILES["rao_stirling_index_intervals"].replace(
+        "subject", level
+    )
     logger.info(f"Saving Rao-Stirling intervals to {result_file}")
     with open(result_file, "w", encoding="utf-8") as f:
         json.dump(rao_stirling_index_intervals, f, ensure_ascii=False, indent=4)
