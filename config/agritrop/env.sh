@@ -56,6 +56,7 @@ export REL_GROBID_XML=xml               # Grobid extracted data (xml)
 export REL_META_JSON=json/metadata      # text contained in metadata formatted as json 
 export REL_GROBID_JSON=json/fulltext    # text extracted by Grobid formatted as json
 export REL_COAL_JSON=json/coalesced     # json coalesced from the two above with metadata replacing Grobit when present 
+export REL_OPENALEX=openalex            # metadata from OpenAlex and computation, formatted as json 
 
 
 # Metadata configuration

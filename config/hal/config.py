@@ -37,6 +37,7 @@ _REL_GROBID_XML  	    = read_env_var('REL_GROBID_XML',        'xml' )
 _REL_GROBID_TXT  	    = read_env_var('REL_GROBID_TXT',        'txt' )
 _REL_GROBID_JSON  	    = read_env_var('REL_GROBID_JSON',       'json/fulltext')
 _REL_COAL_JSON  	    = read_env_var('REL_COAL_JSON',         'json/coalesced')
+_REL_OPENALEX 	        = read_env_var('REL_OPENALEX',          'openalex')
 
 _REL_SPOTLIGHT	        = read_env_var('REL_SPOTLIGHT',         'annotation/dbpedia')
 _REL_EF			        = read_env_var('REL_EF',                'annotation/wikidata')
@@ -70,6 +71,7 @@ class cfg_pipeline(object):
                'coalesced_json' :  os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, _REL_COAL_JSON  ),
                'xml' :             os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, _REL_GROBID_XML ),
                'txt' :             os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, _REL_GROBID_TXT ),
+               'openalex' :        os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, _REL_OPENALEX ),
                'rdf' :             os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, _REL_RDF ),
               
                'annotation_dbpedia': os.path.join(DATASET_ROOT_PATH, LATEST_UPDATE, _REL_SPOTLIGHT ),
@@ -84,7 +86,7 @@ class cfg_pipeline(object):
     # TSV metadata file where to look for new documents
     DOCUMENT_URI_TEMPLATE = 'http://data-issa.cirad.fr/document/%s'
     
-    DEBUG=False
+    DEBUG=True
 
 
 class cfg_download_corpus_metadata(cfg_pipeline):
@@ -402,6 +404,7 @@ PREFIX wdt:    <http://www.wikidata.org/prop/direct/>
     OPENALEX_API = {
         'base_url' : 'https://api.openalex.org/works/',
         'use_mailto' : True,           # use if special rate limit agreement with OpenAlex, denoted by param mailto in the API query
+        'mailto': 'franck.michel@inria.fr',
         'max_workers' : 30,             # used if use_mailto = True, max number of parallel workers
         'pause_sequential' : 0.1,       # used if use_mailto = False, pause between two sequential invokations
         'pause_error' : 2.0             # pause when an error occurs
@@ -414,10 +417,25 @@ PREFIX wdt:    <http://www.wikidata.org/prop/direct/>
     }
 
     OUTPUT_FILES = {
-        'authorships':  os.path.join(FILES_LOC['rdf'], "issa-document-openalex-authorships.ttl"),
-        'sdgs':         os.path.join(FILES_LOC['rdf'], "issa-document-openalex-sdgs.ttl"),
-        'topics':       os.path.join(FILES_LOC['rdf'], "issa-document-openalex-topics.ttl")
+        # Complementary metadata retrieval from SPARQL micro-services
+        'authorships':      os.path.join(FILES_LOC['rdf'], "issa-document-openalex-authorships.ttl"),
+        'sdgs':             os.path.join(FILES_LOC['rdf'], "issa-document-openalex-sdgs.ttl"),
+        'topics':           os.path.join(FILES_LOC['rdf'], "issa-document-openalex-topics.ttl"),
+
+        # Citation and topics data retrieval to compute the Rao-Stirling index
+        'article_citation': os.path.join(FILES_LOC['openalex'], "article-citation-subjects.json"),
+        'subject_citation_matrix': os.path.join(FILES_LOC['openalex'], "subject-citation-matrix.json"),
+        'rao_stirling_index': os.path.join(FILES_LOC['openalex'], "rao-stirling-index.json"),
+        'rao_stirling_index_intervals': os.path.join(FILES_LOC['openalex'], "rao-stirling-index-intervals.json"),
     }
+
+    # One of: "Topic", "Subfield", "Field", "Domain"
+    RAO_STIRLING_CALC_LEVEL = "Topic"
+
+    # Sort Rao Stirling index values into intervals of this size
+    RAO_STIRLING_INTERVAL = 0.1
+
+    SAVE_SUBJECT_CITATION_MATRIX = True
 
 
 class cfg_extract_text_from_pdf(cfg_pipeline):

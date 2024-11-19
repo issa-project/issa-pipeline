@@ -1,29 +1,29 @@
 # -*- coding: utf-8 -*-
 """ 
-Retrieve from OpenAlex 3 types of metadata about the documents: 'authorships', 'sdgs' and 'topics'.
+Retrieve from OpenAlex 3 types of metadata about the documents with a DOI: authorships, SDGs and topics.
+from dedicated SPARQL micro-services.
 
 This script is invoked with the following command line arguments:
     - the path to the configuration file containing the class cfg_openalex_data
-    - the type of data to fetch from OpenAlex, one of 'authorships', 'sdgs', 'topics'
+    - `--datatype`: the type of data to fetch from OpenAlex, one of 'authorships', 'sdgs', 'topics'
 
-@author: Franck Michel
+@author: Quentin Scordo, Franck Michel
 """
 import argparse
-import glob
-import json
+from concurrent.futures import ThreadPoolExecutor, as_completed
 import os
 import requests
-import sys
 import time
-from concurrent.futures import ThreadPoolExecutor, as_completed
-from traceback import format_exc
 from tqdm import tqdm
+from traceback import format_exc
 from urllib.parse import quote, urlencode
+import sys
 
 sys.path.append("..")
-from util import read_metadata
-from util import open_timestamp_logger, close_timestamp_logger, INFO, DEBUG
 from util import add_path_to_config
+from util import open_timestamp_logger, close_timestamp_logger
+from util import INFO, DEBUG
+from openalex.common import fetch_document_list
 
 add_path_to_config()
 from config import cfg_openalex_data as cfg
@@ -36,38 +36,6 @@ logger = open_timestamp_logger(
 )
 
 
-def fetch_doi_list() -> list:
-    """
-    Retrieve the list of documents that have a DOI from the JSON metadata files
-
-    Returns:
-        list: list of dictionaries with keys 'paper_id' and 'doi'
-    """
-
-    metadata_files = glob.glob(os.path.join(cfg.INPUT_PATH, cfg.INPUT_PATTERN))
-    logger.info(
-        "found %d files with pattern %s", len(metadata_files), cfg.INPUT_PATTERN
-    )
-
-    try:
-        document_list = []
-        for f_json in metadata_files:
-            json_data = json.load(open(f_json))
-            metadata = json_data["metadata"]
-            if "doi" in metadata.keys() and metadata["doi"] != "":
-                document_list.append(
-                    {"paper_id": json_data["paper_id"], "doi": metadata["doi"]}
-                )
-                logger.info(f"{f_json}: DOI = {metadata['doi']}")
-            else:
-                logger.info(f"{f_json}: no DOI")
-
-        return document_list
-    except Exception as e:
-        logger.error("Error in processing metadata: %s" % e)
-        raise e
-
-
 def fetch_data(data_type, document_uri, doi) -> str:
     """
     Fetch data from one of the SPARQL microservices,
@@ -75,7 +43,7 @@ def fetch_data(data_type, document_uri, doi) -> str:
 
     Args:
         data_type (str): one of 'authorship', 'sdg', 'topics'
-        document_uri (str): document URI
+        document_uri (str): document URI (in ISSA, not in OpenAlex)
         doi (str): document DOI
 
     Returns:
@@ -129,7 +97,7 @@ if __name__ == "__main__":
     error_count = 0
 
     # Fetch list of document URIs and DOIs
-    document_list = fetch_doi_list()
+    document_list = fetch_document_list()
     logger.info(f"No. documents with a DOI: {len(document_list)}")
 
     if cfg.OPENALEX_API["use_mailto"]:
@@ -169,7 +137,7 @@ if __name__ == "__main__":
         # Sequential execution
         logger.info("Running in sequential execution mode")
         for item in tqdm(document_list):
-            (doi, paper_id) = (item["doi"], item["paper_id"])
+            doi, paper_id = item["doi"], item["paper_id"]
             document_uri = cfg.DOCUMENT_URI_TEMPLATE % paper_id
             try:
                 rdf_data = fetch_data(args.data_type, document_uri, doi)
