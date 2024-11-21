@@ -56,7 +56,7 @@ def load_article_data(filepath):
         return json.load(f)
 
 
-def create_article_subjects_citation(article, subject_level) -> tuple:
+def create_article_subjects_citation(article: dict, subject_level: str) -> tuple:
     """
     Calculate, for one article, the proportion of "cited subjects" (topics/subfields/fields/domains)
     based on the occurrence of each subject in the articles cited by this article.
@@ -306,42 +306,81 @@ def calculate_rao_stirling_index(
     return sum_rao_stirling_idx
 
 
-def calculate_rao_stirling_occurrence_intevals(results, interval=0.1):
+def calculate_rao_stirling_occurrence_intevals(results, interval_size=0.1) -> dict:
     """
     Sort Rao Stirling index values into intervals
 
     Args:
         results (list): list of dictionaries with key "Rao Stirling Index"
         interval (float): size of the interval
+
+    Returns:
+        dict: dictionary with the interval as key, and the number of occurrences of the Rao Stirling index in this interval as value
     """
-    logger.debug(f"Sorting Rao Stirling index values into intervals of size {interval}")
+    logger.debug(
+        f"Sorting Rao Stirling index values into intervals of size {interval_size}"
+    )
     occurrences = {}
 
-    # Loop through the ranges
-    for i in range(0, int(1 / interval)):
-        lower_bound = round(i * interval, 3)
-        upper_bound = round((i + 1) * interval, 3)
-        if i != int(1 / interval):
+    # Loop through the ranges to initialize the intervals with value 0
+    for i in range(0, int(1 / interval_size)):
+        lower_bound = round(i * interval_size, 3)
+        upper_bound = round((i + 1) * interval_size, 3)
+        if i != int(1 / interval_size):
             occurrences[f"[{lower_bound}-{upper_bound}["] = 0
         else:
             # last interval includes the upper bound 1.0
             occurrences[f"[{lower_bound}-{upper_bound}]"] = 0
 
     for result in results:
-        rao_index = result["Rao Stirling Index"]
-        for i in range(0, int(1 / interval)):
-            lower_bound = round(i * interval, 3)
-            upper_bound = round((i + 1) * interval, 3)
-            if i != int(1 / interval):
+        rao_index = result["Rao_Stirling_Index"]
+        for i in range(0, int(1 / interval_size)):
+            lower_bound = round(i * interval_size, 3)
+            upper_bound = round((i + 1) * interval_size, 3)
+            if i != int(1 / interval_size):
                 if lower_bound <= rao_index < upper_bound:
                     occurrences[f"[{lower_bound}-{upper_bound}["] += 1
                     break
             else:
+                # last interval includes the upper bound 1.0
                 if lower_bound <= rao_index <= upper_bound:
                     occurrences[f"[{lower_bound}-{upper_bound}]"] += 1
                     break
 
     return occurrences
+
+
+def convert_rao_stirling_value_to_inteval(rao_index: float, interval_size=0.1) -> str:
+    """
+    Takes a Rao Stirling index value and turns it into an interval as a string
+    like "[0.0-0.1[", "[0.1-0.2[" etc.
+
+    Args:
+        results (list): list of dictionaries with key "Rao Stirling Index"
+        interval (float): size of the interval
+
+    Returns:
+        str: interval string representation
+    """
+
+    interval = ""
+    precision = len(str(int(1 / interval_size) - 1))
+    _format = '{:.' + str(precision) + 'f}'
+
+    for i in range(0, int(1 / interval_size)):
+        lower_bound = round(i * interval_size, 3)
+        upper_bound = round((i + 1) * interval_size, 3)
+        if i != int(1 / interval_size):
+            if lower_bound <= rao_index < upper_bound:
+                interval = f"[{_format.format(lower_bound)}-{_format.format(upper_bound)}["
+                break
+        else:
+            # last interval includes the upper bound 1.0
+            if lower_bound <= rao_index <= upper_bound:
+                interval = f"[{_format.format(lower_bound)}-{_format.format(upper_bound)}]"
+                break
+
+    return interval
 
 
 def save_citation_matrix_with_topics(matrix, header_row, filepath):
@@ -399,7 +438,8 @@ def main():
                 "ISSA_Document_URI": article["ISSA_Document_URI"],
                 "OpenAlex_ID": article["OpenAlex_ID"],
                 "Title": article["Title"],
-                "Rao Stirling Index": rao_stirling_index,
+                "Rao_Stirling_Index": rao_stirling_index,
+                "Rao_Stirling_Interval": convert_rao_stirling_value_to_inteval(rao_stirling_index),
             }
         )
 
