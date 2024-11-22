@@ -1,4 +1,4 @@
-# Mapping file for the CORD19 metadata CSV file. The article URIs are built using the sha field.
+# Mapping file for the metadata
 #
 # Author: Ann BOBASHEVA, University Cote d'Azur, CNRS, Inria
 #
