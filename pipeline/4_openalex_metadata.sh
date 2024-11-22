@@ -39,6 +39,7 @@ pushd ./openalex
     mkdir -p $DATASET_ROOT_PATH/$LATEST_UPDATE/$REL_OPENALEX        >> $log 2>&1
     python3 ./retrieve_citation_data.py   $ISSA_PIPELINE_CONFIG     >> $log 2>&1
     python3 ./compute_rao_stirling.py     $ISSA_PIPELINE_CONFIG     >> $log 2>&1
+    mv -f rao_stirling.json $DATASET_ROOT_PATH/$LATEST_UPDATE/$REL_OPENALEX >> $log 2>&1
 
 popd
 

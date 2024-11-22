@@ -420,9 +420,9 @@ PREFIX wdt:    <http://www.wikidata.org/prop/direct/>
 
         # Citation and topics data retrieval to compute the Rao-Stirling index
         'article_citation': os.path.join(FILES_LOC['openalex'], "article-citation-subjects.json"),
-        'subject_citation_matrix': os.path.join(FILES_LOC['openalex'], "subject-citation-matrix.json"),
-        'rao_stirling_index': os.path.join(FILES_LOC['openalex'], "rao-stirling-subject.json"),
-        'rao_stirling_index_intervals': os.path.join(FILES_LOC['openalex'], "rao-stirling-subject-intervals.json"),
+        'subject_citation_matrix': os.path.join(FILES_LOC['openalex'], "article-citation-subjects-matrix.json"),
+        'rao_stirling_index': os.path.join(FILES_LOC['openalex'], "rao-stirling.json"),
+        'rao_stirling_index_intervals': os.path.join(FILES_LOC['openalex'], "rao-stirling-intervals.json"),
     }
 
     # One of: "Topic", "Subfield", "Field", "Domain"

@@ -365,19 +365,23 @@ def convert_rao_stirling_value_to_inteval(rao_index: float, interval_size=0.1) -
 
     interval = ""
     precision = len(str(int(1 / interval_size) - 1))
-    _format = '{:.' + str(precision) + 'f}'
+    _format = "{:." + str(precision) + "f}"
 
     for i in range(0, int(1 / interval_size)):
         lower_bound = round(i * interval_size, 3)
         upper_bound = round((i + 1) * interval_size, 3)
         if i != int(1 / interval_size):
             if lower_bound <= rao_index < upper_bound:
-                interval = f"[{_format.format(lower_bound)}-{_format.format(upper_bound)}["
+                interval = (
+                    f"[{_format.format(lower_bound)}-{_format.format(upper_bound)}["
+                )
                 break
         else:
             # last interval includes the upper bound 1.0
             if lower_bound <= rao_index <= upper_bound:
-                interval = f"[{_format.format(lower_bound)}-{_format.format(upper_bound)}]"
+                interval = (
+                    f"[{_format.format(lower_bound)}-{_format.format(upper_bound)}]"
+                )
                 break
 
     return interval
@@ -439,7 +443,9 @@ def main():
                 "OpenAlex_ID": article["OpenAlex_ID"],
                 "Title": article["Title"],
                 "Rao_Stirling_Index": rao_stirling_index,
-                "Rao_Stirling_Interval": convert_rao_stirling_value_to_inteval(rao_stirling_index),
+                "Rao_Stirling_Interval": convert_rao_stirling_value_to_inteval(
+                    rao_stirling_index
+                ),
             }
         )
 
@@ -451,14 +457,12 @@ def main():
         )
 
         header_row = ["DOI", "OpenAlex_ID", "ISSA_Document_URI"] + all_subjects_list
-        matrix_file = cfg.OUTPUT_FILES["subject_citation_matrix"].replace(
-            "subject", level
-        )
+        matrix_file = cfg.OUTPUT_FILES["subject_citation_matrix"]
         save_citation_matrix_with_topics(
             subjects_citation_matrix, header_row, matrix_file
         )
 
-    result_file = cfg.OUTPUT_FILES["rao_stirling_index"].replace("subject", level)
+    result_file = cfg.OUTPUT_FILES["rao_stirling_index"]
     logger.info(f"Saving Rao-Stirling index results to {result_file}")
     with open(result_file, "w", encoding="utf-8") as f:
         json.dump(rao_stirling_results, f, ensure_ascii=False, indent=4)
@@ -469,17 +473,10 @@ def main():
     rao_stirling_index_intervals = calculate_rao_stirling_occurrence_intevals(
         rao_stirling_results, cfg.RAO_STIRLING_INTERVAL
     )
-    result_file = cfg.OUTPUT_FILES["rao_stirling_index_intervals"].replace(
-        "subject", level
-    )
+    result_file = cfg.OUTPUT_FILES["rao_stirling_index_intervals"]
     logger.info(f"Saving Rao-Stirling intervals to {result_file}")
     with open(result_file, "w", encoding="utf-8") as f:
         json.dump(rao_stirling_index_intervals, f, ensure_ascii=False, indent=4)
-
-    # Trigger RDF Conversion
-    # if config.get("run_rdf_conversion", False):
-    #     logger.info("Running RDF conversion script")
-    #     os.system("python Interdisciplinarity/rao_stirling_to_rdf.py")
 
 
 if __name__ == "__main__":
