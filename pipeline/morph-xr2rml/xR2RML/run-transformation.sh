@@ -99,6 +99,12 @@ docker_exec "Generate documents' full-text RDF" \
             issa-document-text.ttl \
             document_text
 
+docker_exec "Generate documents' Rao Stirling annotations" \
+            xr2rml_rao_stirling_index.tpl.ttl \
+            issa-document-rao-stirling.ttl \
+            rao_stirling
+
+
 docker_exec_multipart "Generate annotations for DBpedia Spotlight" \
                       xr2rml_spotlight_annot.tpl.ttl \
                       issa-document-spotlight-part.ttl \
@@ -120,9 +126,6 @@ docker_exec_multipart "Generate annotations for GeoNames" \
 ############################################################################
 
 docker_exec_multipart "Generate annotations for Pyclinrec" \
-     	                 xr2rml_pyclinrec_annot.tpl.ttl \
-          	            issa-document-pyclinrec-part.ttl \
+     	               xr2rml_pyclinrec_annot.tpl.ttl \
+          	           issa-document-pyclinrec-part.ttl \
                	       pyclinrec_filtered 
-
-
-

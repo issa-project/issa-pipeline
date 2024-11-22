@@ -43,6 +43,9 @@ docker exec -w $WDIR $CONTAINER \
            ./import-json-dir.sh $DB annif_descriptors paper_id $IDIR/$REL_ANNIF >> $log 2>&1
 
 docker exec -w $WDIR $CONTAINER \
+           /bin/bash ./import-file.sh  $IDIR/$REL_OPENALEX/rao-stirling.json  json  $DB  rao_stirling  ISSA_Document_URI >> $log 2>&1
+
+docker exec -w $WDIR $CONTAINER \
            /bin/bash ./import-json-dir.sh $DB spotlight paper_id $IDIR/$REL_SPOTLIGHT $SDIR/filter_spotlight.js >> $log 2>&1
 
 docker exec -w $WDIR $CONTAINER \
@@ -53,3 +56,4 @@ docker exec -w $WDIR $CONTAINER \
 
 docker exec -w $WDIR $CONTAINER \
            /bin/bash ./import-json-dir.sh $DB pyclinrec paper_id $IDIR/$REL_PYCLINREC $SDIR/filter_pyclinrec.js >> $log 2>&1
+

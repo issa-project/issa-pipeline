@@ -1,0 +1,97 @@
+# Mapping file generating the annotations for the Rao Stirling index calculated from the OpenAlex topics
+#
+# Author: Franck MICHEL, University Cote d'Azur, CNRS, Inria
+#
+# Licensed under the Apache License, Version 2.0 (http://www.apache.org/licenses/LICENSE-2.0)
+
+@prefix xrr:    <http://i3s.unice.fr/xr2rml#> .
+@prefix rr:     <http://www.w3.org/ns/r2rml#> .
+@prefix rml:    <http://semweb.mmlab.be/ns/rml#> .
+
+@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rdfs:   <http://www.w3.org/2000/01/rdf-schema#>.
+@prefix owl:    <http://www.w3.org/2002/07/owl#>.
+@prefix xsd:    <http://www.w3.org/2001/XMLSchema#> .
+
+@prefix bibo:   <http://purl.org/ontology/bibo/> .
+@prefix dce:    <http://purl.org/dc/elements/1.1/>.
+@prefix dct:    <http://purl.org/dc/terms/>.
+@prefix fabio:  <http://purl.org/spar/fabio/> .
+@prefix eprint: <http://purl.org/eprint/type/> .
+@prefix foaf:   <http://xmlns.com/foaf/0.1/>.
+@prefix frbr:   <http://purl.org/vocab/frbr/core#>.
+@prefix oa:     <http://www.w3.org/ns/oa#>.
+@prefix prov:   <http://www.w3.org/ns/prov#>.
+@prefix schema: <http://schema.org/>.
+@prefix wd:     <http://www.wikidata.org/entity/>.
+
+
+# Template file: replace placeholders
+# - {{dataset}}: RDF dataset name e.g. "dataset-1-0"
+# - {{collection}}: the MongoDB collection to query, e.g. document_domains
+# - {{namespace}}: The ISSA instance specific namespace,  e.g  http://data-issa.dhm.euromov.fr/
+
+@prefix issa:     <{{namespace}}>.
+@prefix issapr:   <{{namespace}}property/>.
+
+<#LS>
+    a           xrr:LogicalSource;
+    xrr:query    """db.{{collection}}.find()""" .
+
+<#TM>
+    a rr:TriplesMap;
+    xrr:logicalSource <#LS>;
+    rr:subjectMap    [ 
+        rr:template "{{namespace}}raoAnnotation/sha1({$.ISSA_Document_URI}_{$.DOI}_{$.Rao_Stirling_Index}})";
+        rr:class     issa:RaoStirlingAnnotation, prov:Entity;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate oa:hasTarget;
+        rr:objectMap [ xrr:reference "$.ISSA_Document_URI"; rr:termType rr:IRI ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate oa:hasBody;
+        rr:objectMap [ 
+            rr:template "body/sha1({$.ISSA_Document_URI}_{$.DOI}_{$.Rao_Stirling_Index}}";
+            rr:termType rr:BlankNode;
+        ];
+    ];
+
+    # Provenance
+    rr:predicateObjectMap [
+        rr:predicate rdfs:isDefinedBy;
+        rr:objectMap [ rr:constant issa:{{dataset}}; rr:termType rr:IRI ];
+    ];
+.
+
+
+# Annotation body
+<#TM_body>
+    a rr:TriplesMap;
+    xrr:logicalSource <#LS>;
+    rr:subjectMap [
+        rr:template "body/sha1({$.ISSA_Document_URI}_{$.DOI}_{$.Rao_Stirling_Index}}";
+        rr:termType rr:BlankNode;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate rdf:value;
+        rr:objectMap [ 
+            xrr:reference "$.Rao_Stirling_Index" ;
+            rr:datatype xsd:decimal;
+        ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate issapr:raoStirlingDiscret ;
+        rr:objectMap [ xrr:reference "$.Rao_Stirling_Interval" ];
+    ].
+
+
+# Output should look like this:
+#<http://data-issa.cirad.fr/raoAnnotation/68c7e192d8f52da8e3f4386f3aaed01a9a3151b7>
+#    oa:hasTarget <http://data-issa.cirad.fr/document/349640> ;
+#    a issa:RaoStirlingAnnotation ;
+#    oa:hasBody [
+#        rdf:value "0.172"^^xsd:double ;
+#        issapr:raoStirlingDiscret "[0.0-0.2["
+#    ] .
+

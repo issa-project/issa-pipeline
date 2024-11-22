@@ -52,7 +52,7 @@ ld_dir ('$u{IDIR}', 'issa-document-pyclinrec-*.ttl',        '$u{namespace}graph/
 ld_dir ('$u{IDIR}', 'issa-document-openalex-authorships.ttl','$u{namespace}graph/openalex-authorships');
 ld_dir ('$u{IDIR}', 'issa-document-openalex-topics.ttl',    '$u{namespace}graph/openalex-topics');
 ld_dir ('$u{IDIR}', 'issa-document-openalex-sdgs.ttl',      '$u{namespace}graph/openalex-sdgs');
---ld_dir ('$u{IDIR}', 'issa-document-rao-stirling.ttl',       '$u{namespace}graph/rao-stirling-index');
+ld_dir ('$u{IDIR}', 'issa-document-rao-stirling.ttl',       '$u{namespace}graph/rao-stirling-index');
 
 
 -- List files and graphs to load
