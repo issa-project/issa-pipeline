@@ -4,7 +4,7 @@ To facilitate the execution of the pipeline we built an environment that support
 
 <img src="../doc/environment_diagram.png" width="500" />
 
-## Host machine specification:
+## Host machine specification
 
 (minimum tested)
 
@@ -12,7 +12,7 @@ To facilitate the execution of the pipeline we built an environment that support
 - CPU 2.30 GHz (multi-core is preferable)
 - RAM 32 Gb
 
-## Host environment components:
+## Host environment components
 
 (tested versions)
 
@@ -23,7 +23,7 @@ To facilitate the execution of the pipeline we built an environment that support
 
 The pipeline's Python scripts are run in the context of a virtual environment. The package requirements and virtual environment building script is included in this repository.
 
-## Off-the-shelf Docker images:
+## Off-the-shelf Docker images
 
 - Grobid (0.7.2)
 - Morph-xR2RML (1.3.2)
@@ -31,14 +31,15 @@ The pipeline's Python scripts are run in the context of a virtual environment. T
 - DBPedia Spotlight (latest, no specific version tag is available)
 - entity-fishing (0.0.6)
 - OpenLink Virtuoso (7.2) 
+- SPARQL micro-services (0.5.8)
 
 Each image can be downloaded from the Docker Hub and we provide installation scripts in this repository.  
 
-Morph-xR2RML is a multi-container Docker network. It requires Docker Compose to be installed on the host machine.
+Morph-xR2RML and the SPARQL micro-service are multi-container Docker networks. They require Docker Compose to be installed on the host machine.
 
 DBpedia Spotlight and entity-fishing are installed using pre-trained language models.  In our use case, we only download French and English models but this can be easily customized.
 
-## Custom Docker images:
+## Custom Docker images
 
 - pyclinrec (0.20)
 
@@ -46,9 +47,15 @@ For custom-built containers, we provide Dockerfile file(s) and build scripts.
 
 ## Optional external datasets
 
-Optionally and depending on a use case some additional external datasets can be obtained from their origins and uploaded to the ISSA triple store for faster data access. In the Agritrop use case, we choose to host periodically updated Agrovoc thesaurus as well as application-specific AgrIST thesaurus. For the HAL use case, we host HAL domains and MeSH dataset.
+Optionally and depending on a use case, some additional external datasets can be obtained from their origins and uploaded to the ISSA triple store for faster data access. 
 
-To facilitate quick access to the Wikidata and DBpedia labels and hierarchical relationships between named entities for visualization applications such as [ARViz](https://github.com/Wimmics/arviz) we recreate the hierarchies for named entities in the ISSA triple store.
+These include:
+- The hierarchy of [Open Alex topics](https://docs.openalex.org/api-entities/topics) (topic < subfield < field < domain) with their labels;
+- The list of Sustainable Development Goals (SDG) with their labels, obtained from http://metadata.un.org/sdg/;
+- In the Agritrop use case, we host periodically updated Agrovoc thesaurus as well as application-specific AgrIST thesaurus;
+- In the HAL use case, we host HAL domains and MeSH dataset.
+
+To facilitate quick access to the Wikidata and DBpedia labels and hierarchical relationships between named entities for visualization applications such as [ARViz](https://github.com/Wimmics/arviz), we recreate the hierarchies for named entities in the ISSA triple store.
 
 See the [datasets](datasets) folder for more details.
 

@@ -22,17 +22,26 @@ chmod 755 *.sh
 ```
 
 ### Configuration
+
 The ISSA pipeline can be configured for running multiple instances of document corpora.
 Each instance is configured in a separate directory in the [config](../config) sub-directory.
-
->:point_right The instance name is the name of the config sub-directory, currently *agritrop* or *hal*
+**The instance name is the name of the config sub-directory, currently *agritrop* or *hal***
 
 The configuration files are:
 - [env.sh](../config/agritrop/env.sh) - defines the environment variables for the pipeline execution such as data location, Docker containers configuration, etc.
 - [config.py](../config/agritrop/config.py) - defines the processing options for Python scripts such as which steps to run, which models to use, etc.
 - [dataset.ttl](../config/agritrop/dataset.ttl) - defines the RDF description metadata of the dataset Knowledge Graph.
 
->:point_right: To run the pipeline for a specific instance, the instance name has to be passed as an argument to the [run-pipeline.sh](./run-pipeline.sh) script. Or to run a specific script for a specific instance, the environment variable `ISSA_INSTANCE` has to be set to the name of the instance. 
+>:point_right: To run the pipeline for a specific instance, the instance name has to be passed as an argument to the [run-pipeline.sh](./run-pipeline.sh) script. 
+
+>:point_right: To run a specific script for a specific instance, initialize the environment as follows:
+```bash
+# Set variable `ISSA_INSTANCE` to be the name of the instance
+export ISSA_INSTANCE=<your instance> # e.g. 'agritrop' or 'hal'
+
+# Use the global script from the [root](..) directory
+. ../env.sh
+```
 
 Alternatively, in the case of a single instance, the configuration files may be placed in the root directories of the pipeline:
 
@@ -199,6 +208,20 @@ The following output files are generated:
 >:point_right: GeoNames named entities are saved in the same way as Wikidata with the addition of GeoNamesID field.
 
 Scripts are provided in the directory [ner](./ner/).
+
+
+### Retrieve OpenAlex metadata and compute the Rao Stirling diversity index for each article
+
+Additional metadata are retrieved from OpenAlex (see script [4_openalex_metadata.sh](4_openalex_metadata.sh) and tools in folder [openalex](openalex)):
+- authorship data that give the ordered list of authors with theur affiliations
+- the Sustainable Development Goals (SDG) assigned to an article
+- the subjects of the article, that OpenAlex gives by means of topics, subfields, fields and domains.
+
+These data are obtained and transformed into RDF in one step using [dedicated SPARQL micro-services](../environment/containers/sparql-micro-service/services/).
+
+In addition, to compute the Rao Stirling diversity index of each article, we need to collect the topics of the articles cited by each article.
+This step is done using the OpenAlex API whose results are translated into RDF in the next step of the pipeline.
+
 
 ### Transformation to RDF
 

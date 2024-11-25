@@ -296,7 +296,7 @@ Additionally, static named graphs provide reference information that are not reg
 |--------------------------------------    |-------------------------------------------------------|
 | Metadata of the ISSA dataset | <http://data-issa.cirad.fr/graph/dataset> |
 | List and hierarchy of the OpenAlex topics/subfields/fields/domains | <http://data-issa.cirad.fr/graph/openalex-topics-hierarchy> |
-| Metadata about the SDG retrived from URIs <http://metadata.un.org/sdg/xxx> | <http://data-issa.cirad.fr/graph/sdgs-metadata> |
+| Metadata about the SDG retrieved from URIs <http://metadata.un.org/sdg/xxx> | <http://data-issa.cirad.fr/graph/sdgs-metadata> |
 | Labels and hierarchy of the DBpedia named entities | <http://data-issa.cirad.fr/graph/dbpedia-named-entities> |
 | Labels and hierarchy of the Wikidata named entities | <http://data-issa.cirad.fr/graph/wikidata-named-entities> |
 

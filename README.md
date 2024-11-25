@@ -8,6 +8,7 @@ The repository consists of various tools, scripts and configuration files involv
 - download and pre-process the PDF files of the articles;
 - process the output to extract thematic descriptors and named  entities;
 - translate the output of each processing step into a unified, consistent RDF dataset;
+- retrieve additional metadata from OpenAlex: topics, Sustainable Devlopment Goals (SDG), authorship with institutions
 - upload the resulting dataset to a triple store equipped with a SPARQL endpoint.
 
 These steps are summurized in the following diagram.

@@ -13,8 +13,10 @@ authors:
 - family-names: "TOULET"
   given-names: "Anne"
   orcid: "https://orcid.org/0000-0003-0463-0854"
+- family-names: "SCORDO"
+  given-names: "Quentin"
 title: "issa-pipeline"
-version: 1.0.0
-doi: 10.5281/zenodo.6513983
-date-released: 2022-05-03
+version: 2.1.0
+doi: 10.5281/zenodo.10381606
+date-released: 2024-11-25
 url: "https://github.com/issa-project/issa-pipeline"
