@@ -63,7 +63,7 @@ Some datasets must be loaded in the triple store, in addition to the data genera
 See the [dedicated folder](../environment/datasets/) for explanations on how to manage external datasets.
 
 
-## Running the Pipeline
+## Running the pipeline
 After configuring the pipeline it can be run manually step-by-step by running numbered scripts in this directory or by invoking [run-pipeline.sh](run-pipeline.sh) with an instance name (e.g. *agritrop*) as an argument to run the entire pipeline automatically. Here is an example:
 
 ```
@@ -75,6 +75,32 @@ We would recommend running the pipeline manually for the first time to be able t
 Each step of the pipeline outputs a log file that would be stored in the *./logs* directory.
 
 >:point_right: The pipeline step scripts do not take the instance name as a parameter. To execute a single step on an ISSA instance set the *ISSA_INSTANCE* environment variable to the name of the instance before running a script.
+
+
+## Re-running the pipeline: either re-run the last update or from scratch
+
+Times to times we may have to re-execute th pipeline, either because a previous run has failed or while developping new steps.
+
+What happens at each run depends on two things:
+- the articles processed during the last runs, whose list is given by the list of JSON files in `$HOME/ISSA-2/data/<instance>/<dataset>/<date>/json/metadata`:
+- the PDF files previously downloaded, whose list is given by the files in `$HOME/ISSA-2/data/<instance>/pdf_cache`
+
+
+### Re-running the last update
+
+1. Go the `$HOME/ISSA-2/data/<instance>/<dataset>` and remove the folder of the last update.
+
+2. Go to `$HOME/ISSA-2/data/<instance>/pdf_cache` and remove the PDF files corresponding to the last update (use the creatino date).
+
+3. Re-run the pipeline with the `run_pipeline.sh`script.
+
+
+### Re-running the pipeline from scratch
+
+Change the dataset version in the instance's env.sh: increment variables `ISSA_VERSION` and `ISSA_VERSION_DASH` such that a fully new data folder be created.
+
+Then re-run the pipeline with the `run_pipeline.sh`script.
+
 
 ## Data Updates
 
@@ -250,9 +276,10 @@ Scripts are provided in the directory [virtuoso](./virtuoso/).
 
 >:point_right: Each instance of the ISSA pipeline has to have its own Virtuoso Docker container. The Virtuoso container is configured in the [env.sh](../config/agritrop/env.sh) file.
 
-## Extending Pipeline
+## Extending the Pipeline
 
-ISSA pipeline is designed to be open to extension. Adding a new document processing requires only a few steps. See the [HOW-TO-EXTEND-PIPELINE](./HOW-TO-EXTEND-PIPELINE.md) documentation.
+ISSA pipeline is designed to be open to extension. Adding a new document processing requires a few steps.
+See the [HOW-TO-EXTEND-PIPELINE](./HOW-TO-EXTEND-PIPELINE.md) documentation.
 
 >:point_right: It would be even easier to remove a process from the pipeline by editing the calling scripts.
 

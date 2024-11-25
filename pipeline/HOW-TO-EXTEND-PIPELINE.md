@@ -6,15 +6,15 @@ We anticipate that a new process would be one of three types:
 
 - performing indexation, i.e. associating terms with the entire text
 - performing named entity recognition (NER), i.e. associating entities with an exact word or phrase in the text
-- performing something else  
+- performing something else
 
-In any case, the process would be is very similar. For example, the use case specific  _pyclinrec_ NER was added to the pipeline last and can serve as a template for adding a new step.
+In any case, the process would be is very similar. For example, the use case specific  _pyclinrec_ NER can serve as a template for adding a new step.
 
 ## Identify the input and output types and locations
 
 Possible inputs:
 
-- metadata (tsv)
+- metadata: global tsv or separate json documents
 - full document text (json)
 - results of other processing steps (json)
 

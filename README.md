@@ -19,10 +19,12 @@ These steps are summurized in the following diagram.
 ## Content
 
 - [Processing pipeline](pipeline/)
+- [Extending the pipeline](doc/HOW-TO-EXTEND-PIPELINE.md)
 - [Tools related to Docker containers and third-party datasets](environment/)
 - [RDF modeling](doc/data-modeling.md)
 - [RDF examples](doc/examples/)
 - [Vocabulary definitions and RDF dataset description](dataset/)
+
 
 ## License
 
