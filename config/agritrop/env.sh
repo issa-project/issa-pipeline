@@ -22,7 +22,7 @@ export ISSA_PIPELINE_CONFIG=$ISSA_ROOT/config/$ISSA_INSTANCE
 export ISSA_PIPELINE_LOG=$ISSA_ROOT/pipeline/logs/$ISSA_INSTANCE 
 
 # Python virtual environment name and location
-export ISSA_VENV=~/ISSA/environment/python/issa_venv
+export ISSA_VENV=~/ISSA-2/environment/python/issa_venv
 
 ###############################################################################
 #                              DATA LOCATION

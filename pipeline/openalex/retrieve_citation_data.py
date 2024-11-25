@@ -225,8 +225,8 @@ if __name__ == "__main__":
                     elif error == ERROR_OTHER:
                         other_error_count += 1
                     elif article_data:
-                        article_data["ISSA_Document_URI"] = document_uri
                         # Ajoute l'URI du document à l'article
+                        article_data["ISSA_Document_URI"] = document_uri
                         if (
                             not article_data["Cited_articles"]
                             or not article_data["Subjects"]
@@ -239,6 +239,8 @@ if __name__ == "__main__":
                             )
                 except Exception as exc:
                     logger.error(f"Exception while processing DOI {doi} : {exc}")
+                    logger.error(format_exc())
+
     else:
         # Sequential execution
         logger.info("Running in sequential execution mode")
@@ -264,9 +266,10 @@ if __name__ == "__main__":
                         logger.info(
                             f"Data for DOI {doi} recorded with URI {document_uri}."
                         )
-
+    
     # Save results to JSON file
     output = cfg.OUTPUT_FILES["article_citation"]
+    logger.info(f"Saving citation data about {len(articles_data)} documents to JSON file {output}")
     with open(output, "w", encoding="utf-8") as output_file:
         json.dump(articles_data, output_file, ensure_ascii=False, indent=4)
 

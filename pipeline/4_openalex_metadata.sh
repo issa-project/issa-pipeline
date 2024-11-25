@@ -35,11 +35,13 @@ pushd ./openalex
     python3 ./retrieve_article_data.py    $ISSA_PIPELINE_CONFIG     --datatype topics >> $log 2>&1
 
     echo "*********************************************************************" >> $log
-    echo "Computing the Rao Stirling index..." >> $log
-    mkdir -p $DATASET_ROOT_PATH/$LATEST_UPDATE/$REL_OPENALEX        >> $log 2>&1
+    echo "Retrieving citation data..." >> $log
+    mkdir -p $ISSA_DATA_ROOT/$ISSA_DATASET/$LATEST_UPDATE/$REL_OPENALEX        >> $log 2>&1
     python3 ./retrieve_citation_data.py   $ISSA_PIPELINE_CONFIG     >> $log 2>&1
+
+    echo "*********************************************************************" >> $log
+    echo "Computing the Rao Stirling index..." >> $log
     python3 ./compute_rao_stirling.py     $ISSA_PIPELINE_CONFIG     >> $log 2>&1
-    mv -f rao_stirling.json $DATASET_ROOT_PATH/$LATEST_UPDATE/$REL_OPENALEX >> $log 2>&1
 
 popd
 

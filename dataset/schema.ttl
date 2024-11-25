@@ -147,3 +147,9 @@ issa:RaoStirlingAnnotation
     rdfs:label              "Rao-Stirling score annotation";
     dct:description         "The score of a article wrt. the Rao-Stirling interdisciplinarity score";
     .
+
+issap:raoStirlingDiscret
+    a                       owl:DatatypeProperty;
+    rdfs:label              "Rao Stirling discretized value";
+    dct:description         "Value of the Rao-Stirling index represented as an interval for usability, e.g. value 0.234 is turned into string '[0.2, 0.3['";
+    .
