@@ -299,7 +299,10 @@ def calculate_rao_stirling_index(
         no_combinations += 1
 
     # Normalize the index to have a value in [0,1]
-    sum_rao_stirling_idx = sum_rao_stirling / no_combinations
+    if no_combinations != 0:
+        sum_rao_stirling_idx = sum_rao_stirling / no_combinations
+    else:
+        sum_rao_stirling_idx = 0
     logger.debug(
         f"Rao Stirling index: {sum_rao_stirling}, normalized by {no_combinations} couples of {subject_level}s: {sum_rao_stirling_idx}"
     )
