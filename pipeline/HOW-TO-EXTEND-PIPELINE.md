@@ -1,4 +1,4 @@
-# How to add a new document processing step
+# How to add a new processing step
 
 ISSA pipeline is designed to be open to extension. Adding a new document processing requires a few steps.
 

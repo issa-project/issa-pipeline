@@ -19,7 +19,7 @@ These steps are summurized in the following diagram.
 ## Content
 
 - [Processing pipeline](pipeline/)
-- [Extending the pipeline](doc/HOW-TO-EXTEND-PIPELINE.md)
+- [Extending the pipeline](pipeline/HOW-TO-EXTEND-PIPELINE.md)
 - [Tools related to Docker containers and third-party datasets](environment/)
 - [RDF modeling](doc/data-modeling.md)
 - [RDF examples](doc/examples/)
@@ -33,7 +33,9 @@ See the [LICENSE file](LICENSE).
 
 ## Cite this work
 
-Toulet, Anne, Franck Michel, Anna Bobasheva, Aline Menin, Sébastien Dupré, Marie-Claude Deboin, Marco Winckler, and Andon Tchechmedjiev. "ISSA: generic pipeline, knowledge model and visualization tools to help scientists search and make sense of a scientific archive." In The Semantic Web–ISWC 2022: 21st International Semantic Web Conference, Virtual Event, October 23–27, 2022, Proceedings, pp. 660-677. Cham: Springer International Publishing, 2022. https://doi.org/10.1007/978-3-031-19433-7_38 
+### Reference article
+
+Anne Toulet, Franck Michel, Anna Bobasheva, Aline Menin, Sébastien Dupré, Marie-Claude Deboin, Marco Winckler, and Andon Tchechmedjiev. **ISSA: generic pipeline, knowledge model and visualization tools to help scientists search and make sense of a scientific archive**. In *The Semantic Web–ISWC 2022: 21st International Semantic Web Conference*, October 23–27, 2022, Proceedings, pp. 660-677. Cham: Springer International Publishing, 2022. https://doi.org/10.1007/978-3-031-19433-7_38 
 <details>
 <summary>See BibTex</summary>
 
@@ -47,19 +49,18 @@ Toulet, Anne, Franck Michel, Anna Bobasheva, Aline Menin, Sébastien Dupré, Mar
 }
 </details>
 
+### Cite this software
 
-Anna BOBASHEVA, Franck MICHEL, Andon TCHECHMEDJIEV, Anne TOULET (2022). ISSA Processing Pipeline. https://github.com/issa-project/issa-pipeline.
+Anna BOBASHEVA, Franck MICHEL, Andon TCHECHMEDJIEV, Anne TOULET, Quentin SCORDO (2024). **ISSA Processing Pipeline**. https://github.com/issa-project/issa-pipeline.
 
 <details>
 <summary>See BibTex</summary>
 
-@software{BOBASHEVA_issa-pipeline_2022,
-author = {BOBASHEVA, Anna and MICHEL, Franck and TCHECHMEDJIEV, Andon and TOULET, Anne},
-doi = {10.5281/zenodo.6513983},
-month = {5},
+@software{BOBASHEVA_issa-pipeline_2024,
+author = {BOBASHEVA, Anna and MICHEL, Franck and TCHECHMEDJIEV, Andon and TOULET, Anne , and SCORDO Quentin},
 title = {{issa-pipeline}},
 url = {https://github.com/issa-project/issa-pipeline},
-version = {1.0.0},
-year = {2022}
+version = {2.1.0},
+year = {2024}
 }
 </details>

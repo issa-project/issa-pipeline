@@ -39,7 +39,7 @@ The configuration files are:
 # Set variable `ISSA_INSTANCE` to be the name of the instance
 export ISSA_INSTANCE=<your instance> # e.g. 'agritrop' or 'hal'
 
-# Use the global script from the [root](..) directory
+# Use the global script from the root directory
 . ../env.sh
 ```
 
@@ -99,7 +99,11 @@ What happens at each run depends on two things:
 
 Change the dataset version in the instance's env.sh: increment variables `ISSA_VERSION` and `ISSA_VERSION_DASH` such that a fully new data folder be created.
 
+Edit file `virtuoso/import.isql` and uncomment the lines starting with "--SPARQL CLEAR GRAPH" so that all named graphs be cre-created.
+
 Then re-run the pipeline with the `run_pipeline.sh`script.
+
+Do not forget to edit `virtuoso/import.isql` again and comment out the lines starting with "--SPARQL CLEAR GRAPH".
 
 
 ## Data Updates
@@ -239,14 +243,18 @@ Scripts are provided in the directory [ner](./ner/).
 ### Retrieve OpenAlex metadata and compute the Rao Stirling diversity index for each article
 
 Additional metadata are retrieved from OpenAlex (see script [4_openalex_metadata.sh](4_openalex_metadata.sh) and tools in folder [openalex](openalex)):
-- authorship data that give the ordered list of authors with theur affiliations
-- the Sustainable Development Goals (SDG) assigned to an article
-- the subjects of the article, that OpenAlex gives by means of topics, subfields, fields and domains.
+- authorship data that give the ordered list of authors with their affiliations (the metadata retrieved from the OAI-PMH API of Agritrop and HAL oly return a non-ordered list without the affiliations);
+- the Sustainable Development Goals (SDG) assigned to an article;
+- the subjects of the article, that OpenAlex classifies by means of a thesaurus of topics, subfields, fields and domains.
 
-These data are obtained and transformed into RDF in one step using [dedicated SPARQL micro-services](../environment/containers/sparql-micro-service/services/).
+These data are obtained and transformed into RDF in one step using [dedicated SPARQL micro-services](../environment/containers#sparql-micro-service).
 
-In addition, to compute the Rao Stirling diversity index of each article, we need to collect the topics of the articles cited by each article.
-This step is done using the OpenAlex API whose results are translated into RDF in the next step of the pipeline.
+#### Rao Stirling diversity index
+
+The Rao Stirling diversity index is computed for each article of the corpus. To do so, we collect the topics of the articles cited by each article.
+This is achieved using the OpenAlex API (script [openalex/retrieve_citation_data.py](openalex/retrieve_citation_data.py)).
+Then, script [openalex/compute_rao_stirling.py](openalex/compute_rao_stirling.py) computes the Rao Stirling index.
+The resulting JSON file is translated into RDF in the next step of the pipeline by Morph-xR2RML.
 
 
 ### Transformation to RDF
