@@ -6,8 +6,8 @@
 
 # ISSA dataset nomenclature
 ISSA_INSTANCE=agritrop
-ISSA_VERSION=2.0                                    # version with dots 
-ISSA_VERSION_DASH=2-0                               # version with dashes
+ISSA_VERSION=2.1                                    # version with dots 
+ISSA_VERSION_DASH=2-1                               # version with dashes
 ISSA_NAMESPACE=http://data-issa.cirad.fr/           # instance namespace
 ISSA_DATASET_NAME=issa-agritrop                     # this dataset name is used in the RDF dataset definition 
 
